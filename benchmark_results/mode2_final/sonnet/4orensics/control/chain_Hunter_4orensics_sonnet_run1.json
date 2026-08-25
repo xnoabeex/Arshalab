@@ -1,0 +1,203 @@
+{
+  "provider": "sonnet",
+  "case": "4orensics",
+  "case_name": "Hunter_4orensics",
+  "case_id": "case_20260410_120043",
+  "run": 1,
+  "evidence_file": "evidence_Hunter_4orensics.json",
+  "evidence_record_count": 691,
+  "chain_event_count": 27,
+  "prompt_chars": 143389,
+  "elapsed_seconds": 44.1,
+  "chain": [
+    {
+      "timestamp": "2016-06-20 23:48:22.3828274",
+      "event": "System boot and initial interactive logon (Event 4624)",
+      "supporting_artifact": "EventLog Event 4624",
+      "confidence_or_caveat": "high",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:02.3669721",
+      "event": "RDP session established (Event 4648 explicit credential use)",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:39.9920378",
+      "event": "Viewed 'how_do_threat_actors_steal_your_data.lnk' document",
+      "supporting_artifact": "MFT LNK files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:51:20.2260379",
+      "event": "Accessed 'mwri-detecting-deterring-both.lnk' research document",
+      "supporting_artifact": "MFT LNK files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:58:09.3725499",
+      "event": "Reviewed 'DEFCON-22-Zoltan-Balazs-Bypass-firewalls-application-whitelists' material",
+      "supporting_artifact": "MFT LNK files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:06.9483540",
+      "event": "Downloaded setupssh381-20040709.zip archive",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:34:40.3762224",
+      "event": "User logoff (Event 4647)",
+      "supporting_artifact": "EventLog Event 4647",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 01:42:40.5274264",
+      "event": "RDP reconnection with explicit credentials (Event 4648)",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 01:53:14.7757045",
+      "event": "USB device Imation Nano Pro attached (Event 410)",
+      "supporting_artifact": "EventLog PnP",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:01:59.3657151",
+      "event": "Registry records USB device Disk&Ven_Imation&Prod_Nano_Pro SerialNumber 07B20C03C80830A9",
+      "supporting_artifact": "Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:04:40.0000000",
+      "event": "Downloaded FTK-Imager.zip forensic tool archive",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 08:15:00.9122750",
+      "event": "Explicit credential logon from computer WIN-A9KKHBKS7E6 (Event 4648)",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "medium",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 08:30:12.7278195",
+      "event": "Firewall stopped (Event 5025)",
+      "supporting_artifact": "EventLog Event 5025",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0245506",
+      "event": "New user account created (Event 4720)",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.6961545",
+      "event": "Windows Defender configuration changed (Event 5007)",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.0090311",
+      "event": "Second account created (Event 4720)",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.0246957",
+      "event": "Account modified by privileged user (Event 4738)",
+      "supporting_artifact": "EventLog Event 4738",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:07",
+      "event": "Downloaded 7z1602-x64.exe archive tool installer",
+      "supporting_artifact": "Browser downloads",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:13.1476403",
+      "event": "7-Zip application installed to Program Files",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 09:34:13.5047860",
+      "event": "First suspicious service installed (Event 7045)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:47:24.4780939",
+      "event": "VBoxTray service installed and registered in Run key",
+      "supporting_artifact": "EventLog Event 7045 + Registry Run key",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:18:11.8537725",
+      "event": "Created check_soundcard.vbs script file",
+      "supporting_artifact": "USN Journal",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 11:43:18.2219434",
+      "event": "Skype, GoogleDriveSync, and CCleaner Monitoring added to Run key",
+      "supporting_artifact": "Registry Run key NTUSER.DAT",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:44:54.1431830",
+      "event": "MftWipeFilter service (Jetico file system filter) installed",
+      "supporting_artifact": "Registry Services + EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 13:00:54.476902Z",
+      "event": "Accessed Google account security settings and device activity",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2016-06-21 13:02:13.067060Z",
+      "event": "Configured Gmail forwarding and POP settings",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 13:12:11.576942Z",
+      "event": "Enabled 'Less secure apps' access in Google account settings",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    }
+  ]
+}

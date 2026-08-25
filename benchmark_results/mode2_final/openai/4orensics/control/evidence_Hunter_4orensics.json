@@ -1,0 +1,4542 @@
+{
+  "case_id": "case_20260410_120043",
+  "case_name": "Hunter_4orensics",
+  "incident_window": {
+    "start": "2016-06-15",
+    "end": "2016-06-25"
+  },
+  "anchors_used": [
+    "auth_logon_interactive_type2",
+    "auth_logon_network_type3",
+    "auth_logon_rdp_type10",
+    "auth_logon_service_type5",
+    "auth_logon_unlock_type7",
+    "auth_logon_failures_4625",
+    "auth_explicit_cred_4648",
+    "auth_priv_assigned_4672",
+    "auth_account_created_4720",
+    "auth_account_enabled_4722",
+    "auth_account_disabled_4725",
+    "auth_account_deleted_4726",
+    "auth_account_modified_4738",
+    "auth_group_added_4732",
+    "auth_account_lockout_4740",
+    "auth_kerberos_tgt_4768",
+    "auth_kerberos_service_4769",
+    "auth_ntlm_4776",
+    "auth_logoff",
+    "proc_creation_4688",
+    "proc_termination_4689",
+    "svc_install_7045",
+    "svc_crashed_7034",
+    "svc_state_change",
+    "svc_starttype_changed_7040",
+    "tasks_created_4698",
+    "tasks_deleted_4699",
+    "tasks_lifecycle",
+    "ps_scriptblock_4104",
+    "ps_module_4103",
+    "ps_errors_4100",
+    "ps_engine_lifecycle",
+    "wmi_subscription",
+    "applocker_audited",
+    "applocker_blocked",
+    "def_threat_detected_1116",
+    "def_action_taken_1117",
+    "def_action_failed_1118",
+    "def_config_change_5007",
+    "def_realtime_disabled",
+    "def_engine_update",
+    "audit_log_cleared_1102",
+    "audit_policy_changed_4719",
+    "fw_stopped_5025",
+    "time_changed_4616",
+    "net_connections_5156",
+    "fw_rule_added_4946",
+    "fw_rule_modified_4947",
+    "fw_rule_deleted_4948",
+    "fw_setting_changed",
+    "dhcp_auth_50036_50037",
+    "usb_attach_driverframeworks",
+    "usb_kernel_pnp_install",
+    "device_install_recognition",
+    "device_setupapi_events",
+    "rdp_session_lifecycle",
+    "rdp_connection_manager",
+    "rdp_disconnect_reasons",
+    "smb_share_access",
+    "file_audit_access_4663",
+    "object_handle_request_4656",
+    "object_deleted_4660",
+    "permissions_changed_4670",
+    "registry_audit_4657",
+    "mft_ps1_files",
+    "mft_bat_files",
+    "mft_lnk_files",
+    "mft_sys_drivers",
+    "mft_msi_installers",
+    "mft_archive_files",
+    "mft_exe_files",
+    "mft_user_writable_dirs",
+    "mft_alternate_data_streams",
+    "usnjrnl_recent_changes",
+    "reg_persistence_master",
+    "reg_image_file_execution_options",
+    "reg_appinit_dlls",
+    "reg_winlogon_helpers",
+    "mft_startup_folders",
+    "reg_user_context",
+    "app_crashes_1000",
+    "app_hangs_1002",
+    "wer_reports_1001",
+    "prefetch_top",
+    "shimcache_top",
+    "amcache_top",
+    "lnk_recent_files",
+    "jumplist_recent",
+    "srum_network_usage",
+    "browser_raw_history",
+    "browser_downloads_searches",
+    "app_communication",
+    "app_crypto_finance",
+    "app_remote_access",
+    "app_antiforensic",
+    "app_archive_tools",
+    "app_email_client",
+    "suspicious_indicators_universal"
+  ],
+  "total_records": 691,
+  "errors": 0,
+  "evidence_by_anchor": {
+    "auth_logon_interactive_type2": [
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:48:22.3828274",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:48:23.0390132",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:48:27.0542110",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:48:35.4765507",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:48:36.9294742",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:49:02.3669721",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:49:02.3669721",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:49:10.5855555",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:51:28.4319925",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:55:35.2369023",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:55:35.3488741",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:55:43.3234536",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:55:45.4923439",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-20 23:59:43.5450775",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2016-06-21 00:00:28.3985452",
+        "event_id": 4624,
+        "channel": "Security"
+      }
+    ],
+    "auth_logon_network_type3": [
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2016-06-20 23:48:22.3828274",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2016-06-20 23:48:23.0390132",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2016-06-20 23:48:27.0542110",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2016-06-20 23:48:35.4765507",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2016-06-20 23:48:36.9294742",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2016-06-20 23:49:02.3669721",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2016-06-20 23:49:02.3669721",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2016-06-20 23:49:10.5855555",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2016-06-20 23:51:28.4319925",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2016-06-20 23:55:35.2369023",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2016-06-20 23:55:35.3488741",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2016-06-20 23:55:43.3234536",
+        "event_id": 4624,
+        "channel": "Security"
+      }
+    ],
+    "auth_logon_rdp_type10": [
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2016-06-20 23:48:22.3828274",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2016-06-20 23:48:23.0390132",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2016-06-20 23:48:27.0542110",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2016-06-20 23:48:35.4765507",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2016-06-20 23:48:36.9294742",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2016-06-20 23:49:02.3669721",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2016-06-20 23:49:02.3669721",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2016-06-20 23:49:10.5855555",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2016-06-20 23:51:28.4319925",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2016-06-20 23:55:35.2369023",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2016-06-20 23:55:35.3488741",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2016-06-20 23:55:43.3234536",
+        "event_id": 4624,
+        "channel": "Security"
+      }
+    ],
+    "auth_logon_service_type5": [
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2016-06-20 23:48:21.7754081",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2016-06-20 23:48:21.7754081",
+        "event_id": 1,
+        "channel": "System"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2016-06-20 23:48:22.3828274",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2016-06-20 23:48:22.3828274",
+        "event_id": 4672,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2016-06-20 23:48:22.8202269",
+        "event_id": 4116,
+        "channel": "Microsoft-Windows-GroupPolicy/Operational"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2016-06-20 23:48:23.0390132",
+        "event_id": 1531,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2016-06-20 23:48:23.0390132",
+        "event_id": 4115,
+        "channel": "Microsoft-Windows-GroupPolicy/Operational"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2016-06-20 23:48:23.0390132",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2016-06-20 23:48:23.0390132",
+        "event_id": 4672,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2016-06-20 23:48:23.0549820",
+        "event_id": 5116,
+        "channel": "Microsoft-Windows-GroupPolicy/Operational"
+      }
+    ],
+    "auth_logon_unlock_type7": [
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2016-06-20 23:48:22.3828274",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2016-06-20 23:48:23.0390132",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2016-06-20 23:48:27.0542110",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2016-06-20 23:48:35.4765507",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2016-06-20 23:48:36.9294742",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2016-06-20 23:49:02.3669721",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2016-06-20 23:49:02.3669721",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2016-06-20 23:49:10.5855555",
+        "event_id": 4624,
+        "channel": "Security"
+      }
+    ],
+    "auth_logon_failures_4625": [
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2016-06-20 23:48:22.0000000",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2016-06-20 23:48:22.0000000",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2016-06-21 01:41:07.0000000",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "4ORENSICS",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2016-06-21 01:41:07.0000000",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "4ORENSICS",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2016-06-21 08:15:09.0000000",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "WIN-A9KKHBKS7E6",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2016-06-21 08:15:09.0000000",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "WIN-A9KKHBKS7E6",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2016-06-21 08:29:53.0000000",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2016-06-21 08:29:53.0000000",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      }
+    ],
+    "auth_explicit_cred_4648": [
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-20 23:49:02.3669721",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-20 23:49:02.3669721",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-21 01:42:40.5274264",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-21 01:42:40.5274264",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-21 08:15:00.9122750",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "WIN-A9KKHBKS7E6",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-21 08:15:00.9122750",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "WIN-A9KKHBKS7E6",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-21 08:19:28.4310307",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-21 08:19:28.4310307",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-21 08:37:45.8371877",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-21 08:37:45.8371877",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-21 09:48:19.7522618",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-21 09:48:19.7522618",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-21 11:41:04.3871559",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2016-06-21 11:41:04.3871559",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      }
+    ],
+    "auth_priv_assigned_4672": [
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 11:38:40.9555996",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 11:38:40.9555996",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 11:41:03.9494983",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 11:41:03.9494983",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 11:41:03.9810822",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 11:41:03.9810822",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 11:41:04.3871559",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 11:41:04.3871559",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 11:41:04.3871559",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 11:41:04.3871559",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 12:01:06.8673909",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 12:01:06.8673909",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 12:01:06.8907339",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 12:01:06.8907339",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 12:18:36.1428803",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 12:18:36.1428803",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 12:46:17.9768021",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 12:46:17.9768021",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 13:07:13.1132197",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2016-06-21 13:07:13.1132197",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "authentication"
+      }
+    ],
+    "auth_account_created_4720": [
+      {
+        "_anchor": "auth_account_created_4720",
+        "timestamp": "2016-06-21 08:37:43.0245506",
+        "event_id": 4720,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_created_4720",
+        "timestamp": "2016-06-21 08:40:06.0090311",
+        "event_id": 4720,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "account_management"
+      }
+    ],
+    "auth_account_enabled_4722": [
+      {
+        "_anchor": "auth_account_enabled_4722",
+        "timestamp": "2016-06-21 08:37:43.0558459",
+        "event_id": 4722,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_account_enabled_4722",
+        "timestamp": "2016-06-21 08:40:06.0090311",
+        "event_id": 4722,
+        "channel": "Security"
+      }
+    ],
+    "auth_account_disabled_4725": [],
+    "auth_account_deleted_4726": [],
+    "auth_account_modified_4738": [
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2016-06-21 08:19:47.3526015",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2016-06-21 08:19:47.3526015",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2016-06-21 08:19:47.3526015",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2016-06-21 08:19:47.3526015",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2016-06-21 08:37:43.0558459",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2016-06-21 08:37:43.0715669",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2016-06-21 08:37:43.0715669",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2016-06-21 08:37:43.0715669",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2016-06-21 08:40:06.0090311",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2016-06-21 08:40:06.0246957",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "4orensics",
+        "_bucket": "account_management"
+      }
+    ],
+    "auth_group_added_4732": [
+      {
+        "_anchor": "auth_group_added_4732",
+        "timestamp": "2016-06-21 08:37:43.0402357",
+        "event_id": 4732,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_group_added_4732",
+        "timestamp": "2016-06-21 08:37:43.1028967",
+        "event_id": 4732,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_group_added_4732",
+        "timestamp": "2016-06-21 08:40:06.1968203",
+        "event_id": 4732,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_group_added_4732",
+        "timestamp": "2016-06-21 08:40:06.2901448",
+        "event_id": 4732,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_group_added_4732",
+        "timestamp": "2016-06-21 08:40:06.7122668",
+        "event_id": 4732,
+        "channel": "Security"
+      }
+    ],
+    "auth_account_lockout_4740": [],
+    "auth_kerberos_tgt_4768": [],
+    "auth_kerberos_service_4769": [],
+    "auth_ntlm_4776": [],
+    "auth_logoff": [
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2016-06-21 01:34:40.3762224",
+        "event_id": 4647,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2016-06-21 09:47:47.2587435",
+        "event_id": 4647,
+        "channel": "Security"
+      }
+    ],
+    "proc_creation_4688": [],
+    "proc_termination_4689": [],
+    "svc_install_7045": [
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 09:34:13.5047860",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 09:34:13.7886581",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 09:34:20.0522621",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 09:34:23.0281725",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 09:47:24.4780939",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 09:47:33.2376118",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 09:47:33.8877738",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 09:47:33.9776625",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 09:47:34.0717962",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 11:44:53.7413387",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 11:44:53.7763315",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 11:44:54.1360295",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 11:44:54.1416663",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 12:53:21.5412076",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2016-06-21 13:18:45.7508404",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "4orensics",
+        "_bucket": "suspicious_events"
+      }
+    ],
+    "svc_crashed_7034": [],
+    "svc_state_change": [],
+    "svc_starttype_changed_7040": [
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2016-06-21 01:02:50.3136004",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2016-06-21 01:42:47.4967894",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2016-06-21 08:30:21.3835089",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2016-06-21 08:30:22.1963356",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2016-06-21 08:30:45.2902427",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2016-06-21 08:30:56.3524162",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2016-06-21 08:40:06.8998163",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2016-06-21 09:34:23.0791409",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2016-06-21 10:40:33.6205876",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2016-06-21 10:42:47.2222055",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2016-06-21 11:19:31.6852767",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2016-06-21 11:19:38.0651542",
+        "event_id": 7040,
+        "channel": "System"
+      }
+    ],
+    "tasks_created_4698": [],
+    "tasks_deleted_4699": [],
+    "tasks_lifecycle": [],
+    "ps_scriptblock_4104": [],
+    "ps_module_4103": [],
+    "ps_errors_4100": [],
+    "ps_engine_lifecycle": [
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2016-06-21 08:37:57.3211775",
+        "event_id": 28115,
+        "channel": "Microsoft-Windows-Shell-Core/Operational"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2016-06-21 08:48:52.3761719",
+        "event_id": 800,
+        "channel": "Microsoft-Windows-TaskScheduler/Maintenance"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2016-06-21 08:48:53.2800745",
+        "event_id": 800,
+        "channel": "Microsoft-Windows-TaskScheduler/Maintenance"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2016-06-21 08:48:53.3588321",
+        "event_id": 800,
+        "channel": "Microsoft-Windows-TaskScheduler/Maintenance"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2016-06-21 10:40:34.5296100",
+        "event_id": 800,
+        "channel": "Microsoft-Windows-TaskScheduler/Maintenance"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2016-06-21 10:40:36.1591486",
+        "event_id": 800,
+        "channel": "Microsoft-Windows-TaskScheduler/Maintenance"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2016-06-21 12:46:14.1849562",
+        "event_id": 800,
+        "channel": "Microsoft-Windows-TaskScheduler/Maintenance"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2016-06-21 12:52:17.6424289",
+        "event_id": 800,
+        "channel": "Microsoft-Windows-TaskScheduler/Maintenance"
+      }
+    ],
+    "wmi_subscription": [
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2016-06-20 23:49:02.7573328",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2016-06-20 23:49:02.7573328",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2016-06-20 23:49:02.7573328",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2016-06-20 23:49:02.7573328",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2016-06-20 23:49:02.7573328",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2016-06-20 23:49:02.7573328",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2016-06-20 23:49:02.7573328",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2016-06-20 23:49:02.7573328",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2016-06-20 23:49:02.7573328",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2016-06-20 23:49:02.7573328",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      }
+    ],
+    "applocker_audited": [],
+    "applocker_blocked": [],
+    "def_threat_detected_1116": [
+      {
+        "_anchor": "def_threat_detected_1116"
+      }
+    ],
+    "def_action_taken_1117": [
+      {
+        "_anchor": "def_action_taken_1117"
+      }
+    ],
+    "def_action_failed_1118": [],
+    "def_config_change_5007": [
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2016-06-21 08:37:43.6961545",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2016-06-21 08:37:43.6961545",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      }
+    ],
+    "def_realtime_disabled": [
+      {
+        "_anchor": "def_realtime_disabled",
+        "timestamp": "2016-06-21 08:40:06.1968203",
+        "event_id": 5010,
+        "channel": "Microsoft-Windows-HomeGroup Provider Service/Operational"
+      }
+    ],
+    "def_engine_update": [
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2016-06-20 23:48:37.9607672",
+        "event_id": 2002,
+        "channel": "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2016-06-21 01:34:44.2827083",
+        "event_id": 2002,
+        "channel": "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2016-06-21 01:41:17.1678203",
+        "event_id": 2002,
+        "channel": "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2016-06-21 02:24:07.3899300",
+        "event_id": 2002,
+        "channel": "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2016-06-21 02:24:12.4784785",
+        "event_id": 2002,
+        "channel": "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2016-06-21 08:18:53.0683493",
+        "event_id": 2003,
+        "channel": "System"
+      }
+    ],
+    "audit_log_cleared_1102": [],
+    "audit_policy_changed_4719": [],
+    "fw_stopped_5025": [
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2016-06-21 08:30:12.7278195",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-IdCtrls/Operational"
+      },
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2016-06-21 08:30:38.7431910",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-IdCtrls/Operational"
+      },
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2016-06-21 08:31:00.4621940",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-IdCtrls/Operational"
+      },
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2016-06-21 08:38:08.1030916",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-AppXDeploymentServer/Operational"
+      },
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2016-06-21 08:38:08.5092533",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-AppXDeploymentServer/Operational"
+      },
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2016-06-21 08:38:09.2126765",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-AppXDeploymentServer/Operational"
+      },
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2016-06-21 08:38:10.7436520",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-AppXDeploymentServer/Operational"
+      },
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2016-06-21 08:38:10.9151186",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-AppXDeploymentServer/Operational"
+      },
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2016-06-21 08:38:11.1964722",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-AppXDeploymentServer/Operational"
+      },
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2016-06-21 08:38:11.8527530",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-AppXDeploymentServer/Operational"
+      }
+    ],
+    "time_changed_4616": [
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2016-06-20 23:48:21.7754081",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2016-06-21 01:41:06.3256183",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2016-06-21 10:40:33.5948384",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2016-06-21 12:58:02.7459338",
+        "event_id": 4616,
+        "channel": "Security"
+      }
+    ],
+    "net_connections_5156": [],
+    "fw_rule_added_4946": [],
+    "fw_rule_modified_4947": [],
+    "fw_rule_deleted_4948": [],
+    "fw_setting_changed": [],
+    "dhcp_auth_50036_50037": [
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2016-06-20 23:48:24.9759662",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2016-06-21 01:34:43.3765961",
+        "event_id": 50037,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2016-06-21 01:41:07.5120467",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2016-06-21 08:15:09.9587101",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2016-06-21 08:18:53.7272175",
+        "event_id": 50037,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2016-06-21 08:29:52.5562183",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2016-06-21 09:47:49.7277588",
+        "event_id": 50037,
+        "channel": "System"
+      }
+    ],
+    "usb_attach_driverframeworks": [
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 01:53:14.7757045",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 01:53:14.7777115",
+        "event_id": 400,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 01:53:14.7777115",
+        "event_id": 2,
+        "channel": "Microsoft-Windows-Kernel-PnPConfig/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 01:53:14.7777115",
+        "event_id": 2,
+        "channel": "Microsoft-Windows-Kernel-PnPConfig/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 01:53:14.7777115",
+        "event_id": 2,
+        "channel": "Microsoft-Windows-Kernel-PnPConfig/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 01:53:14.7777115",
+        "event_id": 2,
+        "channel": "Microsoft-Windows-Kernel-PnPConfig/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 01:53:14.8059342",
+        "event_id": 4,
+        "channel": "Microsoft-Windows-Kernel-PnPConfig/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 01:53:14.8059342",
+        "event_id": 4,
+        "channel": "Microsoft-Windows-Kernel-PnPConfig/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 01:53:14.8735312",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 01:53:15.4107446",
+        "event_id": 10000,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 01:53:15.4122058",
+        "event_id": 10001,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 01:53:15.5405401",
+        "event_id": 10100,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 02:01:59.3657151",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 02:01:59.3664827",
+        "event_id": 400,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2016-06-21 02:01:59.3673861",
+        "event_id": 2,
+        "channel": "Microsoft-Windows-Kernel-PnPConfig/Configuration"
+      }
+    ],
+    "usb_kernel_pnp_install": [
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2016-06-20 23:55:41.2940373",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2016-06-20 23:55:49.1639635",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2016-06-21 01:53:14.7757045",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2016-06-21 01:53:14.8735312",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2016-06-21 01:53:14.9527172",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2016-06-21 02:01:59.3657151",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2016-06-21 02:01:59.5072155",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2016-06-21 02:01:59.5863528",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2016-06-21 08:14:37.5527124",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2016-06-21 08:14:37.5527124",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      }
+    ],
+    "device_install_recognition": [],
+    "device_setupapi_events": [
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2016-06-21 01:53:15.5759728",
+        "event_id": 20003,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2016-06-21 01:53:16.8830218",
+        "event_id": 20001,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2016-06-21 02:01:59.8534722",
+        "event_id": 20003,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2016-06-21 02:02:01.1914916",
+        "event_id": 20001,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2016-06-21 08:15:17.1305985",
+        "event_id": 20003,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2016-06-21 08:15:20.4900352",
+        "event_id": 20001,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2016-06-21 08:15:20.7249722",
+        "event_id": 20003,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2016-06-21 08:15:21.1461285",
+        "event_id": 20001,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2016-06-21 08:15:21.3962300",
+        "event_id": 20003,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2016-06-21 08:15:21.5212201",
+        "event_id": 20001,
+        "channel": "System"
+      }
+    ],
+    "rdp_session_lifecycle": [
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2016-06-20 23:49:02.8357839",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2016-06-20 23:49:02.8515450",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2016-06-21 01:34:40.4702744",
+        "event_id": 23,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2016-06-21 01:34:41.5165675",
+        "event_id": 54,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2016-06-21 01:42:40.5433466",
+        "event_id": 41,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2016-06-21 01:42:40.5433466",
+        "event_id": 42,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2016-06-21 01:42:40.8091122",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2016-06-21 01:42:40.8244575",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2016-06-21 08:15:00.3654748",
+        "event_id": 32,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2016-06-21 08:15:00.4118451",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2016-06-21 08:15:00.4118451",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2016-06-21 08:15:00.4274855",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      }
+    ],
+    "rdp_connection_manager": [
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2016-06-20 23:49:02.3669721",
+        "event_id": 41,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2016-06-20 23:49:02.3669721",
+        "event_id": 42,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2016-06-20 23:49:02.8357839",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2016-06-20 23:49:02.8515450",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2016-06-21 01:34:40.4702744",
+        "event_id": 23,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2016-06-21 01:34:41.5165675",
+        "event_id": 54,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2016-06-21 01:42:40.5433466",
+        "event_id": 41,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2016-06-21 01:42:40.5433466",
+        "event_id": 42,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2016-06-21 01:42:40.8091122",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2016-06-21 01:42:40.8244575",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2016-06-21 08:15:00.3654748",
+        "event_id": 32,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2016-06-21 08:15:00.4118451",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      }
+    ],
+    "rdp_disconnect_reasons": [
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2016-06-20 23:51:29.0507684",
+        "event_id": 963,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2016-06-20 23:51:45.1640312",
+        "event_id": 963,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2016-06-21 01:58:49.0728972",
+        "event_id": 963,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2016-06-21 09:07:43.6914794",
+        "event_id": 963,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2016-06-21 09:22:53.6828259",
+        "event_id": 963,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2016-06-21 11:02:49.3855220",
+        "event_id": 963,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2016-06-21 13:12:35.0000000",
+        "event_id": 29,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2016-06-21 13:12:38.0000000",
+        "event_id": 29,
+        "channel": "Application"
+      }
+    ],
+    "smb_share_access": [],
+    "file_audit_access_4663": [],
+    "object_handle_request_4656": [],
+    "object_deleted_4660": [],
+    "permissions_changed_4670": [],
+    "registry_audit_4657": [],
+    "mft_ps1_files": [],
+    "mft_bat_files": [],
+    "mft_lnk_files": [
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2016-06-20 23:49:05.5697511",
+        "file_path": ".\\Users\\Hunter\\AppData\\Roaming\\Microsoft\\Internet Explorer\\Quick Launch\\Google Chrome.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2016-06-20 23:49:39.9920378",
+        "file_path": ".\\Users\\Hunter\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\how_do_threat_actors_steal_your_data.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2016-06-20 23:51:20.2260379",
+        "file_path": ".\\Users\\Hunter\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\mwri-detecting-deterring-both.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2016-06-20 23:51:29.2938133",
+        "file_path": ".\\Users\\Hunter\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\defcon-16-ricks.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2016-06-20 23:52:57.7573647",
+        "file_path": ".\\Users\\Hunter\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\Ryan_VanAntwerp_thesis.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2016-06-20 23:58:09.3725499",
+        "file_path": ".\\Users\\Hunter\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\DEFCON-22-Zoltan-Balazs-Bypass-firewalls-application-whitelists-in-20-seconds-UPDATED.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2016-06-20 23:59:27.9156945",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Office 2013\\Office 2013 Tools\\Telemetry Dashboard for Office 2013.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2016-06-20 23:59:27.9330839",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Office 2013\\Office 2013 Tools\\Telemetry Log for Office 2013.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2016-06-20 23:59:27.9492699",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Office 2013\\Office 2013 Tools\\Office 2013 Upload Center.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2016-06-20 23:59:27.9623713",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Office 2013\\Office 2013 Tools\\Office 2013 Language Preferences.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2016-06-20 23:59:27.9718422",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Office 2013\\Excel 2013.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2016-06-20 23:59:28.0055861",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Office 2013\\Outlook 2013.lnk"
+      }
+    ],
+    "mft_sys_drivers": [
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2016-06-16 11:48:20.0000000",
+        "file_path": ".\\Windows\\System32\\drivers\\VBoxSF.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2016-06-16 11:48:20.0000000",
+        "file_path": ".\\Windows\\System32\\drivers\\VBoxMouse.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2016-06-16 11:48:42.0000000",
+        "file_path": ".\\Windows\\System32\\drivers\\VBoxGuest.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2016-06-16 11:48:42.0000000",
+        "file_path": ".\\Windows\\System32\\DriverStore\\FileRepository\\vboxguest.inf_amd64_b43444618ac49da5\\VBoxGuest.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2016-06-16 11:48:42.0000000",
+        "file_path": ".\\Windows\\System32\\drivers\\VBoxVideoW8.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2016-06-16 11:48:42.0000000",
+        "file_path": ".\\Windows\\System32\\DriverStore\\FileRepository\\vboxvideow8.inf_amd64_a1bf806f82b68718\\VBoxVideoW8.sys"
+      }
+    ],
+    "mft_msi_installers": [
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2016-06-20 23:55:43.0280000",
+        "file_path": ".\\MSOCache\\All Users\\{90150000-0115-0409-1000-0000000FF1CE}-C\\OfficeMUISet.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2016-06-20 23:55:43.0280000",
+        "file_path": ".\\Windows\\Installer\\734b1.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2016-06-20 23:55:43.1300000",
+        "file_path": ".\\Windows\\Installer\\734ad.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2016-06-20 23:55:43.1300000",
+        "file_path": ".\\MSOCache\\All Users\\{90150000-0115-0409-1000-0000000FF1CE}-C\\OfficeMUI.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2016-06-20 23:55:45.3490000",
+        "file_path": ".\\MSOCache\\All Users\\{90150000-0117-0409-1000-0000000FF1CE}-C\\AccessMUISet.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2016-06-20 23:55:45.3490000",
+        "file_path": ".\\Windows\\Installer\\734b9.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2016-06-20 23:55:45.3740000",
+        "file_path": ".\\MSOCache\\All Users\\{90150000-0117-0409-1000-0000000FF1CE}-C\\Access.en-us\\AccessMUI.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2016-06-20 23:55:45.3740000",
+        "file_path": ".\\Windows\\Installer\\734b5.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2016-06-20 23:55:46.4890000",
+        "file_path": ".\\MSOCache\\All Users\\{90150000-0044-0409-1000-0000000FF1CE}-C\\InfoPathMUI.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2016-06-20 23:55:46.4890000",
+        "file_path": ".\\Windows\\Installer\\734bd.msi"
+      }
+    ],
+    "mft_archive_files": [
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2016-06-15 08:27:07.2773437",
+        "file_path": ".\\Program Files (x86)\\Google\\Chrome\\Application\\51.0.2704.103\\Installer\\chrome.7z"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2016-06-20 23:59:06.9483540",
+        "file_path": ".\\Users\\Hunter\\Downloads\\setupssh381-20040709.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2016-06-21 02:04:40.0000000",
+        "file_path": ".\\Users\\Hunter\\Google Drive\\FTK-Imager.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2016-06-21 02:04:40.0000000",
+        "file_path": ".\\Users\\Hunter\\Downloads\\FTK-Imager.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2016-06-21 09:18:12.5396737",
+        "file_path": ".\\Program Files\\7-Zip\\Lang"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2016-06-21 09:18:13.1019816",
+        "file_path": ".\\Program Files\\7-Zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2016-06-21 09:18:13.1476403",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\7-Zip\\7-Zip File Manager.lnk"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2016-06-21 09:18:13.1730727",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\7-Zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2016-06-21 09:18:13.1740857",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\7-Zip\\7-Zip Help.lnk"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2016-06-21 09:18:39.9782201",
+        "file_path": ".\\Users\\Hunter\\AppData\\Roaming\\Notepad++\\plugins\\config\\PluginManagerPlugins.zip"
+      }
+    ],
+    "mft_exe_files": [
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-15 08:27:03.4042968",
+        "file_path": ".\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-15 09:00:11.0000000",
+        "file_path": ".\\Program Files (x86)\\Google\\Update\\Download\\{8A69D345-D564-463C-AFF1-A69D9E530F96}\\51.0.2704.103\\51.0.2704.103_chrome_installer_win64.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-15 13:53:52.0000000",
+        "file_path": ".\\Program Files\\CCleaner\\CCleaner.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-15 13:53:54.0000000",
+        "file_path": ".\\Program Files\\CCleaner\\CCleaner64.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-15 14:00:08.0000000",
+        "file_path": ".\\Program Files\\CCleaner\\uninst.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-15 22:18:58.0000000",
+        "file_path": ".\\Program Files (x86)\\Skype\\Phone\\Skype.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-16 11:48:34.0000000",
+        "file_path": ".\\Windows\\System32\\VBoxService.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-16 11:48:42.0000000",
+        "file_path": ".\\Program Files\\Oracle\\VirtualBox Guest Additions\\VBoxDrvInst.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-16 11:48:42.0000000",
+        "file_path": ".\\Program Files\\Oracle\\VirtualBox Guest Additions\\VBoxTray.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-16 11:48:42.0000000",
+        "file_path": ".\\Program Files\\Oracle\\VirtualBox Guest Additions\\VBoxControl.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-16 11:48:42.0000000",
+        "file_path": ".\\Windows\\System32\\VBoxTray.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-16 11:48:42.0000000",
+        "file_path": ".\\Windows\\System32\\VBoxControl.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-16 11:48:42.0000000",
+        "file_path": ".\\Windows\\System32\\DriverStore\\FileRepository\\vboxguest.inf_amd64_b43444618ac49da5\\VBoxControl.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-16 11:48:42.0000000",
+        "file_path": ".\\Windows\\System32\\DriverStore\\FileRepository\\vboxguest.inf_amd64_b43444618ac49da5\\VBoxTray.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2016-06-16 11:49:34.0000000",
+        "file_path": ".\\Program Files\\Oracle\\VirtualBox Guest Additions\\VBoxWHQLFake.exe"
+      }
+    ],
+    "mft_user_writable_dirs": [
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-15 08:26:57.3945312",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Google\\Chrome\\User Data\\WidevineCDM\\1.4.8.885\\_platform_specific\\win_x64\\widevinecdmadapter.dll"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-17 06:46:11.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Microsoft\\Windows\\Notifications\\7488f5a1378b11e68251080027d269d7\\AAe5QL4_h150_w150_m7[1].jpg"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 18:50:48.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Microsoft\\Windows\\Notifications\\7488f5a1378b11e68251080027d269d7\\AAhlayy[2].jpg"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 21:58:13.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Microsoft\\Windows\\Notifications\\7488f5a1378b11e68251080027d269d7\\AAhkJAE[1].jpg"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 22:13:04.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Google\\Chrome\\User Data\\CertificateTransparency\\65\\_platform_specific\\all\\sths\\ddeb1d2b7a0d4fa6208b81ad8168707e2e8e9d01d55c888d3d11c4cdb6ecbecc.sth"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 22:13:04.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Google\\Chrome\\User Data\\CertificateTransparency\\65\\_platform_specific\\all\\sths\\ac3b9aed7fa9674757159e6d7d575672f9d98100941e9bdeffeca1313b75782d.sth"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 22:13:04.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Google\\Chrome\\User Data\\CertificateTransparency\\65\\_platform_specific\\all\\sths\\cdb5179b7fc1c046feea31136a3f8f002e6182faf8896fecc8b2f5b5ab604900.sth"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 22:13:04.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Google\\Chrome\\User Data\\CertificateTransparency\\65\\_platform_specific\\all\\sths\\7461b4a09cfb3d41d75159575b2e7649a445a8d27709b0cc564a6482b7eb41a3.sth"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 22:13:04.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Google\\Chrome\\User Data\\CertificateTransparency\\65\\_platform_specific\\all\\sths\\bc78e1dfc5f63c684649334da10fa15f0979692009c081b4f3f6917f3ed9b8a5.sth"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 22:13:04.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Google\\Chrome\\User Data\\CertificateTransparency\\65\\_platform_specific\\all\\sths\\ee4bbdb775ce60bae142691fabe19e66a30f7e5fb072d88300c47b897aa8fdcb.sth"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 22:13:04.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Google\\Chrome\\User Data\\CertificateTransparency\\65\\_platform_specific\\all\\sths\\68f698f81f6482be3a8ceeb9281d4cfc71515d6793d444d10a67acbb4f4ffbc4.sth"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 22:13:04.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Google\\Chrome\\User Data\\CertificateTransparency\\65\\_platform_specific\\all\\sths\\a4b90990b418581487bb13a2cc67700a3c359804f91bdfb8e377cd0ec80ddc10.sth"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 22:13:04.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Google\\Chrome\\User Data\\CertificateTransparency\\65\\_platform_specific\\all\\sths\\a577ac9ced7548dd8f025b67a241089df86e0f476ec203c2ecbedb185f282638.sth"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 22:13:04.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Google\\Chrome\\User Data\\CertificateTransparency\\65\\_platform_specific\\all\\sths\\5614069a2fd7c2ecd3f5e1bd44b23ec74676b9bc99115cc0ef949855d689d0dd.sth"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2016-06-20 22:23:52.0000000",
+        "file_path": ".\\Users\\Hunter\\AppData\\Local\\Microsoft\\Windows\\Notifications\\7488f5a1378b11e68251080027d269d7\\AAhlEON[1].jpg"
+      }
+    ],
+    "mft_alternate_data_streams": [],
+    "usnjrnl_recent_changes": [
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-20 23:59:14.6780019",
+        "file_path": "OSPP.VBS"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-20 23:59:14.6780019",
+        "file_path": "OSPP.VBS"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-20 23:59:14.6780019",
+        "file_path": "OSPP.VBS"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-20 23:59:14.6780019",
+        "file_path": "OSPP.VBS"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-20 23:59:14.6837303",
+        "file_path": "OSPP.VBS"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-21 10:52:12.2823740",
+        "file_path": "or"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-21 10:52:12.2834978",
+        "file_path": "or"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-21 11:18:11.8537725",
+        "file_path": "check_soundcard.vbs"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-21 11:18:11.8537725",
+        "file_path": "check_soundcard.vbs"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-21 11:18:11.8537725",
+        "file_path": "check_soundcard.vbs"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-21 11:18:11.8537725",
+        "file_path": "check_soundcard.vbs"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-21 11:18:11.8544898",
+        "file_path": "check_soundcard.vbs"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-21 11:18:11.8552064",
+        "file_path": "empty.vbs"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-21 12:17:04.2149482",
+        "file_path": "or"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2016-06-21 12:17:04.2158925",
+        "file_path": "or"
+      }
+    ],
+    "reg_persistence_master": [
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2013-08-22 15:37:10.2813158",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "WIMMount",
+        "value_data": "WIMMount",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2013-08-22 15:37:10.2813158",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "exfat",
+        "value_data": "exFAT File System Driver",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2013-08-22 15:37:14.2344435",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2013-08-22 15:37:40.6719446",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Windows Firewall With Advanced Security/Firewall",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2013-08-22 15:38:15.0781932",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/Packaged app-Execution",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2013-08-22 15:38:35.6094458",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2014-03-18 10:20:32.3511067",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-System",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Directory-Services-SAM",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-20 23:59:26.4823496",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "Hunter",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-2489440558-2754304563-710705792-1001",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoAdminLogon",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "DefaultUserName",
+        "value_data": "Hunter",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 02:01:59.3657151",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Enum\\USBSTOR",
+        "value_name": "Multiple",
+        "value_data": "Manufacturer: Ven_Imation Title: Prod_Nano_Pro Version: Rev_PMAP SerialNumber: 07B20C03C80830A9&0 DeviceName: Imation Nano Pro USB Device\u0000 DiskId: {fb7f938b-37a4-11e6-8254-080027d269d7}",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Desktop",
+        "value_data": "%USERPROFILE%\\Desktop",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Local AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Local",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Cookies",
+        "value_data": "%USERPROFILE%\\AppData\\Local\\Microsoft\\Windows\\INetCookies",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "SendTo",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\SendTo",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 09:23:09.7206541",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 09:47:24.4622827",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "VBoxTray",
+        "value_data": "C:\\Windows\\system32\\VBoxTray.exe",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 11:20:18.3147785",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 11:43:08.3425780",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks",
+        "value_data": "Created on: 2013-08-22 14:45:55.7144529",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 11:43:18.2219434",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "Skype",
+        "value_data": "\"C:\\Program Files (x86)\\Skype\\Phone\\Skype.exe\" /minimized /regrun",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 11:43:18.2219434",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "GoogleDriveSync",
+        "value_data": "\"C:\\Program Files (x86)\\Google\\Drive\\googledrivesync.exe\" /autostart",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 11:43:18.2219434",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "CCleaner Monitoring",
+        "value_data": "\"C:\\Program Files\\CCleaner\\CCleaner64.exe\" /MONITOR",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 11:44:54.1431830",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "MftWipeFilter",
+        "value_data": "Jetico file system filter",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2016-06-21 13:18:45.7508404",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: .NET CLR Data Desc: ",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\DeviceClasses\\{53f56307-b6bf-11d0-94f2-00a0c91efb8b}\\##?#USBSTOR#Disk&Ven_Imation&Prod_Nano_Pro&Rev_PMAP#07B20C03C80830A9&0#{53f56307-b6bf-11d0-94f2-00a0c91efb8b}",
+        "value_name": "Disk&Ven_Imation&Prod_Nano_Pro&Rev_PMAP",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\DeviceClasses\\{53f56307-b6bf-11d0-94f2-00a0c91efb8b}\\##?#USBSTOR#Disk&Ven_Lexar&Prod_JumpDrive&Rev_1100#AAI6UXDKZDV8E9OU&0#{53f56307-b6bf-11d0-94f2-00a0c91efb8b}",
+        "value_name": "Disk&Ven_Lexar&Prod_JumpDrive&Rev_1100",
+        "hive": "SYSTEM"
+      }
+    ],
+    "reg_image_file_execution_options": [
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2013-08-22 15:37:10.2813158",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "WIMMount",
+        "value_data": "WIMMount",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2013-08-22 15:37:10.2813158",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "exfat",
+        "value_data": "exFAT File System Driver",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2013-08-22 15:37:10.2813158",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "cdfs",
+        "value_data": "CD/DVD File System Reader",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2013-08-22 15:37:10.2813158",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "fastfat",
+        "value_data": "FAT12/16/32 File System Driver",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2013-08-22 15:37:14.2344435",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2013-08-22 15:38:15.0781932",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/Packaged app-Execution",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2013-08-22 15:38:35.6094458",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2014-03-18 10:18:07.5246177",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\BackupRestore\\FilesNotToBackup",
+        "value_name": "Memory Page File",
+        "value_data": "\\Pagefile.sys",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2014-03-18 10:20:32.3511067",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-System",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Directory-Services-SAM",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-20 23:50:08.6168682",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Internet Explorer\\Main",
+        "value_name": "Disable Script Debugger",
+        "value_data": "yes",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-20 23:59:26.4823496",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "Hunter",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-2489440558-2754304563-710705792-1001",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Desktop",
+        "value_data": "%USERPROFILE%\\Desktop",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Local AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Local",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-21 09:23:09.7206541",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-21 11:20:18.3147785",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-21 11:43:18.2219434",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "Skype",
+        "value_data": "\"C:\\Program Files (x86)\\Skype\\Phone\\Skype.exe\" /minimized /regrun",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-21 11:43:18.2219434",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "GoogleDriveSync",
+        "value_data": "\"C:\\Program Files (x86)\\Google\\Drive\\googledrivesync.exe\" /autostart",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-21 11:44:54.1431830",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "MftWipeFilter",
+        "value_data": "Jetico file system filter",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-21 12:01:45.9949363",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Internet Explorer\\Main\\WindowsSearch",
+        "value_name": "User Favorites Path",
+        "value_data": "file:///C:\\Users\\Hunter\\Favorites\\",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2016-06-21 13:18:45.7508404",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: .NET CLR Data Desc: ",
+        "hive": "SYSTEM"
+      }
+    ],
+    "reg_appinit_dlls": [
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2013-08-22 15:37:10.2813158",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "WIMMount",
+        "value_data": "WIMMount",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2013-08-22 15:37:14.2344435",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2013-08-22 15:38:35.6094458",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2014-03-18 10:20:32.3511067",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-System",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Directory-Services-SAM",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-20 23:59:26.4823496",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "Hunter",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-2489440558-2754304563-710705792-1001",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 01:45:11.4222303",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "dbupdate",
+        "value_data": "Dropbox Update Service (dbupdate)",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 01:45:11.4251034",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "dbupdatem",
+        "value_data": "Dropbox Update Service (dbupdatem)",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Desktop",
+        "value_data": "%USERPROFILE%\\Desktop",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Local AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Local",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 08:41:43.0403620",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "gupdate",
+        "value_data": "Google Update Service (gupdate)",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 08:41:43.0560213",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "gupdatem",
+        "value_data": "Google Update Service (gupdatem)",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 09:23:09.7206541",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 11:20:18.3147785",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 11:43:18.2219434",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "Skype",
+        "value_data": "\"C:\\Program Files (x86)\\Skype\\Phone\\Skype.exe\" /minimized /regrun",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 11:43:18.2219434",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "GoogleDriveSync",
+        "value_data": "\"C:\\Program Files (x86)\\Google\\Drive\\googledrivesync.exe\" /autostart",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2016-06-21 13:18:45.7508404",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: .NET CLR Data Desc: ",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "",
+        "hive": "SOFTWARE"
+      }
+    ],
+    "reg_winlogon_helpers": [
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2013-08-22 15:37:10.2813158",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "WIMMount",
+        "value_data": "WIMMount",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2013-08-22 15:37:14.2344435",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2013-08-22 15:38:35.6094458",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2014-03-18 10:20:32.3511067",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-System",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Directory-Services-SAM",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-20 23:59:26.4823496",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "Hunter",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-2489440558-2754304563-710705792-1001",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoAdminLogon",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "DefaultUserName",
+        "value_data": "Hunter",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Desktop",
+        "value_data": "%USERPROFILE%\\Desktop",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Local AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Local",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Cookies",
+        "value_data": "%USERPROFILE%\\AppData\\Local\\Microsoft\\Windows\\INetCookies",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "SendTo",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\SendTo",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Personal",
+        "value_data": "%USERPROFILE%\\Documents",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 09:23:09.7206541",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 11:20:18.3147785",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 11:43:18.2219434",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "Skype",
+        "value_data": "\"C:\\Program Files (x86)\\Skype\\Phone\\Skype.exe\" /minimized /regrun",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 11:43:18.2219434",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "GoogleDriveSync",
+        "value_data": "\"C:\\Program Files (x86)\\Google\\Drive\\googledrivesync.exe\" /autostart",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2016-06-21 13:18:45.7508404",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: .NET CLR Data Desc: ",
+        "hive": "SYSTEM"
+      }
+    ],
+    "mft_startup_folders": [
+      {
+        "_anchor": "mft_startup_folders",
+        "timestamp": "2016-06-21 08:37:53.3368088",
+        "file_path": ".\\Users\\Hunter\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
+      },
+      {
+        "_anchor": "mft_startup_folders",
+        "timestamp": "2016-06-21 08:37:53.3368088",
+        "file_path": ".\\Users\\Hunter\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\desktop.ini"
+      },
+      {
+        "_anchor": "mft_startup_folders",
+        "timestamp": "2016-06-21 09:20:51.6799630",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp"
+      },
+      {
+        "_anchor": "mft_startup_folders",
+        "timestamp": "2016-06-21 09:20:51.6809597",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\McAfee Security Scan Plus.lnk"
+      }
+    ],
+    "reg_user_context": [
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2013-08-22 15:37:10.2813158",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "WIMMount",
+        "value_data": "WIMMount",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2013-08-22 15:37:14.2344435",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2013-08-22 15:38:35.6094458",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2014-03-18 10:20:32.3511067",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-System",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Directory-Services-SAM",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-20 23:59:26.4823496",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "Hunter",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-2489440558-2754304563-710705792-1001",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 01:41:09.0896994",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "DefaultUserName",
+        "value_data": "Hunter",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 01:42:40.5274264",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI",
+        "value_name": "LastLoggedOnUser",
+        "value_data": "Hunter",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 08:29:49.1179408",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Control\\ComputerName\\ComputerName",
+        "value_name": "ComputerName",
+        "value_data": "4ORENSICS",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Desktop",
+        "value_data": "%USERPROFILE%\\Desktop",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 08:37:46.2591685",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Local AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Local",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 08:37:49.6808596",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows Media\\WMSDK\\General",
+        "value_name": "ComputerName",
+        "value_data": "4orensics",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 09:23:09.7206541",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 09:47:33.5251384",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion",
+        "value_name": "RegisteredOwner",
+        "value_data": "Hunter",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 09:47:33.5251384",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion",
+        "value_name": "ProductName",
+        "value_data": "Windows 8.1 Enterprise",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 09:47:33.5251384",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion",
+        "value_name": "InstallDate",
+        "value_data": "2016-06-21 08:37:45.0000000",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 09:47:33.5251384",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Microsoft\\Windows NT\\CurrentVersion",
+        "value_name": "CurrentBuildNumber",
+        "value_data": "9600",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 11:20:18.3147785",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 11:43:18.2219434",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "Skype",
+        "value_data": "\"C:\\Program Files (x86)\\Skype\\Phone\\Skype.exe\" /minimized /regrun",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 11:43:18.2219434",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "GoogleDriveSync",
+        "value_data": "\"C:\\Program Files (x86)\\Google\\Drive\\googledrivesync.exe\" /autostart",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2016-06-21 13:18:45.7508404",
+        "key_path": "CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: .NET CLR Data Desc: ",
+        "hive": "SYSTEM"
+      }
+    ],
+    "app_crashes_1000": [
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2016-06-20 23:53:03.4324015",
+        "event_id": 1000,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2016-06-20 23:59:25.6932607",
+        "event_id": 1000,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2016-06-20 23:59:44.0000000",
+        "event_id": 1000,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2016-06-21 01:46:30.9653530",
+        "event_id": 1000,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2016-06-21 01:54:37.8217693",
+        "event_id": 1000,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2016-06-21 02:04:51.3198233",
+        "event_id": 1000,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2016-06-21 08:34:03.8060008",
+        "event_id": 1000,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2016-06-21 12:46:19.0904602",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      }
+    ],
+    "app_hangs_1002": [
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2016-06-20 23:49:08.4291089",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2016-06-20 23:55:52.1961875",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2016-06-20 23:55:52.1961875",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2016-06-20 23:55:52.1961875",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2016-06-20 23:55:52.1971201",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2016-06-20 23:58:08.3455462",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      }
+    ],
+    "wer_reports_1001": [
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2016-06-20 23:49:03.4291237",
+        "event_id": 1001,
+        "channel": "Microsoft-Windows-Resource-Exhaustion-Detector/Operational"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2016-06-20 23:53:03.3555032",
+        "event_id": 1001,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2016-06-20 23:59:53.0000000",
+        "event_id": 1001,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2016-06-21 01:42:41.6057705",
+        "event_id": 1001,
+        "channel": "Microsoft-Windows-Resource-Exhaustion-Detector/Operational"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2016-06-21 01:46:30.7150229",
+        "event_id": 1001,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2016-06-21 01:54:37.7924085",
+        "event_id": 1001,
+        "channel": "Application"
+      }
+    ],
+    "prefetch_top": [
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:49:17",
+        "executable_name": "SLUI.EXE",
+        "run_count": 0,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\WINDOWS\\SYSTEM32\\SLUI.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:49:39",
+        "executable_name": "ACRORD32.EXE",
+        "run_count": 8,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\ADOBE\\ACROBAT READER DC\\READER\\ACRORD32.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:50:08",
+        "executable_name": "RDRCEF.EXE",
+        "run_count": 0,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\ADOBE\\ACROBAT READER DC\\READER\\ACROCEF\\RDRCEF.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:50:36",
+        "executable_name": "RDRCEF.EXE",
+        "run_count": 0,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\ADOBE\\ACROBAT READER DC\\READER\\ACROCEF\\RDRCEF.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:50:37",
+        "executable_name": "GOOGLEUPDATE.EXE",
+        "run_count": 1,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\GOOGLE\\UPDATE\\GOOGLEUPDATE.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:50:39",
+        "executable_name": "WMIPRVSE.EXE",
+        "run_count": 0,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\WINDOWS\\SYSTEM32\\WBEM\\WMIPRVSE.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:51:20",
+        "executable_name": "ACRORD32.EXE",
+        "run_count": 8,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\ADOBE\\ACROBAT READER DC\\READER\\ACRORD32.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:51:20",
+        "executable_name": "RDRCEF.EXE",
+        "run_count": 0,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\ADOBE\\ACROBAT READER DC\\READER\\ACROCEF\\RDRCEF.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:51:29",
+        "executable_name": "ACRORD32.EXE",
+        "run_count": 8,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\ADOBE\\ACROBAT READER DC\\READER\\ACRORD32.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:51:30",
+        "executable_name": "RDRCEF.EXE",
+        "run_count": 0,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\ADOBE\\ACROBAT READER DC\\READER\\ACROCEF\\RDRCEF.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:52:57",
+        "executable_name": "ACRORD32.EXE",
+        "run_count": 8,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\ADOBE\\ACROBAT READER DC\\READER\\ACRORD32.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:52:58",
+        "executable_name": "RDRCEF.EXE",
+        "run_count": 0,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\ADOBE\\ACROBAT READER DC\\READER\\ACROCEF\\RDRCEF.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:53:36",
+        "executable_name": "CMD.EXE",
+        "run_count": 5,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\WINDOWS\\SYSTEM32\\CMD.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:53:44",
+        "executable_name": "NOTEPAD.EXE",
+        "run_count": 5,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\WINDOWS\\SYSTEM32\\NOTEPAD.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:54:10",
+        "executable_name": "CALC.EXE",
+        "run_count": 1,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\WINDOWS\\SYSTEM32\\CALC.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:54:56",
+        "executable_name": "SETUP.EXE",
+        "run_count": 0,
+        "executable_path": "SETUP.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:55:56",
+        "executable_name": "MSIEXEC.EXE",
+        "run_count": 17,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\WINDOWS\\SYSTEM32\\MSIEXEC.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:55:59",
+        "executable_name": "MSIEXEC.EXE",
+        "run_count": 17,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\WINDOWS\\SYSTEM32\\MSIEXEC.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:57:01",
+        "executable_name": "CMD.EXE",
+        "run_count": 5,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\WINDOWS\\SYSWOW64\\CMD.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2016-06-20 23:57:01",
+        "executable_name": "CMD.EXE",
+        "run_count": 5,
+        "executable_path": "\\DEVICE\\HARDDISKVOLUME2\\WINDOWS\\SYSWOW64\\CMD.EXE"
+      }
+    ],
+    "shimcache_top": [
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2012-11-10 18:29:14"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2012-11-10 18:29:14"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2012-11-10 18:30:57"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-06-18 13:14:55"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-06-18 13:14:55"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-10 00:40:50"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-10 00:41:20"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-10 00:41:20"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-10 00:53:58"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-10 00:54:18"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-10 00:54:18"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-15 22:09:51"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-15 22:09:51"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-15 22:09:52"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-22 02:22:14"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-22 02:43:07"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-22 02:52:26"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-22 02:52:54"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-22 02:53:33"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2013-08-22 02:53:52"
+      }
+    ],
+    "amcache_top": [
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2014-03-18 09:55:05",
+        "sha1": "f783a29297a42e86e7f2ef17d91737eb5add732d"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2014-03-18 09:55:23",
+        "sha1": "f783a29297a42e86e7f2ef17d91737eb5add732d"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2014-03-18 10:09:15",
+        "sha1": "f783a29297a42e86e7f2ef17d91737eb5add732d"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2014-03-18 10:11:40",
+        "sha1": "f783a29297a42e86e7f2ef17d91737eb5add732d"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2014-03-18 10:12:58",
+        "sha1": "f783a29297a42e86e7f2ef17d91737eb5add732d"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2014-03-18 10:13:49",
+        "sha1": "f783a29297a42e86e7f2ef17d91737eb5add732d"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2014-03-18 10:14:45",
+        "sha1": "f783a29297a42e86e7f2ef17d91737eb5add732d"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2014-03-18 10:15:41",
+        "sha1": "f783a29297a42e86e7f2ef17d91737eb5add732d"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2014-03-18 10:16:30",
+        "sha1": "f783a29297a42e86e7f2ef17d91737eb5add732d"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2016-06-20 23:49:18",
+        "sha1": "5f36a0dad7b19bea1c2e82787f2602496d7b6f66"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2016-06-20 23:49:39",
+        "sha1": "3db406df9e7452d1088366d4d0d4f9fa3108c325"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2016-06-20 23:50:02",
+        "sha1": "f13c363f124d015ce71b435ff0f07f1e61e69a7e"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2016-06-20 23:55:42",
+        "sha1": "4ad3f7574c39dae1f33de2371cb98269eea6eee0"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2016-06-20 23:55:43",
+        "sha1": "4ad3f7574c39dae1f33de2371cb98269eea6eee0"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2016-06-21 00:00:48"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2016-06-21 00:00:48"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2016-06-21 00:00:48"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2016-06-21 00:00:48"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2016-06-21 00:00:48"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2016-06-21 00:00:48"
+      }
+    ],
+    "lnk_recent_files": [
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-20 23:57:34",
+        "target_path": "C:\\Users\\Hunter\\Downloads\\This PC\\Downloads\\putty.exe",
+        "machine_id": "4orensics",
+        "target_modified": "2016-06-20 23:57:41"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-20 23:57:41",
+        "target_path": "C:\\Users\\Hunter\\Downloads\\This PC\\Downloads\\pscp.exe",
+        "machine_id": "4orensics",
+        "target_modified": "2016-06-20 23:57:42"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-20 23:58:03",
+        "target_path": "C:\\Users\\Hunter\\Documents\\UsersLibraries\\Documents\\Documents\\DEFCON-22-Zoltan-Balazs-Bypass-firewalls-application-whitelists-in-20-seconds-UPDATED",
+        "machine_id": "4orensics",
+        "target_modified": "2016-06-20 23:58:03"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-21 01:46:13",
+        "target_path": "C:\\Program Files (x86)\\Dropbox\\Client\\This PC\\C:\\@shell32.dll,-21817\\Dropbox\\Client\\Dropbox.exe",
+        "machine_id": "4orensics",
+        "target_modified": "2016-05-31 18:34:50"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-21 01:50:11",
+        "target_path": "C:\\Users\\",
+        "machine_id": "4orensics",
+        "target_modified": "2016-06-21 01:50:11"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-21 01:54:21",
+        "target_path": "C:\\Users\\",
+        "machine_id": "4orensics",
+        "target_modified": "2016-06-21 01:54:21"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-21 01:54:21",
+        "target_path": "C:\\Users\\",
+        "machine_id": "4orensics",
+        "target_modified": "2016-06-21 01:54:21"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-21 08:37:53",
+        "target_path": "C:\\Users\\Hunter\\Desktop",
+        "machine_id": "4orensics",
+        "target_modified": "2016-06-21 08:37:53"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-21 08:37:53",
+        "target_path": "C:\\Users\\Hunter\\Downloads",
+        "machine_id": "4orensics",
+        "target_modified": "2016-06-21 08:37:53"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-21 09:37:32",
+        "target_path": "C:\\Users\\Hunter\\Pictures\\Exfil\\UsersLibraries\\PicturesLibrary\\Pictures\\Exfil\\Exfiltration_Diagram.png",
+        "machine_id": "4orensics",
+        "target_modified": "2016-06-21 09:37:50"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-21 09:38:12",
+        "target_path": "C:\\Users\\Hunter\\Pictures\\Exfil\\UsersLibraries\\PicturesLibrary\\Pictures\\Exfil\\dns-exfiltration-using-sqlmap-18-728.jpg",
+        "machine_id": "4orensics",
+        "target_modified": "2016-06-21 09:38:13"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-21 09:38:13",
+        "target_path": "C:\\Users\\",
+        "machine_id": "4orensics",
+        "target_modified": "2016-06-21 09:38:13"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-21 10:51:23",
+        "target_path": "C:\\Users\\Hunter\\Desktop\\Tor Browser\\Browser\\Tor Browser\\Browser\\firefox.exe",
+        "machine_id": "4orensics",
+        "target_modified": "2000-01-01 00:00:00"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-21 11:02:03",
+        "target_path": "C:\\Program Files (x86)\\Nmap\\This PC\\C:\\@shell32.dll,-21817\\Nmap\\zenmap.exe",
+        "machine_id": "4orensics",
+        "target_modified": "2016-03-29 15:41:16"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2016-06-21 11:07:12",
+        "target_path": "C:\\Users\\Hunter\\Downloads\\Ollydbg\\This PC\\Downloads\\Ollydbg\\OLLYDBG.EXE",
+        "machine_id": "4orensics",
+        "target_modified": "2004-05-23 08:10:00"
+      }
+    ],
+    "jumplist_recent": [
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2014-03-18 10:14:20",
+        "target_path": "C:\\Program Files\\Internet Explorer\\iexplore.exe",
+        "machine_id": "00:15:5d:8d:a0:f0",
+        "target_modified": "2014-03-18 10:14:20"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2014-03-18 10:14:20",
+        "target_path": "C:\\Program Files\\Internet Explorer\\iexplore.exe",
+        "machine_id": "00:15:5d:8d:a0:f0",
+        "target_modified": "2014-03-18 10:14:20"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2014-03-18 10:14:20",
+        "target_path": "C:\\Program Files\\Internet Explorer\\iexplore.exe",
+        "machine_id": "00:15:5d:8d:a0:f0",
+        "target_modified": "2014-03-18 10:14:20"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2016-04-29 04:17:51",
+        "target_path": "C:\\Users\\",
+        "machine_id": "08:00:27:d2:69:d7",
+        "target_modified": "2016-04-29 04:18:06"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2016-06-20 23:59:16",
+        "target_path": "C:\\Program Files\\Microsoft Office\\Office15\\OUTLOOK.EXE",
+        "machine_id": "08:00:27:d2:69:d7",
+        "target_modified": "2014-01-23 15:05:36"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2016-06-20 23:59:16",
+        "target_path": "C:\\Program Files\\Microsoft Office\\Office15\\OUTLOOK.EXE",
+        "machine_id": "08:00:27:d2:69:d7",
+        "target_modified": "2014-01-23 15:05:36"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2016-06-20 23:59:16",
+        "target_path": "C:\\Program Files\\Microsoft Office\\Office15\\OUTLOOK.EXE",
+        "machine_id": "08:00:27:d2:69:d7",
+        "target_modified": "2014-01-23 15:05:36"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2016-06-20 23:59:16",
+        "target_path": "C:\\Program Files\\Microsoft Office\\Office15\\OUTLOOK.EXE",
+        "machine_id": "08:00:27:d2:69:d7",
+        "target_modified": "2014-01-23 15:05:36"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2016-06-20 23:59:16",
+        "target_path": "C:\\Program Files\\Microsoft Office\\Office15\\OUTLOOK.EXE",
+        "machine_id": "08:00:27:d2:69:d7",
+        "target_modified": "2014-01-23 15:05:36"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2016-06-21 08:43:03",
+        "target_path": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+        "machine_id": "08:00:27:d2:69:d7",
+        "target_modified": "2016-06-15 08:27:03"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2016-06-21 08:43:03",
+        "target_path": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+        "machine_id": "08:00:27:d2:69:d7",
+        "target_modified": "2016-06-15 08:27:03"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2016-06-21 08:43:03",
+        "target_path": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+        "machine_id": "08:00:27:d2:69:d7",
+        "target_modified": "2016-06-15 08:27:03"
+      }
+    ],
+    "srum_network_usage": [
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-20 23:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-20 23:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-20 23:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-20 23:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-20 23:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-21 00:00:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-21 00:00:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-21 00:00:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-21 00:00:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-21 00:00:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-21 00:00:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-21 00:00:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-21 00:00:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-21 00:00:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2016-06-21 00:00:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      }
+    ],
+    "browser_raw_history": [
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:00:54.476902Z",
+        "url": "https://www.google.com/url?hl=en&q=https://accounts.google.com/AccountChooser?Email%3Dehptmsgs@gmail.com%26continue%3Dhttps://security.google.com/settings/security/activity?rfn%253D27%2526rfnc%253D1%2526asae%253D2&source=gmail&ust=1466600348080000&usg=AFQjCNHWokDH65McBIsgFGWoEteyR0i5Sw",
+        "title": "Security - Devices"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:00:54.476902Z",
+        "url": "https://accounts.google.com/AccountChooser?Email=ehptmsgs@gmail.com&continue=https://security.google.com/settings/security/activity?rfn%3D27%26rfnc%3D1%26asae%3D2",
+        "title": "Security - Devices"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:00:54.476902Z",
+        "url": "https://security.google.com/settings/security/activity?rfn=27&rfnc=1&asae=2&authuser=0",
+        "title": "Security - Devices"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:00:54.476902Z",
+        "url": "https://accounts.google.com/ServiceLogin?service=accountsettings&passive=1209600&osid=1&continue=https://security.google.com/settings/security/activity?rfn%3D27%26rfnc%3D1%26asae%3D2%26authuser%3D0&followup=https://security.google.com/settings/security/activity?rfn%3D27%26rfnc%3D1%26asae%3D2%26authuser%3D0&emr=1&mrp=security-activity--activity",
+        "title": "Security - Devices"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:02:13.067060Z",
+        "url": "https://mail.google.com/mail/#settings/fwdandpop"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:02:41.980816Z",
+        "url": "https://mail.google.com/mail/#inbox",
+        "title": "Inbox - ehptmsgs@gmail.com - Gmail"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:09:46.704338Z",
+        "url": "https://mail.google.com/mail/#settings/general",
+        "title": "Settings - ehptmsgs@gmail.com - Gmail"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:09:56.352354Z",
+        "url": "https://myaccount.google.com/?utm_source=OGB",
+        "title": "My Account"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:10:14.173073Z",
+        "url": "https://myaccount.google.com/security?utm_source=OGB#signin",
+        "title": "Sign-in & security"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:10:36.511103Z",
+        "url": "https://security.google.com/settings/security/permissions",
+        "title": "Apps connected to your account"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:10:39.717245Z",
+        "url": "https://myaccount.google.com/security",
+        "title": "Sign-in & security"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:10:57.707006Z",
+        "url": "https://myaccount.google.com/security#signin"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:10:59.578768Z",
+        "url": "https://myaccount.google.com/privacy#personalinfo",
+        "title": "Personal info & privacy"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:11:27.667063Z",
+        "url": "https://myaccount.google.com/preferences#accessibility",
+        "title": "Account preferences"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2016-06-21T13:12:11.576942Z",
+        "url": "https://www.google.com/settings/security/lesssecureapps",
+        "title": "Less secure apps - Account settings"
+      }
+    ],
+    "browser_downloads_searches": [
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-20T23:56:03.257305Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-20T23:56:03.585127Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T08:41:43.711992Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T09:14:45.244213Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T09:15:07.287216Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T10:46:28.420839Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T10:46:28.420839Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T10:48:16.810822Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T10:56:07.292044Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T10:56:22.004391Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T10:56:22.004391Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T10:56:37.820263Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T10:58:28.865967Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T10:59:59.155874Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2016-06-21T11:20:36.303209Z"
+      }
+    ],
+    "app_communication": [
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-15 22:10:24.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 22:10:24.0000000', 'entry_number': 84323, 'sequence_number': 3, 'filename': 'third-party_attributions.txt', 'extension': '.txt', 'file_path"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-15 22:14:46.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 22:14:46.0000000', 'entry_number': 84328, 'sequence_number': 2, 'filename': 'VideoN.dll', 'extension': '.dll', 'file_path': '.\\\\Program Fil"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-15 22:18:42.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 22:18:42.0000000', 'entry_number': 84320, 'sequence_number': 2, 'filename': 'SkypeSkylib.dll', 'extension': '.dll', 'file_path': '.\\\\Progra"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-15 22:18:58",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 22:18:58', 'path': 'SYSVOL\\\\Program Files (x86)\\\\Skype\\\\Phone\\\\Skype.exe', 'filename': 'Skype.exe', 'extension': '.exe', 'cache_position': "
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-15 22:18:58.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 22:18:58.0000000', 'entry_number': 84313, 'sequence_number': 2, 'filename': 'Skype.exe', 'extension': '.exe', 'file_path': '.\\\\Program File"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-15 22:18:58.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 22:18:58.0000000', 'entry_number': 84319, 'sequence_number': 2, 'filename': 'SkypeResources.dll', 'extension': '.dll', 'file_path': '.\\\\Pro"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-20 23:49:18.5541056",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:49:18.5541056', 'event_id': 9707, 'provider': 'Microsoft-Windows-Shell-Core', 'channel': 'Microsoft-Windows-Shell-Core/Operational', 'le"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-20 23:49:19.9607874",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:49:19.9607874', 'event_id': 9708, 'provider': 'Microsoft-Windows-Shell-Core', 'channel': 'Microsoft-Windows-Shell-Core/Operational', 'le"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-21 00:00:00",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:00:00', 'record_type': 'application', 'app_id': '164', 'app_name': '\\\\Device\\\\HarddiskVolume2\\\\Program Files (x86)\\\\Skype\\\\Updater\\\\Upda"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-21 00:00:00",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:00:00', 'record_type': 'application', 'app_id': '190', 'app_name': '\\\\Device\\\\HarddiskVolume2\\\\Program Files (x86)\\\\Skype\\\\Phone\\\\Skype."
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-21 00:00:00",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:00:00', 'record_type': 'network', 'app_id': '129', 'app_name': '\\\\device\\\\harddiskvolume2\\\\program files (x86)\\\\skype\\\\phone\\\\skype.exe'"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-21 00:35:46.3449692",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:35:46.3449692', 'entry_number': 88284, 'sequence_number': 11, 'filename': '^B9DEB4B07D56AD16A09BFEF0C5C399E2C414D4EE3ECE9CCA41^pthumbnai"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-21 00:35:46.3762224",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:35:46.3762224', 'entry_number': 88293, 'sequence_number': 9, 'filename': '^C3A4D37C8726DD6D55E321A079D8ACC9C32A8ABF3E3B3B23F7^pthumbnail"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-21 00:35:46.3762224",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:35:46.3762224', 'entry_number': 88308, 'sequence_number': 2, 'filename': 'chatsync', 'extension': '', 'file_path': '.\\\\Users\\\\Hunter\\\\Ap"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2016-06-21 00:35:46.3762224",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:35:46.3762224', 'entry_number': 88309, 'sequence_number': 2, 'filename': 'f0', 'extension': '', 'file_path': '.\\\\Users\\\\Hunter\\\\AppData\\"
+      }
+    ],
+    "app_crypto_finance": [],
+    "app_remote_access": [
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:15",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:15', 'record_type': 'file', 'path': 'C:\\\\Users\\\\Hunter\\\\Downloads\\\\TeamViewer_Setup-vfa.exe', 'filename': 'TeamViewer_Setup-vfa.exe',"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:15.5010922",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:15.5010922', 'filename': 'TeamViewer', 'extension': '', 'file_path': 'TeamViewer', 'entry_number': 88243, 'parent_entry': 81393, 'usn"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:15.5010922",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:15.5010922', 'filename': 'TeamViewer', 'extension': '', 'file_path': 'TeamViewer', 'entry_number': 88243, 'parent_entry': 81393, 'usn"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:21",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:21', 'record_type': 'file', 'path': 'C:\\\\Users\\\\Hunter\\\\AppData\\\\Local\\\\Temp\\\\TeamViewer\\\\TeamViewer_.exe', 'filename': 'TeamViewer_."
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:21",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:21', 'executable_name': 'TEAMVIEWER_.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\TEAMVI"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:21.0328758",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:21.0328758', 'entry_number': 88274, 'sequence_number': 8, 'filename': 'tvinfo.ini', 'extension': '.ini', 'file_path': '.\\\\Users\\\\Hunt"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:21.0328758",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:21.0328758', 'entry_number': 88514, 'sequence_number': 2, 'filename': 'tvinfo.ini', 'extension': '.ini', 'file_path': '.\\\\Program Fil"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:29",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:29', 'executable_name': 'TEAMVIEWER_.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\TEAMVI"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:30.3445369",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:30.3445369', 'filename': 'TeamViewer', 'extension': '', 'file_path': 'TeamViewer', 'entry_number': 88431, 'parent_entry': 1948, 'usn'"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:30.3445369",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:30.3445369', 'filename': 'TeamViewer', 'extension': '', 'file_path': 'TeamViewer', 'entry_number': 88431, 'parent_entry': 1948, 'usn'"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:39.9920784",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:39.9920784', 'entry_number': 88505, 'sequence_number': 2, 'filename': 'outlook', 'extension': '', 'file_path': '.\\\\Program Files (x86"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:41.0327639",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:41.0327639', 'event_id': 2004, 'provider': 'Microsoft-Windows-Windows Firewall With Advanced Security', 'channel': 'Microsoft-Windows"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:41.0476911",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:41.0476911', 'event_id': 2004, 'provider': 'Microsoft-Windows-Windows Firewall With Advanced Security', 'channel': 'Microsoft-Windows"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:41.0638620",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:41.0638620', 'event_id': 2004, 'provider': 'Microsoft-Windows-Windows Firewall With Advanced Security', 'channel': 'Microsoft-Windows"
+      },
+      {
+        "_anchor": "app_remote_access",
+        "timestamp": "2016-06-21 00:57:41.0638620",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:41.0638620', 'event_id': 2004, 'provider': 'Microsoft-Windows-Windows Firewall With Advanced Security', 'channel': 'Microsoft-Windows"
+      }
+    ],
+    "app_antiforensic": [
+      {
+        "_anchor": "app_antiforensic",
+        "timestamp": "2016-06-15 12:55:46.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 12:55:46.0000000', 'entry_number': 89692, 'sequence_number': 3, 'filename': 'lang-1031.dll', 'extension': '.dll', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "app_antiforensic",
+        "timestamp": "2016-06-15 12:55:46.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 12:55:46.0000000', 'entry_number': 89794, 'sequence_number': 4, 'filename': 'lang-1053.dll', 'extension': '.dll', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "app_antiforensic",
+        "timestamp": "2016-06-15 12:55:46.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 12:55:46.0000000', 'entry_number': 91797, 'sequence_number': 10, 'filename': 'lang-1052.dll', 'extension': '.dll', 'file_path': '.\\\\Program"
+      },
+      {
+        "_anchor": "app_antiforensic",
+        "timestamp": "2016-06-15 12:55:46.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 12:55:46.0000000', 'entry_number': 92329, 'sequence_number': 11, 'filename': 'lang-1051.dll', 'extension': '.dll', 'file_path': '.\\\\Program"
+      },
+      {
+        "_anchor": "app_antiforensic",
+        "timestamp": "2016-06-15 12:55:48.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 12:55:48.0000000', 'entry_number': 89824, 'sequence_number': 13, 'filename': 'lang-1028.dll', 'extension': '.dll', 'file_path': '.\\\\Program"
+      },
+      {
+        "_anchor": "app_antiforensic",
+        "timestamp": "2016-06-15 12:55:48.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 12:55:48.0000000', 'entry_number': 89830, 'sequence_number': 7, 'filename': 'lang-1030.dll', 'extension': '.dll', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "app_antiforensic",
+        "timestamp": "2016-06-15 12:55:48.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 12:55:48.0000000', 'entry_number': 90747, 'sequence_number': 2, 'filename': 'lang-1029.dll', 'extension': '.dll', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "app_antiforensic",
+        "timestamp": "2016-06-15 12:55:48.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 12:55:48.0000000', 'entry_number': 90750, 'sequence_number': 2, 'filename': 'lang-2052.dll', 'extension': '.dll', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "app_antiforensic",
+        "timestamp": "2016-06-15 12:55:48.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 12:55:48.0000000', 'entry_number': 90752, 'sequence_number': 2, 'filename': 'lang-1027.dll', 'extension': '.dll', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "app_antiforensic",
+        "timestamp": "2016-06-15 12:55:48.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 12:55:48.0000000', 'entry_number': 91514, 'sequence_number': 3, 'filename': 'lang-1025.dll', 'extension': '.dll', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "app_antiforensic",
+        "timestamp": "2016-06-15 12:55:50.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 12:55:50.0000000', 'entry_number': 89799, 'sequence_number': 6, 'filename': 'lang-1043.dll', 'extension': '.dll', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "app_antiforensic",
+        "timestamp": "2016-06-15 12:55:50.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-15 12:55:50.0000000', 'entry_number': 89811, 'sequence_number': 5, 'filename': 'lang-1036.dll', 'extension': '.dll', 'file_path': '.\\\\Program "
+      }
+    ],
+    "app_archive_tools": [
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2016-06-21 09:18:07",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:07', 'record_type': 'file', 'path': 'C:\\\\Users\\\\Hunter\\\\Downloads\\\\7z1602-x64.exe', 'filename': '7z1602-x64.exe', 'extension': '.exe'"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2016-06-21 09:18:10",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:10', 'executable_name': '7Z1602-X64.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\DOWNLOADS\\\\7Z1602-X64.EXE', '"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2016-06-21 09:18:12.1518204",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:12.1518204', 'filename': '7-Zip', 'extension': '', 'file_path': '7-Zip', 'entry_number': 87441, 'parent_entry': 61, 'usn': 0, 'operat"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2016-06-21 09:18:12.1518204",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:12.1518204', 'filename': '7-Zip', 'extension': '', 'file_path': '7-Zip', 'entry_number': 87441, 'parent_entry': 61, 'usn': 0, 'operat"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2016-06-21 09:18:12.5396737",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:12.5396737', 'entry_number': 87445, 'sequence_number': 1, 'filename': 'Lang', 'extension': '', 'file_path': '.\\\\Program Files\\\\7-Zip\\"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2016-06-21 09:18:13.1019816",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:13.1019816', 'entry_number': 87441, 'sequence_number': 1, 'filename': '7-Zip', 'extension': '', 'file_path': '.\\\\Program Files\\\\7-Zip"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2016-06-21 09:18:13.1273278",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:13.1273278', 'filename': '7-Zip', 'extension': '', 'file_path': '7-Zip', 'entry_number': 87545, 'parent_entry': 2066, 'usn': 0, 'oper"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2016-06-21 09:18:13.1283202",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:13.1283202', 'filename': '7-Zip', 'extension': '', 'file_path': '7-Zip', 'entry_number': 87545, 'parent_entry': 2066, 'usn': 0, 'oper"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2016-06-21 09:18:13.1451381",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:13.1451381', 'filename': '7-Zip File Manager.lnk', 'extension': '.lnk', 'file_path': '7-Zip File Manager.lnk', 'entry_number': 87546,"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2016-06-21 09:18:13.1467296",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:13.1467296', 'filename': '7-Zip File Manager.lnk', 'extension': '.lnk', 'file_path': '7-Zip File Manager.lnk', 'entry_number': 87546,"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2016-06-21 09:18:13.1476403",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:13.1476403', 'entry_number': 87546, 'sequence_number': 1, 'filename': '7-Zip File Manager.lnk', 'extension': '.lnk', 'file_path': '.\\"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2016-06-21 09:18:13.1476403",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:13.1476403', 'filename': '7-Zip File Manager.lnk', 'extension': '.lnk', 'file_path': '7-Zip File Manager.lnk', 'entry_number': 87546,"
+      }
+    ],
+    "app_email_client": [
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:57:06.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:57:06.0000000', 'event_id': 11707, 'provider': 'MsiInstaller', 'channel': 'Application', 'level': 'Info', 'severity': 'info', 'computer_"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:57:06.0000000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:57:06.0000000', 'event_id': 1033, 'provider': 'MsiInstaller', 'channel': 'Application', 'level': 'Info', 'severity': 'info', 'computer_n"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:16",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:16', 'list_type': 'custom', 'app_id': '6d2bac8f1edf6668', 'app_name': 'Microsoft Outlook 2016 64-bit', 'target_path': 'C:\\\\Program Fi"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:16",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:16', 'list_type': 'custom', 'app_id': '6d2bac8f1edf6668', 'app_name': 'Microsoft Outlook 2016 64-bit', 'target_path': 'C:\\\\Program Fi"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:16",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:16', 'list_type': 'custom', 'app_id': '6d2bac8f1edf6668', 'app_name': 'Microsoft Outlook 2016 64-bit', 'target_path': 'C:\\\\Program Fi"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:16",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:16', 'list_type': 'custom', 'app_id': '6d2bac8f1edf6668', 'app_name': 'Microsoft Outlook 2016 64-bit', 'target_path': 'C:\\\\Program Fi"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:16",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:16', 'list_type': 'custom', 'app_id': '6d2bac8f1edf6668', 'app_name': 'Microsoft Outlook 2016 64-bit', 'target_path': 'C:\\\\Program Fi"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:27.9756463",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:27.9756463', 'filename': 'Outlook 2013.lnk', 'extension': '.lnk', 'file_path': 'Outlook 2013.lnk', 'entry_number': 99537, 'parent_ent"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:27.9756463",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:27.9756463', 'filename': 'Outlook 2013.lnk', 'extension': '.lnk', 'file_path': 'Outlook 2013.lnk', 'entry_number': 99537, 'parent_ent"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:27.9912651",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:27.9912651', 'filename': 'Outlook 2013.lnk', 'extension': '.lnk', 'file_path': 'Outlook 2013.lnk', 'entry_number': 99537, 'parent_ent"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:27.9969328",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:27.9969328', 'filename': 'Outlook 2013.lnk~RFa7454.TMP', 'extension': '.tmp', 'file_path': 'Outlook 2013.lnk~RFa7454.TMP', 'entry_num"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:27.9969328",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:27.9969328', 'filename': 'Outlook 2013.lnk~RFa7454.TMP', 'extension': '.tmp', 'file_path': 'Outlook 2013.lnk~RFa7454.TMP', 'entry_num"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:27.9969328",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:27.9969328', 'filename': 'Outlook 2013.lnk~RFa7454.TMP', 'extension': '.tmp', 'file_path': 'Outlook 2013.lnk~RFa7454.TMP', 'entry_num"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:27.9969328",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:27.9969328', 'filename': 'Outlook 2013.lnk', 'extension': '.lnk', 'file_path': 'Outlook 2013.lnk', 'entry_number': 99537, 'parent_ent"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2016-06-20 23:59:27.9969328",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:27.9969328', 'filename': 'Outlook 2013.lnk~RFa7454.TMP', 'extension': '.tmp', 'file_path': 'Outlook 2013.lnk~RFa7454.TMP', 'entry_num"
+      }
+    ],
+    "suspicious_indicators_universal": [
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2016-06-21 11:01:44.1316101",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 11:01:44.1316101', 'filename': 'psexec', 'extension': '', 'file_path': 'psexec', 'entry_number': 89529, 'parent_entry': 89493, 'usn': 0, 'o"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2016-06-21 11:01:44.1325750",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 11:01:44.1325750', 'filename': 'psexec', 'extension': '', 'file_path': 'psexec', 'entry_number': 89529, 'parent_entry': 89493, 'usn': 0, 'o"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2016-06-21 11:01:44.1548135",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 11:01:44.1548135', 'entry_number': 89529, 'sequence_number': 2, 'filename': 'psexec', 'extension': '', 'file_path': '.\\\\Program Files (x86)"
+      }
+    ]
+  }
+}

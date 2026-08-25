@@ -1,0 +1,182 @@
+{
+  "provider": "opus",
+  "case": "magnet",
+  "case_name": "Magnet_CTF_2022",
+  "case_id": "case_20260323_032324",
+  "run": 3,
+  "evidence_file": "evidence_Magnet_CTF_2022.json",
+  "evidence_record_count": 798,
+  "chain_event_count": 24,
+  "prompt_chars": 153009,
+  "elapsed_seconds": 50.0,
+  "chain": [
+    {
+      "timestamp": "2022-02-04 07:02:36.9811567",
+      "event": "Interactive logon (Event 4624) detected",
+      "supporting_artifact": "EventLog Event 4624",
+      "confidence_or_caveat": "high",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2022-02-04 07:05:42.6894842",
+      "event": "Windows Defender configuration changed (Event 5007)",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-04 07:05:53.1678802",
+      "event": "New service installed (Event 7045) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-05 01:17:49.849651Z",
+      "event": "User searched 'stamps worth money' on YouTube",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-06 07:14:10.0767923",
+      "event": "ZeroTier One.msi installer downloaded to Downloads folder",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:35.3564786",
+      "event": "ZeroTier service installed (Windows\\Installer\\a578cfd.msi)",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:45.3852097",
+      "event": "file_deleter.ps1 created in ZeroTier prerequisites folder",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2022-02-09 22:44:37.8591332",
+      "event": "Windows Defender action taken (Event 1117) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 1117",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-09 23:34:55.1225188",
+      "event": "PowerShell script block logged (Event 4104)",
+      "supporting_artifact": "EventLog Event 4104",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11 01:18:02.114178Z",
+      "event": "User searched 'how to know if you've been hacked' on Google",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2022-02-11 22:46:09.7189557",
+      "event": "Failed logon attempts (Event 4625) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-11 23:00:56.3207237",
+      "event": "Windows Defender threat detected (Event 1116) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-11 23:19:23.2090504",
+      "event": "goteem.ps1 malicious script created in Documents\\Minecraft folder",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11 23:25:57.5388308",
+      "event": "goteem2.ps1 second malicious script created in Documents\\Minecraft",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-12 00:17:50.1891195",
+      "event": "PowerShell script block execution (Event 4104)",
+      "supporting_artifact": "EventLog Event 4104",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-12 01:29:43.1362394",
+      "event": "New user account created (Event 4720) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 01:29:43.1595265",
+      "event": "User account enabled (Event 4722)",
+      "supporting_artifact": "EventLog Event 4722",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 01:45:52.8832578",
+      "event": "Multiple Windows Defender threats detected (Event 1116)",
+      "supporting_artifact": "EventLog Event 1116",
+      "confidence_or_caveat": "high",
+      "phase": "impact"
+    },
+    {
+      "timestamp": "2022-02-12 02:12:16.6903086",
+      "event": "tightvnc-2.8.63-gpl-setup-64bit.msi installed for remote access",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2022-02-12 22:47:43.3308355",
+      "event": "Explicit credential use (Event 4648) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-12 22:54:09.9161001",
+      "event": "Gaming Services installed (Event 7045)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 23:25:56.0076948",
+      "event": "Special privileges assigned (Event 4672) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4672",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 23:33:49.5093077",
+      "event": "USB device attached (General UDisk) detected via USBSTOR registry",
+      "supporting_artifact": "Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2022-02-12 23:33:49.8141627",
+      "event": "New service installed (Event 7045) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    }
+  ]
+}

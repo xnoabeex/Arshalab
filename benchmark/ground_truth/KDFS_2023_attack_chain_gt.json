@@ -1,0 +1,2120 @@
+{
+  "metadata": {
+    "case_id": "case_20260128_141256",
+    "case_name": "KDFS_2023",
+    "schema_version": "attack_chain_gt_DRAFT_v1",
+    "phase_taxonomy": "MITRE ATT&CK Tactics v14 + Anti-Forensics custom",
+    "sources_consulted": [
+      "docx_timeline (68 events, kept 32 after phase whitelist + intra-dedup)",
+      "v4_systematic (83 events, kept 72 after phase exclude + source exclude + intra-dedup)"
+    ],
+    "phase_whitelist_docx": "ALL",
+    "phase_exclusions_v4": [
+      "P1_pre_incident_finance"
+    ],
+    "source_exclusions_v4": [
+      "chrome localstorage",
+      "blockchain",
+      "outlook ost",
+      "outlook pst",
+      "skype main.db",
+      "wallet log file",
+      "ledger live",
+      "#btc"
+    ],
+    "totals": {
+      "events": 100,
+      "in_scope_for_scoring": 48,
+      "out_of_scope_modules_not_yet_built": 52,
+      "cross_verified": 22,
+      "single_source": 78,
+      "es_verified": 48,
+      "es_unverified_in_scope": 0,
+      "unknown_tactic": 33
+    },
+    "out_of_scope_source_patterns": [
+      "outlook",
+      " ost",
+      "pst attachment",
+      "blockchain",
+      "etherscan",
+      "ledger live",
+      "visual studio code",
+      "sublime text",
+      "skype",
+      "wallet log",
+      "thumbcache",
+      "vscdb",
+      "sublime_session",
+      "skybridge",
+      "exchange-like wallet",
+      "external evidence",
+      "publicly visible",
+      "localstorage",
+      "metamask",
+      "firsttimeinfo",
+      ".ldb"
+    ],
+    "scoring_note": "Pass 2 curation precision/recall is computed using events with es_in_scope=True only. Out-of-scope events are kept here for transparency; they reference artifact types (email mailbox, blockchain, IDE state DB) not covered by the current ArshaLab modules. Adding such modules is an explicit future-work item and does not change the platform's modular architecture.",
+    "tactic_distribution_all": {
+      "Command and Control": 8,
+      "Resource Development": 14,
+      "Reconnaissance": 26,
+      "Initial Access": 5,
+      "Impact": 13,
+      "UNKNOWN": 33,
+      "Exfiltration": 1
+    },
+    "tactic_distribution_in_scope": {
+      "Command and Control": 7,
+      "Resource Development": 6,
+      "Reconnaissance": 25,
+      "Impact": 9,
+      "Exfiltration": 1
+    }
+  },
+  "events": [
+    {
+      "id": "KDF-001",
+      "timestamp": "2023-08-27 23:39:16",
+      "mitre_tactic": "Command and Control",
+      "mitre_technique": "T1102 - Web Service (Discord C2/comms)",
+      "description": "C:\\Users\\souldrag\\AppData\\Local\\Discord\\Update.exe",
+      "source_artifact": "Shimcache",
+      "evidence_keywords": [
+        "2023-08-27 23:39:16",
+        "2023-08-27",
+        "23:39",
+        "23:39:16",
+        "Update.exe",
+        "AppData"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-1"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Communication"
+    },
+    {
+      "id": "KDF-002",
+      "timestamp": "2023-09-11 13:20:30",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "C:\\Program Files\\Ledger Live\\Ledger Live.exe",
+      "source_artifact": "Shimcache",
+      "evidence_keywords": [
+        "2023-09-11 13:20:30",
+        "2023-09-11",
+        "13:20",
+        "13:20:30",
+        "Live.exe"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-2"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Payment"
+    },
+    {
+      "id": "KDF-003",
+      "timestamp": "2023-09-15 01:08:09",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "BANDIZIP-SETUP-STD-X64.EXE (runs=1)",
+      "source_artifact": "Prefetch",
+      "evidence_keywords": [
+        "2023-09-15 01:08:09",
+        "2023-09-15",
+        "01:08",
+        "01:08:09",
+        "BANDIZIP-SETUP-STD-X64.EXE",
+        "BANDIZIP",
+        "SETUP"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-3"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Packaging"
+    },
+    {
+      "id": "KDF-004",
+      "timestamp": "2023-09-15 04:14:20.9788972",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1583 - Acquire Infrastructure / financial preparation",
+      "description": "#BTC매매일지.xlsx (19161 bytes)",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "2023-09-15 04:14:20.9788972",
+        "2023-09-15",
+        "04:14",
+        "04:14:20",
+        "BTC매매일지.xlsx",
+        "19161"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-4"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Financial Evidence"
+    },
+    {
+      "id": "KDF-005",
+      "timestamp": "2023-09-19 04:04:39.067 UTC",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "Search: '사채 안갚으면 어떻게 되나요' (what happens if you don't repay loan shark)",
+      "source_artifact": "Chrome browser history (82cook.com forum)",
+      "evidence_keywords": [
+        "사채 안갚으면",
+        "82cook"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-12"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P2_debt_pressure"
+    },
+    {
+      "id": "KDF-006",
+      "timestamp": "2023-09-19 05:18:04 UTC",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "Reads article: '돈 없어? 네 가족 해칠게 - 원금 50배 불법 사채 조직 검거'",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "가족",
+        "협박",
+        "불법사채"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-13"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P2_debt_pressure"
+    },
+    {
+      "id": "KDF-007",
+      "timestamp": "2023-09-19 07:04 KST",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1566 - Phishing",
+      "description": "Email received from bloodmoney7979@gmail.com (BM Company representative '사채박'). Subject: '[BM Company] 채무상환 예정일 알림'. Content: demand for repayment of 350,000,000 KRW debt.",
+      "source_artifact": "Outlook OST mailbox souldrag576@gmail.com.ost",
+      "evidence_keywords": [
+        "BM Company",
+        "사채박",
+        "bloodmoney7979",
+        "350,000,000",
+        "채무상환"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-10"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P2_debt_pressure"
+    },
+    {
+      "id": "KDF-008",
+      "timestamp": "2023-09-19 07:23:52 UTC",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "Transition: first '파산 신청' (personal bankruptcy filing) search",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "파산 신청",
+        "개인 파산"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-14"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P2_debt_pressure"
+    },
+    {
+      "id": "KDF-009",
+      "timestamp": "2023-09-19 07:32:27-07:38:19 UTC",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "Visits 8 pages on personal bankruptcy procedures (Gyeonggi welfare center, eligibility, application forms, electronic civil center). Conclusion: does not qualify for bankruptcy.",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "개인 파산 신청",
+        "자격 조건",
+        "신청 자격"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-15"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P2_debt_pressure"
+    },
+    {
+      "id": "KDF-010",
+      "timestamp": "2023-09-19 12:50-16:38 KST (4 hours)",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "Continuous research on illegal lending consequences and personal bankruptcy procedures (29 distinct queries and article reads)",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "사채",
+        "파산",
+        "안갚으면",
+        "협박",
+        "신청"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-11"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P2_debt_pressure"
+    },
+    {
+      "id": "KDF-011",
+      "timestamp": "2023-09-19T04:04:39.067266Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "사채 안갚으면 어떻게 되나요?? ::: 82cook.com 자유게시판",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "2023-09-19T04:04:39.067266Z",
+        "2023-09-19",
+        "04:04",
+        "04:04:39",
+        "82cook.com"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-5"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-012",
+      "timestamp": "2023-09-19T04:10:21.056173Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "불법사채를 사용하였을 경우 대처방법 : 네이버 블로그",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "04:10",
+        "04:10:21",
+        "04:11",
+        "04:11:29",
+        "04:11:56",
+        "2023-09-19",
+        "2023-09-19T04:10:21.056173Z",
+        "2023-09-19T04:11:29.154692Z",
+        "2023-09-19T04:11:56.739290Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-7",
+        "docx-8",
+        "docx-6"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-013",
+      "timestamp": "2023-09-19T05:09:46.179571Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "부모·지인 협박하고 알몸사진 유포…사채 덫에 ‘지옥’ 생활 | 중앙일보",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "05:09",
+        "05:09:46",
+        "05:10",
+        "05:10:17",
+        "2023-09-19",
+        "2023-09-19T05:09:46.179571Z",
+        "2023-09-19T05:10:17.707047Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-9",
+        "docx-10"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-014",
+      "timestamp": "2023-09-19T05:18:04.263664Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "\"돈 없어? 네 가족 해칠게\"…원금 50배 불법 사채 조직 검거",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "05:18",
+        "05:18:04",
+        "05:18:28",
+        "2023-09-19",
+        "2023-09-19T05:18:04.263664Z",
+        "2023-09-19T05:18:28.855608Z",
+        "돈 없어? 네 가족 해칠게"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-11",
+        "docx-12"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-015",
+      "timestamp": "2023-09-19T05:25:12.445309Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "“소액·단기 대출 후 5000% 이상 이자 요구”···불법사금융 범죄 조직 123명 검거해 10명 구속 - 경향신문",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "05:25",
+        "05:25:12",
+        "05:26",
+        "05:26:18",
+        "05:26:36",
+        "2023-09-19",
+        "2023-09-19T05:25:12.445309Z",
+        "2023-09-19T05:26:18.212997Z",
+        "2023-09-19T05:26:36.676956Z",
+        "5000",
+        "소액·단기 대출 후 5000% 이상 이자 요구"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-13",
+        "docx-14",
+        "docx-15"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-016",
+      "timestamp": "2023-09-19T05:29:25.611532Z",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "RETROACTIVE: ransom.exe path recorded in OpenSavePidlMRU registry (date predates MFT creation; suggests user interacted with filename earlier OR registry-vs-MFT timestamp disambiguation needed)",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "05:29",
+        "05:29:15",
+        "05:29:25",
+        "05:30",
+        "05:30:45",
+        "2023-09-19",
+        "2023-09-19 05:29:15.7178646",
+        "2023-09-19T05:29:25.611532Z",
+        "2023-09-19T05:30:45.005247Z",
+        "OpenSavePidlMRU",
+        "ransom.exe",
+        "갚으면 돼"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-59",
+        "docx-62",
+        "docx-17",
+        "docx-16"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-017",
+      "timestamp": "2023-09-19T05:31:55.781488Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "'초고금리'·'주변인 협박' 불법 사채, 신고해서 벗어나세요! | 아주경제",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "05:31",
+        "05:31:55",
+        "05:32",
+        "05:32:08",
+        "2023-09-19",
+        "2023-09-19T05:31:55.781488Z",
+        "2023-09-19T05:32:08.523766Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-19",
+        "docx-18"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-018",
+      "timestamp": "2023-09-19T06:20:13.402225Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "\"가족들 가만 안둔다\"…협박 문자 93통 보낸 불법 사채업자 실형 - 머니투데이",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "06:20",
+        "06:20:13",
+        "06:20:48",
+        "2023-09-19",
+        "2023-09-19T06:20:13.402225Z",
+        "2023-09-19T06:20:48.436323Z",
+        "229",
+        "가족들 가만 안둔다"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-21",
+        "docx-20"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-019",
+      "timestamp": "2023-09-19T06:36:32.277246Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "“빌린 30만원, 한달뒤 100만원 돼”… 불법사채 내몰리는 서민들｜동아일보",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "2023-09-19T06:36:32.277246Z",
+        "2023-09-19",
+        "06:36",
+        "06:36:32",
+        "빌린 30만원, 한달뒤 100만원 돼"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-22"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-020",
+      "timestamp": "2023-09-19T07:23:45.136183Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "불법 사채 가족협박 - Google 검색",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "07:23",
+        "07:23:45",
+        "07:23:52",
+        "2023-09-19",
+        "2023-09-19T07:23:45.136183Z",
+        "2023-09-19T07:23:52.226465Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-24",
+        "docx-23"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-021",
+      "timestamp": "2023-09-19T07:32:27.049397Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "경기금융복지지원센터 경유 개인파산 신청 119.8% 늘어",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "07:32",
+        "07:32:27",
+        "07:32:45",
+        "07:32:48",
+        "119",
+        "2023-09-19",
+        "2023-09-19T07:32:27.049397Z",
+        "2023-09-19T07:32:45.568130Z",
+        "2023-09-19T07:32:48.248077Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-26",
+        "docx-27",
+        "docx-25"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-022",
+      "timestamp": "2023-09-19T07:34:54.358034Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "개인 파산 신청 - Google 검색",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "07:34",
+        "07:34:54",
+        "07:35",
+        "07:35:13",
+        "2023-09-19",
+        "2023-09-19T07:34:54.358034Z",
+        "2023-09-19T07:35:13.334139Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-29",
+        "docx-28"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-023",
+      "timestamp": "2023-09-19T07:37:59.090816Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "개인파산 신청자격 조건 신청방법 비용 기간 서류 총정리! | Life is good",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "07:37",
+        "07:37:59",
+        "07:38",
+        "07:38:11",
+        "07:38:13",
+        "07:38:19",
+        "2023-09-19",
+        "2023-09-19T07:37:59.090816Z",
+        "2023-09-19T07:38:11.320585Z",
+        "2023-09-19T07:38:13.335918Z",
+        "2023-09-19T07:38:19.208460Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-30",
+        "docx-32",
+        "docx-31",
+        "docx-33"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Motive"
+    },
+    {
+      "id": "KDF-024",
+      "timestamp": "2023-09-20 23:36:21.478 UTC",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "First-ever ransomware search '랜섬웨어' on Naver - marks transition from victim to perpetrator intent",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "랜섬웨어",
+        "ransomware"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-16"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P3_intent_formation"
+    },
+    {
+      "id": "KDF-025",
+      "timestamp": "2023-09-20 23:36:26.503 UTC",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "Reads Newsis article: 'FBI가 쫒던 그 랜섬웨어 그룹, 국내 IT기업도 당했다'",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "FBI",
+        "랜섬웨어 그룹"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-17"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P3_intent_formation"
+    },
+    {
+      "id": "KDF-026",
+      "timestamp": "2023-09-20 23:36:44.049 UTC",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "Reads article: '사이버 위협 심각성 커져... 랜섬웨어 피해의 88%는 중소기업' (88% of ransomware victims are SMBs)",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "랜섬웨어 피해",
+        "중소기업",
+        "88"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-18"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P3_intent_formation"
+    },
+    {
+      "id": "KDF-027",
+      "timestamp": "2023-09-20 23:38:31",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "LEDGER-LIVE-DESKTOP-2.68.1-WI (runs=1)",
+      "source_artifact": "Prefetch",
+      "evidence_keywords": [
+        "2023-09-20 23:38:31",
+        "2023-09-20",
+        "23:38",
+        "23:38:31",
+        "LEDGER",
+        "LIVE",
+        "DESKTOP"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-34"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Payment"
+    },
+    {
+      "id": "KDF-028",
+      "timestamp": "2023-09-20 23:38:31 KST",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Ledger Live Desktop 2.68.1 installer (LEDGER-LIVE-DESKTOP-2.68.1-WI.EXE) executed",
+      "source_artifact": "Prefetch (runs=1)",
+      "evidence_keywords": [
+        "LEDGER-LIVE-DESKTOP",
+        "2.68.1"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-19"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P3_intent_formation"
+    },
+    {
+      "id": "KDF-029",
+      "timestamp": "2023-09-20T23:36:21.478762Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "FBI가 쫒던 그 랜섬웨어 그룹, 국내 IT기업도 당했다 :: 공감언론 뉴시스통신사 ::",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "2023-09-20",
+        "2023-09-20T23:36:21.478762Z",
+        "2023-09-20T23:36:26.503653Z",
+        "2023-09-20T23:36:44.049448Z",
+        "23:36",
+        "23:36:21",
+        "23:36:26",
+        "23:36:44"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-36",
+        "docx-37",
+        "docx-35"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Research"
+    },
+    {
+      "id": "KDF-030",
+      "timestamp": "2023-09-21 (entire session)",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "NEGATIVE FINDING: ransom.exe NEVER executed on suspect's PC. No Prefetch entry. No Amcache record. No UserAssist entry.",
+      "source_artifact": "Prefetch (absence) + Amcache (absence) + Registry UserAssist (absence)",
+      "evidence_keywords": [
+        "Prefetch",
+        "Amcache",
+        "UserAssist"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-61"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P9_weapon_acquisition"
+    },
+    {
+      "id": "KDF-031",
+      "timestamp": "2023-09-21 (full session)",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "NEGATIVE FINDING: NO ransomware source code in Visual Studio Code or Sublime Text 3 history. Only cryptocurrency trading scripts (binance.py, bitcoin.py, pyupbittest.py and 7 others).",
+      "source_artifact": "Visual Studio state.vscdb + Sublime Text 3 Session.sublime_session",
+      "evidence_keywords": [
+        "bitcoin.py",
+        "binance.py",
+        "Sublime Text",
+        "Visual Studio Code"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-62"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P9_weapon_acquisition"
+    },
+    {
+      "id": "KDF-032",
+      "timestamp": "2023-09-21 00:06:47",
+      "mitre_tactic": "Command and Control",
+      "mitre_technique": "T1102 - Web Service (Discord C2/comms)",
+      "description": "DISCORD.EXE first executed this session (cumulative Prefetch run_count=18)",
+      "source_artifact": "Prefetch",
+      "evidence_keywords": [
+        "00:06",
+        "00:06:47",
+        "2023-09-21",
+        "2023-09-21 00:06:47",
+        "DISCORD",
+        "DISCORD.EXE"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-38",
+        "v4-20"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Communication"
+    },
+    {
+      "id": "KDF-033",
+      "timestamp": "2023-09-21 00:31:06 UTC",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "Google search 'discord'",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "discord",
+        "Google"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-21"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P3_intent_formation"
+    },
+    {
+      "id": "KDF-034",
+      "timestamp": "2023-09-21 00:31:32 UTC",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "Suspect visits Discord login (discord.com)",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "discord.com"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-22"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P3_intent_formation"
+    },
+    {
+      "id": "KDF-035",
+      "timestamp": "2023-09-21 01:10:29 UTC",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "Suspect joins '쌀줍-공지사항' channel (Ssalzoop community announcement)",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "쌀줍",
+        "channels"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-23"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P3_intent_formation"
+    },
+    {
+      "id": "KDF-036",
+      "timestamp": "2023-09-21 01:58:19 UTC",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "Suspect enters '화이트해커들의 심심디코방' channel in Hello-World (Codemos) server - venue for accomplice contact",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "화이트해커",
+        "Hello-World",
+        "심심디코방"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-24"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P3_intent_formation"
+    },
+    {
+      "id": "KDF-037",
+      "timestamp": "2023-09-21 02:36:04 UTC",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "Visits '미인증-채팅-1' channel in Codemos For Dev server",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "미인증-채팅",
+        "Codemos"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-25"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P3_intent_formation"
+    },
+    {
+      "id": "KDF-038",
+      "timestamp": "2023-09-21 04:21:44.8938991",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "everyrecover56@gmail.com.ost (16818176 bytes)",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "2023-09-21 04:21:44.8938991",
+        "2023-09-21",
+        "04:21",
+        "04:21:44",
+        "everyrecover56@gmail.com.ost",
+        "everyrecover56",
+        "gmail.com"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-39"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Ransom Email"
+    },
+    {
+      "id": "KDF-039",
+      "timestamp": "2023-09-21 04:43:39.8939855",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "ransom.exe (7,287,357 bytes) inside ransom.zip - SHA1: 0b88dd8519259f4afd15aeb376ccea9c27b2a253",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "04:43",
+        "04:43:39",
+        "04:43:41",
+        "0b88dd85192",
+        "2023-09-21",
+        "2023-09-21 04:43:39.8939855",
+        "2023-09-21 04:43:41",
+        "7287357",
+        "gofile.io/d/RORPNG",
+        "ransom.exe"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-40",
+        "docx-41",
+        "v4-58"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Weapon Creation"
+    },
+    {
+      "id": "KDF-040",
+      "timestamp": "2023-09-21 05:50:49.2016810",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "Gofile - Free Unlimited File Sharing and Storage",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "05:50",
+        "05:50:49",
+        "05:51",
+        "05:51:15",
+        "05:51:23",
+        "05:51:26",
+        "05:51:46",
+        "05:51:53",
+        "2023-09-21",
+        "2023-09-21 05:50:49.2016810",
+        "2023-09-21 05:51:15.1254347",
+        "2023-09-21 05:51:46.1743480",
+        "2023-09-21 05:51:53.1114538",
+        "2023-09-21T05:51:23.785402Z",
+        "2023-09-21T05:51:26.339720Z",
+        "FileCreate",
+        "LastVisitedPidlMRU",
+        "ransom.exe",
+        "ransom.zip"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-42",
+        "docx-65",
+        "docx-67",
+        "docx-57",
+        "docx-64",
+        "docx-56",
+        "docx-66"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Weapon Packaging"
+    },
+    {
+      "id": "KDF-041",
+      "timestamp": "2023-09-21 10:14:11 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Accomplice receives 0.025 ETH from Coinone exchange to wallet 0xF5F53280aE3555A629c2e5F4E6bCf3A38FD49a4e (preparing identity)",
+      "source_artifact": "Blockchain (Etherscan public ledger)",
+      "evidence_keywords": [
+        "takemejail",
+        "Coinone",
+        "0.025 ETH"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-26"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P4_accomplice_setup"
+    },
+    {
+      "id": "KDF-042",
+      "timestamp": "2023-09-21 10:34 KST",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Suspect receives 0.012 BTC from external exchange-like wallet 3DGxAYYUA61WrrdbBac8Ra9eA9peAQwTJF (suspected exchange Multisig)",
+      "source_artifact": "Blockchain + Ledger Live cache data + Chrome cache showing 3DGxAY... reference",
+      "evidence_keywords": [
+        "3DGxAYYUA61",
+        "MYBITCOIN",
+        "0.012 BTC"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-28"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P12_initial_funds"
+    },
+    {
+      "id": "KDF-043",
+      "timestamp": "2023-09-21 10:44 KST (approximate, ~30min after funds)",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Accomplice registers ENS domain 'takemejail.eth' for wallet 0xF5F53280... via 'ENS: ETH Registrar Controller' smart contract (~0.003 ETH fee)",
+      "source_artifact": "Blockchain (Etherscan)",
+      "evidence_keywords": [
+        "takemejail.eth",
+        "ENS",
+        "domain registration"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-27"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P4_accomplice_setup"
+    },
+    {
+      "id": "KDF-044",
+      "timestamp": "2023-09-21 10:57 KST",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "souldrag__ also opens DMs with 밥만먹고CTF🥇 and 취약점외길인생👍 (probing other potential accomplices)",
+      "source_artifact": "Chrome LocalStorage + Browser history",
+      "evidence_keywords": [
+        "밥만먹고CTF",
+        "취약점외길인생"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-30"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P5_initial_contact"
+    },
+    {
+      "id": "KDF-045",
+      "timestamp": "2023-09-21 10:57:30 KST",
+      "mitre_tactic": "Command and Control",
+      "mitre_technique": "T1102 - Web Service (Discord C2/comms)",
+      "description": "souldrag__ initiates DM with CyberNinja_⚔ (channel /1154234888678023250): '안녕하세요'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb (Discord chat) + Chrome browser history URL",
+      "evidence_keywords": [
+        "CyberNinja_",
+        "안녕하세요"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-29"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P5_initial_contact"
+    },
+    {
+      "id": "KDF-046",
+      "timestamp": "2023-09-21 11:08:17 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "cyberninja__: '?'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-31"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P5_initial_contact"
+    },
+    {
+      "id": "KDF-047",
+      "timestamp": "2023-09-21 11:35:30 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "souldrag__ probes hacking skill: '상태메세지 보니까 취약점이랑 모의해킹 쪽 잘하시는 것 같은데 실력이 어느정도 되세요?'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-32"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P5_initial_contact"
+    },
+    {
+      "id": "KDF-048",
+      "timestamp": "2023-09-21 11:46:19 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "cyberninja__: '뭐 유명한 것들은 다 한 번씩 뚫어봤죠'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-33"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P5_initial_contact"
+    },
+    {
+      "id": "KDF-049",
+      "timestamp": "2023-09-21 11:56:16 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "souldrag__: '그런거하면 안들키면서 할 수 있는건가요?' (Can it be done without being caught?)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-34"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P5_initial_contact"
+    },
+    {
+      "id": "KDF-050",
+      "timestamp": "2023-09-21 13:18:10 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "cyberninja__: '완전 안들키는건 몰라도 안 잡힐 자신은 있어요'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-35"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P5_initial_contact"
+    },
+    {
+      "id": "KDF-051",
+      "timestamp": "2023-09-21 13:25:09 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "souldrag__: '제가 사실 돈이 좀 필요한 상황인데… 부탁? 좀 드릴 수 있을까 해서요..'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-36"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P6_conspiracy"
+    },
+    {
+      "id": "KDF-052",
+      "timestamp": "2023-09-21 13:25:53 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "souldrag__ EXPLICIT CRIMINAL PROPOSAL: '랜섬웨어로 요즘 돈 많이 벌 수 있는 것 같아서 해보려고 만들긴 했거든요'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-37"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P6_conspiracy"
+    },
+    {
+      "id": "KDF-053",
+      "timestamp": "2023-09-21 13:26:13 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "souldrag__: '만들기는 했는데 이걸 어떻게 퍼뜨리는 줄을 몰라서 왔는데' (I made it but don't know how to spread it)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-38"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P6_conspiracy"
+    },
+    {
+      "id": "KDF-054",
+      "timestamp": "2023-09-21 13:26:34 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "souldrag__ asks for paid distribution: '안 잡힐 자신 있으시다고 하셨는데 제가 비용을 좀 지불하면 대신 퍼뜨려주실 수 있나 해서요'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-39"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P6_conspiracy"
+    },
+    {
+      "id": "KDF-055",
+      "timestamp": "2023-09-21 13:44:03 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "cyberninja__: '얼마 주실 수 있는데요?'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-40"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P6_conspiracy"
+    },
+    {
+      "id": "KDF-056",
+      "timestamp": "2023-09-21 13:44:40 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "souldrag__: '30만원 정도 드릴 수 있거든요' (~$220)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-41"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P6_conspiracy"
+    },
+    {
+      "id": "KDF-057",
+      "timestamp": "2023-09-21 13:45:16 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "cyberninja__: '30만원에 솔직히 아무도 안해주죠' (no one does it for 300K)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-42"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P6_conspiracy"
+    },
+    {
+      "id": "KDF-058",
+      "timestamp": "2023-09-21 13:45:49 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "souldrag__ proposes revenue share: '그러면 제가 수익 한 건당 일부를 드리는 것도 해드릴 수 있습니다'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-43"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P6_conspiracy"
+    },
+    {
+      "id": "KDF-059",
+      "timestamp": "2023-09-21 13:46:39 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "cyberninja__ AGREES: '사실 뭐 요새 몇 명이나 걸려줄 줄 모르겠는데 심심하기도 하고 한 번 해보죠' + asks about crypto experience",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-44"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P6_conspiracy"
+    },
+    {
+      "id": "KDF-060",
+      "timestamp": "2023-09-21 14:04:19 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "cyberninja__ specifies prepayment terms: 'takemejail.eth로 0.0085 wBTC 보내고 마저 얘기하시죠'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-45"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P7_payment_setup"
+    },
+    {
+      "id": "KDF-061",
+      "timestamp": "2023-09-21 14:31 KST",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Suspect uses Changelly swap service to convert 0.01 BTC to ETH (start of laundering chain)",
+      "source_artifact": "Ledger Live app.json swap_history + Blockchain",
+      "evidence_keywords": [
+        "Changelly",
+        "0.01 BTC",
+        "swap"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-46"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P7_payment_setup"
+    },
+    {
+      "id": "KDF-062",
+      "timestamp": "2023-09-21 14:33:11 KST",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Changelly returns 0.16154827 ETH via Union Chain partner to suspect's Ledger ETH wallet",
+      "source_artifact": "Blockchain + Ledger Live transactions",
+      "evidence_keywords": [
+        "Union Chain",
+        "0.16154827 ETH"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-47"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P7_payment_setup"
+    },
+    {
+      "id": "KDF-063",
+      "timestamp": "2023-09-21 14:35:11 KST",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "MetaMask 11.0.0 Chrome extension INSTALLED (folder nkbihfbeogaeaoehlefnkodbefgpgknn created)",
+      "source_artifact": "MetaMask firstTimeInfo in LevelDB + Chrome extensions + MFT",
+      "evidence_keywords": [
+        "MetaMask",
+        "nkbihfb",
+        "11.0.0",
+        "14:35:11"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-48"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P7_payment_setup"
+    },
+    {
+      "id": "KDF-064",
+      "timestamp": "2023-09-21 14:38:23 KST",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Suspect transfers 0.16127908 ETH from Ledger ETH wallet to newly-created MetaMask Account1 wallet",
+      "source_artifact": "Blockchain + MetaMask TransactionController log",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-49"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P7_payment_setup"
+    },
+    {
+      "id": "KDF-065",
+      "timestamp": "2023-09-21 14:43:35 KST",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Suspect swaps 0.1486875 ETH to 0.00892858 wBTC via MetaMask Swap Router (multi-hop: OpenOcean Exchange V2 + Balancer WBTC/ETH 50/50 pool #9)",
+      "source_artifact": "Blockchain + MetaMask logs",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-50"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P8_prepayment"
+    },
+    {
+      "id": "KDF-066",
+      "timestamp": "2023-09-21 14:45:18 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Token transfer event for wBTC (0 ETH fee transaction)",
+      "source_artifact": "Blockchain",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-51"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P8_prepayment"
+    },
+    {
+      "id": "KDF-067",
+      "timestamp": "2023-09-21 14:45:35 KST",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "Suspect sends 0.0085 wBTC to accomplice's takemejail.eth wallet (prepayment for ransomware distribution)",
+      "source_artifact": "Blockchain (publicly visible)",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-52"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P8_prepayment"
+    },
+    {
+      "id": "KDF-068",
+      "timestamp": "2023-09-21 14:47:31 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "souldrag__ confirms transfer to accomplice: '보냈는데 받으셨나요?'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-53"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P8_prepayment"
+    },
+    {
+      "id": "KDF-069",
+      "timestamp": "2023-09-21 14:49:26 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "cyberninja__ confirms receipt: 'ㅇㅋ' (OK)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-54"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P8_prepayment"
+    },
+    {
+      "id": "KDF-070",
+      "timestamp": "2023-09-21 14:49:28 KST",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "cyberninja__ requests: '랜섬웨어 주시죠' (give me the ransomware)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-56"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P9_weapon_acquisition"
+    },
+    {
+      "id": "KDF-071",
+      "timestamp": "2023-09-21 14:50:15.0000000",
+      "mitre_tactic": "Exfiltration",
+      "mitre_technique": "T1052.001 - Exfiltration over USB",
+      "description": "SanDisk Cruzer Blade USB Device CONNECTED to PC (Serial: 4C530000320903119361, VID: 0781)",
+      "source_artifact": "EventLog",
+      "evidence_keywords": [
+        "14:50",
+        "14:50:15",
+        "2023-09-21",
+        "2023-09-21 14:50:15.0000000",
+        "4C530000320903119361",
+        "7045",
+        "Cruzer Blade",
+        "Event 7045",
+        "SanDisk",
+        "USBSTOR"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-63",
+        "v4-55"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "USB Activity"
+    },
+    {
+      "id": "KDF-072",
+      "timestamp": "2023-09-21 14:50:49 KST",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "ransom.zip materializes in C:\\Users\\souldrag\\Pictures\\ransom\\ (7,121,752 bytes) - 34 seconds AFTER SanDisk USB connection",
+      "source_artifact": "MFT (file system) + UsnJrnl FileCreate",
+      "evidence_keywords": [
+        "14:50:49",
+        "7121752",
+        "BANDIZIP.EXE",
+        "Pictures",
+        "ransom.exe",
+        "ransom.zip"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-60",
+        "v4-57"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "P9_weapon_acquisition"
+    },
+    {
+      "id": "KDF-073",
+      "timestamp": "2023-09-21 14:54:27 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "cyberninja__: '네 뭐 오늘 안에 뿌리기는 할 건데 언제 걸릴지는 모르는거라서 기다리고 계세요' (will distribute today, victim selection unpredictable)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-64"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P10_distribution_handoff"
+    },
+    {
+      "id": "KDF-074",
+      "timestamp": "2023-09-21 14:56:01 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "cyberninja__ reveals OPSEC: '저 디스코드 계정도 1회용 메일로 만들었고 절대 잡힐 일 없으니까 님만 조심하면 돼요'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-65"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P10_distribution_handoff"
+    },
+    {
+      "id": "KDF-075",
+      "timestamp": "2023-09-21 14:56:17 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "cyberninja__: '트랜잭션 보고 있을거니까 돈 들어올 때마다 보내주시고요' (I'll watch transactions, send revenue share each time)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-66"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P10_distribution_handoff"
+    },
+    {
+      "id": "KDF-076",
+      "timestamp": "2023-09-21 15:02:42 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Token transfer for residual wBTC (0 ETH gas transaction)",
+      "source_artifact": "Blockchain",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-67"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P11_post_handoff"
+    },
+    {
+      "id": "KDF-077",
+      "timestamp": "2023-09-21 15:02:43 KST",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Suspect swaps remaining 0.00042858 wBTC back to ETH (returning unused portion)",
+      "source_artifact": "Blockchain (MetaMask Swap Router)",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-68"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P11_post_handoff"
+    },
+    {
+      "id": "KDF-078",
+      "timestamp": "2023-09-21 15:10:12 KST",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Suspect transfers 0.01331641 ETH back from MetaMask Account1 to Ledger Ethereum 2 wallet (consolidating residual)",
+      "source_artifact": "Blockchain",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-69"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P11_post_handoff"
+    },
+    {
+      "id": "KDF-079",
+      "timestamp": "2023-09-21T00:31:06.182686Z",
+      "mitre_tactic": "Command and Control",
+      "mitre_technique": "T1102 - Web Service (Discord C2/comms)",
+      "description": "Discord | 대화하고, 어울리는 공간",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "00:31",
+        "00:31:06",
+        "00:31:32",
+        "2023-09-21",
+        "2023-09-21T00:31:06.182686Z",
+        "2023-09-21T00:31:32.343628Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-43",
+        "docx-44"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Communication"
+    },
+    {
+      "id": "KDF-080",
+      "timestamp": "2023-09-21T01:10:29.139172Z",
+      "mitre_tactic": "Command and Control",
+      "mitre_technique": "T1102 - Web Service (Discord C2/comms)",
+      "description": "(1) Discord | #『📌』쌀줍-공지사항 | 쌀줍",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "01:10",
+        "01:10:29",
+        "01:11",
+        "01:11:37",
+        "2023-09-21",
+        "2023-09-21T01:10:29.139172Z",
+        "2023-09-21T01:11:37.002371Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-45",
+        "docx-46"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Communication"
+    },
+    {
+      "id": "KDF-081",
+      "timestamp": "2023-09-21T01:58:19.627752Z",
+      "mitre_tactic": "Command and Control",
+      "mitre_technique": "T1102 - Web Service (Discord C2/comms)",
+      "description": "(1) Discord | #⭐：𝙃𝙚𝙡𝙡𝙤·𝙒𝙤𝙧𝙡𝙙 | 화이트해커들의 심심디코방",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "2023-09-21T01:58:19.627752Z",
+        "2023-09-21",
+        "01:58",
+        "01:58:19"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-47"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Communication"
+    },
+    {
+      "id": "KDF-082",
+      "timestamp": "2023-09-21T02:36:04.673483Z",
+      "mitre_tactic": "Command and Control",
+      "mitre_technique": "T1102 - Web Service (Discord C2/comms)",
+      "description": "(1) Discord | #❌ㅣ미인증-채팅-1 | Codemos { For Dev }",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "2023-09-21T02:36:04.673483Z",
+        "2023-09-21",
+        "02:36",
+        "02:36:04"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-48"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Communication"
+    },
+    {
+      "id": "KDF-083",
+      "timestamp": "2023-09-21T05:26:15.706730Z",
+      "mitre_tactic": "Command and Control",
+      "mitre_technique": "T1102 - Web Service (Discord C2/comms)",
+      "description": "(1) Discord | @CyberNinja_⚔",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "05:26",
+        "05:26:15",
+        "05:26:18",
+        "05:26:20",
+        "2023-09-21",
+        "2023-09-21T05:26:15.706730Z",
+        "2023-09-21T05:26:18.781178Z",
+        "2023-09-21T05:26:20.218912Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-51",
+        "docx-49",
+        "docx-50"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Communication"
+    },
+    {
+      "id": "KDF-084",
+      "timestamp": "2023-09-21T05:34:38.360592Z",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Chrome 웹 스토어 - metamask",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "05:34",
+        "05:34:38",
+        "05:34:50",
+        "05:34:52",
+        "05:35",
+        "05:35:09",
+        "2023-09-21",
+        "2023-09-21T05:34:38.360592Z",
+        "2023-09-21T05:34:50.425802Z",
+        "2023-09-21T05:34:52.548361Z",
+        "2023-09-21T05:35:09.886822Z",
+        "MetaMask"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-53",
+        "docx-55",
+        "docx-54",
+        "docx-52"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Payment Setup"
+    },
+    {
+      "id": "KDF-085",
+      "timestamp": "2023-09-22 01:47:35 UTC",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Accomplice forwards 0.0085 wBTC from takemejail.eth to secondary wallet 0x4C666B... (separating funds from primary identity)",
+      "source_artifact": "Blockchain",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-78"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P17_accomplice_laundering"
+    },
+    {
+      "id": "KDF-086",
+      "timestamp": "2023-09-22 02:55:42 UTC (= 11:55:42 KST)",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "Victim 1 sends 0.003 BTC to suspect's MYBITCOIN wallet (initial ransom payment)",
+      "source_artifact": "Blockchain (publicly visible)",
+      "evidence_keywords": [
+        "0.003 BTC",
+        "MYBITCOIN",
+        "35iMHbUZe"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-70"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P13_victim1_payment"
+    },
+    {
+      "id": "KDF-087",
+      "timestamp": "2023-09-22 03:16:33 UTC (= 12:16:33 KST)",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1566 - Phishing",
+      "description": "Victim 1 (dou120313@gmail.com) sends payment confirmation email to everyrecover56@gmail.com requesting decryption tool",
+      "source_artifact": "Outlook OST mailbox everyrecover56@gmail.com.ost content",
+      "evidence_keywords": [
+        "dou120313",
+        "everyrecover56",
+        "decryption"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-71"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P13_victim1_correspondence"
+    },
+    {
+      "id": "KDF-088",
+      "timestamp": "2023-09-22 07:44:15 UTC (= 16:44:15 KST)",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1566 - Phishing",
+      "description": "Victim 1 sends screenshot of payment + repeated decryption request",
+      "source_artifact": "Outlook OST mailbox content",
+      "evidence_keywords": [
+        "screenshot",
+        "decryption"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-72"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P13_victim1_correspondence"
+    },
+    {
+      "id": "KDF-089",
+      "timestamp": "2023-09-22 07:51:23 UTC (= 16:51:23 KST)",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Suspect sends 0.005 ETH commission to accomplice (per-victim revenue share, ~10% of 0.003 BTC)",
+      "source_artifact": "Blockchain (Etherscan)",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-73"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P14_revenue_share_1"
+    },
+    {
+      "id": "KDF-090",
+      "timestamp": "2023-09-22 08:04:07 UTC (= 17:04:07 KST)",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Victim 2 sends 0.003 BTC to suspect's MYBITCOIN wallet (via Binance exchange)",
+      "source_artifact": "Blockchain",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-74"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P15_victim2_payment"
+    },
+    {
+      "id": "KDF-091",
+      "timestamp": "2023-09-22 10:06:09 UTC (= 19:06:09 KST)",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1566 - Phishing",
+      "description": "Victim 2 (mugimyeong85@gmail.com) sends payment confirmation email",
+      "source_artifact": "Outlook OST mailbox content",
+      "evidence_keywords": [
+        "mugimyeong85",
+        "everyrecover56"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-75"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P15_victim2_correspondence"
+    },
+    {
+      "id": "KDF-092",
+      "timestamp": "2023-09-22 12:04:35 UTC (= 21:04:35 KST)",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1566 - Phishing",
+      "description": "Victim 2 sends screenshot + decryption request",
+      "source_artifact": "Outlook OST mailbox content",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-76"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P15_victim2_correspondence"
+    },
+    {
+      "id": "KDF-093",
+      "timestamp": "2023-09-22 12:11:59 UTC (= 21:11:59 KST)",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Suspect sends second 0.005 ETH commission to accomplice (per victim 2 payment)",
+      "source_artifact": "Blockchain",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-77"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P16_revenue_share_2"
+    },
+    {
+      "id": "KDF-094",
+      "timestamp": "2023-09-22T18:37:25.339399Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "휴일 랜섬웨어 공격량 30 급증 연휴 기업 보안 지키려면 │ 매거진한경",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "18:37",
+        "18:37:25",
+        "18:37:28",
+        "18:37:32",
+        "18:37:44",
+        "2023-09-22",
+        "2023-09-22T18:37:25.339399Z",
+        "2023-09-22T18:37:28.463823Z",
+        "2023-09-22T18:37:32.421284Z",
+        "2023-09-22T18:37:44.445580Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-59",
+        "docx-58",
+        "docx-61",
+        "docx-60"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Research"
+    },
+    {
+      "id": "KDF-095",
+      "timestamp": "2023-09-23 (later)",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Converted BTC arrives at accomplice's BTC wallet bc1qpd2k6rguqsqe7wk4f8kq59yyl7mm8pg6f745q4",
+      "source_artifact": "Blockchain (Skybridge Explorer)",
+      "evidence_keywords": [
+        "Skybridge",
+        "bc1qpd2k"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-81"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P17_accomplice_laundering"
+    },
+    {
+      "id": "KDF-096",
+      "timestamp": "2023-09-23 (post-swap)",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Accomplice forwards 0.0003 BTC to Binance Hot Wallet (cashout); residual to 1MMMkQRp8gnjFUD5XPSdVZDX9USMcDPWQQ",
+      "source_artifact": "Blockchain",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-82"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P17_accomplice_laundering"
+    },
+    {
+      "id": "KDF-097",
+      "timestamp": "2023-09-23 03:05:54.1696481",
+      "mitre_tactic": "Impact",
+      "mitre_technique": "T1486 - Data Encrypted for Impact",
+      "description": "AppCompatCache: ransom.exe",
+      "source_artifact": "Registry",
+      "evidence_keywords": [
+        "2023-09-23 03:05:54.1696481",
+        "2023-09-23",
+        "03:05",
+        "03:05:54",
+        "ransom.exe",
+        "AppCompatCache"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-68"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Weapon Post-Attack"
+    },
+    {
+      "id": "KDF-098",
+      "timestamp": "2023-09-23 14:21:35 UTC",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Accomplice's secondary wallet sends 0.00849 wBTC to Skybridge Smart Contract (Swingby bridge) for wBTC->BTC conversion",
+      "source_artifact": "Blockchain (Skybridge Smart Contract 0x92c95b6227a9f0B4602649BD83F83aDC48dae903)",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-79"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P17_accomplice_laundering"
+    },
+    {
+      "id": "KDF-099",
+      "timestamp": "2023-09-23 14:25:59 UTC",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Skybridge returns 105.88 SWINGBY tokens as swap fee rebate to accomplice's wallet",
+      "source_artifact": "Blockchain",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-80"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P17_accomplice_laundering"
+    },
+    {
+      "id": "KDF-100",
+      "timestamp": "2023-09-26 12:03 KST",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Third unidentified victim sends 0.003 BTC to suspect's MYBITCOIN wallet (PC was imaged Sep 23 - victim identity not in current image)",
+      "source_artifact": "Blockchain (publicly visible) - external evidence",
+      "evidence_keywords": [],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-83"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P18_post_imaging"
+    }
+  ]
+}

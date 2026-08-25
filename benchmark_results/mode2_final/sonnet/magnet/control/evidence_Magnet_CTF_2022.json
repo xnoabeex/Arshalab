@@ -1,0 +1,5318 @@
+{
+  "case_id": "case_20260323_032324",
+  "case_name": "Magnet_CTF_2022",
+  "incident_window": {
+    "start": "2022-02-01",
+    "end": "2022-02-14"
+  },
+  "anchors_used": [
+    "auth_logon_interactive_type2",
+    "auth_logon_network_type3",
+    "auth_logon_rdp_type10",
+    "auth_logon_service_type5",
+    "auth_logon_unlock_type7",
+    "auth_logon_failures_4625",
+    "auth_explicit_cred_4648",
+    "auth_priv_assigned_4672",
+    "auth_account_created_4720",
+    "auth_account_enabled_4722",
+    "auth_account_disabled_4725",
+    "auth_account_deleted_4726",
+    "auth_account_modified_4738",
+    "auth_group_added_4732",
+    "auth_account_lockout_4740",
+    "auth_kerberos_tgt_4768",
+    "auth_kerberos_service_4769",
+    "auth_ntlm_4776",
+    "auth_logoff",
+    "proc_creation_4688",
+    "proc_termination_4689",
+    "svc_install_7045",
+    "svc_crashed_7034",
+    "svc_state_change",
+    "svc_starttype_changed_7040",
+    "tasks_created_4698",
+    "tasks_deleted_4699",
+    "tasks_lifecycle",
+    "ps_scriptblock_4104",
+    "ps_module_4103",
+    "ps_errors_4100",
+    "ps_engine_lifecycle",
+    "wmi_subscription",
+    "applocker_audited",
+    "applocker_blocked",
+    "def_threat_detected_1116",
+    "def_action_taken_1117",
+    "def_action_failed_1118",
+    "def_config_change_5007",
+    "def_realtime_disabled",
+    "def_engine_update",
+    "audit_log_cleared_1102",
+    "audit_policy_changed_4719",
+    "fw_stopped_5025",
+    "time_changed_4616",
+    "net_connections_5156",
+    "fw_rule_added_4946",
+    "fw_rule_modified_4947",
+    "fw_rule_deleted_4948",
+    "fw_setting_changed",
+    "dhcp_auth_50036_50037",
+    "usb_attach_driverframeworks",
+    "usb_kernel_pnp_install",
+    "device_install_recognition",
+    "device_setupapi_events",
+    "rdp_session_lifecycle",
+    "rdp_connection_manager",
+    "rdp_disconnect_reasons",
+    "smb_share_access",
+    "file_audit_access_4663",
+    "object_handle_request_4656",
+    "object_deleted_4660",
+    "permissions_changed_4670",
+    "registry_audit_4657",
+    "mft_ps1_files",
+    "mft_bat_files",
+    "mft_lnk_files",
+    "mft_sys_drivers",
+    "mft_msi_installers",
+    "mft_archive_files",
+    "mft_exe_files",
+    "mft_user_writable_dirs",
+    "mft_alternate_data_streams",
+    "usnjrnl_recent_changes",
+    "reg_persistence_master",
+    "reg_image_file_execution_options",
+    "reg_appinit_dlls",
+    "reg_winlogon_helpers",
+    "mft_startup_folders",
+    "reg_user_context",
+    "app_crashes_1000",
+    "app_hangs_1002",
+    "wer_reports_1001",
+    "prefetch_top",
+    "shimcache_top",
+    "amcache_top",
+    "lnk_recent_files",
+    "jumplist_recent",
+    "srum_network_usage",
+    "browser_raw_history",
+    "browser_downloads_searches",
+    "app_communication",
+    "app_crypto_finance",
+    "app_remote_access",
+    "app_antiforensic",
+    "app_archive_tools",
+    "app_email_client",
+    "suspicious_indicators_universal"
+  ],
+  "total_records": 798,
+  "errors": 0,
+  "evidence_by_anchor": {
+    "auth_logon_interactive_type2": [
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:36.9811567",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:37.0789065",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:37.0789085",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:37.0832089",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:37.1324642",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:37.2205927",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:37.3855093",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:37.3950907",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:37.4407438",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:37.4407607",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:37.9256481",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:38.1139696",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:46.2581373",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:47.3861156",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2022-02-04 07:02:53.8499109",
+        "event_id": 4624,
+        "channel": "Security"
+      }
+    ],
+    "auth_logon_network_type3": [
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2022-02-04 07:02:36.9811567",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2022-02-04 07:02:37.0789065",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2022-02-04 07:02:37.0789085",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2022-02-04 07:02:37.0832089",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2022-02-04 07:02:37.1324642",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2022-02-04 07:02:37.2205927",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2022-02-04 07:02:37.3855093",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2022-02-04 07:02:37.3950907",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2022-02-04 07:02:37.4407438",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2022-02-04 07:02:37.4407607",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2022-02-04 07:02:37.9256481",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2022-02-04 07:02:38.1139696",
+        "event_id": 4624,
+        "channel": "Security"
+      }
+    ],
+    "auth_logon_rdp_type10": [
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2022-02-04 07:02:36.9811567",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2022-02-04 07:02:37.0789065",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2022-02-04 07:02:37.0789085",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2022-02-04 07:02:37.0832089",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2022-02-04 07:02:37.1324642",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2022-02-04 07:02:37.2205927",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2022-02-04 07:02:37.3855093",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2022-02-04 07:02:37.3950907",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2022-02-04 07:02:37.4407438",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2022-02-04 07:02:37.4407607",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2022-02-04 07:02:37.9256481",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2022-02-04 07:02:38.1139696",
+        "event_id": 4624,
+        "channel": "Security"
+      }
+    ],
+    "auth_logon_service_type5": [
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2022-02-04 07:02:34.2776448",
+        "event_id": 12,
+        "channel": "System"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2022-02-04 07:02:34.2778220",
+        "event_id": 153,
+        "channel": "System"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2022-02-04 07:02:34.2778675",
+        "event_id": 26,
+        "channel": "System"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2022-02-04 07:02:34.2778821",
+        "event_id": 32,
+        "channel": "System"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2022-02-04 07:02:34.2779437",
+        "event_id": 20,
+        "channel": "System"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2022-02-04 07:02:34.2779796",
+        "event_id": 238,
+        "channel": "System"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2022-02-04 07:02:34.2779800",
+        "event_id": 25,
+        "channel": "System"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2022-02-04 07:02:34.2779803",
+        "event_id": 27,
+        "channel": "System"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2022-02-04 07:02:34.2780367",
+        "event_id": 30,
+        "channel": "System"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2022-02-04 07:02:34.2786028",
+        "event_id": 440,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      }
+    ],
+    "auth_logon_unlock_type7": [
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2022-02-04 07:02:36.9811567",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2022-02-04 07:02:37.0789065",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2022-02-04 07:02:37.0789085",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2022-02-04 07:02:37.0832089",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2022-02-04 07:02:37.1324642",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2022-02-04 07:02:37.2205927",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2022-02-04 07:02:37.3855093",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2022-02-04 07:02:37.3950907",
+        "event_id": 4624,
+        "channel": "Security"
+      }
+    ],
+    "auth_logon_failures_4625": [
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-04 07:02:53.9491612",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-04 07:02:53.9491612",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-04 07:03:51.2235879",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-04 07:03:51.2235879",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-09 03:45:32.7218427",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-09 03:45:32.7218427",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-09 03:52:50.6201706",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-09 03:52:50.6201706",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-11 22:46:09.7189557",
+        "event_id": 4625,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-11 22:46:09.7189557",
+        "event_id": 4625,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-12 22:47:44.5786488",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-12 22:47:44.5786488",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-12 23:17:10.5538087",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2022-02-12 23:17:10.5538087",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      }
+    ],
+    "auth_explicit_cred_4648": [
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 22:47:43.3308355",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 22:47:43.3308355",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 22:47:44.0583470",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 22:47:44.0583470",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 22:47:44.1429250",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 22:47:44.1429250",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 22:47:51.4059172",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 22:47:51.4059172",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 22:47:58.3365653",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 22:47:58.3365653",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 22:47:58.4697071",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 22:47:58.4697071",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 23:17:09.2888503",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 23:17:09.2888503",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 23:17:09.9860246",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 23:17:09.9860246",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 23:17:10.0620029",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 23:17:10.0620029",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 23:17:11.8443741",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 23:17:11.8443741",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 23:17:20.0307520",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 23:17:20.0307520",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 23:17:20.1446992",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2022-02-12 23:17:20.1446992",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      }
+    ],
+    "auth_priv_assigned_4672": [
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:25:56.0076948",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:25:56.0076948",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:26:18.1402110",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:26:18.1402110",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:32:09.4731863",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:32:09.4731863",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:32:13.2712844",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:32:13.2712844",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:33:03.2920452",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:33:03.2920452",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:33:49.2919967",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:33:49.2919967",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:33:49.5413747",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:33:49.5413747",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:36:50.3061898",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:36:50.3061898",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:36:52.0479170",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:36:52.0479170",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:37:28.4638869",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2022-02-12 23:37:28.4638869",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "authentication"
+      }
+    ],
+    "auth_account_created_4720": [
+      {
+        "_anchor": "auth_account_created_4720",
+        "timestamp": "2022-02-12 01:29:43.1362394",
+        "event_id": 4720,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "account_management"
+      }
+    ],
+    "auth_account_enabled_4722": [
+      {
+        "_anchor": "auth_account_enabled_4722",
+        "timestamp": "2022-02-12 01:29:43.1595265",
+        "event_id": 4722,
+        "channel": "Security"
+      }
+    ],
+    "auth_account_disabled_4725": [],
+    "auth_account_deleted_4726": [],
+    "auth_account_modified_4738": [
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2022-02-11 22:46:12.9291981",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2022-02-12 01:29:43.1596196",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2022-02-12 02:06:06.5576887",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2022-02-12 02:17:18.4143172",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2022-02-12 22:47:51.3962717",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2022-02-12 22:47:58.3323862",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2022-02-12 22:47:58.4630834",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2022-02-12 23:17:11.8291610",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2022-02-12 23:17:20.0273602",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2022-02-12 23:17:20.1395408",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "account_management"
+      }
+    ],
+    "auth_group_added_4732": [
+      {
+        "_anchor": "auth_group_added_4732",
+        "timestamp": "2022-02-12 01:37:07.8274813",
+        "event_id": 4732,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_group_added_4732",
+        "timestamp": "2022-02-12 01:37:18.5367536",
+        "event_id": 4732,
+        "channel": "Security"
+      }
+    ],
+    "auth_account_lockout_4740": [],
+    "auth_kerberos_tgt_4768": [],
+    "auth_kerberos_service_4769": [],
+    "auth_ntlm_4776": [],
+    "auth_logoff": [
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-04 07:16:34.5129543",
+        "event_id": 4647,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-04 07:16:35.2091829",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-05 01:10:46.9668749",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-05 01:10:46.9669476",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-05 01:11:11.7644740",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-05 01:11:11.7645387",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-05 01:11:11.7646412",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-05 01:11:11.7646451",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-05 07:20:17.5809340",
+        "event_id": 4647,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-05 07:20:19.4521913",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-06 06:26:29.8555253",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-06 06:26:29.8556694",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-06 06:26:38.2607942",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-06 06:26:38.2608059",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2022-02-06 06:26:38.2609330",
+        "event_id": 4634,
+        "channel": "Security"
+      }
+    ],
+    "proc_creation_4688": [
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:02:35.5384668",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:02:35.5406556",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:02:36.2326407",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:02:36.6783854",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:02:36.7501350",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:02:36.8173408",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:02:36.8587613",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:02:36.8605975",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:02:36.8641231",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:02:36.8792483",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:02:36.9127207",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:02:36.9477804",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:03:42.0049594",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:03:42.0071023",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:03:42.1351883",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:03:42.6235377",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:03:45.5108031",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:03:45.7185802",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:03:45.7201549",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2022-02-04 07:03:45.7236057",
+        "event_id": 4688,
+        "channel": "Security"
+      }
+    ],
+    "proc_termination_4689": [],
+    "svc_install_7045": [
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-04 07:05:53.1678802",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-04 07:06:23.8367714",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-04 07:06:23.8523948",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-06 06:28:49.7262351",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-06 06:28:49.7312199",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-06 07:15:35.8444968",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-06 07:22:40.9118883",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-09 03:42:56.9297066",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-09 03:42:56.9331688",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-09 04:17:50.5453456",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-10 05:55:49.3583488",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-12 04:30:13.8560210",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-12 22:54:09.9161001",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-12 22:54:09.9210856",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2022-02-12 23:33:49.8141627",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      }
+    ],
+    "svc_crashed_7034": [],
+    "svc_state_change": [
+      {
+        "_anchor": "svc_state_change",
+        "timestamp": "2022-02-04 07:03:03.9828483",
+        "event_id": 7036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_state_change",
+        "timestamp": "2022-02-04 07:03:43.2630495",
+        "event_id": 7036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_state_change",
+        "timestamp": "2022-02-09 03:45:28.5121418",
+        "event_id": 7036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_state_change",
+        "timestamp": "2022-02-09 03:52:46.4339701",
+        "event_id": 7036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_state_change",
+        "timestamp": "2022-02-12 22:47:39.2922635",
+        "event_id": 7036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_state_change",
+        "timestamp": "2022-02-12 23:17:06.4809970",
+        "event_id": 7036,
+        "channel": "System"
+      }
+    ],
+    "svc_starttype_changed_7040": [
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:02:37.7499303",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:03:51.7102864",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:03:51.7259071",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:04:01.0624465",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:04:01.0624465",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:05:40.9702846",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:05:42.8608562",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:05:42.8764770",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:05:50.1247822",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:06:17.2753971",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:07:51.9486929",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:07:58.0637647",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:07:59.0173323",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-04 07:10:03.6735444",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2022-02-05 01:11:07.4804027",
+        "event_id": 7040,
+        "channel": "System"
+      }
+    ],
+    "tasks_created_4698": [],
+    "tasks_deleted_4699": [],
+    "tasks_lifecycle": [],
+    "ps_scriptblock_4104": [
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-09 23:34:55.1225188",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-09 23:34:56.3562051",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-11 23:03:02.3163079",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-11 23:19:58.1369850",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-11 23:26:05.6992559",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-11 23:29:01.8370463",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-11 23:47:13.5220138",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-11 23:53:42.4382429",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-12 00:04:59.5820164",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-12 00:17:50.1891195",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-12 00:17:50.5600513",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-12 00:17:50.6966778",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-12 00:17:51.6228952",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-12 00:17:51.8757481",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2022-02-12 00:49:24.8898832",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      }
+    ],
+    "ps_module_4103": [
+      {
+        "_anchor": "ps_module_4103",
+        "timestamp": "2022-02-09 23:34:55.6059197",
+        "event_id": 4103,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_module_4103",
+        "timestamp": "2022-02-09 23:34:56.7107594",
+        "event_id": 4103,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_module_4103",
+        "timestamp": "2022-02-11 23:19:58.2567379",
+        "event_id": 4103,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_module_4103",
+        "timestamp": "2022-02-11 23:25:50.6382686",
+        "event_id": 4103,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_module_4103",
+        "timestamp": "2022-02-11 23:26:05.8089323",
+        "event_id": 4103,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_module_4103",
+        "timestamp": "2022-02-11 23:29:02.0022328",
+        "event_id": 4103,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_module_4103",
+        "timestamp": "2022-02-11 23:47:13.6710038",
+        "event_id": 4103,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_module_4103",
+        "timestamp": "2022-02-11 23:53:42.6072503",
+        "event_id": 4103,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_module_4103",
+        "timestamp": "2022-02-12 00:04:59.7328120",
+        "event_id": 4103,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_module_4103",
+        "timestamp": "2022-02-12 22:53:03.6210312",
+        "event_id": 4103,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      }
+    ],
+    "ps_errors_4100": [
+      {
+        "_anchor": "ps_errors_4100",
+        "timestamp": "2022-02-06 07:16:30.6409990",
+        "event_id": 4100,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_errors_4100",
+        "timestamp": "2022-02-10 00:06:34.1865698",
+        "event_id": 4100,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_errors_4100",
+        "timestamp": "2022-02-10 00:06:35.2845073",
+        "event_id": 4100,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_errors_4100",
+        "timestamp": "2022-02-10 00:37:43.0732055",
+        "event_id": 4100,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_errors_4100",
+        "timestamp": "2022-02-11 23:00:54.5365158",
+        "event_id": 4100,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_errors_4100",
+        "timestamp": "2022-02-11 23:00:56.3224213",
+        "event_id": 4100,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_errors_4100",
+        "timestamp": "2022-02-11 23:01:26.6133083",
+        "event_id": 4100,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_errors_4100",
+        "timestamp": "2022-02-11 23:01:28.2708327",
+        "event_id": 4100,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_errors_4100",
+        "timestamp": "2022-02-12 22:49:57.0276421",
+        "event_id": 4100,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_errors_4100",
+        "timestamp": "2022-02-12 22:50:00.3629319",
+        "event_id": 4100,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      }
+    ],
+    "ps_engine_lifecycle": [
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2022-02-04 07:05:55.8649350",
+        "event_id": 28115,
+        "channel": "Microsoft-Windows-Shell-Core/Operational"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2022-02-04 07:05:55.8689172",
+        "event_id": 28115,
+        "channel": "Microsoft-Windows-Shell-Core/Operational"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2022-02-04 07:05:56.0348398",
+        "event_id": 28115,
+        "channel": "Microsoft-Windows-Shell-Core/Operational"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2022-02-04 07:05:56.0379998",
+        "event_id": 28115,
+        "channel": "Microsoft-Windows-Shell-Core/Operational"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2022-02-04 07:15:52.8431599",
+        "event_id": 800,
+        "channel": "Microsoft-Windows-TaskScheduler/Maintenance"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2022-02-04 07:15:53.7185483",
+        "event_id": 800,
+        "channel": "Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider/Operational"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2022-02-04 07:15:53.7191481",
+        "event_id": 800,
+        "channel": "Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider/Operational"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2022-02-04 07:15:53.7197899",
+        "event_id": 800,
+        "channel": "Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider/Operational"
+      }
+    ],
+    "wmi_subscription": [
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2022-02-04 07:02:47.7810029",
+        "event_id": 5861,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2022-02-04 07:02:47.9215723",
+        "event_id": 5859,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2022-02-04 07:02:52.7908627",
+        "event_id": 5857,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2022-02-04 07:02:52.8015272",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2022-02-04 07:02:52.8024844",
+        "event_id": 5857,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2022-02-04 07:02:52.8081321",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2022-02-04 07:03:01.4547097",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2022-02-04 07:03:01.5292941",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2022-02-04 07:03:08.1684786",
+        "event_id": 5857,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2022-02-04 07:03:52.1408748",
+        "event_id": 5857,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      }
+    ],
+    "applocker_audited": [
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2022-02-06 06:26:38.9866744",
+        "event_id": 8003,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2022-02-06 07:56:06.4761630",
+        "event_id": 8003,
+        "channel": "System"
+      },
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2022-02-09 03:55:42.0513754",
+        "event_id": 8003,
+        "channel": "System"
+      },
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2022-02-11 01:23:17.6037666",
+        "event_id": 8003,
+        "channel": "Microsoft-Windows-WLAN-AutoConfig/Operational"
+      },
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2022-02-11 22:48:04.2703552",
+        "event_id": 8003,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2022-02-11 23:28:14.5924343",
+        "event_id": 8003,
+        "channel": "Microsoft-Windows-Store/Operational"
+      }
+    ],
+    "applocker_blocked": [
+      {
+        "_anchor": "applocker_blocked",
+        "timestamp": "2022-02-04 07:03:33.5217793",
+        "event_id": 8004,
+        "channel": "Microsoft-Windows-UserPnp/DeviceInstall"
+      },
+      {
+        "_anchor": "applocker_blocked",
+        "timestamp": "2022-02-09 03:45:10.4408156",
+        "event_id": 8004,
+        "channel": "Microsoft-Windows-UserPnp/DeviceInstall"
+      },
+      {
+        "_anchor": "applocker_blocked",
+        "timestamp": "2022-02-09 03:52:14.4820567",
+        "event_id": 8004,
+        "channel": "Microsoft-Windows-UserPnp/DeviceInstall"
+      },
+      {
+        "_anchor": "applocker_blocked",
+        "timestamp": "2022-02-12 22:47:21.4078321",
+        "event_id": 8004,
+        "channel": "Microsoft-Windows-UserPnp/DeviceInstall"
+      },
+      {
+        "_anchor": "applocker_blocked",
+        "timestamp": "2022-02-12 23:16:50.3564659",
+        "event_id": 8004,
+        "channel": "Microsoft-Windows-UserPnp/DeviceInstall"
+      }
+    ],
+    "def_threat_detected_1116": [
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-11 23:00:56.3207237",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-11 23:01:26.6102499",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-11 23:01:28.2686977",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-12 01:45:52.8832578",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-12 01:47:35.2532582",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-12 01:47:45.3634305",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-12 01:47:55.8459122",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-12 01:47:55.9160525",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-12 04:30:12.3573572",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-12 04:30:12.6470594",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-12 04:30:12.7736003",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-12 04:30:13.0093852",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-12 04:30:13.1905418",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-12 04:30:13.3862832",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2022-02-12 04:30:13.8479476",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      }
+    ],
+    "def_action_taken_1117": [
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2022-02-09 22:44:37.8591332",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2022-02-09 22:56:11.6285892",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2022-02-11 23:01:16.6415813",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2022-02-11 23:01:43.2099050",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2022-02-12 01:46:18.5970927",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2022-02-12 01:47:55.9092358",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2022-02-12 01:47:58.4128218",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2022-02-12 04:30:13.3771612",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2022-02-12 04:30:15.7741690",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2022-02-12 04:30:15.8169484",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2022-02-12 04:30:15.8212361",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-Windows Defender/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2022-02-12 18:11:23.2889326",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-PushNotification-Platform/Operational",
+        "computer": "DESKTOP-SKPTDIO",
+        "_bucket": "suspicious_events"
+      }
+    ],
+    "def_action_failed_1118": [],
+    "def_config_change_5007": [
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2022-02-04 07:05:42.6894842",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2022-02-04 07:05:46.1595005",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2022-02-04 07:05:46.1603118",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2022-02-04 07:05:46.1603173",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2022-02-04 07:05:52.5043087",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2022-02-04 07:05:52.5043220",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2022-02-04 07:06:46.1630648",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2022-02-04 07:06:46.1630747",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2022-02-05 01:11:20.6007122",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2022-02-05 01:11:20.6007201",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      }
+    ],
+    "def_realtime_disabled": [],
+    "def_engine_update": [
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2022-02-04 07:02:54.3778557",
+        "event_id": 2000,
+        "channel": "Microsoft-Windows-WebAuthN/Operational"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2022-02-04 07:03:06.9277930",
+        "event_id": 2000,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2022-02-04 07:03:33.7094264",
+        "event_id": 2001,
+        "channel": "Microsoft-Windows-WebAuthN/Operational"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2022-02-04 07:03:51.7121788",
+        "event_id": 2000,
+        "channel": "Microsoft-Windows-WebAuthN/Operational"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2022-02-04 07:03:51.8044180",
+        "event_id": 2000,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2022-02-04 07:05:55.6896927",
+        "event_id": 2000,
+        "channel": "Microsoft-Windows-Store/Operational"
+      }
+    ],
+    "audit_log_cleared_1102": [],
+    "audit_policy_changed_4719": [],
+    "fw_stopped_5025": [
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2022-02-05 01:12:04.3377527",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-AppXDeploymentServer/Operational"
+      },
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2022-02-05 01:12:05.0287779",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-AppXDeploymentServer/Operational"
+      },
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2022-02-09 06:38:43.5443389",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-AppXDeploymentServer/Operational"
+      }
+    ],
+    "time_changed_4616": [
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2022-02-09 03:39:03.0767264",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2022-02-09 03:39:03.0782109",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2022-02-09 03:39:03.0805467",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2022-02-09 13:16:51.5338510",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2022-02-10 16:59:00.0361144",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2022-02-12 08:09:10.0684581",
+        "event_id": 4616,
+        "channel": "Security"
+      }
+    ],
+    "net_connections_5156": [],
+    "fw_rule_added_4946": [],
+    "fw_rule_modified_4947": [],
+    "fw_rule_deleted_4948": [],
+    "fw_setting_changed": [],
+    "dhcp_auth_50036_50037": [
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2022-02-04 07:02:38.0519501",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2022-02-04 07:02:38.0520536",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2022-02-04 07:03:33.7041945",
+        "event_id": 50037,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2022-02-04 07:03:51.4150479",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2022-02-04 07:03:51.4151740",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2022-02-09 03:45:11.2424987",
+        "event_id": 50037,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2022-02-09 03:45:32.9962042",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2022-02-09 03:45:32.9963861",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2022-02-09 03:52:31.0736751",
+        "event_id": 50037,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2022-02-09 03:52:50.9111895",
+        "event_id": 50036,
+        "channel": "System"
+      }
+    ],
+    "usb_attach_driverframeworks": [
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-04 07:02:56.5402085",
+        "event_id": 10000,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-04 07:02:56.5416350",
+        "event_id": 10001,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-04 07:02:56.5475994",
+        "event_id": 10100,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-04 07:03:42.6850572",
+        "event_id": 10118,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-09 03:45:27.9090154",
+        "event_id": 10118,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-09 03:52:45.8623175",
+        "event_id": 10118,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-12 22:47:38.6863152",
+        "event_id": 10118,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-12 23:17:05.9088516",
+        "event_id": 10118,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-12 23:33:49.5093077",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-12 23:33:49.5162968",
+        "event_id": 442,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-12 23:33:49.5224700",
+        "event_id": 400,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-12 23:33:49.5364983",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-12 23:33:49.7923451",
+        "event_id": 10000,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-12 23:33:49.7955145",
+        "event_id": 10001,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2022-02-12 23:33:49.7988593",
+        "event_id": 10100,
+        "channel": "System"
+      }
+    ],
+    "usb_kernel_pnp_install": [
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2022-02-04 07:02:34.2796193",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2022-02-04 07:02:34.3541458",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2022-02-04 07:02:34.4061141",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2022-02-04 07:02:34.4063306",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2022-02-04 07:02:34.4064848",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2022-02-04 07:02:34.4176490",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2022-02-04 07:02:34.4177397",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2022-02-04 07:02:34.4222300",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2022-02-04 07:02:34.6795531",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2022-02-04 07:02:34.6796578",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      }
+    ],
+    "device_install_recognition": [],
+    "device_setupapi_events": [
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2022-02-04 07:02:56.5593421",
+        "event_id": 20003,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2022-02-04 07:02:56.5650526",
+        "event_id": 20003,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2022-02-04 07:02:56.5879080",
+        "event_id": 20003,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2022-02-04 07:03:10.3222576",
+        "event_id": 20003,
+        "channel": "System"
+      },
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2022-02-12 23:33:49.8188076",
+        "event_id": 20003,
+        "channel": "System"
+      }
+    ],
+    "rdp_session_lifecycle": [
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2022-02-04 07:03:46.8175868",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2022-02-04 07:03:46.8177113",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2022-02-04 07:03:50.5755123",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2022-02-04 07:05:50.6621819",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2022-02-04 07:05:50.7650139",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2022-02-05 01:10:47.2244666",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2022-02-05 01:10:47.3036507",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2022-02-06 06:26:31.5229188",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2022-02-06 06:26:31.6348518",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2022-02-09 03:45:34.2852413",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2022-02-09 03:45:34.3854028",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2022-02-09 03:52:52.1397365",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      }
+    ],
+    "rdp_connection_manager": [
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2022-02-04 07:02:37.2569959",
+        "event_id": 32,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2022-02-04 07:02:37.2609138",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2022-02-04 07:02:37.2615379",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2022-02-04 07:02:37.2616618",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2022-02-04 07:02:37.2617756",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2022-02-04 07:02:42.0988838",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2022-02-04 07:02:42.0990119",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2022-02-04 07:02:42.1479169",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2022-02-04 07:02:42.1483852",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2022-02-04 07:02:53.1269873",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2022-02-04 07:02:53.5022520",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2022-02-04 07:02:53.5023745",
+        "event_id": 34,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      }
+    ],
+    "rdp_disconnect_reasons": [
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2022-02-04 07:05:55.8358605",
+        "event_id": 100,
+        "channel": "Microsoft-Windows-StateRepository/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2022-02-04 07:06:01.4442572",
+        "event_id": 100,
+        "channel": "Microsoft-Windows-StateRepository/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2022-02-04 07:06:06.2164923",
+        "event_id": 100,
+        "channel": "Microsoft-Windows-StateRepository/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2022-02-04 07:06:06.4956509",
+        "event_id": 100,
+        "channel": "Microsoft-Windows-StateRepository/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2022-02-04 07:06:06.6188642",
+        "event_id": 100,
+        "channel": "Microsoft-Windows-StateRepository/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2022-02-04 07:06:15.4892073",
+        "event_id": 100,
+        "channel": "Microsoft-Windows-StateRepository/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2022-02-05 01:11:23.6803682",
+        "event_id": 100,
+        "channel": "Microsoft-Windows-StateRepository/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2022-02-05 01:11:25.5471752",
+        "event_id": 100,
+        "channel": "Microsoft-Windows-StateRepository/Operational"
+      }
+    ],
+    "smb_share_access": [],
+    "file_audit_access_4663": [],
+    "object_handle_request_4656": [],
+    "object_deleted_4660": [],
+    "permissions_changed_4670": [],
+    "registry_audit_4657": [],
+    "mft_ps1_files": [
+      {
+        "_anchor": "mft_ps1_files",
+        "timestamp": "2022-02-06 07:15:45.3852097",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Temp\\AI_70BB.ps1"
+      },
+      {
+        "_anchor": "mft_ps1_files",
+        "timestamp": "2022-02-06 07:15:45.3852097",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\ZeroTier, Inc\\ZeroTier One\\prerequisites\\file_deleter.ps1"
+      },
+      {
+        "_anchor": "mft_ps1_files",
+        "timestamp": "2022-02-11 23:19:23.2090504",
+        "file_path": ".\\Users\\Patrick\\Documents\\Minecraft\\goteem.ps1"
+      },
+      {
+        "_anchor": "mft_ps1_files",
+        "timestamp": "2022-02-11 23:25:57.5388308",
+        "file_path": ".\\Users\\Patrick\\Documents\\Minecraft\\goteem2.ps1"
+      }
+    ],
+    "mft_bat_files": [
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2022-02-03 02:32:23.8830985",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\98.0.1108.43\\show_third_party_software_licenses.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2022-02-03 02:32:23.8830985",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeCore\\98.0.1108.43\\show_third_party_software_licenses.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2022-02-05 01:36:10.4743985",
+        "file_path": ".\\Program Files\\WindowsApps\\7458BE2C.WorldofTanksBlitz_8.7.316.0_x64__x4tje2y229k00\\Data\\Gfx\\Particles\\halloween2019\\Bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2022-02-05 01:53:09.9651417",
+        "file_path": ".\\Program Files\\WindowsApps\\7458BE2C.WorldofTanksBlitz_8.7.316.0_x64__x4tje2y229k00\\Data\\Gfx\\Particles\\halloween2019\\Bat\\bat_one.txt"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2022-02-05 01:53:09.9655652",
+        "file_path": ".\\Program Files\\WindowsApps\\7458BE2C.WorldofTanksBlitz_8.7.316.0_x64__x4tje2y229k00\\Data\\Gfx\\Particles\\halloween2019\\Bat\\texture0.dx11.webp"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2022-02-05 01:53:09.9659360",
+        "file_path": ".\\Program Files\\WindowsApps\\7458BE2C.WorldofTanksBlitz_8.7.316.0_x64__x4tje2y229k00\\Data\\Gfx\\Particles\\halloween2019\\Bat\\texture0.tex"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2022-02-06 07:15:35.7898674",
+        "file_path": ".\\Program Files (x86)\\ZeroTier\\One\\zerotier-cli.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2022-02-06 07:15:35.7908665",
+        "file_path": ".\\Program Files (x86)\\ZeroTier\\One\\zerotier-idtool.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2022-02-06 07:48:24.3521658",
+        "file_path": ".\\Users\\Patrick\\Documents\\Minecraft\\start.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2022-02-09 16:32:13.0333286",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\Edge\\Application\\98.0.1108.50\\show_third_party_software_licenses.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2022-02-09 16:32:13.0333286",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeCore\\98.0.1108.50\\show_third_party_software_licenses.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2022-02-10 03:46:05.8423416",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Microsoft\\OneDrive\\22.022.0130.0001\\CollectSyncLogs.bat"
+      }
+    ],
+    "mft_lnk_files": [
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2022-02-04 02:00:41.4700341",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\note.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2022-02-04 02:00:41.5231781",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\Downloads.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2022-02-04 02:02:03.6257280",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\Uninstall a program.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2022-02-04 02:02:03.6287497",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\All Tasks.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2022-02-04 05:22:06.9795350",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\ms-gamingoverlay--startuptips-TitleId=Microsoft.4297127D64EC6_8wekyb3d8bbwe%21Minecraft&ProcessId=11180&WindowId=460276.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2022-02-04 05:31:51.5209919",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\ms-gamingoverlay--startuptips-TitleId=1791712750&ProcessId=13052&WindowId=656904.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2022-02-04 05:53:43.4033112",
+        "file_path": ".\\Users\\Patrick\\Desktop\\Discord.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2022-02-04 05:53:43.4159511",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Discord Inc\\Discord.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2022-02-04 06:01:08.9823897",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\ms-gamingoverlay--startuptips-AumId=1ED5AEA5.4160926B82DB_p2gbknwb5d8r2%21App&ProcessId=12980&WindowId=198334.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2022-02-04 06:23:45.3536946",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Logitech\\Logitech Options.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2022-02-04 06:24:48.7244550",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Logi\\Logi Bolt.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2022-02-04 06:27:08.7829631",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\ms-gamingoverlay--startuptips-TitleId=Microsoft.4297127D64EC6_8wekyb3d8bbwe%21Minecraft&ProcessId=17480&WindowId=1050160.lnk"
+      }
+    ],
+    "mft_sys_drivers": [
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2022-02-04 02:16:47.9370000",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.2201.8-0\\Drivers\\WdBoot.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2022-02-04 02:16:47.9550000",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.2201.8-0\\Drivers\\WdDevFlt.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2022-02-04 02:16:47.9880000",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.2201.8-0\\Drivers\\WdFilter.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2022-02-04 02:16:48.0130000",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.2201.8-0\\Drivers\\WdNisDrv.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2022-02-06 06:28:03.0010249",
+        "file_path": ".\\Windows\\System32\\DriverStore\\FileRepository\\gameflt.inf_amd64_10c518155fa47d97\\gameflt.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2022-02-06 06:28:03.0010249",
+        "file_path": ".\\Program Files\\WindowsApps\\Microsoft.GamingServices_3.62.11002.0_x64__8wekyb3d8bbwe\\Drivers\\gameflt.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2022-02-09 03:42:18.6480000",
+        "file_path": ".\\Windows\\System32\\drivers\\wd\\WdBoot.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2022-02-09 03:42:18.6480000",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.2201.10-0\\Drivers\\WdBoot.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2022-02-09 03:42:18.7110000",
+        "file_path": ".\\Windows\\System32\\drivers\\wd\\WdDevFlt.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2022-02-09 03:42:18.7110000",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.2201.10-0\\Drivers\\WdDevFlt.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2022-02-09 03:42:18.7960000",
+        "file_path": ".\\Windows\\System32\\drivers\\wd\\WdFilter.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2022-02-09 03:42:18.7960000",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.2201.10-0\\Drivers\\WdFilter.sys"
+      }
+    ],
+    "mft_msi_installers": [
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2022-02-06 07:14:10.0767923",
+        "file_path": ".\\Users\\Patrick\\Downloads\\ZeroTier One.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2022-02-06 07:14:10.0767923",
+        "file_path": ".\\Windows\\Installer\\a578cf8.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2022-02-06 07:15:35.3564786",
+        "file_path": ".\\Windows\\Installer\\a578cfd.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2022-02-06 07:37:18.5478613",
+        "file_path": ".\\Users\\Patrick\\AppData\\LocalLow\\Oracle\\Java\\jdk1.8.0_181_x64\\jdk1.8.0_18164.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2022-02-06 07:37:18.5478613",
+        "file_path": ".\\Windows\\Installer\\a6baf41.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2022-02-06 07:37:47.5034386",
+        "file_path": ".\\Windows\\Installer\\a6baf45.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2022-02-06 07:38:50.9933798",
+        "file_path": ".\\Windows\\Installer\\a6baf49.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2022-02-06 07:38:58.3709779",
+        "file_path": ".\\Users\\Patrick\\AppData\\LocalLow\\Oracle\\Java\\jdk1.8.0_181_x64\\au.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2022-02-12 02:12:16.6903086",
+        "file_path": ".\\Windows\\SysWOW64\\tightvnc-2.8.63-gpl-setup-64bit.msi"
+      }
+    ],
+    "mft_archive_files": [
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2022-02-04 06:01:40.7882682",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Packages\\1ED5AEA5.4160926B82DB_p2gbknwb5d8r2\\LocalState\\VungleSDK\\faf20ceb6783b1a8c3a7b09b2cba9a70\\fa155af3-8c48-4f70-919c-1ddd7b4d9299.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2022-02-04 06:01:40.7882682",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Packages\\1ED5AEA5.4160926B82DB_p2gbknwb5d8r2\\LocalState\\VungleSDK\\vungleDiskCache\\1056374b16153ec5b5771c566dc783ef2d69f58d0203fcde9bc3d7c98e9fd051_fa155af3-8c48-4f70-919c-1ddd7b4d9299.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2022-02-04 06:01:44.5696013",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Packages\\1ED5AEA5.4160926B82DB_p2gbknwb5d8r2\\LocalState\\VungleSDK\\91a9bddd7de57cab777ba43fe38cc819\\2cfe642e-3a88-496a-8a0e-c6bc58274236.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2022-02-04 06:01:48.6556438",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Packages\\1ED5AEA5.4160926B82DB_p2gbknwb5d8r2\\LocalState\\VungleSDK\\vungleDiskCache\\cae36c91236d06a736f66718c69e2ea925662c45173164532c0f8d289ea5444a_3ab118da-78d9-425f-8647-c87170b13645.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2022-02-04 06:01:48.6556438",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Packages\\1ED5AEA5.4160926B82DB_p2gbknwb5d8r2\\LocalState\\VungleSDK\\a8836623ed6185c729bca2ab71736ed5\\3ab118da-78d9-425f-8647-c87170b13645.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2022-02-04 06:27:34.0335736",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\.minecraft\\logs\\2022-02-03-1.log.gz"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2022-02-04 07:03:10.5598506",
+        "file_path": ".\\Windows\\System32\\drivers\\rtkhdasetting.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2022-02-05 01:19:32.4373995",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\.minecraft\\logs\\2022-02-03-2.log.gz"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2022-02-06 07:37:41.7715475",
+        "file_path": ".\\Program Files\\Java\\jdk1.8.0_181\\javafx-src.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2022-02-06 07:37:42.0650435",
+        "file_path": ".\\Program Files\\Java\\jdk1.8.0_181\\jre\\lib\\deploy\\ffjcext.zip"
+      }
+    ],
+    "mft_exe_files": [
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:22:23.4361550",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\98.0.1108.43\\cookie_exporter.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:22:23.4361550",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeCore\\98.0.1108.43\\cookie_exporter.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:22:55.4167041",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\98.0.1108.43\\msedge_proxy.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:22:55.4167041",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeCore\\98.0.1108.43\\msedge_proxy.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:23:09.1859793",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\98.0.1108.43\\elevation_service.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:23:09.1859793",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeCore\\98.0.1108.43\\elevation_service.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:23:09.4046740",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\98.0.1108.43\\identity_helper.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:23:09.4046740",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeCore\\98.0.1108.43\\identity_helper.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:23:09.4202988",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\98.0.1108.43\\BHO\\ie_to_edge_stub.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:23:09.4202988",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeCore\\98.0.1108.43\\BHO\\ie_to_edge_stub.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:23:09.7328757",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\98.0.1108.43\\msedge_pwa_launcher.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:23:09.7328757",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeCore\\98.0.1108.43\\msedge_pwa_launcher.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:23:09.8265497",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\98.0.1108.43\\msedgewebview2.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:23:09.8265497",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeCore\\98.0.1108.43\\msedgewebview2.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2022-02-03 07:23:22.2954637",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\98.0.1108.43\\msedge.exe"
+      }
+    ],
+    "mft_user_writable_dirs": [
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-02 07:09:10.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Google\\Chrome\\User Data\\PKIMetadata\\159\\ct_config.pb"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-02 07:09:10.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Google\\Chrome\\User Data\\PKIMetadata\\159\\manifest.json"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-02 07:09:10.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Google\\Chrome\\User Data\\PKIMetadata\\159\\_metadata\\verified_contents.json"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-02 14:22:24.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Google\\Chrome\\User Data\\OptimizationGuidePredictionModels\\OPTIMIZATION_TARGET_LANGUAGE_DETECTION_2202022222\\model.tflite"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-02 17:28:46.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Google\\Chrome\\User Data\\OnDeviceHeadSuggestModel\\20220128.424838780\\cr_en-us_2022-01-28_424838780_500000_index.bin"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-02 17:28:46.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Google\\Chrome\\User Data\\OnDeviceHeadSuggestModel\\20220128.424838780\\manifest.json"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-02 17:28:46.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Google\\Chrome\\User Data\\OnDeviceHeadSuggestModel\\20220128.424838780\\_metadata\\verified_contents.json"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-02 23:38:02.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Google\\Chrome\\User Data\\TrustTokenKeyCommitments\\2022.2.10.2\\LICENSE"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-02 23:38:02.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Google\\Chrome\\User Data\\TrustTokenKeyCommitments\\2022.2.6.2\\LICENSE"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-03 00:28:58.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Temp\\wct20A2.tmp"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-03 00:34:14.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Microsoft\\Edge\\User Data\\Edge Shopping\\2.0.0.1507\\shopping.js"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-03 00:34:16.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Microsoft\\Edge\\User Data\\Edge Shopping\\2.0.0.1507\\shoppingfre.js"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-03 00:34:18.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Microsoft\\Edge\\User Data\\Edge Shopping\\2.0.0.1507\\edge_checkout_page_validator.js"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-03 00:34:18.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Microsoft\\Edge\\User Data\\Edge Shopping\\2.0.0.1507\\edge_confirmation_page_validator.js"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2022-02-03 00:34:18.0000000",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Microsoft\\Edge\\User Data\\Edge Shopping\\2.0.0.1507\\edge_driver.js"
+      }
+    ],
+    "mft_alternate_data_streams": [
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2022-02-04 05:53:46.3409107",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\modules\\discord_utils-1\\discord_utils\\node_modules\\combined-stream\\lib"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2022-02-04 05:53:46.3430206",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\modules\\discord_utils-1\\discord_utils\\node_modules\\combined-stream"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2022-02-04 05:53:46.3890571",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\modules\\discord_utils-1\\discord_utils\\node_modules\\delayed-stream\\lib"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2022-02-04 05:53:46.3943405",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\modules\\discord_utils-1\\discord_utils\\node_modules\\delayed-stream"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2022-02-04 05:53:46.3976828",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\modules\\discord_utils-1\\discord_utils\\node_modules\\end-of-stream"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2022-02-04 05:53:46.8868948",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\modules\\discord_utils-1\\discord_utils\\node_modules\\get-stream"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2022-02-04 05:53:47.0691195",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\modules\\discord_utils-1\\discord_utils\\node_modules\\is-stream"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2022-02-04 05:53:47.1455381",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\modules\\discord_utils-1\\discord_utils\\node_modules\\merge-stream"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2022-02-04 05:53:47.2283148",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\modules\\discord_voice-5\\discord_voice\\node_modules\\get-stream"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2022-02-04 05:53:47.3464026",
+        "file_path": ".\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\modules\\discord_voice-5\\discord_voice\\node_modules\\is-stream"
+      }
+    ],
+    "usnjrnl_recent_changes": [
+      {
+        "_anchor": "usnjrnl_recent_changes"
+      }
+    ],
+    "reg_persistence_master": [
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-01-23 17:45:32.4332971",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-01-23 17:45:33.4957905",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/Packaged app-Execution",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-01-23 17:45:33.5114175",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-01-23 17:45:33.5114175",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-01-23 17:45:34.8395516",
+        "key_path": "ROOT\\Classes\\exefile\\shell\\open\\command",
+        "value_name": "(default)",
+        "value_data": "\"%1\" %*",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-04 06:40:05.9502204",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-04 06:40:05.9502204",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-04 06:40:05.9502204",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Cache",
+        "value_data": "%USERPROFILE%\\AppData\\Local\\Microsoft\\Windows\\INetCache",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-04 06:40:05.9502204",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Cookies",
+        "value_data": "%USERPROFILE%\\AppData\\Local\\Microsoft\\Windows\\INetCookies",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-04 06:40:43.4814424",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-04 06:42:40.5712600",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-04 06:42:40.5724804",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\StartupFolder",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-04 06:42:57.6674519",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "value_name": "SecurityHealth",
+        "value_data": "04-00-00-00-00-00-00-00-00-00-00-00",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-04 06:42:57.6674519",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "value_name": "LogiOptions",
+        "value_data": "02-00-00-00-00-00-00-00-00-00-00-00",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "SecurityHealth",
+        "value_data": "%windir%\\system32\\SecurityHealthSystray.exe",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "RTHDVCPL",
+        "value_data": "\"C:\\Program Files\\Realtek\\Audio\\HDA\\RtkNGUI64.exe\" -s",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "CxAgent",
+        "value_data": "\"C:\\Program Files\\Realtek\\Audio\\HDA\\CXAPOAgent64.exe\"",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "RtHDVBg_Session",
+        "value_data": "\"C:\\Program Files\\Realtek\\Audio\\HDA\\RAVBg64.exe\" /SESSION",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "LogiOptions",
+        "value_data": "C:\\Program Files\\Logitech\\LogiOptions\\LogiOptions.exe /noui",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-10 03:46:09.6966618",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks",
+        "value_data": "Created on: 2022-01-10 23:02:11.2492726",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-11 22:46:25.1504259",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-12 22:54:09.9190932",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "GamingServicesNet",
+        "value_data": "Gaming Services",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-12 22:54:09.9250751",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "GamingServices",
+        "value_data": "Gaming Services",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-12 23:17:13.3135897",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-System",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Directory-Services-SAM",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-12 23:18:14.7365405",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}\\Count",
+        "value_name": "{9R3995NO-1S9P-4S13-O827-48O24O6P7174}\\GnfxOne\\Svyr Rkcybere.yax",
+        "value_data": "{User Pinned}\\TaskBar\\File Explorer.lnk",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-12 23:33:49.5097252",
+        "key_path": "ROOT\\ControlSet001\\Enum\\USBSTOR",
+        "value_name": "Multiple",
+        "value_data": "Manufacturer: Ven_General Title: Prod_UDisk Version: Rev_5.00 SerialNumber: 6&2a67491b&0&_&0 DeviceName: General UDisk USB Device\u0000 DiskId: {e34d8416-8c59-11ec-a228-f894c2dfe804}",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2022-02-12 23:39:58.2092565",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: GamingServices Desc: Gaming Services",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "",
+        "hive": "SOFTWARE"
+      }
+    ],
+    "reg_image_file_execution_options": [
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-01-23 17:42:28.4794344",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "Wof",
+        "value_data": "Windows Overlay File System Filter Driver",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-01-23 17:42:28.7919283",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "exfat",
+        "value_data": "exFAT File System Driver",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-01-23 17:42:28.7919283",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "fastfat",
+        "value_data": "FAT12/16/32 File System Driver",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-01-23 17:42:28.9325933",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "cdfs",
+        "value_data": "CD/DVD File System Reader",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-01-23 17:45:32.4332971",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-01-23 17:45:33.4957905",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/Packaged app-Execution",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-01-23 17:45:33.5114175",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-01-23 17:45:33.5114175",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-01-23 17:45:34.8395516",
+        "key_path": "ROOT\\Classes\\exefile\\shell\\open\\command",
+        "value_name": "(default)",
+        "value_data": "\"%1\" %*",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-04 06:40:05.9502204",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-04 06:40:05.9502204",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-04 06:40:43.4814424",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-04 06:40:48.9957123",
+        "key_path": "ROOT\\ControlSet001\\Control\\BackupRestore\\FilesNotToBackup",
+        "value_name": "Memory Page File",
+        "value_data": "\\Pagefile.sys",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-04 06:42:40.5712600",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-04 07:02:34.2875083",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "WindowsTrustedRT",
+        "value_data": "Windows Trusted Execution Environment Class Extension",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "SecurityHealth",
+        "value_data": "%windir%\\system32\\SecurityHealthSystray.exe",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "RTHDVCPL",
+        "value_data": "\"C:\\Program Files\\Realtek\\Audio\\HDA\\RtkNGUI64.exe\" -s",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-05 01:16:34.0246457",
+        "key_path": "ROOT\\Software\\Microsoft\\Internet Explorer\\Main",
+        "value_name": "Disable Script Debugger",
+        "value_data": "yes",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-11 22:46:25.1504259",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-12 22:54:09.9190932",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "GamingServicesNet",
+        "value_data": "Gaming Services",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-12 22:54:09.9250751",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "GamingServices",
+        "value_data": "Gaming Services",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-12 23:18:14.7365405",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}\\Count",
+        "value_name": "{9R3995NO-1S9P-4S13-O827-48O24O6P7174}\\GnfxOne\\Svyr Rkcybere.yax",
+        "value_data": "{User Pinned}\\TaskBar\\File Explorer.lnk",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-12 23:33:49.8292727",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "WUDFWpdFs",
+        "value_data": "@wpdfs.inf,%WPDFS_SvcName%;WPD File System driver",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-12 23:39:58.9487382",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "Patrick",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2022-02-12 23:39:58.9487382",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-3341181097-1059518978-806882922-1001",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\LogiOptions",
+        "value_data": "Logitech Options",
+        "hive": "SOFTWARE"
+      }
+    ],
+    "reg_appinit_dlls": [
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-01-23 17:45:32.4332971",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-01-23 17:45:33.4957905",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/Packaged app-Execution",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-01-23 17:45:33.5114175",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-01-23 17:45:33.5114175",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-01-23 17:45:34.8395516",
+        "key_path": "ROOT\\Classes\\exefile\\shell\\open\\command",
+        "value_name": "(default)",
+        "value_data": "\"%1\" %*",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-04 06:40:05.9502204",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-04 06:40:05.9502204",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-04 06:40:43.4814424",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-04 06:41:49.1876070",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "edgeupdate",
+        "value_data": "Microsoft Edge Update Service (edgeupdate)",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-04 06:41:49.1948400",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "edgeupdatem",
+        "value_data": "Microsoft Edge Update Service (edgeupdatem)",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-04 06:42:40.5712600",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-04 07:03:32.2880030",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "gupdate",
+        "value_data": "Google Update Service (gupdate)",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-04 07:03:32.2880030",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "gupdatem",
+        "value_data": "Google Update Service (gupdatem)",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "SecurityHealth",
+        "value_data": "%windir%\\system32\\SecurityHealthSystray.exe",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "RTHDVCPL",
+        "value_data": "\"C:\\Program Files\\Realtek\\Audio\\HDA\\RtkNGUI64.exe\" -s",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-11 22:46:25.1504259",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-12 22:54:09.9190932",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "GamingServicesNet",
+        "value_data": "Gaming Services",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-12 22:54:09.9250751",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "GamingServices",
+        "value_data": "Gaming Services",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-12 23:39:58.2092565",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: edgeupdate Desc: Keeps your Microsoft software up to date. If this service is disabled or stopped, your Microsoft software will not be kept up to date, meaning security vulnerabilities that may ",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-12 23:39:58.9487382",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "Patrick",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2022-02-12 23:39:58.9487382",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-3341181097-1059518978-806882922-1001",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "",
+        "hive": "SOFTWARE"
+      }
+    ],
+    "reg_winlogon_helpers": [
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-01-23 17:45:32.4332971",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-01-23 17:45:33.4957905",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/Packaged app-Execution",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-01-23 17:45:33.4957905",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/EXE and DLL",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-01-23 17:45:33.4957905",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/MSI and Script",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-01-23 17:45:33.5114175",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-01-23 17:45:33.5114175",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-01-23 17:45:33.5114175",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Network-and-Sharing-Center/Diagnostic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-01-23 17:45:33.5270560",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-RemoteApp and Desktop Connections/Admin",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-01-23 17:45:33.5426720",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Winlogon/Diagnostic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-01-23 17:45:33.5426720",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Winlogon/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-01-23 17:45:34.8395516",
+        "key_path": "ROOT\\Classes\\exefile\\shell\\open\\command",
+        "value_name": "(default)",
+        "value_data": "\"%1\" %*",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-04 06:40:05.9502204",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-04 06:40:05.9502204",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-04 06:40:43.4814424",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-04 06:42:40.5712600",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "SecurityHealth",
+        "value_data": "%windir%\\system32\\SecurityHealthSystray.exe",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "RTHDVCPL",
+        "value_data": "\"C:\\Program Files\\Realtek\\Audio\\HDA\\RtkNGUI64.exe\" -s",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-11 22:46:25.1504259",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-12 22:54:09.9190932",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "GamingServicesNet",
+        "value_data": "Gaming Services",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-12 22:54:09.9250751",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "GamingServices",
+        "value_data": "Gaming Services",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-12 23:17:13.3135897",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-System",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Winlogon",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-12 23:39:58.9487382",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "Patrick",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-12 23:39:58.9487382",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-3341181097-1059518978-806882922-1001",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-12 23:39:58.9487382",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoAdminLogon",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2022-02-12 23:39:58.9487382",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "DefaultUserName",
+        "value_data": "Patrick",
+        "hive": "SOFTWARE"
+      }
+    ],
+    "mft_startup_folders": [
+      {
+        "_anchor": "mft_startup_folders",
+        "timestamp": "2022-02-04 07:06:12.8076910",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\desktop.ini"
+      },
+      {
+        "_anchor": "mft_startup_folders",
+        "timestamp": "2022-02-04 07:06:12.8076910",
+        "file_path": ".\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
+      }
+    ],
+    "reg_user_context": [
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-01-23 17:45:32.4332971",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-01-23 17:45:33.4957905",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/Packaged app-Execution",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-01-23 17:45:33.5114175",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-01-23 17:45:33.5114175",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-01-23 17:45:34.8395516",
+        "key_path": "ROOT\\Classes\\exefile\\shell\\open\\command",
+        "value_name": "(default)",
+        "value_data": "\"%1\" %*",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-04 06:37:34.4053009",
+        "key_path": "ROOT\\ControlSet001\\Control\\ComputerName\\ComputerName",
+        "value_name": "ComputerName",
+        "value_data": "DESKTOP-SKPTDIO",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-04 06:39:33.9013724",
+        "key_path": "ROOT\\Setup\\Source OS (Updated on 2/3/2022 22:10:10)",
+        "value_name": "RegisteredOwner",
+        "value_data": "Patrick",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-04 06:40:05.9502204",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-04 06:40:05.9502204",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-04 06:40:43.4814424",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-04 06:42:40.5712600",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "SecurityHealth",
+        "value_data": "%windir%\\system32\\SecurityHealthSystray.exe",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-05 01:15:05.6700466",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "RTHDVCPL",
+        "value_data": "\"C:\\Program Files\\Realtek\\Audio\\HDA\\RtkNGUI64.exe\" -s",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-11 22:46:25.1504259",
+        "key_path": "ROOT\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-12 22:54:09.9190932",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "GamingServicesNet",
+        "value_data": "Gaming Services",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-12 22:54:09.9250751",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "GamingServices",
+        "value_data": "Gaming Services",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-12 23:17:11.8863903",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion",
+        "value_name": "RegisteredOwner",
+        "value_data": "Patrick",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-12 23:17:11.8863903",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion",
+        "value_name": "ProductName",
+        "value_data": "Windows 10 Home",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-12 23:17:11.8863903",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion",
+        "value_name": "InstallDate",
+        "value_data": "2022-02-04 07:05:47.0000000",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-12 23:17:11.8863903",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion",
+        "value_name": "CurrentBuildNumber",
+        "value_data": "22543",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-12 23:39:53.3644041",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI",
+        "value_name": "LastLoggedOnUser",
+        "value_data": ".\\Patrick",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-12 23:39:58.2092565",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: edgeupdate Desc: Keeps your Microsoft software up to date. If this service is disabled or stopped, your Microsoft software will not be kept up to date, meaning security vulnerabilities that may ",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-12 23:39:58.9487382",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "Patrick",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-12 23:39:58.9487382",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-3341181097-1059518978-806882922-1001",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2022-02-12 23:39:58.9487382",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "DefaultUserName",
+        "value_data": "Patrick",
+        "hive": "SOFTWARE"
+      }
+    ],
+    "app_crashes_1000": [
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2022-02-04 07:02:54.4456271",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Privacy-Auditing/Operational"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2022-02-04 07:02:54.4979200",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Privacy-Auditing/Operational"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2022-02-04 07:03:00.5203841",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Kernel-PnP/Device Management"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2022-02-04 07:03:00.5234913",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Kernel-PnP/Device Management"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2022-02-04 07:03:00.6254626",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Kernel-PnP/Device Management"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2022-02-04 07:03:00.7136876",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Kernel-PnP/Device Management"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2022-02-04 07:03:00.7982753",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Kernel-PnP/Device Management"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2022-02-04 07:03:00.8778675",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Kernel-PnP/Device Management"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2022-02-04 07:03:00.9079388",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Kernel-PnP/Device Management"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2022-02-04 07:03:00.9382789",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Kernel-PnP/Device Management"
+      }
+    ],
+    "app_hangs_1002": [
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2022-02-04 07:02:54.6866753",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2022-02-04 07:03:08.0295401",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2022-02-04 07:03:08.3699310",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2022-02-04 07:03:11.5684466",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2022-02-04 07:03:52.3579123",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2022-02-04 07:04:14.3108596",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      }
+    ],
+    "wer_reports_1001": [
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2022-02-04 07:05:46.3755705",
+        "event_id": 1001,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2022-02-04 07:05:50.3888590",
+        "event_id": 1001,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2022-02-04 07:05:51.2080976",
+        "event_id": 1001,
+        "channel": "Microsoft-Windows-Resource-Exhaustion-Detector/Operational"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2022-02-04 07:07:48.7540872",
+        "event_id": 1001,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2022-02-04 07:16:26.8124716",
+        "event_id": 1001,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2022-02-05 01:10:57.7853870",
+        "event_id": 1001,
+        "channel": "Application"
+      }
+    ],
+    "prefetch_top": [
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:06:25",
+        "executable_name": "BACKGROUNDTASKHOST.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\BACKGROUNDTASKHOST.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:06:25",
+        "executable_name": "RUNTIMEBROKER.EXE",
+        "run_count": 3,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\RUNTIMEBROKER.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:06:25",
+        "executable_name": "RUNTIMEBROKER.EXE",
+        "run_count": 3,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\RUNTIMEBROKER.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:06:25",
+        "executable_name": "SEARCHHOST.EXE",
+        "run_count": 4,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEMAPPS\\MICROSOFTWINDOWS.CLIENT.CBS_CW5N1H2TXYEWY\\SEARCHHOST.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:06:25",
+        "executable_name": "STARTMENUEXPERIENCEHOST.EXE",
+        "run_count": 4,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEMAPPS\\MICROSOFT.WINDOWS.STARTMENUEXPERIENCEHOST_CW5N1H2TXYEWY\\STARTMENUEXPERIENCEHOST.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:06:25",
+        "executable_name": "SVCHOST.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\SVCHOST.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:16",
+        "executable_name": "SEARCHFILTERHOST.EXE",
+        "run_count": 9,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\SEARCHFILTERHOST.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:19",
+        "executable_name": "SVCHOST.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\SVCHOST.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:40",
+        "executable_name": "SLUI.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\SLUI.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:40",
+        "executable_name": "SPPEXTCOMOBJ.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\SPPEXTCOMOBJ.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:43",
+        "executable_name": "DLLHOST.EXE",
+        "run_count": 5,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\DLLHOST.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:43",
+        "executable_name": "DLLHOST.EXE",
+        "run_count": 5,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\DLLHOST.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:44",
+        "executable_name": "FSQUIRT.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\FSQUIRT.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:44",
+        "executable_name": "RUNTIMEBROKER.EXE",
+        "run_count": 3,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\RUNTIMEBROKER.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:44",
+        "executable_name": "SVCHOST.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\SVCHOST.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:51",
+        "executable_name": "WMIADAP.EXE",
+        "run_count": 5,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\WBEM\\WMIADAP.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:54",
+        "executable_name": "SECURITYHEALTHSERVICE.EXE",
+        "run_count": 5,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\SECURITYHEALTHSERVICE.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:54",
+        "executable_name": "SECURITYHEALTHSYSTRAY.EXE",
+        "run_count": 7,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\WINDOWS\\SYSTEM32\\SECURITYHEALTHSYSTRAY.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:55",
+        "executable_name": "RTKNGUI64.EXE",
+        "run_count": 8,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\PROGRAM FILES\\REALTEK\\AUDIO\\HDA\\RTKNGUI64.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2022-02-04 07:07:57",
+        "executable_name": "CXAPOAGENT64.EXE",
+        "run_count": 5,
+        "executable_path": "\\VOLUME{01d8067502ac9764-1002c20a}\\PROGRAM FILES\\REALTEK\\AUDIO\\HDA\\CXAPOAGENT64.EXE"
+      }
+    ],
+    "shimcache_top": [
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2017-07-07 17:30:12"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2017-07-07 17:30:14"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2018-07-07 13:19:38"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2018-07-07 13:30:40"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2018-07-07 13:30:58"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2018-07-07 13:32:02"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2018-12-21 21:22:06"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-08-21 13:57:24"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-08-21 13:57:26"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-08-26 10:55:46"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2020-04-24 08:58:30"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2020-04-24 08:59:06"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2020-04-24 08:59:42"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2020-04-24 08:59:46"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2020-10-02 20:42:10"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2021-05-20 23:05:35"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2021-06-16 14:23:52"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2021-09-01 10:23:52"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2021-09-02 10:06:42"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2021-09-15 18:02:20"
+      }
+    ],
+    "amcache_top": [
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-06 07:16:08",
+        "sha1": "f644d2f9ac72e79f97f592523f2ff6b5a1ec7bf5"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "6c12c804fad6cc2887d1400e0a35a5e22b362b74"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "a624bef0e4a977ffad80472a3b7ae3d251d6ae1c"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "8ae975539bab1a0770ac6730cab181af05522ffb"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "afb901c93487d283b8ff475e20890bb81a2ba3c1"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "9e09ac1191fb0ff90703c6b5c2f2c17bb1c93e5c"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "581870f37b75183412dd5ac39ed2f466c07a9511"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "9e76060938309f2ccc81aad67a31f7ed3f624b0d"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "5e2b254adca1f935485a2c86f3d8e295bac830e1"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "673875c090f6b35a05a7c6d54e8868c99bbe4650"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "8ba079de070605afdf2413cf225cb0ea4e89c68c"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "6054d1ef8adca51ecddda626e6d28eafcdfe0a27"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "0e3ab1ae8b5f1a348138cf7c2ba40ddaba258237"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "d3ea27883b5b65ed5ec6cad6159219be49df72c3"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "abb11b9454b7b320e7bf40392282af6b55c3fe00"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "67c4abaa5d5987d0cbbd15eb0e82b02551e61c02"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "efdb536e330a25194f624c1cb4c30cf0843c1c3f"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "65a639d6fe429236f845cbd4e50c913f05e6bf2b"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "ba9f69960ebe3b9354ccd879c53208845530abed"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2022-02-09 03:45:39",
+        "sha1": "521b310f483f07695b68b2a5f03c793cd1cd38cf"
+      }
+    ],
+    "lnk_recent_files": [
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2022-01-22 01:24:41",
+        "target_path": "C:\\Users\\Patrick\\Pictures",
+        "machine_id": "desktop-skptdio",
+        "target_modified": "2022-01-22 01:24:41"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2022-01-28 06:33:35",
+        "target_path": "C:\\Users\\Patrick\\Music",
+        "machine_id": "desktop-skptdio",
+        "target_modified": "2022-01-28 06:33:35"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2022-02-04 02:00:41",
+        "target_path": "C:\\Users\\Patrick\\Downloads",
+        "machine_id": "desktop-skptdio",
+        "target_modified": "2022-02-04 02:00:41"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2022-02-04 05:53:43",
+        "target_path": "C:\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\Shared Documents Folder (Users Files)\\AppData\\Local\\Discord\\Update.exe",
+        "machine_id": "desktop-skptdio",
+        "target_modified": "2021-09-22 02:16:42"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2022-02-04 07:06:12",
+        "target_path": "C:\\Users\\Patrick\\Desktop",
+        "machine_id": "desktop-skptdio",
+        "target_modified": "2022-02-04 07:06:12"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2022-02-04 07:06:12",
+        "target_path": "C:\\Users\\Patrick\\Downloads",
+        "machine_id": "desktop-skptdio",
+        "target_modified": "2022-02-04 07:06:12"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2022-02-06 07:56:04",
+        "target_path": "C:\\Users\\Patrick\\Documents\\Minecraft\\This PC\\Documents\\Minecraft\\eula.txt",
+        "machine_id": "desktop-skptdio",
+        "target_modified": "2022-02-06 07:55:21"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2022-02-11 22:50:40",
+        "target_path": "C:\\Users\\Patrick\\Documents",
+        "machine_id": "desktop-skptdio",
+        "target_modified": "2022-02-11 22:50:40"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2022-02-11 22:50:40",
+        "target_path": "C:\\Users\\Patrick\\Documents\\Evidence",
+        "machine_id": "desktop-skptdio",
+        "target_modified": "2022-02-11 22:50:37"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2022-02-11 23:22:52",
+        "target_path": "C:\\Users\\Patrick\\Documents\\Minecraft\\This PC\\Documents\\Minecraft\\goteem.ps1",
+        "machine_id": "desktop-skptdio",
+        "target_modified": "2022-02-11 23:19:23"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2022-02-12 00:04:42",
+        "target_path": "C:\\Users\\Patrick\\Documents\\Minecraft\\This PC\\Documents\\Minecraft\\goteem2.ps1",
+        "machine_id": "desktop-skptdio",
+        "target_modified": "2022-02-11 23:25:57"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2022-02-12 00:04:42",
+        "target_path": "C:\\Users\\Patrick\\Documents\\Minecraft",
+        "machine_id": "desktop-skptdio",
+        "target_modified": "2022-02-11 23:25:57"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2026-03-22 18:37:49",
+        "target_path": "All Tasks"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2026-03-22 18:37:49",
+        "target_path": "C:\\Users\\Patrick\\Music\\This PC\\Music\\fred.png"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2026-03-22 18:37:49",
+        "target_path": "C:\\Users\\Patrick\\Desktop\\goteem.txt"
+      }
+    ],
+    "jumplist_recent": [
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2022-01-10 23:08:58",
+        "target_path": "knownfolder:{18989B1D-99B5-455B-841C-AB7C74E4DDFC} ==> My Video",
+        "machine_id": "00:50:b6:28:8f:09",
+        "target_modified": "2022-01-10 23:08:58"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2022-01-22 01:24:41",
+        "target_path": "knownfolder:{33E28130-4E1E-4676-835A-98395C3BC3BB} ==> My Pictures",
+        "machine_id": "00:50:b6:28:8f:09",
+        "target_modified": "2022-01-22 01:24:41"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2022-01-22 01:24:41",
+        "target_path": "C:\\Users\\Patrick\\Pictures\\Phone Photos",
+        "machine_id": "f8:94:c2:df:e8:04",
+        "target_modified": "2022-01-22 01:24:26"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2022-01-28 06:33:35",
+        "target_path": "C:\\Users\\Patrick\\Music\\fred.png",
+        "machine_id": "f8:94:c2:df:e8:04",
+        "target_modified": "2022-01-28 06:33:35"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2022-01-28 06:33:35",
+        "target_path": "knownfolder:{4BD8D571-6D19-48D3-BE97-422220080E43} ==> My Music",
+        "machine_id": "00:50:b6:28:8f:09",
+        "target_modified": "2022-01-28 06:33:35"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2022-02-04 02:00:41",
+        "target_path": "knownfolder:{374DE290-123F-4565-9164-39C4925E467B} ==> Downloads",
+        "machine_id": "00:50:b6:28:8f:09",
+        "target_modified": "2022-02-04 02:00:41"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2022-02-04 05:13:19",
+        "target_path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell_ise.exe",
+        "machine_id": "f8:94:c2:df:e8:04",
+        "target_modified": "2021-06-04 19:48:00"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2022-02-04 05:13:19",
+        "target_path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell_ise.exe",
+        "machine_id": "f8:94:c2:df:e8:04",
+        "target_modified": "2021-06-04 19:48:00"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2022-02-04 05:13:24",
+        "target_path": "C:\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Windows PowerShell\\Windows PowerShell.lnk",
+        "machine_id": "f8:94:c2:df:e8:04",
+        "target_modified": "2021-11-04 14:26:15"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2022-02-04 05:53:59",
+        "target_path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "machine_id": "b8:8a:89:44:bf:3a",
+        "target_modified": "2022-01-27 06:59:18"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2022-02-04 05:53:59",
+        "target_path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "machine_id": "b8:8a:89:44:bf:3a",
+        "target_modified": "2022-01-27 06:59:18"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2022-02-04 05:53:59",
+        "target_path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "machine_id": "b8:8a:89:44:bf:3a",
+        "target_modified": "2022-01-27 06:59:18"
+      }
+    ],
+    "srum_network_usage": [
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:49:33",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2022-01-20 05:50:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      }
+    ],
+    "browser_raw_history": [
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-04T05:12:10.282799Z",
+        "url": "https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&checkda=1&ct=1643940715&rver=6.7.6643.0&wp=MBI_SSL&wreply=https:%2F%2Fanswers.microsoft.com%2Fen-us%2Fsite%2Fcompletesignin%3Fsilent%3DTrue%26returnUrl%3Dhttps%253A%252F%252Fanswers.microsoft.com%252Fen-us%252Fxbox%252Fforum%252Fall%252Funable-to-install-minecraft-java-error-code%252F3f994117-d65f-446c-b980-31daac822eb4&id=273572&aadredir=1",
+        "title": "Continue"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-04T05:12:12.354307Z",
+        "url": "https://answers.microsoft.com/en-us/xbox/forum/all/unable-to-install-minecraft-java-error-code/3f994117-d65f-446c-b980-31daac822eb4",
+        "title": "Unable to install Minecraft Java, error code 0x80131509 - Microsoft Community"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-05T01:16:41.540766Z",
+        "url": "http://www.youtube.com/signin?action_handle_signin=true&app=desktop&next=https%3A%2F%2Fwww.youtube.com%2F&feature=account_registration&authuser=0",
+        "title": "YouTube"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-05T01:16:41.540766Z",
+        "url": "https://www.youtube.com/signin?action_handle_signin=true&app=desktop&next=https%3A%2F%2Fwww.youtube.com%2F&feature=account_registration&authuser=0",
+        "title": "YouTube"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-05T01:16:41.540766Z",
+        "url": "https://www.youtube.com/?skip_registered_account_check=true",
+        "title": "YouTube"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-05T01:17:49.849651Z",
+        "url": "https://www.youtube.com/",
+        "title": "YouTube"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-05T01:17:49.868431Z",
+        "url": "https://www.youtube.com/results?search_query=stamps+worth+money",
+        "title": "stamps worth money - YouTube"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-05T01:18:12.301189Z",
+        "url": "https://www.youtube.com/watch?v=8z3pB2d7TF8",
+        "title": "10 SUPER RARE STAMPS WORTH MONEY - EXTREMELY VALUABLE STAMPS - YouTube"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-05T01:24:38.069593Z",
+        "url": "https://www.youtube.com/watch?v=GX2kNCn_dIs",
+        "title": "Pawn Stars: \"You Don't See This Too Often\" *MAJOR Value for MISPRINTED Stamps* (Season 6) | History - YouTube"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-05T01:32:22.305370Z",
+        "url": "https://www.youtube.com/watch?v=z8NvI1eM66c",
+        "title": "How to Value and Sell a Stamp Collection - YouTube"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-05T06:04:40.780853Z",
+        "url": "https://www.youtube.com/watch?v=wUZwYQpixSQ",
+        "title": "A History of America in Thirty-six Postage Stamps, Chris West, Maynard Sundman Lecture 2014 - YouTube"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-05T07:18:50.044888Z",
+        "url": "https://www.youtube.com/watch?v=yN2qUzi0E6Y",
+        "title": "The Art of the Stamp, Maynard Sundman Lecture 2012 - YouTube"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-06T07:10:15.844950Z",
+        "url": "https://www.google.com/search?q=what+are+packets&oq=what+are+packets&aqs=chrome..69i57j0i512l9.2232j0j7&sourceid=chrome&ie=UTF-8",
+        "title": "what are packets - Google Search"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-11T01:18:02.114178Z",
+        "url": "https://www.google.com/search?q=how+to+know+if+you%27ve+been+hacked&oq=how+to+know+if+you%27ve+been+hacked&aqs=chrome..69i57j0i512l9.5959j0j7&sourceid=chrome&ie=UTF-8",
+        "title": "how to know if you've been hacked - Google Search"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2022-02-11T01:21:05.533438Z",
+        "url": "https://www.google.com/search?q=how+to+report+a+hacker%3F&oq=how+to+report+a+hacker%3F&aqs=chrome..69i57j0i512l9.27618j0j7&sourceid=chrome&ie=UTF-8",
+        "title": "how to report a hacker? - Google Search"
+      }
+    ],
+    "browser_downloads_searches": [
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-01-20T07:22:31.656918Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-01-30T05:02:19.259830Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-01-30T05:02:19.259830Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-01-30T05:02:19.259830Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-01-30T05:02:19.259830Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-01-30T05:02:19.259830Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-01-30T05:02:19.259830Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-01-30T05:02:19.259830Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-01-30T05:03:48.853554Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-02-04T04:53:43.637602Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-02-04T04:53:43.637602Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-02-04T05:10:37.013983Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-02-04T05:11:36.948254Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-02-06T07:10:15.844950Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2022-02-11T01:21:05.533438Z"
+      }
+    ],
+    "app_communication": [
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:33.5831587",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:33.5831587', 'entry_number': 241454, 'sequence_number': 1, 'filename': 'locales', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick\\\\A"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:33.7035712",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:33.7035712', 'entry_number': 241508, 'sequence_number': 1, 'filename': 'resources', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick\\"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:33.7035712",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:33.7035712', 'entry_number': 241511, 'sequence_number': 1, 'filename': 'bootstrap', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick\\"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:33.7157817",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:33.7157817', 'entry_number': 241513, 'sequence_number': 1, 'filename': 'swiftshader', 'extension': '', 'file_path': '.\\\\Users\\\\Patric"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:34.3308605",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:34.3308605', 'entry_number': 241434, 'sequence_number': 2, 'filename': 'SquirrelTemp', 'extension': '', 'file_path': '.\\\\Users\\\\Patri"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:41.1619255",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:41.1619255', 'entry_number': 241520, 'sequence_number': 1, 'filename': 'reports', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick\\\\A"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:41.1640999",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:41.1640999', 'entry_number': 241519, 'sequence_number': 1, 'filename': 'Crashpad', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick\\\\"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:41.1640999",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:41.1640999', 'entry_number': 241522, 'sequence_number': 1, 'filename': 'metadata', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick\\\\"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:43",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:43', 'lnk_name': 'Discord.lnk', 'target_path': 'C:\\\\Users\\\\Patrick\\\\AppData\\\\Local\\\\Discord\\\\app-1.0.9003\\\\Shared Documents Folder (U"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:43.3171071",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:43.3171071', 'entry_number': 241523, 'sequence_number': 1, 'filename': 'app.ico', 'extension': '.ico', 'file_path': '.\\\\Users\\\\Patric"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:43.4159511",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:43.4159511', 'entry_number': 241527, 'sequence_number': 1, 'filename': 'Discord.lnk', 'extension': '.lnk', 'file_path': '.\\\\Users\\\\Pa"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:43.4872798",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:43.4872798', 'entry_number': 241423, 'sequence_number': 3, 'filename': 'Local Storage', 'extension': '', 'file_path': '.\\\\Users\\\\Patr"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:43.4882770",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:43.4882770', 'entry_number': 241537, 'sequence_number': 1, 'filename': 'LOCK', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick\\\\AppD"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:43.4914199",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:43.4914199', 'entry_number': 241539, 'sequence_number': 1, 'filename': 'CURRENT', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick\\\\A"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2022-02-04 05:53:43.4995222",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:43.4995222', 'entry_number': 241540, 'sequence_number': 1, 'filename': 'Code Cache', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick"
+      }
+    ],
+    "app_crypto_finance": [],
+    "app_remote_access": [],
+    "app_antiforensic": [],
+    "app_archive_tools": [],
+    "app_email_client": [
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2022-02-12 23:34:10.6570383",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-12 23:34:10.6570383', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\FileExts', 'value_"
+      }
+    ],
+    "suspicious_indicators_universal": [
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2022-02-10 00:06:33.5838339",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:33.5838339', 'event_id': 600, 'provider': 'PowerShell', 'channel': 'Windows PowerShell', 'level': 'Info', 'severity': 'info', 'comput"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2022-02-10 00:06:33.5838339",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:33.5838339', 'event_id': 600, 'provider': 'PowerShell', 'channel': 'Windows PowerShell', 'level': 'Info', 'severity': 'info', 'comput"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2022-02-10 00:06:33.5848325",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:33.5848325', 'event_id': 600, 'provider': 'PowerShell', 'channel': 'Windows PowerShell', 'level': 'Info', 'severity': 'info', 'comput"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2022-02-10 00:06:33.5848325",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:33.5848325', 'event_id': 600, 'provider': 'PowerShell', 'channel': 'Windows PowerShell', 'level': 'Info', 'severity': 'info', 'comput"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2022-02-10 00:06:33.5848325",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:33.5848325', 'event_id': 600, 'provider': 'PowerShell', 'channel': 'Windows PowerShell', 'level': 'Info', 'severity': 'info', 'comput"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2022-02-10 00:06:33.5858286",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:33.5858286', 'event_id': 600, 'provider': 'PowerShell', 'channel': 'Windows PowerShell', 'level': 'Info', 'severity': 'info', 'comput"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2022-02-10 00:06:33.5978305",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:33.5978305', 'event_id': 400, 'provider': 'PowerShell', 'channel': 'Windows PowerShell', 'level': 'Info', 'severity': 'info', 'comput"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2022-02-10 00:06:34.1865698",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:34.1865698', 'event_id': 4100, 'provider': 'Microsoft-Windows-PowerShell', 'channel': 'Microsoft-Windows-PowerShell/Operational', 'le"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2022-02-10 00:06:34.2175300",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:34.2175300', 'event_id': 403, 'provider': 'PowerShell', 'channel': 'Windows PowerShell', 'level': 'Info', 'severity': 'info', 'comput"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2022-02-10 00:06:34.7679051",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:34.7679051', 'event_id': 600, 'provider': 'PowerShell', 'channel': 'Windows PowerShell', 'level': 'Info', 'severity': 'info', 'comput"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2022-02-10 00:06:34.7679051",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:34.7679051', 'event_id': 600, 'provider': 'PowerShell', 'channel': 'Windows PowerShell', 'level': 'Info', 'severity': 'info', 'comput"
+      },
+      {
+        "_anchor": "suspicious_indicators_universal",
+        "timestamp": "2022-02-10 00:06:34.7679051",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:34.7679051', 'event_id': 600, 'provider': 'PowerShell', 'channel': 'Windows PowerShell', 'level': 'Info', 'severity': 'info', 'comput"
+      }
+    ]
+  }
+}

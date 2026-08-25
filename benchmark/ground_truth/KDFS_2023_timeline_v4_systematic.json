@@ -1,0 +1,1489 @@
+{
+  "metadata": {
+    "case_id": "KDFS_2023",
+    "case_full_name": "KDFS Challenge 2023 - Ransomware Distribution and Cryptocurrency Extortion Case",
+    "image_source": "2023_KDFS.E01 (SHA1: 39c4e63ecc0715d249f57f57caaef35e7004bfec, 19.86 GB)",
+    "ransomware_sha1": "0b88dd8519259f4afd15aeb376ccea9c27b2a253",
+    "challenge_event": "Korean Digital Forensics Society Challenge 2023 (KIISC), Oct 4 - Nov 4, 2023",
+    "windows_install_date_kst": "2023-09-11 11:23:29 (CTF baseline image setup)",
+    "system_timezone": "UTC+09:00 (KST)",
+    "case_es_id": "case_20260128_141256",
+    "sources_consulted": {
+      "DigitalElephant": "231104_KDFS_분석보고서_디지털코끼리.pdf (37 pages, transaction-focused)",
+      "Team1st": "KDFS챌린지분석보고서_정소민진짜예쁘더라.pdf (44 pages, comprehensive)",
+      "cases_timeline_docx": "Project file: cases timeline.docx (61 events curated)",
+      "old_ground_truth": "benchmark/ground_truth/KDFS_2023_timeline.json (16 events with Registry)",
+      "ES_indices": "Elasticsearch indices forensic-* with case filter",
+      "plainbit_official": "http://plainbit.co.kr/events/kdfs2023/"
+    },
+    "suspect": {
+      "korean_name": "김영끌 (Kim Young-Ggeul)",
+      "pc_username": "souldrag",
+      "primary_email": "souldrag576@gmail.com",
+      "ransom_email": "everyrecover56@gmail.com",
+      "discord_username": "souldrag__",
+      "wallets": {
+        "MYBITCOIN_ledger_btc": "bc1q7ng04nqppjf6cf3296q4l56h9pxg3suzltud4e",
+        "Ethereum_2_ledger_eth": "0x88e0e062325b2C8e5D161745C9C0ec09f4140027",
+        "Account1_metamask_eth": "0x5a6bf322c916c1a5e6dc6a4284c7d4b20d79e617"
+      },
+      "btc_loss_period": "2023-06-24 to 2023-09-18",
+      "btc_loss_total": "388,011,536 KRW -> 6,000,000 KRW (98.5% loss)",
+      "loan_shark_debt": "350,000,000 KRW owed to BM Company"
+    },
+    "accomplice": {
+      "discord_username": "cyberninja__",
+      "discord_display_name": "CyberNinja_⚔",
+      "discord_channel_id": "1154234888678023250",
+      "wallets": {
+        "primary_takemejail": "0xF5F53280aE3555A629c2e5F4E6bCf3A38FD49a4e (ENS: takemejail.eth)",
+        "secondary": "0x4C666B763A54e6eAD70786039a6704738a93Dc0b"
+      },
+      "opsec_note": "Used disposable email to create Discord account"
+    },
+    "non_accomplice_discord_contacts": [
+      {
+        "username": "취약점외길인생👍",
+        "channel_id": "1154235101799010394",
+        "purpose": "Probed about program distribution but not recruited"
+      },
+      {
+        "username": "밥만먹고CTF🥇",
+        "purpose": "Discussed hacking skills but not recruited"
+      }
+    ],
+    "victims": [
+      {
+        "victim_id": 1,
+        "email": "dou120313@gmail.com",
+        "btc_amount": "0.003 BTC",
+        "exchange_used_for_payment": "Unknown (35iMHbUZeTssxBodiHwEEkb32jpBfVueEL)"
+      },
+      {
+        "victim_id": 2,
+        "email": "mugimyeong85@gmail.com",
+        "btc_amount": "0.003 BTC",
+        "exchange_used_for_payment": "Binance Hot Wallet (bc1qm34lsc65zpw79lxes69zkqmk6ee3ewf0j77s3h)"
+      },
+      {
+        "victim_id": 3,
+        "email": "unknown (PC imaged before email arrived)",
+        "btc_amount": "0.003 BTC",
+        "source_wallet": "3HUQG8yzFS8LXxrMXiYxCDVru7QWzusM2X",
+        "payment_date_kst": "2023-09-26 12:03"
+      }
+    ],
+    "infrastructure": {
+      "ransomware_payload": "ransom.exe (7,287,357 bytes), packaged as ransom.zip (7,121,752 bytes)",
+      "ransomware_origin": "External - circumstantially traced to SanDisk Cruzer Blade USB connected 14:50:15 KST",
+      "code_editors_on_pc": "Visual Studio Code, Sublime Text 3 — used for cryptocurrency trading scripts (bitcoin.py, binance.py, etc.), NO ransomware source code found",
+      "ransomware_distribution_url": "https://gofile.io/d/RORPNG",
+      "btc_trading_journal": "#BTC매매일지.xlsx (Desktop, suspect-authored)",
+      "wallets_installed": {
+        "BlockStream_Green_1.2.7": "Installed 2023-09-15 11:30:52 KST (Bitcoin Testnet only, NOT used in crime)",
+        "Ledger_Live_2.68.1": "Re-installed 2023-09-21 08:38:40 KST (original pre-existed)",
+        "MetaMask_11.0.0": "Installed 2023-09-21 14:35:11 KST (Chrome extension)"
+      },
+      "ledger_hardware_wallets_connected": [
+        "Ledger Nano S (VID 2C97)",
+        "Ledger Nano S Plus (VID 2C97)"
+      ],
+      "usb_storage_connected": "SanDisk Cruzer Blade USB Device (VID 0781, Serial 4C530000320903119361)",
+      "external_swap_services_used": [
+        "Changelly (BTC to ETH swap)",
+        "MetaMask Swap Router (ETH to wBTC)",
+        "OpenOcean Exchange V2 (intermediate)",
+        "Balancer WBTC/ETH 50/50 pool #9 (intermediate)",
+        "Skybridge Smart Contract / Swingby (wBTC to BTC for accomplice)"
+      ]
+    },
+    "key_disagreements_between_sources": [
+      {
+        "topic": "Did the suspect AUTHOR ransom.exe?",
+        "DE_position": "Yes - based on Discord chat statement '랜섬웨어로 ... 만들긴 했거든요'",
+        "Team1st_position": "No - Visual Studio and Sublime Text artifact analysis found ZERO ransomware source code; all editor activity was on cryptocurrency trading scripts (bitcoin.py, binance.py, etc.). Suspect likely received ransomware externally via USB.",
+        "ES_verification": "ES confirms: SanDisk USB connected 2023-09-21 14:50:15 KST. ransom.zip created 14:50:49 KST (34 second gap). No editor activity tied to ransomware creation.",
+        "conclusion": "Team1st position is forensically stronger. Suspect's Discord claim was deception or simplification. Real source: external (USB)."
+      },
+      {
+        "topic": "When was the email from BM Company received?",
+        "DE_position": "2023-09-19 12:46:02 KST",
+        "Team1st_position": "2023-09-19 07:04 KST",
+        "ES_verification": "OST file content not parsed by our 13 parsers - cannot verify directly. Both are within Sep 19.",
+        "conclusion": "Use 1st place team timestamp (07:04) as it's more detailed and cross-checked."
+      },
+      {
+        "topic": "Was the ransom.exe executed on suspect's PC?",
+        "DE_position": "Implied yes (Shimcache + AppCompatCache claims)",
+        "Team1st_position": "Not explicitly addressed; team executed in VM for analysis",
+        "ES_verification": "DEFINITIVE NO: No Prefetch record, no Amcache record, no UserAssist entry for ransom.exe. Shimcache/AppCompatCache only confirm file existence, not execution.",
+        "conclusion": "ransom.exe was NOT executed on suspect's PC. This is consistent with operational design - suspect distributed for accomplice to spread, would not infect own machine."
+      }
+    ]
+  },
+  "phase_structure": [
+    {
+      "id": "P1_pre_incident_finance",
+      "period": "Sep 13-18",
+      "events": 9
+    },
+    {
+      "id": "P2_debt_pressure",
+      "period": "Sep 19",
+      "events": 6
+    },
+    {
+      "id": "P3_intent_formation",
+      "period": "Sep 20-21 early",
+      "events": 10
+    },
+    {
+      "id": "P4_accomplice_setup",
+      "period": "Sep 21 10:14-10:44",
+      "events": 2
+    },
+    {
+      "id": "P5_initial_contact",
+      "period": "Sep 21 10:57-13:18",
+      "events": 7
+    },
+    {
+      "id": "P6_conspiracy",
+      "period": "Sep 21 13:25-13:47",
+      "events": 9
+    },
+    {
+      "id": "P7_payment_setup",
+      "period": "Sep 21 13:47-14:35",
+      "events": 5
+    },
+    {
+      "id": "P8_prepayment",
+      "period": "Sep 21 14:38-14:47",
+      "events": 5
+    },
+    {
+      "id": "P9_weapon_acquisition",
+      "period": "Sep 21 14:50:15-14:51:14",
+      "events": 8
+    },
+    {
+      "id": "P10_distribution_handoff",
+      "period": "Sep 21 14:52-14:56",
+      "events": 4
+    },
+    {
+      "id": "P11_post_handoff",
+      "period": "Sep 21 15:02-15:10",
+      "events": 3
+    },
+    {
+      "id": "P12_initial_funds",
+      "period": "Sep 21 10:34",
+      "events": 1
+    },
+    {
+      "id": "P13_victim1_*",
+      "period": "Sep 22 11:55-16:44",
+      "events": 3
+    },
+    {
+      "id": "P14_revenue_share_1",
+      "period": "Sep 22 16:51",
+      "events": 1
+    },
+    {
+      "id": "P15_victim2_*",
+      "period": "Sep 22 17:04-21:04",
+      "events": 3
+    },
+    {
+      "id": "P16_revenue_share_2",
+      "period": "Sep 22 21:11",
+      "events": 1
+    },
+    {
+      "id": "P17_accomplice_laundering",
+      "period": "Sep 22-23",
+      "events": 5
+    },
+    {
+      "id": "P18_post_imaging",
+      "period": "Sep 26",
+      "events": 1
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "timestamp": "2023-09-13 16:52 KST",
+      "phase": "P1_pre_incident_finance",
+      "event": "Suspect begins searching for cryptocurrency and stock market information",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p9"
+      ],
+      "evidence_keywords": [
+        "coin",
+        "stock",
+        "2023-09-13"
+      ]
+    },
+    {
+      "id": 2,
+      "timestamp": "2023-09-13 (PM) KST",
+      "phase": "P1_pre_incident_finance",
+      "event": "Suspect downloads Google Chrome (transition from Microsoft Edge)",
+      "source_artifact": "Chrome browser history downloads table + Edge history",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p9"
+      ],
+      "evidence_keywords": [
+        "Chrome",
+        "2023-09-13"
+      ]
+    },
+    {
+      "id": 3,
+      "timestamp": "2023-09-14 13:13 KST",
+      "phase": "P1_pre_incident_finance",
+      "event": "Suspect searches for and accesses Discord (first time on this PC session)",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p9"
+      ],
+      "evidence_keywords": [
+        "Discord",
+        "2023-09-14"
+      ]
+    },
+    {
+      "id": 4,
+      "timestamp": "2023-09-14 KST",
+      "phase": "P1_pre_incident_finance",
+      "event": "Suspect signs up for Github and downloads Trading Bot programs",
+      "source_artifact": "Chrome browser downloads",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p9-10"
+      ],
+      "evidence_keywords": [
+        "Github",
+        "Trading Bot",
+        "2023-09-14"
+      ]
+    },
+    {
+      "id": 5,
+      "timestamp": "2023-09-15 11:30:52 KST",
+      "phase": "P1_pre_incident_finance",
+      "event": "BlockStream Green 1.2.7 (Bitcoin Testnet wallet) installed - subsequently unused after Sep 18, not used in crime",
+      "source_artifact": "Wallet log file %LocalAppData%\\BlockStream\\Green\\logs\\1.2.7.txt + MFT",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p21-22"
+      ],
+      "evidence_keywords": [
+        "BlockStream Green",
+        "Testnet",
+        "2023-09-15"
+      ],
+      "notes": "Bitcoin Testnet only - not used for actual crime"
+    },
+    {
+      "id": 6,
+      "timestamp": "2023-09-16 KST",
+      "phase": "P1_pre_incident_finance",
+      "event": "Suspect downloads Ledger Live (cryptocurrency hardware wallet software)",
+      "source_artifact": "Chrome browser downloads",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p9"
+      ],
+      "evidence_keywords": [
+        "Ledger Live",
+        "download",
+        "2023-09-16"
+      ]
+    },
+    {
+      "id": 7,
+      "timestamp": "2023-06-24 to 2023-09-18 KST",
+      "phase": "P1_pre_incident_finance",
+      "event": "BTC trading journal entries: portfolio collapses from 388,011,536 KRW (initial) to 6,000,000 KRW (final on Sep 18) - 98.5% loss over ~12 weeks",
+      "source_artifact": "#BTC매매일지.xlsx Excel content on Desktop",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p7",
+        "Team1st p19"
+      ],
+      "evidence_keywords": [
+        "BTC매매일지",
+        "388,011,536",
+        "6,000,000",
+        "xlsx"
+      ]
+    },
+    {
+      "id": 8,
+      "timestamp": "2023-09-15 04:14:20.978 UTC",
+      "phase": "P1_pre_incident_finance",
+      "event": "#BTC매매일지.xlsx file created on Desktop (19,161 bytes; author and last-modifier metadata: souldrag)",
+      "source_artifact": "MFT",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p7",
+        "Team1st p19"
+      ],
+      "evidence_keywords": [
+        "BTC매매일지",
+        "xlsx",
+        "Desktop",
+        "19161"
+      ]
+    },
+    {
+      "id": 9,
+      "timestamp": "2023-09-18 KST",
+      "phase": "P1_pre_incident_finance",
+      "event": "First search for 'illegal lending non-payment' - transition point from victim mindset",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p9"
+      ],
+      "evidence_keywords": [
+        "불법사채",
+        "사채",
+        "2023-09-18"
+      ],
+      "notes": "Marks shift from passive loss to active seeking of solutions"
+    },
+    {
+      "id": 10,
+      "timestamp": "2023-09-19 07:04 KST",
+      "phase": "P2_debt_pressure",
+      "event": "Email received from bloodmoney7979@gmail.com (BM Company representative '사채박'). Subject: '[BM Company] 채무상환 예정일 알림'. Content: demand for repayment of 350,000,000 KRW debt.",
+      "source_artifact": "Outlook OST mailbox souldrag576@gmail.com.ost",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p12",
+        "DE p6"
+      ],
+      "evidence_keywords": [
+        "BM Company",
+        "사채박",
+        "bloodmoney7979",
+        "350,000,000",
+        "채무상환"
+      ],
+      "notes": "Direct trigger for active criminal planning. INDIRECT in ES (OST exists, content not parsed)"
+    },
+    {
+      "id": 11,
+      "timestamp": "2023-09-19 12:50-16:38 KST (4 hours)",
+      "phase": "P2_debt_pressure",
+      "event": "Continuous research on illegal lending consequences and personal bankruptcy procedures (29 distinct queries and article reads)",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p9",
+        "DE p9-10"
+      ],
+      "evidence_keywords": [
+        "사채",
+        "파산",
+        "안갚으면",
+        "협박",
+        "신청"
+      ]
+    },
+    {
+      "id": 12,
+      "timestamp": "2023-09-19 04:04:39.067 UTC",
+      "phase": "P2_debt_pressure",
+      "event": "Search: '사채 안갚으면 어떻게 되나요' (what happens if you don't repay loan shark)",
+      "source_artifact": "Chrome browser history (82cook.com forum)",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p9"
+      ],
+      "evidence_keywords": [
+        "사채 안갚으면",
+        "82cook"
+      ]
+    },
+    {
+      "id": 13,
+      "timestamp": "2023-09-19 05:18:04 UTC",
+      "phase": "P2_debt_pressure",
+      "event": "Reads article: '돈 없어? 네 가족 해칠게 - 원금 50배 불법 사채 조직 검거'",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p9"
+      ],
+      "evidence_keywords": [
+        "가족",
+        "협박",
+        "불법사채"
+      ]
+    },
+    {
+      "id": 14,
+      "timestamp": "2023-09-19 07:23:52 UTC",
+      "phase": "P2_debt_pressure",
+      "event": "Transition: first '파산 신청' (personal bankruptcy filing) search",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p10"
+      ],
+      "evidence_keywords": [
+        "파산 신청",
+        "개인 파산"
+      ]
+    },
+    {
+      "id": 15,
+      "timestamp": "2023-09-19 07:32:27-07:38:19 UTC",
+      "phase": "P2_debt_pressure",
+      "event": "Visits 8 pages on personal bankruptcy procedures (Gyeonggi welfare center, eligibility, application forms, electronic civil center). Conclusion: does not qualify for bankruptcy.",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p10"
+      ],
+      "evidence_keywords": [
+        "개인 파산 신청",
+        "자격 조건",
+        "신청 자격"
+      ]
+    },
+    {
+      "id": 16,
+      "timestamp": "2023-09-20 23:36:21.478 UTC",
+      "phase": "P3_intent_formation",
+      "event": "First-ever ransomware search '랜섬웨어' on Naver - marks transition from victim to perpetrator intent",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p10",
+        "DE p11"
+      ],
+      "evidence_keywords": [
+        "랜섬웨어",
+        "ransomware"
+      ]
+    },
+    {
+      "id": 17,
+      "timestamp": "2023-09-20 23:36:26.503 UTC",
+      "phase": "P3_intent_formation",
+      "event": "Reads Newsis article: 'FBI가 쫒던 그 랜섬웨어 그룹, 국내 IT기업도 당했다'",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p11"
+      ],
+      "evidence_keywords": [
+        "FBI",
+        "랜섬웨어 그룹"
+      ]
+    },
+    {
+      "id": 18,
+      "timestamp": "2023-09-20 23:36:44.049 UTC",
+      "phase": "P3_intent_formation",
+      "event": "Reads article: '사이버 위협 심각성 커져... 랜섬웨어 피해의 88%는 중소기업' (88% of ransomware victims are SMBs)",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p11"
+      ],
+      "evidence_keywords": [
+        "랜섬웨어 피해",
+        "중소기업",
+        "88"
+      ]
+    },
+    {
+      "id": 19,
+      "timestamp": "2023-09-20 23:38:31 KST",
+      "phase": "P3_intent_formation",
+      "event": "Ledger Live Desktop 2.68.1 installer (LEDGER-LIVE-DESKTOP-2.68.1-WI.EXE) executed",
+      "source_artifact": "Prefetch (runs=1)",
+      "party": "suspect",
+      "sources_citing": [
+        "DE timeline table"
+      ],
+      "evidence_keywords": [
+        "LEDGER-LIVE-DESKTOP",
+        "2.68.1"
+      ]
+    },
+    {
+      "id": 20,
+      "timestamp": "2023-09-21 00:06:47 KST",
+      "phase": "P3_intent_formation",
+      "event": "DISCORD.EXE first executed this session (cumulative Prefetch run_count=18)",
+      "source_artifact": "Prefetch",
+      "party": "suspect",
+      "sources_citing": [
+        "DE timeline table"
+      ],
+      "evidence_keywords": [
+        "DISCORD.EXE"
+      ]
+    },
+    {
+      "id": 21,
+      "timestamp": "2023-09-21 00:31:06 UTC",
+      "phase": "P3_intent_formation",
+      "event": "Google search 'discord'",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p11"
+      ],
+      "evidence_keywords": [
+        "discord",
+        "Google"
+      ]
+    },
+    {
+      "id": 22,
+      "timestamp": "2023-09-21 00:31:32 UTC",
+      "phase": "P3_intent_formation",
+      "event": "Suspect visits Discord login (discord.com)",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p11"
+      ],
+      "evidence_keywords": [
+        "discord.com"
+      ]
+    },
+    {
+      "id": 23,
+      "timestamp": "2023-09-21 01:10:29 UTC",
+      "phase": "P3_intent_formation",
+      "event": "Suspect joins '쌀줍-공지사항' channel (Ssalzoop community announcement)",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p11"
+      ],
+      "evidence_keywords": [
+        "쌀줍",
+        "channels"
+      ]
+    },
+    {
+      "id": 24,
+      "timestamp": "2023-09-21 01:58:19 UTC",
+      "phase": "P3_intent_formation",
+      "event": "Suspect enters '화이트해커들의 심심디코방' channel in Hello-World (Codemos) server - venue for accomplice contact",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p11-12"
+      ],
+      "evidence_keywords": [
+        "화이트해커",
+        "Hello-World",
+        "심심디코방"
+      ]
+    },
+    {
+      "id": 25,
+      "timestamp": "2023-09-21 02:36:04 UTC",
+      "phase": "P3_intent_formation",
+      "event": "Visits '미인증-채팅-1' channel in Codemos For Dev server",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "DE p11"
+      ],
+      "evidence_keywords": [
+        "미인증-채팅",
+        "Codemos"
+      ]
+    },
+    {
+      "id": 26,
+      "timestamp": "2023-09-21 10:14:11 KST",
+      "phase": "P4_accomplice_setup",
+      "event": "Accomplice receives 0.025 ETH from Coinone exchange to wallet 0xF5F53280aE3555A629c2e5F4E6bCf3A38FD49a4e (preparing identity)",
+      "source_artifact": "Blockchain (Etherscan public ledger)",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p29"
+      ],
+      "evidence_keywords": [
+        "takemejail",
+        "Coinone",
+        "0.025 ETH"
+      ],
+      "blockchain_txid": "(public, see Etherscan for 0xF5F532...)",
+      "from": "Coinone exchange wallet",
+      "to": "0xF5F53280aE3555A629c2e5F4E6bCf3A38FD49a4e",
+      "amount": "0.025 ETH"
+    },
+    {
+      "id": 27,
+      "timestamp": "2023-09-21 10:44 KST (approximate, ~30min after funds)",
+      "phase": "P4_accomplice_setup",
+      "event": "Accomplice registers ENS domain 'takemejail.eth' for wallet 0xF5F53280... via 'ENS: ETH Registrar Controller' smart contract (~0.003 ETH fee)",
+      "source_artifact": "Blockchain (Etherscan)",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p29"
+      ],
+      "evidence_keywords": [
+        "takemejail.eth",
+        "ENS",
+        "domain registration"
+      ],
+      "from": "0xF5F53280aE3555A629c2e5F4E6bCf3A38FD49a4e",
+      "to": "ENS Registrar Controller smart contract",
+      "amount": "0.003 ETH (ENS registration fee)",
+      "notes": "Accomplice prepared identity ~45 minutes BEFORE first chat with suspect at 10:57"
+    },
+    {
+      "id": 28,
+      "timestamp": "2023-09-21 10:34 KST",
+      "phase": "P12_initial_funds",
+      "event": "Suspect receives 0.012 BTC from external exchange-like wallet 3DGxAYYUA61WrrdbBac8Ra9eA9peAQwTJF (suspected exchange Multisig)",
+      "source_artifact": "Blockchain + Ledger Live cache data + Chrome cache showing 3DGxAY... reference",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p30-32",
+        "DE p3 figure 3"
+      ],
+      "evidence_keywords": [
+        "3DGxAYYUA61",
+        "MYBITCOIN",
+        "0.012 BTC"
+      ],
+      "blockchain_txid": "bde5d5a8fe1dfbf99f8d01957ceb83bddb02d34f8a4365f56bb25bbe50d2b8dd",
+      "from": "3DGxAYYUA61WrrdbBac8Ra9eA9peAQwTJF (suspected exchange Multisig)",
+      "to": "bc1q7ng04nqppjf6cf3296q4l56h9pxg3suzltud4e (MYBITCOIN, Ledger BTC)",
+      "amount": "0.012 BTC",
+      "notes": "Source wallet appears to be exchange-owned (Multisig + matching deposit/withdrawal volumes)"
+    },
+    {
+      "id": 29,
+      "timestamp": "2023-09-21 10:57:30 KST",
+      "phase": "P5_initial_contact",
+      "event": "souldrag__ initiates DM with CyberNinja_⚔ (channel /1154234888678023250): '안녕하세요'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb (Discord chat) + Chrome browser history URL",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p13-14",
+        "DE chat reconstruction"
+      ],
+      "evidence_keywords": [
+        "CyberNinja_",
+        "안녕하세요"
+      ],
+      "message": "안녕하세요"
+    },
+    {
+      "id": 30,
+      "timestamp": "2023-09-21 10:57 KST",
+      "phase": "P5_initial_contact",
+      "event": "souldrag__ also opens DMs with 밥만먹고CTF🥇 and 취약점외길인생👍 (probing other potential accomplices)",
+      "source_artifact": "Chrome LocalStorage + Browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p14",
+        "DE p11"
+      ],
+      "evidence_keywords": [
+        "밥만먹고CTF",
+        "취약점외길인생"
+      ],
+      "notes": "Two parallel conversations that did NOT lead to recruitment"
+    },
+    {
+      "id": 31,
+      "timestamp": "2023-09-21 11:08:17 KST",
+      "phase": "P5_initial_contact",
+      "event": "cyberninja__: '?'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p14"
+      ],
+      "message": "?"
+    },
+    {
+      "id": 32,
+      "timestamp": "2023-09-21 11:35:30 KST",
+      "phase": "P5_initial_contact",
+      "event": "souldrag__ probes hacking skill: '상태메세지 보니까 취약점이랑 모의해킹 쪽 잘하시는 것 같은데 실력이 어느정도 되세요?'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p14"
+      ],
+      "message": "상태메세지 보니까 취약점이랑 모의해킹 쪽 잘하시는 것 같은데 실력이 어느정도 되세요?"
+    },
+    {
+      "id": 33,
+      "timestamp": "2023-09-21 11:46:19 KST",
+      "phase": "P5_initial_contact",
+      "event": "cyberninja__: '뭐 유명한 것들은 다 한 번씩 뚫어봤죠'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p14"
+      ],
+      "message": "뭐 유명한 것들은 다 한 번씩 뚫어봤죠"
+    },
+    {
+      "id": 34,
+      "timestamp": "2023-09-21 11:56:16 KST",
+      "phase": "P5_initial_contact",
+      "event": "souldrag__: '그런거하면 안들키면서 할 수 있는건가요?' (Can it be done without being caught?)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p14"
+      ],
+      "message": "그런거하면 안들키면서 할 수 있는건가요?"
+    },
+    {
+      "id": 35,
+      "timestamp": "2023-09-21 13:18:10 KST",
+      "phase": "P5_initial_contact",
+      "event": "cyberninja__: '완전 안들키는건 몰라도 안 잡힐 자신은 있어요'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p14"
+      ],
+      "message": "완전 안들키는건 몰라도 안 잡힐 자신은 있어요"
+    },
+    {
+      "id": 36,
+      "timestamp": "2023-09-21 13:25:09 KST",
+      "phase": "P6_conspiracy",
+      "event": "souldrag__: '제가 사실 돈이 좀 필요한 상황인데… 부탁? 좀 드릴 수 있을까 해서요..'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p14"
+      ],
+      "message": "제가 사실 돈이 좀 필요한 상황인데… 부탁? 좀 드릴 수 있을까 해서요.."
+    },
+    {
+      "id": 37,
+      "timestamp": "2023-09-21 13:25:53 KST",
+      "phase": "P6_conspiracy",
+      "event": "souldrag__ EXPLICIT CRIMINAL PROPOSAL: '랜섬웨어로 요즘 돈 많이 벌 수 있는 것 같아서 해보려고 만들긴 했거든요'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p14"
+      ],
+      "message": "랜섬웨어로 요즘 돈 많이 벌 수 있는 것 같아서 해보려고 만들긴 했거든요",
+      "notes": "Suspect CLAIMS authorship of ransomware. Forensic evidence (no editor history) contradicts this claim - likely deception or simplification"
+    },
+    {
+      "id": 38,
+      "timestamp": "2023-09-21 13:26:13 KST",
+      "phase": "P6_conspiracy",
+      "event": "souldrag__: '만들기는 했는데 이걸 어떻게 퍼뜨리는 줄을 몰라서 왔는데' (I made it but don't know how to spread it)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p14"
+      ],
+      "message": "만들기는 했는데 이걸 어떻게 퍼뜨리는 줄을 몰라서 왔는데"
+    },
+    {
+      "id": 39,
+      "timestamp": "2023-09-21 13:26:34 KST",
+      "phase": "P6_conspiracy",
+      "event": "souldrag__ asks for paid distribution: '안 잡힐 자신 있으시다고 하셨는데 제가 비용을 좀 지불하면 대신 퍼뜨려주실 수 있나 해서요'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p15"
+      ],
+      "message": "안 잡힐 자신 있으시다고 하셨는데 제가 비용을 좀 지불하면 대신 퍼뜨려주실 수 있나 해서요"
+    },
+    {
+      "id": 40,
+      "timestamp": "2023-09-21 13:44:03 KST",
+      "phase": "P6_conspiracy",
+      "event": "cyberninja__: '얼마 주실 수 있는데요?'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p15"
+      ],
+      "message": "얼마 주실 수 있는데요?"
+    },
+    {
+      "id": 41,
+      "timestamp": "2023-09-21 13:44:40 KST",
+      "phase": "P6_conspiracy",
+      "event": "souldrag__: '30만원 정도 드릴 수 있거든요' (~$220)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p15"
+      ],
+      "message": "30만원 정도 드릴 수 있거든요"
+    },
+    {
+      "id": 42,
+      "timestamp": "2023-09-21 13:45:16 KST",
+      "phase": "P6_conspiracy",
+      "event": "cyberninja__: '30만원에 솔직히 아무도 안해주죠' (no one does it for 300K)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p15"
+      ],
+      "message": "30만원에 솔직히 아무도 안해주죠"
+    },
+    {
+      "id": 43,
+      "timestamp": "2023-09-21 13:45:49 KST",
+      "phase": "P6_conspiracy",
+      "event": "souldrag__ proposes revenue share: '그러면 제가 수익 한 건당 일부를 드리는 것도 해드릴 수 있습니다'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p15"
+      ],
+      "message": "그러면 제가 수익 한 건당 일부를 드리는 것도 해드릴 수 있습니다"
+    },
+    {
+      "id": 44,
+      "timestamp": "2023-09-21 13:46:39 KST",
+      "phase": "P6_conspiracy",
+      "event": "cyberninja__ AGREES: '사실 뭐 요새 몇 명이나 걸려줄 줄 모르겠는데 심심하기도 하고 한 번 해보죠' + asks about crypto experience",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p15"
+      ],
+      "message": "사실 뭐 요새 몇 명이나 걸려줄 줄 모르겠는데 심심하기도 하고 한 번 해보죠 / 코인은써봤어요?",
+      "notes": "Conspiracy formed"
+    },
+    {
+      "id": 45,
+      "timestamp": "2023-09-21 14:04:19 KST",
+      "phase": "P7_payment_setup",
+      "event": "cyberninja__ specifies prepayment terms: 'takemejail.eth로 0.0085 wBTC 보내고 마저 얘기하시죠'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p15"
+      ],
+      "message": "takemejail.eth로 0.0085 wBTC 보내고 마저 얘기하시죠"
+    },
+    {
+      "id": 46,
+      "timestamp": "2023-09-21 14:31 KST",
+      "phase": "P7_payment_setup",
+      "event": "Suspect uses Changelly swap service to convert 0.01 BTC to ETH (start of laundering chain)",
+      "source_artifact": "Ledger Live app.json swap_history + Blockchain",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p32-33",
+        "DE p13-14"
+      ],
+      "evidence_keywords": [
+        "Changelly",
+        "0.01 BTC",
+        "swap"
+      ],
+      "blockchain_txid": "a186429f69d9276ec3050bdf328cbc2dee7834775591c82219c69815ede75928",
+      "from": "bc1q7ng04nqppjf6cf3296q4l56h9pxg3suzltud4e (MYBITCOIN)",
+      "to": "bc1qc9qv5cdvfzge2tuk4m5evrvgyx52m8nr6kgrqd (Changelly/BitMEX intermediate)",
+      "amount": "0.01 BTC"
+    },
+    {
+      "id": 47,
+      "timestamp": "2023-09-21 14:33:11 KST",
+      "phase": "P7_payment_setup",
+      "event": "Changelly returns 0.16154827 ETH via Union Chain partner to suspect's Ledger ETH wallet",
+      "source_artifact": "Blockchain + Ledger Live transactions",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p33"
+      ],
+      "evidence_keywords": [
+        "Union Chain",
+        "0.16154827 ETH"
+      ],
+      "blockchain_txid": "0xadb1eeebfdcb30af589e6dbaf70009ee2e33b2e24fe8f5f278cbdadb512b14e9",
+      "from": "Union Chain (Changelly partner)",
+      "to": "0x88e0e062325b2C8e5D161745C9C0ec09f4140027 (Ethereum 2, Ledger ETH)",
+      "amount": "0.16154827 ETH"
+    },
+    {
+      "id": 48,
+      "timestamp": "2023-09-21 14:35:11 KST",
+      "phase": "P7_payment_setup",
+      "event": "MetaMask 11.0.0 Chrome extension INSTALLED (folder nkbihfbeogaeaoehlefnkodbefgpgknn created)",
+      "source_artifact": "MetaMask firstTimeInfo in LevelDB + Chrome extensions + MFT",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p25",
+        "DE p10-11"
+      ],
+      "evidence_keywords": [
+        "MetaMask",
+        "nkbihfb",
+        "11.0.0",
+        "14:35:11"
+      ]
+    },
+    {
+      "id": 49,
+      "timestamp": "2023-09-21 14:38:23 KST",
+      "phase": "P7_payment_setup",
+      "event": "Suspect transfers 0.16127908 ETH from Ledger ETH wallet to newly-created MetaMask Account1 wallet",
+      "source_artifact": "Blockchain + MetaMask TransactionController log",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p26"
+      ],
+      "from": "0x88e0e062325b2C8e5D161745C9C0ec09f4140027 (Ethereum 2)",
+      "to": "0x5a6bf322c916c1a5e6dc6a4284c7d4b20d79e617 (Account1)",
+      "amount": "0.16127908 ETH"
+    },
+    {
+      "id": 50,
+      "timestamp": "2023-09-21 14:43:35 KST",
+      "phase": "P8_prepayment",
+      "event": "Suspect swaps 0.1486875 ETH to 0.00892858 wBTC via MetaMask Swap Router (multi-hop: OpenOcean Exchange V2 + Balancer WBTC/ETH 50/50 pool #9)",
+      "source_artifact": "Blockchain + MetaMask logs",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p26"
+      ],
+      "from": "0x5a6bf322c916c1a5e6dc6a4284c7d4b20d79e617 (Account1)",
+      "to": "MetaMask Swap Router (0x881D40237659C251811CEC9c364ef91dC08D300C)",
+      "amount": "0.1486875 ETH -> 0.00892858 wBTC"
+    },
+    {
+      "id": 51,
+      "timestamp": "2023-09-21 14:45:18 KST",
+      "phase": "P8_prepayment",
+      "event": "Token transfer event for wBTC (0 ETH fee transaction)",
+      "source_artifact": "Blockchain",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p27 table 9"
+      ],
+      "from": "Account1",
+      "to": "WBTC Token contract",
+      "amount": "0 ETH"
+    },
+    {
+      "id": 52,
+      "timestamp": "2023-09-21 14:45:35 KST",
+      "phase": "P8_prepayment",
+      "event": "Suspect sends 0.0085 wBTC to accomplice's takemejail.eth wallet (prepayment for ransomware distribution)",
+      "source_artifact": "Blockchain (publicly visible)",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p33",
+        "DE p14-15 figure 34"
+      ],
+      "blockchain_txid": "0xea963a1aa0fd8068d78254d36e01f997384efb67f2694cb0d09c6db299228a0b",
+      "from": "0x5a6bf322c916c1a5e6dc6a4284c7d4b20d79e617 (Account1, suspect MetaMask)",
+      "to": "0xF5F53280aE3555A629c2e5F4E6bCf3A38FD49a4e (takemejail.eth, accomplice)",
+      "amount": "0.0085 wBTC",
+      "notes": "Definitive forensic link suspect-to-accomplice"
+    },
+    {
+      "id": 53,
+      "timestamp": "2023-09-21 14:47:31 KST",
+      "phase": "P8_prepayment",
+      "event": "souldrag__ confirms transfer to accomplice: '보냈는데 받으셨나요?'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p15"
+      ],
+      "message": "보냈는데 받으셨나요?"
+    },
+    {
+      "id": 54,
+      "timestamp": "2023-09-21 14:49:26 KST",
+      "phase": "P8_prepayment",
+      "event": "cyberninja__ confirms receipt: 'ㅇㅋ' (OK)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p15"
+      ],
+      "message": "ㅇㅋ"
+    },
+    {
+      "id": 55,
+      "timestamp": "2023-09-21 14:50:15 KST",
+      "phase": "P9_weapon_acquisition",
+      "event": "SanDisk Cruzer Blade USB Device CONNECTED to PC (Serial: 4C530000320903119361, VID: 0781)",
+      "source_artifact": "Windows System.evtx EventLog (USB driver install) + Registry USBSTOR",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p16-18"
+      ],
+      "evidence_keywords": [
+        "SanDisk",
+        "Cruzer Blade",
+        "USBSTOR",
+        "4C530000320903119361"
+      ],
+      "notes": "Critical: USB connection 34 seconds before ransom.zip materializes - circumstantial source of malware"
+    },
+    {
+      "id": 56,
+      "timestamp": "2023-09-21 14:49:28 KST",
+      "phase": "P9_weapon_acquisition",
+      "event": "cyberninja__ requests: '랜섬웨어 주시죠' (give me the ransomware)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p15"
+      ],
+      "message": "랜섬웨어 주시죠"
+    },
+    {
+      "id": 57,
+      "timestamp": "2023-09-21 14:50:49 KST",
+      "phase": "P9_weapon_acquisition",
+      "event": "ransom.zip materializes in C:\\Users\\souldrag\\Pictures\\ransom\\ (7,121,752 bytes) - 34 seconds AFTER SanDisk USB connection",
+      "source_artifact": "MFT (file system) + UsnJrnl FileCreate",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p19",
+        "DE timeline"
+      ],
+      "evidence_keywords": [
+        "ransom.zip",
+        "Pictures",
+        "7121752",
+        "14:50:49"
+      ],
+      "file_size_bytes": 7121752
+    },
+    {
+      "id": 58,
+      "timestamp": "2023-09-21 (post-extraction)",
+      "phase": "P9_weapon_acquisition",
+      "event": "ransom.exe (7,287,357 bytes) inside ransom.zip - SHA1: 0b88dd8519259f4afd15aeb376ccea9c27b2a253",
+      "source_artifact": "MFT (file metadata) + UsnJrnl",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p20",
+        "DE p11"
+      ],
+      "evidence_keywords": [
+        "ransom.exe",
+        "0b88dd85192",
+        "7287357"
+      ],
+      "file_size_bytes": 7287357
+    },
+    {
+      "id": 59,
+      "timestamp": "2023-09-19 05:29:15.717 UTC",
+      "phase": "P9_weapon_acquisition",
+      "event": "RETROACTIVE: ransom.exe path recorded in OpenSavePidlMRU registry (date predates MFT creation; suggests user interacted with filename earlier OR registry-vs-MFT timestamp disambiguation needed)",
+      "source_artifact": "Registry NTUSER.DAT OpenSavePidlMRU values 13 and 6",
+      "party": "suspect",
+      "sources_citing": [
+        "Old JSON KDFS_2023_timeline.json event 8",
+        "ES verification"
+      ],
+      "evidence_keywords": [
+        "OpenSavePidlMRU",
+        "ransom.exe"
+      ],
+      "notes": "Critical anomaly: Registry timestamp is BEFORE MFT creation. Either: (a) earlier ransom.exe version existed; (b) Registry value_data path was recorded retroactively; (c) timestamp interpretation discrepancy"
+    },
+    {
+      "id": 60,
+      "timestamp": "2023-09-21 14:51:14 KST (Prefetch records BANDIZIP runs=11 cumulative)",
+      "phase": "P9_weapon_acquisition",
+      "event": "Bandizip executed loading ransom.zip and ransom.exe as input files (final packaging step)",
+      "source_artifact": "Prefetch (BANDIZIP.EXE)",
+      "party": "suspect",
+      "sources_citing": [
+        "DE timeline"
+      ],
+      "evidence_keywords": [
+        "BANDIZIP.EXE",
+        "ransom.zip",
+        "ransom.exe"
+      ]
+    },
+    {
+      "id": 61,
+      "timestamp": "2023-09-21 (entire session)",
+      "phase": "P9_weapon_acquisition",
+      "event": "NEGATIVE FINDING: ransom.exe NEVER executed on suspect's PC. No Prefetch entry. No Amcache record. No UserAssist entry.",
+      "source_artifact": "Prefetch (absence) + Amcache (absence) + Registry UserAssist (absence)",
+      "party": "suspect",
+      "sources_citing": [
+        "ES verification",
+        "Cross-validated"
+      ],
+      "evidence_keywords": [
+        "Prefetch",
+        "Amcache",
+        "UserAssist"
+      ],
+      "notes": "Operational design: suspect distributes without executing on own machine. Consistent with rational threat actor."
+    },
+    {
+      "id": 62,
+      "timestamp": "2023-09-21 (full session)",
+      "phase": "P9_weapon_acquisition",
+      "event": "NEGATIVE FINDING: NO ransomware source code in Visual Studio Code or Sublime Text 3 history. Only cryptocurrency trading scripts (binance.py, bitcoin.py, pyupbittest.py and 7 others).",
+      "source_artifact": "Visual Studio state.vscdb + Sublime Text 3 Session.sublime_session",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p19-20"
+      ],
+      "evidence_keywords": [
+        "bitcoin.py",
+        "binance.py",
+        "Sublime Text",
+        "Visual Studio Code"
+      ],
+      "notes": "Contradicts suspect's Discord claim 'I made the ransomware'. Real source: external (USB)."
+    },
+    {
+      "id": 63,
+      "timestamp": "2023-09-21 14:52:28 KST",
+      "phase": "P10_distribution_handoff",
+      "event": "souldrag__ shares ransomware URL: 'https://gofile.io/d/RORPNG'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb + Browser history (gofile.io visit)",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p15-16"
+      ],
+      "evidence_keywords": [
+        "gofile.io/d/RORPNG",
+        "ransom.exe"
+      ],
+      "message": "네 제가 링크 올려드릴게요 / https://gofile.io/d/RORPNG",
+      "notes": "Thumbnail of gofile link confirmed by Team1st to show ransom.exe file"
+    },
+    {
+      "id": 64,
+      "timestamp": "2023-09-21 14:54:27 KST",
+      "phase": "P10_distribution_handoff",
+      "event": "cyberninja__: '네 뭐 오늘 안에 뿌리기는 할 건데 언제 걸릴지는 모르는거라서 기다리고 계세요' (will distribute today, victim selection unpredictable)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p16"
+      ],
+      "message": "네 뭐 오늘 안에 뿌리기는 할 건데 언제 걸릴지는 모르는거라서 기다리고 계세요"
+    },
+    {
+      "id": 65,
+      "timestamp": "2023-09-21 14:56:01 KST",
+      "phase": "P10_distribution_handoff",
+      "event": "cyberninja__ reveals OPSEC: '저 디스코드 계정도 1회용 메일로 만들었고 절대 잡힐 일 없으니까 님만 조심하면 돼요'",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p16"
+      ],
+      "message": "저 디스코드 계정도 1회용 메일로 만들었고 절대 잡힐 일 없으니까 님만 조심하면 돼요",
+      "notes": "Critical: accomplice admits to using disposable email for Discord account; suspect cautioned to monitor own activity"
+    },
+    {
+      "id": 66,
+      "timestamp": "2023-09-21 14:56:17 KST",
+      "phase": "P10_distribution_handoff",
+      "event": "cyberninja__: '트랜잭션 보고 있을거니까 돈 들어올 때마다 보내주시고요' (I'll watch transactions, send revenue share each time)",
+      "source_artifact": "Chrome LocalStorage 000064.ldb",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p16"
+      ],
+      "message": "트랜잭션 보고 있을거니까 돈 들어올 때마다 보내주시고요"
+    },
+    {
+      "id": 67,
+      "timestamp": "2023-09-21 15:02:42 KST",
+      "phase": "P11_post_handoff",
+      "event": "Token transfer for residual wBTC (0 ETH gas transaction)",
+      "source_artifact": "Blockchain",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p27"
+      ],
+      "from": "Account1",
+      "to": "WBTC Token contract",
+      "amount": "0 ETH"
+    },
+    {
+      "id": 68,
+      "timestamp": "2023-09-21 15:02:43 KST",
+      "phase": "P11_post_handoff",
+      "event": "Suspect swaps remaining 0.00042858 wBTC back to ETH (returning unused portion)",
+      "source_artifact": "Blockchain (MetaMask Swap Router)",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p27"
+      ],
+      "from": "Account1",
+      "to": "MetaMask Swap Router",
+      "amount": "0.00042858 wBTC -> 0.007121416 ETH"
+    },
+    {
+      "id": 69,
+      "timestamp": "2023-09-21 15:10:12 KST",
+      "phase": "P11_post_handoff",
+      "event": "Suspect transfers 0.01331641 ETH back from MetaMask Account1 to Ledger Ethereum 2 wallet (consolidating residual)",
+      "source_artifact": "Blockchain",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p27"
+      ],
+      "from": "0x5a6bf322c916c1a5e6dc6a4284c7d4b20d79e617 (Account1)",
+      "to": "0x88e0e062325b2C8e5D161745C9C0ec09f4140027 (Ethereum 2)",
+      "amount": "0.01331641 ETH"
+    },
+    {
+      "id": 70,
+      "timestamp": "2023-09-22 02:55:42 UTC (= 11:55:42 KST)",
+      "phase": "P13_victim1_payment",
+      "event": "Victim 1 sends 0.003 BTC to suspect's MYBITCOIN wallet (initial ransom payment)",
+      "source_artifact": "Blockchain (publicly visible)",
+      "party": "victim_1",
+      "sources_citing": [
+        "Team1st p23-24",
+        "DE p17"
+      ],
+      "evidence_keywords": [
+        "0.003 BTC",
+        "MYBITCOIN",
+        "35iMHbUZe"
+      ],
+      "from": "35iMHbUZeTssxBodiHwEEkb32jpBfVueEL (Victim 1 source)",
+      "to": "bc1q7ng04nqppjf6cf3296q4l56h9pxg3suzltud4e (MYBITCOIN)",
+      "amount": "0.003 BTC"
+    },
+    {
+      "id": 71,
+      "timestamp": "2023-09-22 03:16:33 UTC (= 12:16:33 KST)",
+      "phase": "P13_victim1_correspondence",
+      "event": "Victim 1 (dou120313@gmail.com) sends payment confirmation email to everyrecover56@gmail.com requesting decryption tool",
+      "source_artifact": "Outlook OST mailbox everyrecover56@gmail.com.ost content",
+      "party": "victim_1",
+      "sources_citing": [
+        "Team1st p12-13",
+        "DE p17"
+      ],
+      "evidence_keywords": [
+        "dou120313",
+        "everyrecover56",
+        "decryption"
+      ]
+    },
+    {
+      "id": 72,
+      "timestamp": "2023-09-22 07:44:15 UTC (= 16:44:15 KST)",
+      "phase": "P13_victim1_correspondence",
+      "event": "Victim 1 sends screenshot of payment + repeated decryption request",
+      "source_artifact": "Outlook OST mailbox content",
+      "party": "victim_1",
+      "sources_citing": [
+        "Team1st p12"
+      ],
+      "evidence_keywords": [
+        "screenshot",
+        "decryption"
+      ]
+    },
+    {
+      "id": 73,
+      "timestamp": "2023-09-22 07:51:23 UTC (= 16:51:23 KST)",
+      "phase": "P14_revenue_share_1",
+      "event": "Suspect sends 0.005 ETH commission to accomplice (per-victim revenue share, ~10% of 0.003 BTC)",
+      "source_artifact": "Blockchain (Etherscan)",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p33-34",
+        "DE p15"
+      ],
+      "from": "Suspect Ledger ETH (Ethereum 2)",
+      "to": "takemejail.eth (accomplice)",
+      "amount": "0.005 ETH",
+      "notes": "Approximately 5 hours after victim 1 payment; per Discord agreement"
+    },
+    {
+      "id": 74,
+      "timestamp": "2023-09-22 08:04:07 UTC (= 17:04:07 KST)",
+      "phase": "P15_victim2_payment",
+      "event": "Victim 2 sends 0.003 BTC to suspect's MYBITCOIN wallet (via Binance exchange)",
+      "source_artifact": "Blockchain",
+      "party": "victim_2",
+      "sources_citing": [
+        "Team1st p23-24",
+        "DE p18"
+      ],
+      "from": "bc1qm34lsc65zpw79lxes69zkqmk6ee3ewf0j77s3h (Binance Hot Wallet, used by Victim 2)",
+      "to": "bc1q7ng04nqppjf6cf3296q4l56h9pxg3suzltud4e (MYBITCOIN)",
+      "amount": "0.003 BTC",
+      "notes": "Source wallet is Binance Hot Wallet - Victim 2 used Binance to send ransom payment"
+    },
+    {
+      "id": 75,
+      "timestamp": "2023-09-22 10:06:09 UTC (= 19:06:09 KST)",
+      "phase": "P15_victim2_correspondence",
+      "event": "Victim 2 (mugimyeong85@gmail.com) sends payment confirmation email",
+      "source_artifact": "Outlook OST mailbox content",
+      "party": "victim_2",
+      "sources_citing": [
+        "Team1st p13",
+        "DE p18"
+      ],
+      "evidence_keywords": [
+        "mugimyeong85",
+        "everyrecover56"
+      ]
+    },
+    {
+      "id": 76,
+      "timestamp": "2023-09-22 12:04:35 UTC (= 21:04:35 KST)",
+      "phase": "P15_victim2_correspondence",
+      "event": "Victim 2 sends screenshot + decryption request",
+      "source_artifact": "Outlook OST mailbox content",
+      "party": "victim_2",
+      "sources_citing": [
+        "Team1st p13"
+      ]
+    },
+    {
+      "id": 77,
+      "timestamp": "2023-09-22 12:11:59 UTC (= 21:11:59 KST)",
+      "phase": "P16_revenue_share_2",
+      "event": "Suspect sends second 0.005 ETH commission to accomplice (per victim 2 payment)",
+      "source_artifact": "Blockchain",
+      "party": "suspect",
+      "sources_citing": [
+        "Team1st p34"
+      ],
+      "from": "Suspect Ledger ETH",
+      "to": "takemejail.eth",
+      "amount": "0.005 ETH"
+    },
+    {
+      "id": 78,
+      "timestamp": "2023-09-22 01:47:35 UTC",
+      "phase": "P17_accomplice_laundering",
+      "event": "Accomplice forwards 0.0085 wBTC from takemejail.eth to secondary wallet 0x4C666B... (separating funds from primary identity)",
+      "source_artifact": "Blockchain",
+      "party": "accomplice",
+      "sources_citing": [
+        "DE p15 table 10",
+        "Team1st p36"
+      ],
+      "from": "0xF5F53280aE3555A629c2e5F4E6bCf3A38FD49a4e",
+      "to": "0x4C666B763A54e6eAD70786039a6704738a93Dc0b",
+      "amount": "0.0085 wBTC"
+    },
+    {
+      "id": 79,
+      "timestamp": "2023-09-23 14:21:35 UTC",
+      "phase": "P17_accomplice_laundering",
+      "event": "Accomplice's secondary wallet sends 0.00849 wBTC to Skybridge Smart Contract (Swingby bridge) for wBTC->BTC conversion",
+      "source_artifact": "Blockchain (Skybridge Smart Contract 0x92c95b6227a9f0B4602649BD83F83aDC48dae903)",
+      "party": "accomplice",
+      "sources_citing": [
+        "DE p15-16",
+        "Team1st p36-37"
+      ],
+      "from": "0x4C666B763A54e6eAD70786039a6704738a93Dc0b",
+      "to": "0x92c95b6227a9f0B4602649BD83F83aDC48dae903 (Skybridge)",
+      "amount": "0.00849 wBTC"
+    },
+    {
+      "id": 80,
+      "timestamp": "2023-09-23 14:25:59 UTC",
+      "phase": "P17_accomplice_laundering",
+      "event": "Skybridge returns 105.88 SWINGBY tokens as swap fee rebate to accomplice's wallet",
+      "source_artifact": "Blockchain",
+      "party": "accomplice",
+      "sources_citing": [
+        "DE p16",
+        "Team1st p37"
+      ],
+      "from": "0x2a3040D8B2a4ea8d3C36c04AE2affB9c5a8e856d (Skybridge fee distributor)",
+      "to": "0x4C666B763A54e6eAD70786039a6704738a93Dc0b",
+      "amount": "105.88075 SWINGBY tokens"
+    },
+    {
+      "id": 81,
+      "timestamp": "2023-09-23 (later)",
+      "phase": "P17_accomplice_laundering",
+      "event": "Converted BTC arrives at accomplice's BTC wallet bc1qpd2k6rguqsqe7wk4f8kq59yyl7mm8pg6f745q4",
+      "source_artifact": "Blockchain (Skybridge Explorer)",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p37-38"
+      ],
+      "evidence_keywords": [
+        "Skybridge",
+        "bc1qpd2k"
+      ],
+      "to": "bc1qpd2k6rguqsqe7wk4f8kq59yyl7mm8pg6f745q4"
+    },
+    {
+      "id": 82,
+      "timestamp": "2023-09-23 (post-swap)",
+      "phase": "P17_accomplice_laundering",
+      "event": "Accomplice forwards 0.0003 BTC to Binance Hot Wallet (cashout); residual to 1MMMkQRp8gnjFUD5XPSdVZDX9USMcDPWQQ",
+      "source_artifact": "Blockchain",
+      "party": "accomplice",
+      "sources_citing": [
+        "Team1st p38"
+      ],
+      "from": "bc1qpd2k6rguqsqe7wk4f8kq59yyl7mm8pg6f745q4",
+      "to": "bc1qm34lsc65zpw79lxes69zkqmk6ee3ewf0j77s3h (Binance Hot Wallet)",
+      "amount": "0.0003 BTC (to Binance for cashout)",
+      "notes": "Same Binance Hot Wallet that Victim 2 used - just demonstrates exchange recycling"
+    },
+    {
+      "id": 83,
+      "timestamp": "2023-09-26 12:03 KST",
+      "phase": "P18_post_imaging",
+      "event": "Third unidentified victim sends 0.003 BTC to suspect's MYBITCOIN wallet (PC was imaged Sep 23 - victim identity not in current image)",
+      "source_artifact": "Blockchain (publicly visible) - external evidence",
+      "party": "victim_3",
+      "sources_citing": [
+        "Team1st p34"
+      ],
+      "from": "3HUQG8yzFS8LXxrMXiYxCDVru7QWzusM2X",
+      "to": "bc1q7ng04nqppjf6cf3296q4l56h9pxg3suzltud4e (MYBITCOIN)",
+      "amount": "0.003 BTC",
+      "notes": "Out of forensic scope of this image - identity discoverable only by examining suspect's email after Sep 26"
+    }
+  ],
+  "totals": {
+    "total_events": 83,
+    "phases_count": 20
+  }
+}

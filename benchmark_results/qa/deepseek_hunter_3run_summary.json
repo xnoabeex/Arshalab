@@ -1,0 +1,30 @@
+{
+  "case": "Hunter_4orensics",
+  "runs": {
+    "Run 1": {
+      "keyword_recall": 96.5,
+      "bertscore_f1": 0.9100151062011719,
+      "mean_latency": 30.235185256004332,
+      "perfect": 93
+    },
+    "Run 2": {
+      "keyword_recall": 96.0,
+      "bertscore_f1": 0.9072602987289429,
+      "mean_latency": 26.268317832946778,
+      "perfect": 93
+    },
+    "Run 3": {
+      "keyword_recall": 96.5,
+      "bertscore_f1": 0.9487088918685913,
+      "mean_latency": 20.980013477802277,
+      "perfect": 93
+    }
+  },
+  "combined": {
+    "mean_recall": 96.33333333333333,
+    "mean_bertscore_f1": 0.9219947655995687,
+    "mean_latency": 25.827838855584464,
+    "consistency": 90,
+    "best_of_3": 99.0
+  }
+}

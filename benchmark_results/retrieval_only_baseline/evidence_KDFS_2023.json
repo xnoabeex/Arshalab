@@ -1,0 +1,4956 @@
+{
+  "case_id": "case_20260128_141256",
+  "case_name": "KDFS_2023",
+  "incident_window": {
+    "start": "2023-09-15",
+    "end": "2023-09-30"
+  },
+  "anchors_used": [
+    "auth_logon_interactive_type2",
+    "auth_logon_network_type3",
+    "auth_logon_rdp_type10",
+    "auth_logon_service_type5",
+    "auth_logon_unlock_type7",
+    "auth_logon_failures_4625",
+    "auth_explicit_cred_4648",
+    "auth_priv_assigned_4672",
+    "auth_account_created_4720",
+    "auth_account_enabled_4722",
+    "auth_account_disabled_4725",
+    "auth_account_deleted_4726",
+    "auth_account_modified_4738",
+    "auth_group_added_4732",
+    "auth_account_lockout_4740",
+    "auth_kerberos_tgt_4768",
+    "auth_kerberos_service_4769",
+    "auth_ntlm_4776",
+    "auth_logoff",
+    "proc_creation_4688",
+    "proc_termination_4689",
+    "svc_install_7045",
+    "svc_crashed_7034",
+    "svc_state_change",
+    "svc_starttype_changed_7040",
+    "tasks_created_4698",
+    "tasks_deleted_4699",
+    "tasks_lifecycle",
+    "ps_scriptblock_4104",
+    "ps_module_4103",
+    "ps_errors_4100",
+    "ps_engine_lifecycle",
+    "wmi_subscription",
+    "applocker_audited",
+    "applocker_blocked",
+    "def_threat_detected_1116",
+    "def_action_taken_1117",
+    "def_action_failed_1118",
+    "def_config_change_5007",
+    "def_realtime_disabled",
+    "def_engine_update",
+    "audit_log_cleared_1102",
+    "audit_policy_changed_4719",
+    "fw_stopped_5025",
+    "time_changed_4616",
+    "net_connections_5156",
+    "fw_rule_added_4946",
+    "fw_rule_modified_4947",
+    "fw_rule_deleted_4948",
+    "fw_setting_changed",
+    "dhcp_auth_50036_50037",
+    "usb_attach_driverframeworks",
+    "usb_kernel_pnp_install",
+    "device_install_recognition",
+    "device_setupapi_events",
+    "rdp_session_lifecycle",
+    "rdp_connection_manager",
+    "rdp_disconnect_reasons",
+    "smb_share_access",
+    "file_audit_access_4663",
+    "object_handle_request_4656",
+    "object_deleted_4660",
+    "permissions_changed_4670",
+    "registry_audit_4657",
+    "mft_ps1_files",
+    "mft_bat_files",
+    "mft_lnk_files",
+    "mft_sys_drivers",
+    "mft_msi_installers",
+    "mft_archive_files",
+    "mft_exe_files",
+    "mft_user_writable_dirs",
+    "mft_alternate_data_streams",
+    "usnjrnl_recent_changes",
+    "reg_persistence_master",
+    "reg_image_file_execution_options",
+    "reg_appinit_dlls",
+    "reg_winlogon_helpers",
+    "mft_startup_folders",
+    "reg_user_context",
+    "app_crashes_1000",
+    "app_hangs_1002",
+    "wer_reports_1001",
+    "prefetch_top",
+    "shimcache_top",
+    "amcache_top",
+    "lnk_recent_files",
+    "jumplist_recent",
+    "srum_network_usage",
+    "browser_raw_history",
+    "browser_downloads_searches",
+    "app_communication",
+    "app_crypto_finance",
+    "app_remote_access",
+    "app_antiforensic",
+    "app_archive_tools",
+    "app_email_client",
+    "suspicious_indicators_universal"
+  ],
+  "total_records": 746,
+  "errors": 0,
+  "evidence_by_anchor": {
+    "auth_logon_interactive_type2": [
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:01:17.2496398",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:01:23.4915351",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:02:12.0025803",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:09:11.7881465",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:09:36.1691549",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:11:22.5234393",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:20:30.8843140",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:23:33.3232106",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:23:36.3788555",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:28:57.4781692",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:34:59.6114706",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:38:27.0463620",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:41:22.8717944",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:41:32.8770919",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_interactive_type2",
+        "timestamp": "2023-09-15 01:44:16.2528664",
+        "event_id": 4624,
+        "channel": "Security"
+      }
+    ],
+    "auth_logon_network_type3": [
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2023-09-15 01:01:17.2496398",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2023-09-15 01:01:23.4915351",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2023-09-15 01:02:12.0025803",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2023-09-15 01:09:11.7881465",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2023-09-15 01:09:36.1691549",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2023-09-15 01:11:22.5234393",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2023-09-15 01:20:30.8843140",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2023-09-15 01:23:33.3232106",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2023-09-15 01:23:36.3788555",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2023-09-15 01:28:57.4781692",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2023-09-15 01:34:59.6114706",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_network_type3",
+        "timestamp": "2023-09-15 01:38:27.0463620",
+        "event_id": 4624,
+        "channel": "Security"
+      }
+    ],
+    "auth_logon_rdp_type10": [
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2023-09-15 01:01:17.2496398",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2023-09-15 01:01:23.4915351",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2023-09-15 01:02:12.0025803",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2023-09-15 01:09:11.7881465",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2023-09-15 01:09:36.1691549",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2023-09-15 01:11:22.5234393",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2023-09-15 01:20:30.8843140",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2023-09-15 01:23:33.3232106",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2023-09-15 01:23:36.3788555",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2023-09-15 01:28:57.4781692",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2023-09-15 01:34:59.6114706",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_rdp_type10",
+        "timestamp": "2023-09-15 01:38:27.0463620",
+        "event_id": 4624,
+        "channel": "Security"
+      }
+    ],
+    "auth_logon_service_type5": [
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2023-09-15 01:01:09.9052676",
+        "event_id": 24,
+        "channel": "System"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2023-09-15 01:01:09.9054588",
+        "event_id": 1,
+        "channel": "System"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2023-09-15 01:01:09.9274325",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2023-09-15 01:01:10.3097338",
+        "event_id": 30811,
+        "channel": "Microsoft-Windows-SmbClient/Connectivity"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2023-09-15 01:01:11.0266775",
+        "event_id": 30810,
+        "channel": "Microsoft-Windows-SmbClient/Connectivity"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2023-09-15 01:01:11.0615189",
+        "event_id": 20002,
+        "channel": "Microsoft-Windows-NetworkProfile/Operational"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2023-09-15 01:01:11.0619586",
+        "event_id": 4001,
+        "channel": "Microsoft-Windows-NetworkProfile/Operational"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2023-09-15 01:01:11.0623070",
+        "event_id": 10000,
+        "channel": "Microsoft-Windows-NetworkProfile/Operational"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2023-09-15 01:01:11.1971054",
+        "event_id": 4004,
+        "channel": "Microsoft-Windows-NetworkProfile/Operational"
+      },
+      {
+        "_anchor": "auth_logon_service_type5",
+        "timestamp": "2023-09-15 01:01:11.9017439",
+        "event_id": 30810,
+        "channel": "Microsoft-Windows-SmbClient/Connectivity"
+      }
+    ],
+    "auth_logon_unlock_type7": [
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2023-09-15 01:01:17.2496398",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2023-09-15 01:01:23.4915351",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2023-09-15 01:02:12.0025803",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2023-09-15 01:09:11.7881465",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2023-09-15 01:09:36.1691549",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2023-09-15 01:11:22.5234393",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2023-09-15 01:20:30.8843140",
+        "event_id": 4624,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logon_unlock_type7",
+        "timestamp": "2023-09-15 01:23:33.3232106",
+        "event_id": 4624,
+        "channel": "Security"
+      }
+    ],
+    "auth_logon_failures_4625": [
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-11 02:22:07.5533823",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "WIN-NI0JCB7SBTU",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-11 02:22:07.5533823",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "WIN-NI0JCB7SBTU",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-11 02:23:27.3961032",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-11 02:23:27.3961032",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-13 04:57:33.2421377",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-13 04:57:33.2421377",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-14 02:10:01.7177820",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-14 02:10:01.7177820",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-14 10:11:34.1814746",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-14 10:11:34.1814746",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-15 02:49:38.4026645",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-15 02:49:38.4026645",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-15 03:20:48.6807385",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-15 03:20:48.6807385",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-16 02:12:31.5347890",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-16 02:12:31.5347890",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-17 08:41:11.3265524",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-17 08:41:11.3265524",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-18 04:23:47.1318722",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-18 04:23:47.1318722",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-19 01:15:02.6519910",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-19 01:15:02.6519910",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-22 18:24:12.1273733",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_logon_failures_4625",
+        "timestamp": "2023-09-22 18:24:12.1273733",
+        "event_id": 4625,
+        "channel": "Application",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      }
+    ],
+    "auth_explicit_cred_4648": [
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-18 04:23:46.3161550",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-18 04:23:46.3161550",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-18 04:23:46.3161598",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-18 04:23:46.3161598",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-18 04:23:46.6368756",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-18 04:23:46.6368756",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-18 04:23:48.6080526",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-18 04:23:48.6080526",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-19 01:14:59.1909577",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-19 01:14:59.1909577",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-19 01:14:59.1910360",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-19 01:14:59.1910360",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-19 01:15:00.2487142",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-19 01:15:00.2487142",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-19 01:15:04.7027433",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-19 01:15:04.7027433",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-22 18:24:11.0688612",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-22 18:24:11.0688612",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-22 18:24:11.0694020",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-22 18:24:11.0694020",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-22 18:24:11.3593643",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-22 18:24:11.3593643",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-22 18:24:16.6717839",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_explicit_cred_4648",
+        "timestamp": "2023-09-22 18:24:16.6717839",
+        "event_id": 4648,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      }
+    ],
+    "auth_priv_assigned_4672": [
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:20:12.7760050",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:20:12.7760050",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:20:58.8683661",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:20:58.8683661",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:24:18.7889557",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:24:18.7889557",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:24:19.1519634",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:24:19.1519634",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:24:19.1754046",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:24:19.1754046",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:24:20.0817482",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:24:20.0817482",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:36:52.5251629",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:36:52.5251629",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:42:02.7123132",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 02:42:02.7123132",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 03:05:44.4865233",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 03:05:44.4865233",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 03:05:44.7044035",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      },
+      {
+        "_anchor": "auth_priv_assigned_4672",
+        "timestamp": "2023-09-23 03:05:44.7044035",
+        "event_id": 4672,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "authentication"
+      }
+    ],
+    "auth_account_created_4720": [
+      {
+        "_anchor": "auth_account_created_4720",
+        "timestamp": "2023-09-11 02:22:01.0721731",
+        "event_id": 4720,
+        "channel": "Security",
+        "computer": "WIN-NI0JCB7SBTU",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_created_4720",
+        "timestamp": "2023-09-11 02:23:25.3721991",
+        "event_id": 4720,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_created_4720",
+        "timestamp": "2023-09-11 02:26:57.5637116",
+        "event_id": 4720,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "account_management"
+      }
+    ],
+    "auth_account_enabled_4722": [],
+    "auth_account_disabled_4725": [],
+    "auth_account_deleted_4726": [],
+    "auth_account_modified_4738": [
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2023-09-11 02:23:28.9125388",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2023-09-11 02:23:28.9126268",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2023-09-11 02:23:28.9128243",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2023-09-11 02:23:28.9129339",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2023-09-11 02:23:28.9131243",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2023-09-11 02:23:28.9133311",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2023-09-11 02:26:57.6002241",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2023-09-11 02:26:57.6044483",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2023-09-11 02:26:57.6199511",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "account_management"
+      },
+      {
+        "_anchor": "auth_account_modified_4738",
+        "timestamp": "2023-09-11 02:27:44.3675820",
+        "event_id": 4738,
+        "channel": "Security",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "account_management"
+      }
+    ],
+    "auth_group_added_4732": [],
+    "auth_account_lockout_4740": [],
+    "auth_kerberos_tgt_4768": [],
+    "auth_kerberos_service_4769": [],
+    "auth_ntlm_4776": [],
+    "auth_logoff": [
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-15 02:32:06.1538016",
+        "event_id": 4647,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-15 02:56:53.3829773",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-15 02:56:53.4515074",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-15 02:56:53.4515944",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-15 10:00:57.0893623",
+        "event_id": 4647,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-16 13:52:06.1170020",
+        "event_id": 4647,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-16 13:53:00.4679775",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-16 13:53:00.4977430",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-16 13:53:00.4977754",
+        "event_id": 4634,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-17 10:42:33.9816047",
+        "event_id": 4647,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-19 01:14:20.2031362",
+        "event_id": 4647,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-22 12:17:19.2856374",
+        "event_id": 4647,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "auth_logoff",
+        "timestamp": "2023-09-23 03:05:52.8538016",
+        "event_id": 4647,
+        "channel": "Security"
+      }
+    ],
+    "proc_creation_4688": [
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 02:49:26.8440399",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 02:49:26.8518738",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 02:49:28.5221824",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 02:49:30.9725731",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 02:49:31.1222994",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 02:49:31.6910499",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 02:49:31.6983519",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 02:49:31.6987436",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 02:49:31.9601340",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 02:49:32.0170315",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 02:49:32.1953641",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 03:20:37.7953333",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 03:20:37.8014445",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 03:20:38.5591308",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 03:20:41.8599050",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 03:20:42.2427061",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 03:20:42.8102514",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 03:20:42.8163226",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 03:20:42.8452840",
+        "event_id": 4688,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "proc_creation_4688",
+        "timestamp": "2023-09-15 03:20:42.9890152",
+        "event_id": 4688,
+        "channel": "Security"
+      }
+    ],
+    "proc_termination_4689": [],
+    "svc_install_7045": [
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-13 09:12:52.2453169",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-13 09:13:00.8854141",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-13 09:13:01.5365068",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-13 09:13:01.5744059",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-14 02:15:25.9682191",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-14 05:57:24.0242084",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-14 06:01:06.7899729",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-14 06:01:06.7919431",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-16 02:29:23.9932408",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-18 04:35:37.1733644",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-18 07:33:03.9176490",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-18 07:33:03.9187169",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-18 07:33:03.9197321",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-19 05:38:16.6009569",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "svc_install_7045",
+        "timestamp": "2023-09-21 05:50:15.5344352",
+        "event_id": 7045,
+        "channel": "System",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      }
+    ],
+    "svc_crashed_7034": [],
+    "svc_state_change": [],
+    "svc_starttype_changed_7040": [
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 01:38:27.6229902",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 01:43:43.8924049",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 01:44:16.3942738",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 01:46:37.3342625",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 02:50:10.1838954",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 02:56:52.5900768",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 03:37:15.5041402",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 03:45:24.0506725",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 03:50:34.8246014",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 04:34:38.0969470",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 04:36:43.2726929",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 04:55:31.4052782",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 04:57:36.6926719",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 05:07:00.7336976",
+        "event_id": 7040,
+        "channel": "System"
+      },
+      {
+        "_anchor": "svc_starttype_changed_7040",
+        "timestamp": "2023-09-15 05:09:05.3517270",
+        "event_id": 7040,
+        "channel": "System"
+      }
+    ],
+    "tasks_created_4698": [],
+    "tasks_deleted_4699": [],
+    "tasks_lifecycle": [],
+    "ps_scriptblock_4104": [
+      {
+        "_anchor": "ps_scriptblock_4104",
+        "timestamp": "2023-09-18 04:34:53.3780777",
+        "event_id": 4104,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      }
+    ],
+    "ps_module_4103": [],
+    "ps_errors_4100": [],
+    "ps_engine_lifecycle": [
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2023-09-15 01:07:56.6213600",
+        "event_id": 40961,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2023-09-15 01:08:14.0828481",
+        "event_id": 53504,
+        "channel": "Microsoft-Windows-PowerShell/Operational"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2023-09-15 01:08:46.5274362",
+        "event_id": 600,
+        "channel": "Windows PowerShell"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2023-09-15 01:08:46.5592930",
+        "event_id": 600,
+        "channel": "Windows PowerShell"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2023-09-15 01:08:46.5613460",
+        "event_id": 600,
+        "channel": "Windows PowerShell"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2023-09-15 01:08:46.5794997",
+        "event_id": 600,
+        "channel": "Windows PowerShell"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2023-09-15 01:08:46.5804651",
+        "event_id": 600,
+        "channel": "Windows PowerShell"
+      },
+      {
+        "_anchor": "ps_engine_lifecycle",
+        "timestamp": "2023-09-15 01:08:46.5804651",
+        "event_id": 600,
+        "channel": "Windows PowerShell"
+      }
+    ],
+    "wmi_subscription": [
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2023-09-15 01:02:02.0087869",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2023-09-15 01:02:13.4531682",
+        "event_id": 5857,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2023-09-15 01:03:06.8244153",
+        "event_id": 5857,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2023-09-15 01:03:06.8544165",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2023-09-15 01:03:11.7130750",
+        "event_id": 5857,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2023-09-15 01:03:14.6731071",
+        "event_id": 5857,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2023-09-15 01:03:15.1105312",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2023-09-15 01:03:15.1800215",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2023-09-15 01:08:49.3550587",
+        "event_id": 5857,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "wmi_subscription",
+        "timestamp": "2023-09-15 01:08:50.2191690",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      }
+    ],
+    "applocker_audited": [
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2023-09-15 01:03:08.9344501",
+        "event_id": 8003,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2023-09-15 01:03:11.9301361",
+        "event_id": 8003,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2023-09-15 03:26:09.5213592",
+        "event_id": 8003,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2023-09-15 03:27:10.5356801",
+        "event_id": 8003,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2023-09-15 03:27:13.2399246",
+        "event_id": 8003,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2023-09-15 03:28:02.5640145",
+        "event_id": 8003,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2023-09-15 03:28:05.0029885",
+        "event_id": 8003,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "applocker_audited",
+        "timestamp": "2023-09-15 08:42:57.0408051",
+        "event_id": 8003,
+        "channel": "Microsoft-Windows-Store/Operational"
+      }
+    ],
+    "applocker_blocked": [],
+    "def_threat_detected_1116": [
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2023-09-17 10:38:33.1216989",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-PushNotification-Platform/Operational",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_threat_detected_1116",
+        "timestamp": "2023-09-22 07:42:54.6083618",
+        "event_id": 1116,
+        "channel": "Microsoft-Windows-PushNotification-Platform/Operational",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      }
+    ],
+    "def_action_taken_1117": [
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2023-09-15 05:55:12.1275465",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-PushNotification-Platform/Operational",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2023-09-17 10:35:04.8134924",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-PushNotification-Platform/Operational",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2023-09-18 08:07:05.4134211",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-PushNotification-Platform/Operational",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2023-09-21 08:13:51.0209479",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-PushNotification-Platform/Operational",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      },
+      {
+        "_anchor": "def_action_taken_1117",
+        "timestamp": "2023-09-22 08:22:57.7915524",
+        "event_id": 1117,
+        "channel": "Microsoft-Windows-PushNotification-Platform/Operational",
+        "computer": "DESKTOP-K7VGB7O",
+        "_bucket": "suspicious_events"
+      }
+    ],
+    "def_action_failed_1118": [],
+    "def_config_change_5007": [
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2023-09-15 01:10:20.1296462",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2023-09-15 01:10:20.1296648",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2023-09-15 01:11:01.1044136",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2023-09-15 01:11:01.1044413",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2023-09-15 02:49:48.5934869",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2023-09-15 02:50:05.4566245",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2023-09-15 02:50:06.1255601",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2023-09-15 02:50:06.1255770",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2023-09-15 02:50:34.7332897",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_config_change_5007",
+        "timestamp": "2023-09-15 02:50:34.7333096",
+        "event_id": 5007,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      }
+    ],
+    "def_realtime_disabled": [],
+    "def_engine_update": [
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2023-09-15 01:01:54.5159180",
+        "event_id": 2000,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2023-09-15 01:11:11.8688782",
+        "event_id": 2000,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2023-09-15 01:11:11.8702065",
+        "event_id": 2000,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2023-09-15 01:29:26.1821042",
+        "event_id": 2000,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2023-09-15 02:21:13.5121095",
+        "event_id": 2000,
+        "channel": "Microsoft-Windows-Store/Operational"
+      },
+      {
+        "_anchor": "def_engine_update",
+        "timestamp": "2023-09-15 02:48:58.1335561",
+        "event_id": 2001,
+        "channel": "Microsoft-Windows-WebAuthN/Operational"
+      }
+    ],
+    "audit_log_cleared_1102": [],
+    "audit_policy_changed_4719": [],
+    "fw_stopped_5025": [
+      {
+        "_anchor": "fw_stopped_5025",
+        "timestamp": "2023-09-16 02:35:08.9155271",
+        "event_id": 5025,
+        "channel": "Microsoft-Windows-AppXDeploymentServer/Operational"
+      }
+    ],
+    "time_changed_4616": [
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2023-09-15 01:01:09.9274325",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2023-09-15 03:46:19.0832517",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2023-09-15 08:42:30.7302600",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2023-09-16 02:27:13.9170528",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2023-09-17 10:38:31.8085301",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2023-09-17 10:42:18.8034637",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2023-09-18 04:35:00.0090586",
+        "event_id": 4616,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "time_changed_4616",
+        "timestamp": "2023-09-19 01:12:39.0243169",
+        "event_id": 4616,
+        "channel": "Security"
+      }
+    ],
+    "net_connections_5156": [],
+    "fw_rule_added_4946": [],
+    "fw_rule_modified_4947": [],
+    "fw_rule_deleted_4948": [],
+    "fw_setting_changed": [],
+    "dhcp_auth_50036_50037": [
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2023-09-15 02:48:57.8499568",
+        "event_id": 50037,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2023-09-15 02:49:37.4830366",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2023-09-15 02:57:46.7293831",
+        "event_id": 50037,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2023-09-15 03:20:47.5977197",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2023-09-15 10:00:58.9031330",
+        "event_id": 50037,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2023-09-16 02:12:31.2501597",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2023-09-16 13:52:37.8215346",
+        "event_id": 50037,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2023-09-16 13:52:56.7203504",
+        "event_id": 50036,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2023-09-16 13:53:01.8146330",
+        "event_id": 50037,
+        "channel": "System"
+      },
+      {
+        "_anchor": "dhcp_auth_50036_50037",
+        "timestamp": "2023-09-17 08:41:11.1493150",
+        "event_id": 50036,
+        "channel": "System"
+      }
+    ],
+    "usb_attach_driverframeworks": [
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2023-09-21 05:50:14.9658507",
+        "event_id": 4,
+        "channel": "Microsoft-Windows-Kernel-ShimEngine/Operational"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2023-09-21 05:50:14.9753464",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2023-09-21 05:50:14.9784513",
+        "event_id": 400,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2023-09-21 05:50:14.9949262",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2023-09-21 05:50:15.4816677",
+        "event_id": 10000,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2023-09-21 05:50:15.4847991",
+        "event_id": 10001,
+        "channel": "System"
+      },
+      {
+        "_anchor": "usb_attach_driverframeworks",
+        "timestamp": "2023-09-21 05:50:15.4903472",
+        "event_id": 10100,
+        "channel": "System"
+      }
+    ],
+    "usb_kernel_pnp_install": [
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2023-09-15 02:49:27.7540759",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2023-09-17 10:27:39.5764319",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2023-09-17 10:27:39.6533273",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2023-09-17 10:27:39.6618675",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2023-09-17 10:27:39.6634458",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2023-09-17 10:27:40.2871271",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2023-09-17 10:27:40.2873978",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2023-09-17 10:31:54.1097577",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2023-09-17 10:31:54.1632509",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      },
+      {
+        "_anchor": "usb_kernel_pnp_install",
+        "timestamp": "2023-09-17 10:31:54.1876885",
+        "event_id": 410,
+        "channel": "Microsoft-Windows-Kernel-PnP/Configuration"
+      }
+    ],
+    "device_install_recognition": [],
+    "device_setupapi_events": [
+      {
+        "_anchor": "device_setupapi_events",
+        "timestamp": "2023-09-21 05:50:15.5395675",
+        "event_id": 20003,
+        "channel": "System"
+      }
+    ],
+    "rdp_session_lifecycle": [
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2023-09-15 03:20:53.2544075",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2023-09-15 03:20:54.0880507",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2023-09-16 02:12:33.8073272",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2023-09-16 02:12:35.5894502",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2023-09-17 08:41:13.0770542",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2023-09-17 08:41:13.3277290",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2023-09-18 04:23:49.8166783",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2023-09-18 04:23:50.1851038",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2023-09-19 01:15:05.6872087",
+        "event_id": 21,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2023-09-19 01:15:06.2724463",
+        "event_id": 22,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2023-09-22 12:17:19.6660170",
+        "event_id": 23,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_session_lifecycle",
+        "timestamp": "2023-09-22 12:17:19.7933635",
+        "event_id": 54,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      }
+    ],
+    "rdp_connection_manager": [
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2023-09-15 02:32:06.4224492",
+        "event_id": 23,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2023-09-15 02:32:06.6921637",
+        "event_id": 54,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2023-09-15 02:44:39.9461249",
+        "event_id": 4907,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2023-09-15 02:44:39.9518985",
+        "event_id": 4907,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2023-09-15 02:45:17.9745021",
+        "event_id": 4907,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2023-09-15 02:45:17.9806887",
+        "event_id": 4907,
+        "channel": "Security"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2023-09-15 02:49:34.5132664",
+        "event_id": 32,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2023-09-15 02:56:52.8560099",
+        "event_id": 54,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2023-09-15 02:56:53.3725897",
+        "event_id": 40,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2023-09-15 03:20:44.9588941",
+        "event_id": 32,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2023-09-15 03:20:51.2721713",
+        "event_id": 41,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      },
+      {
+        "_anchor": "rdp_connection_manager",
+        "timestamp": "2023-09-15 03:20:51.3407220",
+        "event_id": 42,
+        "channel": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+      }
+    ],
+    "rdp_disconnect_reasons": [
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2023-09-13 04:57:11.1766149",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2023-09-13 04:57:11.1796087",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2023-09-13 04:57:11.1828901",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2023-09-13 04:57:11.2051194",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2023-09-14 02:17:29.2416528",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2023-09-14 02:17:29.2560540",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2023-09-15 01:08:51.7109442",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      },
+      {
+        "_anchor": "rdp_disconnect_reasons",
+        "timestamp": "2023-09-15 01:08:51.8625960",
+        "event_id": 5858,
+        "channel": "Microsoft-Windows-WMI-Activity/Operational"
+      }
+    ],
+    "smb_share_access": [],
+    "file_audit_access_4663": [],
+    "object_handle_request_4656": [],
+    "object_deleted_4660": [],
+    "permissions_changed_4670": [],
+    "registry_audit_4657": [],
+    "mft_ps1_files": [],
+    "mft_bat_files": [
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2023-09-15 01:14:13.1412727",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\bat\\snippets"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2023-09-15 01:14:13.1520961",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2023-09-15 01:14:13.1580775",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\bat\\syntaxes"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2023-09-15 01:19:47.4961669",
+        "file_path": ".\\Users\\souldrag\\.vscode\\extensions\\ms-python.python-2023.16.0\\pythonFiles\\lib\\python\\debugpy\\_vendored\\pydevd\\pydevd_attach_to_process\\windows\\compile_windows.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2023-09-15 01:34:00.7255613",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\GitHubDesktop\\app-3.3.1\\resources\\app\\static\\github.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2023-09-15 01:34:16.2496598",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\GitHubDesktop\\bin\\github.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2023-09-15 01:40:28.5056471",
+        "file_path": ".\\#Github\\cointrader\\cointrader.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2023-09-15 02:31:56.7821016",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeCore\\117.0.2045.31\\show_third_party_software_licenses.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2023-09-19 01:17:29.9887462",
+        "file_path": ".\\Program Files\\Microsoft OneDrive\\23.184.0903.0002\\CollectSyncLogs.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2023-09-19 12:33:34.5556620",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\Edge\\Application\\117.0.2045.36\\show_third_party_software_licenses.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2023-09-19 12:33:34.5556620",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\117.0.2045.36\\show_third_party_software_licenses.bat"
+      },
+      {
+        "_anchor": "mft_bat_files",
+        "timestamp": "2023-09-19 12:33:34.5556620",
+        "file_path": ".\\Program Files (x86)\\Microsoft\\EdgeCore\\117.0.2045.36\\show_third_party_software_licenses.bat"
+      }
+    ],
+    "mft_lnk_files": [
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2023-09-15 01:04:41.2005679",
+        "file_path": ".\\Users\\souldrag\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\BTCUSDT-1h-2023-07.zip.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2023-09-15 01:04:47.6944937",
+        "file_path": ".\\Users\\souldrag\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\BTCUSDT-1h-2023-06.zip.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2023-09-15 01:05:02.0615330",
+        "file_path": ".\\Users\\souldrag\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\BTCUSDT-1h-2023-05.zip.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2023-09-15 01:08:18.6962812",
+        "file_path": ".\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\반디집\\반디집.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2023-09-15 01:08:18.7052736",
+        "file_path": ".\\Users\\Public\\Desktop\\반디집.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2023-09-15 01:14:38.2232969",
+        "file_path": ".\\Users\\souldrag\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio Code\\Visual Studio Code.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2023-09-15 01:14:38.2720928",
+        "file_path": ".\\Users\\souldrag\\Desktop\\Visual Studio Code.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2023-09-15 01:16:29.2572068",
+        "file_path": ".\\Users\\souldrag\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\코드.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2023-09-15 01:21:17.2571508",
+        "file_path": ".\\Users\\souldrag\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\BTCUSDT-1h-2022-02.zip.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2023-09-15 01:23:12.1344639",
+        "file_path": ".\\Users\\souldrag\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\BTCUSDT-1h-2022-01.zip.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2023-09-15 01:23:34.0332148",
+        "file_path": ".\\Users\\souldrag\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\다운로드.lnk"
+      },
+      {
+        "_anchor": "mft_lnk_files",
+        "timestamp": "2023-09-15 01:25:50.0648357",
+        "file_path": ".\\Users\\souldrag\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\가상화폐매매일지.xlsx.lnk"
+      }
+    ],
+    "mft_sys_drivers": [
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2023-09-18 07:33:19.2006062",
+        "file_path": ".\\Windows\\System32\\drivers\\ProDefense2.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2023-09-18 07:33:19.2356207",
+        "file_path": ".\\Windows\\SysWOW64\\drivers\\kck64s.sys"
+      },
+      {
+        "_anchor": "mft_sys_drivers",
+        "timestamp": "2023-09-18 07:33:19.2365392",
+        "file_path": ".\\Windows\\SysWOW64\\drivers\\x64kdss.sys"
+      }
+    ],
+    "mft_msi_installers": [
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2023-09-17 08:47:25.2821168",
+        "file_path": ".\\Windows\\Installer\\10f9f.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2023-09-17 08:47:25.2821168",
+        "file_path": ".\\Program Files\\Microsoft Office\\root\\Integration\\C2RInt.16.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2023-09-17 08:47:25.8019800",
+        "file_path": ".\\Windows\\Installer\\10fc7.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2023-09-17 08:47:25.8019800",
+        "file_path": ".\\Program Files\\Microsoft Office\\root\\Integration\\SPPRedist.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2023-09-17 08:47:46.1079253",
+        "file_path": ".\\Windows\\Installer\\10fbf.msi"
+      },
+      {
+        "_anchor": "mft_msi_installers",
+        "timestamp": "2023-09-17 08:47:46.1079253",
+        "file_path": ".\\Program Files\\Microsoft Office\\root\\Integration\\C2RIntLoc.ko-kr.16.msi"
+      }
+    ],
+    "mft_archive_files": [
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2023-09-15 01:04:44.0014684",
+        "file_path": ".\\Users\\souldrag\\Desktop\\USDT\\BTCUSDT-1h-2023-07.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2023-09-15 01:04:48.8078895",
+        "file_path": ".\\Users\\souldrag\\Desktop\\USDT\\BTCUSDT-1h-2023-06.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2023-09-15 01:05:03.9034964",
+        "file_path": ".\\Users\\souldrag\\Desktop\\USDT\\BTCUSDT-1h-2023-05.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2023-09-15 01:21:19.0571265",
+        "file_path": ".\\Users\\souldrag\\Desktop\\USDT\\BTCUSDT-1h-2022-02.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2023-09-15 01:23:19.4764660",
+        "file_path": ".\\Users\\souldrag\\Desktop\\USDT\\BTCUSDT-1h-2022-01.zip"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2023-09-15 01:26:47.7125386",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Notion\\resources\\app\\node_modules\\tar-fs\\node_modules"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2023-09-15 01:26:47.8035721",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Notion\\resources\\app\\node_modules\\tar-fs\\node_modules\\chownr"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2023-09-15 01:26:47.8116686",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Notion\\resources\\app\\node_modules\\tar-fs"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2023-09-15 01:26:47.8846269",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Notion\\resources\\app\\node_modules\\tar-fs\\test"
+      },
+      {
+        "_anchor": "mft_archive_files",
+        "timestamp": "2023-09-15 01:26:47.9575677",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Notion\\resources\\app\\node_modules\\tar-fs\\test\\fixtures\\a"
+      }
+    ],
+    "mft_exe_files": [
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:06:18.2448753",
+        "file_path": ".\\Users\\souldrag\\Downloads\\BANDIZIP-SETUP-STD-X64.EXE"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:08:25.2004069",
+        "file_path": ".\\Windows\\Prefetch\\BANDIZIP-SETUP-STD-X64.EXE-7EED8C47.pf"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:12:20.0706291",
+        "file_path": ".\\Users\\souldrag\\Downloads\\VSCodeUserSetup-x64-1.82.2.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:12:30.1557046",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Microsoft VS Code\\unins000.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:19:46.9554526",
+        "file_path": ".\\Users\\souldrag\\.vscode\\extensions\\ms-python.python-2023.16.0\\pythonFiles\\lib\\python\\debugpy\\_vendored\\pydevd\\pydevd_attach_to_process\\inject_dll_amd64.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:19:47.2661823",
+        "file_path": ".\\Users\\souldrag\\.vscode\\extensions\\ms-python.python-2023.16.0\\pythonFiles\\lib\\python\\debugpy\\_vendored\\pydevd\\pydevd_attach_to_process\\inject_dll_x86.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:21:09.2173795",
+        "file_path": ".\\Users\\souldrag\\Downloads\\Notion Setup 2.0.53.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:21:09.2173795",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\notion-updater\\installer.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:33:15.6082903",
+        "file_path": ".\\Users\\souldrag\\Downloads\\GitHubDesktopSetup-x64.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:33:35.5685727",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\GitHubDesktop\\app-3.3.1\\GitHubDesktop.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:33:35.5917923",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\GitHubDesktop\\GitHubDesktop.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:33:38.0376725",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\GitHubDesktop\\app-3.3.1\\resources\\app\\desktop-trampoline\\desktop-trampoline.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:33:46.4496158",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\GitHubDesktop\\app-3.3.1\\resources\\app\\git\\cmd\\git.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:33:46.4527559",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\GitHubDesktop\\app-3.3.1\\resources\\app\\git\\cmd\\scalar.exe"
+      },
+      {
+        "_anchor": "mft_exe_files",
+        "timestamp": "2023-09-15 01:33:46.7309767",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\GitHubDesktop\\app-3.3.1\\resources\\app\\git\\mingw64\\bin\\Atlassian.Bitbucket.UI.exe"
+      }
+    ],
+    "mft_user_writable_dirs": [
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\_locales\\jp\\messages.json"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\aknowledgements.html"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\favicon.png"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\fonts\\OpenSans_VariableFont_wdth_wght.ttf"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\_locales\\de_\\messages.json"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\images\\deepl-logo-white-v2.svg"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\global.css"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\images\\toggle-on.svg"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\images\\checkmark.svg"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\images\\arrow-down.svg"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\images\\arrow-right-variant.svg"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\images\\bottom-position-icon.svg"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\images\\circle.svg"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\images\\buttons\\settings-input-blue.svg"
+      },
+      {
+        "_anchor": "mft_user_writable_dirs",
+        "timestamp": "2023-09-15 00:01:04.0000000",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\cofdbpoegempjloogbagkncekinflcnj\\1.8.0_0\\images\\buttons\\close-zendesk.svg"
+      }
+    ],
+    "mft_alternate_data_streams": [
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2023-09-15 01:17:39.3723733",
+        "file_path": ".\\Users\\souldrag\\.vscode\\extensions\\ms-python.python-2023.16.0\\out\\client\\node_modules\\node-stream-zip.js"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2023-09-15 01:17:39.3861274",
+        "file_path": ".\\Users\\souldrag\\.vscode\\extensions\\ms-python.python-2023.16.0\\out\\client\\node_modules\\node-stream-zip.js.LICENSE.txt"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2023-09-15 01:24:50.8992044",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Notion\\resources\\app\\node_modules\\end-of-stream"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2023-09-15 01:26:39.5586278",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Notion\\resources\\app\\node_modules\\readable-stream"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2023-09-15 01:26:39.8787962",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Notion\\resources\\app\\node_modules\\readable-stream\\lib"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2023-09-15 01:26:39.8878279",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Notion\\resources\\app\\node_modules\\readable-stream\\lib\\internal"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2023-09-15 01:26:40.4037548",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Notion\\resources\\app\\node_modules\\readable-stream\\lib\\internal\\streams"
+      },
+      {
+        "_anchor": "mft_alternate_data_streams",
+        "timestamp": "2023-09-15 01:26:48.4177853",
+        "file_path": ".\\Users\\souldrag\\AppData\\Local\\Programs\\Notion\\resources\\app\\node_modules\\tar-stream"
+      }
+    ],
+    "usnjrnl_recent_changes": [
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-17 08:41:30.0585235",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-17 08:41:30.0585235",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-18 05:08:43.3688231",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-18 05:08:43.3688231",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-19 01:20:36.7147367",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-19 01:20:36.7201198",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-19 01:21:07.0167843",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-19 05:14:45.2160675",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-19 05:14:45.2160675",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-19 05:36:57.0226302",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-19 05:36:57.0226302",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-21 00:11:36.8841550",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-21 00:11:36.8841550",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-21 05:21:03.7633215",
+        "file_path": "or-IN"
+      },
+      {
+        "_anchor": "usnjrnl_recent_changes",
+        "timestamp": "2023-09-21 05:21:03.7633215",
+        "file_path": "or-IN"
+      }
+    ],
+    "reg_persistence_master": [
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/Packaged app-Execution",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Firewall-CPL/Diagnostic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2019-12-07 09:17:28.0713291",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Windows Firewall With Advanced Security/Firewall",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2019-12-07 09:17:44.3745576",
+        "key_path": "ROOT\\Classes\\exefile\\shell\\open\\command",
+        "value_name": "(default)",
+        "value_data": "\"%1\" %*",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-11 02:22:55.8657340",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "value_name": "SecurityHealth",
+        "value_data": "04-00-00-00-00-00-00-00-00-00-00-00",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Cache",
+        "value_data": "%USERPROFILE%\\AppData\\Local\\Microsoft\\Windows\\INetCache",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Cookies",
+        "value_data": "%USERPROFILE%\\AppData\\Local\\Microsoft\\Windows\\INetCookies",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Desktop",
+        "value_data": "%USERPROFILE%\\Desktop",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-13 05:08:32.6462962",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-14 06:04:57.7236391",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "SecurityHealth",
+        "value_data": "%windir%\\system32\\SecurityHealthSystray.exe",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-14 06:04:57.7236391",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "VMware User Process",
+        "value_data": "\"C:\\Program Files\\VMware\\VMware Tools\\vmtoolsd.exe\" -n vmusr",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-14 06:04:57.7236391",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "Everything",
+        "value_data": "\"C:\\Program Files\\Everything\\Everything.exe\" -startup",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-14 10:12:48.5261691",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-15 02:51:12.0125982",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-19 01:20:59.1859167",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks",
+        "value_data": "Created on: 2023-09-11 02:22:08.2254619",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-21 00:06:48.3282621",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "OneDrive",
+        "value_data": "\"C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe\" /background",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-21 00:06:48.3282621",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "MicrosoftEdgeAutoLaunch_29190AE5E51D4546208706D7DF61D436",
+        "value_data": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" --no-startup-window --win-session-start /prefetch:5",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-21 05:50:14.9707487",
+        "key_path": "ROOT\\ControlSet001\\Enum\\USBSTOR",
+        "value_name": "Multiple",
+        "value_data": "Manufacturer: Ven_SanDisk Title: Prod_Cruzer_Blade Version: Rev_1.00 SerialNumber: 4C530000320903119361&0 DeviceName: SanDisk Cruzer Blade USB Device\u0000 DiskId: {eacef221-5689-11ee-b584-e8f408e69a91}",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-22 18:24:15.3775923",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-System",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Directory-Services-SAM",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-22 18:24:19.2368043",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-22 18:37:11.2458747",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}\\Count",
+        "value_name": "{9R3995NO-1S9P-4S13-O827-48O24O6P7174}\\GnfxOne\\Svyr Rkcybere.yax",
+        "value_data": "{User Pinned}\\TaskBar\\File Explorer.lnk",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: .NET CLR Data Desc: ",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "souldrag",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-1317971962-2888861349-1690603405-1001",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoAdminLogon",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "",
+        "key_path": "ROOT\\ControlSet001\\Enum\\USBSTOR\\Disk&Ven_SanDisk&Prod_Cruzer_Blade&Rev_1.00",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_persistence_master",
+        "timestamp": "",
+        "key_path": "ROOT\\ControlSet001\\Control\\DeviceClasses\\{53f56307-b6bf-11d0-94f2-00a0c91efb8b}\\##?#USBSTOR#Disk&Ven_SanDisk&Prod_Cruzer_Blade&Rev_1.00#4C530000320903119361&0#{53f56307-b6bf-11d0-94f2-00a0c91efb8b}",
+        "value_name": "Disk&Ven_SanDisk&Prod_Cruzer_Blade&Rev_1.00",
+        "hive": "SYSTEM"
+      }
+    ],
+    "reg_image_file_execution_options": [
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2019-12-07 09:15:07.6005178",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "Wof",
+        "value_data": "Windows Overlay File System Filter Driver",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2019-12-07 09:15:07.7371732",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "exfat",
+        "value_data": "exFAT File System Driver",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2019-12-07 09:15:07.7371732",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "fastfat",
+        "value_data": "FAT12/16/32 File System Driver",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2019-12-07 09:15:07.8162989",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "cdfs",
+        "value_data": "CD/DVD File System Reader",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/Packaged app-Execution",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2019-12-07 09:17:44.3745576",
+        "key_path": "ROOT\\Classes\\exefile\\shell\\open\\command",
+        "value_name": "(default)",
+        "value_data": "\"%1\" %*",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-11 02:21:54.5781500",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "WindowsTrustedRT",
+        "value_data": "Windows Trusted Execution Environment Class Extension",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-11 02:22:55.8500711",
+        "key_path": "ROOT\\ControlSet001\\Control\\BackupRestore\\FilesNotToBackup",
+        "value_name": "Memory Page File",
+        "value_data": "\\Pagefile.sys",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-11 02:29:18.4041610",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Internet Explorer\\Main",
+        "value_name": "Disable Script Debugger",
+        "value_data": "yes",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-13 05:08:32.6462962",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-14 06:04:57.7236391",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "SecurityHealth",
+        "value_data": "%windir%\\system32\\SecurityHealthSystray.exe",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-14 06:04:57.7236391",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "VMware User Process",
+        "value_data": "\"C:\\Program Files\\VMware\\VMware Tools\\vmtoolsd.exe\" -n vmusr",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-14 10:12:48.5261691",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-15 02:51:12.0125982",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-15 03:21:32.1500751",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts",
+        "value_name": "Multiple",
+        "value_data": "Extension: .3g2",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-22 18:24:15.3775923",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-System",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Directory-Services-SAM",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-22 18:24:19.2368043",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-22 18:37:11.2458747",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}\\Count",
+        "value_name": "{9R3995NO-1S9P-4S13-O827-48O24O6P7174}\\GnfxOne\\Svyr Rkcybere.yax",
+        "value_data": "{User Pinned}\\TaskBar\\File Explorer.lnk",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: .NET CLR Data Desc: ",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "souldrag",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_image_file_execution_options",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-1317971962-2888861349-1690603405-1001",
+        "hive": "SOFTWARE"
+      }
+    ],
+    "reg_appinit_dlls": [
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/Packaged app-Execution",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2019-12-07 09:17:44.3745576",
+        "key_path": "ROOT\\Classes\\exefile\\shell\\open\\command",
+        "value_name": "(default)",
+        "value_data": "\"%1\" %*",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2023-09-13 05:08:32.6462962",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2023-09-14 06:04:57.7236391",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "SecurityHealth",
+        "value_data": "%windir%\\system32\\SecurityHealthSystray.exe",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2023-09-14 06:04:57.7236391",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "VMware User Process",
+        "value_data": "\"C:\\Program Files\\VMware\\VMware Tools\\vmtoolsd.exe\" -n vmusr",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2023-09-14 10:12:48.5261691",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2023-09-15 02:51:12.0125982",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2023-09-22 18:24:15.3775923",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-System",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Directory-Services-SAM",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2023-09-22 18:24:19.2368043",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: .NET CLR Data Desc: ",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "souldrag",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_appinit_dlls",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-1317971962-2888861349-1690603405-1001",
+        "hive": "SOFTWARE"
+      }
+    ],
+    "reg_winlogon_helpers": [
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/Packaged app-Execution",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/EXE and DLL",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/MSI and Script",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2019-12-07 09:17:28.0634297",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Network-and-Sharing-Center/Diagnostic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2019-12-07 09:17:28.0634297",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-RemoteApp and Desktop Connections/Admin",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2019-12-07 09:17:28.0713291",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Winlogon/Diagnostic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2019-12-07 09:17:28.0713291",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Winlogon/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2019-12-07 09:17:44.3745576",
+        "key_path": "ROOT\\Classes\\exefile\\shell\\open\\command",
+        "value_name": "(default)",
+        "value_data": "\"%1\" %*",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-13 05:08:32.6462962",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-14 06:04:57.7236391",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "SecurityHealth",
+        "value_data": "%windir%\\system32\\SecurityHealthSystray.exe",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-14 06:04:57.7236391",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "VMware User Process",
+        "value_data": "\"C:\\Program Files\\VMware\\VMware Tools\\vmtoolsd.exe\" -n vmusr",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-14 10:12:48.5261691",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-15 02:51:12.0125982",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-22 18:24:15.3775923",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-System",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Directory-Services-SAM",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-22 18:24:19.2368043",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: .NET CLR Data Desc: ",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "souldrag",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-1317971962-2888861349-1690603405-1001",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoAdminLogon",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_winlogon_helpers",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "DefaultUserName",
+        "value_data": "souldrag",
+        "hive": "SOFTWARE"
+      }
+    ],
+    "mft_startup_folders": [],
+    "reg_user_context": [
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Diagnosis-Scheduled/Operational",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-Kernel-File/Analytic",
+        "value_name": "Enabled",
+        "value_data": "0",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2019-12-07 09:17:28.0391451",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\Microsoft-Windows-AppLocker/Packaged app-Execution",
+        "value_name": "Enabled",
+        "value_data": "1",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2019-12-07 09:17:44.3745576",
+        "key_path": "ROOT\\Classes\\exefile\\shell\\open\\command",
+        "value_name": "(default)",
+        "value_data": "\"%1\" %*",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-11 02:23:25.2710149",
+        "key_path": "ROOT\\ControlSet001\\Control\\ComputerName\\ComputerName",
+        "value_name": "ComputerName",
+        "value_data": "DESKTOP-K7VGB7O",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "Startup",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-11 02:26:58.1532785",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+        "value_name": "AppData",
+        "value_data": "%USERPROFILE%\\AppData\\Roaming",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-13 05:08:32.6462962",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StartupApproved\\Run",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-14 06:04:57.7236391",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "SecurityHealth",
+        "value_data": "%windir%\\system32\\SecurityHealthSystray.exe",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-14 06:04:57.7236391",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "value_name": "VMware User Process",
+        "value_data": "\"C:\\Program Files\\VMware\\VMware Tools\\vmtoolsd.exe\" -n vmusr",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-14 10:12:48.5261691",
+        "key_path": "ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "NTUSER.DAT"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-15 02:51:12.0125982",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Diagnosis-Scheduled",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-22 18:24:15.3775923",
+        "key_path": "ROOT\\ControlSet001\\Control\\WMI\\Autologger\\EventLog-System",
+        "value_name": "Provider",
+        "value_data": "Provider: Microsoft-Windows-Directory-Services-SAM",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-22 18:24:16.7211279",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion",
+        "value_name": "RegisteredOwner",
+        "value_data": "souldrag",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-22 18:24:16.7211279",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion",
+        "value_name": "ProductName",
+        "value_data": "Windows 10 Pro",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-22 18:24:16.7211279",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion",
+        "value_name": "InstallDate",
+        "value_data": "2023-09-11 02:23:29.0000000",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-22 18:24:16.7211279",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion",
+        "value_name": "CurrentBuildNumber",
+        "value_data": "19045",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-22 18:24:19.2368043",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-23 03:05:51.6545391",
+        "key_path": "ROOT\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI",
+        "value_name": "LastLoggedOnUser",
+        "value_data": ".\\souldrag",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\ControlSet001\\Services",
+        "value_name": "None",
+        "value_data": "Name: .NET CLR Data Desc: ",
+        "hive": "SYSTEM"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "LastUsedUsername",
+        "value_data": "souldrag",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "AutoLogonSID",
+        "value_data": "S-1-5-21-1317971962-2888861349-1690603405-1001",
+        "hive": "SOFTWARE"
+      },
+      {
+        "_anchor": "reg_user_context",
+        "timestamp": "2023-09-23 03:05:52.9666256",
+        "key_path": "ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+        "value_name": "DefaultUserName",
+        "value_data": "souldrag",
+        "hive": "SOFTWARE"
+      }
+    ],
+    "app_crashes_1000": [
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2023-09-16 02:26:58.0164949",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2023-09-16 05:28:53.2411738",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2023-09-17 10:42:21.6125884",
+        "event_id": 1000,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2023-09-18 04:34:44.0478786",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2023-09-18 05:08:43.3592488",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2023-09-18 07:32:33.5548706",
+        "event_id": 1000,
+        "channel": "Application"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2023-09-19 05:14:45.2029831",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2023-09-19 05:36:56.6829476",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2023-09-21 00:11:37.2499301",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "app_crashes_1000",
+        "timestamp": "2023-09-21 05:21:03.8103931",
+        "event_id": 1000,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      }
+    ],
+    "app_hangs_1002": [
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2023-09-15 01:08:40.6235483",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2023-09-15 01:08:54.7040263",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2023-09-15 01:23:41.6208709",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2023-09-15 01:25:56.8317202",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Known Folders API Service"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2023-09-15 01:31:17.3782293",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Resource-Exhaustion-Detector/Operational"
+      },
+      {
+        "_anchor": "app_hangs_1002",
+        "timestamp": "2023-09-15 02:48:57.7860783",
+        "event_id": 1002,
+        "channel": "Microsoft-Windows-Resource-Exhaustion-Detector/Operational"
+      }
+    ],
+    "wer_reports_1001": [
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2023-09-15 01:11:22.3985002",
+        "event_id": 1001,
+        "channel": "Microsoft-Windows-Resource-Exhaustion-Detector/Operational"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2023-09-15 03:21:00.2353418",
+        "event_id": 1001,
+        "channel": "Microsoft-Windows-Resource-Exhaustion-Detector/Operational"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2023-09-16 02:12:35.1608140",
+        "event_id": 1001,
+        "channel": "Microsoft-Windows-Resource-Exhaustion-Detector/Operational"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2023-09-16 02:31:36.4979197",
+        "event_id": 1001,
+        "channel": "Microsoft-Windows-Windows Defender/Operational"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2023-09-17 08:41:14.2779414",
+        "event_id": 1001,
+        "channel": "Microsoft-Windows-Resource-Exhaustion-Detector/Operational"
+      },
+      {
+        "_anchor": "wer_reports_1001",
+        "timestamp": "2023-09-17 10:26:16.7717622",
+        "event_id": 1001,
+        "channel": "Microsoft-Windows-Resource-Exhaustion-Detector/Operational"
+      }
+    ],
+    "prefetch_top": [
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:23:36",
+        "executable_name": "WWAHOST.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\WINDOWS\\SYSTEM32\\WWAHOST.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:25:46",
+        "executable_name": "TEXTINPUTHOST.EXE",
+        "run_count": 3,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\WINDOWS\\SYSTEMAPPS\\MICROSOFTWINDOWS.CLIENT.CBS_CW5N1H2TXYEWY\\INPUTAPP\\TEXTINPUTHOST.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:27:45",
+        "executable_name": "FIRSTLOGONANIM.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\WINDOWS\\SYSTEM32\\OOBE\\FIRSTLOGONANIM.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:27:55",
+        "executable_name": "SEARCHAPP.EXE",
+        "run_count": 3,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\WINDOWS\\SYSTEMAPPS\\MICROSOFT.WINDOWS.SEARCH_CW5N1H2TXYEWY\\SEARCHAPP.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:29:18",
+        "executable_name": "ONEDRIVE.EXE",
+        "run_count": 6,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\USERS\\SOULDRAG\\APPDATA\\LOCAL\\MICROSOFT\\ONEDRIVE\\ONEDRIVE.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:29:47",
+        "executable_name": "ONEDRIVE.EXE",
+        "run_count": 6,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\USERS\\SOULDRAG\\APPDATA\\LOCAL\\MICROSOFT\\ONEDRIVE\\ONEDRIVE.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:31:58",
+        "executable_name": "SETUP64.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{0000000000000000-e8737baf}\\SETUP64.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:31:59",
+        "executable_name": "VCREDIST_X86.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\WINDOWS\\TEMP\\{4C6E6940-D878-4406-B26B-B7E72F0E0FAD}\\.CR\\VCREDIST_X86.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:31:59",
+        "executable_name": "VC_REDIST.X86.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\WINDOWS\\TEMP\\{746A17CF-8B3E-4924-96E9-971D7782165B}\\.BE\\VC_REDIST.X86.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:32:01",
+        "executable_name": "VCREDIST_X64.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\WINDOWS\\TEMP\\{D80CC48E-84B3-4F14-966D-F5139A6191E0}\\.CR\\VCREDIST_X64.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:32:01",
+        "executable_name": "VC_REDIST.X64.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\WINDOWS\\TEMP\\{492D06A0-6D10-43F0-A4C3-7A9FD0E98F79}\\.BE\\VC_REDIST.X64.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:33:10",
+        "executable_name": "VMTOOLSD.EXE",
+        "run_count": 6,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\PROGRAM FILES\\VMWARE\\VMWARE TOOLS\\VMTOOLSD.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-11 02:33:10",
+        "executable_name": "VMTOOLSD.EXE",
+        "run_count": 6,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\PROGRAM FILES\\VMWARE\\VMWARE TOOLS\\VMTOOLSD.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-13 04:56:01",
+        "executable_name": "ONEDRIVE.EXE",
+        "run_count": 6,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\USERS\\SOULDRAG\\APPDATA\\LOCAL\\MICROSOFT\\ONEDRIVE\\ONEDRIVE.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-13 04:58:04",
+        "executable_name": "ONEDRIVE.EXE",
+        "run_count": 6,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\USERS\\SOULDRAG\\APPDATA\\LOCAL\\MICROSOFT\\ONEDRIVE\\ONEDRIVE.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-13 04:59:35",
+        "executable_name": "SVCHOST.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\WINDOWS\\SYSTEM32\\SVCHOST.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-13 04:59:36",
+        "executable_name": "SGRMBROKER.EXE",
+        "run_count": 9,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\WINDOWS\\SYSTEM32\\SGRMBROKER.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-13 05:00:43",
+        "executable_name": "MSEDGE.EXE",
+        "run_count": 97,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\PROGRAM FILES (X86)\\MICROSOFT\\EDGE\\APPLICATION\\MSEDGE.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-13 05:01:50",
+        "executable_name": "GOOGLEUPDATE.EXE",
+        "run_count": 36,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\USERS\\SOULDRAG\\APPDATA\\LOCAL\\TEMP\\GUMDD7.TMP\\GOOGLEUPDATE.EXE"
+      },
+      {
+        "_anchor": "prefetch_top",
+        "timestamp": "2023-09-13 05:08:32",
+        "executable_name": "SVCHOST.EXE",
+        "run_count": 1,
+        "executable_path": "\\VOLUME{01d9e45672605923-54726c56}\\WINDOWS\\SYSTEM32\\SVCHOST.EXE"
+      }
+    ],
+    "shimcache_top": [
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2008-07-30 11:19:46"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2010-03-04 09:02:48"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2010-08-01 15:25:46"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-10-01 01:35:08"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-10-01 01:35:10"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-10-01 01:35:14"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-10-01 01:35:16"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-10-01 01:35:20"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-12-06 17:05:00"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-12-06 19:48:00"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-12-06 21:18:00"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-12-06 21:18:00"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-12-06 21:23:00"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-12-06 21:26:00"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-12-06 21:27:00"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-12-06 21:28:00"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-12-07 06:53:11"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-12-07 09:08:07"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-12-07 09:08:09"
+      },
+      {
+        "_anchor": "shimcache_top",
+        "timestamp": "2019-12-07 09:08:12"
+      }
+    ],
+    "amcache_top": [
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-11 02:27:35",
+        "sha1": "618c61a5f7dab66e7ec08e1da08ce24ec41ae65d"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:10",
+        "sha1": "935407d4d0d898f997d5231daffa3329a1443f56"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:10",
+        "sha1": "2cf0e935fedc16aa1583ab088ff129efd65ea8e6"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:10",
+        "sha1": "ee05f81b330d2e755d8028ec5da859cf9eae1813"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:11"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:13"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:13",
+        "sha1": "a6cf5e455d2704276ed7331dfe1f7e580ea8794e"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:13",
+        "sha1": "'\u000b'ũ\u0000619908accc3528844b52399b5e6fe561"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:13",
+        "sha1": "89e1e4f4d278a9927e9b972612c98de47ffcfddc"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:14",
+        "sha1": "8010f7c746a7ba4864785f798f46ec05caae7ece"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:15"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:15",
+        "sha1": "099050247e58084963bcc657b1f1699fde6f5df6"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:16",
+        "sha1": "455b86f5977e5079568e1593ec057fd68c99e261"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:16",
+        "sha1": "5012e4c1b5418b1352cd5a7471989d963ba1a53e"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:18"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:19",
+        "sha1": "6c76e059a0588c42477612a350c3f21d33284292"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:20",
+        "sha1": "7546d9e89cadcadc24cd6a04d7b5913d5187dd44"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:20",
+        "sha1": "4ab1726215e92af6d7d8da3b7865806604a19f50"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:20",
+        "sha1": "f917f203e6c610b32cd318384d2940c7b9a47e87"
+      },
+      {
+        "_anchor": "amcache_top",
+        "timestamp": "2023-09-13 04:56:20",
+        "sha1": "f62aa7821ca4d90b96e4ad8d7932d3fff37d2229"
+      }
+    ],
+    "lnk_recent_files": [
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:32:29",
+        "target_path": "C:\\Users\\souldrag\\Downloads\\This PC\\Downloads\\2023년 매매일지_나씨TV_v.230115.xlsx",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 06:32:24"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:33:03",
+        "target_path": "C:\\Users\\souldrag\\Downloads\\This PC\\Downloads\\매매일지 ver.1.0(by 강고라니).xlsx",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 06:32:59"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:33:53",
+        "target_path": "C:\\Users\\souldrag\\Downloads\\This PC\\Downloads\\매매 일지 양식.xlsx",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 06:33:49"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:33:53",
+        "target_path": "C:\\Users\\souldrag\\Downloads\\¸Å¸Å ÀÏÁö ¾ç½Ä.xlsx",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 06:33:49"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:34:36",
+        "target_path": "C:\\Users\\souldrag\\Downloads\\This PC\\Downloads\\매매일지.xlsx",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 06:34:33"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:34:36",
+        "target_path": "C:\\Users\\souldrag\\Downloads\\¸Å¸ÅÀÏÁö.xlsx",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 06:34:33"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:53:33",
+        "target_path": "C:\\Users\\souldrag\\AppData\\Local\\Programs\\Python\\Python311",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-13 07:04:50"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:55:12",
+        "target_path": "C:\\Users\\souldrag\\Desktop",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 06:55:12"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:55:28",
+        "target_path": "C:\\Users\\souldrag\\Desktop\\코드\\This PC\\Desktop\\코드\\coin.py",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 06:55:28"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:56:57",
+        "target_path": "C:\\Users\\souldrag\\Desktop\\코드\\This PC\\Desktop\\코드\\investment.py",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 06:56:57"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:58:32",
+        "target_path": "C:\\Users\\souldrag\\Desktop\\코드\\This PC\\Desktop\\코드\\test.py",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 06:58:32"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:59:49",
+        "target_path": "C:\\Users\\souldrag\\Desktop\\코드\\This PC\\Desktop\\코드\\분봉조회.py",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 06:59:49"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 06:59:59",
+        "target_path": "C:\\Users\\souldrag\\Desktop\\코드\\This PC\\Desktop\\코드\\일봉조회.py",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 06:59:59"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 07:00:10",
+        "target_path": "C:\\Users\\souldrag\\Desktop\\코드\\This PC\\Desktop\\코드\\특정개수만조회.py",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 07:00:10"
+      },
+      {
+        "_anchor": "lnk_recent_files",
+        "timestamp": "2023-09-14 07:00:39",
+        "target_path": "C:\\Users\\souldrag\\Desktop\\코드\\This PC\\Desktop\\코드\\pyupbittest.py",
+        "machine_id": "desktop-k7vgb7o",
+        "target_modified": "2023-09-14 07:00:39"
+      }
+    ],
+    "jumplist_recent": [
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2023-09-11 02:27:47",
+        "target_path": "knownfolder:{18989B1D-99B5-455B-841C-AB7C74E4DDFC} ==> My Video",
+        "machine_id": "e8:f4:08:e6:9a:91",
+        "target_modified": "2023-09-11 02:27:47"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2023-09-11 02:27:48",
+        "target_path": "knownfolder:{4BD8D571-6D19-48D3-BE97-422220080E43} ==> My Music",
+        "machine_id": "e8:f4:08:e6:9a:91",
+        "target_modified": "2023-09-11 02:27:48"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2023-09-14 02:51:16",
+        "target_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "machine_id": "e8:f4:08:e6:9a:91",
+        "target_modified": "2023-09-09 05:25:43"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2023-09-14 02:51:16",
+        "target_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "machine_id": "e8:f4:08:e6:9a:91",
+        "target_modified": "2023-09-09 05:25:43"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2023-09-14 04:22:15",
+        "target_path": "C:\\Users\\souldrag\\Desktop\\시세.txt",
+        "machine_id": "e8:f4:08:e6:9a:91",
+        "target_modified": "2023-09-14 04:22:15"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2023-09-14 06:32:29",
+        "target_path": "C:\\Users\\souldrag\\Downloads\\2023년 매매일지_나씨TV_v.230115.xlsx",
+        "machine_id": "e8:f4:08:e6:9a:91",
+        "target_modified": "2023-09-14 06:32:24"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2023-09-14 06:33:03",
+        "target_path": "C:\\Users\\souldrag\\Downloads\\매매일지 ver.1.0(by 강고라니).xlsx",
+        "machine_id": "e8:f4:08:e6:9a:91",
+        "target_modified": "2023-09-14 06:32:59"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2023-09-14 06:33:53",
+        "target_path": "C:\\Users\\souldrag\\Downloads\\매매 일지 양식.xlsx",
+        "machine_id": "e8:f4:08:e6:9a:91",
+        "target_modified": "2023-09-14 06:33:49"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2023-09-14 06:34:36",
+        "target_path": "C:\\Users\\souldrag\\Downloads\\매매일지.xlsx",
+        "machine_id": "e8:f4:08:e6:9a:91",
+        "target_modified": "2023-09-14 06:34:33"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2023-09-14 06:55:28",
+        "target_path": "C:\\Users\\souldrag\\Desktop\\코드\\coin.py",
+        "machine_id": "e8:f4:08:e6:9a:91",
+        "target_modified": "2023-09-14 06:55:28"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2023-09-14 06:56:57",
+        "target_path": "C:\\Users\\souldrag\\Desktop\\코드\\investment.py",
+        "machine_id": "e8:f4:08:e6:9a:91",
+        "target_modified": "2023-09-14 06:56:57"
+      },
+      {
+        "_anchor": "jumplist_recent",
+        "timestamp": "2023-09-14 06:58:32",
+        "target_path": "C:\\Users\\souldrag\\Desktop\\코드\\test.py",
+        "machine_id": "e8:f4:08:e6:9a:91",
+        "target_modified": "2023-09-14 06:58:32"
+      }
+    ],
+    "srum_network_usage": [
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      },
+      {
+        "_anchor": "srum_network_usage",
+        "timestamp": "2023-09-11 02:23:00",
+        "bytes_sent": 0,
+        "bytes_received": 0
+      }
+    ],
+    "browser_raw_history": [
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-21T05:51:23.785402Z",
+        "url": "https://www.google.com/search?q=gofile&oq=gofile&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCDI2NThqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8",
+        "title": "gofile - Google 검색"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-21T05:51:26.339720Z",
+        "url": "https://gofile.io/",
+        "title": "Gofile - Free Unlimited File Sharing and Storage"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-21T05:51:30.415270Z",
+        "url": "https://gofile.io/welcome",
+        "title": "Gofile - Free Unlimited File Sharing and Storage"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-21T05:51:32.390051Z",
+        "url": "https://gofile.io/uploadFiles",
+        "title": "Gofile - Free Unlimited File Sharing and Storage"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-22T18:37:17.184238Z",
+        "url": "https://naver.com/",
+        "title": "NAVER"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-22T18:37:17.184238Z",
+        "url": "http://www.naver.com/",
+        "title": "NAVER"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-22T18:37:17.184238Z",
+        "url": "https://www.naver.com/",
+        "title": "NAVER"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-22T18:37:25.339399Z",
+        "url": "https://search.naver.com/search.naver?where=nexearch&sm=top_sug.pre&fbm=0&acr=3&acq=%EB%9E%9C%EC%84%AC%EC%9B%A8%EC%96%B4&qdt=0&ie=utf8&query=%EB%9E%9C%EC%84%AC%EC%9B%A8%EC%96%B4",
+        "title": "랜섬웨어 : 네이버 통합검색"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-22T18:37:28.463823Z",
+        "url": "https://search.naver.com/p/crd/rd?m=1&px=594&py=80&sx=594&sy=80&p=id3PHlprvN8sshPbU1sssssss%2FC-034161&q=%EB%9E%9C%EC%84%AC%EC%9B%A8%EC%96%B4&ie=utf8&rev=1&ssc=tab.nx.all&f=nexearch&w=nexearch&s=E0Z%2BrfVZyuUjv%2FuFEFz1oA%3D%3D&time=1695407848381&abt=%5B%7B%22eid%22%3A%22NXGEN%22%2C%22vid%22%3A%2218%22%7D%5D&a=tab*n.jmp&r=1&i=&u=https%3A%2F%2Fsearch.naver.com%2Fsearch.naver%3Fwhere%3Dnews%26sm%3Dtab_jum%26query%3D%25EB%259E%259C%25EC%2584%25AC%25EC%259B%25A8%25EC%2596%25B4",
+        "title": "랜섬웨어 : 네이버 뉴스검색"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-22T18:37:28.463823Z",
+        "url": "https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%EB%9E%9C%EC%84%AC%EC%9B%A8%EC%96%B4",
+        "title": "랜섬웨어 : 네이버 뉴스검색"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-22T18:37:32.421284Z",
+        "url": "https://search.naver.com/p/crd/rd?m=1&px=654&py=308&sx=654&sy=308&p=id3PIdprvh8sstS8khwsssssszh-122952&q=%EB%9E%9C%EC%84%AC%EC%9B%A8%EC%96%B4&ie=utf8&rev=1&ssc=tab.news.all&f=news&w=news&s=E0Z%2BrfVZyuUjv%2FuFEFz1oA%3D%3D&time=1695407852239&abt=%5B%7B%22eid%22%3A%22NXGEN%22%2C%22vid%22%3A%2218%22%7D%5D&a=nws*h.tit&r=1&i=88000106_000000000000000000068404&g=050.0000068404&u=https%3A%2F%2Fmagazine.hankyung.com%2Fbusiness%2Farticle%2F202309218397b",
+        "title": "휴일 랜섬웨어 공격량 30 급증 연휴 기업 보안 지키려면 │ 매거진한경"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-22T18:37:32.421284Z",
+        "url": "https://magazine.hankyung.com/business/article/202309218397b",
+        "title": "휴일 랜섬웨어 공격량 30 급증 연휴 기업 보안 지키려면 │ 매거진한경"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-22T18:37:44.445580Z",
+        "url": "https://search.naver.com/p/crd/rd?m=1&px=952&py=488&sx=952&sy=488&p=id3PIdprvh8sstS8khwsssssszh-122952&q=%EB%9E%9C%EC%84%AC%EC%9B%A8%EC%96%B4&ie=utf8&rev=1&ssc=tab.news.all&f=news&w=news&s=E0Z%2BrfVZyuUjv%2FuFEFz1oA%3D%3D&time=1695407863971&abt=%5B%7B%22eid%22%3A%22NXGEN%22%2C%22vid%22%3A%2218%22%7D%5D&a=nws*a.tit&r=4&i=880000C2_000000000000000004941667&g=008.0004941667&u=http%3A%2F%2Fnews.mt.co.kr%2Fmtview.php%3Fno%3D2023092208090918342",
+        "title": "중소기업 노리는 랜섬웨어 급증…소규모 공격 조직도 많아져 - 머니투데이"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-22T18:37:44.445580Z",
+        "url": "http://news.mt.co.kr/mtview.php?no=2023092208090918342",
+        "title": "중소기업 노리는 랜섬웨어 급증…소규모 공격 조직도 많아져 - 머니투데이"
+      },
+      {
+        "_anchor": "browser_raw_history",
+        "timestamp": "2023-09-22T18:37:44.445580Z",
+        "url": "https://news.mt.co.kr/mtview.php?no=2023092208090918342",
+        "title": "중소기업 노리는 랜섬웨어 급증…소규모 공격 조직도 많아져 - 머니투데이"
+      }
+    ],
+    "browser_downloads_searches": [
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-13T07:51:12.676258Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-13T07:51:16.093746Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-13T07:51:20.693029Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-15T01:40:14.941069Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-15T02:27:10.455542Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-15T02:27:16.094322Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-15T04:01:46.046497Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-15T04:01:55.880116Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-15T04:06:40.714226Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-15T04:07:19.008755Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-17T08:56:26.498615Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-17T10:23:35.982706Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-17T10:23:40.113111Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-17T10:23:41.482679Z"
+      },
+      {
+        "_anchor": "browser_downloads_searches",
+        "timestamp": "2023-09-17T10:23:53.650139Z"
+      }
+    ],
+    "app_communication": [
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 01:20:12.5403351",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:20:12.5403351', 'entry_number': 334696, 'sequence_number': 1, 'filename': '_max_len_seq_inner.pyi', 'extension': '.pyi', 'file_path': '."
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 01:20:12.5442074",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:20:12.5442074', 'entry_number': 334697, 'sequence_number': 1, 'filename': '_peak_finding_utils.pyi', 'extension': '.pyi', 'file_path': '"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 01:20:12.5483179",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:20:12.5483179', 'entry_number': 334698, 'sequence_number': 1, 'filename': '_sosfilt.pyi', 'extension': '.pyi', 'file_path': '.\\\\Users\\\\s"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 01:20:12.5531960",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:20:12.5531960', 'entry_number': 334699, 'sequence_number': 1, 'filename': '_spectral.pyi', 'extension': '.pyi', 'file_path': '.\\\\Users\\\\"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 01:20:12.5572183",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:20:12.5572183', 'entry_number': 334700, 'sequence_number': 1, 'filename': '_upfirdn_apply.pyi', 'extension': '.pyi', 'file_path': '.\\\\Us"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 01:20:12.5624331",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:20:12.5624331', 'entry_number': 334701, 'sequence_number': 1, 'filename': 'sigtools.pyi', 'extension': '.pyi', 'file_path': '.\\\\Users\\\\s"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 01:20:12.5652695",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:20:12.5652695', 'entry_number': 334695, 'sequence_number': 1, 'filename': 'signal', 'extension': '', 'file_path': '.\\\\Users\\\\souldrag\\\\."
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 01:20:12.5663283",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:20:12.5663283', 'entry_number': 334702, 'sequence_number': 1, 'filename': 'spline.pyi', 'extension': '.pyi', 'file_path': '.\\\\Users\\\\sou"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 01:37:00",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:37:00', 'record_type': 'application', 'app_id': '920', 'app_name': '\\\\Device\\\\HarddiskVolume2\\\\Users\\\\souldrag\\\\AppData\\\\Local\\\\Discord\\"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 01:37:00",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:37:00', 'record_type': 'network', 'app_id': '888', 'app_name': '\\\\device\\\\harddiskvolume2\\\\users\\\\souldrag\\\\appdata\\\\local\\\\discord\\\\app"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 02:37:00",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:37:00', 'record_type': 'network', 'app_id': '888', 'app_name': '\\\\device\\\\harddiskvolume2\\\\users\\\\souldrag\\\\appdata\\\\local\\\\discord\\\\app"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 02:38:00",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:38:00', 'record_type': 'application', 'app_id': '920', 'app_name': '\\\\Device\\\\HarddiskVolume2\\\\Users\\\\souldrag\\\\AppData\\\\Local\\\\Discord\\"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 04:21:00",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 04:21:00', 'record_type': 'network', 'app_id': '888', 'app_name': '\\\\device\\\\harddiskvolume2\\\\users\\\\souldrag\\\\appdata\\\\local\\\\discord\\\\app"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 04:22:00",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 04:22:00', 'record_type': 'application', 'app_id': '1007', 'app_name': '\\\\Device\\\\HarddiskVolume2\\\\Users\\\\souldrag\\\\AppData\\\\Local\\\\Discord"
+      },
+      {
+        "_anchor": "app_communication",
+        "timestamp": "2023-09-15 04:22:00",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 04:22:00', 'record_type': 'application', 'app_id': '920', 'app_name': '\\\\Device\\\\HarddiskVolume2\\\\Users\\\\souldrag\\\\AppData\\\\Local\\\\Discord\\"
+      }
+    ],
+    "app_crypto_finance": [
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:06:20",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:06:20', 'executable_name': 'CONSENT.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\CONSENT.EXE', 'pre"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.6285251",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.6285251', 'entry_number': 98455, 'sequence_number': 4, 'filename': 'description', 'extension': '', 'file_path': '.\\\\#Github\\\\coinb"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.6305325",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.6305325', 'entry_number': 98657, 'sequence_number': 3, 'filename': 'applypatch-msg.sample', 'extension': '.sample', 'file_path': '"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.6325251",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.6325251', 'entry_number': 99798, 'sequence_number': 2, 'filename': 'commit-msg.sample', 'extension': '.sample', 'file_path': '.\\\\#"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.6376944",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.6376944', 'entry_number': 99799, 'sequence_number': 2, 'filename': 'fsmonitor-watchman.sample', 'extension': '.sample', 'file_path"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.6419268",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.6419268', 'entry_number': 99839, 'sequence_number': 2, 'filename': 'post-update.sample', 'extension': '.sample', 'file_path': '.\\\\"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.6448355",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.6448355', 'entry_number': 99840, 'sequence_number': 2, 'filename': 'pre-applypatch.sample', 'extension': '.sample', 'file_path': '"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.6467869",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.6467869', 'entry_number': 99851, 'sequence_number': 2, 'filename': 'pre-commit.sample', 'extension': '.sample', 'file_path': '.\\\\#"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.6535556",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.6535556', 'entry_number': 99852, 'sequence_number': 2, 'filename': 'pre-merge-commit.sample', 'extension': '.sample', 'file_path':"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.7087271",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.7087271', 'entry_number': 108622, 'sequence_number': 6, 'filename': 'pre-push.sample', 'extension': '.sample', 'file_path': '.\\\\#G"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.7206260",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.7206260', 'entry_number': 127304, 'sequence_number': 3, 'filename': 'pre-rebase.sample', 'extension': '.sample', 'file_path': '.\\\\"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.7225095",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.7225095', 'entry_number': 127305, 'sequence_number': 3, 'filename': 'pre-receive.sample', 'extension': '.sample', 'file_path': '.\\"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.7247604",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.7247604', 'entry_number': 127372, 'sequence_number': 3, 'filename': 'prepare-commit-msg.sample', 'extension': '.sample', 'file_pat"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.7347899",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.7347899', 'entry_number': 127376, 'sequence_number': 5, 'filename': 'push-to-checkout.sample', 'extension': '.sample', 'file_path'"
+      },
+      {
+        "_anchor": "app_crypto_finance",
+        "timestamp": "2023-09-15 01:39:36.7877835",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:39:36.7877835', 'entry_number': 98624, 'sequence_number': 3, 'filename': 'hooks', 'extension': '', 'file_path': '.\\\\#Github\\\\coinbase-pr"
+      }
+    ],
+    "app_remote_access": [],
+    "app_antiforensic": [],
+    "app_archive_tools": [
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2023-09-15 01:06:18",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:06:18', 'path': 'C:\\\\Users\\\\souldrag\\\\Downloads\\\\BANDIZIP-SETUP-STD-X64.EXE', 'filename': 'BANDIZIP-SETUP-STD-X64.EXE', 'extension': '.e"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2023-09-15 01:06:18.2448753",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:06:18.2448753', 'entry_number': 101361, 'sequence_number': 4, 'filename': 'BANDIZIP-SETUP-STD-X64.EXE', 'extension': '.exe', 'file_path'"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2023-09-15 01:08:09",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:08:09', 'executable_name': 'BANDIZIP-SETUP-STD-X64.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\DOWNL"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2023-09-15 01:08:17.1984307",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:08:17.1984307', 'entry_number': 93002, 'sequence_number': 2, 'filename': 'icons', 'extension': '', 'file_path': '.\\\\Program Files\\\\Bandi"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2023-09-15 01:08:17.4907200",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:08:17.4907200', 'entry_number': 93008, 'sequence_number': 2, 'filename': 'shellicons', 'extension': '', 'file_path': '.\\\\Program Files\\\\"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2023-09-15 01:08:17.5643292",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:08:17.5643292', 'entry_number': 93003, 'sequence_number': 2, 'filename': 'default', 'extension': '', 'file_path': '.\\\\Program Files\\\\Ban"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2023-09-15 01:08:18.2678978",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:08:18.2678978', 'entry_number': 93035, 'sequence_number': 2, 'filename': 'langs', 'extension': '', 'file_path': '.\\\\Program Files\\\\Bandi"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2023-09-15 01:08:18.3185058",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:08:18.3185058', 'entry_number': 92976, 'sequence_number': 2, 'filename': 'Bandizip', 'extension': '', 'file_path': '.\\\\Program Files\\\\Ba"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2023-09-15 01:08:18.3282709",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:08:18.3282709', 'entry_number': 92977, 'sequence_number': 2, 'filename': 'data', 'extension': '', 'file_path': '.\\\\Program Files\\\\Bandiz"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2023-09-15 01:08:21.3653611",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:08:21.3653611', 'event_id': 28115, 'provider': 'Microsoft-Windows-Shell-Core', 'channel': 'Microsoft-Windows-Shell-Core/Operational', 'l"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2023-09-15 01:08:21.3752450",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:08:21.3752450', 'event_id': 28115, 'provider': 'Microsoft-Windows-Shell-Core', 'channel': 'Microsoft-Windows-Shell-Core/Operational', 'l"
+      },
+      {
+        "_anchor": "app_archive_tools",
+        "timestamp": "2023-09-15 01:08:25.2004069",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:08:25.2004069', 'entry_number': 93093, 'sequence_number': 2, 'filename': 'BANDIZIP-SETUP-STD-X64.EXE-7EED8C47.pf', 'extension': '.pf', '"
+      }
+    ],
+    "app_email_client": [
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-15 01:41:30.7445678",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:41:30.7445678', 'event_id': 300, 'provider': 'Microsoft Office 16 Alerts', 'channel': 'OAlerts', 'level': 'Info', 'severity': 'info', 'c"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-15 01:41:47.1147668",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:41:47.1147668', 'event_id': 45, 'provider': 'Outlook', 'channel': 'Application', 'level': 'Info', 'severity': 'info', 'computer_name': '"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-15 01:41:47.1650832",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:41:47.1650832', 'entry_number': 318330, 'sequence_number': 1, 'filename': 'Stream_WorkHours_1_1A47B3F8C296004D9D84BE89F566F31A.dat', 'ex"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-15 03:21:32.1500751",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 03:21:32.1500751', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\FileExts', 'value_"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-15 09:01:45.4110789",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 09:01:45.4110789', 'entry_number': 277026, 'sequence_number': 7, 'filename': 'SearchProtocolHost_7_0_19041_3393-20230915T1758050190-2556.et"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-15 09:03:44.8179506",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 09:03:44.8179506', 'entry_number': 127807, 'sequence_number': 7, 'filename': 'SearchProtocolHost_7_0_19041_3393-20230915T1802140751-9840.et"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-16 02:16:43.4195338",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 02:16:43.4195338', 'entry_number': 127965, 'sequence_number': 4, 'filename': 'SearchProtocolHost_7_0_19041_3393-20230916T1114450463-4740.et"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-16 05:16:44.2030142",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 05:16:44.2030142', 'entry_number': 41607, 'sequence_number': 10, 'filename': 'SearchProtocolHost_7_0_19041_3393-20230916T1414460349-5748.et"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-16 10:45:37.9900779",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:45:37.9900779', 'event_id': 300, 'provider': 'Microsoft Office 16 Alerts', 'channel': 'OAlerts', 'level': 'Info', 'severity': 'info', 'c"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-16 10:45:38.4579540",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:45:38.4579540', 'filename': 'souldrag576@gmail.com.ost', 'extension': '.ost', 'file_path': 'souldrag576@gmail.com.ost', 'entry_number': "
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-16 10:45:38.4628065",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:45:38.4628065', 'filename': 'souldrag576@gmail.com.ost', 'extension': '.ost', 'file_path': 'souldrag576@gmail.com.ost', 'entry_number': "
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-16 10:46:00.1424585",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:46:00.1424585', 'event_id': 45, 'provider': 'Outlook', 'channel': 'Application', 'level': 'Info', 'severity': 'info', 'computer_name': '"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-16 10:46:00.2154505",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:46:00.2154505', 'entry_number': 274898, 'sequence_number': 5, 'filename': 'Stream_ContactPrefs_2_E703A1C862B8E1408C5A42949E9198FE.dat', "
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-16 10:46:00.2154505",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:46:00.2154505', 'entry_number': 306898, 'sequence_number': 2, 'filename': 'RoamCache', 'extension': '', 'file_path': '.\\\\Users\\\\souldrag"
+      },
+      {
+        "_anchor": "app_email_client",
+        "timestamp": "2023-09-16 10:46:17.8256694",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:46:17.8256694', 'filename': 'microsoft-office-outlook-exe-15_115_0.png', 'extension': '.png', 'file_path': 'microsoft-office-outlook-exe"
+      }
+    ],
+    "suspicious_indicators_universal": []
+  }
+}

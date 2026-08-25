@@ -1,0 +1,831 @@
+{
+  "metadata": {
+    "case_id": "Hunter_4orensics",
+    "case_full_name": "CyberDefenders Hunter Lab - Insider Threat with Port Scanning and Data Exfiltration",
+    "image_source": "4orensics.001 (24.66 GB RAW split, Windows 8.1 Enterprise)",
+    "challenge_event": "CyberDefenders Blue Team CTF (published 2020, incident dated June 2016)",
+    "case_es_id": "case_20260410_120043",
+    "sources_consulted": {
+      "Essam": "Muhammad Essam Medium writeup (0xm4r7yr) - full 30 Q&A + timeline",
+      "forensicskween": "forensicskween.com Hunter writeup",
+      "OfficialChallenge": "https://cyberdefenders.org/blueteam-ctf-challenges/hunter/",
+      "old_ground_truth": "benchmark/ground_truth/Hunter_4orensics_timeline.json (12 events + 30 CTF answers)",
+      "ES": "Elasticsearch indices forensic-* for case_20260410_120043"
+    },
+    "suspect": {
+      "username": "Hunter",
+      "user_id": 1001,
+      "system_name": "4ORENSICS",
+      "ip_address": "10.0.2.15",
+      "sid": "S-1-5-21-2489440558-2754304563-710705792",
+      "os": "Windows 8.1 Enterprise Build 9600",
+      "timezone": "UTC-07:00 (PST/PDT - Pacific)",
+      "gmail": "ehptmsgs@gmail.com",
+      "skype_username": "hunterehpt",
+      "login_count": 3
+    },
+    "external_contact": {
+      "skype_username": "linux-rul3z",
+      "email": "linux-rul3z@hotmail.com",
+      "purpose": "Coordinated data exfiltration from Hunter's workstation"
+    },
+    "key_disagreements_between_sources": [
+      {
+        "topic": "Last login timestamp for Hunter",
+        "Essam_position": "2016-06-21 05:34:36 AM (likely local PDT)",
+        "forensicskween_position": "2016-06-21 01:42:40 (UTC)",
+        "old_JSON_position": "2016-06-21 01:42:40 (UTC)",
+        "conclusion": "Use UTC time 01:42:40 (forensicskween + old JSON consensus). The 05:34:36 might be PDT representation of a different login event."
+      },
+      {
+        "topic": "DHCP lease timestamp",
+        "Essam_position": "2016-06-20 23:44:12 PDT (= 06:44:12 UTC June 21)",
+        "forensicskween_position": "2016-06-21 02:24:12 UTC",
+        "conclusion": "Different events likely captured. 02:24:12 UTC matches the CTF Q3 answer."
+      },
+      {
+        "topic": "Total prefetch files count",
+        "Essam_position": "190",
+        "forensicskween_position": "174",
+        "conclusion": "Different methodology or partial counts. CTF expected answer is 174."
+      }
+    ]
+  },
+  "phase_structure": [
+    {
+      "id": "P1_baseline",
+      "events": 2
+    },
+    {
+      "id": "P2_email_exchange",
+      "events": 2
+    },
+    {
+      "id": "P3_login",
+      "events": 2
+    },
+    {
+      "id": "P4_tool_install",
+      "events": 11
+    },
+    {
+      "id": "P5_reconnaissance",
+      "events": 3
+    },
+    {
+      "id": "P6_port_scan",
+      "events": 5
+    },
+    {
+      "id": "P7_exfil_prep",
+      "events": 3
+    },
+    {
+      "id": "P8_skype_comm",
+      "events": 4
+    },
+    {
+      "id": "P9_usb",
+      "events": 2
+    },
+    {
+      "id": "P10_anti_forensics",
+      "events": 4
+    },
+    {
+      "id": "P11_exfiltration",
+      "events": 2
+    },
+    {
+      "id": "P12_self_analysis",
+      "events": 1
+    },
+    {
+      "id": "P13_negative",
+      "events": 2
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "timestamp": "2016-06-20",
+      "phase": "P1_baseline",
+      "event": "Windows 8.1 Enterprise (Build 9600) installed on system 4ORENSICS",
+      "source_artifact": "Registry SYSTEM hive",
+      "party": "system",
+      "sources_citing": [
+        "Essam",
+        "forensicskween"
+      ],
+      "evidence_keywords": [
+        "4ORENSICS",
+        "Windows 8.1",
+        "Enterprise"
+      ]
+    },
+    {
+      "id": 2,
+      "timestamp": "2016-06-20 21:38 UTC (approx)",
+      "phase": "P1_baseline",
+      "event": "DHCP lease obtained: IP 10.0.2.15 assigned via DHCP",
+      "source_artifact": "Registry SYSTEM hive (Tcpip\\Parameters\\Interfaces)",
+      "party": "system",
+      "sources_citing": [
+        "forensicskween",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "10.0.2.15",
+        "DHCP"
+      ]
+    },
+    {
+      "id": 3,
+      "timestamp": "2016-06-20 17:56:51 PDT (= 00:56:51 UTC June 21)",
+      "phase": "P2_email_exchange",
+      "event": "Hunter emails linux-rul3z@hotmail.com discussing data exfiltration plans",
+      "source_artifact": "Outlook PST mailbox content (likely backup.pst)",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam"
+      ],
+      "evidence_keywords": [
+        "linux-rul3z",
+        "ehptmsgs",
+        "exfiltration"
+      ],
+      "notes": "INDIRECT in ES — PST content requires PST parser"
+    },
+    {
+      "id": 4,
+      "timestamp": "2016-06-20 18:00:31 PDT",
+      "phase": "P2_email_exchange",
+      "event": "Hunter agrees via Skype to provide 7z archive password",
+      "source_artifact": "Skype main.db SQLite database",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam"
+      ],
+      "evidence_keywords": [
+        "Skype",
+        "7z",
+        "password"
+      ],
+      "notes": "INDIRECT — Skype DB content requires Skyperious-equivalent parser"
+    },
+    {
+      "id": 5,
+      "timestamp": "2016-06-21 01:42:40 UTC",
+      "phase": "P3_login",
+      "event": "Hunter logs in to system (login_count=3, last recorded login)",
+      "source_artifact": "Registry SAM hive",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "Hunter",
+        "login",
+        "01:42"
+      ],
+      "notes": "Disagreement: Essam reports 05:34:36 PDT - different event possibly"
+    },
+    {
+      "id": 6,
+      "timestamp": "2016-06-21 02:24:12 UTC",
+      "phase": "P3_login",
+      "event": "Final DHCP lease obtained at 02:24:12 UTC (CTF Q3 expected answer)",
+      "source_artifact": "Registry SYSTEM hive",
+      "party": "system",
+      "sources_citing": [
+        "forensicskween",
+        "old_JSON",
+        "CTF_Q3"
+      ],
+      "evidence_keywords": [
+        "02:24:12",
+        "DHCP"
+      ]
+    },
+    {
+      "id": 7,
+      "timestamp": "2016-06-21 09:22:25",
+      "phase": "P4_tool_install",
+      "event": "Wireshark 2.0.4 installer executed (WIRESHARK-WIN64-2.0.4.EXE)",
+      "source_artifact": "Prefetch + UsnJrnl FileCreate",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam",
+        "forensicskween",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "WIRESHARK",
+        "2.0.4",
+        "09:22"
+      ]
+    },
+    {
+      "id": 8,
+      "timestamp": "2016-06-21 09:37:49 UTC",
+      "phase": "P4_tool_install",
+      "event": "Exfiltration_Diagram.png created (100,256 bytes) - reference material for planned exfil",
+      "source_artifact": "MFT FileCreate",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween",
+        "DE-style old JSON"
+      ],
+      "evidence_keywords": [
+        "Exfiltration_Diagram",
+        "100256"
+      ],
+      "file_size_bytes": 100256
+    },
+    {
+      "id": 9,
+      "timestamp": "2016-06-21 09:39:04 UTC",
+      "phase": "P4_tool_install",
+      "event": "Browser visits 'Data Exfiltration in Depth' article",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween"
+      ],
+      "evidence_keywords": [
+        "Data Exfiltration",
+        "09:39"
+      ]
+    },
+    {
+      "id": 10,
+      "timestamp": "2016-06-21 10:48:08 UTC",
+      "phase": "P4_tool_install",
+      "event": "Tor Browser activity (research)",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween"
+      ],
+      "evidence_keywords": [
+        "tor",
+        "10:48"
+      ]
+    },
+    {
+      "id": 11,
+      "timestamp": "2016-06-21 10:51:23 UTC",
+      "phase": "P4_tool_install",
+      "event": "Tor Browser folder created on Desktop (target path: C:\\Users\\Hunter\\Desktop\\Tor Browser\\Browser\\firefox.exe)",
+      "source_artifact": "MFT + Registry (AppIDs)",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween",
+        "Essam",
+        "CTF_Q30"
+      ],
+      "evidence_keywords": [
+        "Tor Browser",
+        "firefox.exe",
+        "Desktop"
+      ]
+    },
+    {
+      "id": 12,
+      "timestamp": "2016-06-21 10:58:20 UTC",
+      "phase": "P4_tool_install",
+      "event": "Browser visits 'Free Metasploit Community Download | Rapid7'",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween"
+      ],
+      "evidence_keywords": [
+        "Metasploit",
+        "Rapid7"
+      ]
+    },
+    {
+      "id": 13,
+      "timestamp": "2016-06-21 11:01:34",
+      "phase": "P4_tool_install",
+      "event": "Nmap 7.12 installer executed (NMAP-7.12-SETUP.EXE)",
+      "source_artifact": "Prefetch",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam",
+        "forensicskween",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "NMAP",
+        "7.12",
+        "11:01"
+      ]
+    },
+    {
+      "id": 14,
+      "timestamp": "2016-06-21 11:02:02",
+      "phase": "P4_tool_install",
+      "event": "WinPcap for Nmap installed (WINPCAP-NMAP-4.13.EXE)",
+      "source_artifact": "Prefetch",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "WINPCAP",
+        "11:02"
+      ]
+    },
+    {
+      "id": 15,
+      "timestamp": "2016-06-21 11:17:53 UTC",
+      "phase": "P4_tool_install",
+      "event": "SysinternalsSuite folder created (Microsoft Sysinternals tools)",
+      "source_artifact": "MFT FileCreate",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween"
+      ],
+      "evidence_keywords": [
+        "SysinternalsSuite"
+      ]
+    },
+    {
+      "id": 16,
+      "timestamp": "2016-06-21 11:44:44 UTC",
+      "phase": "P4_tool_install",
+      "event": "Jetico BCWipe folder/installer created (BCWipe - file shredder for anti-forensics)",
+      "source_artifact": "MFT",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween"
+      ],
+      "evidence_keywords": [
+        "BCWipe",
+        "Jetico"
+      ]
+    },
+    {
+      "id": 17,
+      "timestamp": "2016-06-21 11:44:53",
+      "phase": "P4_tool_install",
+      "event": "BCWipe service installed (Event ID 7045 records service installation)",
+      "source_artifact": "Windows EventLog",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam",
+        "old_JSON",
+        "CTF_Q21"
+      ],
+      "evidence_keywords": [
+        "BCWipe",
+        "7045",
+        "11:44"
+      ]
+    },
+    {
+      "id": 18,
+      "timestamp": "2016-06-21 11:00-11:50 UTC",
+      "phase": "P5_reconnaissance",
+      "event": "Browser visits to security tool download pages: OllyDbg, Hash Suite, THC Hydra, Burp Suite, Nexpose",
+      "source_artifact": "Chrome browser history",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween"
+      ],
+      "evidence_keywords": [
+        "OllyDbg",
+        "Hash Suite",
+        "THC Hydra",
+        "Burp",
+        "Nexpose"
+      ]
+    },
+    {
+      "id": 19,
+      "timestamp": "2016-06-21 (various)",
+      "phase": "P5_reconnaissance",
+      "event": "Burp Suite v1.7.03 free downloaded to C:\\Users\\Hunter\\Downloads\\Burpsuite_free_v1.7.03.jar",
+      "source_artifact": "MFT + Browser downloads",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween",
+        "Essam",
+        "CTF_Q25"
+      ],
+      "evidence_keywords": [
+        "Burpsuite_free_v1.7.03.jar",
+        "Burp Suite"
+      ],
+      "notes": "forensicskween reports v1.7.03; Essam reports newer 2020 version - sources disagree"
+    },
+    {
+      "id": 20,
+      "timestamp": "2016-06-21 12:13:57",
+      "phase": "P5_reconnaissance",
+      "event": "Reference document related to exfil tools downloaded/cached: dns-exfiltration-using-sqlmap-18-728.jpg.lnk created (3,588 bytes)",
+      "source_artifact": "MFT + LNK",
+      "party": "suspect",
+      "sources_citing": [
+        "DE-style old JSON"
+      ],
+      "evidence_keywords": [
+        "dns-exfiltration",
+        "sqlmap"
+      ]
+    },
+    {
+      "id": 21,
+      "timestamp": "2016-06-21 05:10:13 PDT (= 12:10:13 UTC)",
+      "phase": "P6_port_scan",
+      "event": "Zenmap network scanner executed (Essam reports first execution)",
+      "source_artifact": "Prefetch + MFT (Zenmap.exe)",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam"
+      ],
+      "evidence_keywords": [
+        "Zenmap",
+        "12:10"
+      ]
+    },
+    {
+      "id": 22,
+      "timestamp": "2016-06-21 05:12:09 PDT (= 12:12:09 UTC)",
+      "phase": "P6_port_scan",
+      "event": "Port scan COMPLETED: 1000 ports scanned; OPEN ports identified: 22 (SSH), 80 (HTTP), 9929, 31337 ('elite' port)",
+      "source_artifact": "Prefetch + MFT (nmapscan.xml)",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam",
+        "forensicskween",
+        "CTF_Q10-12"
+      ],
+      "evidence_keywords": [
+        "1000 ports",
+        "22",
+        "80",
+        "9929",
+        "31337",
+        "scan_end"
+      ],
+      "notes": "Scan end time matches CTF Q10 expected answer: 'Tue Jun 21 05:12:09 2016'"
+    },
+    {
+      "id": 23,
+      "timestamp": "2016-06-21 12:08:13 UTC",
+      "phase": "P6_port_scan",
+      "event": "Zenmap LAST execution timestamp (CTF Q24 expected answer)",
+      "source_artifact": "Prefetch (Zenmap.exe)",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween",
+        "Essam",
+        "CTF_Q24"
+      ],
+      "evidence_keywords": [
+        "ZENMAP",
+        "12:08:13"
+      ]
+    },
+    {
+      "id": 24,
+      "timestamp": "2016-06-21 12:10:42",
+      "phase": "P6_port_scan",
+      "event": "Nmap CLI scan executed (NMAP.EXE 2 runs via command line)",
+      "source_artifact": "Prefetch",
+      "party": "suspect",
+      "sources_citing": [
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "NMAP.EXE",
+        "12:10:42"
+      ]
+    },
+    {
+      "id": 25,
+      "timestamp": "2016-06-21 12:13:57",
+      "phase": "P6_port_scan",
+      "event": "nmapscan.xml created (13,137 bytes) - results of port scan operation",
+      "source_artifact": "MFT FileCreate",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween"
+      ],
+      "evidence_keywords": [
+        "nmapscan.xml",
+        "13137"
+      ],
+      "file_size_bytes": 13137
+    },
+    {
+      "id": 26,
+      "timestamp": "2016-06-21 01:52:17 UTC",
+      "phase": "P7_exfil_prep",
+      "event": "Pictures.7z (1,849,480 bytes / 1806 KB) archive created in suspect's Pictures folder",
+      "source_artifact": "MFT",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween",
+        "Essam",
+        "CTF_Q26"
+      ],
+      "evidence_keywords": [
+        "Pictures.7z",
+        "1806"
+      ],
+      "file_size_bytes": 1849480
+    },
+    {
+      "id": 27,
+      "timestamp": "2016-06-21 (during exfil setup)",
+      "phase": "P7_exfil_prep",
+      "event": "Hunter's Pictures\\Exfil staging folder created at C:\\Users\\Hunter\\Pictures\\Exfil",
+      "source_artifact": "MFT directory",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween",
+        "CTF_Q27"
+      ],
+      "evidence_keywords": [
+        "Pictures\\Exfil",
+        "staging"
+      ]
+    },
+    {
+      "id": 28,
+      "timestamp": "2016-06-21 (around tool install)",
+      "phase": "P7_exfil_prep",
+      "event": "Ryan_VanAntwerp_thesis.pdf downloaded (academic reference on data exfiltration techniques)",
+      "source_artifact": "MFT + Browser downloads",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween"
+      ],
+      "evidence_keywords": [
+        "Ryan_VanAntwerp_thesis",
+        "exfiltration techniques"
+      ]
+    },
+    {
+      "id": 29,
+      "timestamp": "2016-06-20-21 (multiple sessions)",
+      "phase": "P8_skype_comm",
+      "event": "Skype conversations between hunterehpt and linux-rul3z. Linux-rul3z requested TeamViewer installation for remote access.",
+      "source_artifact": "Skype main.db (file existence in MFT) - content requires Skyperious parser",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam",
+        "forensicskween",
+        "CTF_Q14-15"
+      ],
+      "evidence_keywords": [
+        "linux-rul3z",
+        "TeamViewer",
+        "Skype"
+      ],
+      "notes": "INDIRECT — Skype DB file exists in MFT, content requires dedicated parser"
+    },
+    {
+      "id": 30,
+      "timestamp": "2016-06-21 (after exfil)",
+      "phase": "P8_skype_comm",
+      "event": "Hunter sends 7z archive password to linux-rul3z via Skype (Hunter agreed at 18:00:31 PDT Jun 20)",
+      "source_artifact": "Skype main.db content",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam"
+      ],
+      "evidence_keywords": [
+        "password",
+        "7z"
+      ]
+    },
+    {
+      "id": 31,
+      "timestamp": "2016-06-21 (concurrent)",
+      "phase": "P8_skype_comm",
+      "event": "Hunter emails Pictures.7z attachment to linux-rul3z@hotmail.com",
+      "source_artifact": "Outlook PST content (backup.pst)",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam"
+      ],
+      "evidence_keywords": [
+        "Pictures.7z",
+        "linux-rul3z@hotmail"
+      ]
+    },
+    {
+      "id": 32,
+      "timestamp": "2016-06-21 (after exfil)",
+      "phase": "P8_skype_comm",
+      "event": "Encoded PDF file disguised as 'conf.jgp' sent",
+      "source_artifact": "Outlook PST attachment",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam"
+      ],
+      "evidence_keywords": [
+        "conf.jgp",
+        "encoded"
+      ]
+    },
+    {
+      "id": 33,
+      "timestamp": "2016-06-21 (during incident)",
+      "phase": "P9_usb",
+      "event": "USB device #1 connected (Serial: 07B20C03C80830A9)",
+      "source_artifact": "Registry USBSTOR",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam",
+        "forensicskween",
+        "CTF_Q20"
+      ],
+      "evidence_keywords": [
+        "07B20C03C80830A9",
+        "USBSTOR"
+      ]
+    },
+    {
+      "id": 34,
+      "timestamp": "2016-06-21 (during incident)",
+      "phase": "P9_usb",
+      "event": "USB device #2 connected (Serial: AAI6UXDKZDV8E9OU)",
+      "source_artifact": "Registry USBSTOR",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam",
+        "forensicskween",
+        "CTF_Q20"
+      ],
+      "evidence_keywords": [
+        "AAI6UXDKZDV8E9OU",
+        "USBSTOR"
+      ]
+    },
+    {
+      "id": 35,
+      "timestamp": "2016-06-21 (5 executions)",
+      "phase": "P10_anti_forensics",
+      "event": "Jetico BCWipe (file shredder) executed 5 times — anti-forensic file deletion",
+      "source_artifact": "Prefetch BCWipe.exe + Registry",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam",
+        "forensicskween",
+        "CTF_Q23"
+      ],
+      "evidence_keywords": [
+        "BCWipe",
+        "5 executions",
+        "shredder"
+      ]
+    },
+    {
+      "id": 36,
+      "timestamp": "2016-06-21 12:28:08",
+      "phase": "P10_anti_forensics",
+      "event": "CCleaner 64-bit executed (CCLEANER64.EXE, 7 runs total)",
+      "source_artifact": "Prefetch",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween"
+      ],
+      "evidence_keywords": [
+        "CCLEANER64",
+        "12:28"
+      ]
+    },
+    {
+      "id": 37,
+      "timestamp": "2016-06-21 (during cleanup)",
+      "phase": "P10_anti_forensics",
+      "event": "Crypto Swap disk encryption application installed (per CTF Q19 answer)",
+      "source_artifact": "Registry Uninstall + MFT",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam",
+        "CTF_Q19"
+      ],
+      "evidence_keywords": [
+        "Crypto Swap",
+        "disk encryption"
+      ]
+    },
+    {
+      "id": 38,
+      "timestamp": "2016-06-21 (multiple instances)",
+      "phase": "P10_anti_forensics",
+      "event": "Suspect attempted to delete sensitive files. Deleted files include: home-network-design-networking-for-a-single-family-home-case-house-arkko-1433-x-792.jpg (deleted diagram referenced in CTF Q17) and ws_Small_cute_kitty_1920x1200.jpg (CTF Q28)",
+      "source_artifact": "UsnJrnl FileDelete + Recycle Bin metadata",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween",
+        "Essam",
+        "CTF_Q17",
+        "CTF_Q28"
+      ],
+      "evidence_keywords": [
+        "home-network-design",
+        "ws_Small_cute_kitty",
+        "deleted"
+      ]
+    },
+    {
+      "id": 39,
+      "timestamp": "2016-06-21 (per Skype agreement)",
+      "phase": "P11_exfiltration",
+      "event": "TeamViewer installed/used for remote access by linux-rul3z (CTF Q15 expected answer)",
+      "source_artifact": "Prefetch + MFT + Registry",
+      "party": "suspect+external_contact",
+      "sources_citing": [
+        "Essam",
+        "forensicskween",
+        "CTF_Q15"
+      ],
+      "evidence_keywords": [
+        "TeamViewer",
+        "remote access"
+      ]
+    },
+    {
+      "id": 40,
+      "timestamp": "2016-06-21 13:13:43 UTC",
+      "phase": "P11_exfiltration",
+      "event": "backup.pst (10,429,440 bytes) - Outlook backup created, synced to Dropbox (per old JSON)",
+      "source_artifact": "MFT",
+      "party": "suspect",
+      "sources_citing": [
+        "DE-style old JSON"
+      ],
+      "evidence_keywords": [
+        "backup.pst",
+        "Dropbox"
+      ],
+      "file_size_bytes": 10429440
+    },
+    {
+      "id": 41,
+      "timestamp": "2016-06-21 13:18:13",
+      "phase": "P12_self_analysis",
+      "event": "FTK Imager last executed (3 total executions) - suspect performed self-analysis of own machine",
+      "source_artifact": "Prefetch",
+      "party": "suspect",
+      "sources_citing": [
+        "forensicskween",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "FTK IMAGER",
+        "13:18",
+        "3 executions"
+      ],
+      "notes": "Indicates suspect was aware of forensics; tried to inspect own evidence"
+    },
+    {
+      "id": 42,
+      "timestamp": "Entire session",
+      "phase": "P13_negative",
+      "event": "NEGATIVE FINDING: NO direct exfiltration network capture / no PCAP evidence. Exfil established only via Skype agreement + Pictures.7z email attachment + TeamViewer agreement. Network-side analysis needed for full exfil reconstruction.",
+      "source_artifact": "PCAP absent + network monitoring absent",
+      "party": "system",
+      "sources_citing": [
+        "forensicskween + ES verification"
+      ],
+      "evidence_keywords": [
+        "PCAP",
+        "network capture"
+      ],
+      "notes": "OUT_OF_SCOPE — network side requires external monitoring data"
+    },
+    {
+      "id": 43,
+      "timestamp": "Entire session",
+      "phase": "P13_negative",
+      "event": "NEGATIVE FINDING: Skype chat content cannot be parsed by 13-parser set. main.db exists in MFT but requires SQLite + Skype-specific schema parser (e.g., Skyperious).",
+      "source_artifact": "Skype main.db file existence + content gap",
+      "party": "suspect",
+      "sources_citing": [
+        "Essam tools list",
+        "ES verification"
+      ],
+      "evidence_keywords": [
+        "Skype",
+        "main.db",
+        "Skyperious"
+      ],
+      "notes": "INDIRECT — DB exists, content not parsed"
+    }
+  ],
+  "totals": {
+    "total_events": 43,
+    "phases": 13
+  }
+}

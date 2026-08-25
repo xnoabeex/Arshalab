@@ -1,0 +1,26 @@
+# ArshaLab Digital Forensics - Requirements
+# ==========================================
+
+# Web Framework
+fastapi>=0.104.0          # Async web framework
+uvicorn>=0.24.0           # ASGI server
+python-multipart>=0.0.6   # File upload support
+websockets>=12.0          # WebSocket support
+
+# Data Storage
+elasticsearch>=8.0.0      # Primary data store
+requests>=2.31.0          # HTTP client for ES
+
+# LLM Integration (Claude is primary)
+anthropic>=0.39.0         # Claude API client
+
+# Optional LLM backends
+# openai>=1.0.0           # For DeepSeek (OpenAI-compatible)
+# groq>=0.4.0             # Groq API
+
+# MCP Protocol (optional)
+# mcp>=1.0.0              # Model Context Protocol
+
+# Utilities
+python-dotenv>=1.0.0      # Environment variables
+pyyaml>=6.0.0             # YAML config parsing

@@ -1,0 +1,224 @@
+{
+  "provider": "sonnet",
+  "case": "magnet",
+  "case_name": "Magnet_CTF_2022",
+  "case_id": "case_20260323_032324",
+  "run": 3,
+  "evidence_file": "evidence_Magnet_CTF_2022.json",
+  "evidence_record_count": 798,
+  "chain_event_count": 30,
+  "prompt_chars": 153009,
+  "elapsed_seconds": 42.2,
+  "chain": [
+    {
+      "timestamp": "2022-02-04 05:53:43",
+      "event": "Discord.lnk shortcut created on Desktop",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-04 07:02:34.2776448",
+      "event": "System boot and initial logon (Event 12)",
+      "supporting_artifact": "EventLog Event 12",
+      "confidence_or_caveat": "high",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2022-02-04 07:05:42.6894842",
+      "event": "Windows Defender configuration change (Event 5007)",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-04 07:05:53.1678802",
+      "event": "Service installation (Event 7045)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-05 01:17:49.849651",
+      "event": "Browser search: stamps worth money",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-06 07:14:10.0767923",
+      "event": "ZeroTier One.msi downloaded",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:35.7898674",
+      "event": "zerotier-cli.bat and zerotier-idtool.bat installed",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:45.3852097",
+      "event": "file_deleter.ps1 created in ZeroTier directory",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2022-02-06 07:37:18.5478613",
+      "event": "Java JDK 1.8.0_181 MSI installer dropped",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-06 07:48:24.3521658",
+      "event": "start.bat created in Minecraft directory",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-09 03:42:56.9297066",
+      "event": "Service installation (Event 7045)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-09 03:45:32.7218427",
+      "event": "Authentication failure (Event 4625)",
+      "supporting_artifact": "EventLog Event 4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-09 22:44:37.8591332",
+      "event": "Windows Defender action taken against threat (Event 1117)",
+      "supporting_artifact": "EventLog Event 1117",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-09 23:34:55.1225188",
+      "event": "PowerShell script execution (Event 4104)",
+      "supporting_artifact": "EventLog Event 4104",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11 01:18:02.114178",
+      "event": "Browser search: how to know if you've been hacked",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2022-02-11 22:46:09.7189557",
+      "event": "Authentication failure (Event 4625)",
+      "supporting_artifact": "EventLog Event 4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-11 22:50:40",
+      "event": "Evidence folder created in Documents",
+      "supporting_artifact": "LNK",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2022-02-11 23:00:56.3207237",
+      "event": "Windows Defender threat detected (Event 1116)",
+      "supporting_artifact": "EventLog Event 1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-11 23:19:23.2090504",
+      "event": "goteem.ps1 created in Minecraft directory",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11 23:25:57.5388308",
+      "event": "goteem2.ps1 created in Minecraft directory",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-12 01:29:43.1362394",
+      "event": "New user account created (Event 4720)",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 01:37:07.8274813",
+      "event": "User added to security group (Event 4732)",
+      "supporting_artifact": "EventLog Event 4732",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 02:12:16.6903086",
+      "event": "TightVNC 2.8.63 installer (tightvnc-2.8.63-gpl-setup-64bit.msi) dropped",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2022-02-12 04:30:12.3573572",
+      "event": "Windows Defender threat detected (Event 1116)",
+      "supporting_artifact": "EventLog Event 1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-12 22:47:43.3308355",
+      "event": "Explicit credential usage (Event 4648)",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-12 22:54:09.9161001",
+      "event": "GamingServices and GamingServicesNet service installed (Event 7045)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 23:17:09.2888503",
+      "event": "Explicit credential usage (Event 4648)",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-12 23:25:56.0076948",
+      "event": "Special privileges assigned to new logon (Event 4672)",
+      "supporting_artifact": "EventLog Event 4672",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 23:33:49.5097252",
+      "event": "USB storage device connected (USBSTOR registry key - General UDisk)",
+      "supporting_artifact": "Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2022-02-12 23:33:49.8141627",
+      "event": "Service installation (Event 7045)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    }
+  ]
+}

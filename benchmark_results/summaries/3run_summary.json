@@ -1,0 +1,25 @@
+{
+  "runs": {
+    "Run 1": {
+      "keyword_recall": 99.0,
+      "bertscore_f1": 0.8850785619020463,
+      "mean_latency": 27.4
+    },
+    "Run 2": {
+      "keyword_recall": 95.8,
+      "bertscore_f1": 0.8454011106491088,
+      "mean_latency": 27.1
+    },
+    "Run 3": {
+      "keyword_recall": 95.5,
+      "bertscore_f1": 0.8491398096084595,
+      "mean_latency": 22.4
+    }
+  },
+  "combined": {
+    "mean_recall": 96.77222222222223,
+    "mean_sigma": 0.040983692506794886,
+    "consistency_3of3": 86,
+    "best_of_3": 100.0
+  }
+}

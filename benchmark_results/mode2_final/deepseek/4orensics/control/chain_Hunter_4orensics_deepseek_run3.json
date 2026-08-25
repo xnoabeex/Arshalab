@@ -1,0 +1,224 @@
+{
+  "provider": "deepseek",
+  "case": "4orensics",
+  "case_name": "Hunter_4orensics",
+  "case_id": "case_20260410_120043",
+  "run": 3,
+  "evidence_file": "evidence_Hunter_4orensics.json",
+  "evidence_record_count": 691,
+  "chain_event_count": 30,
+  "prompt_chars": 143389,
+  "elapsed_seconds": 12.9,
+  "chain": [
+    {
+      "timestamp": "2016-06-15 13:53:52.0000000",
+      "event": "CCleaner.exe installed in Program Files",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-15 22:18:58",
+      "event": "Skype.exe installed in Program Files (x86)",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:39.9920378",
+      "event": "Recent file how_do_threat_actors_steal_your_data.lnk created",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-20 23:51:29.2938133",
+      "event": "Recent file defcon-16-ricks.lnk created",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-20 23:53:36",
+      "event": "CMD.EXE executed (run_count 5)",
+      "supporting_artifact": "Prefetch",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:34",
+      "event": "putty.exe accessed in Downloads",
+      "supporting_artifact": "LNK Recent Files",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:41",
+      "event": "pscp.exe accessed in Downloads",
+      "supporting_artifact": "LNK Recent Files",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:06.9483540",
+      "event": "setupssh381-20040709.zip downloaded to Downloads",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:15",
+      "event": "TeamViewer_Setup-vfa.exe downloaded to Downloads",
+      "supporting_artifact": "USN Journal",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:21",
+      "event": "TeamViewer_.exe executed from Temp",
+      "supporting_artifact": "Prefetch",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 01:45:11.4222303",
+      "event": "Dropbox Update Service (dbupdate) registered in Services",
+      "supporting_artifact": "Registry",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 01:53:14.7757045",
+      "event": "USB device attached (Kernel-PnP event 410)",
+      "supporting_artifact": "USB Kernel-PnP",
+      "confidence_or_caveat": "medium",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:01:59.3657151",
+      "event": "Imation Nano Pro USB device registered in USBSTOR (SerialNumber 07B20C03C80830A9&0)",
+      "supporting_artifact": "Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:04:40.0000000",
+      "event": "FTK-Imager.zip created in Google Drive and Downloads",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0245506",
+      "event": "Account created (Event 4720)",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.6961545",
+      "event": "Windows Defender configuration changed (Event 5007)",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.1968203",
+      "event": "Windows Defender real-time protection disabled (Event 5010)",
+      "supporting_artifact": "EventLog Event 5010",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:07",
+      "event": "7z1602-x64.exe downloaded to Downloads",
+      "supporting_artifact": "USN Journal",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:10",
+      "event": "7z1602-x64.exe executed",
+      "supporting_artifact": "Prefetch",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 09:37:32",
+      "event": "Exfiltration_Diagram.png accessed in Pictures\\Exfil",
+      "supporting_artifact": "LNK Recent Files",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 09:38:12",
+      "event": "dns-exfiltration-using-sqlmap-18-728.jpg accessed in Pictures\\Exfil",
+      "supporting_artifact": "LNK Recent Files",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 10:51:23",
+      "event": "Tor Browser firefox.exe accessed on Desktop",
+      "supporting_artifact": "LNK Recent Files",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2016-06-21 11:01:44.1316101",
+      "event": "psexec file created in Program Files (x86)",
+      "supporting_artifact": "USN Journal",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 11:02:03",
+      "event": "zenmap.exe accessed in Nmap directory",
+      "supporting_artifact": "LNK Recent Files",
+      "confidence_or_caveat": "high",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2016-06-21 11:07:12",
+      "event": "OLLYDBG.EXE accessed in Downloads\\Ollydbg",
+      "supporting_artifact": "LNK Recent Files",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 11:18:11.8537725",
+      "event": "check_soundcard.vbs and empty.vbs created",
+      "supporting_artifact": "USN Journal",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 11:44:54.1431830",
+      "event": "MftWipeFilter service registered (Jetico file system filter)",
+      "supporting_artifact": "Registry Services",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 12:53:21.5412076",
+      "event": "Service installed (Event 7045)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 13:00:54.476902Z",
+      "event": "Accessed Google security settings for ehptmsgs@gmail.com",
+      "supporting_artifact": "Browser History",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 13:12:11.576942Z",
+      "event": "Accessed Google less secure apps settings",
+      "supporting_artifact": "Browser History",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    }
+  ]
+}

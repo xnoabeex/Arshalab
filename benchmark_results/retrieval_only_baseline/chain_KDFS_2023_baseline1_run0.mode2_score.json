@@ -1,0 +1,469 @@
+{
+  "chain_file": "benchmark_results/mode2_baseline_2026-08-14\\chain_KDFS_2023_baseline1_run0.json",
+  "case": "kdfs",
+  "provider": "BASELINE_anchors_sort_1pa",
+  "run": 0,
+  "evidence_record_count": 746,
+  "chain_event_count": 25,
+  "gt_in_scope_count": 48,
+  "gt_out_of_scope_excluded": 52,
+  "gt_distinct_tactics": [
+    "Command and Control",
+    "Exfiltration",
+    "Impact",
+    "Reconnaissance",
+    "Resource Development"
+  ],
+  "milestone_coverage": 0.25,
+  "milestones_covered_count": 1,
+  "milestones_total": 4,
+  "milestones_missed": [
+    "P3_intent_formation",
+    "P7_payment_setup",
+    "P10_distribution_handoff"
+  ],
+  "milestone_detail": {
+    "P2_debt_pressure": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "cook.com",
+        "\uc0ac\ucc44",
+        "\ud30c\uc0b0",
+        "82cook",
+        "bankruptcy",
+        "illegal lending",
+        "debt research",
+        "loan shark"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "Korean case-tied; dropped in v2 case-agnostic cleanup (kdfs_korean_financial_search anchor removed, \uc0ac\ucc44/\ud30c\uc0b0 tokens stripped from browser_downloads_searches)"
+    },
+    "P3_intent_formation": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "discord",
+        "discord.exe",
+        "\ub79c\uc12c\uc6e8\uc5b4",
+        "ransomware",
+        "\uc300\uc90d",
+        "\ud654\uc774\ud2b8\ud574\ucee4",
+        "\ubbf8\uc778\uc99d",
+        "ledger live"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P7_payment_setup": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "metamask",
+        "ledger live",
+        "bandizip",
+        "crypto wallet",
+        "wallet extension",
+        "blockstream",
+        "souldrag576"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P9_weapon_acquisition": {
+      "covered": true,
+      "hit_keywords": [
+        "usb"
+      ],
+      "all_keywords": [
+        "bandizip",
+        "ransom.exe",
+        "ransom.zip",
+        "sandisk",
+        "cruzer",
+        "usb",
+        "7121752",
+        "7287357"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P10_distribution_handoff": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "gofile",
+        "gofile.io",
+        "file sharing",
+        "share url",
+        "upload"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P4_accomplice_setup": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "takemejail",
+        "coinone"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "Etherscan blockchain explorer module not built (0 ES hits)"
+    },
+    "P5_initial_contact": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "cyberninja",
+        "souldrag__"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "Discord LevelDB chat parser not built (0 ES hits for cyberninja)"
+    },
+    "P6_conspiracy": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "30\ub9cc\uc6d0",
+        "cyberninja dm"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "Discord LevelDB chat parser not built"
+    },
+    "P8_prepayment": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "changelly",
+        "0.0085 wbtc"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "blockchain explorer + LevelDB not built (0 ES hits for changelly)"
+    },
+    "P11_post_handoff": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "wbtc swap",
+        "residual eth"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "blockchain explorer not built"
+    },
+    "P12_initial_funds": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "0.012 btc",
+        "3dgxayyua"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "blockchain explorer not built"
+    },
+    "P13_victim1": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "dou120313",
+        "0.003 btc"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "Outlook OST content parser + blockchain not built"
+    },
+    "P14_revenue_share_1": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "0.005 eth commission v1"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "blockchain explorer not built"
+    },
+    "P15_victim2": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "mugimyeong85",
+        "victim 2 payment"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "Outlook OST + blockchain not built"
+    },
+    "P16_revenue_share_2": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "0.005 eth commission v2"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "blockchain explorer not built"
+    },
+    "P17_accomplice_laundering": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "skybridge",
+        "swingby"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "blockchain explorer + Skybridge bridge not built"
+    },
+    "P18_post_imaging": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "mybitcoin third"
+      ],
+      "gt_event_ids": null,
+      "scope": "out_of_scope_future_module",
+      "scope_reason": "blockchain explorer not built"
+    }
+  },
+  "out_of_scope_milestones_total": 13,
+  "out_of_scope_milestones_covered": 0,
+  "out_of_scope_milestone_coverage": 0.0,
+  "tactic_coverage": 0.4,
+  "tactics_covered": [
+    "Impact",
+    "Resource Development"
+  ],
+  "tactics_missed": [
+    "Command and Control",
+    "Exfiltration",
+    "Reconnaissance"
+  ],
+  "per_tactic_recall": {
+    "Command and Control": "0/7",
+    "Exfiltration": "0/1",
+    "Impact": "1/9",
+    "Reconnaissance": "0/25",
+    "Resource Development": "1/6"
+  },
+  "ordering_accuracy": 1.0,
+  "ordering_pairs_concordant": 1,
+  "ordering_pairs_discordant": 0,
+  "ordering_pairs_masked_negative_finding": 0,
+  "source_attribution_accuracy": 0.0,
+  "source_attribution_correct": 0,
+  "source_attribution_total": 2,
+  "per_source_attribution": {
+    "mft": "0/1",
+    "prefetch": "0/1"
+  },
+  "hallucination_rate": 0.0,
+  "grounded_events": 25,
+  "hallucinated_events": 0,
+  "hallucination_reasons": {
+    "no_factual_entity_to_check": 25
+  },
+  "exact_event_coverage": 0.0417,
+  "matched_event_count": 2,
+  "matched_gt_ids": [
+    "KDF-003",
+    "KDF-040"
+  ],
+  "missed_gt": [
+    [
+      "KDF-001",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-002",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-004",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-005",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-006",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-008",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-009",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-010",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-011",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-012",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-013",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-014",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-015",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-016",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-017",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-018",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-019",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-020",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-021",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-022",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-023",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-024",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-025",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-026",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-027",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-028",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-029",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-030",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-032",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-033",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-034",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-035",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-036",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-037",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-038",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-039",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-071",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-072",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-079",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-080",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-081",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-082",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-083",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-084",
+      "date_match_no_kw"
+    ],
+    [
+      "KDF-094",
+      "date_not_in_chain"
+    ],
+    [
+      "KDF-097",
+      "date_not_in_chain"
+    ]
+  ],
+  "miss_reasons": {
+    "date_not_in_chain": 27,
+    "date_match_no_kw": 19
+  },
+  "composite_headline": 0.595
+}

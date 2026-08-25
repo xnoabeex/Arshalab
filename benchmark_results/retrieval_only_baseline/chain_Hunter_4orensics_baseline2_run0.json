@@ -1,0 +1,186 @@
+{
+  "provider": "BASELINE_anchors_sort_2pa",
+  "case": "4orensics",
+  "case_name": "Hunter_4orensics",
+  "run": 0,
+  "evidence_file": "evidence_Hunter_4orensics.json",
+  "evidence_record_count": 691,
+  "chain_event_count": 25,
+  "chain": [
+    {
+      "timestamp": "2012-11-10 18:29:14",
+      "event": "[shimcache_top] _anchor=shimcache_top",
+      "supporting_artifact": "shimcache_top",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2013-08-22 15:37:10.2813158",
+      "event": "[reg_image_file_execution_options] _anchor=reg_image_file_execution_options",
+      "supporting_artifact": "reg_image_file_execution_options",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2013-08-22 15:37:14.2344435",
+      "event": "[reg_appinit_dlls] _anchor=reg_appinit_dlls",
+      "supporting_artifact": "reg_appinit_dlls",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2014-03-18 10:14:20",
+      "event": "[jumplist_recent] _anchor=jumplist_recent",
+      "supporting_artifact": "jumplist_recent",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-15 08:27:07.2773437",
+      "event": "[mft_archive_files] _anchor=mft_archive_files",
+      "supporting_artifact": "mft_archive_files",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-15 22:14:46.0000000",
+      "event": "[app_communication] _anchor=app_communication",
+      "supporting_artifact": "app_communication",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-20 23:48:21.7754081",
+      "event": "[auth_logon_service_type5] _anchor=auth_logon_service_type5",
+      "supporting_artifact": "auth_logon_service_type5",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-20 23:48:22.3828274",
+      "event": "[auth_logon_interactive_type2] _anchor=auth_logon_interactive_type2",
+      "supporting_artifact": "auth_logon_interactive_type2",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-20 23:48:23.0390132",
+      "event": "[auth_logon_network_type3] _anchor=auth_logon_network_type3",
+      "supporting_artifact": "auth_logon_network_type3",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:02.3669721",
+      "event": "[auth_explicit_cred_4648] _anchor=auth_explicit_cred_4648",
+      "supporting_artifact": "auth_explicit_cred_4648",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:02.7573328",
+      "event": "[wmi_subscription] _anchor=wmi_subscription",
+      "supporting_artifact": "wmi_subscription",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:05.5697511",
+      "event": "[mft_lnk_files] _anchor=mft_lnk_files",
+      "supporting_artifact": "mft_lnk_files",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-20 23:50:00",
+      "event": "[srum_network_usage] _anchor=srum_network_usage",
+      "supporting_artifact": "srum_network_usage",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-20 23:53:03.3555032",
+      "event": "[wer_reports_1001] _anchor=wer_reports_1001",
+      "supporting_artifact": "wer_reports_1001",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-20 23:55:49.1639635",
+      "event": "[usb_kernel_pnp_install] _anchor=usb_kernel_pnp_install",
+      "supporting_artifact": "usb_kernel_pnp_install",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:06.0000000",
+      "event": "[app_email_client] _anchor=app_email_client",
+      "supporting_artifact": "app_email_client",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:14.6780019",
+      "event": "[usnjrnl_recent_changes] _anchor=usnjrnl_recent_changes",
+      "supporting_artifact": "usnjrnl_recent_changes",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-21 01:02:50.3136004",
+      "event": "[svc_starttype_changed_7040] _anchor=svc_starttype_changed_7040",
+      "supporting_artifact": "svc_starttype_changed_7040",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-21 01:42:47.4967894",
+      "event": "[svc_starttype_changed_7040] _anchor=svc_starttype_changed_7040",
+      "supporting_artifact": "svc_starttype_changed_7040",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-21 01:53:16.8830218",
+      "event": "[device_setupapi_events] _anchor=device_setupapi_events",
+      "supporting_artifact": "device_setupapi_events",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0245506",
+      "event": "[auth_account_created_4720] _anchor=auth_account_created_4720",
+      "supporting_artifact": "auth_account_created_4720",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.6961545",
+      "event": "[def_config_change_5007] _anchor=def_config_change_5007",
+      "supporting_artifact": "def_config_change_5007",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.0090311",
+      "event": "[auth_account_created_4720] _anchor=auth_account_created_4720",
+      "supporting_artifact": "auth_account_created_4720",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:10",
+      "event": "[app_archive_tools] _anchor=app_archive_tools",
+      "supporting_artifact": "app_archive_tools",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2016-06-21 11:01:44.1325750",
+      "event": "[suspicious_indicators_universal] _anchor=suspicious_indicators_universal",
+      "supporting_artifact": "suspicious_indicators_universal",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    }
+  ]
+}

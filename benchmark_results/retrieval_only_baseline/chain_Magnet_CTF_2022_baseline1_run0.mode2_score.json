@@ -1,0 +1,282 @@
+{
+  "chain_file": "benchmark_results/mode2_baseline_2026-08-14\\chain_Magnet_CTF_2022_baseline1_run0.json",
+  "case": "magnet",
+  "provider": "BASELINE_anchors_sort_1pa",
+  "run": 0,
+  "evidence_record_count": 798,
+  "chain_event_count": 25,
+  "gt_in_scope_count": 17,
+  "gt_out_of_scope_excluded": 1,
+  "gt_distinct_tactics": [
+    "Command and Control",
+    "Defense Evasion",
+    "Execution",
+    "Persistence"
+  ],
+  "milestone_coverage": 0.75,
+  "milestones_covered_count": 6,
+  "milestones_total": 8,
+  "milestones_missed": [
+    "M_zerotier_deployment",
+    "M_antiforensic_scripts"
+  ],
+  "milestone_detail": {
+    "M_defender_tampering": {
+      "covered": true,
+      "hit_keywords": [
+        "5007"
+      ],
+      "all_keywords": [
+        "5007"
+      ],
+      "gt_event_ids": [
+        "MAG-002"
+      ],
+      "scope": "in_scope"
+    },
+    "M_zerotier_deployment": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "1.8.4",
+        "7045",
+        "one.msi",
+        "zerotier",
+        "zerotier-one",
+        "zttap300.sys",
+        "zerotierone",
+        "zerotier-one.port"
+      ],
+      "gt_event_ids": [
+        "MAG-003",
+        "MAG-004",
+        "MAG-005",
+        "MAG-008"
+      ],
+      "scope": "in_scope"
+    },
+    "M_antiforensic_scripts": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "file_deleter.ps1",
+        "ai_70bb.ps1"
+      ],
+      "gt_event_ids": [
+        "MAG-006",
+        "MAG-007"
+      ],
+      "scope": "in_scope"
+    },
+    "M_defender_detections": {
+      "covered": true,
+      "hit_keywords": [
+        "2022-02-09"
+      ],
+      "all_keywords": [
+        "1116",
+        "1117",
+        "2022-02-09",
+        "2022-02-09 22:44:11.0630581",
+        "2022-02-09 22:44:16.2033444",
+        "22:44",
+        "22:44:11",
+        "22:44:16"
+      ],
+      "gt_event_ids": [
+        "MAG-009"
+      ],
+      "scope": "in_scope"
+    },
+    "M_powershell_c2": {
+      "covered": true,
+      "hit_keywords": [
+        "2022-02-09 23:34:55.1225188",
+        "2022-02-09",
+        "23:34"
+      ],
+      "all_keywords": [
+        "2022-02-09 23:34:55.1225188",
+        "2022-02-09",
+        "23:34",
+        "23:34:55",
+        "event 4104",
+        "4104",
+        "scriptblock",
+        "00:06"
+      ],
+      "gt_event_ids": [
+        "MAG-010",
+        "MAG-011"
+      ],
+      "scope": "in_scope"
+    },
+    "M_goteem_scripts": {
+      "covered": true,
+      "hit_keywords": [
+        "2022-02-11",
+        "2022-02-11"
+      ],
+      "all_keywords": [
+        "goteem.ps1",
+        "documents/minecraft",
+        "2022-02-11 23:22:52.3693218",
+        "2022-02-11",
+        "23:22",
+        "23:22:52",
+        "goteem2.ps1",
+        "2022-02-11 23:26:51.7850954"
+      ],
+      "gt_event_ids": [
+        "MAG-012",
+        "MAG-013",
+        "MAG-014",
+        "MAG-015",
+        "MAG-016"
+      ],
+      "scope": "in_scope"
+    },
+    "M_matrix_lolololol": {
+      "covered": true,
+      "hit_keywords": [
+        "00:41",
+        "2022-02-12"
+      ],
+      "all_keywords": [
+        "00:41",
+        "00:41:00",
+        "2022-02-12",
+        "2022-02-12 00:41:00.0000000",
+        "lolololol",
+        "matrix.bat"
+      ],
+      "gt_event_ids": [
+        "MAG-017"
+      ],
+      "scope": "in_scope"
+    },
+    "M_unauthorised_account": {
+      "covered": true,
+      "hit_keywords": [
+        "01:29",
+        "01:29:43",
+        "2022-02-12"
+      ],
+      "all_keywords": [
+        "01:29",
+        "01:29:43",
+        "2022-02-12",
+        "2022-02-12 01:29:43.1362394",
+        "4720",
+        "desktop-skptdio",
+        "event 4720",
+        "s-1-5-18"
+      ],
+      "gt_event_ids": [
+        "MAG-018"
+      ],
+      "scope": "in_scope"
+    }
+  },
+  "out_of_scope_milestones_total": 0,
+  "out_of_scope_milestones_covered": 0,
+  "out_of_scope_milestone_coverage": null,
+  "tactic_coverage": 0.75,
+  "tactics_covered": [
+    "Defense Evasion",
+    "Execution",
+    "Persistence"
+  ],
+  "tactics_missed": [
+    "Command and Control"
+  ],
+  "per_tactic_recall": {
+    "Command and Control": "0/3",
+    "Defense Evasion": "1/3",
+    "Execution": "2/9",
+    "Persistence": "1/2"
+  },
+  "ordering_accuracy": 0.8333,
+  "ordering_pairs_concordant": 5,
+  "ordering_pairs_discordant": 1,
+  "ordering_pairs_masked_negative_finding": 0,
+  "source_attribution_accuracy": 1.0,
+  "source_attribution_correct": 4,
+  "source_attribution_total": 4,
+  "per_source_attribution": {
+    "eventlog": "3/3",
+    "eventlog+reg": "1/1"
+  },
+  "hallucination_rate": 0.0,
+  "grounded_events": 25,
+  "hallucinated_events": 0,
+  "hallucination_reasons": {
+    "no_factual_entity_to_check": 25
+  },
+  "exact_event_coverage": 0.2353,
+  "matched_event_count": 4,
+  "matched_gt_ids": [
+    "MAG-002",
+    "MAG-010",
+    "MAG-011",
+    "MAG-018"
+  ],
+  "missed_gt": [
+    [
+      "MAG-003",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-004",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-005",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-006",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-007",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-008",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-009",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-012",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-013",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-014",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-015",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-016",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-017",
+      "date_match_no_kw"
+    ]
+  ],
+  "miss_reasons": {
+    "date_match_no_kw": 13
+  },
+  "composite_headline": 0.825
+}

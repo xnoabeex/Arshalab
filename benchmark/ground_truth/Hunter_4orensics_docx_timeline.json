@@ -1,0 +1,1173 @@
+{
+  "case_id": "case_20260410_120043",
+  "case_name": "Hunter 4orensics",
+  "source": "case timeline.docx (all events, in-scope)",
+  "total_events": 68,
+  "events": [
+    {
+      "id": 1,
+      "timestamp": "2016-06-21 01:52:17.0902822",
+      "phase": "Exfiltration",
+      "source": "MFT",
+      "description": "Pictures.7z (1849480 bytes)",
+      "evidence_keywords": [
+        "2016-06-21 01:52:17.0902822",
+        "2016-06-21",
+        "01:52",
+        "01:52:17",
+        "Pictures.7z"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 2,
+      "timestamp": "2016-06-21 09:22:25",
+      "phase": "Tool Installation",
+      "source": "Prefetch",
+      "description": "WIRESHARK-WIN64-2.0.4.EXE (runs=0)",
+      "evidence_keywords": [
+        "2016-06-21 09:22:25",
+        "2016-06-21",
+        "09:22",
+        "09:22:25",
+        "WIRESHARK-WIN64-2.0.4.EXE",
+        "WIRESHARK"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 3,
+      "timestamp": "2016-06-21 09:37:49.7508426",
+      "phase": "Exfil Evidence",
+      "source": "MFT",
+      "description": "Exfiltration_Diagram.png (100256 bytes)",
+      "evidence_keywords": [
+        "2016-06-21 09:37:49.7508426",
+        "2016-06-21",
+        "09:37",
+        "09:37:49",
+        "Exfiltration_Diagram.png"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 4,
+      "timestamp": "2016-06-21 10:51:23.2591081",
+      "phase": "Tool Installation",
+      "source": "MFT",
+      "description": "Tor Browser (0 bytes)",
+      "evidence_keywords": [
+        "2016-06-21 10:51:23.2591081",
+        "2016-06-21",
+        "10:51",
+        "10:51:23"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 5,
+      "timestamp": "2016-06-21 11:01:34",
+      "phase": "Tool Installation",
+      "source": "Prefetch",
+      "description": "NMAP-7.12-SETUP.EXE (runs=1)",
+      "evidence_keywords": [
+        "2016-06-21 11:01:34",
+        "2016-06-21",
+        "11:01",
+        "11:01:34",
+        "NMAP-7.12-SETUP.EXE",
+        "NMAP",
+        "SETUP"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 6,
+      "timestamp": "2016-06-21 11:17:53.6414771",
+      "phase": "Tool Installation",
+      "source": "MFT",
+      "description": "SysinternalsSuite (0 bytes)",
+      "evidence_keywords": [
+        "2016-06-21 11:17:53.6414771",
+        "2016-06-21",
+        "11:17",
+        "11:17:53",
+        "SysinternalsSuite"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 7,
+      "timestamp": "2016-06-21 11:44:44.1021040",
+      "phase": "Anti-Forensics",
+      "source": "MFT",
+      "description": "BCWipe (0 bytes)",
+      "evidence_keywords": [
+        "2016-06-21 11:44:44.1021040",
+        "2016-06-21",
+        "11:44",
+        "11:44:44"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 8,
+      "timestamp": "2016-06-21 11:44:57.7442628",
+      "phase": "Anti-Forensics",
+      "source": "EventLog",
+      "description": "Event 28115 (BCWipe service)",
+      "evidence_keywords": [
+        "2016-06-21 11:44:57.7442628",
+        "2016-06-21",
+        "11:44",
+        "11:44:57",
+        "Event 28115",
+        "28115"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 9,
+      "timestamp": "2016-06-21 12:10:51",
+      "phase": "Port Scanning",
+      "source": "Prefetch",
+      "description": "NMAP.EXE (runs=2)",
+      "evidence_keywords": [
+        "2016-06-21 12:10:51",
+        "2016-06-21",
+        "12:10",
+        "12:10:51",
+        "NMAP.EXE",
+        "NMAP"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 10,
+      "timestamp": "2016-06-21 12:13:57.7961630",
+      "phase": "Port Scanning",
+      "source": "MFT",
+      "description": "nmapscan.xml (13137 bytes)",
+      "evidence_keywords": [
+        "2016-06-21 12:13:57.7961630",
+        "2016-06-21",
+        "12:13",
+        "12:13:57",
+        "13137"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 11,
+      "timestamp": "2016-06-21 12:17:39.5306402",
+      "phase": "Exfil Evidence",
+      "source": "MFT",
+      "description": "dns-exfiltration-using-sqlmap-18-728.jpg.lnk (3588 bytes)",
+      "evidence_keywords": [
+        "2016-06-21 12:17:39.5306402",
+        "2016-06-21",
+        "12:17",
+        "12:17:39",
+        "dns-exfiltration-using-sqlmap-18-728.jpg.lnk",
+        "728",
+        "3588"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 12,
+      "timestamp": "2016-06-21 12:28:08",
+      "phase": "Anti-Forensics",
+      "source": "Prefetch",
+      "description": "CCLEANER64.EXE (runs=7)",
+      "evidence_keywords": [
+        "2016-06-21 12:28:08",
+        "2016-06-21",
+        "12:28",
+        "12:28:08",
+        "CCLEANER64.EXE",
+        "CCLEANER64"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 13,
+      "timestamp": "2016-06-21 13:13:43.7772513",
+      "phase": "Exfiltration",
+      "source": "MFT",
+      "description": "backup.pst (10429440 bytes)",
+      "evidence_keywords": [
+        "2016-06-21 13:13:43.7772513",
+        "2016-06-21",
+        "13:13",
+        "13:13:43",
+        "backup.pst"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 14,
+      "timestamp": "2016-06-21 13:18:13",
+      "phase": "Self-Analysis",
+      "source": "Prefetch",
+      "description": "FTK IMAGER.EXE (runs=3)",
+      "evidence_keywords": [
+        "2016-06-21 13:18:13",
+        "2016-06-21",
+        "13:18",
+        "13:18:13",
+        "IMAGER.EXE",
+        "IMAGER"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 15,
+      "timestamp": "2016-06-21T09:37:01.604750Z",
+      "phase": "Exfil Research",
+      "source": "Browser",
+      "description": "exfiltration - Google Search",
+      "evidence_keywords": [
+        "2016-06-21T09:37:01.604750Z",
+        "2016-06-21",
+        "09:37",
+        "09:37:01"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 16,
+      "timestamp": "2016-06-21T09:37:09.550438Z",
+      "phase": "Exfil Research",
+      "source": "Browser",
+      "description": "Google Image Result for http://www.filetransferconsulting.com/wp-content/uploads",
+      "evidence_keywords": [
+        "2016-06-21T09:37:09.550438Z",
+        "2016-06-21",
+        "09:37",
+        "09:37:09",
+        "filetransferconsulting.com"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 17,
+      "timestamp": "2016-06-21T09:37:10.714132Z",
+      "phase": "Exfil Research",
+      "source": "Browser",
+      "description": "data exfiltration - Google Search",
+      "evidence_keywords": [
+        "2016-06-21T09:37:10.714132Z",
+        "2016-06-21",
+        "09:37",
+        "09:37:10"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 18,
+      "timestamp": "2016-06-21T09:37:26.587778Z",
+      "phase": "Exfil Research",
+      "source": "Browser",
+      "description": "howto exfiltrate data - Google Search",
+      "evidence_keywords": [
+        "2016-06-21T09:37:26.587778Z",
+        "2016-06-21",
+        "09:37",
+        "09:37:26"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 19,
+      "timestamp": "2016-06-21T09:37:30.489525Z",
+      "phase": "Exfil Research",
+      "source": "Browser",
+      "description": "Exfiltration_Diagram.png (907×359)",
+      "evidence_keywords": [
+        "2016-06-21T09:37:30.489525Z",
+        "2016-06-21",
+        "09:37",
+        "09:37:30",
+        "Exfiltration_Diagram.png",
+        "907",
+        "359"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 20,
+      "timestamp": "2016-06-21T09:38:10.793020Z",
+      "phase": "Exfil Research",
+      "source": "Browser",
+      "description": "dns-exfiltration-using-sqlmap-18-728.jpg (728×546)",
+      "evidence_keywords": [
+        "2016-06-21T09:38:10.793020Z",
+        "2016-06-21",
+        "09:38",
+        "09:38:10",
+        "dns-exfiltration-using-sqlmap-18-728.jpg",
+        "728",
+        "546"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 21,
+      "timestamp": "2016-06-21T09:38:17.986170Z",
+      "phase": "Exfil Research",
+      "source": "Browser",
+      "description": "DNS Exfiltration Using sqlmap",
+      "evidence_keywords": [
+        "2016-06-21T09:38:17.986170Z",
+        "2016-06-21",
+        "09:38",
+        "09:38:17"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 22,
+      "timestamp": "2016-06-21T09:39:04.939323Z",
+      "phase": "Exfil Research",
+      "source": "Browser",
+      "description": "Data Exfiltration in Depth",
+      "evidence_keywords": [
+        "2016-06-21T09:39:04.939323Z",
+        "2016-06-21",
+        "09:39",
+        "09:39:04"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 23,
+      "timestamp": "2016-06-21T09:39:21.079899Z",
+      "phase": "Exfil Research",
+      "source": "Browser",
+      "description": "Detecting & Deterring Data Exfiltration",
+      "evidence_keywords": [
+        "2016-06-21T09:39:21.079899Z",
+        "2016-06-21",
+        "09:39",
+        "09:39:21"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 24,
+      "timestamp": "2016-06-21T09:39:33.947536Z",
+      "phase": "Exfil Research",
+      "source": "Browser",
+      "description": "dns data exfiltration - Google Search",
+      "evidence_keywords": [
+        "2016-06-21T09:39:33.947536Z",
+        "2016-06-21",
+        "09:39",
+        "09:39:33"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 25,
+      "timestamp": "2016-06-21T09:43:54.327452Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "hacking - Google Search",
+      "evidence_keywords": [
+        "2016-06-21T09:43:54.327452Z",
+        "2016-06-21",
+        "09:43",
+        "09:43:54"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 26,
+      "timestamp": "2016-06-21T09:43:59.783279Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "computer hacking wallpaper - Google Search",
+      "evidence_keywords": [
+        "2016-06-21T09:43:59.783279Z",
+        "2016-06-21",
+        "09:43",
+        "09:43:59"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 27,
+      "timestamp": "2016-06-21T09:45:33.661766Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "wallpaper-linux-hacking-wallpapers.jpg (1920×1080)",
+      "evidence_keywords": [
+        "2016-06-21T09:45:33.661766Z",
+        "2016-06-21",
+        "09:45",
+        "09:45:33",
+        "wallpaper-linux-hacking-wallpapers.jpg",
+        "1920",
+        "1080"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 28,
+      "timestamp": "2016-06-21T09:45:47.827385Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "image.php (700×350)",
+      "evidence_keywords": [
+        "2016-06-21T09:45:47.827385Z",
+        "2016-06-21",
+        "09:45",
+        "09:45:47",
+        "700",
+        "350"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 29,
+      "timestamp": "2016-06-21T09:46:21.372805Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "Hackers+Got+real+Brain.png (1600×1000)",
+      "evidence_keywords": [
+        "2016-06-21T09:46:21.372805Z",
+        "2016-06-21",
+        "09:46",
+        "09:46:21",
+        "Brain.png",
+        "1600",
+        "1000"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 30,
+      "timestamp": "2016-06-21T10:47:36.582785Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "Google",
+      "evidence_keywords": [
+        "2016-06-21T10:47:36.582785Z",
+        "2016-06-21",
+        "10:47",
+        "10:47:36"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 31,
+      "timestamp": "2016-06-21T10:48:01.104612Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "404 Page Not Found",
+      "evidence_keywords": [
+        "2016-06-21T10:48:01.104612Z",
+        "2016-06-21",
+        "10:48",
+        "10:48:01",
+        "404"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 32,
+      "timestamp": "2016-06-21T10:48:12.381784Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "Tor Project: Anonymity Online",
+      "evidence_keywords": [
+        "2016-06-21T10:48:12.381784Z",
+        "2016-06-21",
+        "10:48",
+        "10:48:12"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 33,
+      "timestamp": "2016-06-21T10:48:16.810822Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "Download Tor",
+      "evidence_keywords": [
+        "2016-06-21T10:48:16.810822Z",
+        "2016-06-21",
+        "10:48",
+        "10:48:16"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 34,
+      "timestamp": "2016-06-21T10:56:07.292044Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "metasploit windows download - Google Search",
+      "evidence_keywords": [
+        "2016-06-21T10:56:07.292044Z",
+        "2016-06-21",
+        "10:56",
+        "10:56:07"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 35,
+      "timestamp": "2016-06-21T10:57:34.580814Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "netcat - Google Search",
+      "evidence_keywords": [
+        "2016-06-21T10:57:34.580814Z",
+        "2016-06-21",
+        "10:57",
+        "10:57:34"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 36,
+      "timestamp": "2016-06-21T10:57:39.833563Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "Penetration Testing Software | Metasploit",
+      "evidence_keywords": [
+        "2016-06-21T10:57:39.833563Z",
+        "2016-06-21",
+        "10:57",
+        "10:57:39"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 37,
+      "timestamp": "2016-06-21T10:58:03.406965Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "Ncat - Netcat for the 21st Century",
+      "evidence_keywords": [
+        "2016-06-21T10:58:03.406965Z",
+        "2016-06-21",
+        "10:58",
+        "10:58:03"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 38,
+      "timestamp": "2016-06-21T10:58:10.008820Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "Penetration Testing Tool, Metasploit, Free Download | Rapid7",
+      "evidence_keywords": [
+        "2016-06-21T10:58:10.008820Z",
+        "2016-06-21",
+        "10:58",
+        "10:58:10"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 39,
+      "timestamp": "2016-06-21T10:58:20.899681Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "Free Metasploit Community Download for Pen Testing | Rapid7",
+      "evidence_keywords": [
+        "2016-06-21T10:58:20.899681Z",
+        "2016-06-21",
+        "10:58",
+        "10:58:20"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 40,
+      "timestamp": "2016-06-21T10:58:28.865967Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "Download the Free Nmap Security Scanner for Linux/MAC/UNIX or Windows",
+      "evidence_keywords": [
+        "2016-06-21T10:58:28.865967Z",
+        "2016-06-21",
+        "10:58",
+        "10:58:28",
+        "UNIX"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 41,
+      "timestamp": "2016-06-21T10:59:11.583763Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "Free Vulnerability Scanner - Enterprise Level to Single Users | Rapid7",
+      "evidence_keywords": [
+        "2016-06-21T10:59:11.583763Z",
+        "2016-06-21",
+        "10:59",
+        "10:59:11"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 42,
+      "timestamp": "2016-06-21T10:59:50.760315Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "Hash Suite - a program to audit security of password hashes",
+      "evidence_keywords": [
+        "2016-06-21T10:59:50.760315Z",
+        "2016-06-21",
+        "10:59",
+        "10:59:50"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 43,
+      "timestamp": "2016-06-21T11:00:45.281424Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "Burp Suite",
+      "evidence_keywords": [
+        "2016-06-21T11:00:45.281424Z",
+        "2016-06-21",
+        "11:00",
+        "11:00:45"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 44,
+      "timestamp": "2016-06-21T11:00:54.767206Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "Download Burp Suite",
+      "evidence_keywords": [
+        "2016-06-21T11:00:54.767206Z",
+        "2016-06-21",
+        "11:00",
+        "11:00:54"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 45,
+      "timestamp": "2016-06-21T11:00:56.942078Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "Download Burp Suite Free Edition",
+      "evidence_keywords": [
+        "2016-06-21T11:00:56.942078Z",
+        "2016-06-21",
+        "11:00",
+        "11:00:56"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 46,
+      "timestamp": "2016-06-21T11:02:09.693932Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "THC Hydra – SecTools Top Network Security Tools",
+      "evidence_keywords": [
+        "2016-06-21T11:02:09.693932Z",
+        "2016-06-21",
+        "11:02",
+        "11:02:09",
+        "SecTools"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 47,
+      "timestamp": "2016-06-21T11:02:40.238361Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "Nexpose Community Trial | Rapid7",
+      "evidence_keywords": [
+        "2016-06-21T11:02:40.238361Z",
+        "2016-06-21",
+        "11:02",
+        "11:02:40"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 48,
+      "timestamp": "2016-06-21T11:03:13.836416Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "THC-HYDRA - fast and flexible network login hacker",
+      "evidence_keywords": [
+        "2016-06-21T11:03:13.836416Z",
+        "2016-06-21",
+        "11:03",
+        "11:03:13",
+        "HYDRA"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 49,
+      "timestamp": "2016-06-21T11:04:35.553366Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "ollydbg - Google Search",
+      "evidence_keywords": [
+        "2016-06-21T11:04:35.553366Z",
+        "2016-06-21",
+        "11:04",
+        "11:04:35"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 50,
+      "timestamp": "2016-06-21T11:04:38.371136Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "OllyDbg v1.10",
+      "evidence_keywords": [
+        "2016-06-21T11:04:38.371136Z",
+        "2016-06-21",
+        "11:04",
+        "11:04:38",
+        "OllyDbg"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 51,
+      "timestamp": "2016-06-21T11:20:32.120577Z",
+      "phase": "Tool Research",
+      "source": "Browser",
+      "description": "java - Google Search",
+      "evidence_keywords": [
+        "2016-06-21T11:20:32.120577Z",
+        "2016-06-21",
+        "11:20",
+        "11:20:32"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 52,
+      "timestamp": "2016-06-21T11:50:19.784531Z",
+      "phase": "Exfil Research",
+      "source": "Browser",
+      "description": "DEFCON 16: New Tool for SQL Injection with DNS Exfiltration - YouTube",
+      "evidence_keywords": [
+        "2016-06-21T11:50:19.784531Z",
+        "2016-06-21",
+        "11:50",
+        "11:50:19",
+        "DEFCON",
+        "YouTube"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 53,
+      "timestamp": "2016-06-21T11:57:11.685518Z",
+      "phase": "Email",
+      "source": "Browser",
+      "description": "DNS Exfil Videos - ehptmsgs@gmail.com - Gmail",
+      "evidence_keywords": [
+        "2016-06-21T11:57:11.685518Z",
+        "2016-06-21",
+        "11:57",
+        "11:57:11",
+        "ehptmsgs@gmail.com",
+        "gmail.com"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 54,
+      "timestamp": "2016-06-21T13:00:44.865932Z",
+      "phase": "Email",
+      "source": "Browser",
+      "description": "Sign-in attempt prevented - ehptmsgs@gmail.com - Gmail",
+      "evidence_keywords": [
+        "2016-06-21T13:00:44.865932Z",
+        "2016-06-21",
+        "13:00",
+        "13:00:44",
+        "ehptmsgs@gmail.com",
+        "gmail.com"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 55,
+      "timestamp": "2016-06-21T13:00:54.476902Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "Security - Devices",
+      "evidence_keywords": [
+        "2016-06-21T13:00:54.476902Z",
+        "2016-06-21",
+        "13:00",
+        "13:00:54"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 56,
+      "timestamp": "2016-06-21T13:02:41.980816Z",
+      "phase": "Email",
+      "source": "Browser",
+      "description": "Inbox - ehptmsgs@gmail.com - Gmail",
+      "evidence_keywords": [
+        "2016-06-21T13:02:41.980816Z",
+        "2016-06-21",
+        "13:02",
+        "13:02:41",
+        "ehptmsgs@gmail.com",
+        "gmail.com"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 57,
+      "timestamp": "2016-06-21T13:09:46.704338Z",
+      "phase": "Email",
+      "source": "Browser",
+      "description": "Settings - ehptmsgs@gmail.com - Gmail",
+      "evidence_keywords": [
+        "2016-06-21T13:09:46.704338Z",
+        "2016-06-21",
+        "13:09",
+        "13:09:46",
+        "ehptmsgs@gmail.com",
+        "gmail.com"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 58,
+      "timestamp": "2016-06-21T13:10:14.173073Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "Sign-in & security",
+      "evidence_keywords": [
+        "2016-06-21T13:10:14.173073Z",
+        "2016-06-21",
+        "13:10",
+        "13:10:14"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 59,
+      "timestamp": "2016-06-21T13:10:36.511103Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "Apps connected to your account",
+      "evidence_keywords": [
+        "2016-06-21T13:10:36.511103Z",
+        "2016-06-21",
+        "13:10",
+        "13:10:36"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 60,
+      "timestamp": "2016-06-21T13:10:59.578768Z",
+      "phase": "Cloud Storage",
+      "source": "Browser",
+      "description": "Personal info & privacy",
+      "evidence_keywords": [
+        "2016-06-21T13:10:59.578768Z",
+        "2016-06-21",
+        "13:10",
+        "13:10:59"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 61,
+      "timestamp": "2016-06-21T13:11:27.667063Z",
+      "phase": "Cloud Storage",
+      "source": "Browser",
+      "description": "Account preferences",
+      "evidence_keywords": [
+        "2016-06-21T13:11:27.667063Z",
+        "2016-06-21",
+        "13:11",
+        "13:11:27"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 62,
+      "timestamp": "2016-06-21T13:12:11.576942Z",
+      "phase": "Security Research",
+      "source": "Browser",
+      "description": "Less secure apps - Account settings",
+      "evidence_keywords": [
+        "2016-06-21T13:12:11.576942Z",
+        "2016-06-21",
+        "13:12",
+        "13:12:11"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 63,
+      "timestamp": "2016-06-21 01:53:14.7757045",
+      "phase": "USB Activity",
+      "source": "Registry",
+      "description": "USBSTOR Imation Nano Pro (Serial 07B20C03C80830A9)",
+      "evidence_keywords": [
+        "2016-06-21 01:53:14.7757045",
+        "2016-06-21",
+        "01:53",
+        "01:53:14",
+        "USBSTOR",
+        "07B20C03C80830A9"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 64,
+      "timestamp": "2016-06-21 02:01:59.3657151",
+      "phase": "USB Activity",
+      "source": "Registry",
+      "description": "USBSTOR Lexar JumpDrive (Serial AAI6UXDKZDV8E9OU)",
+      "evidence_keywords": [
+        "2016-06-21 02:01:59.3657151",
+        "2016-06-21",
+        "02:01",
+        "02:01:59",
+        "USBSTOR",
+        "JumpDrive",
+        "AAI6UXDKZDV8E9OU"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 65,
+      "timestamp": "2016-06-21 11:44:53.0000000",
+      "phase": "Anti-Forensics",
+      "source": "Prefetch",
+      "description": "BCWIPE.EXE (runs=5)",
+      "evidence_keywords": [
+        "2016-06-21 11:44:53.0000000",
+        "2016-06-21",
+        "11:44",
+        "11:44:53",
+        "BCWIPE.EXE",
+        "BCWIPE"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 66,
+      "timestamp": "2016-06-21 12:50:38",
+      "phase": "Cloud Sync",
+      "source": "Prefetch",
+      "description": "DROPBOXUPDATE.EXE (8 run times, last 12:50:38)",
+      "evidence_keywords": [
+        "2016-06-21 12:50:38",
+        "2016-06-21",
+        "12:50",
+        "12:50:38",
+        "DROPBOXUPDATE.EXE",
+        "DROPBOXUPDATE"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 67,
+      "timestamp": "2016-06-21 00:57:31.5476320",
+      "phase": "Remote Access",
+      "source": "MFT",
+      "description": "TeamViewer.exe install (80 MFT records)",
+      "evidence_keywords": [
+        "2016-06-21 00:57:31.5476320",
+        "2016-06-21",
+        "00:57",
+        "00:57:31",
+        "TeamViewer.exe",
+        "TeamViewer"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 68,
+      "timestamp": "2016-06-21 10:51:23.0000000",
+      "phase": "Tool Usage",
+      "source": "JumpList",
+      "description": "AppID aa28770954eaeaaa (Tor Browser firefox.exe)",
+      "evidence_keywords": [
+        "2016-06-21 10:51:23.0000000",
+        "2016-06-21",
+        "10:51",
+        "10:51:23",
+        "firefox.exe",
+        "aa28770954eaeaaa"
+      ],
+      "incident_significant": true
+    }
+  ],
+  "phases_summary": [
+    {
+      "phase": "Exfiltration",
+      "events": [
+        1,
+        13
+      ]
+    },
+    {
+      "phase": "Tool Installation",
+      "events": [
+        2,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "phase": "Exfil Evidence",
+      "events": [
+        3,
+        11
+      ]
+    },
+    {
+      "phase": "Anti-Forensics",
+      "events": [
+        7,
+        8,
+        12,
+        65
+      ]
+    },
+    {
+      "phase": "Port Scanning",
+      "events": [
+        9,
+        10
+      ]
+    },
+    {
+      "phase": "Self-Analysis",
+      "events": [
+        14
+      ]
+    },
+    {
+      "phase": "Exfil Research",
+      "events": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        52
+      ]
+    },
+    {
+      "phase": "Security Research",
+      "events": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        42,
+        46,
+        48,
+        55,
+        58,
+        59,
+        62
+      ]
+    },
+    {
+      "phase": "Tool Research",
+      "events": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        43,
+        44,
+        45,
+        47,
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "phase": "Email",
+      "events": [
+        53,
+        54,
+        56,
+        57
+      ]
+    },
+    {
+      "phase": "Cloud Storage",
+      "events": [
+        60,
+        61
+      ]
+    },
+    {
+      "phase": "USB Activity",
+      "events": [
+        63,
+        64
+      ]
+    },
+    {
+      "phase": "Cloud Sync",
+      "events": [
+        66
+      ]
+    },
+    {
+      "phase": "Remote Access",
+      "events": [
+        67
+      ]
+    },
+    {
+      "phase": "Tool Usage",
+      "events": [
+        68
+      ]
+    }
+  ],
+  "checklist_facts": [],
+  "evaluation_prompt": "You are a senior digital forensic investigator analyzing the Hunter 4orensics Windows disk image. Reconstruct the complete chronological incident timeline using the available forensic tools (search_artifacts, get_full_timeline, analyze_program_execution, analyze_web_activity, analyze_registry, analyze_security_events, correlate_activity, etc.). Investigate every artifact type. Do not fabricate — only report what tools return. For each event provide: exact timestamp, artifact source, and a concise factual description.",
+  "notes": "Auto-generated from docx table. evidence_keywords are heuristic — review needed.",
+  "incident_significant_count": 34
+}

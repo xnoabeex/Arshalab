@@ -1,0 +1,1306 @@
+{
+  "metadata": {
+    "case_id": "case_20260410_120043",
+    "case_name": "Hunter_4orensics",
+    "schema_version": "attack_chain_gt_DRAFT_v1",
+    "phase_taxonomy": "MITRE ATT&CK Tactics v14 + Anti-Forensics custom",
+    "sources_consulted": [
+      "docx_timeline (68 events, kept 30 after phase whitelist + intra-dedup)",
+      "v4_systematic (43 events, kept 33 after phase exclude + source exclude + intra-dedup)"
+    ],
+    "phase_whitelist_docx": "ALL",
+    "phase_exclusions_v4": [
+      "P12_self_analysis",
+      "P13_negative",
+      "P1_baseline"
+    ],
+    "source_exclusions_v4": [
+      "outlook pst",
+      "skype main.db",
+      "thumbcache"
+    ],
+    "totals": {
+      "events": 49,
+      "in_scope_for_scoring": 45,
+      "out_of_scope_modules_not_yet_built": 4,
+      "cross_verified": 23,
+      "single_source": 26,
+      "es_verified": 45,
+      "es_unverified_in_scope": 0,
+      "unknown_tactic": 1
+    },
+    "out_of_scope_source_patterns": [
+      "outlook",
+      " ost",
+      "pst attachment",
+      "blockchain",
+      "etherscan",
+      "ledger live",
+      "visual studio code",
+      "sublime text",
+      "skype",
+      "wallet log",
+      "thumbcache",
+      "vscdb",
+      "sublime_session",
+      "skybridge",
+      "exchange-like wallet",
+      "external evidence",
+      "publicly visible",
+      "localstorage",
+      "metamask",
+      "firsttimeinfo",
+      ".ldb"
+    ],
+    "scoring_note": "Pass 2 curation precision/recall is computed using events with es_in_scope=True only. Out-of-scope events are kept here for transparency; they reference artifact types (email mailbox, blockchain, IDE state DB) not covered by the current ArshaLab modules. Adding such modules is an explicit future-work item and does not change the platform's modular architecture.",
+    "tactic_distribution_all": {
+      "Lateral Movement": 2,
+      "Initial Access": 7,
+      "UNKNOWN": 1,
+      "Reconnaissance": 11,
+      "Defense Evasion": 4,
+      "Collection": 4,
+      "Resource Development": 6,
+      "Exfiltration": 3,
+      "Discovery": 9,
+      "Execution": 2
+    },
+    "tactic_distribution_in_scope": {
+      "Reconnaissance": 11,
+      "Defense Evasion": 4,
+      "Collection": 4,
+      "Resource Development": 6,
+      "Lateral Movement": 1,
+      "Initial Access": 5,
+      "Exfiltration": 3,
+      "Discovery": 9,
+      "Execution": 2
+    }
+  },
+  "events": [
+    {
+      "id": "HUN-001",
+      "timestamp": "2016-06-20 17:56:51 PDT (= 00:56:51 UTC June 21)",
+      "mitre_tactic": "Lateral Movement",
+      "mitre_technique": "T1219 - Remote Access Software",
+      "description": "Skype conversations between hunterehpt and linux-rul3z. Linux-rul3z requested TeamViewer installation for remote access.",
+      "source_artifact": "Outlook PST mailbox content (likely backup.pst)",
+      "evidence_keywords": [
+        "Skype",
+        "TeamViewer",
+        "ehptmsgs",
+        "exfiltration",
+        "linux-rul3z"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-29",
+        "v4-3"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "P2_email_exchange"
+    },
+    {
+      "id": "HUN-002",
+      "timestamp": "2016-06-20 18:00:31 PDT",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1566 - Phishing",
+      "description": "Hunter agrees via Skype to provide 7z archive password",
+      "source_artifact": "Skype main.db SQLite database",
+      "evidence_keywords": [
+        "Skype",
+        "7z",
+        "password"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-4"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P2_email_exchange"
+    },
+    {
+      "id": "HUN-003",
+      "timestamp": "2016-06-21 (after exfil)",
+      "mitre_tactic": "UNKNOWN",
+      "mitre_technique": "Manual review required",
+      "description": "Hunter sends 7z archive password to linux-rul3z via Skype (Hunter agreed at 18:00:31 PDT Jun 20)",
+      "source_artifact": "Skype main.db content",
+      "evidence_keywords": [
+        "password",
+        "7z"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-30"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P8_skype_comm"
+    },
+    {
+      "id": "HUN-004",
+      "timestamp": "2016-06-21 (after exfil)",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1566 - Phishing",
+      "description": "Encoded PDF file disguised as 'conf.jgp' sent",
+      "source_artifact": "Outlook PST attachment",
+      "evidence_keywords": [
+        "conf.jgp",
+        "encoded"
+      ],
+      "es_in_scope": false,
+      "es_verified": false,
+      "sources_citing": [
+        "v4-32"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P8_skype_comm"
+    },
+    {
+      "id": "HUN-005",
+      "timestamp": "2016-06-21 (around tool install)",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1592 - Gather Victim Host Information / Self-Research",
+      "description": "Ryan_VanAntwerp_thesis.pdf downloaded (academic reference on data exfiltration techniques)",
+      "source_artifact": "MFT + Browser downloads",
+      "evidence_keywords": [
+        "Ryan_VanAntwerp_thesis",
+        "exfiltration techniques"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-28"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P7_exfil_prep"
+    },
+    {
+      "id": "HUN-006",
+      "timestamp": "2016-06-21 (during cleanup)",
+      "mitre_tactic": "Defense Evasion",
+      "mitre_technique": "T1070.004 - Indicator Removal: File Deletion",
+      "description": "Crypto Swap disk encryption application installed (per CTF Q19 answer)",
+      "source_artifact": "Registry Uninstall + MFT",
+      "evidence_keywords": [
+        "Crypto Swap",
+        "disk encryption"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-37"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P10_anti_forensics"
+    },
+    {
+      "id": "HUN-007",
+      "timestamp": "2016-06-21 (during exfil setup)",
+      "mitre_tactic": "Collection",
+      "mitre_technique": "T1074.001 - Data Staged: Local Data Staging",
+      "description": "Hunter's Pictures\\Exfil staging folder created at C:\\Users\\Hunter\\Pictures\\Exfil",
+      "source_artifact": "MFT directory",
+      "evidence_keywords": [
+        "Pictures\\Exfil",
+        "staging"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-27"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P7_exfil_prep"
+    },
+    {
+      "id": "HUN-008",
+      "timestamp": "2016-06-21 (multiple instances)",
+      "mitre_tactic": "Defense Evasion",
+      "mitre_technique": "T1070.004 - Indicator Removal: File Deletion",
+      "description": "Suspect attempted to delete sensitive files. Deleted files include: home-network-design-networking-for-a-single-family-home-case-house-arkko-1433-x-792.jpg (deleted diagram referenced in CTF Q17) and ws_Small_cute_kitty_1920x1200.jpg (CTF Q28)",
+      "source_artifact": "UsnJrnl FileDelete + Recycle Bin metadata",
+      "evidence_keywords": [
+        "home-network-design",
+        "ws_Small_cute_kitty",
+        "deleted"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-38"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P10_anti_forensics"
+    },
+    {
+      "id": "HUN-009",
+      "timestamp": "2016-06-21 (various)",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Burp Suite v1.7.03 free downloaded to C:\\Users\\Hunter\\Downloads\\Burpsuite_free_v1.7.03.jar",
+      "source_artifact": "MFT + Browser downloads",
+      "evidence_keywords": [
+        "Burpsuite_free_v1.7.03.jar",
+        "Burp Suite"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-19"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P5_reconnaissance"
+    },
+    {
+      "id": "HUN-010",
+      "timestamp": "2016-06-21 00:57:31.5476320",
+      "mitre_tactic": "Lateral Movement",
+      "mitre_technique": "T1219 - Remote Access Software",
+      "description": "TeamViewer installed/used for remote access by linux-rul3z (CTF Q15 expected answer)",
+      "source_artifact": "MFT + Amcache + Prefetch + EventLog 7045 + Browser downloads",
+      "evidence_keywords": [
+        "00:57",
+        "00:57:31",
+        "2016-06-21",
+        "2016-06-21 00:57:31.5476320",
+        "TeamViewer",
+        "TeamViewer.exe",
+        "remote access"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-67",
+        "v4-39"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Remote Access"
+    },
+    {
+      "id": "HUN-011",
+      "timestamp": "2016-06-21 01:42:40 UTC",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1078 - Valid Accounts",
+      "description": "Hunter logs in to system (login_count=3, last recorded login)",
+      "source_artifact": "Registry SAM hive",
+      "evidence_keywords": [
+        "Hunter",
+        "login",
+        "01:42"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-5"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P3_login"
+    },
+    {
+      "id": "HUN-012",
+      "timestamp": "2016-06-21 01:52:17.0902822",
+      "mitre_tactic": "Collection",
+      "mitre_technique": "T1560.001 - Archive Collected Data via Utility",
+      "description": "Pictures.7z (1,849,480 bytes / 1806 KB) archive created in suspect's Pictures folder",
+      "source_artifact": "MFT + USN journal + LNK",
+      "evidence_keywords": [
+        "01:52",
+        "01:52:17",
+        "01:53",
+        "01:53:14",
+        "07B20C03C80830A9",
+        "1806",
+        "2016-06-21",
+        "2016-06-21 01:52:17.0902822",
+        "2016-06-21 01:53:14.7757045",
+        "Pictures.7z",
+        "USBSTOR",
+        "linux-rul3z@hotmail"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-63",
+        "docx-1",
+        "v4-26"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Exfiltration"
+    },
+    {
+      "id": "HUN-013",
+      "timestamp": "2016-06-21 02:01:59.3657151",
+      "mitre_tactic": "Exfiltration",
+      "mitre_technique": "T1052.001 - Exfiltration over USB",
+      "description": "USB device #1 connected (Serial: 07B20C03C80830A9)",
+      "source_artifact": "Registry",
+      "evidence_keywords": [
+        "02:01",
+        "02:01:59",
+        "07B20C03C80830A9",
+        "2016-06-21",
+        "2016-06-21 02:01:59.3657151",
+        "AAI6UXDKZDV8E9OU",
+        "JumpDrive",
+        "USBSTOR"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-33",
+        "docx-64"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "USB Activity"
+    },
+    {
+      "id": "HUN-014",
+      "timestamp": "2016-06-21 02:24:12 UTC",
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1016 - System Network Configuration Discovery",
+      "description": "Final DHCP lease obtained at 02:24:12 UTC (CTF Q3 expected answer)",
+      "source_artifact": "Registry SYSTEM hive",
+      "evidence_keywords": [
+        "02:24:12",
+        "DHCP"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-6"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P3_login"
+    },
+    {
+      "id": "HUN-015",
+      "timestamp": "2016-06-21 05:10:13 PDT (= 12:10:13 UTC)",
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "description": "Zenmap network scanner executed (Essam reports first execution)",
+      "source_artifact": "Prefetch + MFT (Zenmap.exe)",
+      "evidence_keywords": [
+        "Zenmap",
+        "12:10"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-21"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P6_port_scan"
+    },
+    {
+      "id": "HUN-016",
+      "timestamp": "2016-06-21 05:12:09 PDT (= 12:12:09 UTC)",
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "description": "Port scan COMPLETED: 1000 ports scanned; OPEN ports identified: 22 (SSH), 80 (HTTP), 9929, 31337 ('elite' port)",
+      "source_artifact": "Prefetch + MFT (nmapscan.xml)",
+      "evidence_keywords": [
+        "1000 ports",
+        "22",
+        "80",
+        "9929",
+        "31337",
+        "scan_end"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-22"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P6_port_scan"
+    },
+    {
+      "id": "HUN-017",
+      "timestamp": "2016-06-21 09:22:25",
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1040 - Network Sniffing",
+      "description": "Wireshark 2.0.4 installer executed (WIRESHARK-WIN64-2.0.4.EXE)",
+      "source_artifact": "Prefetch + MFT + Amcache + Shimcache",
+      "evidence_keywords": [
+        "09:22",
+        "09:22:25",
+        "2.0.4",
+        "2016-06-21",
+        "2016-06-21 09:22:25",
+        "WIRESHARK",
+        "WIRESHARK-WIN64-2.0.4.EXE"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-7",
+        "docx-2"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Tool Installation"
+    },
+    {
+      "id": "HUN-018",
+      "timestamp": "2016-06-21 09:37:49 UTC",
+      "mitre_tactic": "Collection",
+      "mitre_technique": "T1074.001 - Data Staged: Local Data Staging",
+      "description": "Exfiltration_Diagram.png created (100,256 bytes) - reference material for planned exfil",
+      "source_artifact": "MFT + LNK + Browser downloads",
+      "evidence_keywords": [
+        "Exfiltration_Diagram",
+        "100256"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-8"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P4_tool_install"
+    },
+    {
+      "id": "HUN-019",
+      "timestamp": "2016-06-21 09:37:49.7508426",
+      "mitre_tactic": "Collection",
+      "mitre_technique": "T1074.001 - Data Staged: Local Data Staging",
+      "description": "Google Image Result for http://www.filetransferconsulting.com/wp-content/uploads",
+      "source_artifact": "MFT + LNK + Browser downloads",
+      "evidence_keywords": [
+        "09:37",
+        "09:37:01",
+        "09:37:09",
+        "09:37:10",
+        "09:37:26",
+        "09:37:30",
+        "09:37:49",
+        "09:38",
+        "09:38:10",
+        "09:38:17",
+        "2016-06-21",
+        "2016-06-21 09:37:49.7508426",
+        "2016-06-21T09:37:01.604750Z",
+        "2016-06-21T09:37:09.550438Z",
+        "2016-06-21T09:37:10.714132Z",
+        "2016-06-21T09:37:26.587778Z",
+        "2016-06-21T09:37:30.489525Z",
+        "2016-06-21T09:38:10.793020Z",
+        "2016-06-21T09:38:17.986170Z",
+        "359",
+        "546",
+        "728",
+        "907",
+        "Exfiltration_Diagram.png",
+        "dns-exfiltration-using-sqlmap-18-728.jpg",
+        "filetransferconsulting.com"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-20",
+        "docx-16",
+        "docx-15",
+        "docx-21",
+        "docx-18",
+        "docx-17",
+        "docx-19",
+        "docx-3"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Exfil Evidence"
+    },
+    {
+      "id": "HUN-020",
+      "timestamp": "2016-06-21 10:51:23.2591081",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Tor Browser folder created on Desktop (target path: C:\\Users\\Hunter\\Desktop\\Tor Browser\\Browser\\firefox.exe)",
+      "source_artifact": "MFT + Browser downloads + LNK",
+      "evidence_keywords": [
+        "10:51",
+        "10:51:23",
+        "2016-06-21",
+        "2016-06-21 10:51:23.0000000",
+        "2016-06-21 10:51:23.2591081",
+        "Desktop",
+        "Tor Browser",
+        "aa28770954eaeaaa",
+        "firefox.exe"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-11",
+        "docx-68",
+        "docx-4"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Tool Installation"
+    },
+    {
+      "id": "HUN-021",
+      "timestamp": "2016-06-21 10:58:20 UTC",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "Browser visits 'Free Metasploit Community Download | Rapid7'",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "Metasploit",
+        "Rapid7"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-12"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P4_tool_install"
+    },
+    {
+      "id": "HUN-022",
+      "timestamp": "2016-06-21 11:00-11:50 UTC",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Browser visits to security tool download pages: OllyDbg, Hash Suite, THC Hydra, Burp Suite, Nexpose",
+      "source_artifact": "Chrome browser history",
+      "evidence_keywords": [
+        "OllyDbg",
+        "Hash Suite",
+        "THC Hydra",
+        "Burp",
+        "Nexpose"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-18"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P5_reconnaissance"
+    },
+    {
+      "id": "HUN-023",
+      "timestamp": "2016-06-21 11:01:34",
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "description": "Nmap 7.12 installer executed (NMAP-7.12-SETUP.EXE)",
+      "source_artifact": "Prefetch + MFT + Amcache + Shimcache + LNK",
+      "evidence_keywords": [
+        "11:00",
+        "11:00:45",
+        "11:00:54",
+        "11:00:56",
+        "11:01",
+        "11:01:34",
+        "11:02",
+        "11:02:09",
+        "11:02:40",
+        "2016-06-21",
+        "2016-06-21 11:01:34",
+        "2016-06-21T11:00:45.281424Z",
+        "2016-06-21T11:00:54.767206Z",
+        "2016-06-21T11:00:56.942078Z",
+        "2016-06-21T11:02:09.693932Z",
+        "2016-06-21T11:02:40.238361Z",
+        "7.12",
+        "NMAP",
+        "NMAP-7.12-SETUP.EXE",
+        "SETUP",
+        "SecTools"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-13",
+        "docx-45",
+        "docx-5",
+        "docx-47",
+        "docx-46",
+        "docx-43",
+        "docx-44"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Tool Installation"
+    },
+    {
+      "id": "HUN-024",
+      "timestamp": "2016-06-21 11:02:02",
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "description": "WinPcap for Nmap installed (WINPCAP-NMAP-4.13.EXE)",
+      "source_artifact": "Prefetch",
+      "evidence_keywords": [
+        "WINPCAP",
+        "11:02"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-14"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P4_tool_install"
+    },
+    {
+      "id": "HUN-025",
+      "timestamp": "2016-06-21 11:17:53.6414771",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "SysinternalsSuite folder created (Microsoft Sysinternals tools)",
+      "source_artifact": "MFT + USN journal",
+      "evidence_keywords": [
+        "11:17",
+        "11:17:53",
+        "2016-06-21",
+        "2016-06-21 11:17:53.6414771",
+        "SysinternalsSuite"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-15",
+        "docx-6"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Tool Installation"
+    },
+    {
+      "id": "HUN-026",
+      "timestamp": "2016-06-21 11:44:44.1021040",
+      "mitre_tactic": "Defense Evasion",
+      "mitre_technique": "T1070.004 - Indicator Removal: File Deletion",
+      "description": "Jetico BCWipe folder/installer created (BCWipe - file shredder for anti-forensics)",
+      "source_artifact": "MFT + Amcache + Prefetch + Registry + EventLog 7045",
+      "evidence_keywords": [
+        "11:44",
+        "11:44:44",
+        "11:44:53",
+        "11:44:57",
+        "2016-06-21",
+        "2016-06-21 11:44:44.1021040",
+        "2016-06-21 11:44:53.0000000",
+        "2016-06-21 11:44:57.7442628",
+        "28115",
+        "5 executions",
+        "7045",
+        "BCWIPE",
+        "BCWIPE.EXE",
+        "BCWipe",
+        "Event 28115",
+        "Jetico",
+        "shredder"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-7",
+        "v4-16",
+        "docx-8",
+        "docx-65"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Anti-Forensics"
+    },
+    {
+      "id": "HUN-027",
+      "timestamp": "2016-06-21 12:08:13 UTC",
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "description": "Zenmap LAST execution timestamp (CTF Q24 expected answer)",
+      "source_artifact": "Prefetch (Zenmap.exe)",
+      "evidence_keywords": [
+        "ZENMAP",
+        "12:08:13"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-23"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P6_port_scan"
+    },
+    {
+      "id": "HUN-028",
+      "timestamp": "2016-06-21 12:10:51",
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "description": "Nmap CLI scan executed (NMAP.EXE 2 runs via command line)",
+      "source_artifact": "Prefetch",
+      "evidence_keywords": [
+        "12:10",
+        "12:10:42",
+        "12:10:51",
+        "2016-06-21",
+        "2016-06-21 12:10:51",
+        "NMAP",
+        "NMAP.EXE"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-9",
+        "v4-24"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Port Scanning"
+    },
+    {
+      "id": "HUN-029",
+      "timestamp": "2016-06-21 12:13:57",
+      "mitre_tactic": "Execution",
+      "mitre_technique": "T1547.009 - Boot or Logon Autostart Execution: Shortcut Modification",
+      "description": "Reference document related to exfil tools downloaded/cached: dns-exfiltration-using-sqlmap-18-728.jpg.lnk created (3,588 bytes)",
+      "source_artifact": "MFT + LNK",
+      "evidence_keywords": [
+        "dns-exfiltration",
+        "sqlmap"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-20"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P5_reconnaissance"
+    },
+    {
+      "id": "HUN-030",
+      "timestamp": "2016-06-21 12:13:57.7961630",
+      "mitre_tactic": "Discovery",
+      "mitre_technique": "T1046 - Network Service Discovery",
+      "description": "nmapscan.xml created (13,137 bytes) - results of port scan operation",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "12:13",
+        "12:13:57",
+        "13137",
+        "2016-06-21",
+        "2016-06-21 12:13:57.7961630",
+        "nmapscan.xml"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-25",
+        "docx-10"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Port Scanning"
+    },
+    {
+      "id": "HUN-031",
+      "timestamp": "2016-06-21 12:17:39.5306402",
+      "mitre_tactic": "Execution",
+      "mitre_technique": "T1547.009 - Boot or Logon Autostart Execution: Shortcut Modification",
+      "description": "dns-exfiltration-using-sqlmap-18-728.jpg.lnk (3588 bytes)",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "2016-06-21 12:17:39.5306402",
+        "2016-06-21",
+        "12:17",
+        "12:17:39",
+        "dns-exfiltration-using-sqlmap-18-728.jpg.lnk",
+        "728",
+        "3588"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-11"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Exfil Evidence"
+    },
+    {
+      "id": "HUN-032",
+      "timestamp": "2016-06-21 12:28:08",
+      "mitre_tactic": "Defense Evasion",
+      "mitre_technique": "T1070.004 - Indicator Removal: File Deletion",
+      "description": "CCleaner 64-bit executed (CCLEANER64.EXE, 7 runs total)",
+      "source_artifact": "Prefetch + Amcache + Shimcache",
+      "evidence_keywords": [
+        "12:28",
+        "12:28:08",
+        "2016-06-21",
+        "2016-06-21 12:28:08",
+        "CCLEANER64",
+        "CCLEANER64.EXE"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-12",
+        "v4-36"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Anti-Forensics"
+    },
+    {
+      "id": "HUN-033",
+      "timestamp": "2016-06-21 12:50:38",
+      "mitre_tactic": "Exfiltration",
+      "mitre_technique": "T1567.002 - Exfiltration to Cloud Storage",
+      "description": "DROPBOXUPDATE.EXE (8 run times, last 12:50:38)",
+      "source_artifact": "Prefetch + Amcache + Shimcache",
+      "evidence_keywords": [
+        "2016-06-21 12:50:38",
+        "2016-06-21",
+        "12:50",
+        "12:50:38",
+        "DROPBOXUPDATE.EXE",
+        "DROPBOXUPDATE"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-66"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Cloud Sync"
+    },
+    {
+      "id": "HUN-034",
+      "timestamp": "2016-06-21 13:13:43.7772513",
+      "mitre_tactic": "Exfiltration",
+      "mitre_technique": "T1567.002 - Exfiltration to Cloud Storage",
+      "description": "backup.pst (10,429,440 bytes) - Outlook backup created, synced to Dropbox (per old JSON)",
+      "source_artifact": "MFT + Dropbox + Browser",
+      "evidence_keywords": [
+        "13:12",
+        "13:12:11",
+        "13:13",
+        "13:13:43",
+        "2016-06-21",
+        "2016-06-21 13:13:43.7772513",
+        "2016-06-21T13:12:11.576942Z",
+        "Dropbox",
+        "backup.pst"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-40",
+        "docx-13",
+        "docx-62"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Exfiltration"
+    },
+    {
+      "id": "HUN-035",
+      "timestamp": "2016-06-21 13:18:13",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "FTK IMAGER.EXE (runs=3)",
+      "source_artifact": "Prefetch",
+      "evidence_keywords": [
+        "2016-06-21 13:18:13",
+        "2016-06-21",
+        "13:18",
+        "13:18:13",
+        "IMAGER.EXE",
+        "IMAGER"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-14"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Self-Analysis"
+    },
+    {
+      "id": "HUN-036",
+      "timestamp": "2016-06-21T09:39:04.939323Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "Browser visits 'Data Exfiltration in Depth' article",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "09:39",
+        "09:39:04",
+        "09:39:21",
+        "09:39:33",
+        "2016-06-21",
+        "2016-06-21T09:39:04.939323Z",
+        "2016-06-21T09:39:21.079899Z",
+        "2016-06-21T09:39:33.947536Z",
+        "Data Exfiltration"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-24",
+        "v4-9",
+        "docx-22",
+        "docx-23"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Exfil Research"
+    },
+    {
+      "id": "HUN-037",
+      "timestamp": "2016-06-21T09:43:54.327452Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "computer hacking wallpaper - Google Search",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "09:43",
+        "09:43:54",
+        "09:43:59",
+        "2016-06-21",
+        "2016-06-21T09:43:54.327452Z",
+        "2016-06-21T09:43:59.783279Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-26",
+        "docx-25"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Security Research"
+    },
+    {
+      "id": "HUN-038",
+      "timestamp": "2016-06-21T09:45:33.661766Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "wallpaper-linux-hacking-wallpapers.jpg (1920×1080)",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "09:45",
+        "09:45:33",
+        "09:45:47",
+        "09:46",
+        "09:46:21",
+        "1000",
+        "1080",
+        "1600",
+        "1920",
+        "2016-06-21",
+        "2016-06-21T09:45:33.661766Z",
+        "2016-06-21T09:45:47.827385Z",
+        "2016-06-21T09:46:21.372805Z",
+        "350",
+        "700",
+        "Brain.png",
+        "wallpaper-linux-hacking-wallpapers.jpg"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-29",
+        "docx-28",
+        "docx-27"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Security Research"
+    },
+    {
+      "id": "HUN-039",
+      "timestamp": "2016-06-21T10:47:36.582785Z",
+      "mitre_tactic": "Resource Development",
+      "mitre_technique": "T1588.002 - Obtain Capabilities: Tool",
+      "description": "Tor Browser activity (research)",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "10:47",
+        "10:47:36",
+        "10:48",
+        "10:48:01",
+        "10:48:12",
+        "10:48:16",
+        "2016-06-21",
+        "2016-06-21T10:47:36.582785Z",
+        "2016-06-21T10:48:01.104612Z",
+        "2016-06-21T10:48:12.381784Z",
+        "2016-06-21T10:48:16.810822Z",
+        "404",
+        "tor"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-32",
+        "docx-31",
+        "docx-30",
+        "v4-10",
+        "docx-33"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Security Research"
+    },
+    {
+      "id": "HUN-040",
+      "timestamp": "2016-06-21T10:56:07.292044Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "metasploit windows download - Google Search",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "10:56",
+        "10:56:07",
+        "10:57",
+        "10:57:34",
+        "10:57:39",
+        "2016-06-21",
+        "2016-06-21T10:56:07.292044Z",
+        "2016-06-21T10:57:34.580814Z",
+        "2016-06-21T10:57:39.833563Z"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-36",
+        "docx-35",
+        "docx-34"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Tool Research"
+    },
+    {
+      "id": "HUN-041",
+      "timestamp": "2016-06-21T10:58:03.406965Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "Free Vulnerability Scanner - Enterprise Level to Single Users | Rapid7",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "10:58",
+        "10:58:03",
+        "10:58:10",
+        "10:58:20",
+        "10:58:28",
+        "10:59",
+        "10:59:11",
+        "10:59:50",
+        "2016-06-21",
+        "2016-06-21T10:58:03.406965Z",
+        "2016-06-21T10:58:10.008820Z",
+        "2016-06-21T10:58:20.899681Z",
+        "2016-06-21T10:58:28.865967Z",
+        "2016-06-21T10:59:11.583763Z",
+        "2016-06-21T10:59:50.760315Z",
+        "UNIX"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-38",
+        "docx-41",
+        "docx-37",
+        "docx-40",
+        "docx-39",
+        "docx-42"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Tool Research"
+    },
+    {
+      "id": "HUN-042",
+      "timestamp": "2016-06-21T11:03:13.836416Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "THC-HYDRA - fast and flexible network login hacker",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "11:03",
+        "11:03:13",
+        "11:04",
+        "11:04:35",
+        "11:04:38",
+        "2016-06-21",
+        "2016-06-21T11:03:13.836416Z",
+        "2016-06-21T11:04:35.553366Z",
+        "2016-06-21T11:04:38.371136Z",
+        "HYDRA",
+        "OllyDbg"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-49",
+        "docx-50",
+        "docx-48"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Security Research"
+    },
+    {
+      "id": "HUN-043",
+      "timestamp": "2016-06-21T11:20:32.120577Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "java - Google Search",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "2016-06-21T11:20:32.120577Z",
+        "2016-06-21",
+        "11:20",
+        "11:20:32"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-51"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Tool Research"
+    },
+    {
+      "id": "HUN-044",
+      "timestamp": "2016-06-21T11:50:19.784531Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Search Open Websites / Domains",
+      "description": "DEFCON 16: New Tool for SQL Injection with DNS Exfiltration - YouTube",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "2016-06-21T11:50:19.784531Z",
+        "2016-06-21",
+        "11:50",
+        "11:50:19",
+        "DEFCON",
+        "YouTube"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-52"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Exfil Research"
+    },
+    {
+      "id": "HUN-045",
+      "timestamp": "2016-06-21T11:57:11.685518Z",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1566 - Phishing",
+      "description": "DNS Exfil Videos - ehptmsgs@gmail.com - Gmail",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "2016-06-21T11:57:11.685518Z",
+        "2016-06-21",
+        "11:57",
+        "11:57:11",
+        "ehptmsgs@gmail.com",
+        "gmail.com"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-53"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Email"
+    },
+    {
+      "id": "HUN-046",
+      "timestamp": "2016-06-21T13:00:44.865932Z",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1566 - Phishing",
+      "description": "Sign-in attempt prevented - ehptmsgs@gmail.com - Gmail",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "13:00",
+        "13:00:44",
+        "13:00:54",
+        "2016-06-21",
+        "2016-06-21T13:00:44.865932Z",
+        "2016-06-21T13:00:54.476902Z",
+        "ehptmsgs@gmail.com",
+        "gmail.com"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-55",
+        "docx-54"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Email"
+    },
+    {
+      "id": "HUN-047",
+      "timestamp": "2016-06-21T13:02:41.980816Z",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1566 - Phishing",
+      "description": "Inbox - ehptmsgs@gmail.com - Gmail",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "2016-06-21T13:02:41.980816Z",
+        "2016-06-21",
+        "13:02",
+        "13:02:41",
+        "ehptmsgs@gmail.com",
+        "gmail.com"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-56"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Email"
+    },
+    {
+      "id": "HUN-048",
+      "timestamp": "2016-06-21T13:09:46.704338Z",
+      "mitre_tactic": "Initial Access",
+      "mitre_technique": "T1566 - Phishing",
+      "description": "Settings - ehptmsgs@gmail.com - Gmail",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "13:09",
+        "13:09:46",
+        "13:10",
+        "13:10:14",
+        "13:10:36",
+        "13:10:59",
+        "2016-06-21",
+        "2016-06-21T13:09:46.704338Z",
+        "2016-06-21T13:10:14.173073Z",
+        "2016-06-21T13:10:36.511103Z",
+        "2016-06-21T13:10:59.578768Z",
+        "ehptmsgs@gmail.com",
+        "gmail.com"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-59",
+        "docx-58",
+        "docx-57",
+        "docx-60"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Email"
+    },
+    {
+      "id": "HUN-049",
+      "timestamp": "2016-06-21T13:11:27.667063Z",
+      "mitre_tactic": "Reconnaissance",
+      "mitre_technique": "T1593 - Generic browser activity",
+      "description": "Account preferences",
+      "source_artifact": "Browser",
+      "evidence_keywords": [
+        "2016-06-21T13:11:27.667063Z",
+        "2016-06-21",
+        "13:11",
+        "13:11:27"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-61"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Cloud Storage"
+    }
+  ]
+}

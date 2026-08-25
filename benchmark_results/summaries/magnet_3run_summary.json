@@ -1,0 +1,27 @@
+{
+  "case": "CTF_Magnet_2022",
+  "runs": {
+    "Run 1": {
+      "keyword_recall": 100.0,
+      "bertscore_f1": 0.9428329467773438,
+      "mean_latency": 17.84854725599289
+    },
+    "Run 2": {
+      "keyword_recall": 99.0,
+      "bertscore_f1": 0.9398624897003174,
+      "mean_latency": 19.857310826778413
+    },
+    "Run 3": {
+      "keyword_recall": 97.5,
+      "bertscore_f1": 0.9731450080871582,
+      "mean_latency": 22.66329607963562
+    }
+  },
+  "combined": {
+    "mean_recall": 98.83333333333333,
+    "mean_bertscore_f1": 0.9519468148549398,
+    "mean_latency": 20.123051387468976,
+    "consistency": 94,
+    "best_of_3": 100.0
+  }
+}

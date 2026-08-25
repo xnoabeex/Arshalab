@@ -1,0 +1,26 @@
+[
+  {
+    "case": "magnet",
+    "arm": "control",
+    "events": 74,
+    "prompt_chars": 153009,
+    "seconds": 83.7,
+    "error": ""
+  },
+  {
+    "case": "kdfs",
+    "arm": "control",
+    "events": 75,
+    "prompt_chars": 147803,
+    "seconds": 72.4,
+    "error": ""
+  },
+  {
+    "case": "4orensics",
+    "arm": "control",
+    "events": 61,
+    "prompt_chars": 143389,
+    "seconds": 79.1,
+    "error": ""
+  }
+]

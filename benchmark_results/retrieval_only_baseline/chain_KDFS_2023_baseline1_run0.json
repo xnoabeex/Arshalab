@@ -1,0 +1,186 @@
+{
+  "provider": "BASELINE_anchors_sort_1pa",
+  "case": "kdfs",
+  "case_name": "KDFS_2023",
+  "run": 0,
+  "evidence_file": "evidence_KDFS_2023.json",
+  "evidence_record_count": 746,
+  "chain_event_count": 25,
+  "chain": [
+    {
+      "timestamp": "2008-07-30 11:19:46",
+      "event": "[shimcache_top] _anchor=shimcache_top",
+      "supporting_artifact": "shimcache_top",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2019-12-07 09:17:28.0391451",
+      "event": "[reg_persistence_master] _anchor=reg_persistence_master",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2019-12-07 09:17:28.0391451",
+      "event": "[reg_winlogon_helpers] _anchor=reg_winlogon_helpers",
+      "supporting_artifact": "reg_winlogon_helpers",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-11 02:22:07.5533823",
+      "event": "[auth_logon_failures_4625] _anchor=auth_logon_failures_4625",
+      "supporting_artifact": "auth_logon_failures_4625",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-11 02:23:28.9125388",
+      "event": "[auth_account_modified_4738] _anchor=auth_account_modified_4738",
+      "supporting_artifact": "auth_account_modified_4738",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-11 02:27:47",
+      "event": "[jumplist_recent] _anchor=jumplist_recent",
+      "supporting_artifact": "jumplist_recent",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-13T07:51:12.676258Z",
+      "event": "[browser_downloads_searches] _anchor=browser_downloads_searches",
+      "supporting_artifact": "browser_downloads_searches",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-14 06:32:29",
+      "event": "[lnk_recent_files] _anchor=lnk_recent_files",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-15 01:01:09.9274325",
+      "event": "[time_changed_4616] _anchor=time_changed_4616",
+      "supporting_artifact": "time_changed_4616",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-15 01:01:17.2496398",
+      "event": "[auth_logon_network_type3] _anchor=auth_logon_network_type3",
+      "supporting_artifact": "auth_logon_network_type3",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-15 01:01:54.5159180",
+      "event": "[def_engine_update] _anchor=def_engine_update",
+      "supporting_artifact": "def_engine_update",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-15 01:03:08.9344501",
+      "event": "[applocker_audited] _anchor=applocker_audited",
+      "supporting_artifact": "applocker_audited",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-15 01:04:44.0014684",
+      "event": "[mft_archive_files] _anchor=mft_archive_files",
+      "supporting_artifact": "mft_archive_files",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-15 01:06:20",
+      "event": "[app_crypto_finance] _anchor=app_crypto_finance",
+      "supporting_artifact": "app_crypto_finance",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-15 01:08:40.6235483",
+      "event": "[app_hangs_1002] _anchor=app_hangs_1002",
+      "supporting_artifact": "app_hangs_1002",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-15 01:14:13.1412727",
+      "event": "[mft_bat_files] _anchor=mft_bat_files",
+      "supporting_artifact": "mft_bat_files",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-15 01:20:12.5403351",
+      "event": "[app_communication] _anchor=app_communication",
+      "supporting_artifact": "app_communication",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-15 01:41:30.7445678",
+      "event": "[app_email_client] _anchor=app_email_client",
+      "supporting_artifact": "app_email_client",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-15 02:48:57.8499568",
+      "event": "[dhcp_auth_50036_50037] _anchor=dhcp_auth_50036_50037",
+      "supporting_artifact": "dhcp_auth_50036_50037",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-15 02:49:27.7540759",
+      "event": "[usb_kernel_pnp_install] _anchor=usb_kernel_pnp_install",
+      "supporting_artifact": "usb_kernel_pnp_install",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-16 02:26:58.0164949",
+      "event": "[app_crashes_1000] _anchor=app_crashes_1000",
+      "supporting_artifact": "app_crashes_1000",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-17 08:41:30.0585235",
+      "event": "[usnjrnl_recent_changes] _anchor=usnjrnl_recent_changes",
+      "supporting_artifact": "usnjrnl_recent_changes",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-17 10:38:33.1216989",
+      "event": "[def_threat_detected_1116] _anchor=def_threat_detected_1116",
+      "supporting_artifact": "def_threat_detected_1116",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-18 07:33:19.2006062",
+      "event": "[mft_sys_drivers] _anchor=mft_sys_drivers",
+      "supporting_artifact": "mft_sys_drivers",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2023-09-21 05:50:15.5395675",
+      "event": "[device_setupapi_events] _anchor=device_setupapi_events",
+      "supporting_artifact": "device_setupapi_events",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    }
+  ]
+}

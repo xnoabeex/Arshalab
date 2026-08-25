@@ -1,0 +1,1519 @@
+{
+    "scenario": "Background: Hunter is an employee at a company whose SOC team received an alert about illegal port scanning activity originating from his workstation (computer name 4ORENSICS, Windows 8.1, IP 10.0.2.15). Hunter denies any involvement and claims the activity was caused by malware. The investigation on 2016-06-21 reveals that Hunter installed multiple offensive security tools (Nmap 7.12, Zenmap, Wireshark, Burp Suite, Tor Browser, OllyDbg, SysinternalsSuite), performed a port scan against scanme.nmap.org, communicated via Skype with contact 'linux-rul3z', used TeamViewer for remote access, and exfiltrated data via Dropbox (Pictures.7z). Anti-forensic tools (Jetico BCWipe, CCleaner, Crypto Swap) were used to destroy evidence. The user's Gmail account is ehptmsgs@gmail.com.",
+    "questions": [
+        {
+            "id": "HNT01",
+            "category": "retrieval",
+            "question": "What is the primary user account on this Windows system?",
+            "expected_answer": "The primary user account on this Windows system is \"Hunter\" (User ID: 1001).",
+            "keywords": [
+                "Hunter"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT02",
+            "category": "retrieval",
+            "question": "What is the computer name of this system?",
+            "expected_answer": "The event log data references multiple computer names:\n\n1. The primary computer name is \"4orensics\" (lowercase)\n2. \"4ORENSICS\" (uppercase) also appears and refers to the same system\n3. \"WIN-A9KKHBKS7E6\" and \"WIN-0Q61PC073B6\" appear to be other systems in the network\n\nThe computer name of this system is \"4orensics\".",
+            "keywords": [
+                [
+                    "4ORENSICS",
+                    "4orensics"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT03",
+            "category": "retrieval",
+            "question": "What operating system version is installed on this system?",
+            "expected_answer": "The system is running Windows 8.1 (Windows Blue) with build number 9600.17031 (amd64fre.winblue_gdr.140221-1952). The evidence:\nBuild name: \"9600.17031.amd64fre.winblue_gdr.140221-1952\" from event logs\nFile paths showing Windows 8.1/Windows Blue architecture (WinSxS folders with 6.3.9600.",
+            "keywords": [
+                [
+                    "Windows 8",
+                    "Windows81",
+                    "9600",
+                    "Windows 8.1",
+                    "6.3",
+                    "8.1"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT04",
+            "category": "retrieval",
+            "question": "What user accounts exist on this system besides Hunter?",
+            "expected_answer": "The registry SAM hive and event logs show the following user accounts on this system:\n\nAdministrator (User ID: 500) Built-in administrator account\nGuest (User ID: 501) Built-in guest account\nHunter (User ID: 1001) Primary user account mentioned in the question\nHomeGroupUser$ (User ID: 1003) System account for HomeGroup functionality\n\nThe system also has standard Windows built-in groups including Administ",
+            "keywords": [
+                "Administrator",
+                [
+                    "Guest",
+                    "HomeGroupUser"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT05",
+            "category": "retrieval",
+            "question": "What is the user ID (RID) for the Hunter account?",
+            "expected_answer": "The Hunter account has RID 1001. This was found in the SAM registry hive showing \"Username: Hunter Id: 1001\".",
+            "keywords": [
+                "Hunter",
+                [
+                    "1001",
+                    "RID"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT06",
+            "category": "retrieval",
+            "question": "How many Event ID 4624 (successful logon) events are recorded?",
+            "expected_answer": "There are 107 Event ID 4624 (successful logon) events recorded in the system.",
+            "keywords": [
+                "4624",
+                [
+                    "107"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT07",
+            "category": "retrieval",
+            "question": "How many Event ID 4625 (failed logon) events are recorded?",
+            "expected_answer": "There are 4 Event ID 4625 events recorded, but these are not security logon failures. They are EventSystem events related to \"SuppressDuplicateDuration\" settings in the EventLog registry key. The event_id_counts shows 4 total events with ID 4625, but they are from the Application channel (Microsoft-Windows-EventSystem provider), not the Security channel.",
+            "keywords": [
+                "4625",
+                [
+                    "4",
+                    "four"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT08",
+            "category": "retrieval",
+            "question": "How many Event ID 4647 (user logoff) events are recorded?",
+            "expected_answer": "There are 2 Event ID 4647 (user logoff) events recorded. Both events show user \"Hunter\" logging off from the \"4orensics\" computer at:\n2016-06-21 09:47:47.2587435 (Logon ID: 0x64AFE)\n2016-06-21 01:34:40.",
+            "keywords": [
+                "4647",
+                [
+                    "2",
+                    "two"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT09",
+            "category": "retrieval",
+            "question": "How many Event ID 7045 (service installation) events are recorded?",
+            "expected_answer": "The search found 33 Event ID 7045 (service installation) events recorded in the Windows Event Logs.",
+            "keywords": [
+                "7045",
+                "33"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT10",
+            "category": "retrieval",
+            "question": "How many distinct artifact types are available for this case and total records?",
+            "expected_answer": "Available artifact types: 11 distinct types hold data for this case. The platform supports 13 artifact types; recyclebin and powershell have no records here.\n\nTotal records: 490,463 across all artifacts, made up of UsnJrnl 331,306, MFT 136,928, EventLog 9,627, Registry 8,099, Amcache 2,273, SRUM 1,008, Prefetch 549, Browser 363, Shimcache 248, JumpList 37 and LNK 25.",
+            "keywords": [
+                [
+                    "480",
+                    "331",
+                    "MFT"
+                ],
+                [
+                    "EventLog",
+                    "Prefetch"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT11",
+            "category": "retrieval",
+            "question": "What network scanner tool was installed and used on this system?",
+            "expected_answer": "Two network scanner tools were installed and used on this system:\n\n1. Nmap (Zenmap GUI) Version 7.12\n   Installed on June 21, 2016 at 11:01:37 from C:\\Users\\Hunter\\Downloads\\nmap-7.12-setup.",
+            "keywords": [
+                [
+                    "Nmap",
+                    "nmap"
+                ],
+                "7.12",
+                [
+                    "Zenmap",
+                    "zenmap"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT12",
+            "category": "retrieval",
+            "question": "What is the exact version of the Nmap installer file found in Prefetch?",
+            "expected_answer": "The Prefetch data shows the Nmap installer file is named \"NMAP-7.12-SETUP.EXE\" with the exact version 7.12. The file was located at \"\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\DOWNLOADS\\\\NMAP-7.12-SETUP.EXE\" and was executed once on 2016-06-21 at 11:01:34.",
+            "keywords": [
+                [
+                    "NMAP-7.12-SETUP",
+                    "nmap",
+                    "Nmap",
+                    "Nmap 7.12"
+                ],
+                "7.12"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT13",
+            "category": "retrieval",
+            "question": "When was ZENMAP.EXE last executed according to Prefetch?",
+            "expected_answer": "ZENMAP.EXE was last executed on 2016-06-21 at 12:08:13 according to Prefetch data. The executable was located at \\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\NMAP\\ZENMAP.EXE.",
+            "keywords": [
+                [
+                    "Zenmap",
+                    "ZENMAP.EXE",
+                    "zenmap"
+                ],
+                [
+                    "2016-06-21",
+                    "June 21"
+                ],
+                "12:08"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT14",
+            "category": "retrieval",
+            "question": "What port scanning XML output file was found on the Desktop?",
+            "expected_answer": "Found it. The port scanning XML output file found on the Desktop is \"nmapscan.xml\" located at C:\\Users\\Hunter\\Desktop\\nmapscan.xml. The file was created on June 21, 2016 at 12:13:57, is 13,137 bytes in size, and has an associated LNK file and JumpList entries indicating recent access.",
+            "keywords": [
+                "nmapscan.xml",
+                [
+                    "Desktop",
+                    "Hunter"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT15",
+            "category": "retrieval",
+            "question": "What file records recent Zenmap scans in the Hunter profile?",
+            "expected_answer": "Two files in the Hunter profile's Zenmap directory record recent Zenmap scans:\n\n1. recent_scans.txt Located at `.\\Users\\Hunter\\.zenmap\\recent_scans.txt` (36 bytes, last modified 2016-06-21 12:13:57.8168997)\n2. zenmap.db Located at `.\\Users\\Hunter\\.zenmap\\zenmap.db` (27,648 bytes, last modified 2016-06-21 12:14:11.5530043)\n\nThe primary file that records recent Zenmap scans is recent_scans.",
+            "keywords": [
+                "recent_scans.txt",
+                [
+                    ".zenmap",
+                    "Hunter"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT16",
+            "category": "retrieval",
+            "question": "What wireshark installer was executed and when?",
+            "expected_answer": "The Wireshark installer executed was Wireshark-win64-2.0.4.exe (version 2.0.4, 64-bit Windows installer).\n\nExecution timeline:\n09:15:24 Installer file created in Downloads folder: `.\\Users\\Hunter\\Downloads\\Wireshark-win64-2.0.4.exe`\n09:22:25 Main installer execution recorded in Prefetch: `WIRESHARK-WIN64-2.0.4.",
+            "keywords": [
+                [
+                    "WIRESHARK",
+                    "wireshark"
+                ],
+                "2.0.4"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT17",
+            "category": "retrieval",
+            "question": "What Burp Suite version file is found on the system?",
+            "expected_answer": "Found! The Burp Suite file on the system is burpsuite_free_v1.7.03.jar located at `.\\Users\\Hunter\\Downloads\\burpsuite_free_v1.7.03.jar`. This is Burp Suite Free Edition version 1.7.03, downloaded on June 21, 2016 at 11:00:58, with a file size of 12,397,221 bytes.",
+            "keywords": [
+                "burpsuite",
+                "1.7.03",
+                [
+                    "Downloads",
+                    "Hunter"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT18",
+            "category": "retrieval",
+            "question": "What Tor Browser version was installed on the system?",
+            "expected_answer": "Tor Browser version 6.0.1 was installed on the system. The installation file \"torbrowser-install-6.0.1_en-US.exe\" was downloaded on June 21, 2016 at 10:48:23 and installed to \"C:\\Users\\Hunter\\Desktop\\Tor Browser\\\". The prefetch file \"TORBROWSER-INSTALL-6.0.1_EN-U-46D64A96.pf\" confirms execution of the installer at 10:51:23 on the same day.",
+            "keywords": [
+                [
+                    "Tor",
+                    "TORBROWSER"
+                ],
+                "6.0.1"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT19",
+            "category": "retrieval",
+            "question": "What is the full path to the Tor Browser firefox.exe on this system?",
+            "expected_answer": "The full path to the Tor Browser firefox.exe on this system is:\n\nC:\\Users\\Hunter\\Desktop\\Tor Browser\\Browser\\firefox.exe\n\nMultiple artifact sources confirm it:\nMFT entry: \".\\\\Users\\\\Hunter\\\\Desktop\\\\Tor Browser\\\\Browser\\\\firefox.exe\"\nEvent Log: \"C:\\\\Users\\\\Hunter\\\\Desktop\\\\Tor Browser\\\\Browser\\\\firefox.",
+            "keywords": [
+                "firefox.exe",
+                [
+                    "Tor",
+                    "tor"
+                ],
+                "Desktop"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT20",
+            "category": "retrieval",
+            "question": "What debugger tool is found in the Hunter Downloads folder?",
+            "expected_answer": "The debugger tool found in the Hunter Downloads folder is OllyDbg (OLLYDBG.EXE), located at C:\\Users\\Hunter\\Downloads\\Ollydbg\\OLLYDBG.EXE. This is a Windows debugger used for analyzing binary code, reverse engineering, and malware analysis. The folder was created on June 21, 2016 at 11:07:54, and a shortcut to the debugger was created at 11:08:07.",
+            "keywords": [
+                [
+                    "Ollydbg",
+                    "OLLYDBG",
+                    "ollydbg"
+                ],
+                "Downloads"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT21",
+            "category": "retrieval",
+            "question": "What Sysinternals toolkit is present in the user's Downloads?",
+            "expected_answer": "The user has the complete Sysinternals Suite in their Downloads folder. The suite was downloaded as \"SysinternalsSuite.zip\" (16.1 MB) on June 21, 2016 at 11:01:24, extracted to \"SysinternalsSuite\" folder at 11:17:53, and contains numerous Sysinternals tools including:\n\nSysmon.exe (system monitoring)\nsigcheck.exe (file signature verification)\nprocdump.exe (process memory dump)\nprocexp.",
+            "keywords": [
+                [
+                    "SysinternalsSuite",
+                    "sysinternals",
+                    "Sysinternals"
+                ],
+                [
+                    "Downloads",
+                    "Desktop"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT22",
+            "category": "retrieval",
+            "question": "What SSH/SCP client tools are found in the Downloads folder?",
+            "expected_answer": "One SSH/SCP client tool is present in the Downloads folder of the Windows disk image:\n\nputty.exe located at `C:\\Users\\Hunter\\Downloads\\putty.exe`\n  File size: 531,368 bytes\n  SHA1 hash: 1083245ac66d4261f526d18d4eac79a7dbd72989\n  Created: 2016-06-20 23:57:34.6176221\n  Last modified: 2016-06-20 23:57:41.3375000\n  Evidence of execution: Prefetch file PUTTY.EXE-6CB315A8.",
+            "keywords": [
+                [
+                    "PUTTY",
+                    "pscp",
+                    "SSH",
+                    "scp",
+                    "putty"
+                ],
+                [
+                    "pscp",
+                    "PSCP"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT23",
+            "category": "retrieval",
+            "question": "What is the SHA1 hash of putty.exe from Amcache?",
+            "expected_answer": "The SHA1 hash of putty.exe from Amcache is 1083245ac66d4261f526d18d4eac79a7dbd72989.",
+            "keywords": [
+                [
+                    "1083245ac66d426",
+                    "SHA1",
+                    "sha1"
+                ],
+                [
+                    "putty",
+                    "PUTTY"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT24",
+            "category": "retrieval",
+            "question": "What WinPcap packet capture library is installed on the system?",
+            "expected_answer": "WinPcap 4.1.3 was installed on the system. The evidence:\n\nWinPcap 4.1.3 was installed from \"C:\\Program Files\\Wireshark\\WinPcap_4_1_3.exe\" on June 21, 2016 at 09:22:51\nThe installation created a service named \"Remote Packet Capture Protocol v.0 (experimental)\" with image path \"%ProgramFiles(x86)%\\WinPcap\\rpcapd.exe\"\nThe WinPcap files were located at \"C:\\Program Files (x86)\\WinPcap\\\" with an install.",
+            "keywords": [
+                [
+                    "WINPCAP",
+                    "WinPcap"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT25",
+            "category": "retrieval",
+            "question": "What FTK forensic imaging tool was used on this system, and how many times?",
+            "expected_answer": "The FTK forensic imaging tool used was AccessData® FTK® Imager (version 3.1.3 based on file timestamps from 2012). The tool was executed 3 times according to Prefetch records, with execution timestamps at:\n2016-06-21 02:06:24 (first run)\n2016-06-21 12:29:55 (second run)  \n2016-06-21 13:18:13 (third run)\n\nExecutable: FTK Imager.",
+            "keywords": [
+                "FTK IMAGER",
+                [
+                    "3",
+                    "three"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT26",
+            "category": "retrieval",
+            "question": "What file shredder application is installed on this system?",
+            "expected_answer": "The file shredder application installed on this system is BCWipe by Jetico.\n\nKey evidence:\nBCWipe is installed at \"C:\\Program Files (x86)\\Jetico\\BCWipe\\\"\nMain executable: BCWipeTM.exe (BCWipe Task Manager) located at \"C:\\Program Files (x86)\\Jetico\\BCWipe\\BCWipeTM.exe\"\nService installed: \"BCWipe service\" (BCWipeSvc.exe) configured for auto-start\nKernel driver: \"Jetico file system filter\" (MftWipeFilter.",
+            "keywords": [
+                [
+                    "BCWipe",
+                    "bcwipe",
+                    "Jetico"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT27",
+            "category": "retrieval",
+            "question": "How many times was BCWipe executed on this system?",
+            "expected_answer": "Prefetch data records the following BCWipe executions:\n\nBCWIPE.EXE was executed 5 times (run_count: 5)\nBCWIPETM.EXE was executed 2 times (run_count: 2)  \nBCWIPESVC.EXE was executed 2 times (run_count: 2)\nBCRESIDENT.EXE was executed 1 time (run_count: 1)\nBCWIPESETUP.EXE was executed 1 time (run_count: 1)\n\nTotal BCWipe executions: 11 times across all BCWipe executables.",
+            "keywords": [
+                "BCWIPE",
+                [
+                    "5",
+                    "five"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT28",
+            "category": "retrieval",
+            "question": "What BCWipe installer and service components are in Prefetch?",
+            "expected_answer": "The BCWipe installer and service components found in Prefetch are:\n\nBCWipe Service Components in Prefetch:\nBCWIPESVC.EXE (BCWipe service) run count: 2, last execution: 2016-06-21 11:44:53\nBCRESIDENT.EXE (BCWipe resident component) run count: 1, last execution: 2016-06-21 11:44:55\nBCWIPETM.",
+            "keywords": [
+                [
+                    "BCWIPE",
+                    "BCWipe"
+                ],
+                [
+                    "SVC",
+                    "TM",
+                    "SETUP"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT29",
+            "category": "retrieval",
+            "question": "What privacy cleaner application is installed and how many times was it used?",
+            "expected_answer": "CCleaner 5.15.5513 64-bit is installed at C:\\Program Files\\CCleaner\\\nAccording to Prefetch data, CCleaner64.exe has been executed 7 times (run_count: 7)\nCCleaner.",
+            "keywords": [
+                [
+                    "CCLEANER",
+                    "CCleaner"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT30",
+            "category": "retrieval",
+            "question": "What registry/disk encryption application was installed?",
+            "expected_answer": "No disk encryption applications were found installed on the system. The analysis shows:\n\nWindows BitLocker components exist in system directories (Windows\\System32\\WindowsPowerShell\\Modules\\BitLocker and Windows\\WinSxS), but these are standard Windows 8.",
+            "keywords": [
+                [
+                    "Crypto",
+                    "crypto"
+                ],
+                [
+                    "Swap",
+                    "swap",
+                    "encryption"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT31",
+            "category": "retrieval",
+            "question": "What forensic artifacts demonstrate use of anti-forensic tools?",
+            "expected_answer": "The following artifacts demonstrate use of anti-forensic tools:\n\nCCleaner installation and execution: CCleaner64.exe installed in Program Files\\CCleaner with prefetch file CCLEANER64.EXE-779BD542.pf showing 7 executions. Event logs show CCleaner activity at 2016-06-21 11:43:09. CCleaner is a privacy/cleaning tool that can delete browser history, temporary files, and other forensic artifacts.",
+            "keywords": [
+                [
+                    "BCWipe",
+                    "BCWIPE"
+                ],
+                [
+                    "CCleaner",
+                    "CCLEANER"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT32",
+            "category": "retrieval",
+            "question": "Why was FTK Imager present on the suspect's system?",
+            "expected_answer": "FTK Imager was present as part of a comprehensive set of security and forensic tools downloaded and used by the user \"Hunter\" on June 21, 2016.",
+            "keywords": [
+                "FTK",
+                [
+                    "Imager",
+                    "IMAGER"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT33",
+            "category": "retrieval",
+            "question": "What icacls.exe activity suggests permission manipulation?",
+            "expected_answer": "The icacls.exe activity suggesting permission manipulation is:\n\nicacls.exe was executed multiple times on June 21, 2016: at 09:47:34, 09:47:36, 09:47:37 (from System32) and 12:01:06 (from SysWOW64)\nEach execution had a run count of 3, indicating repeated use\nConhost.",
+            "keywords": [
+                "ICACLS",
+                [
+                    "4",
+                    "four",
+                    "permission"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT34",
+            "category": "retrieval",
+            "question": "What antivirus tool detection events exist?",
+            "expected_answer": "Windows Defender detection event IDs (1116, 1117, 1118, 1119, 1120, 1121, 1122, 1123, 1124, 1125, 1126, 1127, 1128, 1129, 1130, 1131, 1132, 1133, 1134, 1135, 1136, 1137, 1138, 1139, 1140, 1141, 1142, 1143, 1144, 1145, 1146, 1147, 1148, 1149, 1150, 1151, 1152, 1153, 1154, 1155, 1156, 1157, 1158, 1159, 1160, 1161, 1162, 1163, 1164, 1165, 1166, 1167, 1168, 1169, 1170, 1171, 1172, 1173, 1174, 1175, 1176, 1177, 1178, 117",
+            "keywords": [
+                "MPCMDRUN",
+                [
+                    "Defender",
+                    "22"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT35",
+            "category": "retrieval",
+            "question": "What NET.EXE and NET1.EXE activity indicates command-line management?",
+            "expected_answer": "The indicators of command-line management from NET.EXE and NET1.EXE activity are:\n\nNET.EXE executed 11 times from C:\\Windows\\SysWOW64\\net.exe on June 21, 2016, between 09:33:59 and 09:34:25\nNET1.EXE executed 11 times from C:\\Windows\\SysWOW64\\net1.exe during the same timeframe\nBoth executables show identical run counts (11) and execution timestamps, indicating coordinated usage\nPrefetch files created: NET.",
+            "keywords": [
+                [
+                    "NET.EXE",
+                    "NET1.EXE"
+                ],
+                [
+                    "8",
+                    "eight"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT36",
+            "category": "retrieval",
+            "question": "How many total Prefetch files exist for this case?",
+            "expected_answer": "The case index holds 549 Prefetch records covering 130 distinct executables. Those records were parsed from 208 .pf files carved from the image, of which 174 parsed without error. A single .pf file yields several records because each recorded run timestamp is stored separately.",
+            "keywords": [
+                [
+                    "549",
+                    "130"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT37",
+            "category": "retrieval",
+            "question": "What kali.org reference exists in LNK files?",
+            "expected_answer": "There is 1 LNK file referencing kali.org:\n\nLNK file: \"https--www.kali.org-_1.lnk\"\nTarget path: \"Internet Folder\\https://www.kali.org/\"\nTimestamp: 2026-02-03 05:28:24\nSource created: 2026-02-03 05:28:19\nSource modified: 2026-02-03 05:28:19\nSource accessed: 2026-02-03 05:28:24\n\nThis is an Internet shortcut (URL shortcut) pointing to https://www.kali.",
+            "keywords": [
+                [
+                    "kali.org",
+                    "Kali"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT38",
+            "category": "retrieval",
+            "question": "What Rapid7/Metasploit browser activity is recorded?",
+            "expected_answer": "The Rapid7/Metasploit browser activities recorded are:\n\nRapid7.com activity (4 visits):\n2016-06-21T10:58:10.008820Z: \"Penetration Testing Tool, Metasploit, Free Download | Rapid7\" (https://www.rapid7.com/products/metasploit/download.jsp)\n2016-06-21T10:58:20.899681Z: \"Free Metasploit Community Download for Pen Testing | Rapid7\" (https://www.rapid7.com/products/metasploit/metasploit-community-registration.",
+            "keywords": [
+                [
+                    "Metasploit",
+                    "metasploit"
+                ],
+                [
+                    "Rapid7",
+                    "rapid7"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT39",
+            "category": "retrieval",
+            "question": "What Data Exfiltration research did the suspect perform in browser?",
+            "expected_answer": "The browser history shows the following data exfiltration research:\n\nData Exfiltration Research Found:\n\nDNS Exfiltration Techniques:\n  Searched for \"DNS data exfiltration\" and \"DNS exfiltration using sqlmap\"\n  Viewed slideshare presentation \"DNS Exfiltration Using sqlmap\" (2016-06-21T09:38:17Z)\n  Watched YouTube video \"DEFCON 16: New Tool for SQL Injection with DNS Exfiltration\" (2016-06-21",
+            "keywords": [
+                [
+                    "Data Exfiltration",
+                    "exfiltration"
+                ],
+                [
+                    "2016-06-21",
+                    "June 21"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT40",
+            "category": "retrieval",
+            "question": "What is the country domain pattern of the main Google searches?",
+            "expected_answer": "The main Google searches in the browser history show a clear country domain pattern:\n\nPrimary pattern: www.google.jo (Jordan country domain) 162 total records, used for all search queries including \"metasploit windows download\", \"netcat windows\", \"john the ripper\", \"sysinternals\", \"wireshark\", \"hacking\", \"exfiltration\", \"animals\", \"network design\", etc.\n\nSecondary pattern: www.google.",
+            "keywords": [
+                [
+                    "google.jo",
+                    ".jo",
+                    "Jordan"
+                ],
+                [
+                    "162"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT41",
+            "category": "retrieval",
+            "question": "What OllyDbg download source appears in browser history?",
+            "expected_answer": "The browser history shows one OllyDbg download source: http://ollydbg.de/ (OllyDbg v1.10) visited on 2016-06-21 at 11:04:38. There were also Google searches for \"ollydbg\" from google.jo domain.",
+            "keywords": [
+                [
+                    "ollydbg.de",
+                    "ollydbg"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT42",
+            "category": "retrieval",
+            "question": "What Java-related downloads are referenced in browser?",
+            "expected_answer": "The Java-related downloads referenced in the browser are:\n\nJava Runtime Environment (JRE) 8 Update 91 64-bit installer: jre-8u91-windows-x64.exe (57.6 MB file)\nBrowser activity: User visited java.com download pages on June 21, 2016 at 11:20:36-11:20:41 UTC\n  https://java.com/download\n  https://java.com/en/download/\n  https://java.com/en/download/win8.",
+            "keywords": [
+                [
+                    "java.com",
+                    "Java"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT43",
+            "category": "retrieval",
+            "question": "What network diagram/home network searches were performed?",
+            "expected_answer": "The network diagram and home network searches performed were:\n\n\"network design\" Google search performed on June 21, 2016 at 12:17:56 UTC\n\"network design\" Google Images search performed on June 21, 2016 at 12:17:59 UTC\nHome network design image accessed from www.foruum.co showing \"home-network-design-networking-for-a-single-family-home-case-house-arkko-1433-x-792.",
+            "keywords": [
+                [
+                    "network design",
+                    "network"
+                ],
+                [
+                    "google.jo",
+                    "Google"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT44",
+            "category": "retrieval",
+            "question": "What browser was used the most on this system by SRUM bytes?",
+            "expected_answer": "Based on SRUM network activity data:\n\nChrome (chrome.exe) was used the most with 563,471,654 total bytes (281,779,011 bytes sent + 535,293,753 bytes received)\nInternet Explorer (iexplore.exe) was second with 399,776,459 total bytes (106,577,445 bytes sent + 389,118,714 bytes received)\nTor Browser (tor.",
+            "keywords": [
+                [
+                    "Chrome",
+                    "chrome"
+                ],
+                [
+                    "28,177",
+                    "28177"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT45",
+            "category": "retrieval",
+            "question": "What Internet Explorer activity exists in SRUM?",
+            "expected_answer": "Internet Explorer shows significant network activity in SRUM:\n\nTotal bytes sent: 10,698,526 bytes (~10.2 MB)\nTotal bytes received: 389,583,942 bytes (~371.5 MB)\n\nTwo Internet Explorer executables recorded traffic:\n1. 32-bit version (Program Files (x86)): 10,657,745 bytes sent, 389,118,714 bytes received (399.8 MB total)\n2.",
+            "keywords": [
+                [
+                    "Internet Explorer",
+                    "iexplore"
+                ],
+                [
+                    "10,657",
+                    "10657",
+                    "10.7",
+                    "10.6"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT46",
+            "category": "retrieval",
+            "question": "What instant messaging application is installed on this system?",
+            "expected_answer": "Skype is installed on this system. Evidence includes:\n\nSkype.exe located at C:\\Program Files (x86)\\Skype\\Phone\\Skype.exe (version 7.25.0.",
+            "keywords": [
+                [
+                    "Skype",
+                    "skype"
+                ],
+                "7.24"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT47",
+            "category": "retrieval",
+            "question": "What remote access application is installed and how much traffic did it generate?",
+            "expected_answer": "Remote access applications installed:\n\nTeamViewer 11 (installed on 2016-06-21 at 00:57:30, auto-start service)\nWinPcap 4.1.",
+            "keywords": [
+                [
+                    "TeamViewer",
+                    "teamviewer"
+                ],
+                [
+                    "9,856",
+                    "9856"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT48",
+            "category": "retrieval",
+            "question": "What cloud storage application is installed?",
+            "expected_answer": "Two cloud storage applications are installed:\n\n1. Dropbox Installed at C:\\Program Files (x86)\\Dropbox, with Dropbox.exe executable (23.9 MB, SHA1: fce655020b4aaf0402f65d5670ea3bdd136e0947). First execution at 2016-06-21 01:46:13, last seen at 2016-06-21 12:54:11 with 4 runs total. Dropbox Update Service installed as auto-start service.\n\n2. Google Drive Installed at C:\\Program Files (x86)\\Google\\Drive, with googledrivesync.",
+            "keywords": [
+                [
+                    "Dropbox",
+                    "dropbox"
+                ],
+                [
+                    "2,662",
+                    "4"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT49",
+            "category": "retrieval",
+            "question": "What Google Drive sync activity is present?",
+            "expected_answer": "The Google Drive sync activity present is:\n\nGoogle Drive Installation and Setup:\nGoogle Drive was downloaded on 2016-06-21 at 01:43:45-01:43:56 via Chrome from tools.google.com\nInstallation occurred at 01:44:39 with MSI installer events (Event IDs 1033, 1040, 1042)\nExecutable installed at C:\\Program Files (x86)\\Google\\Drive\\googledrivesync.",
+            "keywords": [
+                [
+                    "Google Drive",
+                    "GoogleDrive",
+                    "GOOGLEDRIVESYNC"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT50",
+            "category": "retrieval",
+            "question": "What email client is installed on this system?",
+            "expected_answer": "The email client installed on this system is Microsoft Outlook 2013 (Office15). The evidence shows:\n\nOUTLOOK.EXE located at \"C:\\Program Files\\Microsoft Office\\Office15\\OUTLOOK.EXE\" (27 MB file size, created 2014-01-23)\nOutlook event logs showing email account configuration for \"ehptmsgs@gmail.",
+            "keywords": [
+                [
+                    "Outlook",
+                    "OUTLOOK"
+                ],
+                [
+                    "2016",
+                    "Office"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT51",
+            "category": "retrieval",
+            "question": "What Outlook PST backup file is stored in Dropbox?",
+            "expected_answer": "The Outlook PST backup file stored in Dropbox is:\n\nFile name: backup.pst\nLocation: C:\\Users\\Hunter\\Dropbox\\Outlook\\backup.pst\nFile size: 10,429,440 bytes (approximately 10.4 MB)\nCreated: 2016-06-21 13:14:59.9144250\nLast modified: 2016-06-21 13:15:04.3338204\nLast accessed: 2016-06-21 13:15:03.",
+            "keywords": [
+                "backup.pst",
+                [
+                    "Dropbox",
+                    "Outlook"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT52",
+            "category": "retrieval",
+            "question": "What Gmail account is configured on this system?",
+            "expected_answer": "The Gmail account ehptmsgs@gmail.com is configured and actively used on this system, according to the available browser history data. Evidence includes:\n\nMultiple Gmail browser sessions showing \"ehptmsgs@gmail.com\" in page titles\nGoogle Drive cache folder containing \"ehptmsgs@gmail.",
+            "keywords": [
+                [
+                    "ehptmsgs",
+                    "gmail.com"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT53",
+            "category": "retrieval",
+            "question": "What Google account security pages did the suspect visit?",
+            "expected_answer": "The suspect visited these Google account security pages:\n\nSecurity activity page: https://security.google.com/settings/security/activity (visited multiple times on June 21, 2016 around 13:00-13:10 UTC)\nApp permissions page: https://security.google.com/settings/security/permissions (visited twice on June 21, 2016 at 13:10:36 UTC)\nMy Account security section: https://myaccount.google.",
+            "keywords": [
+                [
+                    "security.google.com",
+                    "myaccount.google.com"
+                ],
+                [
+                    "Google",
+                    "security"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT54",
+            "category": "retrieval",
+            "question": "What 'less secure apps' Google setting did the suspect view?",
+            "expected_answer": "The suspect viewed the Google \"Less secure apps\" setting page at https://www.google.com/settings/security/lesssecureapps on June 21, 2016 at 13:12:11 UTC. The page title was \"Less secure apps Account settings\". They also visited the related \"Apps connected to your account\" page at security.google.com/settings/security/permissions two minutes earlier.",
+            "keywords": [
+                [
+                    "less secure apps",
+                    "Less secure"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT55",
+            "category": "retrieval",
+            "question": "What Skype Received Files folder exists in the Hunter profile?",
+            "expected_answer": "The Skype Received Files folder in the Hunter profile is:\n\nFolder name: \"My Skype Received Files\"\nFull path: `.\\Users\\Hunter\\AppData\\Roaming\\Skype\\My Skype Received Files`\nCreated: 2016-06-21 09:08:36.9323258\nLast modified: 2016-06-21 09:08:36.9323258\nLast accessed: 2016-06-21 09:08:36.",
+            "keywords": [
+                [
+                    "Skype Received Files",
+                    "Received Files"
+                ],
+                [
+                    "Hunter",
+                    "Skype"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT56",
+            "category": "retrieval",
+            "question": "What is the full path and size of the Pictures.7z archive?",
+            "expected_answer": "Found it! The Pictures.7z archive is located at:\n\nFull path: `.\\Users\\Hunter\\Dropbox\\Pictures.7z`\nFile size: 1,849,480 bytes (approximately 1.85 MB)\n\nThe file was created on 2016-06-21 01:52:17.0902822 and last modified on 2016-06-21 09:42:48.8514011.",
+            "keywords": [
+                "Pictures.7z",
+                [
+                    "Dropbox",
+                    "1849480",
+                    "1,849,480"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT57",
+            "category": "retrieval",
+            "question": "What is the full path of the Exfil folder on this system?",
+            "expected_answer": "The Exfil folder is located at: C:\\Users\\Hunter\\Pictures\\Exfil\n\nThe folder was created on June 21, 2016 at 09:37:36 and contains files including Exfiltration_Diagram.png and dns-exfiltration-using-sqlmap-18-728.jpg.",
+            "keywords": [
+                [
+                    "Exfil",
+                    "Hunter",
+                    "hunter",
+                    "Pictures"
+                ],
+                "Hunter"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT58",
+            "category": "retrieval",
+            "question": "What Exfiltration_Diagram.png file exists on the system?",
+            "expected_answer": "The details of the Exfiltration_Diagram.png file are:\n\nFile location: C:\\Users\\Hunter\\Pictures\\Exfil\\Exfiltration_Diagram.png\nFile size: 100,256 bytes\nCreated: 2016-06-21 09:37:49.7508426\nLast modified: 2016-06-21 09:37:50.3412469\nLast accessed: 2016-06-21 09:37:32.4643467\n\nThe file was downloaded from www.filetransferconsulting.com via Google Images search (www.google.",
+            "keywords": [
+                "Exfiltration_Diagram.png",
+                [
+                    "Exfil",
+                    "Pictures"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT59",
+            "category": "retrieval",
+            "question": "What DNS exfiltration image is in the Exfil folder?",
+            "expected_answer": "The DNS exfiltration image in the Exfil folder is \"dns-exfiltration-using-sqlmap-18-728.jpg\" located at C:\\Users\\Hunter\\Pictures\\Exfil\\dns-exfiltration-using-sqlmap-18-728.jpg. The file was created on June 21, 2016 at 09:38:13, is 71,910 bytes in size, and there's also an \"Exfiltration_Diagram.png\" file in the same folder.",
+            "keywords": [
+                "dns-exfiltration-using-sqlmap",
+                "Exfil"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT60",
+            "category": "retrieval",
+            "question": "What data exfiltration thesis document was found on the system?",
+            "expected_answer": "The data exfiltration thesis document found on the system is \"Ryan_VanAntwerp_thesis.pdf\" (606,814 bytes). This thesis was downloaded from the University of Delaware's institutional repository at http://dspace.udel.edu/bitstream/handle/19716/10145/Ryan_VanAntwerp_thesis.pdf?sequence=1 on June 21, 2016 at 09:39:27 UTC.",
+            "keywords": [
+                "Ryan_VanAntwerp_thesis",
+                [
+                    "606814",
+                    "606,814",
+                    "exfiltration"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT61",
+            "category": "retrieval",
+            "question": "What DEFCON presentation file was downloaded?",
+            "expected_answer": "Two DEFCON presentation files were downloaded:\n\n1. DEFCON-22-Zoltan-Balazs-Bypass-firewalls-application-whitelists-in-20-seconds-UPDATED.pdf Downloaded on June 20, 2016 at 23:58:08, file size 4,170,265 bytes, located at C:\\Users\\Hunter\\Documents\\\n\n2. defcon-16-ricks.",
+            "keywords": [
+                [
+                    "DEFCON",
+                    "Defcon",
+                    "DEFCON-22"
+                ],
+                [
+                    "Zoltan",
+                    "Balazs",
+                    "bypass"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT62",
+            "category": "retrieval",
+            "question": "What deleted home network diagram was found?",
+            "expected_answer": "A file named \"home-network-design-networking-for-a-single-family-home-case-house-arkko-1433-x-792.jpg\" was found in the user's Dropbox folder at `C:\\Users\\Hunter\\Dropbox\\home-network-design-networking-for-a-single-family-home-case-house-arkko-1433-x-792.",
+            "keywords": [
+                [
+                    "home-network-design",
+                    "networking"
+                ],
+                "Hunter"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT63",
+            "category": "retrieval",
+            "question": "What 1920x1200 resolution kitty image was deleted?",
+            "expected_answer": "A file named \"ws_Small_cute_kitty_1920x1200.jpg\" is located at \".\\\\Users\\\\Hunter\\\\Pictures\\\\Private\\\\ws_Small_cute_kitty_1920x1200.jpg\" (389,987 bytes, created/modified June 21, 2016 at 09:31:09-09:31:12). The MFT shows this file is NOT deleted (is_deleted: false). USN Journal entries show RENAME operations for \"ws_Small_cute_kitty_1920x1200 (1).",
+            "keywords": [
+                [
+                    "Small_cute_kitty",
+                    "kitty"
+                ],
+                [
+                    "1920x1200",
+                    "1920"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT64",
+            "category": "retrieval",
+            "question": "What zone identifier ADS files exist in the Exfil folder?",
+            "expected_answer": "The MFT data contains 2 zone identifier ADS files in the Exfil folder:\n\n`dns-exfiltration-using-sqlmap-18-728.jpg:Zone.Identifier` (26 bytes, created/modified: 2016-06-21 09:38:13)\n`Exfiltration_Diagram.png:Zone.Identifier` (26 bytes, created/modified: 2016-06-21 09:37:50)\n\nBoth files are 26 bytes in size and located in `C:\\Users\\Hunter\\Pictures\\Exfil\\`. The Zone.",
+            "keywords": [
+                "Zone.Identifier",
+                [
+                    "Exfil",
+                    "Exfiltration"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT65",
+            "category": "retrieval",
+            "question": "What is the total size of known files in the Pictures\\Exfil folder?",
+            "expected_answer": "The total size is the sum of the actual files in the Pictures\\Exfil folder (excluding alternate data streams and system files).\n\nThe MFT records identify these files in the Pictures\\Exfil folder:\n\n1. Thumbs.db: 24,064 bytes\n2. dns-exfiltration-using-sqlmap-18-728.jpg: 71,910 bytes\n3. Exfiltration_Diagram.png: 100,256 bytes\n\nThe alternate data streams (Zone.",
+            "keywords": [
+                [
+                    "Exfil",
+                    "Pictures"
+                ],
+                [
+                    "Exfiltration_Diagram",
+                    "dns-exfiltration"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT66",
+            "category": "retrieval",
+            "question": "How many total browser history records are available for this case?",
+            "expected_answer": "There are 363 browser history records available for this case.",
+            "keywords": [
+                [
+                    "363"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT67",
+            "category": "retrieval",
+            "question": "What is the Welcome.docx file path on the system?",
+            "expected_answer": "The Welcome.docx file is located at: `C:\\Users\\Hunter\\Documents\\Welcome.docx`\n\nThis is confirmed by multiple artifacts:\nMFT shows the file path as `.\\Users\\Hunter\\Documents\\Welcome.docx` (relative path)\nJumpList shows the full path: `C:\\Users\\Hunter\\Documents\\Welcome.",
+            "keywords": [
+                "Welcome.docx",
+                [
+                    "Documents",
+                    "Hunter"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT68",
+            "category": "retrieval",
+            "question": "What Adobe Reader activity is recorded?",
+            "expected_answer": "Adobe Reader activity recorded:\n\nAdobe Reader Execution Activity:\nAdobe Reader DC (AcroRd32.exe) executed multiple times between 2016-06-20 23:49:39 and 2016-06-21 02:00:01\nPrefetch records show 8 execution counts with hash ACF2947E\nExecutable path: C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe\n\nPDF Files Accessed:\n\"Confidential Document.",
+            "keywords": [
+                "ACRORD32",
+                [
+                    "8",
+                    "Adobe",
+                    "Acrobat"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT69",
+            "category": "retrieval",
+            "question": "How many times was Chrome executed according to Prefetch?",
+            "expected_answer": "According to Prefetch, Chrome (CHROME.EXE) has a run count of 45. That figure comes from the prefetch file with hash D999B1C2, which tracks CHROME.EXE under Program Files (x86)\\Google\\Chrome\\Application. The index holds 35 rows for this executable, but those are recorded run timestamps rather than separate executions. Six Chrome prefetch files exist in total, with run counts of 6, 40, 1, 7, 5 and 45.",
+            "keywords": [
+                [
+                    "Chrome",
+                    "CHROME.EXE",
+                    "chrome"
+                ],
+                [
+                    "35",
+                    "45",
+                    "most"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT70",
+            "category": "retrieval",
+            "question": "What is the most visited Google domain in browser history?",
+            "expected_answer": "The most visited Google domain is www.google.jo with 162 total records (43 visits shown in the top domains list). This is the Jordan-specific Google domain (.jo TLD).\n\nOther Google domains visited include:\nmail.google.com: 36 total records (46 visits shown)\nmyaccount.google.com: 9 total records\nwww.google.com: 8 total records\naccounts.google.com: 5 total records\nsecurity.google.",
+            "keywords": [
+                [
+                    "google.jo",
+                    "Jordan"
+                ],
+                [
+                    "162"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT71",
+            "category": "retrieval",
+            "question": "What Internet Explorer browser data exists in JumpList?",
+            "expected_answer": "The JumpList artifacts contain 3 entries for Internet Explorer 8.0.7600.16385 / 9 with AppID \"28c8b86deab549a1\". All entries point to the executable at \"C:\\Program Files\\Internet Explorer\\iexplore.",
+            "keywords": [
+                [
+                    "Internet Explorer",
+                    "iexplore"
+                ],
+                [
+                    "8.0"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT72",
+            "category": "retrieval",
+            "question": "What MSN and news domains were visited?",
+            "expected_answer": "MSN and news domains visited:\n\nwww.msn.com visited 4 times on June 21, 2016 between 08:40:38 and 08:41:43 UTC\n  Main MSN UAE homepage: http://www.msn.com/en-ae/?ocid=iehp\n  News video: \"Very hot drinks cause cancer?\" http://www.msn.com/en-ae/video/news/can-very-hot-drinks-cause-cancer/vi-AAhjDD4\n  News video: \"Mumbai cops have embraced yoga and are loving it\" http://www.msn.",
+            "keywords": [
+                [
+                    "msn.com",
+                    "msn"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT73",
+            "category": "retrieval",
+            "question": "What hdwallpapery.com activity exists?",
+            "expected_answer": "hdwallpapery.com activity:\n\nBrowser Activity (4 visits on June 21, 2016):\n09:46:26 Visited \"www.hdwallpapery.com Wallpaper HD page 4\" \n09:46:33 Viewed \"Abstract-Fringe-Wallpapers-HD-Download-77829_H97lpMw.jpg\" (2560×1600)\n09:46:34 Viewed \"1907906_cBpi8Hg.jpg\" (640×400) visited twice\n09:46:38 Viewed \"wallpapers-hd-7986-8317-hd-wallpapers_cBzejsZ.",
+            "keywords": [
+                [
+                    "hdwallpapery",
+                    "wallpaper"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT74",
+            "category": "retrieval",
+            "question": "What sourceforge.net activity is recorded?",
+            "expected_answer": "SourceForge.net activity recorded:\n\n4 browser visits to SourceForge.net on June 20-21, 2016:\n  June 20, 23:57:28 OpenSSH for Windows project page\n  June 20, 23:57:47 OpenSSH for Windows download page\n  June 20, 23:59:05 OpenSSH for Windows post-download page\n  June 21, 10:57:02 Eraser 6.2.0.2971 download (Eraser6.2.0.2971-NoRuntimes.",
+            "keywords": [
+                [
+                    "sourceforge",
+                    "SourceForge"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT75",
+            "category": "retrieval",
+            "question": "How many JumpList entries exist and what applications are tracked?",
+            "expected_answer": "JumpList artifacts:\n\nTotal JumpList entries: 37 entries (from case statistics)\nApplications tracked:\n  Google Chrome (11 entries) app_id: 5d696d521de238c3\n  Internet Explorer (6 entries) app_id: 28c8b86deab549a1\n  Microsoft Outlook (7 entries) app_id: 6d2bac8f1edf6668\n  Windows Explorer (6 entries) app_id: f01b4d95cf55d32a\n  Document applications (2 entries with empty app_name but tracking .",
+            "keywords": [
+                [
+                    "37",
+                    "JumpList"
+                ],
+                [
+                    "Outlook",
+                    "Chrome",
+                    "Skype"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT76",
+            "category": "retrieval",
+            "question": "What is the total number of MFT records for this case?",
+            "expected_answer": "The total number of MFT records for this case is 136,928.",
+            "keywords": [
+                [
+                    "136928",
+                    "136,928"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT77",
+            "category": "retrieval",
+            "question": "What is the total number of USN Journal records?",
+            "expected_answer": "The USN Journal contains 331,306 records.",
+            "keywords": [
+                [
+                    "331306",
+                    "331,306"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT78",
+            "category": "retrieval",
+            "question": "What is the file path of the Hunter .zenmap folder?",
+            "expected_answer": "The Hunter .zenmap folder is located at: `.\\Users\\Hunter\\.zenmap`\n\nThis directory was created on June 21, 2016 at 12:08:14 UTC and contains Zenmap configuration files including scan_profile.usp, zenmap.conf, target_list.txt, recent_scans.txt, and zenmap.db.",
+            "keywords": [
+                [
+                    ".zenmap",
+                    "zenmap"
+                ],
+                "Hunter"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT79",
+            "category": "retrieval",
+            "question": "How many LNK files are in the forensic data?",
+            "expected_answer": "There are 25 LNK files in the forensic data.",
+            "keywords": [
+                [
+                    "25",
+                    "LNK"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT80",
+            "category": "retrieval",
+            "question": "What Kali Linux LNK reference exists?",
+            "expected_answer": "Found it! There is one Kali Linux LNK reference:\n\nLNK file: \"https--www.kali.org-_1.lnk\" created on 2026-02-03 05:28:19\nTarget path: \"Internet Folder\\https://www.kali.org/\"\nLast accessed: 2026-02-03 05:28:24\nThis is an internet shortcut pointing to the Kali Linux website (https://www.kali.org/)\n\nNo other Kali Linux or Linux-related LNK files were found in the 25 LNK records.",
+            "keywords": [
+                [
+                    "kali.org",
+                    "Kali"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT81",
+            "category": "retrieval",
+            "question": "What backup.pst file size is recorded in MFT?",
+            "expected_answer": "The MFT records show two backup.pst files with identical sizes:\n\nFirst backup.pst at \".\\Users\\Hunter\\Dropbox\\Outlook\\backup.pst\": 10,429,440 bytes\nSecond backup.pst at \".\\Users\\Hunter\\Documents\\Outlook Files\\backup.pst\": 10,429,440 bytes\n\nBoth files are exactly 10,429,440 bytes (approximately 9.95 MB).",
+            "keywords": [
+                "backup.pst",
+                [
+                    "Dropbox",
+                    "Outlook"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT82",
+            "category": "retrieval",
+            "question": "What is the path to the Nmap folder in Program Files?",
+            "expected_answer": "The Nmap folder is located at:\n\nC:\\Program Files (x86)\\Nmap\n\nMFT evidence shows the directory was created on June 21, 2016 at 11:01:37.9082849, and Prefetch data confirms NMAP.EXE runs from this path: \"\\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\NMAP\\NMAP.EXE\".",
+            "keywords": [
+                [
+                    "Program Files",
+                    "Nmap"
+                ],
+                [
+                    "Nmap",
+                    "nmap"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT83",
+            "category": "retrieval",
+            "question": "Where is the BCWipe application installed?",
+            "expected_answer": "BCWipe is installed at `C:\\Program Files (x86)\\Jetico\\BCWipe\\`. The MFT and event log data confirm this:\nMFT directory entry: `.\\Program Files (x86)\\Jetico\\BCWipe` (created 2016-06-21 11:44:44)\nService installation event showing path: `\"C:\\Program Files (x86)\\Jetico\\BCWipe\\BCWipeSvc.exe\"`\nMultiple executable files found in that directory: BCWipe.exe, BCWipeTM.exe, BCUpdt.",
+            "keywords": [
+                [
+                    "Jetico",
+                    "BCWipe"
+                ],
+                "Program Files"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT84",
+            "category": "retrieval",
+            "question": "What Chrome setup executable exists in Amcache?",
+            "expected_answer": "The Amcache data contains three Chrome-related setup executables:\n\n1. Google Chrome Installer SHA1: 3eb51dcf47e5500c36b54c414e3ea0969cf78f01, size: 1,576,088 bytes\n2. Chrome Cleanup Tool SHA1: 7b9d835a3aa6fb3ae15305d9756ee1673f75c8ca, size: 1,541,624 bytes\n3.",
+            "keywords": [
+                [
+                    "ChromeSetup",
+                    "Chrome"
+                ],
+                [
+                    "c9554040f4fe",
+                    "Downloads"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT85",
+            "category": "retrieval",
+            "question": "What is the path to the Hunter Dropbox folder?",
+            "expected_answer": "The path to the Hunter Dropbox folder is `C:\\Users\\Hunter\\Dropbox`. This is confirmed by multiple MFT entries showing the directory path `.\\\\Users\\\\Hunter\\\\Dropbox` and an Event Log entry showing `C:\\\\Users\\\\Hunter\\\\Dropbox\\\\Outlook\\\\backup.pst`.",
+            "keywords": [
+                [
+                    "Dropbox",
+                    "Hunter"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT86",
+            "category": "retrieval",
+            "question": "When did the main suspicious activity take place on this system?",
+            "expected_answer": "The main suspicious activity occurred during a concentrated period on June 21, 2016, between approximately 10:45 AM and 1:18 PM.\n\nKey timeline of suspicious forensic tool activity:\n10:45 AM: CCleaner (CCSETUP519PRO.EXE) downloaded and executed\n11:00-11:02 AM: Sysinternals tools researched and Nmap (NMAP-7.",
+            "keywords": [
+                [
+                    "2016-06-21",
+                    "June 21"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT87",
+            "category": "retrieval",
+            "question": "When was Nmap installed on the system?",
+            "expected_answer": "Nmap was installed on June 21, 2016 between 11:01:34 and 11:02:38. The installation process involved:\n\nThe installer file \"nmap-7.12-setup.",
+            "keywords": [
+                [
+                    "2016-06-21",
+                    "June 21"
+                ],
+                [
+                    "11:01",
+                    "Nmap"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT88",
+            "category": "retrieval",
+            "question": "When was the port scan performed?",
+            "expected_answer": "The port scan was performed using Nmap (network scanning tool) on June 21, 2016. Key evidence includes:\n\nNmap installation occurred at 11:01:34 (nmap-7.12-setup.exe execution)\nNmap.",
+            "keywords": [
+                [
+                    "2016-06-21",
+                    "June 21"
+                ],
+                [
+                    "08:37",
+                    "12:08",
+                    "08:38"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT89",
+            "category": "retrieval",
+            "question": "When was Wireshark installer executed?",
+            "expected_answer": "The Wireshark installer (Wireshark-win64-2.0.4.exe) was executed at 2016-06-21 09:22:25 (09:22:25 AM on June 21, 2016). This is evidenced by:\n\nPrefetch record showing WIRESHARK-WIN64-2.0.4.EXE execution at 09:22:25\nPrefetch file WIRESHARK-WIN64-2.0.4.EXE-5DD191BE.",
+            "keywords": [
+                [
+                    "2016-06-21",
+                    "June 21"
+                ],
+                [
+                    "09:22",
+                    "Wireshark"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT90",
+            "category": "retrieval",
+            "question": "When was FTK Imager last executed?",
+            "expected_answer": "FTK Imager was last executed on June 21, 2016 at 13:18:13 (1:18 PM). This is recorded in the Prefetch artifact showing the most recent execution timestamp. The program was executed from `\\DEVICE\\HARDDISKVOLUME2\\USERS\\HUNTER\\DOWNLOADS\\FTK-IMAGER\\FTK IMAGER.EXE` and had a run count of 3.",
+            "keywords": [
+                [
+                    "2016-06-21",
+                    "June 21"
+                ],
+                "13:18"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT91",
+            "category": "retrieval",
+            "question": "What date range does the browser history cover?",
+            "expected_answer": "The browser history date range covers a single day: June 21, 2016. The earliest browser activity is at 11:31:43 UTC on June 21, 2016, and the latest is at 13:12:11 UTC on the same day. All browser history records fall within this approximately 1 hour and 40 minute window on June 21, 2016.",
+            "keywords": [
+                [
+                    "2016-06-21",
+                    "June 21"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT92",
+            "category": "retrieval",
+            "question": "What is the Skype app last modification timestamp?",
+            "expected_answer": "The Skype app (Skype.exe) last modification timestamp is 2016-06-15 22:18:58.0000000. This is the file modification time of the Skype executable located at \"C:\\Program Files (x86)\\Skype\\Phone\\Skype.exe\".\n\nAdditional context:\nThe Skype executable was created on 2016-06-15 22:18:58\nIt was last accessed on 2016-06-21 08:59:06.",
+            "keywords": [
+                [
+                    "2016-06-21",
+                    "Skype",
+                    "June"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT93",
+            "category": "retrieval",
+            "question": "What is the latest Chrome execution timestamp in Prefetch?",
+            "expected_answer": "The latest Chrome execution timestamp in Prefetch is 2016-06-21 13:12:04. This is from a CHROME.EXE prefetch entry with run count 45, located at \\DEVICE\\HARDDISKVOLUME2\\PROGRAM FILES (X86)\\GOOGLE\\CHROME\\APPLICATION\\CHROME.EXE.",
+            "keywords": [
+                [
+                    "2016-06-21",
+                    "June 21"
+                ],
+                [
+                    "Chrome",
+                    "CHROME",
+                    "chrome"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT94",
+            "category": "retrieval",
+            "question": "When was the Ryan VanAntwerp thesis PDF downloaded?",
+            "expected_answer": "The Ryan VanAntwerp thesis PDF was downloaded on June 21, 2016 at 09:39:27 UTC from http://dspace.udel.edu/bitstream/handle/19716/10145/Ryan_VanAntwerp_thesis.pdf?sequence=1. The file was created in the Documents folder at 09:40:07.7023438 UTC, with the browser accessing the download URL 40 seconds earlier at 09:39:27.360424 UTC.",
+            "keywords": [
+                [
+                    "2016-06-21",
+                    "June 21"
+                ],
+                [
+                    "Ryan",
+                    "VanAntwerp",
+                    "thesis"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT95",
+            "category": "retrieval",
+            "question": "What is the time pattern of the attack chain events?",
+            "expected_answer": "Time pattern of the attack chain events:\n\nAttack Chain Timeline Pattern:\n\nInitial reconnaissance phase (June 20, 23:57-23:59): User \"hunter\" downloads PuTTY from putty.org and putty.exe is created in Downloads folder.\n\nMorning reconnaissance escalation (June 21, 08:37-09:42): Multiple suspicious downloads and executions begin:\n  08:37-08:42: DSMUSERTASK.",
+            "keywords": [
+                [
+                    "2016-06-21",
+                    "June 21"
+                ],
+                [
+                    "09:22",
+                    "11:01",
+                    "12:08"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT96",
+            "category": "retrieval",
+            "question": "What startup programs are configured via registry Run keys?",
+            "expected_answer": "Only the SAM hive is loaded in the available registry data (42 records showing user accounts and groups). The Software hive, which contains the Run keys for startup programs, is not present in this dataset.\n\nNo startup programs configured via registry Run keys are found in the available data.",
+            "keywords": [
+                [
+                    "Run",
+                    "startup",
+                    "autorun"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT97",
+            "category": "retrieval",
+            "question": "How many Event ID 4720 (account creation) events exist?",
+            "expected_answer": "There are 2 Event ID 4720 (account creation) events in the Windows Security logs.\n\nFirst event: Created user \"Hunter\" on 2016-06-21 08:37:43\nSecond event: Created user \"HomeGroupUser$\" on 2016-06-21 08:40:06",
+            "keywords": [
+                "4720",
+                [
+                    "2",
+                    "two"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT98",
+            "category": "retrieval",
+            "question": "What group memberships exist on this Windows 8.1 system?",
+            "expected_answer": "The group memberships on this Windows 8.",
+            "keywords": [
+                [
+                    "Administrators",
+                    "Users",
+                    "Guests"
+                ],
+                [
+                    "Hunter",
+                    "Remote Desktop"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT99",
+            "category": "retrieval",
+            "question": "What is the Administrator account RID on this system?",
+            "expected_answer": "The Administrator account RID is 500. This is the standard RID for the built-in Administrator account in Windows.",
+            "keywords": [
+                [
+                    "500",
+                    "501",
+                    "1001"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "HNT100",
+            "category": "retrieval",
+            "question": "What is the FTK Imager Prefetch run count and what does it indicate?",
+            "expected_answer": "FTK Imager Prefetch run count is 3. This indicates FTK Imager was executed three times on this system, with the most recent execution at 2016-06-21 13:18:13. The low run count suggests it was used recently and not frequently, which is typical for forensic tools that are run only when needed for specific investigations or evidence collection tasks.",
+            "keywords": [
+                "FTK IMAGER",
+                [
+                    "3",
+                    "13:18"
+                ]
+            ],
+            "expected_facts": {}
+        }
+    ]
+}

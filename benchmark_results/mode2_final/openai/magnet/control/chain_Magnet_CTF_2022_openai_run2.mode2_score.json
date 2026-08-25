@@ -1,0 +1,290 @@
+{
+  "chain_file": "benchmark_results/mode2_final/openai/magnet/control/chain_Magnet_CTF_2022_openai_run2.json",
+  "case": "magnet",
+  "provider": "openai",
+  "run": 2,
+  "evidence_record_count": 798,
+  "chain_event_count": 50,
+  "gt_in_scope_count": 17,
+  "gt_out_of_scope_excluded": 1,
+  "gt_distinct_tactics": [
+    "Command and Control",
+    "Defense Evasion",
+    "Execution",
+    "Persistence"
+  ],
+  "milestone_coverage": 1.0,
+  "milestones_covered_count": 8,
+  "milestones_total": 8,
+  "milestones_missed": [],
+  "milestone_detail": {
+    "M_defender_tampering": {
+      "covered": true,
+      "hit_keywords": [
+        "5007"
+      ],
+      "all_keywords": [
+        "5007"
+      ],
+      "gt_event_ids": [
+        "MAG-002"
+      ],
+      "scope": "in_scope"
+    },
+    "M_zerotier_deployment": {
+      "covered": true,
+      "hit_keywords": [
+        "7045",
+        "one.msi",
+        "zerotier"
+      ],
+      "all_keywords": [
+        "1.8.4",
+        "7045",
+        "one.msi",
+        "zerotier",
+        "zerotier-one",
+        "zttap300.sys",
+        "zerotierone",
+        "zerotier-one.port"
+      ],
+      "gt_event_ids": [
+        "MAG-003",
+        "MAG-004",
+        "MAG-005",
+        "MAG-008"
+      ],
+      "scope": "in_scope"
+    },
+    "M_antiforensic_scripts": {
+      "covered": true,
+      "hit_keywords": [
+        "file_deleter.ps1"
+      ],
+      "all_keywords": [
+        "file_deleter.ps1",
+        "ai_70bb.ps1"
+      ],
+      "gt_event_ids": [
+        "MAG-006",
+        "MAG-007"
+      ],
+      "scope": "in_scope"
+    },
+    "M_defender_detections": {
+      "covered": true,
+      "hit_keywords": [
+        "1116",
+        "1117",
+        "2022-02-09"
+      ],
+      "all_keywords": [
+        "1116",
+        "1117",
+        "2022-02-09",
+        "2022-02-09 22:44:11.0630581",
+        "2022-02-09 22:44:16.2033444",
+        "22:44",
+        "22:44:11",
+        "22:44:16"
+      ],
+      "gt_event_ids": [
+        "MAG-009"
+      ],
+      "scope": "in_scope"
+    },
+    "M_powershell_c2": {
+      "covered": true,
+      "hit_keywords": [
+        "2022-02-09 23:34:55.1225188",
+        "2022-02-09",
+        "23:34"
+      ],
+      "all_keywords": [
+        "2022-02-09 23:34:55.1225188",
+        "2022-02-09",
+        "23:34",
+        "23:34:55",
+        "event 4104",
+        "4104",
+        "scriptblock",
+        "00:06"
+      ],
+      "gt_event_ids": [
+        "MAG-010",
+        "MAG-011"
+      ],
+      "scope": "in_scope"
+    },
+    "M_goteem_scripts": {
+      "covered": true,
+      "hit_keywords": [
+        "goteem.ps1",
+        "2022-02-11",
+        "23:22"
+      ],
+      "all_keywords": [
+        "goteem.ps1",
+        "documents/minecraft",
+        "2022-02-11 23:22:52.3693218",
+        "2022-02-11",
+        "23:22",
+        "23:22:52",
+        "goteem2.ps1",
+        "2022-02-11 23:26:51.7850954"
+      ],
+      "gt_event_ids": [
+        "MAG-012",
+        "MAG-013",
+        "MAG-014",
+        "MAG-015",
+        "MAG-016"
+      ],
+      "scope": "in_scope"
+    },
+    "M_matrix_lolololol": {
+      "covered": true,
+      "hit_keywords": [
+        "2022-02-12"
+      ],
+      "all_keywords": [
+        "00:41",
+        "00:41:00",
+        "2022-02-12",
+        "2022-02-12 00:41:00.0000000",
+        "lolololol",
+        "matrix.bat"
+      ],
+      "gt_event_ids": [
+        "MAG-017"
+      ],
+      "scope": "in_scope"
+    },
+    "M_unauthorised_account": {
+      "covered": true,
+      "hit_keywords": [
+        "01:29",
+        "01:29:43",
+        "2022-02-12"
+      ],
+      "all_keywords": [
+        "01:29",
+        "01:29:43",
+        "2022-02-12",
+        "2022-02-12 01:29:43.1362394",
+        "4720",
+        "desktop-skptdio",
+        "event 4720",
+        "s-1-5-18"
+      ],
+      "gt_event_ids": [
+        "MAG-018"
+      ],
+      "scope": "in_scope"
+    }
+  },
+  "out_of_scope_milestones_total": 0,
+  "out_of_scope_milestones_covered": 0,
+  "out_of_scope_milestone_coverage": null,
+  "tactic_coverage": 0.75,
+  "tactics_covered": [
+    "Defense Evasion",
+    "Execution",
+    "Persistence"
+  ],
+  "tactics_missed": [
+    "Command and Control"
+  ],
+  "per_tactic_recall": {
+    "Command and Control": "0/3",
+    "Defense Evasion": "2/3",
+    "Execution": "7/9",
+    "Persistence": "2/2"
+  },
+  "ordering_accuracy": 0.9815,
+  "ordering_pairs_concordant": 53,
+  "ordering_pairs_discordant": 1,
+  "ordering_pairs_masked_negative_finding": 0,
+  "source_attribution_accuracy": 0.7273,
+  "source_attribution_correct": 8,
+  "source_attribution_total": 11,
+  "per_source_attribution": {
+    "eventlog": "3/4",
+    "eventlog+mft+registry": "1/1",
+    "eventlog+reg": "1/1",
+    "lnk": "0/1",
+    "mft": "3/4"
+  },
+  "hallucination_rate": 0.0,
+  "grounded_events": 50,
+  "hallucinated_events": 0,
+  "hallucination_reasons": {
+    "no_factual_entity_to_check": 18,
+    "grounded_facts": 32
+  },
+  "exact_event_coverage": 0.6471,
+  "matched_event_count": 11,
+  "matched_gt_ids": [
+    "MAG-002",
+    "MAG-003",
+    "MAG-006",
+    "MAG-009",
+    "MAG-010",
+    "MAG-011",
+    "MAG-012",
+    "MAG-013",
+    "MAG-014",
+    "MAG-016",
+    "MAG-018"
+  ],
+  "missed_gt": [
+    [
+      "MAG-004",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-005",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-007",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-008",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-015",
+      "date_match_no_kw"
+    ],
+    [
+      "MAG-017",
+      "date_match_no_kw"
+    ]
+  ],
+  "miss_reasons": {
+    "date_match_no_kw": 6
+  },
+  "composite_headline": 0.9222,
+  "strict_grounding": {
+    "chain": "chain_Magnet_CTF_2022_openai_run2.json",
+    "provider": "openai",
+    "case": "Magnet_CTF_2022",
+    "events": 50,
+    "events_with_checkable_fact": 37,
+    "events_unchecked": 13,
+    "metric_coverage": 0.74,
+    "ungrounded_events": 0,
+    "name_variant_events": 0,
+    "events_with_unsupported_timestamp": 0,
+    "unsupported_timestamp_rate": 0.0,
+    "timestamp_offenders": [],
+    "strict_fabrication_rate": 0.0,
+    "substantive_fabrication_rate": 0.0,
+    "fabrication_rate_over_all_events": 0.0,
+    "missing_entities": {},
+    "offenders": [],
+    "name_variants": []
+  }
+}

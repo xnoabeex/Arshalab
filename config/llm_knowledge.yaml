@@ -1,0 +1,260 @@
+forensic_knowledge:
+  investigation_types:
+    program_execution:
+      description: "Determining what programs were run and when"
+      primary_artifacts:
+        - prefetch
+        - shimcache
+        - amcache
+      supporting_artifacts:
+        - registry_run_keys
+        - jumplist
+      typical_questions:
+        - "what programs ran"
+        - "what was executed"
+        - "program execution"
+        - "applications run"
+      analysis_approach: |
+        1. Start with Prefetch for recent executions with timestamps
+        2. Check Shimcache for application compatibility data
+        3. Check Amcache for program installation and execution
+        4. Look at JumpLists for recently used files per application
+        5. Check Registry Run keys for startup programs
+        6. Look for anomalies: first-time executions, suspicious paths
+
+    web_activity:
+      description: "User's web browsing behavior"
+      primary_artifacts:
+        - browser_history
+      supporting_artifacts:
+        - jumplist
+      typical_questions:
+        - "websites visited"
+        - "browsing history"
+        - "what did user search"
+        - "downloads"
+      analysis_approach: |
+        1. Extract browser history (Chrome, Edge)
+        2. Identify suspicious domains
+        3. Check for download activity
+        4. Correlate with JumpList for recent browser files
+
+    file_activity:
+      description: "File system operations - creation, access, modification, deletion"
+      primary_artifacts:
+        - mft
+        - jumplist
+        - lnk
+      supporting_artifacts:
+        - recyclebin
+      typical_questions:
+        - "what files were accessed"
+        - "file modifications"
+        - "recently opened files"
+        - "file creation"
+      analysis_approach: |
+        1. Search MFT for file timeline (created, modified, accessed)
+        2. Check JumpLists for recently used files per application
+        3. Analyze LNK shortcuts for accessed files
+        4. Look for patterns in file access times
+
+    deleted_files:
+      description: "Analysis of deleted files and data destruction"
+      primary_artifacts:
+        - recyclebin
+        - mft
+      supporting_artifacts: []
+      typical_questions:
+        - "deleted files"
+        - "what was removed"
+        - "recycle bin"
+        - "data destruction"
+      analysis_approach: |
+        1. Analyze Recycle Bin for deleted files with original paths
+        2. Check MFT for file deletion timestamps
+        3. Look for patterns in deletion times
+        4. Identify potentially suspicious deletions (documents, logs)
+
+    timeline_reconstruction:
+      description: "Chronological sequence of all user activity"
+      primary_artifacts:
+        - prefetch
+        - browser_history
+        - mft
+        - jumplist
+        - shimcache
+        - amcache
+        - usnjrnl
+        - srum
+        - powershell
+      supporting_artifacts:
+        - registry_run_keys
+        - lnk
+        - recyclebin
+      typical_questions:
+        - "what happened"
+        - "timeline"
+        - "sequence of events"
+        - "activity on date"
+      analysis_approach: |
+        1. Collect all available artifacts
+        2. Sort chronologically
+        3. Identify activity clusters and gaps
+        4. Correlate program execution with file access
+        5. Build comprehensive timeline from all sources
+
+    network_activity:
+      description: "Network usage and data exfiltration analysis"
+      primary_artifacts:
+        - srum
+      supporting_artifacts:
+        - browser_history
+        - eventlog
+        - prefetch
+      typical_questions:
+        - "network activity"
+        - "data exfiltration"
+        - "bytes sent"
+        - "bandwidth usage"
+        - "what applications used network"
+      analysis_approach: |
+        1. Analyze SRUM for network usage by application
+        2. Identify top applications by bytes sent/received
+        3. Correlate with browser history for web traffic
+        4. Check for unusual network activity (high upload, suspicious apps)
+        5. Look for C2 indicators (consistent beaconing patterns)
+
+    attacker_commands:
+      description: "PowerShell and command-line activity analysis"
+      primary_artifacts:
+        - powershell
+        - eventlog
+      supporting_artifacts:
+        - prefetch
+        - registry_run_keys
+      typical_questions:
+        - "powershell commands"
+        - "what commands were run"
+        - "attacker activity"
+        - "living off the land"
+        - "encoded commands"
+      analysis_approach: |
+        1. Analyze PowerShell history for executed commands
+        2. Check for suspicious patterns (downloads, encoded, bypass)
+        3. Correlate with Event ID 4104 (PowerShell script block logging)
+        4. Look for credential dumping, lateral movement commands
+        5. Identify LOTL (Living Off The Land) techniques
+
+    detailed_file_changes:
+      description: "Granular file system changes from USN Journal"
+      primary_artifacts:
+        - usnjrnl
+      supporting_artifacts:
+        - mft
+        - recyclebin
+      typical_questions:
+        - "file changes"
+        - "what files were created"
+        - "what was renamed"
+        - "detailed file activity"
+        - "file modifications"
+      analysis_approach: |
+        1. Search USN Journal for specific file or path
+        2. Filter by operation type (CREATE, DELETE, RENAME, MODIFY)
+        3. Build granular timeline of file system changes
+        4. Correlate with MFT for full file metadata
+        5. Track file lifecycle from creation to deletion
+
+  artifact_correlations:
+    - name: "browser_launch_correlation"
+      description: "Browser execution should precede URL visits"
+      artifacts: [prefetch, browser_history]
+      expected_sequence:
+        - artifact: prefetch
+          event_type: "chrome.exe execution"
+        - artifact: browser_history
+          event_type: "first URL visit"
+          time_delta: "10-60 seconds"
+
+    - name: "program_file_correlation"
+      description: "Program execution correlates with file access"
+      artifacts: [prefetch, jumplist, mft]
+      expected_sequence:
+        - artifact: prefetch
+          event_type: "application execution"
+        - artifact: jumplist
+          event_type: "file opened in application"
+        - artifact: mft
+          event_type: "file accessed timestamp"
+
+    - name: "installation_execution_correlation"
+      description: "Amcache shows installation, shimcache/prefetch show execution"
+      artifacts: [amcache, shimcache, prefetch]
+      expected_sequence:
+        - artifact: amcache
+          event_type: "program first seen"
+        - artifact: shimcache
+          event_type: "program in cache"
+        - artifact: prefetch
+          event_type: "program executed"
+
+  anomaly_patterns:
+    suspicious_execution_paths:
+      severity: high
+      indicators:
+        - path_contains: ["TEMP", "Downloads", "AppData\\Local\\Temp"]
+      description: "Execution from temporary directories often indicates malware"
+
+    off_hours_activity:
+      severity: medium
+      indicators:
+        - time_range: ["00:00-06:00", "22:00-23:59"]
+      description: "Activity outside business hours may indicate unauthorized access"
+
+    mass_deletion:
+      severity: high
+      indicators:
+        - multiple_deletions: true
+        - time_window: "short"
+      description: "Multiple files deleted in short time may indicate data destruction"
+
+    suspicious_file_access:
+      severity: medium
+      indicators:
+        - file_types: [".docx", ".xlsx", ".pdf", ".zip"]
+        - unusual_volume: true
+      description: "Large volume of document access may indicate data exfiltration"
+
+    high_network_upload:
+      severity: high
+      indicators:
+        - bytes_sent: "unusually high"
+        - compared_to: "bytes_received"
+      description: "High upload vs download ratio may indicate data exfiltration"
+
+    suspicious_powershell:
+      severity: critical
+      indicators:
+        - patterns: ["invoke-expression", "downloadstring", "encodedcommand", "bypass"]
+      description: "PowerShell commands with suspicious patterns indicate attacker activity"
+
+    rapid_file_changes:
+      severity: high
+      indicators:
+        - usnjrnl_operations: "many in short time"
+        - operation_types: ["DELETE", "RENAME"]
+      description: "Rapid file deletions/renames may indicate data destruction or ransomware"
+
+  response_templates:
+    executive_summary: |
+      Analysis of {artifact_count} artifacts covering {time_range} revealed:
+      - {event_count} total events
+      - {anomaly_count} suspicious indicators
+
+    timeline_event: |
+      [{timestamp}] {artifact_type}: {description}
+
+    anomaly_report: |
+      {severity}: {anomaly_type}
+      Event: {event_description}
+      Reason: {reason}

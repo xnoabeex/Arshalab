@@ -1,0 +1,189 @@
+{
+  "provider": "opus",
+  "case": "kdfs",
+  "case_name": "KDFS_2023",
+  "case_id": "case_20260128_141256",
+  "run": 3,
+  "evidence_file": "evidence_KDFS_2023.json",
+  "evidence_record_count": 746,
+  "chain_event_count": 25,
+  "prompt_chars": 147803,
+  "elapsed_seconds": 56.5,
+  "chain": [
+    {
+      "timestamp": "2023-09-11 02:22:01.0721731",
+      "event": "New account 'WIN-NI0JCB7SBTU' created (Event 4720)",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2023-09-11 02:23:25.3721991",
+      "event": "New account created on DESKTOP-K7VGB7O (Event 4720)",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-11 02:23:28.9125388",
+      "event": "Account modified on DESKTOP-K7VGB7O (Event 4738)",
+      "supporting_artifact": "EventLog Event 4738",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-13 09:12:52.2453169",
+      "event": "Service installed on DESKTOP-K7VGB7O (Event 7045)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-14 02:15:25.9682191",
+      "event": "Additional service installed on DESKTOP-K7VGB7O (Event 7045)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-15 01:04:44.0014684",
+      "event": "BTCUSDT-1h-2023-07.zip archive created in Desktop\\USDT",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2023-09-15 01:06:18.2448753",
+      "event": "BANDIZIP-SETUP-STD-X64.EXE downloaded to Downloads folder",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:08:09",
+      "event": "BANDIZIP-SETUP-STD-X64.EXE executed for archive tool installation",
+      "supporting_artifact": "Prefetch",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-15 01:10:20.1296462",
+      "event": "Windows Defender configuration changed (Event 5007)",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-15 01:37:00",
+      "event": "Discord app activity detected at \\Users\\souldrag\\AppData\\Local\\Discord",
+      "supporting_artifact": "SRUM",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2023-09-15 02:49:48.5934869",
+      "event": "Additional Windows Defender configuration change (Event 5007)",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-16 02:35:08.9155271",
+      "event": "Windows Firewall stopped (Event 5025)",
+      "supporting_artifact": "EventLog Event 5025",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-17 10:27:39.5764319",
+      "event": "USB device installation detected (Event 410)",
+      "supporting_artifact": "EventLog Event 410",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-17 10:38:33.1216989",
+      "event": "Windows Defender threat detected on DESKTOP-K7VGB7O (Event 1116)",
+      "supporting_artifact": "EventLog Event 1116",
+      "confidence_or_caveat": "high",
+      "phase": "impact"
+    },
+    {
+      "timestamp": "2023-09-18 04:23:46.3161550",
+      "event": "Explicit credential use on DESKTOP-K7VGB7O (Event 4648)",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-18 04:34:53.3780777",
+      "event": "PowerShell script block executed (Event 4104)",
+      "supporting_artifact": "EventLog Event 4104",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-18 07:33:19.2006062",
+      "event": "ProDefense2.sys driver installed in System32\\drivers",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-21 05:50:14.9707487",
+      "event": "SanDisk Cruzer Blade USB device connected (USBSTOR registry)",
+      "supporting_artifact": "Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-21 05:51:26.339720Z",
+      "event": "gofile.io file sharing service accessed",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-21 05:51:32.390051Z",
+      "event": "gofile.io/uploadFiles accessed for file upload",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-22 07:42:54.6083618",
+      "event": "Windows Defender threat detected on DESKTOP-K7VGB7O (Event 1116)",
+      "supporting_artifact": "EventLog Event 1116",
+      "confidence_or_caveat": "high",
+      "phase": "impact"
+    },
+    {
+      "timestamp": "2023-09-22 18:24:11.0688612",
+      "event": "Explicit credential use on DESKTOP-K7VGB7O (Event 4648)",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-22 18:37:25.339399Z",
+      "event": "Ransomware search query on naver.com",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2023-09-23 02:20:12.7760050",
+      "event": "Special privileges assigned on DESKTOP-K7VGB7O (Event 4672)",
+      "supporting_artifact": "EventLog Event 4672",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2023-09-23 03:05:52.9666256",
+      "event": "Winlogon LastUsedUsername set to 'souldrag' with SID S-1-5-21-1317971962-2888861349-1690603405-1001",
+      "supporting_artifact": "Registry Winlogon",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    }
+  ]
+}

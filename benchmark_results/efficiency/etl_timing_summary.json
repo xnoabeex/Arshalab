@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-04-27T13:50:34.734260",
+  "runs": [
+    {
+      "case": "KDFS_2023",
+      "image": "images/test.E01",
+      "image_size_gb": 19.86,
+      "elapsed_seconds": 1342.7122509479523,
+      "records": 0,
+      "status": "ok"
+    },
+    {
+      "case": "Hunter_4orensics",
+      "image": "images/4orensics",
+      "image_size_gb": 24.66,
+      "elapsed_seconds": 135.3997025489807,
+      "records": 0,
+      "status": "ok"
+    }
+  ]
+}

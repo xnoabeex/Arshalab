@@ -1,0 +1,182 @@
+{
+  "provider": "deepseek",
+  "case": "magnet",
+  "case_name": "Magnet_CTF_2022",
+  "case_id": "case_20260323_032324",
+  "run": 1,
+  "evidence_file": "evidence_Magnet_CTF_2022.json",
+  "evidence_record_count": 798,
+  "chain_event_count": 24,
+  "prompt_chars": 153009,
+  "elapsed_seconds": 16.9,
+  "chain": [
+    {
+      "timestamp": "2022-02-04 05:53:43",
+      "event": "Discord application installed and Discord.lnk created on Desktop and Start Menu for user Patrick",
+      "supporting_artifact": "MFT lnk_files / app_communication",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-04 07:05:42.6894842",
+      "event": "Windows Defender configuration change detected (EventID 5007)",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-04 07:05:53.1678802",
+      "event": "Unidentified service installation (EventID 7045), service name not in record",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-05 01:12:04.3377527",
+      "event": "Windows Firewall stopped (EventID 5025)",
+      "supporting_artifact": "EventLog Event 5025",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-06 07:14:10.0767923",
+      "event": "ZeroTier One.msi installer downloaded to Patrick's Downloads folder",
+      "supporting_artifact": "MFT msi_installers",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:35.7898674",
+      "event": "ZeroTier One installed, zerotier-cli.bat and zerotier-idtool.bat created in Program Files (x86)\\ZeroTier\\One",
+      "supporting_artifact": "MFT bat_files",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:45.3852097",
+      "event": "file_deleter.ps1 script created in ZeroTier One prerequisites folder",
+      "supporting_artifact": "MFT ps1_files",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2022-02-06 07:16:30.6409990",
+      "event": "PowerShell error (EventID 4100) logged",
+      "supporting_artifact": "EventLog Event 4100",
+      "confidence_or_caveat": "medium",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-09 03:39:03.0767264",
+      "event": "System time changed (EventID 4616)",
+      "supporting_artifact": "EventLog Event 4616",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-09 03:45:32.7218427",
+      "event": "Failed logon attempts (EventID 4625) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-09 23:34:55.1225188",
+      "event": "PowerShell script block logged (EventID 4104)",
+      "supporting_artifact": "EventLog Event 4104",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11 22:46:12.9291981",
+      "event": "User account modified (EventID 4738) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4738",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-11 23:00:56.3207237",
+      "event": "Windows Defender detected a threat (EventID 1116) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-11 23:19:23.2090504",
+      "event": "goteem.ps1 script created in Patrick's Documents\\Minecraft folder",
+      "supporting_artifact": "MFT ps1_files",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11 23:25:57.5388308",
+      "event": "goteem2.ps1 script created in Patrick's Documents\\Minecraft folder",
+      "supporting_artifact": "MFT ps1_files",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-12 01:29:43.1362394",
+      "event": "New user account created (EventID 4720) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 01:37:07.8274813",
+      "event": "User added to a security group (EventID 4732)",
+      "supporting_artifact": "EventLog Event 4732",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 02:12:16.6903086",
+      "event": "tightvnc-2.8.63-gpl-setup-64bit.msi installer created in Windows\\SysWOW64",
+      "supporting_artifact": "MFT msi_installers",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-12 22:47:43.3308355",
+      "event": "Explicit credential logon (EventID 4648) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-12 22:54:09.9161001",
+      "event": "Unidentified service installation (EventID 7045), service name not in record",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 23:25:56.0076948",
+      "event": "Special privileges assigned to new logon (EventID 4672) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4672",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 23:33:49.5097252",
+      "event": "USB storage device 'General UDisk USB Device' connected (USBSTOR registry key)",
+      "supporting_artifact": "Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2022-02-12 23:34:10.6570383",
+      "event": "File extension association modified in NTUSER.DAT (FileExts key)",
+      "supporting_artifact": "Registry FileExts",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2022-02-12 23:39:58.9487382",
+      "event": "AutoAdminLogon enabled with DefaultUserName 'Patrick' and AutoLogonSID S-1-5-21-3341181097-1059518978-806882922-1001",
+      "supporting_artifact": "Registry Winlogon",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    }
+  ]
+}

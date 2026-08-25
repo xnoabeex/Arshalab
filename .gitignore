@@ -1,0 +1,27 @@
+# Secrets — never commit
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Runtime output and case data (not for release)
+output/
+reports/
+*.log
+
+# Large / raw evidence
+*.E01
+*.raw
+*.dd
+*.RAW
+SRUDB*.RAW
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

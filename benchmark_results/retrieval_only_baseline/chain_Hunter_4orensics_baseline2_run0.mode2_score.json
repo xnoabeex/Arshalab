@@ -1,0 +1,412 @@
+{
+  "chain_file": "benchmark_results/mode2_baseline_2026-08-14\\chain_Hunter_4orensics_baseline2_run0.json",
+  "case": "4orensics",
+  "provider": "BASELINE_anchors_sort_2pa",
+  "run": 0,
+  "evidence_record_count": 691,
+  "chain_event_count": 25,
+  "gt_in_scope_count": 45,
+  "gt_out_of_scope_excluded": 4,
+  "gt_distinct_tactics": [
+    "Collection",
+    "Defense Evasion",
+    "Discovery",
+    "Execution",
+    "Exfiltration",
+    "Initial Access",
+    "Lateral Movement",
+    "Reconnaissance",
+    "Resource Development"
+  ],
+  "milestone_coverage": 0.1,
+  "milestones_covered_count": 1,
+  "milestones_total": 10,
+  "milestones_missed": [
+    "P2_email_exchange",
+    "P4_tool_install",
+    "P5_reconnaissance",
+    "P6_port_scan",
+    "P7_exfil_prep",
+    "P8_skype_comm",
+    "P9_usb",
+    "P10_anti_forensics",
+    "P11_exfiltration"
+  ],
+  "milestone_detail": {
+    "P2_email_exchange": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "linux-rul3z",
+        "hotmail",
+        "skype",
+        "exfiltration",
+        "exfil",
+        "email exchange",
+        "outlook"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P3_login": {
+      "covered": true,
+      "hit_keywords": [
+        "logon"
+      ],
+      "all_keywords": [
+        "4624",
+        "logon",
+        "logged in",
+        "login",
+        "login_count",
+        "dhcp",
+        "10.0.2.15",
+        "lease"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P4_tool_install": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "wireshark",
+        "tor browser",
+        "nmap",
+        "winpcap",
+        "metasploit",
+        "exfiltration_diagram",
+        "rapid7",
+        "tool install"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P5_reconnaissance": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "burp suite",
+        "ollydbg",
+        "hash suite",
+        "thc hydra",
+        "nexpose",
+        "burpsuite",
+        "dns-exfiltration",
+        "reconnaissance"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P6_port_scan": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "zenmap",
+        "nmap",
+        "port scan",
+        "nmapscan.xml",
+        "9929",
+        "31337",
+        "elite",
+        "scan"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P7_exfil_prep": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "pictures.7z",
+        "exfil",
+        "ryan_vanantwerp",
+        "staging folder",
+        "exfiltration prep",
+        "archive created"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P8_skype_comm": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "skype",
+        "linux-rul3z",
+        "7z password",
+        "conf.jgp",
+        "teamviewer",
+        "messenger"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P9_usb": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "07b20c03",
+        "aai6uxdk",
+        "07b20c03c80830a9",
+        "aai6uxdkzdv8e9ou",
+        "usb device",
+        "sandisk",
+        "cruzer",
+        "usbstor"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P10_anti_forensics": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "bcwipe",
+        "ccleaner",
+        "crypto swap",
+        "file shredder",
+        "anti-forensic",
+        "wipe",
+        "cleaner"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    },
+    "P11_exfiltration": {
+      "covered": false,
+      "hit_keywords": [],
+      "all_keywords": [
+        "teamviewer",
+        "backup.pst",
+        "dropbox",
+        "remote access",
+        "linux-rul3z",
+        "exfiltration"
+      ],
+      "gt_event_ids": null,
+      "scope": "in_scope"
+    }
+  },
+  "out_of_scope_milestones_total": 0,
+  "out_of_scope_milestones_covered": 0,
+  "out_of_scope_milestone_coverage": null,
+  "tactic_coverage": 0.5556,
+  "tactics_covered": [
+    "Collection",
+    "Discovery",
+    "Initial Access",
+    "Lateral Movement",
+    "Resource Development"
+  ],
+  "tactics_missed": [
+    "Defense Evasion",
+    "Execution",
+    "Exfiltration",
+    "Reconnaissance"
+  ],
+  "per_tactic_recall": {
+    "Collection": "1/4",
+    "Defense Evasion": "0/4",
+    "Discovery": "2/9",
+    "Execution": "0/2",
+    "Exfiltration": "0/3",
+    "Initial Access": "1/5",
+    "Lateral Movement": "1/1",
+    "Reconnaissance": "0/11",
+    "Resource Development": "1/6"
+  },
+  "ordering_accuracy": 0.8,
+  "ordering_pairs_concordant": 12,
+  "ordering_pairs_discordant": 3,
+  "ordering_pairs_masked_negative_finding": 0,
+  "source_attribution_accuracy": 0.1667,
+  "source_attribution_correct": 1,
+  "source_attribution_total": 6,
+  "per_source_attribution": {
+    "browser+eventlog+mft+prefetch+registry": "1/1",
+    "browser+lnk+mft": "0/1",
+    "lnk+mft": "0/1",
+    "mft+prefetch": "0/1",
+    "mft+prefetch+registry": "0/1",
+    "registry": "0/1"
+  },
+  "hallucination_rate": 0.0,
+  "grounded_events": 25,
+  "hallucinated_events": 0,
+  "hallucination_reasons": {
+    "no_factual_entity_to_check": 25
+  },
+  "exact_event_coverage": 0.1333,
+  "matched_event_count": 6,
+  "matched_gt_ids": [
+    "HUN-010",
+    "HUN-011",
+    "HUN-012",
+    "HUN-016",
+    "HUN-017",
+    "HUN-020"
+  ],
+  "missed_gt": [
+    [
+      "HUN-005",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-006",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-007",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-008",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-009",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-013",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-014",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-015",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-018",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-019",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-021",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-022",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-023",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-024",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-025",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-026",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-027",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-028",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-029",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-030",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-031",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-032",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-033",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-034",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-035",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-036",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-037",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-038",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-039",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-040",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-041",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-042",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-043",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-044",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-045",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-046",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-047",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-048",
+      "date_match_no_kw"
+    ],
+    [
+      "HUN-049",
+      "date_match_no_kw"
+    ]
+  ],
+  "miss_reasons": {
+    "date_match_no_kw": 39
+  },
+  "composite_headline": 0.5667
+}

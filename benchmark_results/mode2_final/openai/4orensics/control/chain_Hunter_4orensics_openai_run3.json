@@ -1,0 +1,441 @@
+{
+  "provider": "openai",
+  "case": "4orensics",
+  "case_name": "Hunter_4orensics",
+  "case_id": "case_20260410_120043",
+  "run": 3,
+  "evidence_file": "evidence_Hunter_4orensics.json",
+  "evidence_record_count": 691,
+  "chain_event_count": 61,
+  "prompt_chars": 143389,
+  "elapsed_seconds": 79.1,
+  "chain": [
+    {
+      "timestamp": "2016-06-15 12:55:46.0000000",
+      "event": "Multiple BCWipe language DLLs such as 'lang-1031.dll' created under '.\\Program Files' indicating installation of anti-forensic tool",
+      "supporting_artifact": "app_antiforensic",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-15 13:53:52.0000000",
+      "event": "CCleaner executable 'CCleaner.exe' present in '.\\Program Files\\CCleaner\\', showing system cleanup tool installed",
+      "supporting_artifact": "mft_exe_files",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-15 22:18:58.0000000",
+      "event": "Skype main binary 'Skype.exe' recorded under '.\\Program Files (x86)\\Skype\\Phone\\Skype.exe' indicating communication tool installation",
+      "supporting_artifact": "app_communication",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-16 11:48:34.0000000",
+      "event": "VirtualBox guest service 'VBoxService.exe' present in '.\\Windows\\System32\\VBoxService.exe', indicating use of virtualized environment",
+      "supporting_artifact": "mft_exe_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:39.9920378",
+      "event": "Recent link 'how_do_threat_actors_steal_your_data.lnk' created in '.\\Users\\Hunter\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\', suggesting research into data theft techniques",
+      "supporting_artifact": "mft_lnk_files",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-20 23:53:36",
+      "event": "CMD.EXE executed from '\\DEVICE\\HARDDISKVOLUME2\\WINDOWS\\SYSTEM32\\CMD.EXE' (prefetch entry)",
+      "supporting_artifact": "prefetch_top",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-20 23:54:56",
+      "event": "SETUP.EXE executed (prefetch for 'SETUP.EXE' created) indicating installer run of new software",
+      "supporting_artifact": "prefetch_top",
+      "confidence_or_caveat": "medium",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2016-06-20 23:55:43.0280000",
+      "event": "MSI installers such as 'OfficeMUISet.msi' and '734b1.msi' written under '.\\MSOCache\\All Users' and '.\\Windows\\Installer', showing Office components installation including Outlook",
+      "supporting_artifact": "mft_msi_installers",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:55:56",
+      "event": "MSIEXEC.EXE executed from '\\DEVICE\\HARDDISKVOLUME2\\WINDOWS\\SYSTEM32\\MSIEXEC.EXE' (run_count 17) to install software packages",
+      "supporting_artifact": "prefetch_top",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:34",
+      "event": "Recent link to 'C:\\Users\\Hunter\\Downloads\\This PC\\Downloads\\putty.exe' created, indicating PuTTY SSH client obtained in Downloads",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:41",
+      "event": "Recent link to 'C:\\Users\\Hunter\\Downloads\\This PC\\Downloads\\pscp.exe' created, showing PSCP file transfer tool placed in Downloads",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:06.9483540",
+      "event": "Archive 'setupssh381-20040709.zip' present in '.\\Users\\Hunter\\Downloads\\setupssh381-20040709.zip', consistent with SSH toolset download",
+      "supporting_artifact": "mft_archive_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:16",
+      "event": "Jump list entries reference 'C:\\Program Files\\Microsoft Office\\Office15\\OUTLOOK.EXE' indicating Outlook email client usage",
+      "supporting_artifact": "jumplist_recent",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:26.4823496",
+      "event": "Registry autologger 'EventLog-Application' provider set to 'Microsoft-Windows-Diagnosis-Scheduled' under 'ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application'",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:53.0000000",
+      "event": "Windows Error Reporting 1001 generated in Application log indicating application failures following new tool installs",
+      "supporting_artifact": "wer_reports_1001",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 00:35:46.3762224",
+      "event": "Skype chat-related file 'chatsync' accessed under '.\\Users\\Hunter\\AppData\\' (entry_number 88308) evidencing active Skype communications",
+      "supporting_artifact": "app_communication",
+      "confidence_or_caveat": "medium",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:15",
+      "event": "Remote access installer 'TeamViewer_Setup-vfa.exe' created in 'C:\\Users\\Hunter\\Downloads\\TeamViewer_Setup-vfa.exe'",
+      "supporting_artifact": "app_remote_access",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:21",
+      "event": "TeamViewer binary 'TEAMVIEWER_.EXE' executed from '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\TEAMVIEWER\\\\TEAMVIEWER_.EXE'",
+      "supporting_artifact": "app_remote_access",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2016-06-21 01:34:40.3762224",
+      "event": "User-initiated logoff recorded as Security Event 4647, ending RDP/interactive session",
+      "supporting_artifact": "auth_logoff",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 01:41:06.3256183",
+      "event": "System time change detected with Security Event 4616",
+      "supporting_artifact": "time_changed_4616",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 01:53:14.7757045",
+      "event": "USB device detected by Kernel-PnP Event 410 at '2016-06-21 01:53:14.7757045', indicating removable media attached",
+      "supporting_artifact": "usb_kernel_pnp_install",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:01:59.3657151",
+      "event": "USBSTOR registry entry created under 'ControlSet001\\\\Enum\\\\USBSTOR' with 'Manufacturer: Ven_Imation Prod_Nano_Pro SerialNumber: 07B20C03C80830A9&0', confirming Imation Nano Pro USB device",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:04:40.0000000",
+      "event": "Forensic archive 'FTK-Imager.zip' present both in '.\\Users\\Hunter\\Google Drive\\FTK-Imager.zip' and '.\\Users\\Hunter\\Downloads\\FTK-Imager.zip'",
+      "supporting_artifact": "mft_archive_files",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 08:15:00.9122750",
+      "event": "Explicit credential logon recorded by Security Event 4648 on computer 'WIN-A9KKHBKS7E6'",
+      "supporting_artifact": "auth_explicit_cred_4648",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2016-06-21 08:15:09.0000000",
+      "event": "Failed logon attempts recorded as Event 4625 on computer 'WIN-A9KKHBKS7E6'",
+      "supporting_artifact": "auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2016-06-21 08:18:53.0683493",
+      "event": "Windows Firewall configuration event 2003 logged in System channel, indicating firewall policy change",
+      "supporting_artifact": "def_engine_update",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 08:30:21.3835089",
+      "event": "Service start type modified (System Event 7040) indicating change to a service’s startup behavior",
+      "supporting_artifact": "svc_starttype_changed_7040",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0245506",
+      "event": "New user account created (Security Event 4720) on computer '4orensics'",
+      "supporting_artifact": "auth_account_created_4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0402357",
+      "event": "Group membership modified via Security Event 4732, adding account to a security group on '2016-06-21 08:37:43.0402357'",
+      "supporting_artifact": "auth_group_added_4732",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0558459",
+      "event": "Newly created account enabled with Security Event 4722 at '2016-06-21 08:37:43.0558459'",
+      "supporting_artifact": "auth_account_enabled_4722",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:46.2591685",
+      "event": "User shell folders (including 'Startup' and 'Desktop') set under 'Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\User Shell Folders' in NTUSER.DAT",
+      "supporting_artifact": "reg_user_context",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:53.3368088",
+      "event": "Per-user Startup folder '.\\Users\\Hunter\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup' referenced/created with 'desktop.ini'",
+      "supporting_artifact": "mft_startup_folders",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.1968203",
+      "event": "Windows Defender real-time protection disabled (Event 5010) in 'Microsoft-Windows-HomeGroup Provider Service/Operational' channel",
+      "supporting_artifact": "def_realtime_disabled",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 08:41:43.0403620",
+      "event": "Service entry 'gupdate' (Google Update Service (gupdate)) registered under 'ControlSet001\\\\Services' in SYSTEM hive",
+      "supporting_artifact": "reg_appinit_dlls",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:07",
+      "event": "Archive tool installer '7z1602-x64.exe' created in 'C:\\Users\\Hunter\\Downloads\\7z1602-x64.exe'",
+      "supporting_artifact": "app_archive_tools",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:10",
+      "event": "7-Zip installer '7Z1602-X64.EXE' executed from '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\DOWNLOADS\\\\7Z1602-X64.EXE'",
+      "supporting_artifact": "app_archive_tools",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:13.1476403",
+      "event": "7-Zip program folder and shortcut '7-Zip File Manager.lnk' created under '.\\\\Program Files\\\\7-Zip' and '.\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start Menu\\\\Programs\\\\7-Zip'",
+      "supporting_artifact": "mft_archive_files",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 09:23:09.7206541",
+      "event": "RunOnce key referenced at 'Microsoft\\\\Windows\\\\CurrentVersion\\\\RunOnce' in SOFTWARE hive indicating one-time persistence configuration",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:34:13.5047860",
+      "event": "Unidentified service installation recorded as System Event 7045 on computer '4orensics' (service name/ImagePath not present in record)",
+      "supporting_artifact": "svc_install_7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:37:32",
+      "event": "Recent link to 'C:\\Users\\Hunter\\Pictures\\Exfil\\UsersLibraries\\PicturesLibrary\\Pictures\\Exfil\\Exfiltration_Diagram.png' created, indicating exfiltration-related content accessed",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-21 09:38:12",
+      "event": "Recent link to 'dns-exfiltration-using-sqlmap-18-728.jpg' under 'C:\\Users\\Hunter\\Pictures\\Exfil\\...' showing research material on DNS exfiltration",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-21 09:47:24.4622827",
+      "event": "Registry Run value 'VBoxTray' set under 'Microsoft\\\\Windows\\\\CurrentVersion\\\\Run' to 'C:\\\\Windows\\\\system32\\\\VBoxTray.exe'",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:47:24.4780939",
+      "event": "Unidentified service installation recorded as System Event 7045 at '2016-06-21 09:47:24.4780939' (service_name not in record)",
+      "supporting_artifact": "svc_install_7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 10:40:33.5948384",
+      "event": "System time changed again (Security Event 4616) potentially altering log chronology",
+      "supporting_artifact": "time_changed_4616",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 10:51:23",
+      "event": "Recent link to Tor Browser executable 'C:\\Users\\Hunter\\Desktop\\Tor Browser\\Browser\\Tor Browser\\Browser\\firefox.exe' created",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2016-06-21 11:01:44.1316101",
+      "event": "File named 'psexec' created under '.\\\\Program Files (x86)\\\\' (entry_number 89529) indicating presence of PSExec remote execution tool",
+      "supporting_artifact": "suspicious_indicators_universal",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 11:01:44.3855220",
+      "event": "Store Operational Event 963 logged around same period as 'psexec' creation, marking session activity related to remote operations",
+      "supporting_artifact": "rdp_disconnect_reasons",
+      "confidence_or_caveat": "low",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 11:18:11.8537725",
+      "event": "VBScript files 'check_soundcard.vbs' and 'empty.vbs' modified (USN Journal entries) indicating custom scripts deployed",
+      "supporting_artifact": "usnjrnl_recent_changes",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 11:20:18.3147785",
+      "event": "RunOnce key referenced under 'Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\RunOnce' in NTUSER.DAT",
+      "supporting_artifact": "reg_user_context",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:38:40.9555996",
+      "event": "Special privileges assigned to new logon (Security Event 4672) on '4orensics'",
+      "supporting_artifact": "auth_priv_assigned_4672",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 11:41:04.3871559",
+      "event": "Explicit credentials used (Security Event 4648) followed by multiple 4672 events at '2016-06-21 11:41:04.3871559', reflecting privileged account activity",
+      "supporting_artifact": "auth_explicit_cred_4648",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2016-06-21 11:43:18.2219434",
+      "event": "User Run entries for 'Skype', 'GoogleDriveSync', and 'CCleaner Monitoring' set under 'Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run' in NTUSER.DAT",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:44:53.7413387",
+      "event": "Unidentified service installation logged (System Event 7045) at '2016-06-21 11:44:53.7413387' with no service_name/ImagePath in record",
+      "supporting_artifact": "svc_install_7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:44:54.1431830",
+      "event": "Service 'MftWipeFilter' described as 'Jetico file system filter' registered under 'ControlSet001\\\\Services' in SYSTEM hive",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 12:46:14.1849562",
+      "event": "PowerShell-related Task Scheduler Maintenance Event 800 logged indicating scheduled script activity",
+      "supporting_artifact": "ps_engine_lifecycle",
+      "confidence_or_caveat": "low",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 12:58:02.7459338",
+      "event": "Another system time change recorded with Security Event 4616 at '2016-06-21 12:58:02.7459338'",
+      "supporting_artifact": "time_changed_4616",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 13:00:54.476902Z",
+      "event": "Browser history shows access to Google account security pages including 'https://security.google.com/settings/security/activity' for account 'ehptmsgs@gmail.com'",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-21T13:02:13.067060Z",
+      "event": "Gmail settings page 'https://mail.google.com/mail/#settings/fwdandpop' visited, reviewing forwarding/POP configuration for 'ehptmsgs@gmail.com'",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21T13:10:36.511103Z",
+      "event": "Google security page 'https://security.google.com/settings/security/permissions' accessed, inspecting apps connected to the Gmail account",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-21T13:12:11.576942Z",
+      "event": "Less secure apps settings page 'https://www.google.com/settings/security/lesssecureapps' opened for Gmail account",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 13:18:45.7508404",
+      "event": "Service entry with value_name 'None' and value_data 'Name: .NET CLR Data Desc:' added under 'ControlSet001\\\\Services'",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    }
+  ]
+}

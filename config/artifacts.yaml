@@ -1,0 +1,307 @@
+artifacts:
+  prefetch:
+    description: "Windows Prefetch files (program execution history)"
+    paths:
+      - "/Windows/Prefetch/*.pf"
+    collector: "TSK"
+    parser: "PECmd"
+    parser_config:
+      executable: "tools/PECmd/PECmd.exe"
+      args:
+        - "-d"
+        - "{input_dir}"
+        - "--csv"
+        - "{output_dir}"
+    output_format: "csv"
+    database_table: "prefetch"
+    capabilities:
+      - "program execution timeline"
+      - "file access patterns"
+      - "volume information"
+
+  eventlog:
+    description: "Windows Event Logs (system events)"
+    paths:
+      - "/Windows/System32/winevt/Logs/*.evtx"
+    collector: "TSK"
+    parser: "EvtxECmd"
+    parser_config:
+      executable: "tools/EvtxeCmd/EvtxECmd.exe"
+      args:
+        - "-d"
+        - "{input_dir}"
+        - "--csv"
+        - "{output_dir}"
+        - "--csvf"
+        - "eventlog.csv"
+    output_format: "csv"
+    database_table: "eventlog"
+    capabilities:
+      - "system events"
+      - "authentication logs"
+      - "error tracking"
+      - "service activity"
+
+  registry:
+    description: "Windows Registry hives"
+    paths:
+      - "/Windows/System32/config/SYSTEM"
+      - "/Windows/System32/config/SYSTEM.LOG1"
+      - "/Windows/System32/config/SYSTEM.LOG2"
+      - "/Windows/System32/config/SOFTWARE"
+      - "/Windows/System32/config/SOFTWARE.LOG1"
+      - "/Windows/System32/config/SOFTWARE.LOG2"
+      - "/Windows/System32/config/SAM"
+      - "/Windows/System32/config/SAM.LOG1"
+      - "/Windows/System32/config/SAM.LOG2"
+      - "/Windows/System32/config/SECURITY"
+      - "/Windows/System32/config/SECURITY.LOG1"
+      - "/Windows/System32/config/SECURITY.LOG2"
+      - "/Users/*/NTUSER.DAT"
+      - "/Users/*/NTUSER.DAT.LOG1"
+      - "/Users/*/NTUSER.DAT.LOG2"
+    collector: "TSK"
+    parser: "RECmd"
+    parser_config:
+      executable: "tools/RECmd/RECmd/RECmd.exe"
+      batch_file: "tools/RECmd/RECmd/BatchExamples/Kroll_Batch.reb"
+      args:
+        - "--bn"
+        - "{batch_file}"
+        - "-d"
+        - "{input_dir}"
+        - "--csv"
+        - "{output_dir}"
+    output_format: "csv"
+    database_table: "registry"
+    capabilities:
+      - "system configuration"
+      - "user settings"
+      - "installed software"
+      - "autorun locations"
+
+  browser:
+    description: "Web browser history (Chrome, Edge, Firefox)"
+    paths:
+      - "/Users/*/AppData/Local/Google/Chrome/User Data/*/History"
+      - "/Users/*/AppData/Local/Microsoft/Edge/User Data/*/History"
+      - "/Users/*/AppData/Roaming/Mozilla/Firefox/Profiles/*/places.sqlite"
+    collector: "TSK"
+    parser: "Browser_SQLite"
+    parser_config:
+      executable: "tools/hindsight/dist/hindsight.exe"
+      args:
+        - "-i"
+        - "{input}"
+        - "-o"
+        - "{output_dir}"
+        - "-f"
+        - "jsonl"
+    output_format: "jsonl"
+    database_table: "browser_history"
+    capabilities:
+      - "web browsing history"
+      - "visited URLs"
+      - "search queries"
+      - "download history"
+
+  lnk:
+    description: "Windows LNK shortcut files"
+    paths:
+      - "/Users/*/AppData/Roaming/Microsoft/Windows/Recent/*.lnk"
+      - "/Users/*/AppData/Roaming/Microsoft/Office/Recent/*.lnk"
+      - "/Users/*/Desktop/*.lnk"
+      - "/Users/*/Links/*.lnk"
+    collector: "TSK"
+    parser: "LECmd"
+    parser_config:
+      executable: "tools/LECmd/LECmd.exe"
+      args:
+        - "-d"
+        - "{input_dir}"
+        - "--csv"
+        - "{output_dir}"
+        - "--csvf"
+        - "lnk_output.csv"
+    output_format: "csv"
+    database_table: "lnk_files"
+    capabilities:
+      - "recently accessed files"
+      - "file locations"
+      - "access timestamps"
+      - "user activity patterns"
+
+  # ===================== NEW HIGH-PRIORITY ARTIFACTS =====================
+
+  mft:
+    description: "Master File Table ($MFT) - complete file system metadata"
+    paths:
+      - "/$MFT"
+    collector: "TSK"
+    parser: "MFTECmd"
+    parser_config:
+      executable: "tools/MFTECmd/MFTECmd.exe"
+      args:
+        - "-f"
+        - "{input}"
+        - "--csv"
+        - "{output_dir}"
+    output_format: "csv"
+    database_table: "mft"
+    capabilities:
+      - "complete file system timeline"
+      - "deleted file recovery metadata"
+      - "file creation/modification/access times"
+      - "directory structure"
+
+  jumplist:
+    description: "Windows Jump Lists - recent files per application"
+    paths:
+      - "/Users/*/AppData/Roaming/Microsoft/Windows/Recent/AutomaticDestinations/*.automaticDestinations-ms"
+      - "/Users/*/AppData/Roaming/Microsoft/Windows/Recent/CustomDestinations/*.customDestinations-ms"
+    collector: "TSK"
+    parser: "JLECmd"
+    parser_config:
+      executable: "tools/JLECmd/JLECmd.exe"
+      args:
+        - "-d"
+        - "{input_dir}"
+        - "--csv"
+        - "{output_dir}"
+        - "--all"
+    output_format: "csv"
+    database_table: "jumplist"
+    capabilities:
+      - "recent files by application"
+      - "application usage patterns"
+      - "file access history"
+      - "pinned items"
+
+  recyclebin:
+    description: "Windows Recycle Bin ($Recycle.Bin) - deleted files"
+    paths:
+      - "/$Recycle.Bin/*/$I*"
+    collector: "TSK"
+    parser: "RBCmd"
+    parser_config:
+      executable: "tools/RBCmd/RBCmd.exe"
+      args:
+        - "-d"
+        - "{input_dir}"
+        - "--csv"
+        - "{output_dir}"
+    output_format: "csv"
+    database_table: "recyclebin"
+    capabilities:
+      - "deleted file metadata"
+      - "original file paths"
+      - "deletion timestamps"
+      - "file sizes"
+
+  shimcache:
+    description: "Windows Shimcache - program execution evidence"
+    paths:
+      - "/Windows/System32/config/SYSTEM"
+      - "/Windows/System32/config/SYSTEM.LOG1"
+      - "/Windows/System32/config/SYSTEM.LOG2"
+    collector: "TSK"
+    parser: "AppCompatCacheParser"
+    parser_config:
+      executable: "tools/AppCompatCacheParser/AppCompatCacheParser.exe"
+      args:
+        - "-f"
+        - "{input}"
+        - "--csv"
+        - "{output_dir}"
+    output_format: "csv"
+    database_table: "shimcache"
+    capabilities:
+      - "program execution evidence"
+      - "executable paths"
+      - "execution timeline"
+      - "persistence detection"
+
+  amcache:
+    description: "Windows Amcache - program execution with SHA1 hashes"
+    paths:
+      - "/Windows/AppCompat/Programs/Amcache.hve"
+      - "/Windows/AppCompat/Programs/Amcache.hve.LOG1"
+      - "/Windows/AppCompat/Programs/Amcache.hve.LOG2"
+    collector: "TSK"
+    parser: "AmcacheParser"
+    parser_config:
+      executable: "tools/AmcacheParser/AmcacheParser.exe"
+      args:
+        - "-f"
+        - "{input}"
+        - "--csv"
+        - "{output_dir}"
+        - "-i"
+    output_format: "csv"
+    database_table: "amcache"
+    capabilities:
+      - "program execution with SHA1 hashes"
+      - "publisher/company information"
+      - "product names and versions"
+      - "first execution time"
+
+  # ===================== ENTERPRISE LEVEL ARTIFACTS =====================
+
+  srum:
+    description: "Windows SRUM - network and application resource usage"
+    paths:
+      - "/Windows/System32/sru/SRUDB.dat"
+    collector: "TSK"
+    parser: "SrumECmd"
+    parser_config:
+      executable: "tools/SrumECmd/SrumECmd.exe"
+      args:
+        - "-f"
+        - "{input}"
+        - "--csv"
+        - "{output_dir}"
+    output_format: "csv"
+    database_table: "srum"
+    capabilities:
+      - "network usage per application (bytes sent/received)"
+      - "application execution time"
+      - "CPU/memory resource usage"
+      - "energy usage patterns"
+
+  powershell:
+    description: "PowerShell command history - executed PowerShell commands"
+    paths:
+      - "/Users/*/AppData/Roaming/Microsoft/Windows/PowerShell/PSReadLine/ConsoleHost_history.txt"
+    collector: "TSK"
+    parser: "PowerShellHistory"
+    parser_config:
+      executable: null
+      args: []
+    output_format: "text"
+    database_table: "powershell"
+    capabilities:
+      - "executed PowerShell commands"
+      - "suspicious command detection"
+      - "user attribution"
+      - "command timeline"
+
+  usnjrnl:
+    description: "Windows USN Journal - detailed file system change log"
+    paths:
+      - "/$Extend/$UsnJrnl:$J"
+    collector: "TSK"
+    parser: "MFTECmd"
+    parser_config:
+      executable: "tools/MFTECmd/MFTECmd.exe"
+      args:
+        - "-f"
+        - "{input}"
+        - "--csv"
+        - "{output_dir}"
+    output_format: "csv"
+    database_table: "usnjrnl"
+    capabilities:
+      - "granular file system changes"
+      - "file creation/deletion/rename events"
+      - "security changes"
+      - "detailed timeline reconstruction"

@@ -1,0 +1,224 @@
+{
+  "provider": "sonnet",
+  "case": "kdfs",
+  "case_name": "KDFS_2023",
+  "case_id": "case_20260128_141256",
+  "run": 2,
+  "evidence_file": "evidence_KDFS_2023.json",
+  "evidence_record_count": 746,
+  "chain_event_count": 30,
+  "prompt_chars": 147803,
+  "elapsed_seconds": 49.1,
+  "chain": [
+    {
+      "timestamp": "2023-09-11 02:22:01.0721731",
+      "event": "User account created (Event 4720) on WIN-NI0JCB7SBTU",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-11 02:23:25.3721991",
+      "event": "User account created (Event 4720) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-13 09:12:52.2453169",
+      "event": "Service installed (Event 7045) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-14 06:32:29",
+      "event": "Trading journal file accessed: 2023년 매매일지_나씨TV_v.230115.xlsx",
+      "supporting_artifact": "LNK recent files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-14 06:55:28",
+      "event": "Python script accessed: coin.py",
+      "supporting_artifact": "LNK recent files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:04:44.0014684",
+      "event": "Archive file accessed: BTCUSDT-1h-2023-07.zip",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2023-09-15 01:06:18.2448753",
+      "event": "Bandizip archiver downloaded: BANDIZIP-SETUP-STD-X64.EXE",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:08:09",
+      "event": "Bandizip installer executed: BANDIZIP-SETUP-STD-X64.EXE",
+      "supporting_artifact": "Prefetch",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-15 01:10:20.1296462",
+      "event": "Windows Defender configuration changed (Event 5007)",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-15 01:37:00",
+      "event": "Discord application network activity detected",
+      "supporting_artifact": "SRUM network usage",
+      "confidence_or_caveat": "medium",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2023-09-15 01:39:36.6285251",
+      "event": "Git repository coinbase-pro accessed",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:40:28.5056471",
+      "event": "Batch script created: cointrader.bat",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-15 02:49:26.8440399",
+      "event": "Process creation detected (Event 4688)",
+      "supporting_artifact": "EventLog Event 4688",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-15 02:49:48.5934869",
+      "event": "Windows Defender configuration changed (Event 5007)",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-15 05:55:12.1275465",
+      "event": "Defender action taken (Event 1117)",
+      "supporting_artifact": "EventLog Event 1117",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-16 02:35:08.9155271",
+      "event": "Windows Firewall stopped (Event 5025)",
+      "supporting_artifact": "EventLog Event 5025",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-17 08:41:11.3265524",
+      "event": "Failed logon attempt (Event 4625) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog Event 4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-17 10:27:39.5764319",
+      "event": "USB device connected (Event 410)",
+      "supporting_artifact": "Kernel PnP Event 410",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2023-09-17 10:38:33.1216989",
+      "event": "Defender threat detected (Event 1116)",
+      "supporting_artifact": "EventLog Event 1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-18 04:23:46.3161550",
+      "event": "Explicit credentials used (Event 4648) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2023-09-18 04:34:53.3780777",
+      "event": "PowerShell ScriptBlock execution (Event 4104)",
+      "supporting_artifact": "EventLog Event 4104",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-18 07:33:19.2006062",
+      "event": "Suspicious driver installed: ProDefense2.sys",
+      "supporting_artifact": "MFT sys drivers",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-21 05:50:14.9658507",
+      "event": "USB storage device attached: SanDisk Cruzer Blade",
+      "supporting_artifact": "USB attach driverframeworks Event 4",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-21 05:50:14.9707487",
+      "event": "USBSTOR registry key created for SanDisk Cruzer Blade (SerialNumber: 4C530000320903119361&0)",
+      "supporting_artifact": "Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-21 05:51:26.339720Z",
+      "event": "File-sharing service accessed: gofile.io",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-21 05:51:32.390051Z",
+      "event": "Gofile upload page accessed: gofile.io/uploadFiles",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-22 18:24:11.0688612",
+      "event": "Explicit credentials used (Event 4648) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2023-09-22 18:37:25.339399Z",
+      "event": "Ransomware research search query: 랜섬웨어 (ransomware in Korean)",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-23 02:20:12.7760050",
+      "event": "Special privileges assigned (Event 4672) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog Event 4672",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2023-09-23 03:05:52.8538016",
+      "event": "User logoff (Event 4647)",
+      "supporting_artifact": "EventLog Event 4647",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    }
+  ]
+}

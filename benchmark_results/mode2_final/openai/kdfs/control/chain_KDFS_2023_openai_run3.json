@@ -1,0 +1,539 @@
+{
+  "provider": "openai",
+  "case": "kdfs",
+  "case_name": "KDFS_2023",
+  "case_id": "case_20260128_141256",
+  "run": 3,
+  "evidence_file": "evidence_KDFS_2023.json",
+  "evidence_record_count": 746,
+  "chain_event_count": 75,
+  "prompt_chars": 147803,
+  "elapsed_seconds": 72.4,
+  "chain": [
+    {
+      "timestamp": "2023-09-11 02:21:54.5781500",
+      "event": "Service metadata updated for 'WindowsTrustedRT' in ROOT\\ControlSet001\\Services value_name 'WindowsTrustedRT'",
+      "supporting_artifact": "Registry reg_image_file_execution_options",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-11 02:22:01.0721731",
+      "event": "New user account created on WIN-NI0JCB7SBTU (EventID 4720)",
+      "supporting_artifact": "EventLog auth_account_created_4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-11 02:22:07.5533823",
+      "event": "Failed logon attempt (EventID 4625) on WIN-NI0JCB7SBTU",
+      "supporting_artifact": "EventLog auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-11 02:23:25.2710149",
+      "event": "ComputerName set to 'DESKTOP-K7VGB7O' in ROOT\\ControlSet001\\Control\\ComputerName\\ComputerName",
+      "supporting_artifact": "Registry reg_user_context",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-11 02:23:25.3721991",
+      "event": "New user account created on DESKTOP-K7VGB7O (EventID 4720)",
+      "supporting_artifact": "EventLog auth_account_created_4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-11 02:23:27.3961032",
+      "event": "Failed logon attempt (EventID 4625) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-11 02:26:57.5637116",
+      "event": "Additional user account created on DESKTOP-K7VGB7O (EventID 4720)",
+      "supporting_artifact": "EventLog auth_account_created_4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-11 02:26:58.1532785",
+      "event": "User shell folders (Startup/AppData/Desktop) configured in ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+      "supporting_artifact": "Registry reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-11 02:31:58",
+      "event": "Installer SETUP64.EXE executed (prefetch SETUP64.EXE, run_count 1)",
+      "supporting_artifact": "Prefetch prefetch_top",
+      "confidence_or_caveat": "medium",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2023-09-11 02:32:01",
+      "event": "VCREDIST_X64.EXE executed from WINDOWS\\TEMP (prefetch VCREDIST_X64.EXE, run_count 1)",
+      "supporting_artifact": "Prefetch prefetch_top",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-13 04:57:11.1766149",
+      "event": "WMI Activity EventID 5858 logged (rdp_disconnect_reasons anchor) indicating remote session context",
+      "supporting_artifact": "EventLog rdp_disconnect_reasons",
+      "confidence_or_caveat": "medium",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2023-09-13 04:57:33.2421377",
+      "event": "Failed logon attempt (EventID 4625) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-13 05:00:43",
+      "event": "MSEDGE.EXE executed (prefetch, run_count 97) suggesting heavy web activity",
+      "supporting_artifact": "Prefetch prefetch_top",
+      "confidence_or_caveat": "medium",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2023-09-13 09:12:52.2453169",
+      "event": "Unidentified service installation recorded (EventID 7045) on DESKTOP-K7VGB7O, service name not in record",
+      "supporting_artifact": "EventLog svc_install_7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-14 02:10:01.7177820",
+      "event": "Repeated failed logon (EventID 4625) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-14 06:04:57.7236391",
+      "event": "Autostart entries 'SecurityHealth', 'VMware User Process', 'Everything' set in ROOT\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "supporting_artifact": "Registry reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-14 06:32:29",
+      "event": "Financial spreadsheet '2023년 매매일지_나씨TV_v.230115.xlsx' opened from C:\\Users\\souldrag\\Downloads",
+      "supporting_artifact": "LNK lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2023-09-14 06:55:28",
+      "event": "Python trading script 'coin.py' accessed at C:\\Users\\souldrag\\Desktop\\코드\\coin.py",
+      "supporting_artifact": "LNK lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 00:01:04.0000000",
+      "event": "Chrome extension files for extension 'cofdbpoegempjloogbagkncekinflcnj' present under Chrome\\User Data\\Default\\Extensions",
+      "supporting_artifact": "MFT mft_user_writable_dirs",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:01:09.9274325",
+      "event": "System time adjusted (EventID 4616) on Security channel",
+      "supporting_artifact": "EventLog time_changed_4616",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-15 01:06:18.2448753",
+      "event": "Archive utility installer 'BANDIZIP-SETUP-STD-X64.EXE' created in C:\\Users\\souldrag\\Downloads",
+      "supporting_artifact": "MFT mft_exe_files",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2023-09-15 01:08:18.6962812",
+      "event": "Bandizip installed with shortcut '반디집.lnk' in ProgramData Start Menu",
+      "supporting_artifact": "MFT mft_lnk_files",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2023-09-15 01:14:13.1412727",
+      "event": "VS Code BAT extension directory created at AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\bat",
+      "supporting_artifact": "MFT mft_bat_files",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:20:30.8843140",
+      "event": "Interactive logon success (EventID 4624 type2) coinciding with network and unlock logon",
+      "supporting_artifact": "EventLog auth_logon_interactive_type2",
+      "confidence_or_caveat": "medium",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2023-09-15 01:26:47.7125386",
+      "event": "Notion application node_modules 'tar-fs' directory present under Notion resources (tar-fs\\test\\fixtures\\a)",
+      "supporting_artifact": "MFT mft_archive_files",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:33:15.6082903",
+      "event": "GitHub Desktop installer 'GitHubDesktopSetup-x64.exe' present in Downloads",
+      "supporting_artifact": "MFT mft_exe_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:37:00",
+      "event": "Discord application and network records for path '\\\\Device\\\\HarddiskVolume2\\\\Users\\\\souldrag\\\\AppData\\\\Local\\\\Discord'",
+      "supporting_artifact": "AppTelemetry app_communication",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2023-09-15 02:49:26.8440399",
+      "event": "Process created (EventID 4688) at start of suspicious activity cluster",
+      "supporting_artifact": "EventLog proc_creation_4688",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-15 02:49:27.7540759",
+      "event": "USB device configuration event (Kernel-PnP EventID 410) indicating device install",
+      "supporting_artifact": "EventLog usb_kernel_pnp_install",
+      "confidence_or_caveat": "medium",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-15 02:49:34.5132664",
+      "event": "RDP connection attempt recorded (EventID 32 LocalSessionManager)",
+      "supporting_artifact": "EventLog rdp_connection_manager",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2023-09-15 02:49:38.4026645",
+      "event": "Failed logon (EventID 4625) on DESKTOP-K7VGB7O aligned with process creation cluster",
+      "supporting_artifact": "EventLog auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-15 02:49:48.5934869",
+      "event": "Windows Defender configuration change (EventID 5007) recorded",
+      "supporting_artifact": "EventLog def_config_change_5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-15 02:51:12.0125982",
+      "event": "WMI Autologger 'EventLog-Application' provider set to 'Microsoft-Windows-Diagnosis-Scheduled' in ROOT\\ControlSet001\\Control\\WMI\\Autologger",
+      "supporting_artifact": "Registry reg_persistence_master",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-15 03:20:37.7953333",
+      "event": "New process created (EventID 4688) immediately before RDP session creation",
+      "supporting_artifact": "EventLog proc_creation_4688",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-15 03:20:47.5977197",
+      "event": "DHCP authenticated event (EventID 50036) indicating active network session around RDP",
+      "supporting_artifact": "EventLog dhcp_auth_50036_50037",
+      "confidence_or_caveat": "medium",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2023-09-15 03:20:53.2544075",
+      "event": "Remote session created (RDP LocalSessionManager EventID 21) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog rdp_session_lifecycle",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2023-09-15 03:26:09.5213592",
+      "event": "Store/Applocker audit event (EventID 8003) logged, indicating application execution policy checks",
+      "supporting_artifact": "EventLog applocker_audited",
+      "confidence_or_caveat": "medium",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2023-09-15 03:37:15.5041402",
+      "event": "Service start type change recorded (EventID 7040) in System channel",
+      "supporting_artifact": "EventLog svc_starttype_changed_7040",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-16 02:12:31.5347890",
+      "event": "Failed logon (EventID 4625) on DESKTOP-K7VGB7O with concurrent RDP session events same minute",
+      "supporting_artifact": "EventLog auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-16 02:35:08.9155271",
+      "event": "Firewall stop-related EventID 5025 logged in Microsoft-Windows-AppXDeploymentServer/Operational",
+      "supporting_artifact": "EventLog fw_stopped_5025",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-17 08:41:11.3265524",
+      "event": "Repeated failed logon (EventID 4625) on DESKTOP-K7VGB7O during RDP session timeframe",
+      "supporting_artifact": "EventLog auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-17 08:47:25.2821168",
+      "event": "Office-related MSI installer 'C2RInt.16.msi' recorded at Program Files\\Microsoft Office\\root\\Integration",
+      "supporting_artifact": "MFT mft_msi_installers",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-17 10:27:39.5764319",
+      "event": "Series of USB Kernel-PnP configuration events (EventID 410) indicating USB device activity",
+      "supporting_artifact": "EventLog usb_kernel_pnp_install",
+      "confidence_or_caveat": "medium",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-17 10:38:33.1216989",
+      "event": "Windows Defender threat detection (EventID 1116) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog def_threat_detected_1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-18 04:23:46.3161550",
+      "event": "Explicit credentials used (EventID 4648) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog auth_explicit_cred_4648",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2023-09-18 04:23:49.8166783",
+      "event": "New RDP session created (EventID 21) per LocalSessionManager",
+      "supporting_artifact": "EventLog rdp_session_lifecycle",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2023-09-18 04:34:44.0478786",
+      "event": "Defender-related application crash (EventID 1000) in Windows Defender Operational channel",
+      "supporting_artifact": "EventLog app_crashes_1000",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-18 04:34:53.3780777",
+      "event": "PowerShell script block logging event (EventID 4104) recorded",
+      "supporting_artifact": "EventLog ps_scriptblock_4104",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-18 04:35:00.0090586",
+      "event": "System time changed (EventID 4616) on Security channel shortly after PowerShell activity",
+      "supporting_artifact": "EventLog time_changed_4616",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-18 04:35:37.1733644",
+      "event": "Unidentified service installation (EventID 7045) on DESKTOP-K7VGB7O, service name not present",
+      "supporting_artifact": "EventLog svc_install_7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-18 07:32:33.5548706",
+      "event": "Application crash (EventID 1000) in Application channel indicating instability",
+      "supporting_artifact": "EventLog app_crashes_1000",
+      "confidence_or_caveat": "medium",
+      "phase": "impact"
+    },
+    {
+      "timestamp": "2023-09-18 07:33:03.9176490",
+      "event": "Service installation event (EventID 7045) without visible service_name/image_path",
+      "supporting_artifact": "EventLog svc_install_7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-18 07:33:19.2006062",
+      "event": "Driver '.\\Windows\\System32\\drivers\\ProDefense2.sys' created in driver directory",
+      "supporting_artifact": "MFT mft_sys_drivers",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-19 01:12:39.0243169",
+      "event": "System time changed again (EventID 4616) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog time_changed_4616",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-19 01:14:59.1909577",
+      "event": "Explicit credential logon (EventID 4648) on DESKTOP-K7VGB7O preceding RDP session",
+      "supporting_artifact": "EventLog auth_explicit_cred_4648",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2023-09-19 01:15:05.6872087",
+      "event": "RDP session created (EventID 21) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog rdp_session_lifecycle",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2023-09-19 01:15:02.6519910",
+      "event": "Failed logon attempt (EventID 4625) around the same timeframe on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-19 01:17:29.9887462",
+      "event": "OneDrive batch 'CollectSyncLogs.bat' file present in Program Files\\Microsoft OneDrive",
+      "supporting_artifact": "MFT mft_bat_files",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2023-09-19 05:38:16.6009569",
+      "event": "Additional unidentified service installation (EventID 7045) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog svc_install_7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-21 00:06:48.3282621",
+      "event": "Autostart entry 'OneDrive' and Edge auto-launch configured in ROOT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "supporting_artifact": "Registry reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-21 05:21:03.8103931",
+      "event": "Windows Defender application error (EventID 1000) logged, correlated with USN change on 'or-IN'",
+      "supporting_artifact": "EventLog app_crashes_1000",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-21 05:50:14.9707487",
+      "event": "USB mass storage 'SanDisk Cruzer Blade USB Device' recorded under ROOT\\ControlSet001\\Enum\\USBSTOR with DiskId {eacef221-5689-11ee-b584-e8f408e69a91}",
+      "supporting_artifact": "Registry reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-21 05:50:15.4816677",
+      "event": "System events (EventID 10000/10001/10100) related to USB device initialization logged",
+      "supporting_artifact": "EventLog usb_attach_driverframeworks",
+      "confidence_or_caveat": "medium",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-21 05:51:23.785402Z",
+      "event": "Browser search for 'gofile' via URL 'https://www.google.com/search?q=gofile'",
+      "supporting_artifact": "Browser browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2023-09-21T05:51:32.390051Z",
+      "event": "Visited Gofile upload page 'https://gofile.io/uploadFiles' (file-sharing service)",
+      "supporting_artifact": "Browser browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-22 07:42:54.6083618",
+      "event": "Windows Defender threat detection (EventID 1116) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog def_threat_detected_1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-22 18:24:11.0688612",
+      "event": "Explicit credentials used (EventID 4648) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog auth_explicit_cred_4648",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2023-09-22 18:24:12.1273733",
+      "event": "Failed logon attempt (EventID 4625) on DESKTOP-K7VGB7O during suspicious explicit credential usage window",
+      "supporting_artifact": "EventLog auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-22 18:24:15.3775923",
+      "event": "WMI Autologger 'EventLog-System' provider set to 'Microsoft-Windows-Directory-Services-SAM' in ROOT\\ControlSet001\\Control\\WMI\\Autologger",
+      "supporting_artifact": "Registry reg_persistence_master",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-22T18:37:25.339399Z",
+      "event": "Browser search for '랜섬웨어' (ransomware) via Naver search URL",
+      "supporting_artifact": "Browser browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2023-09-22T18:37:32.421284Z",
+      "event": "Visited ransomware-related news article '휴일 랜섬웨어 공격량 30 급증 연휴 기업 보안 지키려면' at magazine.hankyung.com",
+      "supporting_artifact": "Browser browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "impact"
+    },
+    {
+      "timestamp": "2023-09-22T18:37:44.445580Z",
+      "event": "Accessed additional ransomware news '중소기업 노리는 랜섬웨어 급증…소규모 공격 조직도 많아져' at news.mt.co.kr",
+      "supporting_artifact": "Browser browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2023-09-23 02:20:12.7760050",
+      "event": "Special privileges assigned (EventID 4672) on DESKTOP-K7VGB7O indicating privileged logon",
+      "supporting_artifact": "EventLog auth_priv_assigned_4672",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2023-09-23 03:05:51.6545391",
+      "event": "Winlogon 'LastLoggedOnUser' set to '.\\\\souldrag' in ROOT\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI",
+      "supporting_artifact": "Registry reg_user_context",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-23 03:05:52.9666256",
+      "event": "Winlogon values 'LastUsedUsername' and 'AutoLogonSID' set for user 'souldrag' in ROOT\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+      "supporting_artifact": "Registry reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    }
+  ]
+}

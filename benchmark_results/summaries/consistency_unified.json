@@ -1,0 +1,26 @@
+{
+  "deepseek": {
+    "kw_consistency": 0.9409444444444446,
+    "recall_sigma": 0.02372513548962461,
+    "three_of_three": 0.9066666666666666,
+    "n": 300
+  },
+  "opus": {
+    "kw_consistency": 0.947324414715719,
+    "recall_sigma": 0.022518145856444387,
+    "three_of_three": 0.9130434782608695,
+    "n": 299
+  },
+  "sonnet": {
+    "kw_consistency": 0.9347079037800687,
+    "recall_sigma": 0.02051932621999909,
+    "three_of_three": 0.9278350515463918,
+    "n": 291
+  },
+  "openai": {
+    "kw_consistency": 0.8487777777777777,
+    "recall_sigma": 0.034542468070559385,
+    "three_of_three": 0.8666666666666667,
+    "n": 300
+  }
+}

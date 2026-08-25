@@ -1,0 +1,1150 @@
+{
+  "case_id": "case_20260128_141256",
+  "case_name": "KDFS 2023",
+  "source": "case timeline.docx (all events, in-scope)",
+  "total_events": 68,
+  "events": [
+    {
+      "id": 1,
+      "timestamp": "2023-08-27 23:39:16",
+      "phase": "Communication",
+      "source": "Shimcache",
+      "description": "C:\\Users\\souldrag\\AppData\\Local\\Discord\\Update.exe",
+      "evidence_keywords": [
+        "2023-08-27 23:39:16",
+        "2023-08-27",
+        "23:39",
+        "23:39:16",
+        "Update.exe",
+        "AppData"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 2,
+      "timestamp": "2023-09-11 13:20:30",
+      "phase": "Payment",
+      "source": "Shimcache",
+      "description": "C:\\Program Files\\Ledger Live\\Ledger Live.exe",
+      "evidence_keywords": [
+        "2023-09-11 13:20:30",
+        "2023-09-11",
+        "13:20",
+        "13:20:30",
+        "Live.exe"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 3,
+      "timestamp": "2023-09-15 01:08:09",
+      "phase": "Packaging",
+      "source": "Prefetch",
+      "description": "BANDIZIP-SETUP-STD-X64.EXE (runs=1)",
+      "evidence_keywords": [
+        "2023-09-15 01:08:09",
+        "2023-09-15",
+        "01:08",
+        "01:08:09",
+        "BANDIZIP-SETUP-STD-X64.EXE",
+        "BANDIZIP",
+        "SETUP"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 4,
+      "timestamp": "2023-09-15 04:14:20.9788972",
+      "phase": "Financial Evidence",
+      "source": "MFT",
+      "description": "#BTC매매일지.xlsx (19161 bytes)",
+      "evidence_keywords": [
+        "2023-09-15 04:14:20.9788972",
+        "2023-09-15",
+        "04:14",
+        "04:14:20",
+        "BTC매매일지.xlsx",
+        "19161"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 5,
+      "timestamp": "2023-09-19T04:04:39.067266Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "사채 안갚으면 어떻게 되나요?? ::: 82cook.com 자유게시판",
+      "evidence_keywords": [
+        "2023-09-19T04:04:39.067266Z",
+        "2023-09-19",
+        "04:04",
+        "04:04:39",
+        "82cook.com"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 6,
+      "timestamp": "2023-09-19T04:10:21.056173Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "사채 안갚으면 - Google 검색",
+      "evidence_keywords": [
+        "2023-09-19T04:10:21.056173Z",
+        "2023-09-19",
+        "04:10",
+        "04:10:21"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 7,
+      "timestamp": "2023-09-19T04:11:29.154692Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "사채 안갚으면 - Google 검색",
+      "evidence_keywords": [
+        "2023-09-19T04:11:29.154692Z",
+        "2023-09-19",
+        "04:11",
+        "04:11:29"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 8,
+      "timestamp": "2023-09-19T04:11:56.739290Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "불법사채를 사용하였을 경우 대처방법 : 네이버 블로그",
+      "evidence_keywords": [
+        "2023-09-19T04:11:56.739290Z",
+        "2023-09-19",
+        "04:11",
+        "04:11:56"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 9,
+      "timestamp": "2023-09-19T05:09:46.179571Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "불법사채 신고 후기 - Google 검색",
+      "evidence_keywords": [
+        "2023-09-19T05:09:46.179571Z",
+        "2023-09-19",
+        "05:09",
+        "05:09:46"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 10,
+      "timestamp": "2023-09-19T05:10:17.707047Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "부모·지인 협박하고 알몸사진 유포…사채 덫에 ‘지옥’ 생활 | 중앙일보",
+      "evidence_keywords": [
+        "2023-09-19T05:10:17.707047Z",
+        "2023-09-19",
+        "05:10",
+        "05:10:17"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 11,
+      "timestamp": "2023-09-19T05:18:04.263664Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "\"돈 없어? 네 가족 해칠게\"…원금 50배 불법 사채 조직 검거",
+      "evidence_keywords": [
+        "2023-09-19T05:18:04.263664Z",
+        "2023-09-19",
+        "05:18",
+        "05:18:04",
+        "돈 없어? 네 가족 해칠게"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 12,
+      "timestamp": "2023-09-19T05:18:28.855608Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "불법 사채 가족협박 - Google 검색",
+      "evidence_keywords": [
+        "2023-09-19T05:18:28.855608Z",
+        "2023-09-19",
+        "05:18",
+        "05:18:28"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 13,
+      "timestamp": "2023-09-19T05:25:12.445309Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "`25만원이 3개월만에 1억5천으로` 살해 협박까지…불법 사채조직 검거 - 매일신문",
+      "evidence_keywords": [
+        "2023-09-19T05:25:12.445309Z",
+        "2023-09-19",
+        "05:25",
+        "05:25:12"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 14,
+      "timestamp": "2023-09-19T05:26:18.212997Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "불법 사채 가족협박 - Google 검색",
+      "evidence_keywords": [
+        "2023-09-19T05:26:18.212997Z",
+        "2023-09-19",
+        "05:26",
+        "05:26:18"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 15,
+      "timestamp": "2023-09-19T05:26:36.676956Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "“소액·단기 대출 후 5000% 이상 이자 요구”···불법사금융 범죄 조직 123명 검거해 10명 구속 - 경향신문",
+      "evidence_keywords": [
+        "2023-09-19T05:26:36.676956Z",
+        "2023-09-19",
+        "05:26",
+        "05:26:36",
+        "소액·단기 대출 후 5000% 이상 이자 요구",
+        "5000"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 16,
+      "timestamp": "2023-09-19T05:29:25.611532Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "20만원 빌린돈이 7억으로…영화보다 더 무서운 불법사채 - 아시아경제",
+      "evidence_keywords": [
+        "2023-09-19T05:29:25.611532Z",
+        "2023-09-19",
+        "05:29",
+        "05:29:25"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 17,
+      "timestamp": "2023-09-19T05:30:45.005247Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "\"갚으면 돼\" 착각입니다…30만원 사채, 수백만원 보내도 '협박' 계속 - 머니투데이",
+      "evidence_keywords": [
+        "2023-09-19T05:30:45.005247Z",
+        "2023-09-19",
+        "05:30",
+        "05:30:45",
+        "갚으면 돼"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 18,
+      "timestamp": "2023-09-19T05:31:55.781488Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "불법 사채 가족협박 - Google 검색",
+      "evidence_keywords": [
+        "2023-09-19T05:31:55.781488Z",
+        "2023-09-19",
+        "05:31",
+        "05:31:55"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 19,
+      "timestamp": "2023-09-19T05:32:08.523766Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "'초고금리'·'주변인 협박' 불법 사채, 신고해서 벗어나세요! | 아주경제",
+      "evidence_keywords": [
+        "2023-09-19T05:32:08.523766Z",
+        "2023-09-19",
+        "05:32",
+        "05:32:08"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 20,
+      "timestamp": "2023-09-19T06:20:13.402225Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "평균 이자 229% 불법 사채…대부중개 플랫폼 통해 활개 - MBN",
+      "evidence_keywords": [
+        "2023-09-19T06:20:13.402225Z",
+        "2023-09-19",
+        "06:20",
+        "06:20:13",
+        "229"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 21,
+      "timestamp": "2023-09-19T06:20:48.436323Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "\"가족들 가만 안둔다\"…협박 문자 93통 보낸 불법 사채업자 실형 - 머니투데이",
+      "evidence_keywords": [
+        "2023-09-19T06:20:48.436323Z",
+        "2023-09-19",
+        "06:20",
+        "06:20:48",
+        "가족들 가만 안둔다"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 22,
+      "timestamp": "2023-09-19T06:36:32.277246Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "“빌린 30만원, 한달뒤 100만원 돼”… 불법사채 내몰리는 서민들｜동아일보",
+      "evidence_keywords": [
+        "2023-09-19T06:36:32.277246Z",
+        "2023-09-19",
+        "06:36",
+        "06:36:32",
+        "빌린 30만원, 한달뒤 100만원 돼"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 23,
+      "timestamp": "2023-09-19T07:23:45.136183Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "불법 사채 가족협박 - Google 검색",
+      "evidence_keywords": [
+        "2023-09-19T07:23:45.136183Z",
+        "2023-09-19",
+        "07:23",
+        "07:23:45"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 24,
+      "timestamp": "2023-09-19T07:23:52.226465Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "파산 신청 - Google 검색",
+      "evidence_keywords": [
+        "2023-09-19T07:23:52.226465Z",
+        "2023-09-19",
+        "07:23",
+        "07:23:52"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 25,
+      "timestamp": "2023-09-19T07:32:27.049397Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "경기금융복지지원센터 경유 개인파산 신청 119.8% 늘어",
+      "evidence_keywords": [
+        "2023-09-19T07:32:27.049397Z",
+        "2023-09-19",
+        "07:32",
+        "07:32:27",
+        "119"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 26,
+      "timestamp": "2023-09-19T07:32:45.568130Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "파산자의 재파산… 개인회생·파산자 대상 신용교육 확대해야",
+      "evidence_keywords": [
+        "2023-09-19T07:32:45.568130Z",
+        "2023-09-19",
+        "07:32",
+        "07:32:45"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 27,
+      "timestamp": "2023-09-19T07:32:48.248077Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "개인 파산 신청 - Google 검색",
+      "evidence_keywords": [
+        "2023-09-19T07:32:48.248077Z",
+        "2023-09-19",
+        "07:32",
+        "07:32:48"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 28,
+      "timestamp": "2023-09-19T07:34:54.358034Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "개인 파산 신청 - Google 검색",
+      "evidence_keywords": [
+        "2023-09-19T07:34:54.358034Z",
+        "2023-09-19",
+        "07:34",
+        "07:34:54"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 29,
+      "timestamp": "2023-09-19T07:35:13.334139Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "파산 신청자격 - 알찬법무사",
+      "evidence_keywords": [
+        "2023-09-19T07:35:13.334139Z",
+        "2023-09-19",
+        "07:35",
+        "07:35:13"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 30,
+      "timestamp": "2023-09-19T07:37:59.090816Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "신청서작성 - 개인파산 - 개인파산 및 면책 - 개인파산/회생 - 전자민원센터",
+      "evidence_keywords": [
+        "2023-09-19T07:37:59.090816Z",
+        "2023-09-19",
+        "07:37",
+        "07:37:59"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 31,
+      "timestamp": "2023-09-19T07:38:11.320585Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "파산 및 면책 동시신청 - 개인파산 및 면책 - 개인파산/회생 - 전자민원센터",
+      "evidence_keywords": [
+        "2023-09-19T07:38:11.320585Z",
+        "2023-09-19",
+        "07:38",
+        "07:38:11"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 32,
+      "timestamp": "2023-09-19T07:38:13.335918Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "개인 파산 신청 조건 - Google 검색",
+      "evidence_keywords": [
+        "2023-09-19T07:38:13.335918Z",
+        "2023-09-19",
+        "07:38",
+        "07:38:13"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 33,
+      "timestamp": "2023-09-19T07:38:19.208460Z",
+      "phase": "Motive",
+      "source": "Browser",
+      "description": "개인파산 신청자격 조건 신청방법 비용 기간 서류 총정리! | Life is good",
+      "evidence_keywords": [
+        "2023-09-19T07:38:19.208460Z",
+        "2023-09-19",
+        "07:38",
+        "07:38:19"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 34,
+      "timestamp": "2023-09-20 23:38:31",
+      "phase": "Payment",
+      "source": "Prefetch",
+      "description": "LEDGER-LIVE-DESKTOP-2.68.1-WI (runs=1)",
+      "evidence_keywords": [
+        "2023-09-20 23:38:31",
+        "2023-09-20",
+        "23:38",
+        "23:38:31",
+        "LEDGER",
+        "LIVE",
+        "DESKTOP"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 35,
+      "timestamp": "2023-09-20T23:36:21.478762Z",
+      "phase": "Research",
+      "source": "Browser",
+      "description": "랜섬웨어 : 네이버 뉴스검색",
+      "evidence_keywords": [
+        "2023-09-20T23:36:21.478762Z",
+        "2023-09-20",
+        "23:36",
+        "23:36:21"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 36,
+      "timestamp": "2023-09-20T23:36:26.503653Z",
+      "phase": "Research",
+      "source": "Browser",
+      "description": "FBI가 쫒던 그 랜섬웨어 그룹, 국내 IT기업도 당했다 :: 공감언론 뉴시스통신사 ::",
+      "evidence_keywords": [
+        "2023-09-20T23:36:26.503653Z",
+        "2023-09-20",
+        "23:36",
+        "23:36:26"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 37,
+      "timestamp": "2023-09-20T23:36:44.049448Z",
+      "phase": "Research",
+      "source": "Browser",
+      "description": "사이버 위협 심각성 커져... 랜섬웨어 피해의 88%는 중소기업",
+      "evidence_keywords": [
+        "2023-09-20T23:36:44.049448Z",
+        "2023-09-20",
+        "23:36",
+        "23:36:44"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 38,
+      "timestamp": "2023-09-21 00:06:47",
+      "phase": "Communication",
+      "source": "Prefetch",
+      "description": "DISCORD.EXE (runs=18)",
+      "evidence_keywords": [
+        "2023-09-21 00:06:47",
+        "2023-09-21",
+        "00:06",
+        "00:06:47",
+        "DISCORD.EXE",
+        "DISCORD"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 39,
+      "timestamp": "2023-09-21 04:21:44.8938991",
+      "phase": "Ransom Email",
+      "source": "MFT",
+      "description": "everyrecover56@gmail.com.ost (16818176 bytes)",
+      "evidence_keywords": [
+        "2023-09-21 04:21:44.8938991",
+        "2023-09-21",
+        "04:21",
+        "04:21:44",
+        "everyrecover56@gmail.com.ost",
+        "everyrecover56",
+        "gmail.com"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 40,
+      "timestamp": "2023-09-21 04:43:39.8939855",
+      "phase": "Weapon Creation",
+      "source": "MFT",
+      "description": "ransom.exe (7287357 bytes)",
+      "evidence_keywords": [
+        "2023-09-21 04:43:39.8939855",
+        "2023-09-21",
+        "04:43",
+        "04:43:39",
+        "ransom.exe"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 41,
+      "timestamp": "2023-09-21 04:43:41",
+      "phase": "Weapon",
+      "source": "Shimcache",
+      "description": "C:\\Users\\souldrag\\Pictures\\ransom\\ransom.exe",
+      "evidence_keywords": [
+        "2023-09-21 04:43:41",
+        "2023-09-21",
+        "04:43",
+        "04:43:41",
+        "ransom.exe"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 42,
+      "timestamp": "2023-09-21 05:50:49.2016810",
+      "phase": "Weapon Packaging",
+      "source": "MFT",
+      "description": "ransom.zip (7121752 bytes)",
+      "evidence_keywords": [
+        "2023-09-21 05:50:49.2016810",
+        "2023-09-21",
+        "05:50",
+        "05:50:49",
+        "ransom.zip"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 43,
+      "timestamp": "2023-09-21T00:31:06.182686Z",
+      "phase": "Communication",
+      "source": "Browser",
+      "description": "discord - Google 검색",
+      "evidence_keywords": [
+        "2023-09-21T00:31:06.182686Z",
+        "2023-09-21",
+        "00:31",
+        "00:31:06"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 44,
+      "timestamp": "2023-09-21T00:31:32.343628Z",
+      "phase": "Communication",
+      "source": "Browser",
+      "description": "Discord | 대화하고, 어울리는 공간",
+      "evidence_keywords": [
+        "2023-09-21T00:31:32.343628Z",
+        "2023-09-21",
+        "00:31",
+        "00:31:32"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 45,
+      "timestamp": "2023-09-21T01:10:29.139172Z",
+      "phase": "Communication",
+      "source": "Browser",
+      "description": "(1) Discord | #『📌』쌀줍-공지사항 | 쌀줍",
+      "evidence_keywords": [
+        "2023-09-21T01:10:29.139172Z",
+        "2023-09-21",
+        "01:10",
+        "01:10:29"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 46,
+      "timestamp": "2023-09-21T01:11:37.002371Z",
+      "phase": "Communication",
+      "source": "Browser",
+      "description": "(1) Discord | 친구",
+      "evidence_keywords": [
+        "2023-09-21T01:11:37.002371Z",
+        "2023-09-21",
+        "01:11",
+        "01:11:37"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 47,
+      "timestamp": "2023-09-21T01:58:19.627752Z",
+      "phase": "Communication",
+      "source": "Browser",
+      "description": "(1) Discord | #⭐：𝙃𝙚𝙡𝙡𝙤·𝙒𝙤𝙧𝙡𝙙 | 화이트해커들의 심심디코방",
+      "evidence_keywords": [
+        "2023-09-21T01:58:19.627752Z",
+        "2023-09-21",
+        "01:58",
+        "01:58:19"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 48,
+      "timestamp": "2023-09-21T02:36:04.673483Z",
+      "phase": "Communication",
+      "source": "Browser",
+      "description": "(1) Discord | #❌ㅣ미인증-채팅-1 | Codemos { For Dev }",
+      "evidence_keywords": [
+        "2023-09-21T02:36:04.673483Z",
+        "2023-09-21",
+        "02:36",
+        "02:36:04"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 49,
+      "timestamp": "2023-09-21T05:26:15.706730Z",
+      "phase": "Communication",
+      "source": "Browser",
+      "description": "(1) Discord | @취약점외길인생👍",
+      "evidence_keywords": [
+        "2023-09-21T05:26:15.706730Z",
+        "2023-09-21",
+        "05:26",
+        "05:26:15"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 50,
+      "timestamp": "2023-09-21T05:26:18.781178Z",
+      "phase": "Communication",
+      "source": "Browser",
+      "description": "(1) Discord | @밥만먹고CTF🥇",
+      "evidence_keywords": [
+        "2023-09-21T05:26:18.781178Z",
+        "2023-09-21",
+        "05:26",
+        "05:26:18"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 51,
+      "timestamp": "2023-09-21T05:26:20.218912Z",
+      "phase": "Communication",
+      "source": "Browser",
+      "description": "(1) Discord | @CyberNinja_⚔",
+      "evidence_keywords": [
+        "2023-09-21T05:26:20.218912Z",
+        "2023-09-21",
+        "05:26",
+        "05:26:20"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 52,
+      "timestamp": "2023-09-21T05:34:38.360592Z",
+      "phase": "Payment Setup",
+      "source": "Browser",
+      "description": "확장스토어 - Google 검색",
+      "evidence_keywords": [
+        "2023-09-21T05:34:38.360592Z",
+        "2023-09-21",
+        "05:34",
+        "05:34:38"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 53,
+      "timestamp": "2023-09-21T05:34:50.425802Z",
+      "phase": "Payment Setup",
+      "source": "Browser",
+      "description": "Chrome 웹 스토어 - metamask",
+      "evidence_keywords": [
+        "2023-09-21T05:34:50.425802Z",
+        "2023-09-21",
+        "05:34",
+        "05:34:50"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 54,
+      "timestamp": "2023-09-21T05:34:52.548361Z",
+      "phase": "Payment Setup",
+      "source": "Browser",
+      "description": "MetaMask - Chrome 웹 스토어",
+      "evidence_keywords": [
+        "2023-09-21T05:34:52.548361Z",
+        "2023-09-21",
+        "05:34",
+        "05:34:52",
+        "MetaMask"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 55,
+      "timestamp": "2023-09-21T05:35:09.886822Z",
+      "phase": "Payment Setup",
+      "source": "Browser",
+      "description": "MetaMask - Chrome 웹 스토어",
+      "evidence_keywords": [
+        "2023-09-21T05:35:09.886822Z",
+        "2023-09-21",
+        "05:35",
+        "05:35:09",
+        "MetaMask"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 56,
+      "timestamp": "2023-09-21T05:51:23.785402Z",
+      "phase": "Payment Setup",
+      "source": "Browser",
+      "description": "gofile - Google 검색",
+      "evidence_keywords": [
+        "2023-09-21T05:51:23.785402Z",
+        "2023-09-21",
+        "05:51",
+        "05:51:23"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 57,
+      "timestamp": "2023-09-21T05:51:26.339720Z",
+      "phase": "Payment Setup",
+      "source": "Browser",
+      "description": "Gofile - Free Unlimited File Sharing and Storage",
+      "evidence_keywords": [
+        "2023-09-21T05:51:26.339720Z",
+        "2023-09-21",
+        "05:51",
+        "05:51:26"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 58,
+      "timestamp": "2023-09-22T18:37:25.339399Z",
+      "phase": "Research",
+      "source": "Browser",
+      "description": "랜섬웨어 : 네이버 통합검색",
+      "evidence_keywords": [
+        "2023-09-22T18:37:25.339399Z",
+        "2023-09-22",
+        "18:37",
+        "18:37:25"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 59,
+      "timestamp": "2023-09-22T18:37:28.463823Z",
+      "phase": "Research",
+      "source": "Browser",
+      "description": "랜섬웨어 : 네이버 뉴스검색",
+      "evidence_keywords": [
+        "2023-09-22T18:37:28.463823Z",
+        "2023-09-22",
+        "18:37",
+        "18:37:28"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 60,
+      "timestamp": "2023-09-22T18:37:32.421284Z",
+      "phase": "Research",
+      "source": "Browser",
+      "description": "휴일 랜섬웨어 공격량 30 급증 연휴 기업 보안 지키려면 │ 매거진한경",
+      "evidence_keywords": [
+        "2023-09-22T18:37:32.421284Z",
+        "2023-09-22",
+        "18:37",
+        "18:37:32"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 61,
+      "timestamp": "2023-09-22T18:37:44.445580Z",
+      "phase": "Research",
+      "source": "Browser",
+      "description": "중소기업 노리는 랜섬웨어 급증…소규모 공격 조직도 많아져 - 머니투데이",
+      "evidence_keywords": [
+        "2023-09-22T18:37:44.445580Z",
+        "2023-09-22",
+        "18:37",
+        "18:37:44"
+      ],
+      "incident_significant": false
+    },
+    {
+      "id": 62,
+      "timestamp": "2023-09-19 05:29:15.7178646",
+      "phase": "Weapon Pre-Creation",
+      "source": "Registry",
+      "description": "OpenSavePidlMRU: This PC\\Pictures\\ransom\\ransom.exe",
+      "evidence_keywords": [
+        "2023-09-19 05:29:15.7178646",
+        "2023-09-19",
+        "05:29",
+        "05:29:15",
+        "ransom.exe",
+        "OpenSavePidlMRU"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 63,
+      "timestamp": "2023-09-21 14:50:15.0000000",
+      "phase": "USB Activity",
+      "source": "EventLog",
+      "description": "Event 7045 (SanDisk Cruzer Blade USB Mass Storage)",
+      "evidence_keywords": [
+        "2023-09-21 14:50:15.0000000",
+        "2023-09-21",
+        "14:50",
+        "14:50:15",
+        "Event 7045",
+        "7045",
+        "SanDisk"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 64,
+      "timestamp": "2023-09-21 05:51:15.1254347",
+      "phase": "Weapon Creation",
+      "source": "UsnJrnl",
+      "description": "Pictures\\ransom\\ directory (FileCreate)",
+      "evidence_keywords": [
+        "2023-09-21 05:51:15.1254347",
+        "2023-09-21",
+        "05:51",
+        "05:51:15",
+        "FileCreate"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 65,
+      "timestamp": "2023-09-21 05:51:15.1254347",
+      "phase": "Weapon Creation",
+      "source": "UsnJrnl",
+      "description": "Pictures\\ransom\\ directory (FileCreate|Close)",
+      "evidence_keywords": [
+        "2023-09-21 05:51:15.1254347",
+        "2023-09-21",
+        "05:51",
+        "05:51:15",
+        "FileCreate"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 66,
+      "timestamp": "2023-09-21 05:51:46.1743480",
+      "phase": "Weapon Access",
+      "source": "MFT",
+      "description": "ransom.exe accessed",
+      "evidence_keywords": [
+        "2023-09-21 05:51:46.1743480",
+        "2023-09-21",
+        "05:51",
+        "05:51:46",
+        "ransom.exe"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 67,
+      "timestamp": "2023-09-21 05:51:53.1114538",
+      "phase": "Weapon Access",
+      "source": "Registry",
+      "description": "LastVisitedPidlMRU: Pictures\\ransom\\",
+      "evidence_keywords": [
+        "2023-09-21 05:51:53.1114538",
+        "2023-09-21",
+        "05:51",
+        "05:51:53",
+        "LastVisitedPidlMRU"
+      ],
+      "incident_significant": true
+    },
+    {
+      "id": 68,
+      "timestamp": "2023-09-23 03:05:54.1696481",
+      "phase": "Weapon Post-Attack",
+      "source": "Registry",
+      "description": "AppCompatCache: ransom.exe",
+      "evidence_keywords": [
+        "2023-09-23 03:05:54.1696481",
+        "2023-09-23",
+        "03:05",
+        "03:05:54",
+        "ransom.exe",
+        "AppCompatCache"
+      ],
+      "incident_significant": true
+    }
+  ],
+  "phases_summary": [
+    {
+      "phase": "Communication",
+      "events": [
+        1,
+        38,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "phase": "Payment",
+      "events": [
+        2,
+        34
+      ]
+    },
+    {
+      "phase": "Packaging",
+      "events": [
+        3
+      ]
+    },
+    {
+      "phase": "Financial Evidence",
+      "events": [
+        4
+      ]
+    },
+    {
+      "phase": "Motive",
+      "events": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "phase": "Research",
+      "events": [
+        35,
+        36,
+        37,
+        58,
+        59,
+        60,
+        61
+      ]
+    },
+    {
+      "phase": "Ransom Email",
+      "events": [
+        39
+      ]
+    },
+    {
+      "phase": "Weapon Creation",
+      "events": [
+        40,
+        64,
+        65
+      ]
+    },
+    {
+      "phase": "Weapon",
+      "events": [
+        41
+      ]
+    },
+    {
+      "phase": "Weapon Packaging",
+      "events": [
+        42
+      ]
+    },
+    {
+      "phase": "Payment Setup",
+      "events": [
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "phase": "Weapon Pre-Creation",
+      "events": [
+        62
+      ]
+    },
+    {
+      "phase": "USB Activity",
+      "events": [
+        63
+      ]
+    },
+    {
+      "phase": "Weapon Access",
+      "events": [
+        66,
+        67
+      ]
+    },
+    {
+      "phase": "Weapon Post-Attack",
+      "events": [
+        68
+      ]
+    }
+  ],
+  "checklist_facts": [],
+  "evaluation_prompt": "You are a senior digital forensic investigator analyzing the KDFS 2023 Windows disk image. Reconstruct the complete chronological incident timeline using the available forensic tools (search_artifacts, get_full_timeline, analyze_program_execution, analyze_web_activity, analyze_registry, analyze_security_events, correlate_activity, etc.). Investigate every artifact type. Do not fabricate — only report what tools return. For each event provide: exact timestamp, artifact source, and a concise factual description.",
+  "notes": "Auto-generated from docx table. evidence_keywords are heuristic — review needed.",
+  "incident_significant_count": 17
+}

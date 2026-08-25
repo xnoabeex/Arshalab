@@ -1,0 +1,186 @@
+{
+  "provider": "BASELINE_anchors_sort_1pa",
+  "case": "magnet",
+  "case_name": "Magnet_CTF_2022",
+  "run": 0,
+  "evidence_file": "evidence_Magnet_CTF_2022.json",
+  "evidence_record_count": 798,
+  "chain_event_count": 25,
+  "chain": [
+    {
+      "timestamp": "2017-07-07 17:30:12",
+      "event": "[shimcache_top] _anchor=shimcache_top",
+      "supporting_artifact": "shimcache_top",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-01-20 05:49:33",
+      "event": "[srum_network_usage] _anchor=srum_network_usage",
+      "supporting_artifact": "srum_network_usage",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-01-23 17:42:28.4794344",
+      "event": "[reg_image_file_execution_options] _anchor=reg_image_file_execution_options",
+      "supporting_artifact": "reg_image_file_execution_options",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-01-23 17:45:32.4332971",
+      "event": "[reg_appinit_dlls] _anchor=reg_appinit_dlls",
+      "supporting_artifact": "reg_appinit_dlls",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-02 07:09:10.0000000",
+      "event": "[mft_user_writable_dirs] _anchor=mft_user_writable_dirs",
+      "supporting_artifact": "mft_user_writable_dirs",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04 02:00:41.4700341",
+      "event": "[mft_lnk_files] _anchor=mft_lnk_files",
+      "supporting_artifact": "mft_lnk_files",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04T05:12:10.282799Z",
+      "event": "[browser_raw_history] _anchor=browser_raw_history",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04 06:01:40.7882682",
+      "event": "[mft_archive_files] _anchor=mft_archive_files",
+      "supporting_artifact": "mft_archive_files",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04 07:02:35.5384668",
+      "event": "[proc_creation_4688] _anchor=proc_creation_4688",
+      "supporting_artifact": "proc_creation_4688",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04 07:02:36.9811567",
+      "event": "[auth_logon_network_type3] _anchor=auth_logon_network_type3",
+      "supporting_artifact": "auth_logon_network_type3",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04 07:02:37.2569959",
+      "event": "[rdp_connection_manager] _anchor=rdp_connection_manager",
+      "supporting_artifact": "rdp_connection_manager",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04 07:02:47.7810029",
+      "event": "[wmi_subscription] _anchor=wmi_subscription",
+      "supporting_artifact": "wmi_subscription",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04 07:02:54.3778557",
+      "event": "[def_engine_update] _anchor=def_engine_update",
+      "supporting_artifact": "def_engine_update",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04 07:02:56.5402085",
+      "event": "[usb_attach_driverframeworks] _anchor=usb_attach_driverframeworks",
+      "supporting_artifact": "usb_attach_driverframeworks",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04 07:03:03.9828483",
+      "event": "[svc_state_change] _anchor=svc_state_change",
+      "supporting_artifact": "svc_state_change",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04 07:05:42.6894842",
+      "event": "[def_config_change_5007] _anchor=def_config_change_5007",
+      "supporting_artifact": "def_config_change_5007",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04 07:05:55.8358605",
+      "event": "[rdp_disconnect_reasons] _anchor=rdp_disconnect_reasons",
+      "supporting_artifact": "rdp_disconnect_reasons",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-04 07:06:12.8076910",
+      "event": "[mft_startup_folders] _anchor=mft_startup_folders",
+      "supporting_artifact": "mft_startup_folders",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-05 01:12:04.3377527",
+      "event": "[fw_stopped_5025] _anchor=fw_stopped_5025",
+      "supporting_artifact": "fw_stopped_5025",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:45.3852097",
+      "event": "[mft_ps1_files] _anchor=mft_ps1_files",
+      "supporting_artifact": "mft_ps1_files",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-06 07:16:30.6409990",
+      "event": "[ps_errors_4100] _anchor=ps_errors_4100",
+      "supporting_artifact": "ps_errors_4100",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-09 23:34:55.1225188",
+      "event": "[ps_scriptblock_4104] _anchor=ps_scriptblock_4104",
+      "supporting_artifact": "ps_scriptblock_4104",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-11 22:46:12.9291981",
+      "event": "[auth_account_modified_4738] _anchor=auth_account_modified_4738",
+      "supporting_artifact": "auth_account_modified_4738",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-12 01:29:43.1362394",
+      "event": "[auth_account_created_4720] _anchor=auth_account_created_4720",
+      "supporting_artifact": "auth_account_created_4720",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    },
+    {
+      "timestamp": "2022-02-12 22:47:43.3308355",
+      "event": "[auth_explicit_cred_4648] _anchor=auth_explicit_cred_4648",
+      "supporting_artifact": "auth_explicit_cred_4648",
+      "confidence_or_caveat": "retrieved",
+      "phase": "retrieved"
+    }
+  ]
+}

