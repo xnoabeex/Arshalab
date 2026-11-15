@@ -1,10 +1,10 @@
 {
-  "chain_file": "benchmark_results/mode2_baseline_2026-08-14\\chain_Hunter_4orensics_baseline2_run0.json",
+  "chain_file": "benchmark_results/retrieval_only_baseline/chain_Hunter_4orensics_baseline2_run0.json",
   "case": "4orensics",
-  "provider": "BASELINE_anchors_sort_2pa",
+  "provider": "BASELINE_anchors_sort_2pa_len39",
   "run": 0,
-  "evidence_record_count": 691,
-  "chain_event_count": 25,
+  "evidence_record_count": 846,
+  "chain_event_count": 39,
   "gt_in_scope_count": 45,
   "gt_out_of_scope_excluded": 4,
   "gt_distinct_tactics": [
@@ -51,7 +51,8 @@
     "P3_login": {
       "covered": true,
       "hit_keywords": [
-        "logon"
+        "logon",
+        "dhcp"
       ],
       "all_keywords": [
         "4624",
@@ -195,57 +196,62 @@
   "tactics_covered": [
     "Collection",
     "Discovery",
-    "Initial Access",
+    "Exfiltration",
     "Lateral Movement",
     "Resource Development"
   ],
   "tactics_missed": [
     "Defense Evasion",
     "Execution",
-    "Exfiltration",
+    "Initial Access",
     "Reconnaissance"
   ],
   "per_tactic_recall": {
-    "Collection": "1/4",
+    "Collection": "2/4",
     "Defense Evasion": "0/4",
-    "Discovery": "2/9",
+    "Discovery": "4/9",
     "Execution": "0/2",
-    "Exfiltration": "0/3",
-    "Initial Access": "1/5",
+    "Exfiltration": "1/3",
+    "Initial Access": "0/5",
     "Lateral Movement": "1/1",
     "Reconnaissance": "0/11",
     "Resource Development": "1/6"
   },
-  "ordering_accuracy": 0.8,
-  "ordering_pairs_concordant": 12,
-  "ordering_pairs_discordant": 3,
+  "ordering_accuracy": 0.7222,
+  "ordering_pairs_concordant": 26,
+  "ordering_pairs_discordant": 10,
   "ordering_pairs_masked_negative_finding": 0,
-  "source_attribution_accuracy": 0.1667,
+  "source_attribution_accuracy": 0.1111,
   "source_attribution_correct": 1,
-  "source_attribution_total": 6,
+  "source_attribution_total": 9,
   "per_source_attribution": {
     "browser+eventlog+mft+prefetch+registry": "1/1",
     "browser+lnk+mft": "0/1",
     "lnk+mft": "0/1",
+    "lnk+mft+prefetch+registry": "0/1",
+    "mft": "0/1",
     "mft+prefetch": "0/1",
     "mft+prefetch+registry": "0/1",
-    "registry": "0/1"
+    "registry": "0/2"
   },
   "hallucination_rate": 0.0,
-  "grounded_events": 25,
+  "grounded_events": 39,
   "hallucinated_events": 0,
   "hallucination_reasons": {
-    "no_factual_entity_to_check": 25
+    "no_factual_entity_to_check": 39
   },
-  "exact_event_coverage": 0.1333,
-  "matched_event_count": 6,
+  "exact_event_coverage": 0.2,
+  "matched_event_count": 9,
   "matched_gt_ids": [
     "HUN-010",
-    "HUN-011",
     "HUN-012",
+    "HUN-013",
+    "HUN-014",
     "HUN-016",
     "HUN-017",
-    "HUN-020"
+    "HUN-019",
+    "HUN-023",
+    "HUN-025"
   ],
   "missed_gt": [
     [
@@ -269,11 +275,7 @@
       "date_match_no_kw"
     ],
     [
-      "HUN-013",
-      "date_match_no_kw"
-    ],
-    [
-      "HUN-014",
+      "HUN-011",
       "date_match_no_kw"
     ],
     [
@@ -285,7 +287,7 @@
       "date_match_no_kw"
     ],
     [
-      "HUN-019",
+      "HUN-020",
       "date_match_no_kw"
     ],
     [
@@ -297,15 +299,7 @@
       "date_match_no_kw"
     ],
     [
-      "HUN-023",
-      "date_match_no_kw"
-    ],
-    [
       "HUN-024",
-      "date_match_no_kw"
-    ],
-    [
-      "HUN-025",
       "date_match_no_kw"
     ],
     [
@@ -406,7 +400,7 @@
     ]
   ],
   "miss_reasons": {
-    "date_match_no_kw": 39
+    "date_match_no_kw": 36
   },
-  "composite_headline": 0.5667
+  "composite_headline": 0.555
 }

@@ -31,15 +31,14 @@ synthesis (a day-by-day timeline, the end-to-end operation). Every question is
 answered as a short factual response and scored uniformly by the rules in
 Section 3.
 
-Provider-calibrated copies (for example `KDFS_2023_openai.json`) carry the same
-questions and ground truth; they exist only to tune the surface form of the
-keyword checklist for a given model's phrasing and do not change which facts are
-required.
+Every model is scored against these three files, and `load_case_questions`
+always loads `<case>.json`. Provider-specific copies used in an earlier
+configuration are not part of this release.
 
 ### 1.1 Question record schema
 
 Each question is one record with the following fields (`load_case_questions`,
-lines 222–296):
+lines 163–229):
 
 ```jsonc
 {
@@ -68,7 +67,7 @@ lines 222–296):
 
 ### 1.2 How the checklist is derived from the facts
 
-`extract_keywords_recursive` (lines 187–219) turns `expected_facts` into the
+`extract_keywords_recursive` (lines 128–160) turns `expected_facts` into the
 keyword checklist:
 
 - an all-string list of **length > 1** becomes an **any-match group** — the
@@ -81,7 +80,7 @@ keyword checklist:
 
 The extracted keywords are concatenated with any explicitly authored `keywords`
 and de-duplicated: standalone strings are compared case-insensitively, while
-group lists are compared by their literal form (lines 278–285).
+group lists are compared by their literal form (lines 211–218).
 
 ---
 
@@ -114,8 +113,8 @@ consistency and an optional judge are reported alongside.
 Keyword recall is the fraction of a question's ground-truth keyword checklist
 that appears in the model's answer, where each checklist entry is matched by
 **case-insensitive substring** against a set of generated variants
-(`check_keywords_in_response`, lines 830–868; `_get_keyword_variants`,
-738–827). The variant set always contains the lowercased keyword plus, depending
+(`check_keywords_in_response`, lines 763–801; `_get_keyword_variants`,
+671–760). The variant set always contains the lowercased keyword plus, depending
 on the keyword's form, equivalent **UTC and KST timestamp** renderings,
 executable **display-name aliases** (for example `msedge` yields
 `microsoft edge`), forensic **semantic synonyms** (for example `copied` yields
@@ -133,7 +132,7 @@ recall = found_entries / total_entries
 ### 3.2 Precision
 
 Precision is computed over a **restricted set of automatically extracted,
-machine-checkable tokens**: four-digit Windows Event IDs and non-system
+machine-checkable tokens**: four- or five-digit Windows Event IDs and non-system
 executable names (mentions in negated context and common built-in Windows
 executables are excluded). Each such token is verified by a count lookup against
 the case's Elasticsearch forensic indices, and precision is the fraction of
@@ -145,7 +144,7 @@ precision = verified / (verified + fabricated)
 
 Tokens whose lookup raises an error are dropped from the denominator. When no
 token remains to check (including error responses), precision defaults to 1.0
-(lines 1774–1780).
+(lines 1700–1706).
 
 ### 3.3 F1
 
@@ -153,22 +152,22 @@ token remains to check (including error responses), precision defaults to 1.0
 F1 = 2 * precision * recall / (precision + recall)
 ```
 
-The harmonic mean of precision and recall (line 1783).
+The harmonic mean of precision and recall (line 1709).
 
 ### 3.4 Fabrication (hallucination) rate
 
 The anti-fabrication check extracts two kinds of machine-verifiable claims from
-each answer — four-digit Windows Event IDs and `.exe` file names — and validates
+each answer — four- or five-digit Windows Event IDs and `.exe` file names — and validates
 them against the case's Elasticsearch evidence indices, skipping common built-in
 Windows executables and ignoring claims that appear in an explicit **negative
 context within the preceding 80 characters** (e.g. "no evidence of Event ID X")
-(`detect_hallucinations`, lines 924–1130).
+(`detect_hallucinations`, lines 849–1056).
 
 - **Event-ID claims** are tested only against the **Event Log** index; an ID with
   no matching records is flagged immediately.
 - **`.exe` claims** are checked in turn against the **Prefetch, Shimcache,
   Amcache, LNK, SRUM, and Event Log** indices, and only if none match does a
-  fuzzy fallback run (an alias table plus substring matching over Prefetch,
+  fuzzy fallback run (substring matching of the executable stem over Prefetch,
   Shimcache, and Amcache). A successful fuzzy hit is counted as **verified**,
   not fabricated.
 
@@ -190,18 +189,21 @@ When a question is run N times, consistency is quantified two complementary ways
   matched in **every** one of the N runs (`always_present / total_keywords`),
   where each entry is a single keyword or a group of alternatives deemed matched
   in a run when at least one member occurs (case-insensitive substring) in that
-  run's answer (`compute_consistency`, lines 1137–1172).
+  run's answer (`compute_consistency`, lines 1063–1098).
 - **Semantic similarity** reports the mean pairwise cosine similarity, over all
   unique run pairs, of sentence-transformer (`all-MiniLM-L6-v2`) embeddings of
-  the N answers (`compute_semantic_consistency`, lines 1196–1228).
+  the N answers (`compute_semantic_consistency`, lines 1122–1154).
 
-Both measures require at least two runs.
+Both measures require at least two runs. The consistency column of the paper's
+question-answering table uses factual overlap over the questions with three
+completed runs only, which leaves out Claude Opus KDFS40 and Claude Sonnet
+KDFS61 to KDFS69.
 
 ### 3.6 Optional LLM-as-judge
 
 As a supplementary qualitative check, a separate Claude judge can score each
 answer against the question's reference answer on accuracy, completeness,
-reasoning, and absence of fabrication (1–5 each) (lines 1257–1351). This is
+reasoning, and absence of fabrication (1–5 each) (`llm_judge_evaluate`, lines 1218–1286). This is
 reported separately and is not part of the headline recall/precision figures.
 
 ---
@@ -209,6 +211,11 @@ reported separately and is not part of the headline recall/precision figures.
 ## 4. Reproducing the scores
 
 ```bash
+# Recompute the paper's question-answering table from the released answers
+# (needs the three cases indexed in Elasticsearch; BERTScore takes about 25 minutes)
+python reproduce_qa_table.py
+python reproduce_qa_table.py --no-bert
+
 # Full benchmark for one provider on one image, single run
 python benchmark.py --providers deepseek --case-id <case_id> --runs 1
 

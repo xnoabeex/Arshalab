@@ -103,9 +103,16 @@
     "app_antiforensic",
     "app_archive_tools",
     "app_email_client",
-    "suspicious_indicators_universal"
+    "suspicious_indicators_universal",
+    "ext_prefetch_builtin_discovery",
+    "ext_prefetch_user_path_execution",
+    "ext_reg_mapped_network_shares",
+    "ext_smbclient_connectivity",
+    "ext_usn_archive_created",
+    "ext_usn_user_content_lifecycle",
+    "ext_mft_user_profile_content"
   ],
-  "total_records": 746,
+  "total_records": 895,
   "errors": 0,
   "evidence_by_anchor": {
     "auth_logon_interactive_type2": [
@@ -4951,6 +4958,765 @@
         "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:46:17.8256694', 'filename': 'microsoft-office-outlook-exe-15_115_0.png', 'extension': '.png', 'file_path': 'microsoft-office-outlook-exe"
       }
     ],
-    "suspicious_indicators_universal": []
+    "suspicious_indicators_universal": [],
+    "ext_prefetch_builtin_discovery": [
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-15 01:08:09",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:08:09', 'executable_name': 'BANDIZIP-SETUP-STD-X64.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\DOWNL"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-17 10:38:33",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 10:38:33', 'executable_name': 'IPCONFIG.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\IPCONFIG.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-17 10:40:59",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 10:40:59', 'executable_name': 'IPCONFIG.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\IPCONFIG.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-17 10:42:19",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 10:42:19', 'executable_name': 'IPCONFIG.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\IPCONFIG.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-18 08:07:05",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-18 08:07:05', 'executable_name': 'IPCONFIG.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\IPCONFIG.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-19 01:12:46",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-19 01:12:46', 'executable_name': 'IPCONFIG.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\IPCONFIG.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-19 03:25:53",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-19 03:25:53', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-19 07:07:38",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-19 07:07:38', 'executable_name': 'GOOGLECRASHHANDLER64.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\PROGRAM FILES (X86)\\\\GOO"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-20 23:37:39",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-20 23:37:39', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-21 00:11:35",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-21 00:11:35', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-21 05:51:14",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-21 05:51:14', 'executable_name': 'REGPACKAGE.X86.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\PROGRAM FILES\\\\BANDIZIP\\\\DATA\\"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-21 08:13:50",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-21 08:13:50', 'executable_name': 'IPCONFIG.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\IPCONFIG.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-22 07:42:59",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-22 07:42:59', 'executable_name': 'IPCONFIG.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\IPCONFIG.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-22 07:55:27",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-22 07:55:27', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-22 07:59:16",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-22 07:59:16', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-22 08:22:57",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-22 08:22:57', 'executable_name': 'IPCONFIG.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\IPCONFIG.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-22 18:25:21",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-22 18:25:21', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2023-09-22 18:25:22",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-22 18:25:22', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'p"
+      }
+    ],
+    "ext_prefetch_user_path_execution": [
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-15 01:08:09",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:08:09', 'executable_name': 'BANDIZIP-SETUP-STD-X64.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\DOWNL"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-15 01:14:55",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:14:55', 'executable_name': 'CODE.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL\\\\PROGRAM"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-15 01:34:11",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:34:11', 'executable_name': 'GITHUBDESKTOP.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-15 01:34:17",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:34:17', 'executable_name': 'GITHUBDESKTOP.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-15 01:37:41",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:37:41', 'executable_name': 'GITHUBDESKTOP.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-15 02:30:03",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:30:03', 'executable_name': 'BLOCKSTREAMGREENSETUP.TMP', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDAT"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-15 02:30:12",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:30:12', 'executable_name': 'BLOCKSTREAMGREENSETUP.TMP', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDAT"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-16 02:13:24",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 02:13:24', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL\\\\DISC"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-16 02:13:24",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 02:13:24', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL\\\\DISC"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-16 02:15:24",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 02:15:24', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL\\\\DISC"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-16 05:25:03",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 05:25:03', 'executable_name': 'CODE.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL\\\\PROGRAM"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-17 08:42:06",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:42:06', 'executable_name': 'GPU_ENCODER_HELPER.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-17 08:42:06",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:42:06', 'executable_name': 'GPU_ENCODER_HELPER.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-17 08:42:07",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:42:07', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL\\\\DISC"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-17 08:42:07",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:42:07', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL\\\\DISC"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-17 08:42:51",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:42:51', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL\\\\DISC"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-17 08:52:34",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:52:34', 'executable_name': 'CODE.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL\\\\PROGRAM"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-17 08:52:52",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:52:52', 'executable_name': 'CODE.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL\\\\PROGRAM"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-17 08:54:26",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:54:26', 'executable_name': 'GITHUBDESKTOP.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2023-09-18 04:24:21",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-18 04:24:21', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d9e45672605923-54726c56}\\\\USERS\\\\SOULDRAG\\\\APPDATA\\\\LOCAL\\\\DISC"
+      }
+    ],
+    "ext_reg_mapped_network_shares": [
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2023-09-21 05:50:15.5651879",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-21 05:50:15.5651879', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2', 'va"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2023-09-21 05:50:15.5651879",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-21 05:50:15.5651879', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2\\\\{eac"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2023-09-21 05:50:15.5651879",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-21 05:50:15.5651879', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2\\\\{eac"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2023-09-21 05:50:15.5651879",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-21 05:50:15.5651879', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2\\\\{eac"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2023-09-21 05:50:15.5651879",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-21 05:50:15.5651879', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2\\\\{eac"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2023-09-22 18:24:17.9088790",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-22 18:24:17.9088790', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2\\\\CPC\\"
+      }
+    ],
+    "ext_smbclient_connectivity": [
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 01:01:10.3097338",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:01:10.3097338', 'event_id': 30811, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 01:01:11.0266775",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:01:11.0266775', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 01:01:11.9017439",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:01:11.9017439', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 01:01:12.1524797",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:01:12.1524797', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 01:01:12.2355773",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:01:12.2355773', 'event_id': 30812, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 01:01:19.9646030",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:01:19.9646030', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 02:49:42.5360390",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:49:42.5360390', 'event_id': 31018, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Security', 'level'"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 02:49:42.8049582",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:49:42.8049582', 'event_id': 30812, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 02:49:42.8051038",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:49:42.8051038', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 02:49:42.8105874",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:49:42.8105874', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 02:49:42.8110933",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:49:42.8110933', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 02:49:42.8120393",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:49:42.8120393', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 03:20:52.8791369",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 03:20:52.8791369', 'event_id': 31018, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Security', 'level'"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 03:20:53.6327972",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 03:20:53.6327972', 'event_id': 30812, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 03:20:53.6329570",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 03:20:53.6329570', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 03:20:53.6339033",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 03:20:53.6339033', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 03:20:53.6340784",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 03:20:53.6340784', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 03:20:53.6341620",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 03:20:53.6341620', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 05:55:12.0642402",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 05:55:12.0642402', 'event_id': 30811, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2023-09-15 05:55:12.0644250",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 05:55:12.0644250', 'event_id': 30813, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      }
+    ],
+    "ext_usn_archive_created": [
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:45:39.9382969",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:45:39.9382969', 'filename': 'MSEDGE_PATCH.PACKED.7Z', 'extension': '.7z', 'file_path': 'MSEDGE_PATCH.PACKED.7Z', 'entry_number': 318614,"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:45:39.9392523",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:45:39.9392523', 'filename': 'MSEDGE_PATCH.PACKED.7Z', 'extension': '.7z', 'file_path': 'MSEDGE_PATCH.PACKED.7Z', 'entry_number': 318614,"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:45:40.1084170",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:45:40.1084170', 'filename': 'MSEDGE_PATCH.PACKED.7Z', 'extension': '.7z', 'file_path': 'MSEDGE_PATCH.PACKED.7Z', 'entry_number': 318614,"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:47:14.8950340",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:47:14.8950340', 'filename': 'msedge.rebuilt.7z', 'extension': '.7z', 'file_path': 'msedge.rebuilt.7z', 'entry_number': 127237, 'parent_e"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:47:15.1889210",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:47:15.1889210', 'filename': 'msedge.hollow.7z', 'extension': '.7z', 'file_path': 'msedge.hollow.7z', 'entry_number': 318510, 'parent_ent"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:47:15.1900071",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:47:15.1900071', 'filename': 'msedge.hollow.7z', 'extension': '.7z', 'file_path': 'msedge.hollow.7z', 'entry_number': 318510, 'parent_ent"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:47:15.1999627",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:47:15.1999627', 'filename': 'msedge.hollow.7z', 'extension': '.7z', 'file_path': 'msedge.hollow.7z', 'entry_number': 318510, 'parent_ent"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:47:15.7119460",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:47:15.7119460', 'filename': 'msedge.hollow.7z', 'extension': '.7z', 'file_path': 'msedge.hollow.7z', 'entry_number': 318510, 'parent_ent"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:47:15.8850424",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:47:15.8850424', 'filename': 'msedge.rebuilt.7z', 'extension': '.7z', 'file_path': 'msedge.rebuilt.7z', 'entry_number': 127237, 'parent_e"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:47:26.2010846",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:47:26.2010846', 'filename': 'msedge.rebuilt.7z', 'extension': '.7z', 'file_path': 'msedge.rebuilt.7z', 'entry_number': 127237, 'parent_e"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:48:04.3935270",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:48:04.3935270', 'filename': 'msedge.7z', 'extension': '.7z', 'file_path': 'msedge.7z', 'entry_number': 108670, 'parent_entry': 318646, '"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:48:04.7356381",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:48:04.7356381', 'filename': 'msedge.7z', 'extension': '.7z', 'file_path': 'msedge.7z', 'entry_number': 108670, 'parent_entry': 318646, '"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:48:22.0135965",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:48:22.0135965', 'filename': 'msedge.rebuilt.7z', 'extension': '.7z', 'file_path': 'msedge.rebuilt.7z', 'entry_number': 127237, 'parent_e"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:48:22.4341642",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:48:22.4341642', 'filename': 'msedge.7z', 'extension': '.7z', 'file_path': 'msedge.7z', 'entry_number': 108670, 'parent_entry': 318646, '"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2023-09-17 08:48:42.9027631",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:48:42.9027631', 'filename': 'msedge.7z', 'extension': '.7z', 'file_path': 'msedge.7z', 'entry_number': 108670, 'parent_entry': 318646, '"
+      }
+    ],
+    "ext_usn_user_content_lifecycle": [
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:43:56.8910148",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:43:56.8910148', 'filename': '~$#BTC매매일지.xlsx', 'extension': '.xlsx', 'file_path': '~$#BTC매매일지.xlsx', 'entry_number': 108594, 'parent_ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:43:56.8910148",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:43:56.8910148', 'filename': '~$#BTC매매일지.xlsx', 'extension': '.xlsx', 'file_path': '~$#BTC매매일지.xlsx', 'entry_number': 108594, 'parent_ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:44:32.5834996",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:44:32.5834996', 'filename': '#BTC매매일지.xlsx', 'extension': '.xlsx', 'file_path': '#BTC매매일지.xlsx', 'entry_number': 108671, 'parent_entry':"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:44:32.5841654",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:44:32.5841654', 'filename': '#BTC매매일지.xlsx', 'extension': '.xlsx', 'file_path': '#BTC매매일지.xlsx', 'entry_number': 108671, 'parent_entry':"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:44:37.0380576",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:44:37.0380576', 'filename': '~$#BTC매매일지.xlsx', 'extension': '.xlsx', 'file_path': '~$#BTC매매일지.xlsx', 'entry_number': 108594, 'parent_ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:44:37.5411368",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:44:37.5411368', 'filename': '1-7FeatureCache.txt', 'extension': '.txt', 'file_path': '1-7FeatureCache.txt', 'entry_number': 86638, 'pare"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:44:37.5434357",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:44:37.5434357', 'filename': '1-7FeatureCache.txt', 'extension': '.txt', 'file_path': '1-7FeatureCache.txt', 'entry_number': 108594, 'par"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:44:37.5441722",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:44:37.5441722', 'filename': '1-7FeatureCache.txt', 'extension': '.txt', 'file_path': '1-7FeatureCache.txt', 'entry_number': 108594, 'par"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:45:37.7156127",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:45:37.7156127', 'filename': 'FlightingLogging.txt', 'extension': '.txt', 'file_path': 'FlightingLogging.txt', 'entry_number': 79318, 'pa"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:48:23.2023267",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:48:23.2023267', 'filename': 'index.txt', 'extension': '.txt', 'file_path': 'index.txt', 'entry_number': 109615, 'parent_entry': 108636, "
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:48:23.2023267",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:48:23.2023267', 'filename': 'index.txt', 'extension': '.txt', 'file_path': 'index.txt', 'entry_number': 109615, 'parent_entry': 108636, "
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:48:23.2323553",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:48:23.2323553', 'filename': 'index.txt', 'extension': '.txt', 'file_path': 'index.txt', 'entry_number': 77548, 'parent_entry': 108636, '"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 10:48:23.2323553",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 10:48:23.2323553', 'filename': 'index.txt', 'extension': '.txt', 'file_path': 'index.txt', 'entry_number': 77548, 'parent_entry': 108636, '"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 11:12:31.1073567",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 11:12:31.1073567', 'filename': 'AppCache133393363507897764.txt', 'extension': '.txt', 'file_path': 'AppCache133393363507897764.txt', 'entry"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 11:12:31.1073567",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 11:12:31.1073567', 'filename': 'AppCache133393363507897764.txt', 'extension': '.txt', 'file_path': 'AppCache133393363507897764.txt', 'entry"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 11:12:31.2958462",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 11:12:31.2958462', 'filename': '0.0.filtertrie.intermediate.txt', 'extension': '.txt', 'file_path': '0.0.filtertrie.intermediate.txt', 'ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 11:12:31.2988815",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 11:12:31.2988815', 'filename': '0.1.filtertrie.intermediate.txt', 'extension': '.txt', 'file_path': '0.1.filtertrie.intermediate.txt', 'ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 11:12:31.2988815",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 11:12:31.2988815', 'filename': '0.2.filtertrie.intermediate.txt', 'extension': '.txt', 'file_path': '0.2.filtertrie.intermediate.txt', 'ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 11:12:31.2998472",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 11:12:31.2998472', 'filename': '0.0.filtertrie.intermediate.txt', 'extension': '.txt', 'file_path': '0.0.filtertrie.intermediate.txt', 'ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 11:12:31.3070162",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 11:12:31.3070162', 'filename': '0.1.filtertrie.intermediate.txt', 'extension': '.txt', 'file_path': '0.1.filtertrie.intermediate.txt', 'ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 11:12:31.3079899",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 11:12:31.3079899', 'filename': '0.2.filtertrie.intermediate.txt', 'extension': '.txt', 'file_path': '0.2.filtertrie.intermediate.txt', 'ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 11:12:31.7551994",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 11:12:31.7551994', 'filename': 'AppCache133393219506319905.txt', 'extension': '.txt', 'file_path': 'AppCache133393219506319905.txt', 'entry"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-16 11:12:31.7669144",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-16 11:12:31.7669144', 'filename': 'AppCache133393253037764865.txt', 'extension': '.txt', 'file_path': 'AppCache133393253037764865.txt', 'entry"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:41:25.3086064",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:41:25.3086064', 'filename': 'AppCache133394136835048579.txt', 'extension': '.txt', 'file_path': 'AppCache133394136835048579.txt', 'entry"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:41:25.3086064",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:41:25.3086064', 'filename': 'AppCache133394136835048579.txt', 'extension': '.txt', 'file_path': 'AppCache133394136835048579.txt', 'entry"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:41:25.6209180",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:41:25.6209180', 'filename': '0.0.filtertrie.intermediate.txt', 'extension': '.txt', 'file_path': '0.0.filtertrie.intermediate.txt', 'ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:41:25.6209180",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:41:25.6209180', 'filename': '0.1.filtertrie.intermediate.txt', 'extension': '.txt', 'file_path': '0.1.filtertrie.intermediate.txt', 'ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:41:25.6209180",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:41:25.6209180', 'filename': '0.2.filtertrie.intermediate.txt', 'extension': '.txt', 'file_path': '0.2.filtertrie.intermediate.txt', 'ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:41:25.8867613",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:41:25.8867613', 'filename': 'AppCache133393363507897764.txt', 'extension': '.txt', 'file_path': 'AppCache133393363507897764.txt', 'entry"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:41:35.6368487",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:41:35.6368487', 'filename': 'AppCache133394136918071370.txt', 'extension': '.txt', 'file_path': 'AppCache133394136918071370.txt', 'entry"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:41:35.7617557",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:41:35.7617557', 'filename': 'AppCache133394136918071370.txt', 'extension': '.txt', 'file_path': 'AppCache133394136918071370.txt', 'entry"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:42:10.0644118",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:42:10.0644118', 'filename': 'index.txt', 'extension': '.txt', 'file_path': 'index.txt', 'entry_number': 32847, 'parent_entry': 98585, 'u"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:42:10.0644118",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:42:10.0644118', 'filename': 'index.txt', 'extension': '.txt', 'file_path': 'index.txt', 'entry_number': 32847, 'parent_entry': 98585, 'u"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:42:50.2231245",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:42:50.2231245', 'filename': 'index.txt', 'extension': '.txt', 'file_path': 'index.txt', 'entry_number': 44914, 'parent_entry': 98585, 'u"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:42:50.2239429",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:42:50.2239429', 'filename': 'index.txt', 'extension': '.txt', 'file_path': 'index.txt', 'entry_number': 44914, 'parent_entry': 98585, 'u"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:47:15.1900071",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:47:15.1900071', 'filename': 'msedge.hollow.7z', 'extension': '.7z', 'file_path': 'msedge.hollow.7z', 'entry_number': 318510, 'parent_ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:47:15.1999627",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:47:15.1999627', 'filename': 'msedge.hollow.7z', 'extension': '.7z', 'file_path': 'msedge.hollow.7z', 'entry_number': 318510, 'parent_ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:47:15.7119460",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:47:15.7119460', 'filename': 'msedge.hollow.7z', 'extension': '.7z', 'file_path': 'msedge.hollow.7z', 'entry_number': 318510, 'parent_ent"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:47:32.8652435",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:47:32.8652435', 'filename': 'AppCache133394139284925346.txt', 'extension': '.txt', 'file_path': 'AppCache133394139284925346.txt', 'entry"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2023-09-17 08:47:32.8699482",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-17 08:47:32.8699482', 'filename': 'AppCache133394139284925346.txt', 'extension': '.txt', 'file_path': 'AppCache133394139284925346.txt', 'entry"
+      }
+    ],
+    "ext_mft_user_profile_content": [
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:04:44.0014684",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:04:44.0014684', 'entry_number': 88459, 'sequence_number': 6, 'filename': 'BTCUSDT-1h-2023-07.zip', 'extension': '.zip', 'file_path': '.\\"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:04:44.0014684",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:04:44.0014684', 'entry_number': 88459, 'sequence_number': 6, 'filename': 'BTCUSDT-1h-2023-07.zip:Zone.Identifier', 'extension': '.identi"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:04:48.8078895",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:04:48.8078895', 'entry_number': 319397, 'sequence_number': 10, 'filename': 'BTCUSDT-1h-2023-06.zip', 'extension': '.zip', 'file_path': '"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:04:48.8078895",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:04:48.8078895', 'entry_number': 319397, 'sequence_number': 10, 'filename': 'BTCUSDT-1h-2023-06.zip:Zone.Identifier', 'extension': '.iden"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:05:03.9034964",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:05:03.9034964', 'entry_number': 320788, 'sequence_number': 13, 'filename': 'BTCUSDT-1h-2023-05.zip', 'extension': '.zip', 'file_path': '"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:05:03.9034964",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:05:03.9034964', 'entry_number': 320788, 'sequence_number': 13, 'filename': 'BTCUSDT-1h-2023-05.zip:Zone.Identifier', 'extension': '.iden"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:06:18.2448753",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:06:18.2448753', 'entry_number': 101361, 'sequence_number': 4, 'filename': 'BANDIZIP-SETUP-STD-X64.EXE', 'extension': '.exe', 'file_path'"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:12:20.0706291",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:12:20.0706291', 'entry_number': 94056, 'sequence_number': 4, 'filename': 'VSCodeUserSetup-x64-1.82.2.exe', 'extension': '.exe', 'file_pa"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:14:38.2720928",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:14:38.2720928', 'entry_number': 329492, 'sequence_number': 1, 'filename': 'Visual Studio Code.lnk', 'extension': '.lnk', 'file_path': '."
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:21:09.2173795",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:21:09.2173795', 'entry_number': 331965, 'sequence_number': 1, 'filename': 'Notion Setup 2.0.53.exe', 'extension': '.exe', 'file_path': '"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:21:19.0571265",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:21:19.0571265', 'entry_number': 329767, 'sequence_number': 4, 'filename': 'BTCUSDT-1h-2022-02.zip', 'extension': '.zip', 'file_path': '."
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:21:19.0571265",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:21:19.0571265', 'entry_number': 329767, 'sequence_number': 4, 'filename': 'BTCUSDT-1h-2022-02.zip:Zone.Identifier', 'extension': '.ident"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:21:46.4931597",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:21:46.4931597', 'entry_number': 341810, 'sequence_number': 1, 'filename': 'BTCUSDT-1h-2022-02', 'extension': '', 'file_path': '.\\\\Users\\"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:21:52.8971841",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:21:52.8971841', 'entry_number': 342450, 'sequence_number': 1, 'filename': 'BTCUSDT-1h-2023-05', 'extension': '', 'file_path': '.\\\\Users\\"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:21:57.2343962",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:21:57.2343962', 'entry_number': 342770, 'sequence_number': 1, 'filename': 'BTCUSDT-1h-2023-06', 'extension': '', 'file_path': '.\\\\Users\\"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:22:03.7842196",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:22:03.7842196', 'entry_number': 343432, 'sequence_number': 1, 'filename': 'BTCUSDT-1h-2023-07', 'extension': '', 'file_path': '.\\\\Users\\"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:23:19.4764660",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:23:19.4764660', 'entry_number': 344722, 'sequence_number': 1, 'filename': 'BTCUSDT-1h-2022-01.zip', 'extension': '.zip', 'file_path': '."
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:23:19.4764660",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:23:19.4764660', 'entry_number': 344722, 'sequence_number': 1, 'filename': 'BTCUSDT-1h-2022-01.zip:Zone.Identifier', 'extension': '.ident"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:23:25.8771181",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:23:25.8771181', 'entry_number': 340080, 'sequence_number': 1, 'filename': 'USDT', 'extension': '', 'file_path': '.\\\\Users\\\\souldrag\\\\Des"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:23:25.8802398",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:23:25.8802398', 'entry_number': 344911, 'sequence_number': 1, 'filename': 'BTCUSDT-1h-2022-01', 'extension': '', 'file_path': '.\\\\Users\\"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:25:54.0345539",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:25:54.0345539', 'entry_number': 345599, 'sequence_number': 1, 'filename': '양식', 'extension': '', 'file_path': '.\\\\Users\\\\souldrag\\\\Deskt"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:26:55.0735462",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:26:55.0735462', 'entry_number': 348180, 'sequence_number': 1, 'filename': 'Notion.lnk', 'extension': '.lnk', 'file_path': '.\\\\Users\\\\sou"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:33:15.6082903",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:33:15.6082903', 'entry_number': 340195, 'sequence_number': 11, 'filename': 'GitHubDesktopSetup-x64.exe', 'extension': '.exe', 'file_path"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 01:34:16.1469122",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 01:34:16.1469122', 'entry_number': 342242, 'sequence_number': 2, 'filename': 'GitHub Desktop.lnk', 'extension': '.lnk', 'file_path': '.\\\\Us"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 02:27:54.8027106",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:27:54.8027106', 'entry_number': 100267, 'sequence_number': 28, 'filename': 'BlockstreamGreen_Windows_x86_64.zip', 'extension': '.zip', '"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 02:27:54.8027106",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:27:54.8027106', 'entry_number': 100267, 'sequence_number': 28, 'filename': 'BlockstreamGreen_Windows_x86_64.zip:Zone.Identifier', 'exten"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 02:29:42.9739609",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:29:42.9739609', 'entry_number': 101322, 'sequence_number': 11, 'filename': 'BlockstreamGreen_Windows_x86_64', 'extension': '', 'file_pat"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 02:45:27.9023182",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:45:27.9023182', 'entry_number': 5108, 'sequence_number': 1, 'filename': 'Desktop', 'extension': '', 'file_path': '.\\\\Windows\\\\SystemApps"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 02:45:28.1678476",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 02:45:28.1678476', 'entry_number': 5110, 'sequence_number': 1, 'filename': 'Desktop', 'extension': '', 'file_path': '.\\\\Windows\\\\SystemApps"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2023-09-15 04:14:10.0127011",
+        "_raw": "{'case_id': 'case_20260128_141256', 'timestamp': '2023-09-15 04:14:10.0127011', 'entry_number': 354531, 'sequence_number': 1, 'filename': '사용자 지정 Office 서식 파일', 'extension': '', 'file_path': '.\\\\Users"
+      }
+    ]
   }
 }

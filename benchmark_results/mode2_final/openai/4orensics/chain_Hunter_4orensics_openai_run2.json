@@ -1,0 +1,301 @@
+{
+  "provider": "openai",
+  "case": "4orensics",
+  "case_name": "Hunter_4orensics",
+  "case_id": "case_20260410_120043",
+  "run": 2,
+  "evidence_file": "evidence_Hunter_4orensics.json",
+  "evidence_record_count": 846,
+  "chain_event_count": 41,
+  "prompt_chars": 190656,
+  "elapsed_seconds": 27.1,
+  "chain": [
+    {
+      "timestamp": "2016-06-15 13:53:52.0000000",
+      "event": "Installation of CCleaner executables CCleaner.exe and CCleaner64.exe in 'C:\\Program Files\\CCleaner\\'",
+      "supporting_artifact": "mft_exe_files",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-15 22:18:58.0000000",
+      "event": "Skype.exe recorded under '.\\\\Program Files (x86)\\\\Skype\\\\Phone\\\\Skype.exe' indicating communication tool presence",
+      "supporting_artifact": "app_communication",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:39.9920378",
+      "event": "Recent document 'how_do_threat_actors_steal_your_data.lnk' accessed by user Hunter",
+      "supporting_artifact": "mft_lnk_files",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:42.0547626",
+      "event": "Creation of text file '69JHYQ5B.txt' in user content area",
+      "supporting_artifact": "ext_usn_user_content_lifecycle",
+      "confidence_or_caveat": "medium",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-20 23:56:02.5154491",
+      "event": "Creation of PowerPoint file 'PROTTPLN.PPT' and related Office templates (PROTTPLV.PPT, PROTTPLN.DOC, PROTTPLN.XLS, PROTTPLV.DOC, PROTTPLV.XLS, SOLVSAMP.XLS)",
+      "supporting_artifact": "ext_usn_user_content_lifecycle",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:41.3375000",
+      "event": "Download of SSH client 'putty.exe' to '.\\\\Users\\\\Hunter\\\\Downloads'",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:42.6444149",
+      "event": "Download of SCP tool 'pscp.exe' (with Zone.Identifier) to '.\\\\Users\\\\Hunter\\\\Downloads'",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-20 23:58:45.2342383",
+      "event": "Creation of financial dictionary files 'card_expiration_terms_dict.txt', 'card_security_terms_dict.txt', 'card_terms_dict.txt', 'ssn_high_group_info.txt'",
+      "supporting_artifact": "ext_usn_user_content_lifecycle",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:06.9483540",
+      "event": "Download of SSH archive 'setupssh381-20040709.zip' to '.\\\\Users\\\\Hunter\\\\Downloads'",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2016-06-21 00:02:23.8454489",
+      "event": "Creation of archive 'WVRBEZZTFREDLTKJ.zip'",
+      "supporting_artifact": "ext_usn_archive_created",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:15",
+      "event": "Download of remote access installer 'TeamViewer_Setup-vfa.exe' to 'C:\\Users\\Hunter\\Downloads\\'",
+      "supporting_artifact": "app_remote_access",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:21",
+      "event": "Execution of TeamViewer_.exe from 'C:\\\\Users\\\\Hunter\\\\AppData\\\\Local\\\\Temp\\\\TeamViewer\\\\TeamViewer_.exe' with firewall EventID 2004 shortly after",
+      "supporting_artifact": "ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:30.3757303",
+      "event": "Creation of archive 'tvfiles.7z' in context of TeamViewer files",
+      "supporting_artifact": "ext_usn_archive_created",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:38.0639958",
+      "event": "Creation of archive 'tvfilesx64.7z' in TeamViewer-related directory",
+      "supporting_artifact": "ext_usn_archive_created",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:41:06.3256183",
+      "event": "System time change recorded (EventID 4616) on channel Security",
+      "supporting_artifact": "time_changed_4616",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 01:41:07.0000000",
+      "event": "Logon failures (EventID 4625) on computer '4ORENSICS'",
+      "supporting_artifact": "auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2016-06-21 01:52:17.0902822",
+      "event": "Creation of user archive 'Pictures.7z'",
+      "supporting_artifact": "ext_usn_archive_created",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:53:14.7757045",
+      "event": "USB device installation recorded by Microsoft-Windows-Kernel-PnP (EventID 410) and USBSTOR registry entry for 'Imation Nano Pro USB Device'",
+      "supporting_artifact": "usb_kernel_pnp_install",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:04:40.0000000",
+      "event": "Forensic tool 'FTK-Imager.zip' present in both 'C:\\Users\\Hunter\\Google Drive\\' and 'C:\\Users\\Hunter\\Downloads\\'",
+      "supporting_artifact": "mft_archive_files",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 08:14:37.5527124",
+      "event": "Kernel-PnP EventID 410 for device install at '2016-06-21 08:14:37.5527124' suggesting additional removable storage activity",
+      "supporting_artifact": "usb_kernel_pnp_install",
+      "confidence_or_caveat": "medium",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 08:15:09.9587101",
+      "event": "DHCP authentication EventID 50036 followed by logon failures 4625 on 'WIN-A9KKHBKS7E6', indicating network authentication attempts",
+      "supporting_artifact": "dhcp_auth_50036_50037",
+      "confidence_or_caveat": "medium",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2016-06-21 08:19:47.3526015",
+      "event": "Account modification events (EventID 4738) on '4orensics'",
+      "supporting_artifact": "auth_account_modified_4738",
+      "confidence_or_caveat": "medium",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 08:30:21.3835089",
+      "event": "Service start type changed (EventID 7040) around 08:30 indicating modification of service startup configuration",
+      "supporting_artifact": "svc_starttype_changed_7040",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0245506",
+      "event": "New account creation on '4orensics' (EventID 4720) with subsequent enable (EventID 4722) and group additions (EventID 4732)",
+      "supporting_artifact": "auth_account_created_4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.6961545",
+      "event": "Windows Defender configuration changed (EventID 5007) on 'Microsoft-Windows-Windows Defender/Operational'",
+      "supporting_artifact": "def_config_change_5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.1968203",
+      "event": "Windows Defender real-time protection disabled (EventID 5010) on 'Microsoft-Windows-HomeGroup Provider Service/Operational'",
+      "supporting_artifact": "def_realtime_disabled",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:07",
+      "event": "Download and execution of '7z1602-x64.exe' installer for 7-Zip from 'C:\\Users\\Hunter\\Downloads\\7z1602-x64.exe'",
+      "supporting_artifact": "app_archive_tools",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:39.9782201",
+      "event": "Notepad++ plugin archive 'PluginManagerPlugins.zip' created in '.\\\\Users\\\\Hunter\\\\AppData\\\\Roaming\\\\Notepad++\\\\plugins\\\\config\\\\'",
+      "supporting_artifact": "mft_archive_files",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 09:34:13.5047860",
+      "event": "Unidentified service installation recorded (EventID 7045) on '4orensics' (service name not present in record)",
+      "supporting_artifact": "svc_install_7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:37:32",
+      "event": "User accessed 'C:\\Users\\Hunter\\Pictures\\Exfil\\Exfiltration_Diagram.png' and 'dns-exfiltration-using-sqlmap-18-728.jpg'",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-21 10:40:33.5948384",
+      "event": "Another system time change recorded (EventID 4616) at 10:40:33.5948384",
+      "supporting_artifact": "time_changed_4616",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 10:54:03",
+      "event": "Execution of Tor Browser Firefox.exe from 'C:\\\\Users\\\\Hunter\\\\Desktop\\\\Tor Browser\\\\Browser\\\\Tor Browser\\\\Browser\\\\firefox.exe'",
+      "supporting_artifact": "ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2016-06-21 11:01:44.1316101",
+      "event": "Presence of 'psexec' file under '.\\\\Program Files (x86)\\\\' indicating PSExec tool deployment",
+      "supporting_artifact": "suspicious_indicators_universal",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 11:18:11.8537725",
+      "event": "Script files 'check_soundcard.vbs' and 'empty.vbs' modified according to USN Journal",
+      "supporting_artifact": "usnjrnl_recent_changes",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 11:38:40.9555996",
+      "event": "Special privileges assigned (EventID 4672) to a logon session on '4orensics'",
+      "supporting_artifact": "auth_priv_assigned_4672",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 11:43:18.2219434",
+      "event": "Run keys created for 'Skype', 'GoogleDriveSync', and 'CCleaner Monitoring' under HKCU 'Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run'",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:44:53.7413387",
+      "event": "Service installation (EventID 7045) associated with registry service 'MftWipeFilter' (Jetico file system filter) indicating anti-forensic filter driver",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "medium",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 12:58:02.7459338",
+      "event": "System time modification event (EventID 4616) near end of incident window",
+      "supporting_artifact": "time_changed_4616",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 13:00:54.476902Z",
+      "event": "Browser session visiting Google security activity for account 'ehptmsgs@gmail.com' and reviewing 'Security - Devices'",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2016-06-21T13:02:13.067060Z",
+      "event": "Gmail settings accessed at 'https://mail.google.com/mail/#settings/fwdandpop' for account 'ehptmsgs@gmail.com'",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21T13:12:11.576942Z",
+      "event": "Browser visited 'https://www.google.com/settings/security/lesssecureapps' (Less secure apps - Account settings)",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    }
+  ]
+}

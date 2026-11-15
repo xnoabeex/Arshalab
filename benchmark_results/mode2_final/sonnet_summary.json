@@ -1,26 +1,65 @@
 [
-  {
-    "case": "magnet",
-    "arm": "control",
-    "events": 30,
-    "prompt_chars": 153009,
-    "seconds": 42.2,
-    "error": ""
-  },
-  {
-    "case": "kdfs",
-    "arm": "control",
-    "events": 32,
-    "prompt_chars": 147803,
-    "seconds": 50.9,
-    "error": ""
-  },
-  {
-    "case": "4orensics",
-    "arm": "control",
-    "events": 35,
-    "prompt_chars": 143389,
-    "seconds": 53.4,
-    "error": ""
-  }
+ {
+  "case": "kdfs",
+  "run": 1,
+  "events": 30,
+  "prompt_chars": 193130,
+  "seconds": 48.9
+ },
+ {
+  "case": "kdfs",
+  "run": 2,
+  "events": 30,
+  "prompt_chars": 193130,
+  "seconds": 41.7
+ },
+ {
+  "case": "kdfs",
+  "run": 3,
+  "events": 30,
+  "prompt_chars": 193130,
+  "seconds": 43.8
+ },
+ {
+  "case": "magnet",
+  "run": 1,
+  "events": 30,
+  "prompt_chars": 183012,
+  "seconds": 39.3
+ },
+ {
+  "case": "magnet",
+  "run": 2,
+  "events": 29,
+  "prompt_chars": 183012,
+  "seconds": 39.7
+ },
+ {
+  "case": "magnet",
+  "run": 3,
+  "events": 30,
+  "prompt_chars": 183012,
+  "seconds": 39.5
+ },
+ {
+  "case": "4orensics",
+  "run": 1,
+  "events": 35,
+  "prompt_chars": 190656,
+  "seconds": 47.1
+ },
+ {
+  "case": "4orensics",
+  "run": 2,
+  "events": 30,
+  "prompt_chars": 190656,
+  "seconds": 46.6
+ },
+ {
+  "case": "4orensics",
+  "run": 3,
+  "events": 30,
+  "prompt_chars": 190656,
+  "seconds": 41.8
+ }
 ]

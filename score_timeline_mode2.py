@@ -89,18 +89,18 @@ MILESTONES = {
     # whose evidence is partially indirect (e.g. Discord channel URL in
     # Chrome history is a proxy for Discord chat content stored in .ldb).
     "kdfs": {
-        # IN-SCOPE (5): evidence retrievable through current ArshaLab
-        # modules (Windows EventLog, MFT, Registry, Prefetch, Amcache,
-        # Shimcache, USN Journal, Browser history/SRUM). Verified against
-        # ES contents: discord/metamask/everyrecover56/gofile/bandizip/
-        # ransom.exe/ransom.zip/sandisk/ledger live all present.
+        # IN-SCOPE (4; P2_debt_pressure below is marked out_of_scope): evidence
+        # retrievable through current ArshaLab modules (Windows EventLog, MFT,
+        # Registry, Prefetch, Amcache, Shimcache, USN Journal, Browser/SRUM).
+        # Verified against ES contents: discord/metamask/everyrecover56/gofile/
+        # bandizip/ransom.exe/ransom.zip/sandisk/ledger live all present.
         "P2_debt_pressure":         {"keywords": ["cook.com", "사채", "파산", "82cook", "bankruptcy", "illegal lending", "debt research", "loan shark", "financial distress", "blackmail"], "out_of_scope": "Korean case-tied; dropped in v2 case-agnostic cleanup (kdfs_korean_financial_search anchor removed, 사채/파산 tokens stripped from browser_downloads_searches)"},
         "P3_intent_formation":      {"keywords": ["discord", "discord.exe", "랜섬웨어", "ransomware", "쌀줍", "화이트해커", "미인증", "ledger live", "blockstream"]},
         "P7_payment_setup":         {"keywords": ["metamask", "ledger live", "bandizip", "crypto wallet", "wallet extension", "blockstream", "souldrag576"]},
         "P9_weapon_acquisition":    {"keywords": ["bandizip", "ransom.exe", "ransom.zip", "sandisk", "cruzer", "usb", "7121752", "7287357", "0b88dd85", "pictures\\\\ransom"]},
         "P10_distribution_handoff": {"keywords": ["gofile", "gofile.io", "file sharing", "share url", "upload"]},
-        # OUT-OF-SCOPE (12): require future-work modules. Verified ZERO
-        # matches in current ES indices for cyberninja, changelly,
+        # OUT-OF-SCOPE (13 with P2_debt_pressure): require future-work modules.
+        # Verified ZERO matches in current ES indices for cyberninja, changelly,
         # takemejail (Discord chat / blockchain data); listed for paper
         # transparency, not counted in primary step coverage.
         "P4_accomplice_setup":      {"keywords": ["takemejail", "coinone"], "out_of_scope": "Etherscan blockchain explorer module not built (0 ES hits)"},
@@ -133,9 +133,9 @@ MILESTONES = {
 EVIDENCE_DUMP = {
     # Fallback only. The scorer first looks for evidence_<case>.json sitting
     # next to the chain file, which is how the released runs are laid out.
-    "kdfs":      "benchmark_results/mode2_final/opus/kdfs/control/evidence_KDFS_2023.json",
-    "magnet":    "benchmark_results/mode2_final/opus/magnet/control/evidence_Magnet_CTF_2022.json",
-    "4orensics": "benchmark_results/mode2_final/opus/4orensics/control/evidence_Hunter_4orensics.json",
+    "kdfs":      "benchmark_results/mode2_final/opus/kdfs/evidence_KDFS_2023.json",
+    "magnet":    "benchmark_results/mode2_final/opus/magnet/evidence_Magnet_CTF_2022.json",
+    "4orensics": "benchmark_results/mode2_final/opus/4orensics/evidence_Hunter_4orensics.json",
 }
 
 

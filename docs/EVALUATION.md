@@ -17,21 +17,22 @@ Each (model, case, run) produces one reconstructed chain through a two-stage
 pipeline:
 
 1. **Stage 1 — evidence retrieval** (`retrieve_evidence_v2.py`): a fixed catalog
-   of **98 case-agnostic anchor queries** across ten DFIR domains is issued
+   of **105 case-agnostic anchor queries** across ten DFIR domains is issued
    against the case index, bounded to the case and its incident window. Each
    record is compressed to its diagnostic fields. The result is one evidence
-   pool (691 records on Hunter, 746 on KDFS, 798 on Magnet), persisted as an
+   pool (846 records on Hunter, 895 on KDFS, 896 on Magnet), persisted as an
    audit trail.
 2. **Stage 2 — reconstruction** (`reconstruct_timeline.py`): the full evidence
    pool plus a structured prompt is given to the model, which emits a
-   chronologically ordered chain of 15–30 steps, each with a timestamp, a
+   chronologically ordered chain of steps (the prompt asks for 15 to 30; the
+   released chains hold 28 to 88, 40.9 on average), each with a timestamp, a
    description containing a concrete identifier, a source attribution, and an
    incident phase drawn from a fixed vocabulary. Those phase labels are the
    model's own and are not MITRE ATT&CK tactics. Tactic coverage below is
    scored against the tactics recorded in the reference chain, not against
    the labels the model emits.
 
-The chain is scored by a weighted composite (lines 726–737):
+The chain is scored by a weighted composite (lines 733–744):
 
 ```
 composite = 0.30 * step
@@ -72,11 +73,6 @@ events whose `es_in_scope` field is `true`. A further thirteen milestones rest o
 artifact families the platform does not parse and are excluded, so twenty-two of
 thirty-five stand in scope.
 
-Corrected 2026-08-26. The table previously read 48 / 26 / 41, which were
-pre-revision figures matching neither the event counts nor the milestone counts
-in the shipped ground truth. Previous version kept beside this file as
-`EVALUATION.md.bak_before_chainsize_fix_2026-08-26`.
-
 Two ground-truth formats are supported (lines 572–594):
 
 - **Explicit-keyword format** (KDFS, Hunter): the milestone carries an explicit
@@ -90,8 +86,8 @@ Two ground-truth formats are supported (lines 572–594):
 ## 3. Matching a reconstructed step to a reference event
 
 Coverage and ordering both depend on a **tiered match** between a model step and
-a reference event (`_match_gt_to_chain`, lines 187–305; substring keyword test
-`_kw_in`, lines 224–226):
+a reference event (`_match_gt_to_chain`, lines 189–307; substring keyword test
+`_kw_in`, lines 226–228):
 
 | Tier | Rule | Lines |
 |------|------|-------|
@@ -137,7 +133,7 @@ tactic = covered_tactics / distinct_gt_tactics
 
 The fraction of **chain steps the evidence does not support**, checked against
 the **retrieved evidence pool, not the ground truth** (`_is_grounded`,
-lines 472–527; aggregation lines 658–669).
+lines 474–534; aggregation lines 658–669).
 
 A step is **grounded** only when **both** hold:
 
@@ -166,7 +162,7 @@ penalised as long as it is in the evidence.
 ### 4.4 Ordering accuracy
 
 A **pairwise (Kendall-style) concordance** over matched events
-(`_ordering_accuracy`, lines 340–406; timestamp parsing 310–337):
+(`_ordering_accuracy`, lines 342–408; timestamp parsing 312–339):
 
 - form every pair `(i, j)` of matched reference events with **distinct**
   timestamps (pairs with identical GT timestamps are skipped, line 385);
@@ -187,20 +183,34 @@ ordering = concordant_pairs / comparable_pairs
 ## 5. Reproducing the scores
 
 ```bash
-# Stage 1 — build the 98-anchor evidence pool for a case
+# Stage 1 — build the 105-anchor evidence pool for a case (written to benchmark_results/mode2_v2/)
 python retrieve_evidence_v2.py --case magnet      # kdfs | magnet | 4orensics | all
 
 # Stage 2 — reconstruct the chain with a given provider/run
-python reconstruct_timeline.py --provider deepseek --case magnet --run 1
+python reconstruct_timeline.py --provider deepseek --case magnet --run 1 \
+    --evidence_dir benchmark_results/mode2_v2 --out_dir benchmark_results/mode2_v2
 
-# Score the chain against the reference
-python score_timeline_mode2.py <chain_path> --case magnet \
-    --evidence benchmark_results/mode2_final/opus/magnet/control/evidence_Magnet_CTF_2022.json
+# Score the chain against the reference (the evidence pool beside the chain is used)
+python score_timeline_mode2.py benchmark_results/mode2_v2/chain_Magnet_CTF_2022_deepseek_run1.json magnet
+
+# Recompute Tables 7 and 8 and Appendix C from the 36 released chains, without any model call
+python reproduce_chain_tables.py
 ```
 
 The same code paths produce both the interactive `reconstruct_attack_chain`
 tool output and the benchmark numbers, so the tool and the evaluation are
 identical.
+
+`reproduce_chain_tables.py` also reports the two analyses of Appendix C. The
+first ranks the four models under every weighting of the four components on a
+0.05 grid with a sum of one (1,771 weightings), under five named weightings and
+under the eight shifts of a single weight by 0.10. The second re-scores every
+chain and records, for each match between a reconstructed step and a reference
+event, the tier of Section 3 that made it. With `--rebuild-baseline <new
+directory>` it rebuilds the retrieval-only baseline of Table 8 from the released
+pools: the first time-stamped record of every anchor in one variant and the
+first two in another, ordered by time and sampled evenly down to the mean length
+of the model chains on the case.
 
 ---
 

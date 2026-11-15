@@ -1,0 +1,238 @@
+{
+  "provider": "opus",
+  "case": "4orensics",
+  "case_name": "Hunter_4orensics",
+  "case_id": "case_20260410_120043",
+  "run": 3,
+  "evidence_file": "evidence_Hunter_4orensics.json",
+  "evidence_record_count": 846,
+  "chain_event_count": 32,
+  "prompt_chars": 190656,
+  "elapsed_seconds": 48.7,
+  "chain": [
+    {
+      "timestamp": "2016-06-15 13:53:52.0000000",
+      "event": "CCleaner.exe installed to .\\Program Files\\CCleaner\\CCleaner.exe (anti-forensic/cleanup tool staged)",
+      "supporting_artifact": "MFT mft_exe_files",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-15 22:18:58.0000000",
+      "event": "Skype.exe present at .\\Program Files (x86)\\Skype\\Phone\\Skype.exe (accomplice communication app)",
+      "supporting_artifact": "MFT app_communication",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:39.9920378",
+      "event": "Recent LNK 'how_do_threat_actors_steal_your_data.lnk' created — data-theft research document opened",
+      "supporting_artifact": "MFT mft_lnk_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:58:08.3455462",
+      "event": "DEFCON-22-Zoltan-Balazs-Bypass-firewalls-application-whitelists-in-20-seconds-UPDATED.pdf opened (defense-evasion research)",
+      "supporting_artifact": "USN ext_usn_user_content_lifecycle",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:58:45.2342383",
+      "event": "card_expiration_terms_dict.txt / card_security_terms_dict.txt / ssn_high_group_info.txt created (PII/financial fraud dictionaries staged)",
+      "supporting_artifact": "USN ext_usn_user_content_lifecycle",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:34",
+      "event": "putty.exe downloaded to C:\\Users\\Hunter\\Downloads\\putty.exe (SSH tool for remote transfer)",
+      "supporting_artifact": "LNK lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:41",
+      "event": "pscp.exe downloaded to C:\\Users\\Hunter\\Downloads\\pscp.exe (SCP exfil utility, carries Zone.Identifier)",
+      "supporting_artifact": "LNK lnk_recent_files / MFT ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:06.9483540",
+      "event": "setupssh381-20040709.zip created in Downloads (SSH server package for data handoff)",
+      "supporting_artifact": "MFT mft_archive_files",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 00:02:23.8454489",
+      "event": "Archive WVRBEZZTFREDLTKJ.zip created (randomly-named staging archive for exfil)",
+      "supporting_artifact": "USN ext_usn_archive_created",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:15",
+      "event": "TeamViewer_Setup-vfa.exe downloaded to C:\\Users\\Hunter\\Downloads (remote-access tool for accomplice/handoff)",
+      "supporting_artifact": "app_remote_access",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:21",
+      "event": "TEAMVIEWER_.EXE executed from AppData\\Local\\Temp\\TeamViewer\\TeamViewer_.exe",
+      "supporting_artifact": "Prefetch ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:30.3757303",
+      "event": "tvfiles.7z / tvfilesx64.7z archives created (TeamViewer payload packaging)",
+      "supporting_artifact": "USN ext_usn_archive_created",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:45:11.4222303",
+      "event": "Dropbox Update Service (dbupdate/dbupdatem) registered under ControlSet001\\Services (cloud-sync exfil channel)",
+      "supporting_artifact": "Registry reg_appinit_dlls ControlSet001\\Services",
+      "confidence_or_caveat": "medium",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 01:52:17.0902822",
+      "event": "Pictures.7z archive created (user-data staging for exfil)",
+      "supporting_artifact": "USN ext_usn_archive_created",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:53:14.7757045",
+      "event": "USB mass-storage attach (Kernel-PnP Event 410) — Imation Nano Pro USB device connected",
+      "supporting_artifact": "EventLog usb_attach_driverframeworks / Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:01:59.3657151",
+      "event": "Second USB device attach (Kernel-PnP Event 410) — Lexar JumpDrive USBSTOR enumerated",
+      "supporting_artifact": "EventLog usb_kernel_pnp_install / Registry USBSTOR",
+      "confidence_or_caveat": "medium",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:04:40.0000000",
+      "event": "FTK-Imager.zip placed in Google Drive and Downloads (forensic imaging tool; counter-forensic awareness)",
+      "supporting_artifact": "MFT mft_archive_files",
+      "confidence_or_caveat": "medium",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0245506",
+      "event": "Unauthorized local account created (EventLog Event 4720) on computer 4orensics",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.6961545",
+      "event": "Windows Defender configuration changed (EventLog Event 5007) — Defender tampering",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0402357",
+      "event": "Account added to privileged group (EventLog Event 4732) following 4720 account creation",
+      "supporting_artifact": "EventLog Event 4732",
+      "confidence_or_caveat": "medium",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.1968203",
+      "event": "Defender real-time protection disabled (Event 5010) at group-add time",
+      "supporting_artifact": "EventLog def_realtime_disabled / fw",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:07",
+      "event": "7z1602-x64.exe downloaded and executed from C:\\Users\\Hunter\\Downloads (archive tool for payload packaging)",
+      "supporting_artifact": "app_archive_tools / Prefetch 7Z1602-X64.EXE",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 09:22:25",
+      "event": "WIRESHARK-WIN64-2.0.4.EXE executed (network capture/discovery tool install)",
+      "supporting_artifact": "Prefetch ext_prefetch_builtin_discovery",
+      "confidence_or_caveat": "medium",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2016-06-21 09:34:13.5047860",
+      "event": "Service install (EventLog Event 7045) on 4orensics — first adversary service registered",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:37:32",
+      "event": "Exfiltration_Diagram.png accessed under C:\\Users\\Hunter\\Pictures\\Exfil\\ (explicit exfil staging folder)",
+      "supporting_artifact": "LNK lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 11:01:44.1316101",
+      "event": "psexec staged at .\\Program Files (x86)\\...\\psexec (lateral-movement/remote-exec tool)",
+      "supporting_artifact": "USN suspicious_indicators_universal",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 11:02:03",
+      "event": "Nmap zenmap.exe launched from C:\\Program Files (x86)\\Nmap (network discovery/port scan)",
+      "supporting_artifact": "LNK lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2016-06-21 10:51:23",
+      "event": "Tor Browser firefox.exe launched from C:\\Users\\Hunter\\Desktop\\Tor Browser (anonymized C2/exfil channel)",
+      "supporting_artifact": "LNK lnk_recent_files / Prefetch FIREFOX.EXE",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2016-06-21 11:18:11.8537725",
+      "event": "Scripts check_soundcard.vbs / empty.vbs written (VBS execution artifacts)",
+      "supporting_artifact": "USN usnjrnl_recent_changes",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 11:44:54.1431830",
+      "event": "MftWipeFilter service 'Jetico file system filter' registered under ControlSet001\\Services (BCWipe MFT-wiping anti-forensic driver)",
+      "supporting_artifact": "Registry reg_persistence_master ControlSet001\\Services",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 13:00:54.476902Z",
+      "event": "Gmail account security/activity reviewed for ehptmsgs@gmail.com (security.google.com/settings/security/activity)",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 13:12:11.576942Z",
+      "event": "Gmail 'Less secure apps' setting opened (www.google.com/settings/security/lesssecureapps) to enable programmatic mail exfil",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    }
+  ]
+}

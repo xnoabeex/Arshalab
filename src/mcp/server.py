@@ -39,7 +39,7 @@ class ForensicMCPServer:
     - get_registry_autoruns: Get autorun entries
     - get_case_stats: Case statistics
     - reconstruct_attack_chain: Run autonomous attack-chain reconstruction
-      (98 anchors -> evidence dump -> LLM synthesis -> JSON chain) with
+      (105 anchors -> evidence dump -> LLM synthesis -> JSON chain) with
       audit-trail persistence under /reports/<case_id>/
     """
 
@@ -648,8 +648,8 @@ class ForensicMCPServer:
                     Reconstruct the adversary attack chain.
 
                     Runs the standardized reconstruction pipeline:
-                    1. Collects evidence via 98 case-agnostic anchor queries
-                       (~1,000 records) and persists the full dump.
+                    1. Collects evidence via 105 case-agnostic anchor queries
+                       (about 850 to 900 records) and persists the full dump.
                     2. Synthesizes 15-30 meaningful attack-chain steps with
                        chronological ordering, MITRE ATT&CK phase classification,
                        source attribution, and confidence per step.

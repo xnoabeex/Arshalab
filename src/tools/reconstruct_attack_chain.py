@@ -5,7 +5,7 @@ pipeline as a single callable function suitable for use as an LLM tool
 in interactive and MCP contexts.
 
 Pipeline:
-    1. Run 98-anchor evidence retrieval across 10 DFIR domains
+    1. Run 105-anchor evidence retrieval across 10 DFIR domains
        (`retrieve_evidence_v2.py`) with per-record compression to fit
        the ~350K prompt budget.
     2. Persist evidence dump to /reports/<case_id>/evidence_dumps/
@@ -103,7 +103,7 @@ def reconstruct_attack_chain(
     case_name = _CASE_KEY_TO_NAME[case_key]
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    # -- Stage 1: retrieve evidence via 98 anchors (v2) ----------------------
+    # -- Stage 1: retrieve evidence via 105 anchors (v2) ---------------------
     retrieve_cmd = [
         sys.executable,
         str(_PROJECT_ROOT / "retrieve_evidence_v2.py"),

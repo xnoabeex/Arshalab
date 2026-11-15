@@ -1,0 +1,385 @@
+{
+  "provider": "openai",
+  "case": "4orensics",
+  "case_name": "Hunter_4orensics",
+  "case_id": "case_20260410_120043",
+  "run": 1,
+  "evidence_file": "evidence_Hunter_4orensics.json",
+  "evidence_record_count": 846,
+  "chain_event_count": 53,
+  "prompt_chars": 190656,
+  "elapsed_seconds": 34.5,
+  "chain": [
+    {
+      "timestamp": "2016-06-15 13:53:52.0000000",
+      "event": "Installation of CCleaner executables CCleaner.exe and CCleaner64.exe in 'C:\\Program Files\\CCleaner\\'",
+      "supporting_artifact": "mft_exe_files",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-15 22:18:58.0000000",
+      "event": "Skype executable 'Skype.exe' present under '.\\Program Files (x86)\\Skype\\Phone\\Skype.exe', indicating communication tool installed",
+      "supporting_artifact": "mft_exe_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:39.9920378",
+      "event": "Recent LNK 'how_do_threat_actors_steal_your_data.lnk' created in Hunter profile, suggesting reading material on data theft",
+      "supporting_artifact": "mft_lnk_files",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:42.0547626",
+      "event": "Creation of text file '69JHYQ5B.txt' under user content per USN Journal",
+      "supporting_artifact": "ext_usn_user_content_lifecycle",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:53:36",
+      "event": "Execution of 'CMD.EXE' from '\\WINDOWS\\SYSTEM32\\CMD.EXE' recorded in prefetch",
+      "supporting_artifact": "prefetch_top",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-20 23:55:56",
+      "event": "Execution of 'MSIEXEC.EXE' (run_count 17) from '\\WINDOWS\\SYSTEM32\\MSIEXEC.EXE', installing Office-related MSIs such as 'OfficeMUISet.msi'",
+      "supporting_artifact": "prefetch_top",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:41.3375000",
+      "event": "Download of SSH client 'putty.exe' into '.\\Users\\Hunter\\Downloads\\' recorded in MFT",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:42.6444149",
+      "event": "Download of SCP client 'pscp.exe' with zone identifier '.identifier' into '.\\Users\\Hunter\\Downloads\\'",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-20 23:58:45.2342383",
+      "event": "Creation of 'card_expiration_terms_dict.txt', 'card_security_terms_dict.txt', and 'card_terms_dict.txt' indicating card-related term lists",
+      "supporting_artifact": "ext_usn_user_content_lifecycle",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:06.9483540",
+      "event": "Archive 'setupssh381-20040709.zip' downloaded into '.\\Users\\Hunter\\Downloads\\' with Zone.Identifier stream",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:16",
+      "event": "Microsoft Outlook 2016 64-bit jumplist and 'Outlook 2013.lnk' entries created, indicating Outlook email client configured",
+      "supporting_artifact": "app_email_client",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 00:02:23.8454489",
+      "event": "Archive 'WVRBEZZTFREDLTKJ.zip' created per USN Journal under filename 'WVRBEZZTFREDLTKJ.zip'",
+      "supporting_artifact": "ext_usn_archive_created",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 00:02:38.2120814",
+      "event": "Creation of multiple Autodesk desktop connector files such as 'plugin.js' and 'main.css' under '.\\Program Files (x86)\\A'",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:15",
+      "event": "Download of remote access installer 'TeamViewer_Setup-vfa.exe' into 'C:\\Users\\Hunter\\Downloads\\'",
+      "supporting_artifact": "app_remote_access",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:21",
+      "event": "Execution of 'TEAMVIEWER_.EXE' from 'C:\\Users\\Hunter\\AppData\\Local\\Temp\\TeamViewer\\TeamViewer_.exe' as recorded in prefetch",
+      "supporting_artifact": "ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:30.3757303",
+      "event": "Archives 'tvfiles.7z' and 'tvfilesx64.7z' created, likely containing TeamViewer-related files",
+      "supporting_artifact": "ext_usn_archive_created",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:41:06.3256183",
+      "event": "System time change recorded (EventID 4616) in Security log",
+      "supporting_artifact": "time_changed_4616",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 01:41:07.0000000",
+      "event": "Multiple failed logon attempts (EventID 4625) on computer '4ORENSICS'",
+      "supporting_artifact": "auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2016-06-21 01:42:40.5274264",
+      "event": "Explicit credential logon (EventID 4648) on '4orensics' and LogonUI 'LastLoggedOnUser' set to 'Hunter'",
+      "supporting_artifact": "auth_explicit_cred_4648",
+      "confidence_or_caveat": "high",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2016-06-21 01:52:17.0902822",
+      "event": "Archive 'Pictures.7z' created according to USN Journal, likely staging picture data",
+      "supporting_artifact": "ext_usn_archive_created",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:53:14.7757045",
+      "event": "USB device attach sequence started (Kernel-PnP EventID 410 / 400) indicating removable media connection",
+      "supporting_artifact": "usb_attach_driverframeworks",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:01:59.3657151",
+      "event": "USBSTOR registry entry created for 'Imation Nano Pro USB Device' with DiskId '{fb7f938b-37a4-11e6-8254-080027d269d7}'",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:06:24",
+      "event": "Execution of forensic tool 'FTK IMAGER.EXE' from 'C:\\Users\\Hunter\\Downloads\\FTK-IMAGER\\FTK IMAGER.EXE'",
+      "supporting_artifact": "ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 08:14:37.5527124",
+      "event": "Additional USB storage device activity indicated by Kernel-PnP EventID 410 at '2016-06-21 08:14:37.5527124'",
+      "supporting_artifact": "usb_kernel_pnp_install",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 08:30:12.7278195",
+      "event": "Firewall-related service stop EventID 5025 in IdCtrls/Operational, sequence of firewall-related events starting",
+      "supporting_artifact": "fw_stopped_5025",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0245506",
+      "event": "New accounts created (EventID 4720) on '4orensics' at 08:37:43 and 08:40:06",
+      "supporting_artifact": "auth_account_created_4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0558459",
+      "event": "Accounts enabled (EventID 4722) and modified (EventID 4738) along with group additions (EventID 4732) at 08:37:43",
+      "supporting_artifact": "auth_account_enabled_4722",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:46.2591685",
+      "event": "User shell folders for 'Startup' and 'Desktop' set in NTUSER.DAT under 'Explorer\\User Shell Folders'",
+      "supporting_artifact": "reg_winlogon_helpers",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:49.6808596",
+      "event": "NTUSER.DAT WMSDK 'ComputerName' set to '4orensics', confirming active Hunter profile context",
+      "supporting_artifact": "reg_user_context",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.1968203",
+      "event": "Windows Defender configuration changed (EventID 5007) and real-time protection disabled (EventID 5010)",
+      "supporting_artifact": "def_realtime_disabled",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 08:41:04.3871559",
+      "event": "Special privileges assigned (EventID 4672) to a logon session on '4orensics'",
+      "supporting_artifact": "auth_priv_assigned_4672",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 08:43:03",
+      "event": "Chrome browser 'chrome.exe' launched (jumplist_recent) on 4orensics system",
+      "supporting_artifact": "jumplist_recent",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:07",
+      "event": "Download of '7z1602-x64.exe' into 'C:\\Users\\Hunter\\Downloads\\7z1602-x64.exe'",
+      "supporting_artifact": "app_archive_tools",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:10",
+      "event": "Execution of '7Z1602-X64.EXE' from user Downloads per prefetch, initiating 7-Zip installation",
+      "supporting_artifact": "ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:12.5396737",
+      "event": "7-Zip program folder and 'Lang' subfolder created under '.\\Program Files\\7-Zip\\'",
+      "supporting_artifact": "mft_archive_files",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 09:20:51.6809597",
+      "event": "Startup LNK 'McAfee Security Scan Plus.lnk' created under '.\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\'",
+      "supporting_artifact": "mft_startup_folders",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:22:25",
+      "event": "Execution of 'WIRESHARK-WIN64-2.0.4.EXE' from user context per prefetch",
+      "supporting_artifact": "ext_prefetch_builtin_discovery",
+      "confidence_or_caveat": "high",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2016-06-21 09:37:32",
+      "event": "Recent LNK 'Exfiltration_Diagram.png' in 'C:\\Users\\Hunter\\Pictures\\Exfil\\' accessed",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 09:47:24.4622827",
+      "event": "Registry Run value 'VBoxTray' set to 'C:\\Windows\\system32\\VBoxTray.exe' in SOFTWARE hive",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:47:24.4780939",
+      "event": "New Windows service installation recorded (EventID 7045) on '4orensics' at 09:47:24",
+      "supporting_artifact": "svc_install_7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 10:40:33.5948384",
+      "event": "Another system time change recorded (EventID 4616) on '4orensics'",
+      "supporting_artifact": "time_changed_4616",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 10:51:23",
+      "event": "Execution of 'firefox.exe' from 'C:\\Users\\Hunter\\Desktop\\Tor Browser\\Browser\\Tor Browser\\Browser\\firefox.exe' per LNK and prefetch",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2016-06-21 11:01:44.1316101",
+      "event": "File or directory named 'psexec' present under '.\\\\Program Files (x86)\\\\' as per suspicious_indicators_universal",
+      "supporting_artifact": "suspicious_indicators_universal",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 11:18:11.8537725",
+      "event": "VBS scripts 'check_soundcard.vbs' and 'empty.vbs' modified per USN Journal",
+      "supporting_artifact": "usnjrnl_recent_changes",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 11:41:03.9494983",
+      "event": "Multiple special privilege assignments (EventID 4672) at 11:41 on '4orensics'",
+      "supporting_artifact": "auth_priv_assigned_4672",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 11:43:18.2219434",
+      "event": "NTUSER Run entries configured for 'Skype.exe', 'googledrivesync.exe', and 'CCleaner64.exe' for autostart",
+      "supporting_artifact": "reg_winlogon_helpers",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:44:53.7413387",
+      "event": "New Windows service installation (EventID 7045) associated with registry service 'MftWipeFilter' ('Jetico file system filter')",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 12:46:19.0904602",
+      "event": "Windows Defender Operational channel logged application crash (EventID 1000)",
+      "supporting_artifact": "app_crashes_1000",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 12:58:02.7459338",
+      "event": "System time changed again (EventID 4616) in Security log",
+      "supporting_artifact": "time_changed_4616",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21T13:00:54.476902Z",
+      "event": "Chrome browsing to Google account security pages for 'ehptmsgs@gmail.com' (Security - Devices and activity pages)",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-21T13:02:13.067060Z",
+      "event": "Access to Gmail settings page '#settings/fwdandpop' for 'ehptmsgs@gmail.com'",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21T13:10:36.511103Z",
+      "event": "Visit to 'https://security.google.com/settings/security/permissions' (Apps connected to your account)",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2016-06-21T13:12:11.576942Z",
+      "event": "Visit to 'https://www.google.com/settings/security/lesssecureapps' possibly modifying account security to permit programmatic access",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "impact"
+    }
+  ]
+}

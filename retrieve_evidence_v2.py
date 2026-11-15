@@ -1,7 +1,7 @@
 """Attack-chain reconstruction, stage 1 (v2) — comprehensive DFIR evidence retrieval.
 
 Goal vs v1: replace the 48-anchor v1 set (mixing universal + case-tuned
-signal) with a canonical 98-anchor catalog covering all major Windows
+signal) with a canonical 105-anchor catalog covering all major Windows
 incident-response domains. Designed to be strictly case-agnostic and forensically complete.
 
 Design principles:
@@ -12,20 +12,20 @@ Design principles:
      AnyDesk, ...) covering the documented threat-tooling landscape, not
      specific instances from KDFS/Magnet/Hunter.
   4. Tiered sizing keeps the evidence pool within the prompt budget. The
-     released pools hold 691 records on Hunter, 746 on KDFS and 798 on Magnet.
+     released pools hold 846 records on Hunter, 895 on KDFS and 896 on Magnet.
 
-Anchors cover 10 DFIR domains:
+Anchors cover 10 DFIR domains (ANCHORS.md lists every identifier):
   A. Identity & Access     (19)
   B. Process & Execution   (16)
   C. Defense & Tampering   (10)
-  D. Network & Connectivity (6)
+  D. Network & Connectivity (7)
   E. Removable Media & USB  (4)
-  F. RDP & Lateral Movement (4)
+  F. RDP & Lateral Movement (5)
   G. File & Registry Audit  (5)
-  H. MFT / File-System      (10)
+  H. MFT / File-System      (13)
   I. Persistence & Configuration (6)
-  J. Application Errors & Domain (18)
-                              = 98 anchors
+  J. Application Errors & Domain (20)
+                              = 105 anchors
 
 Output schema is identical to v1 so the downstream scorer
 (score_timeline_mode2.py) does not need to change.
@@ -174,7 +174,7 @@ def compress_record(record, anchor_id, max_fallback_chars=200):
 
 
 # =============================================================================
-# COMPREHENSIVE DFIR ANCHOR CATALOG (98 anchors, 10 domains)
+# COMPREHENSIVE DFIR ANCHOR CATALOG (105 anchors, 10 domains)
 # Each entry: (anchor_id, tool_method_or_BOUNDED_ES, kwargs)
 # Size tiers: Core=40-50, Standard=20-30, Narrow=10-20
 # =============================================================================
@@ -573,6 +573,42 @@ ANCHORS_V2 = [
      {"index": "forensic-*",
       "query": "mimikatz OR meterpreter OR cobaltstrike OR \"cobalt strike\" OR empire OR powersploit OR nishang OR sliver OR \"brute ratel\" OR powercat OR responder OR procdump OR psexec OR netcat OR \"nc.exe\"",
       "size": 12}),
+
+    # =========================================================================
+    # Seven anchors on built-in discovery tools, execution from user paths,
+    # mapped network shares, SMB client connectivity and the life cycle of
+    # user content. ANCHORS.md lists them under domains D, F, H and J. They
+    # stay at the end of the list so that the order of the evidence pool, and
+    # therefore of the prompt, matches the released pools.
+    # =========================================================================
+    ("ext_prefetch_builtin_discovery", "BOUNDED_ES",
+     {"index": "forensic-prefetch",
+      "query": "executable_name:(WHOAMI.EXE OR NET.EXE OR NET1.EXE OR HOSTNAME.EXE OR SYSTEMINFO.EXE OR IPCONFIG.EXE OR NLTEST.EXE OR TASKLIST.EXE OR QUSER.EXE OR ARP.EXE OR NETSTAT.EXE OR ROUTE.EXE OR NBTSTAT.EXE)",
+      "size": 20}),
+    ("ext_prefetch_user_path_execution", "BOUNDED_ES",
+     {"index": "forensic-prefetch",
+      "query": "executable_path:Users",
+      "size": 20}),
+    ("ext_reg_mapped_network_shares", "BOUNDED_ES",
+     {"index": "forensic-registry",
+      "query": "value_name:RemotePath OR key_path:MountPoints2",
+      "size": 20}),
+    ("ext_smbclient_connectivity", "BOUNDED_ES",
+     {"index": "forensic-eventlog",
+      "query": "provider:\"Microsoft-Windows-SMBClient\"",
+      "size": 20}),
+    ("ext_usn_archive_created", "BOUNDED_ES",
+     {"index": "forensic-usnjrnl",
+      "query": "extension:(.7z OR .zip OR .rar) AND update_reasons:FileCreate",
+      "size": 15}),
+    ("ext_usn_user_content_lifecycle", "BOUNDED_ES",
+     {"index": "forensic-usnjrnl",
+      "query": "extension:(.7z OR .zip OR .rar OR .csv OR .txt OR .doc OR .docx OR .xls OR .xlsx OR .pdf OR .ppt OR .pptx) AND update_reasons:(FileDelete OR BasicInfoChange OR RenameNewName)",
+      "size": 40}),
+    ("ext_mft_user_profile_content", "BOUNDED_ES",
+     {"index": "forensic-mft",
+      "query": "file_path:(Documents OR Desktop OR Downloads) AND NOT file_path:(AppData OR Default OR Public OR \"Windows.old\")",
+      "size": 30}),
 ]
 
 

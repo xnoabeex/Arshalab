@@ -1,10 +1,10 @@
 {
-  "chain_file": "benchmark_results/mode2_baseline_2026-08-14\\chain_KDFS_2023_baseline1_run0.json",
+  "chain_file": "benchmark_results/retrieval_only_baseline/chain_KDFS_2023_baseline1_run0.json",
   "case": "kdfs",
-  "provider": "BASELINE_anchors_sort_1pa",
+  "provider": "BASELINE_anchors_sort_1pa_len40",
   "run": 0,
-  "evidence_record_count": 746,
-  "chain_event_count": 25,
+  "evidence_record_count": 895,
+  "chain_event_count": 40,
   "gt_in_scope_count": 48,
   "gt_out_of_scope_excluded": 52,
   "gt_distinct_tactics": [
@@ -14,12 +14,13 @@
     "Reconnaissance",
     "Resource Development"
   ],
-  "milestone_coverage": 0.25,
-  "milestones_covered_count": 1,
+  "milestone_coverage": 0.0,
+  "milestones_covered_count": 0,
   "milestones_total": 4,
   "milestones_missed": [
     "P3_intent_formation",
     "P7_payment_setup",
+    "P9_weapon_acquisition",
     "P10_distribution_handoff"
   ],
   "milestone_detail": {
@@ -28,8 +29,8 @@
       "hit_keywords": [],
       "all_keywords": [
         "cook.com",
-        "\uc0ac\ucc44",
-        "\ud30c\uc0b0",
+        "사채",
+        "파산",
         "82cook",
         "bankruptcy",
         "illegal lending",
@@ -38,7 +39,7 @@
       ],
       "gt_event_ids": null,
       "scope": "out_of_scope_future_module",
-      "scope_reason": "Korean case-tied; dropped in v2 case-agnostic cleanup (kdfs_korean_financial_search anchor removed, \uc0ac\ucc44/\ud30c\uc0b0 tokens stripped from browser_downloads_searches)"
+      "scope_reason": "Korean case-tied; dropped in v2 case-agnostic cleanup (kdfs_korean_financial_search anchor removed, 사채/파산 tokens stripped from browser_downloads_searches)"
     },
     "P3_intent_formation": {
       "covered": false,
@@ -46,11 +47,11 @@
       "all_keywords": [
         "discord",
         "discord.exe",
-        "\ub79c\uc12c\uc6e8\uc5b4",
+        "랜섬웨어",
         "ransomware",
-        "\uc300\uc90d",
-        "\ud654\uc774\ud2b8\ud574\ucee4",
-        "\ubbf8\uc778\uc99d",
+        "쌀줍",
+        "화이트해커",
+        "미인증",
         "ledger live"
       ],
       "gt_event_ids": null,
@@ -72,10 +73,8 @@
       "scope": "in_scope"
     },
     "P9_weapon_acquisition": {
-      "covered": true,
-      "hit_keywords": [
-        "usb"
-      ],
+      "covered": false,
+      "hit_keywords": [],
       "all_keywords": [
         "bandizip",
         "ransom.exe",
@@ -128,7 +127,7 @@
       "covered": false,
       "hit_keywords": [],
       "all_keywords": [
-        "30\ub9cc\uc6d0",
+        "30만원",
         "cyberninja dm"
       ],
       "gt_event_ids": null,
@@ -235,45 +234,49 @@
   "out_of_scope_milestones_total": 13,
   "out_of_scope_milestones_covered": 0,
   "out_of_scope_milestone_coverage": 0.0,
-  "tactic_coverage": 0.4,
+  "tactic_coverage": 0.6,
   "tactics_covered": [
+    "Command and Control",
     "Impact",
     "Resource Development"
   ],
   "tactics_missed": [
-    "Command and Control",
     "Exfiltration",
     "Reconnaissance"
   ],
   "per_tactic_recall": {
-    "Command and Control": "0/7",
+    "Command and Control": "1/7",
     "Exfiltration": "0/1",
-    "Impact": "1/9",
+    "Impact": "2/9",
     "Reconnaissance": "0/25",
     "Resource Development": "1/6"
   },
-  "ordering_accuracy": 1.0,
-  "ordering_pairs_concordant": 1,
-  "ordering_pairs_discordant": 0,
-  "ordering_pairs_masked_negative_finding": 0,
-  "source_attribution_accuracy": 0.0,
-  "source_attribution_correct": 0,
-  "source_attribution_total": 2,
+  "ordering_accuracy": 0.6667,
+  "ordering_pairs_concordant": 2,
+  "ordering_pairs_discordant": 1,
+  "ordering_pairs_masked_negative_finding": 1,
+  "source_attribution_accuracy": 0.75,
+  "source_attribution_correct": 3,
+  "source_attribution_total": 4,
   "per_source_attribution": {
+    "browser": "1/1",
     "mft": "0/1",
-    "prefetch": "0/1"
+    "prefetch": "1/1",
+    "prefetch+registry": "1/1"
   },
   "hallucination_rate": 0.0,
-  "grounded_events": 25,
+  "grounded_events": 40,
   "hallucinated_events": 0,
   "hallucination_reasons": {
-    "no_factual_entity_to_check": 25
+    "no_factual_entity_to_check": 40
   },
-  "exact_event_coverage": 0.0417,
-  "matched_event_count": 2,
+  "exact_event_coverage": 0.0833,
+  "matched_event_count": 4,
   "matched_gt_ids": [
     "KDF-003",
-    "KDF-040"
+    "KDF-030",
+    "KDF-040",
+    "KDF-083"
   ],
   "missed_gt": [
     [
@@ -385,10 +388,6 @@
       "date_not_in_chain"
     ],
     [
-      "KDF-030",
-      "date_match_no_kw"
-    ],
-    [
       "KDF-032",
       "date_match_no_kw"
     ],
@@ -445,10 +444,6 @@
       "date_match_no_kw"
     ],
     [
-      "KDF-083",
-      "date_match_no_kw"
-    ],
-    [
       "KDF-084",
       "date_match_no_kw"
     ],
@@ -463,7 +458,7 @@
   ],
   "miss_reasons": {
     "date_not_in_chain": 27,
-    "date_match_no_kw": 19
+    "date_match_no_kw": 17
   },
-  "composite_headline": 0.595
+  "composite_headline": 0.53
 }

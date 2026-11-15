@@ -1,10 +1,10 @@
 {
-  "chain_file": "benchmark_results/mode2_baseline_2026-08-14\\chain_Magnet_CTF_2022_baseline2_run0.json",
+  "chain_file": "benchmark_results/retrieval_only_baseline/chain_Magnet_CTF_2022_baseline2_run0.json",
   "case": "magnet",
-  "provider": "BASELINE_anchors_sort_2pa",
+  "provider": "BASELINE_anchors_sort_2pa_len44",
   "run": 0,
-  "evidence_record_count": 798,
-  "chain_event_count": 25,
+  "evidence_record_count": 896,
+  "chain_event_count": 44,
   "gt_in_scope_count": 17,
   "gt_out_of_scope_excluded": 1,
   "gt_distinct_tactics": [
@@ -94,8 +94,8 @@
       "covered": true,
       "hit_keywords": [
         "2022-02-09",
-        "00:06",
-        "00:06:33"
+        "23:34",
+        "4104"
       ],
       "all_keywords": [
         "2022-02-09 23:34:55.1225188",
@@ -141,6 +141,7 @@
     "M_matrix_lolololol": {
       "covered": true,
       "hit_keywords": [
+        "00:41",
         "2022-02-12"
       ],
       "all_keywords": [
@@ -159,6 +160,8 @@
     "M_unauthorised_account": {
       "covered": true,
       "hit_keywords": [
+        "01:29",
+        "01:29:43",
         "2022-02-12"
       ],
       "all_keywords": [
@@ -192,32 +195,33 @@
   "per_tactic_recall": {
     "Command and Control": "0/3",
     "Defense Evasion": "2/3",
-    "Execution": "2/9",
+    "Execution": "3/9",
     "Persistence": "1/2"
   },
   "ordering_accuracy": 1.0,
-  "ordering_pairs_concordant": 10,
+  "ordering_pairs_concordant": 15,
   "ordering_pairs_discordant": 0,
   "ordering_pairs_masked_negative_finding": 0,
-  "source_attribution_accuracy": 0.6,
-  "source_attribution_correct": 3,
-  "source_attribution_total": 5,
+  "source_attribution_accuracy": 0.6667,
+  "source_attribution_correct": 4,
+  "source_attribution_total": 6,
   "per_source_attribution": {
-    "eventlog": "2/3",
+    "eventlog": "3/4",
     "eventlog+reg": "1/1",
     "mft": "0/1"
   },
   "hallucination_rate": 0.0,
-  "grounded_events": 25,
+  "grounded_events": 44,
   "hallucinated_events": 0,
   "hallucination_reasons": {
-    "no_factual_entity_to_check": 25
+    "no_factual_entity_to_check": 44
   },
-  "exact_event_coverage": 0.2941,
-  "matched_event_count": 5,
+  "exact_event_coverage": 0.3529,
+  "matched_event_count": 6,
   "matched_gt_ids": [
     "MAG-002",
     "MAG-009",
+    "MAG-010",
     "MAG-011",
     "MAG-013",
     "MAG-018"
@@ -248,10 +252,6 @@
       "date_match_no_kw"
     ],
     [
-      "MAG-010",
-      "date_match_no_kw"
-    ],
-    [
       "MAG-012",
       "date_match_no_kw"
     ],
@@ -273,7 +273,7 @@
     ]
   ],
   "miss_reasons": {
-    "date_match_no_kw": 12
+    "date_match_no_kw": 11
   },
   "composite_headline": 0.85
 }

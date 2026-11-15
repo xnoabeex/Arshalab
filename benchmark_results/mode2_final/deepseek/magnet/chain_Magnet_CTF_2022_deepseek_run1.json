@@ -1,0 +1,259 @@
+{
+  "provider": "deepseek",
+  "case": "magnet",
+  "case_name": "Magnet_CTF_2022",
+  "case_id": "case_20260323_032324",
+  "run": 1,
+  "evidence_file": "evidence_Magnet_CTF_2022.json",
+  "evidence_record_count": 896,
+  "chain_event_count": 35,
+  "prompt_chars": 183012,
+  "elapsed_seconds": 12.2,
+  "chain": [
+    {
+      "timestamp": "2022-02-04 05:52:20.3104112",
+      "event": "DiscordSetup.exe downloaded to user profile (with SmartScreen zone marker) — communication platform installer staged",
+      "supporting_artifact": "MFT ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-04 05:53:43.4033112",
+      "event": "Discord.lnk created on Desktop and Start Menu (Discord Inc) — Discord client installed and launched",
+      "supporting_artifact": "MFT mft_lnk_files / app_communication",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-04 07:05:42.6894842",
+      "event": "Windows Defender configuration change Event 5007 recorded on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-04 07:05:53.1678802",
+      "event": "Service installation Event 7045 recorded on DESKTOP-SKPTDIO (service name not present in record)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-04 07:08:04",
+      "event": "DISCORD.EXE executed from \\Users\\Patrick\\AppData\\Local\\Discord (prefetch)",
+      "supporting_artifact": "Prefetch ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-05 01:15:05.6700466",
+      "event": "Run key values written under SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run (SecurityHealth, RTHDVCPL, CxAgent, LogiOptions)",
+      "supporting_artifact": "Registry Run key",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-05 01:17:49.868431Z",
+      "event": "Browser search 'stamps worth money' on YouTube — financial motive research",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-06 07:14:10.0767923",
+      "event": "ZeroTier One.msi downloaded to \\Users\\Patrick\\Downloads (SmartScreen marker present)",
+      "supporting_artifact": "MFT mft_msi_installers / ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:35.8444968",
+      "event": "Service installation Event 7045 recorded following ZeroTier MSI deployment (service name not present in record)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:45.3852097",
+      "event": "PowerShell script AI_70BB.ps1 created in \\Users\\Patrick\\AppData\\Local\\Temp alongside ZeroTier file_deleter.ps1",
+      "supporting_artifact": "MFT mft_ps1_files",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:45",
+      "event": "AIPACKAGECHAINER.EXE executed from \\Users\\Patrick\\AppData\\Roaming (ZeroTier prerequisite chainer)",
+      "supporting_artifact": "Prefetch ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-06 07:16:30.6409990",
+      "event": "PowerShell error Event 4100 recorded on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4100",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-06 07:37:10",
+      "event": "jdk-8u181-windows-x64.exe executed from \\Users\\Patrick\\Downloads — Java runtime installed",
+      "supporting_artifact": "Prefetch ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-06 07:48:24.3521658",
+      "event": "start.bat created in \\Users\\Patrick\\Documents\\Minecraft (server launch script)",
+      "supporting_artifact": "MFT mft_bat_files / ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-09 03:39:03.0767264",
+      "event": "System time change Event 4616 recorded on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4616",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-09 03:42:56.9297066",
+      "event": "Service installation Event 7045 recorded on DESKTOP-SKPTDIO (service name not present in record)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-09 03:45:32.7218427",
+      "event": "Failed logon Event 4625 recorded on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4625",
+      "confidence_or_caveat": "medium",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-09 22:44:37.8591332",
+      "event": "Windows Defender action taken Event 1117 recorded on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 1117",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-09 23:34:55.1225188",
+      "event": "PowerShell script block Event 4104 logged on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4104",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-10 00:06:33.5838339",
+      "event": "PowerShell engine Event 600/400/4100 sequence logged (Windows PowerShell channel)",
+      "supporting_artifact": "suspicious_indicators_universal",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11 01:18:02.114178Z",
+      "event": "Browser search 'how to know if you've been hacked' — victim awareness of intrusion",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2022-02-11 22:46:09.7189557",
+      "event": "Failed logon Event 4625 recorded on DESKTOP-SKPTDIO (Security channel)",
+      "supporting_artifact": "EventLog Event 4625",
+      "confidence_or_caveat": "medium",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-11 22:46:25.1504259",
+      "event": "RunOnce key written under NTUSER.DAT\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+      "supporting_artifact": "Registry RunOnce key",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-11 23:00:56.3207237",
+      "event": "Windows Defender threat detected Event 1116 on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-11 23:19:23.2090504",
+      "event": "PowerShell payload goteem.ps1 created in \\Users\\Patrick\\Documents\\Minecraft",
+      "supporting_artifact": "MFT mft_ps1_files",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11 23:25:57.5388308",
+      "event": "Second PowerShell payload goteem2.ps1 created in \\Users\\Patrick\\Documents\\Minecraft",
+      "supporting_artifact": "MFT mft_ps1_files",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-12 01:29:43.1362394",
+      "event": "User account created Event 4720 on DESKTOP-SKPTDIO (account name not present in record)",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 01:37:07.8274813",
+      "event": "Member added to security-enabled local group Event 4732",
+      "supporting_artifact": "EventLog Event 4732",
+      "confidence_or_caveat": "medium",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 02:12:16.6903086",
+      "event": "tightvnc-2.8.63-gpl-setup-64bit.msi dropped in \\Windows\\SysWOW64 — remote-access tool staged",
+      "supporting_artifact": "MFT mft_msi_installers",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2022-02-12 04:30:12.3573572",
+      "event": "Windows Defender threat detected Event 1116 on DESKTOP-SKPTDIO (multiple detections)",
+      "supporting_artifact": "EventLog Event 1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-12 22:47:43.3308355",
+      "event": "Explicit credential logon Event 4648 recorded on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "medium",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-12 22:54:09.9161001",
+      "event": "Service installation Event 7045 recorded on DESKTOP-SKPTDIO (service name not present in record)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 23:25:56.0076948",
+      "event": "Special privileges assigned Event 4672 to logon on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4672",
+      "confidence_or_caveat": "medium",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 23:33:49.5097252",
+      "event": "USBSTOR registry entry for 'General UDisk USB Device' (SerialNumber 6&2a67491b&0&_&0) — removable media connected",
+      "supporting_artifact": "Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2022-02-12 23:39:58.9487382",
+      "event": "Winlogon AutoAdminLogon=1 and DefaultUserName=Patrick set under SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+      "supporting_artifact": "Registry Winlogon",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    }
+  ]
+}

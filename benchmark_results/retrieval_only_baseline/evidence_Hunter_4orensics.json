@@ -103,9 +103,16 @@
     "app_antiforensic",
     "app_archive_tools",
     "app_email_client",
-    "suspicious_indicators_universal"
+    "suspicious_indicators_universal",
+    "ext_prefetch_builtin_discovery",
+    "ext_prefetch_user_path_execution",
+    "ext_reg_mapped_network_shares",
+    "ext_smbclient_connectivity",
+    "ext_usn_archive_created",
+    "ext_usn_user_content_lifecycle",
+    "ext_mft_user_profile_content"
   ],
-  "total_records": 691,
+  "total_records": 846,
   "errors": 0,
   "evidence_by_anchor": {
     "auth_logon_interactive_type2": [
@@ -4536,6 +4543,795 @@
         "_anchor": "suspicious_indicators_universal",
         "timestamp": "2016-06-21 11:01:44.1548135",
         "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 11:01:44.1548135', 'entry_number': 89529, 'sequence_number': 2, 'filename': 'psexec', 'extension': '', 'file_path': '.\\\\Program Files (x86)"
+      }
+    ],
+    "ext_prefetch_builtin_discovery": [
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-20 23:49:39",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:49:39', 'executable_name': 'ACRORD32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\PROGRAM FILES (X86)\\\\ADOBE\\\\ACROBAT READER DC\\"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-20 23:51:20",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:51:20', 'executable_name': 'ACRORD32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\PROGRAM FILES (X86)\\\\ADOBE\\\\ACROBAT READER DC\\"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-20 23:51:29",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:51:29', 'executable_name': 'ACRORD32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\PROGRAM FILES (X86)\\\\ADOBE\\\\ACROBAT READER DC\\"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-20 23:52:57",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:52:57', 'executable_name': 'ACRORD32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\PROGRAM FILES (X86)\\\\ADOBE\\\\ACROBAT READER DC\\"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-20 23:59:38",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:38', 'executable_name': 'ACRORD32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\PROGRAM FILES (X86)\\\\ADOBE\\\\ACROBAT READER DC\\"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 00:57:21",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:21', 'executable_name': 'TEAMVIEWER_.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\TEAMVI"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 00:57:29",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:29', 'executable_name': 'TEAMVIEWER_.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\TEAMVI"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 00:57:48",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:48', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'prefetch_ha"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 01:50:38",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:50:38', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'prefetch_ha"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 01:59:05",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:59:05', 'executable_name': 'ACRORD32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\PROGRAM FILES (X86)\\\\ADOBE\\\\ACROBAT READER DC\\"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 01:59:27",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:59:27', 'executable_name': 'ACRORD32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\PROGRAM FILES (X86)\\\\ADOBE\\\\ACROBAT READER DC\\"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 02:00:01",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 02:00:01', 'executable_name': 'ACRORD32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\PROGRAM FILES (X86)\\\\ADOBE\\\\ACROBAT READER DC\\"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 09:08:33",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:08:33', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'prefetch_ha"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 09:15:52",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:15:52', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'prefetch_ha"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 09:18:10",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:10', 'executable_name': '7Z1602-X64.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\DOWNLOADS\\\\7Z1602-X64.EXE', '"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 09:18:29",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:29', 'executable_name': 'REGSVR32.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\WINDOWS\\\\SYSTEM32\\\\REGSVR32.EXE', 'prefetch_ha"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 09:18:35",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:35', 'executable_name': 'NOTEPAD++.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\PROGRAM FILES (X86)\\\\NOTEPAD++\\\\NOTEPAD++.EXE"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 09:22:25",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:22:25', 'executable_name': 'WIRESHARK-WIN64-2.0.4.EXE', 'executable_path': 'WIRESHARK-WIN64-2.0.4.EXE', 'prefetch_hash': '', 'source_fil"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 09:22:47",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:22:47', 'executable_name': 'VCREDIST_X64.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\PROGRAM FILES\\\\WIRESHARK\\\\VCREDIST_X64.EXE"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2016-06-21 09:22:47",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:22:47', 'executable_name': 'VCREDIST_X64.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\PROGRAM FILES\\\\WIRESHARK\\\\VCREDIST_X64.EXE"
+      }
+    ],
+    "ext_prefetch_user_path_execution": [
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 00:57:21",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:21', 'executable_name': 'TEAMVIEWER_.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\TEAMVI"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 00:57:29",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:29', 'executable_name': 'TEAMVIEWER_.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\TEAMVI"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 01:44:12",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:44:12', 'executable_name': 'GOOGLEUPDATE.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\GUM2E"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 01:45:07",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:45:07', 'executable_name': 'DROPBOXUPDATE.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\GUM6"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 01:45:10",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:45:10', 'executable_name': 'DROPBOXUPDATE.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\GUM6"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 02:06:24",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 02:06:24', 'executable_name': 'FTK IMAGER.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\DOWNLOADS\\\\FTK-IMAGER\\\\FTK IM"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 08:41:35",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:41:35', 'executable_name': 'GOOGLEUPDATE.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\GUM80"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 08:42:55",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:42:55', 'executable_name': 'SETUP.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\CR_4BC77.TMP"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 08:42:55",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:42:55', 'executable_name': 'SETUP.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\CR_4BC77.TMP"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 08:54:44",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:54:44', 'executable_name': 'SKYPESETUP.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\DOWNLOADS\\\\SKYPESETUP.EXE', '"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 09:18:10",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:10', 'executable_name': '7Z1602-X64.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\DOWNLOADS\\\\7Z1602-X64.EXE', '"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 09:18:18",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:18', 'executable_name': 'NPP.6.9.2.INSTALLER.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\DOWNLOADS\\\\NPP.6.9.2"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 09:18:27",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:27', 'executable_name': 'XMLUPDATER.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\XMLUPDA"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 09:18:27",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:27', 'executable_name': 'XMLUPDATER.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\XMLUPDA"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 09:18:27",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:27', 'executable_name': 'XMLUPDATER.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\XMLUPDA"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 09:18:27",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:27', 'executable_name': 'XMLUPDATER.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\XMLUPDA"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 09:18:28",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:28', 'executable_name': 'XMLUPDATER.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\XMLUPDA"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 09:18:28",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:18:28', 'executable_name': 'XMLUPDATER.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\TEMP\\\\XMLUPDA"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 09:37:08",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 09:37:08', 'executable_name': 'SOFTWARE_REPORTER_TOOL.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\APPDATA\\\\LOCAL\\\\T"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2016-06-21 10:54:03",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 10:54:03', 'executable_name': 'FIREFOX.EXE', 'executable_path': '\\\\DEVICE\\\\HARDDISKVOLUME2\\\\USERS\\\\HUNTER\\\\DESKTOP\\\\TOR BROWSER\\\\BROWSER\\\\F"
+      }
+    ],
+    "ext_reg_mapped_network_shares": [
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2016-06-21 01:59:48.9752830",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:59:48.9752830', 'hive_type': 'NTUSER.DAT', 'key_path': 'CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\\\Software\\\\Microsoft\\\\"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2016-06-21 01:59:52.1691808",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:59:52.1691808', 'hive_type': 'NTUSER.DAT', 'key_path': 'CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\\\Software\\\\Microsoft\\\\"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2016-06-21 02:02:04.4783455",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 02:02:04.4783455', 'hive_type': 'NTUSER.DAT', 'key_path': 'CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\\\Software\\\\Microsoft\\\\"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2016-06-21 02:02:04.4783455",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 02:02:04.4783455', 'hive_type': 'NTUSER.DAT', 'key_path': 'CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\\\Software\\\\Microsoft\\\\"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2016-06-21 02:02:04.4783455",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 02:02:04.4783455', 'hive_type': 'NTUSER.DAT', 'key_path': 'CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\\\Software\\\\Microsoft\\\\"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2016-06-21 02:02:04.4783455",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 02:02:04.4783455', 'hive_type': 'NTUSER.DAT', 'key_path': 'CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\\\Software\\\\Microsoft\\\\"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2016-06-21 02:02:04.4783455",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 02:02:04.4783455', 'hive_type': 'NTUSER.DAT', 'key_path': 'CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\\\Software\\\\Microsoft\\\\"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2016-06-21 02:03:04.7783083",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 02:03:04.7783083', 'hive_type': 'NTUSER.DAT', 'key_path': 'CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\\\Software\\\\Microsoft\\\\"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2016-06-21 08:37:48.4303974",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:37:48.4303974', 'hive_type': 'NTUSER.DAT', 'key_path': 'CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\\\Software\\\\Microsoft\\\\"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2016-06-21 08:38:46.0555875",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:38:46.0555875', 'hive_type': 'NTUSER.DAT', 'key_path': 'CsiTool-CreateHive-{00000000-0000-0000-0000-000000000000}\\\\Software\\\\Microsoft\\\\"
+      }
+    ],
+    "ext_smbclient_connectivity": [
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-20 23:48:27.6954289",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:48:27.6954289', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-20 23:48:27.6954289",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:48:27.6954289', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-20 23:48:27.6954289",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:48:27.6954289', 'event_id': 30812, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-20 23:48:40.0077372",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:48:40.0077372', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-20 23:48:40.4767453",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:48:40.4767453', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 01:41:09.7306343",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:41:09.7306343', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 01:41:09.7306343",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:41:09.7306343', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 01:41:09.7306343",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:41:09.7306343', 'event_id': 30812, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 01:41:15.7621229",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:41:15.7621229', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 01:41:19.9333863",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:41:19.9333863', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 02:24:07.0900349",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 02:24:07.0900349', 'event_id': 30813, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 02:24:07.2269120",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 02:24:07.2269120', 'event_id': 30811, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 02:24:12.0865746",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 02:24:12.0865746', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 08:15:20.9748017",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:15:20.9748017', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 08:15:21.1154669",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:15:21.1154669', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 08:15:21.1154669",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:15:21.1154669', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 08:15:21.1154669",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:15:21.1154669', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 08:15:22.1463132",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:15:22.1463132', 'event_id': 30812, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 08:29:54.6338333",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:29:54.6338333', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2016-06-21 08:29:54.6338333",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 08:29:54.6338333', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      }
+    ],
+    "ext_usn_archive_created": [
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 00:02:23.8454489",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:23.8454489', 'filename': 'WVRBEZZTFREDLTKJ.zip', 'extension': '.zip', 'file_path': 'WVRBEZZTFREDLTKJ.zip', 'entry_number': 99673, 'pa"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 00:02:23.8454489",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:23.8454489', 'filename': 'WVRBEZZTFREDLTKJ.zip', 'extension': '.zip', 'file_path': 'WVRBEZZTFREDLTKJ.zip', 'entry_number': 99673, 'pa"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 00:03:07.6680914",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:03:07.6680914', 'filename': 'WVRBEZZTFREDLTKJ.zip', 'extension': '.zip', 'file_path': 'WVRBEZZTFREDLTKJ.zip', 'entry_number': 99673, 'pa"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 00:57:30.3757303",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:30.3757303', 'filename': 'tvfiles.7z', 'extension': '.7z', 'file_path': 'tvfiles.7z', 'entry_number': 88433, 'parent_entry': 88432, '"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 00:57:31.2772490",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:31.2772490', 'filename': 'tvfiles.7z', 'extension': '.7z', 'file_path': 'tvfiles.7z', 'entry_number': 88433, 'parent_entry': 88432, '"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 00:57:31.2865702",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:31.2865702', 'filename': 'tvfiles.7z', 'extension': '.7z', 'file_path': 'tvfiles.7z', 'entry_number': 88433, 'parent_entry': 88432, '"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 00:57:31.2881105",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:31.2881105', 'filename': 'tvfiles.7z', 'extension': '.7z', 'file_path': 'tvfiles.7z', 'entry_number': 88433, 'parent_entry': 88432, '"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 00:57:38.0639958",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:38.0639958', 'filename': 'tvfilesx64.7z', 'extension': '.7z', 'file_path': 'tvfilesx64.7z', 'entry_number': 88433, 'parent_entry': 88"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 00:57:38.0639958",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:38.0639958', 'filename': 'tvfilesx64.7z', 'extension': '.7z', 'file_path': 'tvfilesx64.7z', 'entry_number': 88433, 'parent_entry': 88"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 00:57:38.0639958",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:38.0639958', 'filename': 'tvfilesx64.7z', 'extension': '.7z', 'file_path': 'tvfilesx64.7z', 'entry_number': 88433, 'parent_entry': 88"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 00:57:38.0844211",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:57:38.0844211', 'filename': 'tvfilesx64.7z', 'extension': '.7z', 'file_path': 'tvfilesx64.7z', 'entry_number': 88433, 'parent_entry': 88"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 01:52:17.0902822",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:52:17.0902822', 'filename': 'Pictures.7z', 'extension': '.7z', 'file_path': 'Pictures.7z', 'entry_number': 986, 'parent_entry': 22438, '"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 01:52:17.0902822",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:52:17.0902822', 'filename': 'Pictures.7z', 'extension': '.7z', 'file_path': 'Pictures.7z', 'entry_number': 986, 'parent_entry': 22438, '"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 01:52:17.0925526",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:52:17.0925526', 'filename': 'Pictures.7z', 'extension': '.7z', 'file_path': 'Pictures.7z', 'entry_number': 986, 'parent_entry': 22438, '"
+      },
+      {
+        "_anchor": "ext_usn_archive_created",
+        "timestamp": "2016-06-21 01:52:17.1138772",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 01:52:17.1138772', 'filename': 'Pictures.7z', 'extension': '.7z', 'file_path': 'Pictures.7z', 'entry_number': 986, 'parent_entry': 22438, '"
+      }
+    ],
+    "ext_usn_user_content_lifecycle": [
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:49:42.0547626",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:49:42.0547626', 'filename': '69JHYQ5B.txt', 'extension': '.txt', 'file_path': '69JHYQ5B.txt', 'entry_number': 83615, 'parent_entry': 814"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:49:42.0547626",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:49:42.0547626', 'filename': '69JHYQ5B.txt', 'extension': '.txt', 'file_path': '69JHYQ5B.txt', 'entry_number': 83615, 'parent_entry': 814"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:49:42.0547626",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:49:42.0547626', 'filename': '69JHYQ5B.txt', 'extension': '.txt', 'file_path': '69JHYQ5B.txt', 'entry_number': 83615, 'parent_entry': 814"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:49:42.3359323",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:49:42.3359323', 'filename': '7GZEV5BV.txt', 'extension': '.txt', 'file_path': '7GZEV5BV.txt', 'entry_number': 85733, 'parent_entry': 814"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:49:42.8980391",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:49:42.8980391', 'filename': 'R1D63AV5.txt', 'extension': '.txt', 'file_path': 'R1D63AV5.txt', 'entry_number': 83163, 'parent_entry': 814"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:49:42.8980391",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:49:42.8980391', 'filename': 'R1D63AV5.txt', 'extension': '.txt', 'file_path': 'R1D63AV5.txt', 'entry_number': 83163, 'parent_entry': 814"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:49:42.8980391",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:49:42.8980391', 'filename': 'R1D63AV5.txt', 'extension': '.txt', 'file_path': 'R1D63AV5.txt', 'entry_number': 83163, 'parent_entry': 814"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:49:42.8980391",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:49:42.8980391', 'filename': '69JHYQ5B.txt', 'extension': '.txt', 'file_path': '69JHYQ5B.txt', 'entry_number': 83615, 'parent_entry': 814"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:02.5154491",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:02.5154491', 'filename': 'PROTTPLN.PPT', 'extension': '.ppt', 'file_path': 'PROTTPLN.PPT', 'entry_number': 93250, 'parent_entry': 930"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:02.5165437",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:02.5165437', 'filename': 'PROTTPLN.PPT', 'extension': '.ppt', 'file_path': 'PROTTPLN.PPT', 'entry_number': 93250, 'parent_entry': 930"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:02.5235294",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:02.5235294', 'filename': 'PROTTPLV.PPT', 'extension': '.ppt', 'file_path': 'PROTTPLV.PPT', 'entry_number': 93251, 'parent_entry': 930"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:02.5254747",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:02.5254747', 'filename': 'PROTTPLV.PPT', 'extension': '.ppt', 'file_path': 'PROTTPLV.PPT', 'entry_number': 93251, 'parent_entry': 930"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:35.6774137",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:35.6774137', 'filename': 'EXCEL12.XLSX', 'extension': '.xlsx', 'file_path': 'EXCEL12.XLSX', 'entry_number': 93544, 'parent_entry': 39"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:35.6783825",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:35.6783825', 'filename': 'EXCEL12.XLSX', 'extension': '.xlsx', 'file_path': 'EXCEL12.XLSX', 'entry_number': 93544, 'parent_entry': 39"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:35.7293654",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:35.7293654', 'filename': 'PROTTPLN.DOC', 'extension': '.doc', 'file_path': 'PROTTPLN.DOC', 'entry_number': 93552, 'parent_entry': 930"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:35.7313690",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:35.7313690', 'filename': 'PROTTPLN.DOC', 'extension': '.doc', 'file_path': 'PROTTPLN.DOC', 'entry_number': 93552, 'parent_entry': 930"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:35.7313690",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:35.7313690', 'filename': 'PROTTPLN.XLS', 'extension': '.xls', 'file_path': 'PROTTPLN.XLS', 'entry_number': 93553, 'parent_entry': 930"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:35.7333610",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:35.7333610', 'filename': 'PROTTPLN.XLS', 'extension': '.xls', 'file_path': 'PROTTPLN.XLS', 'entry_number': 93553, 'parent_entry': 930"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:35.7333610",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:35.7333610', 'filename': 'PROTTPLV.DOC', 'extension': '.doc', 'file_path': 'PROTTPLV.DOC', 'entry_number': 93554, 'parent_entry': 930"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:35.7353422",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:35.7353422', 'filename': 'PROTTPLV.DOC', 'extension': '.doc', 'file_path': 'PROTTPLV.DOC', 'entry_number': 93554, 'parent_entry': 930"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:35.7498641",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:35.7498641', 'filename': 'PROTTPLV.XLS', 'extension': '.xls', 'file_path': 'PROTTPLV.XLS', 'entry_number': 93555, 'parent_entry': 930"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:35.7520342",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:35.7520342', 'filename': 'PROTTPLV.XLS', 'extension': '.xls', 'file_path': 'PROTTPLV.XLS', 'entry_number': 93555, 'parent_entry': 930"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:35.8293352",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:35.8293352', 'filename': 'SOLVSAMP.XLS', 'extension': '.xls', 'file_path': 'SOLVSAMP.XLS', 'entry_number': 93561, 'parent_entry': 935"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:56:35.8303371",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:56:35.8303371', 'filename': 'SOLVSAMP.XLS', 'extension': '.xls', 'file_path': 'SOLVSAMP.XLS', 'entry_number': 93561, 'parent_entry': 935"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:57:11.9890551",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:57:11.9890551', 'filename': 'Mso_Third_Party_Notices.txt', 'extension': '.txt', 'file_path': 'Mso_Third_Party_Notices.txt', 'entry_numbe"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:57:11.9890551",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:57:11.9890551', 'filename': 'Mso_Third_Party_Notices.txt', 'extension': '.txt', 'file_path': 'Mso_Third_Party_Notices.txt', 'entry_numbe"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:57:45.3058295",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:57:45.3058295', 'filename': 'AccessMessageDismissal.txt', 'extension': '.txt', 'file_path': 'AccessMessageDismissal.txt', 'entry_number'"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:57:45.3058295",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:57:45.3058295', 'filename': 'AccessMessageDismissal.txt', 'extension': '.txt', 'file_path': 'AccessMessageDismissal.txt', 'entry_number'"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:57:45.3063785",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:57:45.3063785', 'filename': 'ExcelMessageDismissal.txt', 'extension': '.txt', 'file_path': 'ExcelMessageDismissal.txt', 'entry_number': "
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:57:45.3063785",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:57:45.3063785', 'filename': 'ExcelMessageDismissal.txt', 'extension': '.txt', 'file_path': 'ExcelMessageDismissal.txt', 'entry_number': "
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:58:08.3455462",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:58:08.3455462', 'filename': 'DEFCON-22-Zoltan-Balazs-Bypass-firewalls-application-whitelists-in-20-seconds-UPDATED.pdf', 'extension': '."
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:58:08.4530471",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:58:08.4530471', 'filename': 'DEFCON-22-Zoltan-Balazs-Bypass-firewalls-application-whitelists-in-20-seconds-UPDATED.pdf', 'extension': '."
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:58:08.4530471",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:58:08.4530471', 'filename': 'DEFCON-22-Zoltan-Balazs-Bypass-firewalls-application-whitelists-in-20-seconds-UPDATED.pdf', 'extension': '."
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:58:45.2342383",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:58:45.2342383', 'filename': 'card_expiration_terms_dict.txt', 'extension': '.txt', 'file_path': 'card_expiration_terms_dict.txt', 'entry"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:58:45.2342383",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:58:45.2342383', 'filename': 'card_expiration_terms_dict.txt', 'extension': '.txt', 'file_path': 'card_expiration_terms_dict.txt', 'entry"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:58:45.2393046",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:58:45.2393046', 'filename': 'card_security_terms_dict.txt', 'extension': '.txt', 'file_path': 'card_security_terms_dict.txt', 'entry_num"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:58:45.2404135",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:58:45.2404135', 'filename': 'card_security_terms_dict.txt', 'extension': '.txt', 'file_path': 'card_security_terms_dict.txt', 'entry_num"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:58:45.2404135",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:58:45.2404135', 'filename': 'card_terms_dict.txt', 'extension': '.txt', 'file_path': 'card_terms_dict.txt', 'entry_number': 98377, 'pare"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:58:45.2404135",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:58:45.2404135', 'filename': 'card_terms_dict.txt', 'extension': '.txt', 'file_path': 'card_terms_dict.txt', 'entry_number': 98377, 'pare"
+      },
+      {
+        "_anchor": "ext_usn_user_content_lifecycle",
+        "timestamp": "2016-06-20 23:58:45.2752969",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:58:45.2752969', 'filename': 'ssn_high_group_info.txt', 'extension': '.txt', 'file_path': 'ssn_high_group_info.txt', 'entry_number': 9838"
+      }
+    ],
+    "ext_mft_user_profile_content": [
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-20 23:51:55.1790000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:51:55.1790000', 'entry_number': 92935, 'sequence_number': 1, 'filename': 'Thumbs.db', 'extension': '.db', 'file_path': '.\\\\Users\\\\Hunter"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-20 23:51:55.1790000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:51:55.1790000', 'entry_number': 92935, 'sequence_number': 1, 'filename': 'Thumbs.db:encryptable', 'extension': '', 'file_path': '.\\\\User"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-20 23:57:41.3375000",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:57:41.3375000', 'entry_number': 94315, 'sequence_number': 1, 'filename': 'putty.exe', 'extension': '.exe', 'file_path': '.\\\\Users\\\\Hunte"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-20 23:57:42.6444149",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:57:42.6444149', 'entry_number': 94320, 'sequence_number': 3, 'filename': 'pscp.exe', 'extension': '.exe', 'file_path': '.\\\\Users\\\\Hunter"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-20 23:57:42.6444149",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:57:42.6444149', 'entry_number': 94320, 'sequence_number': 3, 'filename': 'pscp.exe:Zone.Identifier', 'extension': '.identifier', 'file_p"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-20 23:58:09.1327355",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:58:09.1327355', 'entry_number': 96260, 'sequence_number': 1, 'filename': 'DEFCON-22-Zoltan-Balazs-Bypass-firewalls-application-whitelist"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-20 23:58:09.1327355",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:58:09.1327355', 'entry_number': 96260, 'sequence_number': 1, 'filename': 'DEFCON-22-Zoltan-Balazs-Bypass-firewalls-application-whitelist"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-20 23:59:06.9483540",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:06.9483540', 'entry_number': 98359, 'sequence_number': 1, 'filename': 'setupssh381-20040709.zip', 'extension': '.zip', 'file_path': '"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-20 23:59:06.9483540",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-20 23:59:06.9483540', 'entry_number': 98359, 'sequence_number': 1, 'filename': 'setupssh381-20040709.zip:Zone.Identifier', 'extension': '.iden"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:38.2120814",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:38.2120814', 'entry_number': 100816, 'sequence_number': 1, 'filename': 'desktop-connector-files-select', 'extension': '', 'file_path'"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:38.2120814",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:38.2120814', 'entry_number': 100817, 'sequence_number': 1, 'filename': 'js', 'extension': '', 'file_path': '.\\\\Program Files (x86)\\\\A"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:38.2120814",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:38.2120814', 'entry_number': 100818, 'sequence_number': 1, 'filename': 'plugin.js', 'extension': '.js', 'file_path': '.\\\\Program File"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:38.2120814",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:38.2120814', 'entry_number': 100819, 'sequence_number': 1, 'filename': 'selector.js', 'extension': '.js', 'file_path': '.\\\\Program Fi"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:38.2120814",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:38.2120814', 'entry_number': 100820, 'sequence_number': 1, 'filename': 'css', 'extension': '', 'file_path': '.\\\\Program Files (x86)\\\\"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:38.2120814",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:38.2120814', 'entry_number': 100821, 'sequence_number': 1, 'filename': 'main.css', 'extension': '.css', 'file_path': '.\\\\Program File"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:38.2120814",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:38.2120814', 'entry_number': 100822, 'sequence_number': 1, 'filename': 'main-selector.css', 'extension': '.css', 'file_path': '.\\\\Pro"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:49.8170804",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:49.8170804', 'entry_number': 101260, 'sequence_number': 1, 'filename': 'desktop-tool-view.css', 'extension': '.css', 'file_path': '.\\"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1239966",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1239966', 'entry_number': 101376, 'sequence_number': 1, 'filename': 'ui-strings.js', 'extension': '.js', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1239966",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1239966', 'entry_number': 101377, 'sequence_number': 1, 'filename': 'cs-cz', 'extension': '', 'file_path': '.\\\\Program Files (x86)"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1239966",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1239966', 'entry_number': 101378, 'sequence_number': 1, 'filename': 'ui-strings.js', 'extension': '.js', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1239966",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1239966', 'entry_number': 101379, 'sequence_number': 1, 'filename': 'ru-ru', 'extension': '', 'file_path': '.\\\\Program Files (x86)"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1451385",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1451385', 'entry_number': 101380, 'sequence_number': 1, 'filename': 'ui-strings.js', 'extension': '.js', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1451385",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1451385', 'entry_number': 101381, 'sequence_number': 1, 'filename': 'sv-se', 'extension': '', 'file_path': '.\\\\Program Files (x86)"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1667479",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1667479', 'entry_number': 101382, 'sequence_number': 1, 'filename': 'ui-strings.js', 'extension': '.js', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1667479",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1667479', 'entry_number': 101383, 'sequence_number': 1, 'filename': 'sk-sk', 'extension': '', 'file_path': '.\\\\Program Files (x86)"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1667479",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1667479', 'entry_number': 101384, 'sequence_number': 1, 'filename': 'ui-strings.js', 'extension': '.js', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1667479",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1667479', 'entry_number': 101385, 'sequence_number': 1, 'filename': 'zh-tw', 'extension': '', 'file_path': '.\\\\Program Files (x86)"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1667479",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1667479', 'entry_number': 101386, 'sequence_number': 1, 'filename': 'ui-strings.js', 'extension': '.js', 'file_path': '.\\\\Program "
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1667479",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1667479', 'entry_number': 101387, 'sequence_number': 1, 'filename': 'he-il', 'extension': '', 'file_path': '.\\\\Program Files (x86)"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2016-06-21 00:02:51.1667479",
+        "_raw": "{'case_id': 'case_20260410_120043', 'timestamp': '2016-06-21 00:02:51.1667479', 'entry_number': 101388, 'sequence_number': 1, 'filename': 'ca-es', 'extension': '', 'file_path': '.\\\\Program Files (x86)"
       }
     ]
   }

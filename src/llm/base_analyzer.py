@@ -367,7 +367,7 @@ CRITICAL DATA INTEGRITY RULES:
         },
         {
             "name": "reconstruct_attack_chain",
-            "description": "Reconstruct the adversary attack chain as a chronologically ordered sequence of 15-30 incident steps with MITRE ATT&CK phase classification and source attribution. Runs the standardized reconstruction pipeline: 98 case-agnostic anchor queries collect a comprehensive evidence dump (~1,000 records), which is then synthesized into the attack chain. Both the full evidence dump and the distilled chain are persisted to /reports/<case_id>/ for audit. The returned chain is checked against the persisted evidence and a `grounding` block reports, for this run, how many events state a checkable fact and how many cite an entity absent from the evidence. Use when the user asks: 'reconstruct the attack chain', 'show me the attack timeline', 'what happened in this incident', or similar attack-narrative requests.",
+            "description": "Reconstruct the adversary attack chain as a chronologically ordered sequence of 15-30 incident steps with MITRE ATT&CK phase classification and source attribution. Runs the standardized reconstruction pipeline: 105 case-agnostic anchor queries collect a comprehensive evidence dump (about 850 to 900 records), which is then synthesized into the attack chain. Both the full evidence dump and the distilled chain are persisted to /reports/<case_id>/ for audit. The returned chain is checked against the persisted evidence and a `grounding` block reports, for this run, how many events state a checkable fact and how many cite an entity absent from the evidence. Use when the user asks: 'reconstruct the attack chain', 'show me the attack timeline', 'what happened in this incident', or similar attack-narrative requests.",
             "parameters": {
                 "type": "object",
                 "properties": {
@@ -541,8 +541,11 @@ CRITICAL DATA INTEGRITY RULES:
 
     # ==================== ES SEARCH HELPERS ====================
 
-    def _es_search(self, index: str, query: str = None, size: int = 50) -> List[Dict]:
-        """Execute Elasticsearch search using multi_match with query_string fallback."""
+    def _es_search(self, index: str, query: str = None, size: int = 50, filters: List[Dict] = None) -> List[Dict]:
+        """Execute Elasticsearch search using multi_match with query_string fallback.
+
+        filters: optional extra ES filter clauses, applied in the query before size is cut.
+        """
         try:
             body = {"size": size}
 
@@ -562,12 +565,14 @@ CRITICAL DATA INTEGRITY RULES:
                 # Without query, sort by timestamp desc
                 body["sort"] = [{"timestamp.keyword": {"order": "desc", "unmapped_type": "keyword"}}]
 
-            # Apply case_id filter if set
-            if self.case_id:
+            # Apply case_id filter if set, plus any extra filters
+            filter_clauses = [{"term": {"case_id.keyword": self.case_id}}] if self.case_id else []
+            filter_clauses += filters or []
+            if filter_clauses:
                 body["query"] = {
                     "bool": {
                         "must": [main_query],
-                        "filter": [{"term": {"case_id.keyword": self.case_id}}]
+                        "filter": filter_clauses
                     }
                 }
             else:
@@ -1633,7 +1638,9 @@ CRITICAL DATA INTEGRITY RULES:
 
     def _tool_search_file_changes(self, filename: str = None, operation: str = "all", limit: int = 15) -> Dict:
         """Search USN Journal for file changes."""
-        results = self._es_search("forensic-usnjrnl", filename, limit * 2)
+        # Filter by operation inside the ES query; filtering only the top hits missed rare operations
+        op_filter = [{"match": {"operation": operation.upper()}}] if operation and operation != "all" else None
+        results = self._es_search("forensic-usnjrnl", filename, limit * 2, filters=op_filter)
 
         if operation and operation != "all":
             results = [r for r in results if r.get("operation", "").upper() == operation.upper()]
@@ -1932,11 +1939,11 @@ CRITICAL DATA INTEGRITY RULES:
 
     def _tool_reconstruct_attack_chain(self, provider: str = "deepseek",
                                         run: int = 1) -> Dict:
-        """Run Mode 2 attack-chain reconstruction for the analyzer's case.
+        """Run attack-chain reconstruction for the analyzer's case.
 
         Returns a chronologically ordered chain of 15-30 incident steps
         with MITRE ATT&CK phase classification and source attribution.
-        Persists both the full evidence set (~1,000 records from 98
+        Persists both the full evidence set (about 850 to 900 records from 105
         case-agnostic anchors) and the distilled attack chain JSON to
         /reports/<case_id>/ for audit.
 

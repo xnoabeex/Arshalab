@@ -1,0 +1,560 @@
+{
+  "provider": "openai",
+  "case": "magnet",
+  "case_name": "Magnet_CTF_2022",
+  "case_id": "case_20260323_032324",
+  "run": 2,
+  "evidence_file": "evidence_Magnet_CTF_2022.json",
+  "evidence_record_count": 896,
+  "chain_event_count": 78,
+  "prompt_chars": 183012,
+  "elapsed_seconds": 50.2,
+  "chain": [
+    {
+      "timestamp": "2022-01-20 05:49:33",
+      "event": "Initial SRUM network_usage record with bytes_sent=0 and bytes_received=0",
+      "supporting_artifact": "srum_network_usage",
+      "confidence_or_caveat": "medium",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2022-01-22 01:24:41",
+      "event": "User accessed C:\\Users\\Patrick\\Pictures via recent-file entry",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-01-28 06:33:35",
+      "event": "User accessed C:\\Users\\Patrick\\Music via recent-file LNK",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-02 07:09:10.0000000",
+      "event": "Chrome profile artifacts written under .\\Users\\Patrick\\AppData\\Local\\Google\\Chrome\\User Data\\PKIMetadata\\159\\",
+      "supporting_artifact": "mft_user_writable_dirs",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-03 07:22:23.4361550",
+      "event": "EdgeWebView binaries such as cookie_exporter.exe first written under .\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\98.0.1108.43\\",
+      "supporting_artifact": "mft_exe_files",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-04 02:00:41.4943812",
+      "event": "note.txt created under .\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\note.lnk target directory",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-04 04:53:49.5074280",
+      "event": "MinecraftInstaller.exe written under .\\Users\\Patrick\\Downloads\\",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2022-02-04T05:12:12.354307Z",
+      "event": "Browser visited Microsoft Answers URL 'unable-to-install-minecraft-java-error-code/3f994117-d65f-446c-b980-31daac822eb4'",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2022-02-04 05:52:20.3104112",
+      "event": "DiscordSetup.exe downloaded to .\\Users\\Patrick\\Downloads\\ (with DiscordSetup.exe:SmartScreen ADS)",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2022-02-04 05:53:43.4033112",
+      "event": "Discord.lnk created on Desktop pointing to C:\\Users\\Patrick\\AppData\\Local\\Discord\\app-1.0.9003\\Update.exe",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-04 05:53:59",
+      "event": "User launched msedge.exe from C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe via jumplist entry",
+      "supporting_artifact": "jumplist_recent",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2022-02-04 07:02:34.2796193",
+      "event": "USB device initialization recorded by Kernel-PnP EventID 410",
+      "supporting_artifact": "usb_kernel_pnp_install",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2022-02-04 07:02:35.5384668",
+      "event": "Process created (EventID 4688) during early interactive logon session",
+      "supporting_artifact": "proc_creation_4688",
+      "confidence_or_caveat": "low",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-04 07:02:37.2569959",
+      "event": "RDP connection manager recorded EventID 32 establishing local session",
+      "supporting_artifact": "rdp_connection_manager",
+      "confidence_or_caveat": "medium",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2022-02-04 07:02:53.9491612",
+      "event": "Failed logon recorded (EventID 4625) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-04 07:03:42.6850572",
+      "event": "USB driverframeworks EventID 10118 indicates USB device handling after logon",
+      "supporting_artifact": "usb_attach_driverframeworks",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2022-02-04 07:03:51.4892710",
+      "event": "MountPoints2 CPC key under Explorer suggests mapped device context creation",
+      "supporting_artifact": "ext_reg_mapped_network_shares",
+      "confidence_or_caveat": "medium",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2022-02-04 07:05:42.6894842",
+      "event": "Windows Defender configuration changed (EventID 5007)",
+      "supporting_artifact": "def_config_change_5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-04 07:05:53.1678802",
+      "event": "Unidentified service installation recorded (EventID 7045, service name not in record)",
+      "supporting_artifact": "svc_install_7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-04 07:06:12.8076910",
+      "event": "Startup folder C:\\Users\\Patrick\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\desktop.ini updated",
+      "supporting_artifact": "mft_startup_folders",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-04 07:08:03",
+      "event": "UPDATE.EXE executed from C:\\Users\\Patrick\\AppData\\Local\\Discord\\ per prefetch",
+      "supporting_artifact": "ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-05T01:17:49.868431Z",
+      "event": "YouTube search performed for 'stamps worth money'",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2022-02-05 01:19:32.4373995",
+      "event": "Minecraft log archive 2022-02-03-2.log.gz created under .\\.minecraft\\logs\\",
+      "supporting_artifact": "mft_archive_files",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2022-02-05 01:36:10.4743985",
+      "event": "WorldofTanksBlitz 'Bat' directory entries created under WindowsApps",
+      "supporting_artifact": "mft_bat_files",
+      "confidence_or_caveat": "low",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-05 01:50:00",
+      "event": "Multiple SMBClient connectivity events (EventID 30810/30811/30812/30813/31018) indicating network share access",
+      "supporting_artifact": "ext_smbclient_connectivity",
+      "confidence_or_caveat": "medium",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2022-02-06 06:28:03.0010249",
+      "event": "gameflt.sys driver entries written under GamingServices paths",
+      "supporting_artifact": "mft_sys_drivers",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-06 07:10:15.844950Z",
+      "event": "Google search issued for 'what are packets'",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2022-02-06 07:14:10.0767923",
+      "event": "ZeroTier One.msi downloaded into .\\Users\\Patrick\\Downloads\\ (with ZeroTier One.msi:SmartScreen ADS)",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:35.7898674",
+      "event": "zerotier-cli.bat and zerotier-idtool.bat written under .\\Program Files (x86)\\ZeroTier\\One\\ indicating ZeroTier installation",
+      "supporting_artifact": "mft_bat_files",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:45.3852097",
+      "event": "file_deleter.ps1 created under .\\Users\\Patrick\\AppData\\Roaming\\ZeroTier, Inc\\ZeroTier One\\prerequisites\\",
+      "supporting_artifact": "mft_ps1_files",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2022-02-06 07:37:10",
+      "event": "JDK-8U181-WINDOWS-X64.EXE executed from C:\\Users\\Patrick\\Downloads\\ per prefetch",
+      "supporting_artifact": "ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-06 07:40:18.8524855",
+      "event": "paper-1.8.8-443.jar downloaded to .\\Users\\Patrick\\Documents\\Minecraft\\ with Zone.Identifier ADS",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2022-02-06 07:48:24.3521658",
+      "event": "start.bat created in .\\Users\\Patrick\\Documents\\Minecraft\\ (with start.bat:SmartScreen)",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-09 03:39:03.0767264",
+      "event": "System time changed (EventID 4616) on Security log",
+      "supporting_artifact": "time_changed_4616",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-09 03:42:18.6480000",
+      "event": "Windows Defender platform driver WdBoot.sys updated under ProgramData and System32 drivers",
+      "supporting_artifact": "mft_sys_drivers",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-09 03:42:56.9297066",
+      "event": "Unidentified service installation recorded (EventID 7045) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "svc_install_7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-09 22:44:37.8591332",
+      "event": "Windows Defender took action on detected threat (EventID 1117)",
+      "supporting_artifact": "def_action_taken_1117",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-09 23:34:55.1225188",
+      "event": "PowerShell scriptblock logged (EventID 4104) in Microsoft-Windows-PowerShell/Operational",
+      "supporting_artifact": "ps_scriptblock_4104",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-10 00:06:33.5978305",
+      "event": "Windows PowerShell host start (EventID 400 / 600) recorded as suspicious_indicators_universal",
+      "supporting_artifact": "suspicious_indicators_universal",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-10 00:06:34.1865698",
+      "event": "PowerShell error (EventID 4100) in Microsoft-Windows-PowerShell/Operational during script execution",
+      "supporting_artifact": "ps_errors_4100",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-10 05:55:49.3583488",
+      "event": "Unidentified service installation recorded (EventID 7045) in System channel",
+      "supporting_artifact": "svc_install_7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-11T01:18:02.114178Z",
+      "event": "Google search for 'how to know if you've been hacked'",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2022-02-11T01:21:05.533438Z",
+      "event": "Google search for 'how to report a hacker?'",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2022-02-11 22:46:09.7189557",
+      "event": "Failed logon attempt (EventID 4625) on DESKTOP-SKPTDIO Security log",
+      "supporting_artifact": "auth_logon_failures_4625",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-11 22:46:12.9291981",
+      "event": "Account properties modified (EventID 4738) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "auth_account_modified_4738",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-11 22:50:40",
+      "event": "Recent-folder entry created for C:\\Users\\Patrick\\Documents\\Evidence",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2022-02-11 23:00:56.3207237",
+      "event": "Windows Defender detected a threat (EventID 1116) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "def_threat_detected_1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-11 23:01:16.6415813",
+      "event": "Windows Defender action taken on threat (EventID 1117) following detection",
+      "supporting_artifact": "def_action_taken_1117",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-11 23:19:23.2090504",
+      "event": "goteem.ps1 created under .\\Users\\Patrick\\Documents\\Minecraft\\",
+      "supporting_artifact": "mft_ps1_files",
+      "confidence_or_caveat": "high",
+      "phase": "impact"
+    },
+    {
+      "timestamp": "2022-02-11 23:19:58.1369850",
+      "event": "PowerShell scriptblock (EventID 4104) logged around goteem.ps1 activity",
+      "supporting_artifact": "ps_scriptblock_4104",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11 23:22:52",
+      "event": "Recent-file LNK created to C:\\Users\\Patrick\\Documents\\Minecraft\\goteem.ps1",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "impact"
+    },
+    {
+      "timestamp": "2022-02-11 23:25:57.5388308",
+      "event": "goteem2.ps1 created under .\\Users\\Patrick\\Documents\\Minecraft\\",
+      "supporting_artifact": "mft_ps1_files",
+      "confidence_or_caveat": "high",
+      "phase": "impact"
+    },
+    {
+      "timestamp": "2022-02-12 00:04:42",
+      "event": "Recent-file entries to C:\\Users\\Patrick\\Documents\\Minecraft\\goteem2.ps1 and folder C:\\Users\\Patrick\\Documents\\Minecraft",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "impact"
+    },
+    {
+      "timestamp": "2022-02-12 01:29:43.1362394",
+      "event": "New user account created (EventID 4720) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "auth_account_created_4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 01:29:43.1595265",
+      "event": "User account enabled (EventID 4722) following creation",
+      "supporting_artifact": "auth_account_enabled_4722",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 01:37:07.8274813",
+      "event": "Account added to a security-enabled global group (EventID 4732)",
+      "supporting_artifact": "auth_group_added_4732",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 01:45:52.8832578",
+      "event": "Windows Defender detected additional threat (EventID 1116)",
+      "supporting_artifact": "def_threat_detected_1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-12 01:46:18.5970927",
+      "event": "Windows Defender applied remediation (EventID 1117) for detected threat",
+      "supporting_artifact": "def_action_taken_1117",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-12 02:12:16.6903086",
+      "event": "tightvnc-2.8.63-gpl-setup-64bit.msi present under C:\\Windows\\SysWOW64\\",
+      "supporting_artifact": "mft_msi_installers",
+      "confidence_or_caveat": "medium",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2022-02-12 04:30:12.3573572",
+      "event": "Windows Defender threat detection burst (multiple EventID 1116) around 04:30:12",
+      "supporting_artifact": "def_threat_detected_1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-12 04:30:13.3771612",
+      "event": "Windows Defender took multiple actions (EventID 1117) in response to 04:30 detections",
+      "supporting_artifact": "def_action_taken_1117",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-12 08:09:10.0684581",
+      "event": "System time adjusted again (EventID 4616) in Security log",
+      "supporting_artifact": "time_changed_4616",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-12 22:47:21.4078321",
+      "event": "AppLocker blocked packaged app execution (EventID 8004) in DeviceInstall channel",
+      "supporting_artifact": "applocker_blocked",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-12 22:47:38.6863152",
+      "event": "USB driverframeworks EventID 10118 shows new USB activity",
+      "supporting_artifact": "usb_attach_driverframeworks",
+      "confidence_or_caveat": "medium",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2022-02-12 22:47:43.3308355",
+      "event": "Explicit-credential logon attempt recorded (EventID 4648) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "auth_explicit_cred_4648",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-12 22:53:03.6210312",
+      "event": "PowerShell module logging event (EventID 4103) recorded",
+      "supporting_artifact": "ps_module_4103",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-12 22:54:09.9161001",
+      "event": "Service installation event (EventID 7045) recorded, associated registry entries GamingServices / GamingServicesNet present",
+      "supporting_artifact": "svc_install_7045",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 23:16:50.3564659",
+      "event": "Additional AppLocker blocked event (EventID 8004) in Microsoft-Windows-UserPnp/DeviceInstall",
+      "supporting_artifact": "applocker_blocked",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-12 23:17:06.4809970",
+      "event": "Service state change recorded (EventID 7036) in System channel",
+      "supporting_artifact": "svc_state_change",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 23:17:09.2888503",
+      "event": "Further explicit-credential usage (EventID 4648) on Security log",
+      "supporting_artifact": "auth_explicit_cred_4648",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-12 23:17:11.8863903",
+      "event": "RegisteredOwner and Windows NT CurrentVersion values set to 'Patrick' and 'Windows 10 Home'",
+      "supporting_artifact": "reg_user_context",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-12 23:18:14.7365405",
+      "event": "UserAssist entry for File Explorer.lnk ({User Pinned} TaskBar) updated",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "medium",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2022-02-12 23:33:49.5097252",
+      "event": "USBSTOR registry entry for 'General UDisk USB Device' with DiskId {e34d8416-8c59-11ec-a228-f894c2dfe804} created",
+      "supporting_artifact": "reg_persistence_master",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2022-02-12 23:33:49.7923451",
+      "event": "USB device stack events 10000/10001/10100 logged in System for attached storage",
+      "supporting_artifact": "usb_attach_driverframeworks",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2022-02-12 23:34:10.6570383",
+      "event": "NTUSER.DAT FileExts key accessed (app_email_client-related registry inspection)",
+      "supporting_artifact": "app_email_client",
+      "confidence_or_caveat": "low",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2022-02-12 23:36:37.5192191",
+      "event": "Explorer MountPoints2 entries updated for device GUIDs under NTUSER.DAT",
+      "supporting_artifact": "ext_reg_mapped_network_shares",
+      "confidence_or_caveat": "medium",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2022-02-12 23:39:53.3644041",
+      "event": "Authentication LogonUI LastLoggedOnUser set to .\\Patrick",
+      "supporting_artifact": "reg_user_context",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 23:39:58.9487382",
+      "event": "Winlogon AutoAdminLogon=1 and DefaultUserName 'Patrick' configured for automatic logon",
+      "supporting_artifact": "reg_winlogon_helpers",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    }
+  ]
+}

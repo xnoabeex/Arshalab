@@ -1,0 +1,224 @@
+{
+  "provider": "opus",
+  "case": "magnet",
+  "case_name": "Magnet_CTF_2022",
+  "case_id": "case_20260323_032324",
+  "run": 1,
+  "evidence_file": "evidence_Magnet_CTF_2022.json",
+  "evidence_record_count": 896,
+  "chain_event_count": 30,
+  "prompt_chars": 183012,
+  "elapsed_seconds": 45.4,
+  "chain": [
+    {
+      "timestamp": "2022-02-04T05:12:10.282799Z",
+      "event": "Suspect signs into login.live.com troubleshooting Minecraft Java install error code 0x80131509",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "low",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-04 05:52:20.3104112",
+      "event": "DiscordSetup.exe created in user profile (entry 241404) — communication app install for accomplice contact",
+      "supporting_artifact": "ext_mft_user_profile_content (MFT)",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-04 05:53:43.4033112",
+      "event": "Discord.lnk created on Desktop; Discord.exe later executed from AppData\\Local\\Discord",
+      "supporting_artifact": "mft_lnk_files / ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "medium",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-05T01:17:49.868431Z",
+      "event": "Browser search 'stamps worth money' on YouTube — financial-motive research",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-06T07:10:15.844950Z",
+      "event": "Google search 'what are packets' — reconnaissance / tooling research",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "low",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-06 07:14:10.0767923",
+      "event": "ZeroTier One.msi downloaded to \\Users\\Patrick\\Downloads (entry 99598, :SmartScreen stream) — VPN/C2 tunnel installer",
+      "supporting_artifact": "mft_msi_installers / ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-06 06:28:49.7262351",
+      "event": "Service install Event 7045 (earliest after ZeroTier download window) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 7045 (svc_install_7045)",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:35.7898674",
+      "event": "ZeroTier CLI scripts zerotier-cli.bat / zerotier-idtool.bat written to Program Files (x86)\\ZeroTier\\One",
+      "supporting_artifact": "mft_bat_files (MFT)",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:45.3852097",
+      "event": "file_deleter.ps1 and AI_70BB.ps1 created under ZeroTier One\\prerequisites — anti-forensic deletion script",
+      "supporting_artifact": "mft_ps1_files (MFT)",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2022-02-06 07:48:24.3521658",
+      "event": "start.bat created in \\Users\\Patrick\\Documents\\Minecraft (entry 229071, :SmartScreen) — Minecraft server launcher staging",
+      "supporting_artifact": "ext_mft_user_profile_content / mft_bat_files",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-09 22:44:37.8591332",
+      "event": "Windows Defender action taken Event 1117 (first detection/quarantine) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 1117 (def_action_taken_1117)",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-09 23:34:55.1225188",
+      "event": "PowerShell ScriptBlock logging Event 4104 — first adversary PowerShell script execution",
+      "supporting_artifact": "EventLog Event 4104 (ps_scriptblock_4104)",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-10 00:06:34.1865698",
+      "event": "PowerShell error Event 4100 — adversary PowerShell execution error",
+      "supporting_artifact": "EventLog Event 4100 (ps_errors_4100)",
+      "confidence_or_caveat": "low",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11T01:18:02.114178Z",
+      "event": "Google search 'how to know if you've been hacked' — suspect counter-research",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "low",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2022-02-11 22:46:09.7189557",
+      "event": "Failed logon Event 4625 (Security channel) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4625 (auth_logon_failures_4625)",
+      "confidence_or_caveat": "medium",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-11 22:46:12.9291981",
+      "event": "Account modified Event 4738 on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4738 (auth_account_modified_4738)",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-11 22:50:40",
+      "event": "Access to C:\\Users\\Patrick\\Documents\\Evidence folder via LNK — data staging/collection",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2022-02-11 23:19:23.2090504",
+      "event": "goteem.ps1 created in \\Users\\Patrick\\Documents\\Minecraft — adversary payload script",
+      "supporting_artifact": "mft_ps1_files (MFT)",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11 23:25:57.5388308",
+      "event": "goteem2.ps1 created in \\Users\\Patrick\\Documents\\Minecraft — second adversary payload script",
+      "supporting_artifact": "mft_ps1_files (MFT)",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11 23:00:56.3207237",
+      "event": "Windows Defender threat detected Event 1116 on DESKTOP-SKPTDIO (coincident with PS 4100 errors)",
+      "supporting_artifact": "EventLog Event 1116 (def_threat_detected_1116)",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-12 01:29:43.1362394",
+      "event": "Unauthorized account creation Event 4720 on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4720 (auth_account_created_4720)",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 01:29:43.1595265",
+      "event": "Account enabled Event 4722 (follows 4720) on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4722 (auth_account_enabled_4722)",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 01:37:07.8274813",
+      "event": "Member added to a security group Event 4732 — privilege grant to new account",
+      "supporting_artifact": "EventLog Event 4732 (auth_group_added_4732)",
+      "confidence_or_caveat": "medium",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 02:12:16.6903086",
+      "event": "tightvnc-2.8.63-gpl-setup-64bit.msi staged in \\Windows\\SysWOW64 — remote-access tool for hand-off",
+      "supporting_artifact": "mft_msi_installers (MFT)",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2022-02-12 04:30:13.8560210",
+      "event": "Service install Event 7045 coincident with Defender 1116/1117 burst at 04:30 on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 7045 (svc_install_7045)",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 22:47:43.3308355",
+      "event": "Explicit-credential logon Event 4648 on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4648 (auth_explicit_cred_4648)",
+      "confidence_or_caveat": "medium",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-12 23:25:56.0076948",
+      "event": "Special privileges assigned Event 4672 on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4672 (auth_priv_assigned_4672)",
+      "confidence_or_caveat": "medium",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 23:33:49.5097252",
+      "event": "USBSTOR device 'Ven_General Prod_UDisk' (SerialNumber 6&2a67491b&0, DiskId e34d8416-8c59-11ec) registered — removable-media exfil",
+      "supporting_artifact": "Registry USBSTOR (reg_persistence_master)",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2022-02-12 22:54:09.9190932",
+      "event": "Services 'GamingServicesNet' / 'GamingServices' registered under ControlSet001\\Services",
+      "supporting_artifact": "Registry Services key (reg_persistence_master)",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 23:39:58.9487382",
+      "event": "Winlogon AutoAdminLogon=1 with AutoLogonSID S-1-5-21-3341181097-1059518978-806882922-1001 (Patrick) set",
+      "supporting_artifact": "Registry Winlogon (reg_winlogon_helpers)",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    }
+  ]
+}

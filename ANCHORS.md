@@ -1,25 +1,29 @@
-# The 98 Case-Agnostic Retrieval Anchors
+# The 105 Case-Agnostic Retrieval Anchors
 
 Autonomous attack-chain reconstruction runs in two stages. **Stage 1**
-(`retrieve_evidence_v2.py`) issues a fixed catalog of **98 case-agnostic anchor
-queries** against the case index to build a comprehensive evidence pool (about
-1,000 records). **Stage 2** (`reconstruct_timeline.py`) gives that pool to a
-language model, which synthesizes a chronologically ordered attack chain.
+(`retrieve_evidence_v2.py`) issues a fixed catalog of **105 case-agnostic anchor
+queries** against the case index to build a comprehensive evidence pool (846 to
+896 records on the three public images). **Stage 2** (`reconstruct_timeline.py`)
+gives that pool to a language model, which synthesizes a chronologically ordered
+attack chain.
 
-This document lists all 98 anchors. The exact query for each anchor (tool method
+This document lists all 105 anchors. The exact query for each anchor (tool method
 or bounded Elasticsearch query plus parameters) is defined in `ANCHORS_V2` in
-`retrieve_evidence_v2.py`; the identifiers below are the keys of that list.
+`retrieve_evidence_v2.py`; the identifiers below are the keys of that list. They
+are grouped by domain here as in Appendix B of the paper. In `ANCHORS_V2` the
+seven anchors whose identifiers start with `ext_` come last, so that the order
+of the evidence pool, and therefore of the prompt, matches the released pools.
 
 ## Design principles
 
-The catalog is **case-agnostic by construction** so that the same 98 anchors
+The catalog is **case-agnostic by construction** so that the same 105 anchors
 transfer across cases without per-case tuning:
 
 1. **No case-specific identifiers.** No anchor contains a file name, user name,
    IP address, hash, or domain string taken from any evaluation case.
 2. **Documented primitives only.** Anchors rely on Microsoft-documented Windows
    Event IDs and channel names, and on industry-wide artifact families
-   (Prefetch, Shimcache, Amcache, MFT, USN journal, SRUM, browser, LNK).
+   (Prefetch, ShimCache, Amcache, MFT, USN journal, SRUM, browser, LNK).
 3. **Generic indicator lists.** Domain-category anchors use generic
    threat-tooling lists (for example remote-access or anti-forensic tool
    families) rather than instances observed in a specific case.
@@ -27,21 +31,21 @@ transfer across cases without per-case tuning:
    window, and each record is compressed to its diagnostic fields to fit the
    reconstruction prompt budget.
 
-## The ten DFIR domains (98 anchors)
+## The ten DFIR domains (105 anchors)
 
 | Domain | Anchors | Coverage |
 |--------|:------:|----------|
 | A. Identity & Access | 19 | Authentication and account lifecycle (logon types, failures, explicit credentials, account/group changes, Kerberos, NTLM) |
 | B. Process & Execution | 16 | Process creation/termination, services, scheduled tasks, PowerShell logging, WMI persistence, AppLocker |
 | C. Defense Status & Tampering | 10 | Defender actions, real-time protection, audit-policy changes, log clearing, firewall stop, time change |
-| D. Network & Connectivity | 6 | Filtering-platform connections, firewall-rule changes, DHCP authentication |
+| D. Network & Connectivity | 7 | Filtering-platform connections, firewall-rule changes, DHCP authentication, SMB client connectivity |
 | E. Removable Media & USB | 4 | USB attach detection across DriverFrameworks, kernel PnP, device install, SetupAPI |
-| F. RDP & Lateral Movement | 4 | RDP session lifecycle, connection manager, disconnect reasons, SMB share access |
+| F. RDP & Lateral Movement | 5 | RDP session lifecycle, connection manager, disconnect reasons, SMB share access, mapped network shares |
 | G. File & Registry Audit | 5 | Object-access trail when audit policy is enabled |
-| H. MFT / File-System Activity | 10 | File-creation patterns (scripts, drivers, installers, archives, executables, user-writable dirs, ADS, USN journal) |
+| H. MFT / File-System Activity | 13 | File-creation patterns (scripts, drivers, installers, archives, executables, user-writable dirs, ADS), USN journal changes, archive creation, the life cycle of user content, content in user profile folders |
 | I. Persistence & Configuration | 6 | Registry persistence (Run/RunOnce, IFEO, AppInit_DLLs, Winlogon, startup folders, user context) |
-| J. Application Errors, Execution Traces & Domain Indicators | 18 | App crashes/hangs, WER, Prefetch/Shimcache/Amcache, SRUM, browser, and generic threat-tooling indicator lists |
-| **Total** | **98** | |
+| J. Application Errors, Execution Traces & Domain Indicators | 20 | App crashes/hangs, WER, Prefetch/ShimCache/Amcache, SRUM, browser, generic threat-tooling indicator lists, built-in discovery tools, execution from user paths |
+| **Total** | **105** | |
 
 ## Full anchor list
 
@@ -104,6 +108,7 @@ transfer across cases without per-case tuning:
 - `fw_rule_deleted_4948`
 - `fw_setting_changed`
 - `dhcp_auth_50036_50037`
+- `ext_smbclient_connectivity`
 
 ### E. REMOVABLE MEDIA & USB
 - `usb_attach_driverframeworks`
@@ -116,6 +121,7 @@ transfer across cases without per-case tuning:
 - `rdp_connection_manager`
 - `rdp_disconnect_reasons`
 - `smb_share_access`
+- `ext_reg_mapped_network_shares`
 
 ### G. FILE & REGISTRY AUDIT
 - `file_audit_access_4663`
@@ -135,6 +141,9 @@ transfer across cases without per-case tuning:
 - `mft_user_writable_dirs`
 - `mft_alternate_data_streams`
 - `usnjrnl_recent_changes`
+- `ext_usn_archive_created`
+- `ext_usn_user_content_lifecycle`
+- `ext_mft_user_profile_content`
 
 ### I. PERSISTENCE & CONFIGURATION
 - `reg_persistence_master`
@@ -144,7 +153,7 @@ transfer across cases without per-case tuning:
 - `mft_startup_folders`
 - `reg_user_context`
 
-### J. APPLICATION ERRORS, EXECUTION TRACES & DOMAIN INDICATORS.
+### J. APPLICATION ERRORS, EXECUTION TRACES & DOMAIN INDICATORS
 - `app_crashes_1000`
 - `app_hangs_1002`
 - `wer_reports_1001`
@@ -163,3 +172,5 @@ transfer across cases without per-case tuning:
 - `app_archive_tools`
 - `app_email_client`
 - `suspicious_indicators_universal`
+- `ext_prefetch_builtin_discovery`
+- `ext_prefetch_user_path_execution`

@@ -103,9 +103,16 @@
     "app_antiforensic",
     "app_archive_tools",
     "app_email_client",
-    "suspicious_indicators_universal"
+    "suspicious_indicators_universal",
+    "ext_prefetch_builtin_discovery",
+    "ext_prefetch_user_path_execution",
+    "ext_reg_mapped_network_shares",
+    "ext_smbclient_connectivity",
+    "ext_usn_archive_created",
+    "ext_usn_user_content_lifecycle",
+    "ext_mft_user_profile_content"
   ],
-  "total_records": 798,
+  "total_records": 896,
   "errors": 0,
   "evidence_by_anchor": {
     "auth_logon_interactive_type2": [
@@ -5312,6 +5319,508 @@
         "_anchor": "suspicious_indicators_universal",
         "timestamp": "2022-02-10 00:06:34.7679051",
         "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-10 00:06:34.7679051', 'event_id': 600, 'provider': 'PowerShell', 'channel': 'Windows PowerShell', 'level': 'Info', 'severity': 'info', 'comput"
+      }
+    ],
+    "ext_prefetch_builtin_discovery": [
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-04 07:07:55",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:07:55', 'executable_name': 'RTKNGUI64.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES\\\\REALTEK\\\\AUDIO\\\\HDA\\"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-04 07:07:57",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:07:57', 'executable_name': 'CXAPOAGENT64.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES\\\\REALTEK\\\\AUDIO\\\\H"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-04 07:07:57",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:07:57', 'executable_name': 'RAVBG64.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES\\\\REALTEK\\\\AUDIO\\\\HDA\\\\R"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-04 07:12:44",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:12:44', 'executable_name': 'MSEDGEWEBVIEW2.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-04 07:12:44",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:12:44', 'executable_name': 'MSEDGEWEBVIEW2.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-04 07:12:44",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:12:44', 'executable_name': 'MSEDGEWEBVIEW2.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-04 07:12:44",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:12:44', 'executable_name': 'MSEDGEWEBVIEW2.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-04 07:12:44",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:12:44', 'executable_name': 'MSEDGEWEBVIEW2.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-04 07:12:44",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:12:44', 'executable_name': 'MSEDGEWEBVIEW2.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-04 07:14:44",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:14:44', 'executable_name': 'MSEDGEWEBVIEW2.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-05 01:11:04",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:11:04', 'executable_name': 'CXAPOAGENT64.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES\\\\REALTEK\\\\AUDIO\\\\H"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-05 01:11:04",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:11:04', 'executable_name': 'RAVBG64.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES\\\\REALTEK\\\\AUDIO\\\\HDA\\\\R"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-05 01:11:04",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:11:04', 'executable_name': 'RTKNGUI64.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES\\\\REALTEK\\\\AUDIO\\\\HDA\\"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-05 01:12:53",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:12:53', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-05 01:15:05",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:15:05', 'executable_name': 'RUNDLL32.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\WINDOWS\\\\SYSTEM32\\\\RUNDLL32.EXE', 'p"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-05 01:15:53",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:15:53', 'executable_name': 'MSEDGEWEBVIEW2.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-05 01:15:54",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:15:54', 'executable_name': 'MSEDGEWEBVIEW2.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-05 01:15:54",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:15:54', 'executable_name': 'MSEDGEWEBVIEW2.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-05 01:15:54",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:15:54', 'executable_name': 'MSEDGEWEBVIEW2.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT"
+      },
+      {
+        "_anchor": "ext_prefetch_builtin_discovery",
+        "timestamp": "2022-02-05 01:15:54",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:15:54', 'executable_name': 'MSEDGEWEBVIEW2.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\PROGRAM FILES (X86)\\\\MICROSOFT"
+      }
+    ],
+    "ext_prefetch_user_path_execution": [
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-04 07:08:03",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:08:03', 'executable_name': 'UPDATE.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCOR"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-04 07:08:04",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:08:04', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCO"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-04 07:08:05",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:08:05', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCO"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-04 07:08:07",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:08:07', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCO"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-04 07:08:15",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:08:15', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCO"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-05 01:11:13",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:11:13', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCO"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-05 01:11:14",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:11:14', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCO"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-05 01:11:15",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:11:15', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCO"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-05 01:19:30",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:19:30', 'executable_name': 'JAVAW.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\PACKAGE"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-06 06:26:57",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 06:26:57', 'executable_name': 'UPDATE.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCOR"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-06 06:26:58",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 06:26:58', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCO"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-06 06:27:00",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 06:27:00', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCO"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-06 06:29:00",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 06:29:00', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCO"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-06 07:15:45",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:15:45', 'executable_name': 'AIPACKAGECHAINER.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\ROA"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-06 07:16:09",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:16:09', 'executable_name': 'VC_REDIST.X64.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\ROAMIN"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-06 07:27:08",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:27:08', 'executable_name': 'JAVAUNINSTALLTOOL.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\DOWNLOADS\\\\"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-06 07:27:08",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:27:08', 'executable_name': 'JAVAUNINSTALLTOOL.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LO"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-06 07:37:10",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:37:10', 'executable_name': 'JDK-8U181-WINDOWS-X64.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\DOWNLOA"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-06 07:37:18",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:37:18', 'executable_name': 'JDK-8U181-WINDOWS-X64.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA"
+      },
+      {
+        "_anchor": "ext_prefetch_user_path_execution",
+        "timestamp": "2022-02-06 07:47:38",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:47:38', 'executable_name': 'DISCORD.EXE', 'executable_path': '\\\\VOLUME{01d8067502ac9764-1002c20a}\\\\USERS\\\\PATRICK\\\\APPDATA\\\\LOCAL\\\\DISCO"
+      }
+    ],
+    "ext_reg_mapped_network_shares": [
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2022-02-04 07:05:51.4892710",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:05:51.4892710', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2\\\\CPC'"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2022-02-12 23:36:37.5192191",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-12 23:36:37.5192191', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2', 'va"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2022-02-12 23:36:37.5192191",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-12 23:36:37.5192191', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2\\\\{bd1"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2022-02-12 23:38:53.6271359",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-12 23:38:53.6271359', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2\\\\{3cb"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2022-02-12 23:38:53.6271359",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-12 23:38:53.6271359', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2\\\\{3cb"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2022-02-12 23:38:53.6271359",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-12 23:38:53.6271359', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2\\\\{3cb"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2022-02-12 23:38:53.6271359",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-12 23:38:53.6271359', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2\\\\{3cb"
+      },
+      {
+        "_anchor": "ext_reg_mapped_network_shares",
+        "timestamp": "2022-02-12 23:39:46.4436211",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-12 23:39:46.4436211', 'hive_type': 'NTUSER.DAT', 'key_path': 'ROOT\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\MountPoints2\\\\CPC\\"
+      }
+    ],
+    "ext_smbclient_connectivity": [
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-04 07:02:54.3511275",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:02:54.3511275', 'event_id': 31018, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Security', 'level'"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-04 07:03:51.6357294",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:03:51.6357294', 'event_id': 31018, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Security', 'level'"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-04 07:05:38.2515178",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:05:38.2515178', 'event_id': 30812, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-04 07:05:38.2515887",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:05:38.2515887', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-04 07:05:38.2517286",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:05:38.2517286', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-04 07:05:38.2518078",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:05:38.2518078', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-04 07:05:38.2519095",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:05:38.2519095', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-04 07:05:38.2519591",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:05:38.2519591', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-04 07:05:38.2519967",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:05:38.2519967', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-04 07:05:40.0457916",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:05:40.0457916', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-04 07:05:46.3445562",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:05:46.3445562', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-05 01:10:45.5170674",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:10:45.5170674', 'event_id': 30813, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-05 01:10:45.5171216",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:10:45.5171216', 'event_id': 30811, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-05 01:10:45.7989770",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:10:45.7989770', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-05 01:10:47.8426947",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:10:47.8426947', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-05 01:10:51.3789412",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:10:51.3789412', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-05 01:10:52.8482325",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:10:52.8482325', 'event_id': 30810, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-05 01:10:54.4645624",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:10:54.4645624', 'event_id': 31018, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Security', 'level'"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-05 01:10:54.4653213",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:10:54.4653213', 'event_id': 30812, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      },
+      {
+        "_anchor": "ext_smbclient_connectivity",
+        "timestamp": "2022-02-05 01:10:54.8398562",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-05 01:10:54.8398562', 'event_id': 30811, 'provider': 'Microsoft-Windows-SMBClient', 'channel': 'Microsoft-Windows-SmbClient/Connectivity', 'le"
+      }
+    ],
+    "ext_usn_archive_created": [],
+    "ext_usn_user_content_lifecycle": [],
+    "ext_mft_user_profile_content": [
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 02:00:41.4943812",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 02:00:41.4943812', 'entry_number': 24110, 'sequence_number': 5, 'filename': 'note.txt', 'extension': '.txt', 'file_path': '.\\\\Users\\\\Patric"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 04:53:49.5074280",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 04:53:49.5074280', 'entry_number': 93176, 'sequence_number': 2, 'filename': 'MinecraftInstaller.exe', 'extension': '.exe', 'file_path': '.\\"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 05:52:20.3104112",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:52:20.3104112', 'entry_number': 241404, 'sequence_number': 1, 'filename': 'DiscordSetup.exe', 'extension': '.exe', 'file_path': '.\\\\User"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 05:52:20.3104112",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:52:20.3104112', 'entry_number': 241404, 'sequence_number': 1, 'filename': 'DiscordSetup.exe:SmartScreen', 'extension': '', 'file_path': "
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 05:53:43.4033112",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 05:53:43.4033112', 'entry_number': 241528, 'sequence_number': 1, 'filename': 'Discord.lnk', 'extension': '.lnk', 'file_path': '.\\\\Users\\\\Pa"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 06:34:03.1417562",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 06:34:03.1417562', 'entry_number': 351037, 'sequence_number': 1, 'filename': 'Documents', 'extension': '', 'file_path': '.\\\\Windows\\\\System"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 06:40:05.8804194",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 06:40:05.8804194', 'entry_number': 350790, 'sequence_number': 15, 'filename': 'My Documents', 'extension': '', 'file_path': '.\\\\Users\\\\Patr"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 06:40:05.8813588",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 06:40:05.8813588', 'entry_number': 350791, 'sequence_number': 15, 'filename': 'My Music', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick\\"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 06:40:05.8813588",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 06:40:05.8813588', 'entry_number': 350792, 'sequence_number': 15, 'filename': 'My Pictures', 'extension': '', 'file_path': '.\\\\Users\\\\Patri"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 06:40:05.8823571",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 06:40:05.8823571', 'entry_number': 350793, 'sequence_number': 15, 'filename': 'My Videos', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 07:05:40.1580453",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:05:40.1580453', 'entry_number': 337098, 'sequence_number': 3, 'filename': 'Desktop', 'extension': '', 'file_path': '.\\\\ProgramData\\\\Desk"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 07:05:40.1580453",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:05:40.1580453', 'entry_number': 337099, 'sequence_number': 3, 'filename': 'Documents', 'extension': '', 'file_path': '.\\\\ProgramData\\\\Do"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 07:06:12.6202357",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:06:12.6202357', 'entry_number': 97468, 'sequence_number': 2, 'filename': 'desktop.ini', 'extension': '.ini', 'file_path': '.\\\\Users\\\\Pat"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 07:06:12.6202357",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:06:12.6202357', 'entry_number': 279977, 'sequence_number': 2, 'filename': 'Desktop', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick\\\\D"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 07:06:12.7608273",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:06:12.7608273', 'entry_number': 97490, 'sequence_number': 1, 'filename': 'desktop.ini', 'extension': '.ini', 'file_path': '.\\\\Users\\\\Pat"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 07:06:12.8233128",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:06:12.8233128', 'entry_number': 97483, 'sequence_number': 1, 'filename': 'desktop.ini', 'extension': '.ini', 'file_path': '.\\\\Users\\\\Pat"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-04 07:06:19.9310220",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-04 07:06:19.9310220', 'entry_number': 105783, 'sequence_number': 8, 'filename': 'downloads', 'extension': '', 'file_path': '.\\\\ProgramData\\\\Mi"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:14:10.0767923",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:14:10.0767923', 'entry_number': 99598, 'sequence_number': 9, 'filename': 'ZeroTier One.msi', 'extension': '.msi', 'file_path': '.\\\\Users"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:14:10.0767923",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:14:10.0767923', 'entry_number': 99598, 'sequence_number': 9, 'filename': 'ZeroTier One.msi:SmartScreen', 'extension': '', 'file_path': '"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:26:06.6650053",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:26:06.6650053', 'entry_number': 166424, 'sequence_number': 11, 'filename': 'JavaUninstallTool.exe', 'extension': '.exe', 'file_path': '."
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:26:06.6650053",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:26:06.6650053', 'entry_number': 166424, 'sequence_number': 11, 'filename': 'JavaUninstallTool.exe:SmartScreen', 'extension': '', 'file_p"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:36:34.3504333",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:36:34.3504333', 'entry_number': 170489, 'sequence_number': 7, 'filename': 'jdk-8u181-windows-x64.exe', 'extension': '.exe', 'file_path':"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:36:34.3504333",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:36:34.3504333', 'entry_number': 170489, 'sequence_number': 7, 'filename': 'jdk-8u181-windows-x64.exe:SmartScreen', 'extension': '', 'fil"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:40:18.8524855",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:40:18.8524855', 'entry_number': 170536, 'sequence_number': 5, 'filename': 'paper-1.8.8-443.jar', 'extension': '.jar', 'file_path': '.\\\\U"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:40:18.8524855",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:40:18.8524855', 'entry_number': 170536, 'sequence_number': 5, 'filename': 'paper-1.8.8-443.jar:Zone.Identifier', 'extension': '.identifi"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:48:24.3521658",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:48:24.3521658', 'entry_number': 229071, 'sequence_number': 12, 'filename': 'start.bat', 'extension': '.bat', 'file_path': '.\\\\Users\\\\Pat"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:48:24.3521658",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:48:24.3521658', 'entry_number': 229071, 'sequence_number': 12, 'filename': 'start.bat:SmartScreen', 'extension': '', 'file_path': '.\\\\Us"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:49:59.8673177",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:49:59.8673177', 'entry_number': 279981, 'sequence_number': 2, 'filename': 'Downloads', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick\\"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:55:14.3323357",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:55:14.3323357', 'entry_number': 229420, 'sequence_number': 3, 'filename': 'original.jar', 'extension': '.jar', 'file_path': '.\\\\Users\\\\P"
+      },
+      {
+        "_anchor": "ext_mft_user_profile_content",
+        "timestamp": "2022-02-06 07:55:14.5143177",
+        "_raw": "{'case_id': 'case_20260323_032324', 'timestamp': '2022-02-06 07:55:14.5143177', 'entry_number': 229419, 'sequence_number': 3, 'filename': 'cache', 'extension': '', 'file_path': '.\\\\Users\\\\Patrick\\\\Doc"
       }
     ]
   }

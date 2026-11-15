@@ -1,14 +1,14 @@
-"""Mode 2 step 2 — model reasoning: order pre-retrieved evidence into a
-causal-temporal incident timeline with provenance.
+"""Attack-chain reconstruction, stage 2 — model reasoning: order pre-retrieved
+evidence into a causal-temporal incident timeline with provenance.
 
 Per-step protocol (follows the user's structure literally):
-  - input  : evidence dump produced by retrieve_evidence.py
+  - input  : evidence pool produced by retrieve_evidence_v2.py (105 anchors)
   - task   : pick the events that form the adversary attack chain and order
              them chronologically with provenance
   - output : JSON array of {timestamp, event, supporting_artifact,
              confidence_or_caveat[, phase]}
 
-Same evidence dump is fed to every model -> fair Mode 2 comparison.
+Same evidence pool is fed to every model -> fair comparison across models.
 
 Usage:
     python reconstruct_timeline.py --provider deepseek --case magnet --run 1
@@ -281,14 +281,17 @@ def call_mcp_cli(model, prompt, case_id):
         return f"ERROR: claude CLI exit {result.returncode}: {(result.stderr or '')[:300]}"
     return (result.stdout or "").strip()
 
+# Model identifiers used for the chains in benchmark_results/mode2_final. A hosted
+# name such as deepseek-chat can be served by a newer model version over time; the
+# paper lists the versions that produced the released chains.
 PROVIDERS = {
     "deepseek": lambda p, s, cid: call_openai_compat(
         "deepseek-chat", "https://api.deepseek.com", "DEEPSEEK_API_KEY",
         p, s, max_tokens=16384),
     "openai":   lambda p, s, cid: call_openai_compat(
         "gpt-5.1", None, "OPENAI_API_KEY", p, s, max_tokens=32768),
-    "sonnet":   lambda p, s, cid: call_mcp_cli("sonnet", p, cid),
-    "opus":     lambda p, s, cid: call_mcp_cli("opus",   p, cid),
+    "sonnet":   lambda p, s, cid: call_mcp_cli("claude-sonnet-4-5-20250929", p, cid),
+    "opus":     lambda p, s, cid: call_mcp_cli("claude-opus-4-8", p, cid),
     "llama":    lambda p, s, cid: call_ollama("llama3.1:8b", p, s),
     "qwen":     lambda p, s, cid: call_ollama("qwen2.5:14b", p, s),
 }

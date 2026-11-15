@@ -1,0 +1,224 @@
+{
+  "provider": "sonnet",
+  "case": "4orensics",
+  "case_name": "Hunter_4orensics",
+  "case_id": "case_20260410_120043",
+  "run": 2,
+  "evidence_file": "evidence_Hunter_4orensics.json",
+  "evidence_record_count": 846,
+  "chain_event_count": 30,
+  "prompt_chars": 190656,
+  "elapsed_seconds": 46.6,
+  "chain": [
+    {
+      "timestamp": "2016-06-20 23:48:22.3828274",
+      "event": "System boot and initial user logon - Event 4624",
+      "supporting_artifact": "EventLog Event 4624",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:02.3669721",
+      "event": "RDP session initiated - Event 4648 explicit credentials",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:39",
+      "event": "User opened PDF about data exfiltration - ACRORD32.EXE prefetch shows 8 runs accessing how_do_threat_actors_steal_your_data.lnk",
+      "supporting_artifact": "Prefetch + LNK files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:51:20.2260379",
+      "event": "User accessed mwri-detecting-deterring-both.lnk - research on detection evasion",
+      "supporting_artifact": "LNK recent files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:53:36",
+      "event": "CMD.EXE execution - run count 5",
+      "supporting_artifact": "Prefetch",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:34",
+      "event": "User downloaded putty.exe and pscp.exe - SSH/SCP exfil tools",
+      "supporting_artifact": "LNK recent files + MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:58:03",
+      "event": "User accessed DEFCON-22 bypass firewalls whitelist presentation",
+      "supporting_artifact": "LNK recent files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:06.9483540",
+      "event": "User downloaded setupssh381-20040709.zip - SSH server setup tool",
+      "supporting_artifact": "MFT archive files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 00:02:23.8454489",
+      "event": "Archive file WVRBEZZTFREDLTKJ.zip created in user space",
+      "supporting_artifact": "USN Journal archive creation",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:15",
+      "event": "TeamViewer_Setup-vfa.exe downloaded and executed - remote access tool",
+      "supporting_artifact": "Prefetch + MFT remote access",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:21",
+      "event": "TEAMVIEWER_.EXE executed from TEMP folder",
+      "supporting_artifact": "Prefetch user path execution",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:30.3445369",
+      "event": "TeamViewer archive tvfiles.7z created",
+      "supporting_artifact": "USN Journal archive creation",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:41:07.0000000",
+      "event": "Failed logon attempt - Event 4625 on computer 4ORENSICS",
+      "supporting_artifact": "EventLog Event 4625",
+      "confidence_or_caveat": "medium",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2016-06-21 01:42:40.5274264",
+      "event": "Explicit credential use - Event 4648",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2016-06-21 01:52:17.0902822",
+      "event": "Pictures.7z archive created - data collection for exfiltration",
+      "supporting_artifact": "USN Journal archive creation",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:53:14.7757045",
+      "event": "USB device Imation Nano Pro connected - USBSTOR registry + Event 410",
+      "supporting_artifact": "Registry USBSTOR + USB attach events",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:01:59.3657151",
+      "event": "USB device Imation Nano Pro serial 07B20C03C80830A9&0 DiskId fb7f938b-37a4-11e6-8254-080027d269d7",
+      "supporting_artifact": "Registry persistence master USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:04:40.0000000",
+      "event": "FTK-Imager.zip downloaded - forensic imaging tool",
+      "supporting_artifact": "MFT archive files",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 08:15:09.0000000",
+      "event": "Failed logon attempt - Event 4625 on WIN-A9KKHBKS7E6",
+      "supporting_artifact": "EventLog Event 4625",
+      "confidence_or_caveat": "medium",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0245506",
+      "event": "New user account created - Event 4720",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.6961545",
+      "event": "Windows Defender configuration change - Event 5007",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.0090311",
+      "event": "Second account created - Event 4720",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.1968203",
+      "event": "Windows Defender real-time protection disabled - Event 5010",
+      "supporting_artifact": "EventLog Event 5010",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:10",
+      "event": "7z1602-x64.exe installed - 7-Zip archive tool",
+      "supporting_artifact": "Prefetch + MFT archive tools",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 09:34:13.5047860",
+      "event": "New service installed - Event 7045 (first of 15 service installations)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:47:24.4780939",
+      "event": "VBoxTray persistence via Run key - C:\\Windows\\system32\\VBoxTray.exe",
+      "supporting_artifact": "Registry persistence master Run key",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:01:44.1316101",
+      "event": "psexec folder created - lateral movement tool",
+      "supporting_artifact": "Suspicious indicators universal",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 11:41:04.3871559",
+      "event": "Special privileges assigned - Event 4672",
+      "supporting_artifact": "EventLog Event 4672",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 11:43:18.2219434",
+      "event": "Skype and GoogleDriveSync autostart via Run key persistence",
+      "supporting_artifact": "Registry persistence master Run key",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:44:54.1431830",
+      "event": "MftWipeFilter service installed - Jetico file system filter for anti-forensics",
+      "supporting_artifact": "Registry persistence master Services",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    }
+  ]
+}

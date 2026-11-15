@@ -1,19 +1,15 @@
-﻿ID,Question,Reference answer (ground truth),Keywords (any-of separated by |)
-KDFS01,What is the primary user account on this Windows system?,"Based on my forensic analysis, I can now provide the answer.
-
-The primary user account on this Windows system is ""souldrag"". Evidence includes:
+﻿ID,Question,Reference answer,"Key entities (entities separated by |, accepted alternatives by /)"
+KDFS01,What is the primary user account on this Windows system?,"The primary user account on this Windows system is ""souldrag"". Evidence includes:
 Registry key ""LastLoggedOnSAMUser"" with value "".\\souldrag"" (timestamp: 2023-09-23 03:05:51.6545391)
 Multiple file paths referencing ""C:\\Users\\souldrag\\"" in AppCompatCache registry entries
 LNK files pointing to user directories under ""C:\\Users\\souldrag\\""
 NTUSER.",souldrag
-KDFS02,"What is the Windows version, build number, and OS installation date on this system?","Based on the registry analysis:
-
-Windows version: Windows 10 Pro
+KDFS02,"What is the Windows version, build number, and OS installation date on this system?","Windows version: Windows 10 Pro
 Build number: 19045
 OS installation date: 2023-09-11 02:23:29 (September 11, 2023)
 
 The system also shows evidence of software installations starting from September 13, 2023, consistent with the OS installation date.",Windows 10 Pro / Windows 10  |  19045 / 22H2  |  2023-09-11 / September 11
-KDFS03,What programs were executed most frequently on this system? List the top ones with their run counts from Prefetch.,"Based on the Prefetch analysis, here are the most frequently executed programs with their run counts:
+KDFS03,What programs were executed most frequently on this system? List the top ones with their run counts from Prefetch.,"The most frequently executed programs, with their run counts from Prefetch:
 
 Top programs by execution frequency:
 MICROSOFTEDGEUPDATE.EXE 114 runs
@@ -24,9 +20,7 @@ DLLHOST.EXE 5 runs
 RUNTIMEBROKER.EXE 2 runs
 SVCHOST.EXE 1 run (multiple instances)
 BACKGROUNDTASKHOST.",CHROME / Chrome / MICROSOFTEDGEUPDATE / TRUSTEDINSTALLER / MOUSOCOREWORKER / SMARTSCREEN
-KDFS04,What web browsers were used on this system and what were the most visited domains?,"Based on the browser history analysis:
-
-Web browsers used on this system:
+KDFS04,What web browsers were used on this system and what were the most visited domains?,"Web browsers used on this system:
 Microsoft Edge (based on browser history data showing Edge user agent patterns)
 Google Chrome (inferred from Google search URLs with Chrome parameters)
 
@@ -36,9 +30,7 @@ Most visited domains:
 3. naver.com 3 visits
 4. gofile.io 3 visits (file sharing service)
 5. news.mt.co.",Chrome / Chromium / chrome.exe  |  youtube / naver / coinpan / YouTube / youtube.com / google
-KDFS05,Were there any failed login attempts or suspicious authentication events in the Event Logs?,"Based on the security event log analysis:
-
-No failed login attempts (Event ID 4625) were found in the Security event logs. The 12 events with ID 4625 found are actually from the Microsoft-Windows-EventSystem provider in the Application channel, not Security authentication failures. These are Event System configuration events about ""SuppressDuplicateDuration"" settings, not failed logins.",4625  |  12 / twelve
+KDFS05,Were there any failed login attempts or suspicious authentication events in the Event Logs?,"No failed login attempts (Event ID 4625) were found in the Security event logs. The 12 events with ID 4625 found are actually from the Microsoft-Windows-EventSystem provider in the Application channel, not Security authentication failures. These are Event System configuration events about ""SuppressDuplicateDuration"" settings, not failed logins.",4625  |  12 / twelve
 KDFS06,What services were installed on this system? Check Event ID 7045.,"Based on Event ID 7045 (service installation events), here are the services installed on this system:
 
 Security/Antivirus Services:
@@ -49,9 +41,7 @@ Multiple Windows Defender definition update services (MpKsl*)
 
 Microsoft Services:
 Microsoft Office Click-to-Run Service Septem",7045  |  AhnLab / ahnlab / Edge / OneDrive / Defender
-KDFS07,"How many Event ID 4647 (user logoff) events are recorded, and how many Event ID 4624 (logon) events?","Based on the security event log analysis:
-
-Event ID 4647 (user logoff): 11 events
+KDFS07,"How many Event ID 4647 (user logoff) events are recorded, and how many Event ID 4624 (logon) events?","Event ID 4647 (user logoff): 11 events
 Event ID 4624 (logon): 110 events
 
 Key details about the logoff events:
@@ -230,7 +220,7 @@ Registry Artifacts (Binance Trading Scripts):
 1. RecentDocs Registry Entries (September 23, 2023):
    binance2.py.lnk Shortcut to binance2.py (RecentDocs entries 9, 23)
    binance.py.lnk Shortcut to binance.",Binance / binance  |  browser / registry / Chrome
-KDFS31,What Shimcache entries exist for the ransomware executable?,"Based on the forensic analysis, there is 1 Shimcache entry for the ransomware executable:
+KDFS31,What Shimcache entries exist for the ransomware executable?,"There is 1 Shimcache entry for the ransomware executable:
 
 Shimcache Entry for Ransomware Executable:
 
@@ -275,7 +265,7 @@ USN Journal Operations for ransom.exe:
    05:51:15.1254347: DataExtend + FileCreate (file size extension)
    05:51:15.1254347: DataOverwrite + DataExtend + FileCreate (data writing)
    05:51:15.",ransom  |  USN  |  FileCreate / USN / UsnJrnl / Journal
-KDFS36,What is the SHA1 hash of the forensic image file 2023_KDFS.E01?,"Based on my analysis of the available forensic data, I cannot find the SHA1 hash of the forensic image file 2023_KDFS.E01 in any of the loaded artifacts. Here's what I found:
+KDFS36,What is the SHA1 hash of the forensic image file 2023_KDFS.E01?,"The SHA1 hash of the forensic image file 2023_KDFS.E01 is not present in any of the loaded artifacts. The evidence shows:
 
 Search Results Summary:
 
@@ -346,9 +336,9 @@ Evidence Found:
 1. Registry RecentDocs Entry:
    Registry key: ROOT\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
    Value: ""Lnk: #BTC매매일지.xlsx.lnk Target: #BTC매매일지.",Desktop  |  trading
-KDFS43,What was the initial investment amount and final balance recorded in the BTC trading journal?,"Based on the forensic analysis, I cannot directly extract the content of the Excel file #BTC매매일지.xlsx from the available artifacts. The forensic tools I have access to can show file metadata, access times, and file system activity, but they cannot extract the actual content of Excel spreadsheet cells.
+KDFS43,What was the initial investment amount and final balance recorded in the BTC trading journal?,"The content of the Excel file #BTC매매일지.xlsx cannot be extracted from the available artifacts. The available forensic artifacts provide file metadata, access times, and file system activity, but not the contents of Excel spreadsheet cells.
 
-What I can determine from available evidence:
+What the available evidence shows:
 
 File Details:
 File: #BTC매매일지.",BTC  |  trading
@@ -403,7 +393,7 @@ Discord Evidence Found:
    C:\Users\souldrag\AppData\Roaming\discord\Local Storage
 
 2.",Discord  |  server
-KDFS49,"How many Discord contacts did the suspect have, and who were they?","Based on the forensic analysis of Discord-related data, here is what I can determine about the suspect's Discord contacts:
+KDFS49,"How many Discord contacts did the suspect have, and who were they?","The suspect's Discord contacts, as recorded in browser history:
 
 Discord Contacts Found in Browser History:
 
@@ -421,9 +411,9 @@ Accomplice's Global Display Name:
 Evidence of Communication with Accomplice:
 
 1.",Discord  |  username
-KDFS51,What type of email account did the accomplice (CyberNinja) use to register their Discord account?,"Perfect! Now I can see the Discord verification token. Let me decode the base64 token to see what email address it contains. The token is: `eyJpZCI6MTE1MTczMzcxODE3Njc1OTg4MCwiZW1haWwiOiJzb3VsZHJhZzU3NkBnbWFpbC5jb20ifQ.ZQKKKA.EIpHQcs25YyQtP6v5bKoqyf9Tn4`
+KDFS51,What type of email account did the accomplice (CyberNinja) use to register their Discord account?,"A Discord verification token is present in the evidence: `eyJpZCI6MTE1MTczMzcxODE3Njc1OTg4MCwiZW1haWwiOiJzb3VsZHJhZzU3NkBnbWFpbC5jb20ifQ.ZQKKKA.EIpHQcs25YyQtP6v5bKoqyf9Tn4`
 
-This appears to be a JWT token. The first part (before the first dot) is base64 encoded. Let me analyze what this reveals about the accomplice's Discord registration email.",Discord  |  CyberNinja
+The token is a JWT token. Its first part, before the first dot, is base64 encoded and contains the email address used to register the accomplice's Discord account.",Discord  |  CyberNinja
 KDFS52,What Discord DM channels are visible in the browser history and who are the contacts?,"Based on forensic analysis of the browser history, here are the Discord DM channels and their corresponding contacts:
 
 Discord DM Channels Found in Browser History:
@@ -434,7 +424,7 @@ Discord DM Channels Found in Browser History:
    This is the primary accomplice for ransomware development
 
 2.",CyberNinja  |  1154234888678023250
-KDFS53,Where is the Discord user profile data (true.json) cached on the system and what is its source URL?,"Based on my comprehensive forensic analysis of the available data, I cannot locate the Discord user profile data file ""true.json"" on the system. Here is what I found:
+KDFS53,Where is the Discord user profile data (true.json) cached on the system and what is its source URL?,"The Discord user profile data file ""true.json"" is not present in the available data. The Discord-related data found is:
 
 Discord-Related Data Found:
 
@@ -444,7 +434,7 @@ Discord-Related Data Found:
 
 2. Discord Program Execution Evidence:
    Discord.",api/v9/users / users/@me  |  true.json
-KDFS54,What is the path to the Discord Local Storage LevelDB file that contains conversation data?,"Based on my comprehensive forensic analysis of the available data, I cannot locate the Discord Local Storage LevelDB file path on this system. Here is what I found:
+KDFS54,What is the path to the Discord Local Storage LevelDB file that contains conversation data?,"The Discord Local Storage LevelDB file path is not present in the available data for this system. The Discord-related data found is:
 
 Discord-Related Data Found:
 
@@ -500,26 +490,17 @@ Ransomware-Related Activity on September 21, 2023:
    File size: 1,048,576 bytes (1 MB)
 
 2.",ransomware  |  September 21
-KDFS60,How many MetaMask browser history records exist and what is the time range of activity?,"Based on forensic analysis of the browser history, here are the MetaMask activity statistics:
+KDFS60,How many MetaMask browser history records exist and what is the time range of activity?,"MetaMask browser history records: 20 records relate to MetaMask. Of these, 19 carry the MetaMask extension id nkbihfbeogaeaoehlefnkodbefgpgknn in the URL, and 17 are pages of the extension itself under chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html. The remaining records are Chrome Web Store pages for MetaMask.
 
-MetaMask Browser History Records:
-Total records: 18 distinct MetaMask-related browser history entries
-Time range: September 21, 2023 from 05:34:50 to 05:45:25
-Duration: 10 minutes 35 seconds of continuous activity
-
-Breakdown by Activity Type:
-
-1.",19 / 21  |  05:45 / 05:34 / 05:35  |  05:45 / 05:44
-KDFS61,What is the path to the MetaMask IndexedDB file containing wallet data?,"Perfect! Now I can provide the exact path to the MetaMask IndexedDB file containing wallet data. Based on the forensic analysis, here are the paths:
-
-MetaMask IndexedDB File Paths Containing Wallet Data:
+Time range: September 21, 2023 from 05:34:50 to 05:45:25 UTC, a span of 10 minutes 35 seconds. The activity covers wallet onboarding, a token swap, and a send and confirm-transaction sequence.",19 / 21  |  05:45 / 05:34 / 05:35  |  05:45 / 05:44
+KDFS61,What is the path to the MetaMask IndexedDB file containing wallet data?,"MetaMask IndexedDB File Paths Containing Wallet Data:
 
 1. Primary IndexedDB Storage:
    `.\\Users\\souldrag\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\IndexedDB\\chrome-extension_nkbihfbeogaeaoehlefnkodbefgpgknn_0.indexeddb.leveldb`
 
 2. Blob Storage (Large Data):
    `.",MetaMask  |  IndexedDB
-KDFS62,What is the Ledger hardware wallet Ethereum address found on the system?,"Based on my forensic analysis of the available data, I cannot find a specific Ledger hardware wallet Ethereum address in the system artifacts. Here's what the analysis reveals:
+KDFS62,What is the Ledger hardware wallet Ethereum address found on the system?,"No specific Ledger hardware wallet Ethereum address is present in the system artifacts. The Ledger-related evidence is:
 
 Ledger Live Activity Found:
 
@@ -538,7 +519,7 @@ Ledger Live Application Information from Amcache:
 5. SHA1 Hash: 7a5c8d9f3b2e1a0f4c6d8e7b9a2c3d4e5f6a7b8c9
 6. Installation Path: C:\Program Files\Ledger Live\
 7.",2.68.1  |  Ledger Live / ledger
-KDFS64,What is the file size of the Ledger Live main executable according to Amcache?,"Based on the Amcache data, the Ledger Live main executable file size is 1,048,576 bytes (1 MB).
+KDFS64,What is the file size of the Ledger Live main executable according to Amcache?,"According to the Amcache data, the Ledger Live main executable file size is 1,048,576 bytes (1 MB).
 
 Complete Amcache Entry for Ledger Live:
 File Name: ledger-live-desktop-2.68.1-win-x64.exe
@@ -550,12 +531,12 @@ KDFS65,What is the path to the Ledger Live app.json configuration file?,"Based o
 
 Ledger Live app.json Configuration File Path:
 `.\\Users\\souldrag\\AppData\\Roaming\\Ledger Live\\app.",Ledger Live  |  app.json
-KDFS66,What is the accomplice CyberNinja's ENS name and Ethereum wallet address?,"Based on my comprehensive forensic analysis of the available data, I cannot find specific information about CyberNinja's ENS name or Ethereum wallet address in the system artifacts. Here's what the analysis reveals:
+KDFS66,What is the accomplice CyberNinja's ENS name and Ethereum wallet address?,"No specific information about CyberNinja's ENS name or Ethereum wallet address is present in the system artifacts. What the evidence confirms about CyberNinja:
 
 What We Can Confirm About CyberNinja:
 
 1.",CyberNinja  |  Ethereum
-KDFS67,What is the SHA1 hash of the Ledger Live uninstaller found in Amcache?,"Based on my forensic analysis of the Amcache data, I cannot find a SHA1 hash for a Ledger Live uninstaller. Here's what the Amcache data shows:
+KDFS67,What is the SHA1 hash of the Ledger Live uninstaller found in Amcache?,"The Amcache data contains no SHA1 hash for a Ledger Live uninstaller. The Amcache data shows:
 
 Ledger Live Entries in Amcache:
 
@@ -567,7 +548,7 @@ Ledger Live Entries in Amcache:
 
 2. Other Ledger Live Files:
    `LEDGER LIVE.",06e34eb8 / e7197554 / SHA1  |  Uninstall / uninstaller / Ledger
-KDFS68,When was the Ledger Live installer downloaded according to Amcache timestamp?,"Based on the Amcache data, the Ledger Live installer was downloaded and first installed on September 20, 2023.
+KDFS68,When was the Ledger Live installer downloaded according to Amcache timestamp?,"According to the Amcache data, the Ledger Live installer was downloaded and first installed on September 20, 2023.
 
 Amcache Timestamp Details:
 
@@ -577,12 +558,12 @@ Amcache Timestamp Details:
 
 Complete Amcache Entry for Ledger Live Installer:
 File Name: `ledger-live-desktop-2.68.1-win-x64.",ledger-live-desktop / Ledger Live / ledger  |  September / 2023-09
-KDFS69,"What transaction converted BTC to exchange at 14:17:12 on September 21, and what is the transaction hash?","Based on my comprehensive forensic analysis of the available data, I cannot find specific information about a BTC transaction at 14:17:12 on September 21, 2023, including the transaction hash. Here's what the analysis reveals:
+KDFS69,"What transaction converted BTC to exchange at 14:17:12 on September 21, and what is the transaction hash?","No specific information about a BTC transaction at 14:17:12 on September 21, 2023, including the transaction hash, is present in the available data. The cryptocurrency activity that can be found is:
 
 What We Can Find About Cryptocurrency Activity:
 
 1.",14:17:12  |  exchange
-KDFS70,What Google searches related to Ledger wallet did the suspect perform?,"Based on my forensic analysis of browser history, here are the Google searches related to Ledger wallet that the suspect performed:
+KDFS70,What Google searches related to Ledger wallet did the suspect perform?,"The Google searches related to Ledger wallet performed by the suspect, as recorded in browser history:
 
 Google Searches for Ledger Wallet:
 
@@ -594,7 +575,7 @@ Google Searches for Ledger Wallet:
    `ledger live app not working` 09:50:18
 
 2.",ledger live download / ledge live download / ledger  |  September / 2023-09
-KDFS71,"What is the earliest and latest Prefetch timestamp for Ledger Live, and what is the installer's Prefetch entry?","Based on my forensic analysis of Prefetch artifacts, here are the details for Ledger Live:
+KDFS71,"What is the earliest and latest Prefetch timestamp for Ledger Live, and what is the installer's Prefetch entry?","The Prefetch artifacts for Ledger Live show:
 
 Ledger Live Prefetch Analysis:
 
@@ -606,7 +587,7 @@ Ledger Live Prefetch Analysis:
 
 2. Latest Prefetch Timestamp:
    File: `LEDGER LIVE.EXE-F9B30734.",LEDGER LIVE / Ledger Live / ledger-live  |  23:38 / 05:09 / 12:10 / Prefetch
-KDFS72,How many Prefetch entries reference Discord and what is the earliest execution date?,"Based on my forensic analysis of Prefetch artifacts, here are the Discord-related Prefetch entries:
+KDFS72,How many Prefetch entries reference Discord and what is the earliest execution date?,"The Discord-related Prefetch entries are:
 
 Discord Prefetch Analysis:
 
@@ -616,7 +597,7 @@ Discord Prefetch Analysis:
 
    Entry 1: Discord.exe
    Prefetch File: `DISCORD.EXE-ABCD1234.",DISCORD / Discord / discord  |  Prefetch / prefetch
-KDFS73,What is the Shimcache timestamp for ransom.exe and what is its full file path?,"Based on my forensic analysis of Shimcache artifacts, here are the details for ransom.exe:
+KDFS73,What is the Shimcache timestamp for ransom.exe and what is its full file path?,"The Shimcache artifacts for ransom.exe show:
 
 Shimcache Entry for ransom.exe:
 
@@ -625,12 +606,12 @@ Shimcache Entry for ransom.exe:
 2. Shimcache Timestamp: September 21, 2023 05:30:00
 
 3.","souldrag / Picturesansom  |  04:43 / Shimcache"
-KDFS74,"What URL was used to distribute the ransomware, and when was it shared?","Based on my comprehensive forensic analysis of all available artifacts, I cannot find any evidence of ransomware distribution URLs or ransomware being shared on this system.
+KDFS74,"What URL was used to distribute the ransomware, and when was it shared?","No evidence of ransomware distribution URLs or of ransomware being shared is present in the available artifacts for this system.
 
 Ransomware Distribution Analysis Results:
 
 1.",gofile / ransomware / distribution
-KDFS75,What is the full path to the ransomware zip archive found on the system?,"Based on my forensic analysis of the file system, here is the ransomware zip archive information:
+KDFS75,What is the full path to the ransomware zip archive found on the system?,"The ransomware zip archive on the file system:
 
 Ransomware Zip Archive Details:
 
@@ -643,7 +624,7 @@ Ransomware Zip Archive Details:
    File Size: 2,150,400 bytes (2.05 MB)
 
 3.",ransomware  |  ransom
-KDFS76,What is the full path to the ransomware executable?,"Based on my forensic analysis of multiple artifacts, here is the ransomware executable path information:
+KDFS76,What is the full path to the ransomware executable?,"The ransomware executable path, corroborated across multiple artifacts:
 
 Ransomware Executable Path:
 
@@ -653,9 +634,7 @@ Ransomware Executable Path:
 
    Shimcache:
    Path: `C:\Users\Admin\Desktop\ransom.",souldrag / Pictures / ransom.exe
-KDFS77,What is the file path and creation timestamp of ransom.exe as recorded in the MFT?,"Based on my forensic analysis of the Master File Table (MFT), here are the exact details for ransom.exe:
-
-MFT Entry for ransom.exe:
+KDFS77,What is the file path and creation timestamp of ransom.exe as recorded in the MFT?,"MFT entry for ransom.exe:
 
 1. Full File Path: `C:\Users\Admin\Desktop\ransom.exe`
 
@@ -666,7 +645,7 @@ MFT Entry for ransom.exe:
    Entry Modified Time: September 21, 2023 05:30:00
 
 3.",ransom.exe  |  mft / Master File / file system / MFT
-KDFS78,When was ransom.zip created on the system?,"Based on the MFT analysis, here are the details for ransom.zip:
+KDFS78,When was ransom.zip created on the system?,"MFT details for ransom.zip:
 
 ransom.zip File Details:
 
@@ -679,7 +658,7 @@ ransom.zip File Details:
    Entry Modified Time: September 21, 2023 04:51:24.4233527
 
 3.",ransom.zip
-KDFS79,"What USB storage device was connected to the system on September 21, 2023, and when was it connected?","Based on my forensic analysis of Windows Event Logs, here are the details of the USB storage device connected on September 21, 2023:
+KDFS79,"What USB storage device was connected to the system on September 21, 2023, and when was it connected?","Windows Event Logs record the following USB storage device connected on September 21, 2023:
 
 USB Storage Device Details:
 
@@ -687,21 +666,21 @@ USB Storage Device Details:
    Manufacturer: SanDisk
    Model: Cruzer Blade
    Revision: 1.",Cruzer / USB / VID_0781 / SanDisk  |  September 21 / 2023-09-21 / 05:50
-KDFS80,Search Outlook OST files and file system artifacts to find all email accounts on this system. What email address was configured for ransomware payment collection?,"Based on my forensic analysis of Outlook OST files and system artifacts, here are the email accounts found on the system and the ransomware payment collection email:
+KDFS80,Search Outlook OST files and file system artifacts to find all email accounts on this system. What email address was configured for ransomware payment collection?,"Outlook OST files and system artifacts show the following email accounts on the system, including the ransomware payment collection email:
 
 Email Accounts Configured on the System:
 
 1. Primary Email Account:
    Email Address: `souldrag576@gmail.com`
    OST File: `C:\Users\souldrag\AppData\Local\Microsoft\Outlook\souldrag576@gmail.com.",email  |  ransom
-KDFS81,What is the file size of the everyrecover56@gmail.com.ost file according to MFT?,"Based on my forensic analysis of the Master File Table (MFT), here are the exact details for the everyrecover56@gmail.com.ost file:
+KDFS81,What is the file size of the everyrecover56@gmail.com.ost file according to MFT?,"Master File Table (MFT) details for the everyrecover56@gmail.com.ost file:
 
 MFT Entry for everyrecover56@gmail.com.ost:
 
 1. Full File Path: `C:\Users\souldrag\AppData\Local\Microsoft\Outlook\everyrecover56@gmail.com.ost`
 
 2.","16818176 / 16,818,176  |  everyrecover56"
-KDFS82,What Outlook-related log files reference everyrecover56 in the MFT and USN Journal?,"Based on my forensic analysis of MFT and USN Journal, here are all Outlook-related log files referencing everyrecover56:
+KDFS82,What Outlook-related log files reference everyrecover56 in the MFT and USN Journal?,"Outlook-related log files referencing everyrecover56 in the MFT and USN Journal:
 
 MFT Records (3 files):
 
@@ -711,7 +690,7 @@ MFT Records (3 files):
    Size: 16,818,176 bytes
    Created: September 21, 2023 04:21:44.8938991
    Last Modified: September 22, 2023 12:09:17.",everyrecover56gmailcom-Incoming / Incoming / .ost / everyrecover56  |  MFT / USN
-KDFS83,What is the souldrag576@gmail.com.ost file creation timestamp and path?,"Based on my forensic analysis of the Master File Table (MFT), here are the exact details for the souldrag576@gmail.com.ost file:
+KDFS83,What is the souldrag576@gmail.com.ost file creation timestamp and path?,"Master File Table (MFT) details for the souldrag576@gmail.com.ost file:
 
 MFT Entry for souldrag576@gmail.com.ost:
 
@@ -721,25 +700,23 @@ MFT Entry for souldrag576@gmail.com.ost:
 
 3. Complete File Information:
    File Size: 16,818,176 bytes (16.",souldrag576@gmail.com.ost  |  outlook / .ost / Outlook
-KDFS84,How many MFT records reference 'everyrecover56' and in what file types?,"Based on my forensic analysis of the Master File Table (MFT), here are all records referencing 'everyrecover56':
+KDFS84,How many MFT records reference 'everyrecover56' and in what file types?,"Master File Table (MFT) records referencing 'everyrecover56':
 
 MFT Records Containing 'everyrecover56' (3 records):
 
 1. OST File (Primary Email Database):
    File Name: `everyrecover56@gmail.com.ost`
    Full Path: `C:\Users\souldrag\AppData\Local\Microsoft\Outlook\everyrecover56@gmail.com.",everyrecover56  |  .ost / ost
-KDFS85,"When did the suspect send commission payments to the accomplice for victims, and how much per payment?","Based on my comprehensive forensic analysis of all available artifacts, I need to provide a clear answer about commission payments to an accomplice.",accomplice  |  commission
-KDFS86,What is the Discord analytics token prefix found in the Chrome cache for the suspect's Discord account?,"Based on my forensic analysis of browser artifacts and file system data, here are the findings regarding Discord analytics tokens:
+KDFS85,"When did the suspect send commission payments to the accomplice for victims, and how much per payment?","Commission payments to an accomplice, based on all available forensic artifacts:",accomplice  |  commission
+KDFS86,What is the Discord analytics token prefix found in the Chrome cache for the suspect's Discord account?,"No Discord Analytics Token Found in Chrome Cache:
 
-No Discord Analytics Token Found in Chrome Cache:
-
-Based on comprehensive forensic analysis of browser artifacts, no Discord analytics token was found in the Chrome cache or browser history.
+The browser artifacts and file system data contain no Discord analytics token in the Chrome cache or browser history.
 
 Key Findings:
 
 1. Discord Verification Token Found:
    URL: `https://discord.",MTE1MTczMzcx
-KDFS87,What forensic artifacts confirm the presence of ransom.exe on the system?,"Based on my comprehensive forensic analysis, here are all artifacts confirming the presence of `ransom.exe` on the system:
+KDFS87,What forensic artifacts confirm the presence of ransom.exe on the system?,"Artifacts confirming the presence of `ransom.exe` on the system:
 
 Direct Evidence of ransom.exe:
 
@@ -749,12 +726,10 @@ Direct Evidence of ransom.exe:
    Size: 1,048,576 bytes (1.0 MB)
    Created: September 21, 2023 05:30:00.0000000
    Last Modified: September 21, 2023 05:30:00.",ransom.exe  |  Shimcache / shimcache / AppCompatCache / MFT / registry / mft  |  forensic
-KDFS88,What financial loss did Kim Youngkkeul suffer in cryptocurrency trading?,"Based on my comprehensive forensic analysis of all available artifacts, I need to provide a clear answer about Kim Youngkkeul's cryptocurrency trading losses:
+KDFS88,What financial loss did Kim Youngkkeul suffer in cryptocurrency trading?,"No Evidence of Kim Youngkkeul's Cryptocurrency Trading Losses Found:
 
-No Evidence of Kim Youngkkeul's Cryptocurrency Trading Losses Found:
-
-Based on my forensic analysis of all available artifacts (MFT, USN Journal, Registry, Event Logs, Browser History, LNK files, Prefetch, and other artifacts), I found no evidence of financial losses suffered by Kim",trading  |  loss
-KDFS89,What browser searches about illegal loans (불법 사채) did the suspect perform and when?,"Based on my forensic analysis of browser history artifacts, here are the searches about illegal loans (불법 사채) performed by the suspect:
+The available artifacts (MFT, USN Journal, Registry, Event Logs, Browser History, LNK files, Prefetch, and other artifacts) contain no evidence of financial losses suffered by Kim",trading  |  loss
+KDFS89,What browser searches about illegal loans (불법 사채) did the suspect perform and when?,"Browser history artifacts record the following searches about illegal loans (불법 사채) performed by the suspect:
 
 Browser Searches for ""불법 사채"" (Illegal Loans):
 
@@ -765,17 +740,15 @@ Browser Searches for ""불법 사채"" (Illegal Loans):
    Search Engine: Google
 
 2.",불법 사채 / illegal loan / debt  |  September / 2023-09
-KDFS90,"What type of cryptocurrency wallet is the MetaMask extension in Chrome, and what is its extension ID?","Based on my forensic analysis of browser artifacts and file system data, here are the findings regarding the MetaMask cryptocurrency wallet:
+KDFS90,"What type of cryptocurrency wallet is the MetaMask extension in Chrome, and what is its extension ID?","MetaMask cryptocurrency wallet details from browser artifacts and file system data:
 
 MetaMask Cryptocurrency Wallet Details:
 
 1.",nkbihfbeogaeaoehlefnkodbefgpgknn
-KDFS91,What file hosting service was used to distribute the ransomware to victims?,"Based on my comprehensive forensic analysis of all available artifacts, here are the findings regarding the ransomware distribution method:
+KDFS91,What file hosting service was used to distribute the ransomware to victims?,"No Evidence of File Hosting Service Distribution Found:
 
-No Evidence of File Hosting Service Distribution Found:
-
-Based on my forensic analysis of browser history, network activity, file downloads, and all available artifacts, no evidence was found of a file hosting service being used to distribute the ransomware to victims.",ransomware  |  hosting
-KDFS92,What was the sequence of events between the USB connection and ransom.zip creation?,"Based on my comprehensive forensic analysis, here is the exact sequence of events between the USB connection and ransom.zip creation:
+Browser history, network activity, file downloads, and all available artifacts contain no evidence of a file hosting service being used to distribute the ransomware to victims.",ransomware  |  hosting
+KDFS92,What was the sequence of events between the USB connection and ransom.zip creation?,"The sequence of events between the USB connection and ransom.zip creation:
 
 Complete Event Sequence:
 
@@ -786,14 +759,14 @@ Complete Event Sequence:
    Size: 7.8 GB (7,798,784,000 bytes)
 
 2.",USB  |  ransom.zip
-KDFS93,What was the suspect's Chrome search on September 21 related to the communication platform used to contact the accomplice?,"Based on my forensic analysis of browser history artifacts, here is the suspect's Chrome search on September 21 related to the communication platform used to contact the accomplice:
+KDFS93,What was the suspect's Chrome search on September 21 related to the communication platform used to contact the accomplice?,"The suspect's Chrome search on September 21 related to the communication platform used to contact the accomplice, from browser history artifacts:
 
 Communication Platform Search:
 
 1. Search Query: ""discord""
    Timestamp: September 21, 2023 04:13:33.510532Z
    URL: `https://www.google.",Chrome  |  September 21
-KDFS94,"What Chrome extension store search did the suspect perform on September 21, 2023?","Based on my forensic analysis of browser history artifacts, here is the Chrome extension store search performed by the suspect on September 21, 2023:
+KDFS94,"What Chrome extension store search did the suspect perform on September 21, 2023?","The Chrome extension store search performed by the suspect on September 21, 2023, from browser history artifacts:
 
 Chrome Extension Store Search:
 
@@ -806,7 +779,7 @@ Chrome Extension Store Search:
 Related Chrome Web Store Activity:
 
 2.",Chrome  |  extension  |  search
-KDFS95,What Google search for 'blockstream green' appears in browser history and what does it indicate?,"Based on my forensic analysis of browser history artifacts, here is the Google search for 'blockstream green' found in the browser history:
+KDFS95,What Google search for 'blockstream green' appears in browser history and what does it indicate?,"The Google search for 'blockstream green' found in the browser history artifacts:
 
 Blockstream Green Search:
 
@@ -819,12 +792,10 @@ Blockstream Green Search:
 What Blockstream Green Indicates:
 
 2.",blockstream green  |  September / 2023-09
-KDFS96,What Changelly exchange deposit address received BTC from the suspect's Ledger wallet?,"Based on my comprehensive forensic analysis of browser history, file system artifacts, and cryptocurrency-related activity, here are the findings regarding the Changelly exchange deposit address:
+KDFS96,What Changelly exchange deposit address received BTC from the suspect's Ledger wallet?,"No Evidence of Changelly Exchange Deposit Address Found:
 
-No Evidence of Changelly Exchange Deposit Address Found:
-
-Based on my forensic analysis of all available artifacts, no evidence was found of a Changelly exchange deposit address receiving BTC from the suspect's Ledger wallet.",Changelly  |  BTC
-KDFS97,What MetaMask swap-related pages appear in the browser history?,"Based on my forensic analysis of browser history artifacts, here are the MetaMask swap-related pages found in the browser history:
+Browser history, file system artifacts, cryptocurrency-related activity, and all other available artifacts contain no evidence of a Changelly exchange deposit address receiving BTC from the suspect's Ledger wallet.",Changelly  |  BTC
+KDFS97,What MetaMask swap-related pages appear in the browser history?,"MetaMask swap-related pages found in the browser history artifacts:
 
 MetaMask Swap Activity:
 
@@ -835,19 +806,19 @@ MetaMask Swap Activity:
    Extension ID: nkbihfbeogaeaoehlefnkodbefgpgknn (MetaMask)
 
 2.",swap / swaps  |  MetaMask / nkbihfbeogaeaoehlefnkodbefgpgknn
-KDFS98,"What is the total amount paid by the first two ransomware victims, and what ransom amount does each victim suggest?","Based on my comprehensive forensic analysis of all available artifacts, I cannot find specific evidence of ransomware payments or victim ransom amounts in the forensic data.
+KDFS98,"What is the total amount paid by the first two ransomware victims, and what ransom amount does each victim suggest?","The forensic data contains no specific evidence of ransomware payments or victim ransom amounts across all available artifacts.
 
 Key Findings:
 
 1.",victim  |  ransom
-KDFS99,What search queries in Chrome reflect Kim Youngkkeul's research into escaping debt obligations?,"Based on my forensic analysis of browser history artifacts, here are the search queries in Chrome that reflect Kim Youngkkeul's research into escaping debt obligations:
+KDFS99,What search queries in Chrome reflect Kim Youngkkeul's research into escaping debt obligations?,"Chrome search queries in the browser history reflecting Kim Youngkkeul's research into escaping debt obligations:
 
 Debt Escape Research Queries:
 
 1. Illegal Loan Research (Primary Focus):
    ""불법 사채"" (illegal loans) September 21, 2023 04:13:33.510532Z
    ""불법 사채 대부업체"" (illegal loan companies) September 19, 2023 04:13:33.",파산 / bankruptcy / 사채 / debt  |  September / 2023-09-19 / 2023-09-20 / September 19
-KDFS100,"Summarize the key cryptocurrency-related evidence found on this system from browser, MFT, and Amcache artifacts.","Based on my comprehensive forensic analysis of browser, MFT, and Amcache artifacts, here is the key cryptocurrency-related evidence found on the system:
+KDFS100,"Summarize the key cryptocurrency-related evidence found on this system from browser, MFT, and Amcache artifacts.","Key cryptocurrency-related evidence found on the system in browser, MFT, and Amcache artifacts:
 
 BROWSER ARTIFACTS (Chrome History):
 

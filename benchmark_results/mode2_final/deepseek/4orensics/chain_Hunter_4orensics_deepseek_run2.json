@@ -1,0 +1,266 @@
+{
+  "provider": "deepseek",
+  "case": "4orensics",
+  "case_name": "Hunter_4orensics",
+  "case_id": "case_20260410_120043",
+  "run": 2,
+  "evidence_file": "evidence_Hunter_4orensics.json",
+  "evidence_record_count": 846,
+  "chain_event_count": 36,
+  "prompt_chars": 190656,
+  "elapsed_seconds": 11.7,
+  "chain": [
+    {
+      "timestamp": "2016-06-20 23:49:39.9920378",
+      "event": "Recent LNK 'how_do_threat_actors_steal_your_data.lnk' opened by user Hunter, indicating research into data theft techniques",
+      "supporting_artifact": "MFT LNK files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:51:20.2260379",
+      "event": "Recent LNK 'mwri-detecting-deterring-both.lnk' accessed, further anti-detection research",
+      "supporting_artifact": "MFT LNK files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:34",
+      "event": "LNK recent file points to C:\\Users\\Hunter\\Downloads\\putty.exe (SSH client downloaded)",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:41.3375000",
+      "event": "putty.exe created in user Downloads directory",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:42.6444149",
+      "event": "pscp.exe (PuTTY SCP) created in Downloads with Zone.Identifier",
+      "supporting_artifact": "ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:58:09.3725499",
+      "event": "Recent LNK 'DEFCON-22-Zoltan-Balazs-Bypass-firewalls-application-whitelists-in-20-seconds-UPDATED.lnk' accessed — firewall/whitelist bypass research",
+      "supporting_artifact": "MFT LNK files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:06.9483540",
+      "event": "Archive setupssh381-20040709.zip downloaded to C:\\Users\\Hunter\\Downloads",
+      "supporting_artifact": "MFT archive files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 00:02:23.8454489",
+      "event": "Archive WVRBEZZTFREDLTKJ.zip created (randomized-name staging archive)",
+      "supporting_artifact": "ext_usn_archive_created",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:15",
+      "event": "TeamViewer_Setup-vfa.exe downloaded to C:\\Users\\Hunter\\Downloads",
+      "supporting_artifact": "app_remote_access",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:21",
+      "event": "TEAMVIEWER_.EXE executed from C:\\Users\\Hunter\\AppData\\Local\\Temp\\TeamViewer\\",
+      "supporting_artifact": "ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:30.3757303",
+      "event": "Archive tvfiles.7z created during TeamViewer install (packaging)",
+      "supporting_artifact": "ext_usn_archive_created",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:52:17.0902822",
+      "event": "Archive Pictures.7z created — user Pictures folder staged for exfiltration",
+      "supporting_artifact": "ext_usn_archive_created",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:53:14.7757045",
+      "event": "USB device attached (Kernel-PnP Event 410) — removable media connected",
+      "supporting_artifact": "usb_attach_driverframeworks",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:01:59.3657151",
+      "event": "USBSTOR registry entry created for Imation Nano Pro USB device (SerialNumber 07B20C03C80830A9)",
+      "supporting_artifact": "Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:04:40.0000000",
+      "event": "FTK-Imager.zip present in C:\\Users\\Hunter\\Downloads and Google Drive folder",
+      "supporting_artifact": "MFT archive files",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 02:06:24",
+      "event": "FTK IMAGER.EXE executed from C:\\Users\\Hunter\\Downloads\\FTK-IMAGER\\",
+      "supporting_artifact": "ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0245506",
+      "event": "Security Event 4720 — new user account created on host 4orensics",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.6961545",
+      "event": "Windows Defender configuration change (Event 5007) — Defender settings tampered",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0402357",
+      "event": "Security Event 4732 — member added to a local security group following account creation",
+      "supporting_artifact": "EventLog Event 4732",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.0090311",
+      "event": "Security Event 4720 — second new user account created on host 4orensics",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.1968203",
+      "event": "Defender real-time protection disabled (Event 5010)",
+      "supporting_artifact": "def_realtime_disabled",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:07",
+      "event": "7z1602-x64.exe downloaded to C:\\Users\\Hunter\\Downloads",
+      "supporting_artifact": "app_archive_tools",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:10",
+      "event": "7Z1602-X64.EXE executed from Downloads — 7-Zip archiver installed",
+      "supporting_artifact": "ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 09:22:25",
+      "event": "WIRESHARK-WIN64-2.0.4.EXE executed — network capture tool installed",
+      "supporting_artifact": "ext_prefetch_builtin_discovery",
+      "confidence_or_caveat": "high",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2016-06-21 09:34:13.5047860",
+      "event": "Windows Service Control Manager Event 7045 — unidentified service installation (service name not in record)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:37:32",
+      "event": "LNK recent file points to C:\\Users\\Hunter\\Pictures\\Exfil\\Exfiltration_Diagram.png — exfil staging folder",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 09:47:24.4622827",
+      "event": "Registry Run key 'VBoxTray' set to C:\\Windows\\system32\\VBoxTray.exe (persistence)",
+      "supporting_artifact": "Registry Run key",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 10:51:23",
+      "event": "LNK recent file points to C:\\Users\\Hunter\\Desktop\\Tor Browser\\Browser\\firefox.exe — Tor Browser launched",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2016-06-21 11:01:44.1316101",
+      "event": "psexec artifact created under Program Files (x86) — lateral movement tool dropped",
+      "supporting_artifact": "suspicious_indicators_universal",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 11:02:03",
+      "event": "LNK recent file points to C:\\Program Files (x86)\\Nmap\\zenmap.exe — Nmap/Zenmap launched",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2016-06-21 11:07:12",
+      "event": "LNK recent file points to C:\\Users\\Hunter\\Downloads\\Ollydbg\\OLLYDBG.EXE — debugger launched",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 11:18:11.8537725",
+      "event": "USN journal records creation of check_soundcard.vbs and empty.vbs scripts",
+      "supporting_artifact": "USN Journal",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 11:44:54.1431830",
+      "event": "Service 'MftWipeFilter' (Jetico file system filter) registered — anti-forensic wipe driver",
+      "supporting_artifact": "Registry Services key",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 13:00:54.476902Z",
+      "event": "Browser history shows access to accounts.google.com AccountChooser for ehptmsgs@gmail.com and security activity page",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 13:02:13.067060Z",
+      "event": "Browser history shows Gmail forwarding/POP settings page (mail/#settings/fwdandpop) for ehptmsgs@gmail.com",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 13:12:11.576942Z",
+      "event": "Browser history shows Google 'Less secure apps' settings page accessed — enabling legacy mail access",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    }
+  ]
+}

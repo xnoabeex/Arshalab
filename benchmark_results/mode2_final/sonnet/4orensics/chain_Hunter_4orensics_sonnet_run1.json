@@ -1,0 +1,259 @@
+{
+  "provider": "sonnet",
+  "case": "4orensics",
+  "case_name": "Hunter_4orensics",
+  "case_id": "case_20260410_120043",
+  "run": 1,
+  "evidence_file": "evidence_Hunter_4orensics.json",
+  "evidence_record_count": 846,
+  "chain_event_count": 35,
+  "prompt_chars": 190656,
+  "elapsed_seconds": 47.1,
+  "chain": [
+    {
+      "timestamp": "2016-06-20 23:48:22.3828274",
+      "event": "Initial system logon Event 4624",
+      "supporting_artifact": "EventLog Event 4624",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:02.3669721",
+      "event": "RDP connection established Event 4648 explicit credential logon",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:39",
+      "event": "User opened PDF ACRORD32.EXE reading data exfiltration research documents",
+      "supporting_artifact": "Prefetch",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:53:36",
+      "event": "CMD.EXE executed, run_count 5",
+      "supporting_artifact": "Prefetch",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-20 23:55:43.0280000",
+      "event": "Office 2013 MSI installer executed OfficeMUISet.msi",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:34",
+      "event": "Downloaded putty.exe to Downloads folder",
+      "supporting_artifact": "LNK recent files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:41",
+      "event": "Downloaded pscp.exe SSH file transfer tool",
+      "supporting_artifact": "LNK recent files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:06.9483540",
+      "event": "Downloaded setupssh381-20040709.zip archive",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 00:02:23.8454489",
+      "event": "Created archive WVRBEZZTFREDLTKJ.zip for exfiltration packaging",
+      "supporting_artifact": "USN Journal",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:15",
+      "event": "Downloaded TeamViewer_Setup-vfa.exe remote access tool",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:21",
+      "event": "Executed TEAMVIEWER_.EXE from TEMP directory",
+      "supporting_artifact": "Prefetch",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:30.3445369",
+      "event": "Created tvfiles.7z archive in TeamViewer directory",
+      "supporting_artifact": "USN Journal",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:34:40.3762224",
+      "event": "User logoff Event 4647",
+      "supporting_artifact": "EventLog Event 4647",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 01:41:07.0000000",
+      "event": "Failed logon Event 4625 on computer 4ORENSICS",
+      "supporting_artifact": "EventLog Event 4625",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 01:42:40.5274264",
+      "event": "Explicit credential use Event 4648 after failed logon",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 01:52:17.0902822",
+      "event": "Created Pictures.7z archive in user directory",
+      "supporting_artifact": "USN Journal",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:53:14.7757045",
+      "event": "USB device attached Event 410 Kernel PnP",
+      "supporting_artifact": "EventLog Kernel-PnP",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:01:59.3657151",
+      "event": "USBSTOR registry key created for Imation Nano Pro USB device",
+      "supporting_artifact": "Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:06:24",
+      "event": "Executed FTK IMAGER.EXE from Downloads folder",
+      "supporting_artifact": "Prefetch",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 08:15:00.4118451",
+      "event": "RDP session lifecycle Event 34 Terminal Services",
+      "supporting_artifact": "EventLog RDP",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 08:19:28.4310307",
+      "event": "Explicit credential use Event 4648",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0245506",
+      "event": "New user account created Event 4720",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.6961545",
+      "event": "Windows Defender configuration change Event 5007",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.0090311",
+      "event": "Second user account created Event 4720",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:40:06.1968203",
+      "event": "Windows Defender real-time protection disabled Event 5010",
+      "supporting_artifact": "EventLog Event 5010",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:07",
+      "event": "Downloaded 7z1602-x64.exe 7-Zip archive tool installer",
+      "supporting_artifact": "Browser downloads",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:10",
+      "event": "Executed 7Z1602-X64.EXE archive tool installer",
+      "supporting_artifact": "Prefetch",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 09:34:13.5047860",
+      "event": "Service installed Event 7045",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:47:24.4780939",
+      "event": "VBoxTray service installed Event 7045",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:47:24.4622827",
+      "event": "Registry Run key created for VBoxTray.exe persistence",
+      "supporting_artifact": "Registry Run key",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:01:44.1316101",
+      "event": "PSExec directory created in user path",
+      "supporting_artifact": "USN Journal",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2016-06-21 11:43:18.2219434",
+      "event": "Registry Run key for Skype.exe autostart persistence",
+      "supporting_artifact": "Registry Run key",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:43:18.2219434",
+      "event": "Registry Run key for GoogleDriveSync.exe autostart persistence",
+      "supporting_artifact": "Registry Run key",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:44:54.1431830",
+      "event": "MftWipeFilter service registered (Jetico anti-forensic tool)",
+      "supporting_artifact": "Registry Services",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 13:00:54.476902Z",
+      "event": "Browser accessed Google security settings and account activity",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    }
+  ]
+}

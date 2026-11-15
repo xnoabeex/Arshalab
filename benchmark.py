@@ -63,7 +63,7 @@ PROVIDERS = {
         "class": "DeepSeekAnalyzer",
         "module": "src.llm.deepseek_analyzer",
         "init_kwargs": {},
-        "display_name": "DeepSeek V3",
+        "display_name": "DeepSeek V3.2",
     },
     "opus": {
         "class": "OpusAnalyzer",
@@ -166,23 +166,15 @@ def load_case_questions(case_name: str, provider: str = None) -> Tuple[str, List
 
     Args:
         case_name: Name like 'KDFS_2023', 'CTF_Magnet_2022', 'DFC_2022'
-        provider: LLM provider name (e.g. 'openai', 'deepseek'). If a provider-specific
-                  file exists (e.g. KDFS_2023_openai.json), it will be used instead of
-                  the default. This allows per-model keyword calibration.
+        provider: LLM provider name (e.g. 'openai', 'deepseek'). Ignored; all models use the
+                  common key in benchmark/questions/<case>.json.
 
     Returns:
         Tuple of (scenario_text, list of question dicts with keywords)
     """
-    # Try provider-specific file first, fallback to default
-    json_path = None
-    if provider:
-        provider_path = QUESTIONS_DIR / f"{case_name}_{provider}.json"
-        if provider_path.exists():
-            json_path = provider_path
-            print(f"    Using provider-specific questions: {provider_path.name}")
-
-    if json_path is None:
-        json_path = QUESTIONS_DIR / f"{case_name}.json"
+    # Every model is scored against the same common key; the provider argument is kept only
+    # for call compatibility and does not select a different question file.
+    json_path = QUESTIONS_DIR / f"{case_name}.json"
 
     if not json_path.exists():
         print(f"  [!] Questions file not found: {json_path}")
@@ -814,19 +806,11 @@ def _fuzzy_exe_match(exe_name: str, case_id: str) -> Optional[str]:
     Check if exe_name is a close match to any known executable in ES.
     Returns the matched exe name if found, None otherwise.
 
-    Handles cases like "ransomware.exe" matching "ransom.exe" via substring.
+    A name counts as a close match when its stem contains, or is contained in, the stem of an
+    executable recorded in Prefetch, ShimCache or Amcache for the same case.
     """
     exe_lower = exe_name.lower()
     exe_stem = exe_lower.replace('.exe', '')
-
-    # Known aliases: descriptive name -> actual file name
-    exe_aliases = {
-        "ransomware.exe": "ransom.exe",
-        "ransomware": "ransom",
-        "malware.exe": "ransom.exe",
-    }
-    if exe_lower in exe_aliases:
-        return exe_aliases[exe_lower]
 
     # Substring match: check if exe_stem is contained in or contains a known exe
     try:
@@ -871,13 +855,14 @@ def detect_hallucinations(response: str, case_id: str) -> dict:
     verified = []
     unchecked = 0
 
-    # Extract Event IDs mentioned (4-digit numbers after "Event ID" or "event")
+    # Extract Event IDs mentioned (4- or 5-digit numbers after "Event ID" or "event"; a 5-digit ID
+    # such as 30830 must not be cut to its first four digits)
     # Filter out negative context: skip if LLM says "no evidence of Event ID X"
     neg_patterns = re.compile(
         r'(no |not |zero |0 |didn.t |wasn.t |weren.t |absence |without |lack )',
         re.IGNORECASE
     )
-    for m in re.finditer(r'[Ee]vent\s*(?:ID)?\s*(\d{4})', response):
+    for m in re.finditer(r'[Ee]vent\s*(?:ID)?\s*(\d{4,5})(?!\d)', response):
         eid = m.group(1)
         # Check preceding context (80 chars) for negative language
         start = max(0, m.start() - 80)

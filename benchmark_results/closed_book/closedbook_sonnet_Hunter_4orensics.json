@@ -1,0 +1,1011 @@
+[
+ {
+  "id": "HNT01",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "Hunter"
+  ],
+  "answer": "I do not have access to the specific disk image you're referring to, and without any case context, artifacts, or registry/SAM data from that image, I cannot provide the actual primary user account name.\n\n**Generic answer:**\n\nThe primary user account on a Windows system is typically:\n- The first non-built-in account created during installation or initial setup\n- Often found in the SAM (Security Account Manager) registry hive at `HKEY_LOCAL_MACHINE\\SAM\\SAM\\Domains\\Account\\Users`\n- Usually has RID (Relative Identifier) 1000 for the first created user\n- Can be identified by examining:\n  - `C:\\Users\\` directory names (excluding Default, Public, Administrator)\n  - User profile paths in `SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProfileList`\n  - Most recent activity in NTUSER.DAT hives\n  - Login timestamps in event logs (Event ID 4624)\n\nCommon primary usernames include variations of the owner's name, \"Admin\", \"User\", \"Owner\", or the computer manufacturer's default.\n\n**Uncertainty:** Without the specific image, case name, or any artifacts from the system in question, I cannot provide the actual account name. If you can share the case name or any context, I may be able to recall published details."
+ },
+ {
+  "id": "HNT02",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "4ORENSICS"
+  ],
+  "answer": "I cannot answer this question because you have not provided any identifying details about the specific disk image or forensic case you're referring to.\n\nWithout information such as:\n- Case name or identifier\n- Published CTF/challenge name\n- Sample hash or reference\n- Context from the question itself that would identify the case\n\nI have no basis to recall or state a specific computer name.\n\n**Generic answer:** The Windows computer name can typically be found in:\n- Registry: `SYSTEM\\CurrentControlSet\\Control\\ComputerName\\ComputerName` (value: `ComputerName`)\n- Registry: `SYSTEM\\ControlSet001\\Control\\ComputerName\\ActiveComputerName` \n- Environment variables in memory/hibernation files\n- Event logs (Event ID 6005, 6006, 6008, etc.)\n- Windows setup logs\n- SYSTEM hive exports\n\nIf this is from a known published case or CTF challenge, please provide its name and I can attempt to recall specific details."
+ },
+ {
+  "id": "HNT03",
+  "recall": 1.0,
+  "found": [
+   "6.3"
+  ],
+  "missing": [],
+  "answer": "I have no access to the disk image, artifacts, or any case-specific data, so I cannot determine the actual operating system version installed on the system in question.\n\n**Generic answer:**\n\nTo determine the Windows OS version on a forensic image, you would typically examine:\n\n1. **SOFTWARE registry hive** - Key locations:\n   - `SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion`\n     - `ProductName` (e.g., \"Windows 10 Pro\", \"Windows 11 Home\")\n     - `CurrentVersion` (e.g., \"6.3\")\n     - `CurrentBuild` or `CurrentBuildNumber` (e.g., \"19045\")\n     - `DisplayVersion` (e.g., \"22H2\")\n     - `ReleaseId` (older Win10 builds)\n     - `EditionID` (e.g., \"Professional\", \"Enterprise\")\n\n2. **SYSTEM registry hive** - `SYSTEM\\Select\\Current` to identify the current ControlSet, then:\n   - `SYSTEM\\ControlSet00X\\Control\\Windows\\CSDVersion` (Service Pack info, if applicable)\n\n3. **File system metadata:**\n   - Creation timestamps of `C:\\Windows\\System32` or version info in key system files\n   - Presence of OS-specific directories (e.g., `WindowsApps` for Win10+)\n\n4. **Event logs** - System event log often records OS version at boot\n\n**Uncertainty:** Without access to the actual evidence, I cannot provide the specific OS version for your case."
+ },
+ {
+  "id": "HNT04",
+  "recall": 1.0,
+  "found": [
+   "Administrator",
+   "Guest"
+  ],
+  "missing": [],
+  "answer": "I do not recognize enough specific details to identify this as a particular published forensic case, and without access to the disk image or parsed artifacts, I cannot determine which user accounts exist on the specific system you're asking about.\n\n**Generic answer:**\n\nOn a typical Windows system, common accounts found besides a primary user account might include:\n\n- **Administrator** (built-in)\n- **Guest** (built-in, usually disabled)\n- **DefaultAccount** (built-in, Win10+)\n- **WDAGUtilityAccount** (Windows Defender Application Guard, if enabled)\n- Service accounts (e.g., system-created profiles)\n- Other user-created accounts\n\nTo definitively answer which accounts exist on the system in question, you would need to examine:\n- SAM registry hive (`C:\\Windows\\System32\\config\\SAM`)\n- User profile directories in `C:\\Users\\`\n- Security event logs (Event ID 4720 for account creation)\n\n**Uncertainty:** Without access to the actual evidence or recognition of a specific published case involving a user named \"Hunter,\" I cannot provide the specific account names present on that particular system."
+ },
+ {
+  "id": "HNT05",
+  "recall": 1.0,
+  "found": [
+   "Hunter",
+   "1001"
+  ],
+  "missing": [],
+  "answer": "Based on Windows forensics knowledge, I cannot identify a specific case or disk image from the question alone. However, I can provide information about the \"Hunter\" account:\n\n**Generic Answer:**\nIn Windows, user RIDs (Relative Identifiers) are assigned sequentially starting from 1000 for local user accounts (after built-in accounts like Administrator=500, Guest=501).\n\nWithout access to the specific image's SAM registry hive, I cannot determine the exact RID for the \"Hunter\" account in this case.\n\n**If this is a known forensic challenge/CTF:**\nThe Hunter account is commonly referenced in certain digital forensics training scenarios and CTF challenges. In some well-known cases:\n- The RID is often **1001** or **1002** depending on account creation order\n- **1001** is most common if Hunter was the first non-built-in user account created\n\n**Most likely answer: 1001**\n\n*Uncertainty: Without access to the SAM hive (HKEY_LOCAL_MACHINE\\SAM\\SAM\\Domains\\Account\\Users) or parsed artifact data from the specific image, this is an educated guess based on typical Windows user account creation patterns and common forensic scenarios featuring a \"Hunter\" account.*"
+ },
+ {
+  "id": "HNT06",
+  "recall": 0.5,
+  "found": [
+   "4624"
+  ],
+  "missing": [
+   "107"
+  ],
+  "answer": "Based on my knowledge base alone, I cannot provide the specific count of Event ID 4624 events for this particular forensic case, as I have no access to the disk image, parsed artifacts, or event logs from the case.\n\n**Generic answer:**\nEvent ID 4624 records successful logon events in Windows Security event logs. The count varies widely depending on:\n- System uptime and log retention policies\n- Number of user accounts and service accounts\n- Interactive vs. network logons\n- Log rotation/maximum size settings (default often 20MB)\n\nA typical Windows system might have anywhere from dozens to tens of thousands of these events, depending on the factors above.\n\n**To determine the actual count**, a forensic examiner would typically:\n- Parse `Security.evtx` (and archived `.evtx` files if present) from `C:\\Windows\\System32\\winevt\\Logs\\`\n- Filter for Event ID 4624\n- Count total occurrences\n\n**Uncertainty:** Without access to the specific case image or recognizing this as a known published case, I cannot provide the actual count requested."
+ },
+ {
+  "id": "HNT07",
+  "recall": 1.0,
+  "found": [
+   "4625",
+   "4"
+  ],
+  "missing": [],
+  "answer": "I have no access to the Windows disk image or its artifacts, so I cannot determine the specific count of Event ID 4625 events for this particular case.\n\n**Generic answer:**\n\nEvent ID 4625 records failed logon attempts in the Windows Security event log. To find the count in a forensic case, you would typically:\n\n- Parse the Security.evtx file (usually `C:\\Windows\\System32\\winevt\\Logs\\Security.evtx`)\n- Filter for Event ID 4625\n- Count the matching entries\n\nThe actual count varies entirely by:\n- The system's logging policy and audit settings\n- Log retention/size limits (which may cause log rotation)\n- The timeframe of activity\n- Attack/brute-force attempts vs. legitimate failed logins\n- Whether logs were cleared or tampered with\n\nCounts can range from zero (no failures or logging disabled) to thousands or millions (in cases involving brute-force attacks or extensive user activity).\n\n**Uncertainty:** Without access to the specific image or published case details that I can recall, I cannot provide the actual count for your case."
+ },
+ {
+  "id": "HNT08",
+  "recall": 1.0,
+  "found": [
+   "4647",
+   "2"
+  ],
+  "missing": [],
+  "answer": "I cannot answer this question with specific values because:\n\n1. **No access to the case image** - I have no forensic image, parsed artifacts, or event logs from the case in question to examine\n2. **No context provided** - No case name, identifier, or timeframe was specified that would let me recall published details\n3. **Event ID 4647 count is case-specific** - The number of user logoff events varies entirely based on:\n   - The Windows Security event log size and retention policy on that specific system\n   - The timeframe of activity captured\n   - The number of users and their logon/logoff patterns\n   - Whether log rotation/clearing occurred\n\n**Generic answer**: Event ID 4647 appears in the Windows Security log when a user initiates a logoff. To determine the count for a specific case, you would typically:\n- Parse `C:\\Windows\\System32\\winevt\\Logs\\Security.evtx` \n- Filter for Event ID 4647\n- Count matching events\n\nTools like Event Log Explorer, EvtxECmd, or PowerShell's `Get-WinEvent` would normally be used for this analysis.\n\n**Uncertainty**: Without case identification or access to the actual evidence, I cannot provide the specific count requested."
+ },
+ {
+  "id": "HNT09",
+  "recall": 0.5,
+  "found": [
+   "7045"
+  ],
+  "missing": [
+   "33"
+  ],
+  "answer": "Based on the question asking for a count of Event ID 7045 events in a specific Windows disk image from a forensic case, I cannot provide a specific number without access to the actual evidence.\n\n**Generic answer:**\nEvent ID 7045 is logged by the Windows System Event Log whenever a new service is installed on the system. To determine the count, you would typically:\n\n- Parse the System event log (`%SystemRoot%\\System32\\winevt\\Logs\\System.evtx`)\n- Filter for Event ID 7045\n- Count the matching entries\n\nThe actual count varies widely between systems depending on:\n- How long the system has been running\n- Log retention/rollover settings\n- Software installation activity\n- Presence of malware (which often installs malicious services)\n\n**Common ranges:**\n- Clean baseline systems: 10-50 events (built-in Windows components, drivers)\n- Active workstations: 50-200+ events\n- Servers or compromised systems: Can be significantly higher\n\n**Uncertainty:** Without access to the specific image or published case details that would identify which forensic case this refers to, I cannot provide the exact count being asked for. If this is from a known CTF, training scenario, or published case study, please provide additional context to help identify it."
+ },
+ {
+  "id": "HNT10",
+  "recall": 1.0,
+  "found": [
+   "MFT",
+   "Prefetch"
+  ],
+  "missing": [],
+  "answer": "I do not have access to the specific Windows disk image or case you're referring to, and you haven't provided details that would allow me to identify which forensic case this is.\n\n**Generic answer:**\n\nThe number of distinct artifact types and total records in a Windows forensic case varies dramatically based on:\n\n- **Scope of collection**: Whether it's a full disk image, logical acquisition, or targeted artifact collection\n- **Parsing tools used**: Different forensic suites (Autopsy, X-Ways, AXIOM, Magnet, Plaso/log2timeline) parse different artifact counts\n- **Windows version**: Modern Windows 10/11 systems typically yield 50-150+ distinct artifact types\n- **User activity**: Active systems generate millions of records; minimal-use systems far fewer\n\n**Common artifact type counts:**\n- Registry hives: 5-15 major hives\n- Event logs: 100-300+ .evtx files\n- Prefetch files: 0-1,024 (Windows limit)\n- LNK files: hundreds to thousands\n- SRUM database entries: thousands to millions\n- Browser artifacts: highly variable\n- File system metadata: millions of $MFT entries\n\n**Total records** in a typical case: anywhere from hundreds of thousands to tens of millions of parsed records.\n\n**Uncertainty**: Without knowing the specific case, tool output, or parsed artifact database, I cannot provide exact figures. If this refers to a published CTF, training scenario, or known investigation, please provide the case name."
+ },
+ {
+  "id": "HNT11",
+  "recall": 0.6666666666666666,
+  "found": [
+   "Nmap",
+   "Zenmap"
+  ],
+  "missing": [
+   "7.12"
+  ],
+  "answer": "Based on the question alone, without access to the disk image or any artifacts, I cannot identify the specific network scanner tool that was installed and used on that particular system.\n\nHowever, common network scanner tools that are frequently encountered in Windows forensic cases include:\n\n**Most common:**\n- **Nmap** (Network Mapper) - the most widely used open-source network scanner\n- **Advanced IP Scanner** - popular free tool for Windows\n- **Angry IP Scanner** - lightweight cross-platform scanner\n- **Zenmap** - GUI frontend for Nmap\n- **SolarWinds Port Scanner**\n- **NetScan Tools** \n- **Colasoft Ping Tool**\n- **Masscan** - high-speed port scanner\n\n**Forensic indicators to look for (generically):**\n- Installation directories (Program Files, AppData)\n- Registry keys (HKLM\\Software, HKCU\\Software\\Classes\\Applications)\n- Prefetch files (.pf) showing execution\n- UserAssist entries\n- Recent documents/LNK files\n- Network logs or scan result files (often .txt, .xml, .gnmap formats)\n- Browser download history\n- Windows Event Logs (process creation, network connections)\n\n**Uncertainty:** Without examining the actual evidence from this specific case, I cannot determine which scanner was used. If this refers to a known published forensic challenge or CTF, please provide the case name for a more specific answer."
+ },
+ {
+  "id": "HNT12",
+  "recall": 0.5,
+  "found": [
+   "nmap"
+  ],
+  "missing": [
+   "7.12"
+  ],
+  "answer": "Based on my knowledge, I cannot recall specific details about a particular forensic case that would allow me to provide the exact version of an Nmap installer file found in Prefetch artifacts.\n\nTo answer this question definitively, I would need to:\n- Know which specific forensic case/image this refers to\n- Have access to the parsed Prefetch files from that image\n- Examine the Prefetch filename (e.g., NMAP-<VERSION>-SETUP.EXE-[hash].pf)\n\n**Generic answer**: Nmap installer Prefetch files typically follow the naming pattern `NMAP-<VERSION>-SETUP.EXE-########.pf`. The version number (e.g., 7.91, 7.92, 7.80) would be embedded in the filename. Common recent versions include 7.80, 7.91, 7.92, and 7.93.\n\nIf this refers to a published CTF challenge, training scenario (like SANS FOR500/FOR508), or known forensic case dataset, please specify which one, and I may be able to recall the specific version.\n\n**Uncertainty**: Without knowing the specific case or having access to the actual Prefetch artifacts, I cannot provide the exact version number requested."
+ },
+ {
+  "id": "HNT13",
+  "recall": 0.3333333333333333,
+  "found": [
+   "Zenmap"
+  ],
+  "missing": [
+   "2016-06-21",
+   "12:08"
+  ],
+  "answer": "I do not have access to the specific disk image or its Prefetch artifacts from this forensic case, so I cannot provide the actual execution timestamp for ZENMAP.EXE from the evidence.\n\nTo answer this question in a real examination, I would need to:\n\n1. **Locate the Prefetch file**: Look for `ZENMAP.EXE-[hash].pf` in `C:\\Windows\\Prefetch\\`\n2. **Parse the Prefetch file**: Extract the last execution timestamp from the file header (Windows 8+ stores up to 8 execution times; Windows 7 stores 1)\n3. **Identify the most recent timestamp**: The last run time would be listed in the parsed Prefetch metadata\n\n**Generic answer**: Zenmap is the GUI frontend for Nmap (network scanner). If Prefetch was enabled on the system and ZENMAP.EXE was executed, the Prefetch file would contain:\n- Last execution time(s) in UTC\n- Run count\n- Files/directories accessed during execution\n- Volume information\n\n**Uncertainty**: Without access to the actual Prefetch file or parsed artifacts from this specific case, I cannot provide the timestamp requested. If this is from a known published CTF or forensic challenge (e.g., SANS, DFIR challenges), please specify which one and I may recall published solutions."
+ },
+ {
+  "id": "HNT14",
+  "recall": 0.5,
+  "found": [
+   "Desktop"
+  ],
+  "missing": [
+   "nmapscan.xml"
+  ],
+  "answer": "Based on the question asking about a port scanning XML output file found on the Desktop, this is most likely referencing **nmap** scan results, as nmap is the most common port scanning tool that produces XML output files.\n\nHowever, without access to the specific forensic image or case details, I cannot provide the exact filename. Common nmap XML output filenames include:\n- `nmap.xml`\n- `scan.xml`\n- `output.xml`\n- Or custom names with `.xml` extension\n\nIf this is from a known published forensic case or CTF challenge, please provide additional context (case name, year, challenge name) and I may be able to recall specific details.\n\n**Uncertainty**: Without access to the actual disk image, parsed artifacts, or case documentation, I cannot determine the specific filename, timestamp, or other concrete details about this file. The answer above is based on typical port scanning tool behavior rather than examination of the evidence in question."
+ },
+ {
+  "id": "HNT15",
+  "recall": 1.0,
+  "found": [
+   "recent_scans.txt",
+   "Hunter"
+  ],
+  "missing": [],
+  "answer": "Based on Windows forensics knowledge, Zenmap (the GUI for Nmap) stores recent scan data in XML files within the user's profile directory.\n\n**Answer:**\nThe file that records recent Zenmap scans is typically:\n```\n%USERPROFILE%\\AppData\\Roaming\\zenmap\\recent_scans.txt\n```\n\nThis file maintains a list of recently performed Zenmap scans. Additionally, Zenmap may store:\n- Individual scan results as `.xml` files in the same `AppData\\Roaming\\zenmap\\` directory\n- Configuration in `zenmap.conf` in the same location\n\nFor the \"Hunter\" profile specifically, the path would be:\n```\nC:\\Users\\Hunter\\AppData\\Roaming\\zenmap\\recent_scans.txt\n```\n\n**Uncertainty note:** Without access to the specific disk image, I cannot confirm whether this file exists in this particular case, what scans it contains, or if Zenmap was configured to store data in a non-default location. The answer assumes standard Zenmap installation and default settings on Windows."
+ },
+ {
+  "id": "HNT16",
+  "recall": 0.5,
+  "found": [
+   "WIRESHARK"
+  ],
+  "missing": [
+   "2.0.4"
+  ],
+  "answer": "Based on the specific nature of your question asking about \"what Wireshark installer was executed,\" this appears to reference a known forensic case or CTF challenge rather than a general question.\n\nWithout access to the disk image or artifacts, I cannot provide the specific:\n- Wireshark installer filename (e.g., \"Wireshark-win64-3.x.x.exe\")\n- Execution timestamp\n- Location from which it was executed\n\n**Generic answer from forensic knowledge:**\n\nTo determine Wireshark installer execution on a Windows system, I would typically examine:\n\n1. **Prefetch files** (`C:\\Windows\\Prefetch\\WIRESHARK*.pf`) - Contains last execution time and run count\n2. **SRUM (System Resource Usage Monitor)** - Application execution with timestamps\n3. **Amcache.hve** - Records application installation with SHA-1, path, and first execution time\n4. **UserAssist** - May show installer execution from Explorer\n5. **BAM/DAM** - Background Activity Moderator records with last execution timestamps\n6. **ShimCache (AppCompatCache)** - Shows execution evidence\n7. **Event Logs** - Application installation events (Event ID 11707, 1033, 1034)\n8. **Browser download history** - If downloaded via browser\n9. **MFT** - File creation timestamps for the installer executable\n\n**Uncertainty:** Without the specific case image or published details, I cannot provide the actual installer filename or execution timestamp you're looking for. If this is from a published CTF or training scenario (e.g., DFIR Madness, Magnet Weekly CTF, etc.), please specify which one for a more precise answer."
+ },
+ {
+  "id": "HNT17",
+  "recall": 0.6666666666666666,
+  "found": [
+   "burpsuite",
+   "Downloads"
+  ],
+  "missing": [
+   "1.7.03"
+  ],
+  "answer": "Based on the question asking about a \"Burp Suite version file\" found on a specific Windows system, I need to provide an answer from forensic knowledge without access to the actual image.\n\n**Generic Answer:**\n\nBurp Suite version information on Windows systems is typically found in files such as:\n- `burp-loader.jar` or similar JAR files in the installation directory\n- `version.txt` or similar version metadata files\n- Registry keys under `HKEY_LOCAL_MACHINE\\SOFTWARE\\PortSwigger` or user-specific registry hives\n- Application manifests or `.exe` metadata\n\nCommon locations include:\n- `C:\\Program Files\\BurpSuitePro\\`\n- `C:\\Program Files (x86)\\BurpSuitePro\\`\n- User downloads folder (for portable/free editions)\n- `%APPDATA%\\BurpSuite\\` for user data\n\n**If this is a known CTF/training case:**\n\nWithout additional context about which specific forensic case or challenge this refers to, I cannot recall the exact version file. If this is from a published CTF challenge (e.g., Magnet Virtual Summit, SANS NetWars, CyberDefenders), the answer would typically be a specific JAR file name like `burpsuite_pro_v2022.x.x.jar` or similar.\n\n**Uncertainty:** Without access to the image or recognition of the specific case, I cannot provide the exact filename or version number. The answer depends entirely on what was present on that particular system."
+ },
+ {
+  "id": "HNT18",
+  "recall": 0.5,
+  "found": [
+   "Tor"
+  ],
+  "missing": [
+   "6.0.1"
+  ],
+  "answer": "I have no access to the forensic image or any artifacts from the case you're investigating, so I cannot determine the specific Tor Browser version that was installed on that system.\n\nTo answer this question, a forensic examiner would typically:\n\n**Common artifact locations for Tor Browser version information:**\n\n1. **Installation directory** - Check `C:\\Users\\[username]\\Desktop\\Tor Browser\\` or wherever it was installed\n   - `Browser\\TorBrowser\\Docs\\ChangeLog.txt` - contains version information\n   - `Browser\\firefox.exe` - file properties/version info\n   - `start-tor-browser.desktop` or similar launcher files\n\n2. **Registry keys** - Tor Browser typically doesn't write to registry, but portable app launchers might\n\n3. **Update logs** - `Browser\\TorBrowser\\UpdateInfo\\updates.xml` or similar\n\n4. **Browser profile** - `Browser\\TorBrowser\\Data\\Browser\\profile.default\\compatibility.ini` or `prefs.js` may contain version strings\n\n5. **Prefetch files** - `C:\\Windows\\Prefetch\\` entries for `firefox.exe` or `tor.exe` with timestamps\n\n6. **File metadata** - Version resource information in executable PE headers\n\n**Without access to the specific image, I cannot provide the actual version number.** If you have access to the image, examining these locations should reveal the installed version."
+ },
+ {
+  "id": "HNT19",
+  "recall": 1.0,
+  "found": [
+   "firefox.exe",
+   "Tor",
+   "Desktop"
+  ],
+  "missing": [],
+  "answer": "Based on the question asking for the Tor Browser firefox.exe path on a specific Windows disk image, I need to provide the most likely location without access to the actual image.\n\n**Generic Answer:**\n\nThe typical full path to Tor Browser's firefox.exe on Windows systems is:\n\n```\nC:\\Users\\[Username]\\Desktop\\Tor Browser\\Browser\\firefox.exe\n```\n\nor\n\n```\nC:\\Users\\[Username]\\Downloads\\Tor Browser\\Browser\\firefox.exe\n```\n\nThe most common installation location is:\n```\nC:\\Users\\[Username]\\Desktop\\Tor Browser\\Browser\\firefox.exe\n```\n\nWhere `[Username]` would be replaced by the actual user account name on the system.\n\nTor Browser is a portable application that users typically extract to their Desktop or Downloads folder. The firefox.exe executable is always located in the `Browser` subdirectory within the main \"Tor Browser\" folder.\n\n**Uncertainty:** Without access to the specific disk image, I cannot determine:\n- The exact username\n- Whether the user placed it in Desktop, Downloads, or another custom location\n- Whether multiple installations exist\n\nIf this references a known forensic case or CTF challenge with published artifacts, please provide additional context and I can give a more specific answer."
+ },
+ {
+  "id": "HNT20",
+  "recall": 1.0,
+  "found": [
+   "Ollydbg",
+   "Downloads"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge of Windows forensics cases, I cannot identify a specific case from the question alone, and I have no access to the disk image or artifacts to examine the Hunter Downloads folder directly.\n\nHowever, \"Hunter\" may refer to the notorious Lazarus Group case (specifically the \"Hunter\" persona used in the 2016 Bangladesh Bank heist investigation), or it could be a username in another case. Without access to the image or case files, I cannot determine which specific debugger tool was found.\n\nCommon debugger tools that might be found in a Downloads folder in forensic cases include:\n- OllyDbg\n- x64dbg/x32dbg\n- WinDbg\n- IDA Pro\n- Immunity Debugger\n- Ghidra\n\nIf this refers to a specific published case with the username \"Hunter,\" the answer would be documented in that case's public reports or CTF writeup.\n\n**Uncertainty: High** - Without access to the image, case materials, or knowing which specific forensic case this refers to, I cannot provide the exact debugger tool name found in that particular Hunter Downloads folder."
+ },
+ {
+  "id": "HNT21",
+  "recall": 1.0,
+  "found": [
+   "SysinternalsSuite",
+   "Downloads"
+  ],
+  "missing": [],
+  "answer": "Based on the question alone, I cannot identify the specific case or disk image being referenced, so I cannot give you the exact Sysinternals toolkit name from that particular user's Downloads folder.\n\n**Generic answer:**\n\nCommon Sysinternals toolkits found in user Downloads folders in forensic cases include:\n\n- **Sysinternals Suite** (SysinternalsSuite.zip) - the complete collection of all Sysinternals utilities\n- Individual tools like **PsExec**, **Process Explorer**, **Autoruns**, **TCPView**, **Process Monitor (Procmon)**, **AccessChk**, etc.\n\nThe Sysinternals Suite is most commonly downloaded as a single ZIP archive. If this is from a CTF, training scenario, or published case, the specific toolkit would be visible in:\n- File name in the Downloads folder (e.g., `SysinternalsSuite.zip`, `PSTools.zip`, `ProcessExplorer.zip`)\n- Browser download history artifacts\n- File system metadata (creation/modification timestamps)\n- Zone.Identifier alternate data streams showing download source\n\n**Uncertainty:** Without access to the actual image, artifacts, or case details, I cannot provide the specific Sysinternals toolkit present. If you can share the case name, scenario details, or any file listings you have access to, I could give a definitive answer."
+ },
+ {
+  "id": "HNT22",
+  "recall": 1.0,
+  "found": [
+   "PUTTY",
+   "pscp"
+  ],
+  "missing": [],
+  "answer": "Based on the question asking about SSH/SCP client tools in the Downloads folder of a specific Windows disk image, I cannot provide specific filenames, versions, or counts without access to the actual forensic image or case materials.\n\n**Generic answer:**\n\nCommon SSH/SCP client tools that might be found in a Windows user's Downloads folder include:\n\n- **PuTTY** (putty.exe, pscp.exe, psftp.exe, puttygen.exe, pageant.exe)\n- **WinSCP** (WinSCP.exe or installer packages)\n- **FileZilla** (supports SFTP)\n- **MobaXterm** (portable or installer versions)\n- **KiTTY** (PuTTY fork)\n- **Bitvise SSH Client**\n- **SecureCRT** installers\n- **OpenSSH** Windows binaries\n\nThese are typically found as:\n- Standalone executables (.exe)\n- Installer packages (.msi, .exe)\n- Portable ZIP archives\n- MSI installers\n\n**To answer accurately**, I would need to:\n- Parse the user's Downloads folder from the filesystem\n- Examine file signatures and metadata\n- Check for executable files matching known SSH/SCP client patterns\n\n**Uncertainty:** Without knowing the specific case or having access to the image, I cannot provide the actual tools present, their counts, timestamps, or other forensic details specific to this investigation."
+ },
+ {
+  "id": "HNT23",
+  "recall": 1.0,
+  "found": [
+   "SHA1",
+   "putty"
+  ],
+  "missing": [],
+  "answer": "I don't recognize this as a specific published forensic case, so I cannot provide the exact SHA1 hash value from that particular image's Amcache.\n\nIn a general Windows forensics context, Amcache.hve (located at `C:\\Windows\\appcompat\\Programs\\Amcache.hve`) records program execution evidence including SHA1 hashes of executables. If putty.exe was present and executed on the system, its entry would contain:\n\n- File path where putty.exe was located\n- SHA1 hash (40 hexadecimal characters)\n- File size\n- Compilation timestamp\n- Publisher metadata (Simon Tatham / PuTTY development team)\n\nCommon legitimate PuTTY SHA1 hashes vary by version (e.g., version 0.70 putty.exe has a different hash than 0.73), so without access to the specific case's Amcache, I cannot provide the exact value.\n\n**Uncertainty:** This requires the specific Amcache.hve from the case image to provide the actual SHA1 hash value. If this is from a known CTF, training scenario, or published case, providing those details would help me recall the specific answer."
+ },
+ {
+  "id": "HNT24",
+  "recall": 1.0,
+  "found": [
+   "WINPCAP"
+  ],
+  "missing": [],
+  "answer": "Based on typical Windows forensic examination procedures, to determine which WinPcap packet capture library is installed on a system, I would look for:\n\n**Common indicators:**\n\n1. **Registry keys:**\n   - `HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\WinPcapInst`\n   - Look for `DisplayName` and `DisplayVersion` values\n\n2. **File system artifacts:**\n   - `C:\\Program Files\\WinPcap\\` or `C:\\Program Files (x86)\\WinPcap\\`\n   - Driver files in `C:\\Windows\\System32\\drivers\\` (e.g., `npf.sys`)\n   - DLL files like `wpcap.dll` and `packet.dll` in System32\n\n3. **Version information:**\n   - Right-click properties on `npf.sys` or `wpcap.dll` to check version details\n   - Typical versions include WinPcap 4.1.2, 4.1.3 (most common legacy versions)\n\n**Generic answer without case-specific access:**\nWinPcap versions 4.1.2 and 4.1.3 are the most commonly encountered in forensic cases from the 2010s era. Many systems have since migrated to **Npcap** (the modern replacement).\n\n**Uncertainty:** Without access to the specific disk image, registry hives, or file system, I cannot provide the exact version number or confirm whether WinPcap (vs. Npcap or no capture library) is actually installed on this particular system."
+ },
+ {
+  "id": "HNT25",
+  "recall": 1.0,
+  "found": [
+   "FTK IMAGER",
+   "3"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge of Windows forensics, I cannot identify the specific case from the question alone, and without access to the disk image or artifacts, I cannot provide definitive case-specific details.\n\n**Generic answer:**\n\nFTK Imager usage can typically be detected through:\n\n1. **Registry artifacts** - `HKEY_USERS\\{SID}\\Software\\AccessData\\FTK Imager` or similar keys tracking execution\n2. **Prefetch files** - `FTKImager.exe-[hash].pf` in `C:\\Windows\\Prefetch\\` showing execution count and timestamps\n3. **UserAssist** - Registry entries showing GUI application launches\n4. **ShimCache/AmCache** - Execution evidence\n5. **LNK files** - Recent/jump list shortcuts to FTKImager.exe\n6. **Program installation** artifacts in registry or file system\n\nThe **execution count** would most reliably come from the prefetch file's run counter field (if prefetch is enabled).\n\n**Uncertainty:** Without access to the specific image, I cannot provide the exact FTK tool variant (FTK Imager, FTK Imager Lite, FTK Imager CLI) or the precise execution count. These would need to be determined by examining the artifacts mentioned above from the actual case image."
+ },
+ {
+  "id": "HNT26",
+  "recall": 1.0,
+  "found": [
+   "BCWipe"
+  ],
+  "missing": [],
+  "answer": "Based on the question about a file shredder application on a Windows system, without access to the actual disk image or artifacts, I can only provide a generic forensic approach:\n\n**Common file shredder applications to look for:**\n- CCleaner (includes secure file deletion)\n- Eraser\n- File Shredder\n- BCWipe\n- Shred\n- Secure Delete (SDelete from Sysinternals)\n- Permanent Eraser\n- DeleteOnClick\n\n**Typical evidence locations:**\n- `C:\\Program Files\\` or `C:\\Program Files (x86)\\` - installation directories\n- Registry keys: `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\`\n- User's AppData directories for portable versions\n- Prefetch files (`C:\\Windows\\Prefetch\\*.pf`)\n- Application event logs\n- ShimCache/AmCache entries\n\n**Without the specific case details or image access, I cannot determine which shredder is actually installed.** If this is from a known published CTF, training scenario, or public forensic challenge, please provide the case name and I may recall specific details.\n\n**Uncertainty:** Unable to provide the specific application name without access to the forensic artifacts or knowing which published case this references."
+ },
+ {
+  "id": "HNT27",
+  "recall": 0.5,
+  "found": [
+   "BCWIPE"
+  ],
+  "missing": [
+   "5"
+  ],
+  "answer": "Based on the question alone, I cannot determine the specific number of times BCWipe was executed on this particular forensic case without access to the disk image or parsed artifacts.\n\nTo answer this question in a real forensic examination, I would typically examine:\n\n**Primary evidence sources:**\n- **Prefetch files** (e.g., `BCWIPE.EXE-*.pf`) - The run counter field would show execution count\n- **Windows Event Logs** - Application execution events, if logged\n- **UserAssist** registry keys - Track GUI application launches with execution counts\n- **AmCache.hve** - May contain execution history\n- **BAM/DAM** keys - Background Activity Moderator entries showing last execution time\n- **SRUM** database - System Resource Usage Monitor data\n- **ShimCache** - May indicate execution but doesn't provide counts\n- **Recent Items / JumpLists** - If BCWipe created any documents or was pinned\n\n**Most reliable method:** The Prefetch file for BCWipe would contain a run counter in its header (offset 0xD0-0xD3 in Windows 10+ format), giving the exact execution count.\n\nWithout access to the actual evidence from this case, I cannot provide a specific number. If this refers to a published CTF challenge or known training scenario (e.g., NIST datasets, DFRWS challenges), please provide additional context about which case this is.\n\n**Uncertainty:** Cannot determine specific count without case evidence or recognition of this as a known published scenario."
+ },
+ {
+  "id": "HNT28",
+  "recall": 1.0,
+  "found": [
+   "BCWIPE",
+   "SVC"
+  ],
+  "missing": [],
+  "answer": "Based on the context of Windows digital forensics and Prefetch analysis, BCWipe-related Prefetch entries typically include:\n\n**Common BCWipe Prefetch files:**\n- `BCWIPETASK.EXE-[hash].pf` - The BCWipe scheduled task executable\n- `BCWIPE.EXE-[hash].pf` - Main BCWipe application\n- `BCWIPESVC.EXE-[hash].pf` - BCWipe service executable (if installed as a service)\n\n**Installer-related:**\n- An installer executable, often named something like `BCWIPE-[version].EXE-[hash].pf` or `SETUP.EXE-[hash].pf` (if BCWipe installer was run)\n\nThe exact number and naming depends on:\n- Which BCWipe version was installed\n- Installation method (standard vs. custom)\n- Whether the service component was deployed\n- How many times each component executed (determines Prefetch presence)\n\n**Generic answer:** Without access to the specific case image, I cannot provide exact filenames, hash values, execution counts, or timestamps from the Prefetch directory. The above represents typical BCWipe components that generate Prefetch entries.\n\n*Uncertainty: This is a generic answer based on typical BCWipe deployments. The actual case may contain different versions, additional components, or fewer entries depending on installation and usage patterns.*"
+ },
+ {
+  "id": "HNT29",
+  "recall": 1.0,
+  "found": [
+   "CCLEANER"
+  ],
+  "missing": [],
+  "answer": "Based on the question format and context, I cannot identify which specific forensic case or disk image you're referring to, so I cannot provide the actual application name or usage count from that particular case.\n\n**Generic answer:**\n\nCommon privacy cleaner applications found in Windows forensic cases include:\n- **CCleaner** (most prevalent)\n- BleachBit\n- Wise Disk Cleaner\n- Glary Utilities\n- PrivaZer\n- CleanMyPC\n\n**Typical forensic artifacts to determine usage count:**\n\n1. **Prefetch files** (e.g., `CCLEANER64.EXE-*.pf`) - execution count embedded in the file\n2. **Registry keys:**\n   - `HKCU\\Software\\[Application]\\` - may contain run counts, last execution time\n   - `HKCU\\Software\\Piriform\\CCleaner` (for CCleaner specifically) - often stores statistics\n3. **Application logs/databases** - some cleaners maintain their own execution history\n4. **UserAssist** - `HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist` - tracks GUI application launches\n5. **SRUM** (System Resource Usage Monitor) - records application execution timestamps\n6. **Event logs** - Application/System logs may show installation or execution events\n\n**Without access to the specific image, I cannot provide the exact application name or usage count you're looking for.** If this is a known published case (e.g., a training scenario or CTF challenge), please provide the case name and I may be able to recall specific details."
+ },
+ {
+  "id": "HNT30",
+  "recall": 1.0,
+  "found": [
+   "Crypto",
+   "encryption"
+  ],
+  "missing": [],
+  "answer": "Based on the question asking about a \"registry/disk encryption application,\" this appears to be from a known forensic challenge or CTF scenario.\n\nWithout access to the specific image, I cannot provide definitive installed applications. However, common disk encryption applications found in Windows forensic cases include:\n\n**Most common:**\n- **TrueCrypt** (or VeraCrypt) - frequently seen in older cases\n- **BitLocker** - Microsoft's native disk encryption\n- **PGP Desktop / Symantec Encryption Desktop**\n- **DiskCryptor**\n\n**Detection artifacts typically found at:**\n- Registry keys: `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\`\n- Program Files directories\n- Service entries: `HKLM\\SYSTEM\\CurrentControlSet\\Services\\`\n- Application event logs\n- Prefetch files (`.pf`) showing execution\n- UserAssist registry keys\n\nIf this references a specific published case (e.g., NIST CFReDS, DFRWS challenges, or CTF competitions like Magnet forensics challenges), the answer would typically be **TrueCrypt**, as it has been featured prominently in many forensic training scenarios and challenges.\n\n**Uncertainty:** Without access to the actual image artifacts (registry hives, installed program lists, or filesystem), I cannot provide the specific application name with certainty. If you can indicate which case/challenge this is from, I may recall published details."
+ },
+ {
+  "id": "HNT31",
+  "recall": 0.5,
+  "found": [
+   "CCleaner"
+  ],
+  "missing": [
+   "BCWipe"
+  ],
+  "answer": "Based on my knowledge of Windows digital forensics, here are artifacts that typically demonstrate use of anti-forensic tools:\n\n## Registry Evidence\n- **UserAssist**: Records GUI application execution, including tools like CCleaner, BleachBit, Eraser, or cipher.exe\n- **Shimcache (AppCompatCache)**: Logs executed binaries, capturing anti-forensic tool names even if files were deleted\n- **AmCache.hve**: Tracks installed applications and first execution times of anti-forensic software\n- **MUICache**: May contain display names of deleted wiping utilities\n\n## File System Artifacts\n- **Prefetch files** (.pf): Created for frequently-run executables; look for patterns like `CCLEANER-*.pf`, `BLEACHBIT-*.pf`, `ERASER-*.pf`, `SDELETE-*.pf`\n- **LNK files**: Recent/jump lists may reference anti-forensic tools even after deletion\n- **$MFT**: MACB timestamps showing bulk deletions, file overwrites, or timestamp stomping patterns\n- **$LogFile/$UsnJrnl**: Transaction logs showing file wipe operations or mass deletions\n\n## Evidence of Specific Techniques\n- **Browser artifact gaps**: Missing cache/history during specific timeframes while other activity exists\n- **Zeroed/patterned free space**: Indicates wiping tools like sdelete, Eraser\n- **Timestomp signatures**: $STANDARD_INFORMATION vs $FILE_NAME timestamp mismatches\n- **Orphaned MFT entries**: Deleted records with anti-forensic tool references\n\n## Event Logs\n- **Security/System logs**: Process creation (4688) showing anti-forensic executables\n- **Application logs**: Installation/uninstallation of cleaning software\n- **PowerShell logs**: Scripts using `Clear-RecycleBin`, file deletion cmdlets\n\n**Without access to the specific image, I cannot provide case-specific tool names, counts, or timestamps.**"
+ },
+ {
+  "id": "HNT32",
+  "recall": 1.0,
+  "found": [
+   "FTK",
+   "Imager"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge of digital forensics cases, I cannot identify the specific case you're referring to without additional context. However, I can provide several common explanations for why FTK Imager might be present on a suspect's system:\n\n**Common legitimate reasons:**\n- **IT/Security professional**: The suspect works in IT, system administration, or cybersecurity and uses FTK Imager for legitimate data recovery, disk imaging, or backup purposes\n- **Data recovery**: Personal use for recovering lost files or creating backups of their own systems\n- **Computer enthusiast**: Interest in digital forensics as a hobby or educational pursuit\n\n**Common suspicious reasons:**\n- **Anti-forensics awareness**: Suspects familiar with digital forensics may use FTK Imager to understand how investigators acquire evidence\n- **Data manipulation**: Creating images to hide or alter evidence before seizure\n- **Covering tracks**: Understanding forensic tools to better evade detection\n- **Insider threat**: Employee using forensic tools to exfiltrate data from employer systems\n\n**To provide a specific answer, I would need:**\n- Case name or identifier\n- Suspect's occupation/background\n- Whether FTK Imager was actually executed (vs. just downloaded)\n- Timeline of installation/usage relative to alleged criminal activity\n- Registry artifacts, LNK files, or prefetch showing actual usage\n\n**Uncertainty**: Without access to the specific case artifacts or case identification, I cannot determine which scenario applies. The presence of forensic software alone is not inherently incriminating but requires context from the investigation."
+ },
+ {
+  "id": "HNT33",
+  "recall": 1.0,
+  "found": [
+   "ICACLS",
+   "4"
+  ],
+  "missing": [],
+  "answer": "Based on Windows forensics knowledge, `icacls.exe` activity that suggests permission manipulation includes:\n\n**Execution artifacts showing:**\n- Command-line arguments modifying DACL entries (`/grant`, `/deny`, `/remove`, `/setintegritylevel`)\n- Granting Full Control to non-admin accounts: `icacls C:\\Windows\\System32 /grant Everyone:(F)`\n- Removing inheritance: `/inheritance:r` or `/inheritance:d`\n- Changing ownership via `/setowner`\n- Recursive permission changes: `/T` flag affecting entire directory trees\n\n**Forensic locations to examine:**\n- **Prefetch**: `ICACLS.EXE-[hash].pf` showing execution count and last run times\n- **ShimCache/AmCache**: Execution timestamps\n- **Event ID 4688** (Process Creation): Full command-line showing targets and permission changes\n- **USN Journal**: File access patterns to `icacls.exe`\n- **PowerShell/Command history**: `ConsoleHost_history.txt`, PSReadLine history\n- **Registry Run keys**: Persistence via scheduled permission changes\n\n**Suspicious patterns:**\n- Execution from temp directories or user profiles (not System32)\n- Grants to `Everyone`, `BUILTIN\\Users`, or low-privilege SIDs on sensitive directories (System32, Program Files, admin tools)\n- Modifications to security tools, logs, or forensic artifacts\n- Execution timestamps correlating with malware/intrusion activity\n- Batch scripts or scheduled tasks calling icacls repeatedly\n\n**Without access to the specific case image**, look for these indicators in prefetch timestamps, event logs, and command-line logging to establish timeline and intent."
+ },
+ {
+  "id": "HNT34",
+  "recall": 1.0,
+  "found": [
+   "MPCMDRUN",
+   "Defender"
+  ],
+  "missing": [],
+  "answer": "Based on the question about antivirus tool detection events in a Windows forensic case, I'll provide guidance on what to look for, though without access to the specific image I cannot give exact values.\n\n## Common Antivirus Detection Event Locations:\n\n**Windows Defender (most common on modern Windows):**\n- Event Log: `Microsoft-Windows-Windows Defender/Operational`\n- Key Event IDs:\n  - **1116** - Malware detected\n  - **1117** - Action taken on malware\n  - **1118** - Failed action on malware\n  - **1119** - Critical error\n  - **5001** - Real-time protection disabled\n  - **5007** - Configuration changed\n\n**Generic Antivirus Artifacts:**\n- Event logs in `Application` or `System` logs from AV vendor\n- Quarantine folders (varies by product)\n- AV-specific logs in `ProgramData\\[Vendor]\\Logs`\n\n**What to Report:**\nFor each detection event, typical fields include:\n- Detection timestamp\n- Threat name/signature\n- File path of detected item\n- Action taken (quarantined, deleted, allowed)\n- User context\n- Detection engine version\n\n**Without the Image:**\nI cannot provide:\n- Specific threat names found\n- Exact timestamps\n- Count of detections\n- Which AV product was installed\n- Specific file paths quarantined\n\n**Uncertainty:** This is a generic answer. The actual case may have third-party AV (Symantec, McAfee, Trend Micro, etc.) with different log locations and event structures."
+ },
+ {
+  "id": "HNT35",
+  "recall": 1.0,
+  "found": [
+   "NET.EXE",
+   "8"
+  ],
+  "missing": [],
+  "answer": "Based on Windows forensics knowledge, NET.EXE and NET1.EXE command-line management activity can be identified through several artifacts:\n\n**Execution Evidence:**\n- **Prefetch files**: `NET.EXE-[hash].pf` and `NET1.EXE-[hash].pf` showing execution timestamps and run counts\n- **AmCache/RecentFileCache**: First and last execution times for both binaries\n- **Shimcache (AppCompatCache)**: Execution history entries\n- **BAM/DAM**: Recent execution timestamps with user SID associations\n\n**Command-Line Arguments:**\n- **Event ID 4688** (Process Creation) in Security logs - shows full command line if auditing enabled\n- **Event ID 1** (Sysmon Process Creation) - captures complete command syntax\n- **PowerShell logs** or **ConsoleHost_history.txt** if invoked from PowerShell\n\n**Typical Management Commands:**\n- `net user` - account enumeration/creation\n- `net localgroup` - group membership changes (especially Administrators)\n- `net share` - share enumeration/creation\n- `net use` - network drive mapping\n- `net time` - time synchronization/domain queries\n- `net view` - network resource enumeration\n- `net session` - session management\n\n**Key Indicator**: NET.EXE typically calls NET1.EXE as a child process, so both should appear together in process creation events with matching timestamps.\n\n**Note**: Without access to the specific case image, this is a generic answer. Actual findings would require examining the artifacts above for specific timestamps, user accounts, and command parameters."
+ },
+ {
+  "id": "HNT36",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "549"
+  ],
+  "answer": "I do not have access to the specific forensic case image you're referring to, and without additional context or case identifiers, I cannot recall published details about a specific case.\n\n**Generic answer:**\n\nPrefetch file counts vary significantly by case - a typical Windows system might have anywhere from 0 to 1,024 `.pf` files (the default maximum on Windows 10/11), though older systems had lower limits (128 on Windows XP/Vista/7/8). The actual count depends on:\n\n- Windows version and Prefetch configuration\n- How long the system was in use\n- Whether Prefetch was enabled\n- Whether files were manually cleared\n\nFor educational/CTF scenarios, counts typically range from a few dozen to several hundred files.\n\n**Without case-specific information, I cannot provide an exact count.**\n\n*Uncertainty: High - This answer is entirely generic. If you can provide the case name, source (e.g., NIST, DFRWS, CFReDS), or any identifying details, I may be able to recall specific published information.*"
+ },
+ {
+  "id": "HNT37",
+  "recall": 1.0,
+  "found": [
+   "kali.org"
+  ],
+  "missing": [],
+  "answer": "Based on Windows forensics knowledge, LNK (link) files can contain references to kali.org in several potential ways:\n\n**Most common scenario:**\nLNK files may reference kali.org through:\n- **Target paths** pointing to downloaded Kali Linux ISOs or tools (e.g., `C:\\Users\\[user]\\Downloads\\kali-linux-*.iso`)\n- **Network shares** or URLs in the NetBIOS name or local base path fields\n- **Browser download shortcuts** created when downloading from kali.org\n- **Tracker database entries** containing the NetBIOS machine name if files were accessed from a system named with \"kali\" references\n\n**Specific case recognition:**\nWithout access to the specific image, I cannot identify if this refers to a known published case. However, common forensic scenarios include:\n- Download activity of Kali Linux distributions\n- References to `www.kali.org` or `cdimage.kali.org` in shortcut metadata\n- LNK files in Recent Items (`%APPDATA%\\Microsoft\\Windows\\Recent\\`) pointing to Kali-related downloads\n\n**Where to look in LNK structure:**\n- LinkInfo structure (local/network path)\n- StringData (NAME_STRING, RELATIVE_PATH)\n- ExtraData blocks (TrackerDataBlock with machine NetBIOS name)\n- Working directory fields\n\n**Uncertainty:** Without the actual image or parsed LNK artifacts, I cannot provide the exact reference string, count of files, or specific timestamps from your case."
+ },
+ {
+  "id": "HNT38",
+  "recall": 1.0,
+  "found": [
+   "Metasploit",
+   "Rapid7"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge, I cannot identify a specific forensic case from this question alone, so I'll provide a generic answer about what Rapid7/Metasploit browser activity might look like in a Windows forensic investigation.\n\n**Typical Metasploit Browser Activity Indicators:**\n\n1. **Web requests to Rapid7/Metasploit resources:**\n   - Downloads from `www.rapid7.com` or `www.metasploit.com`\n   - GitHub repository visits: `github.com/rapid7/metasploit-framework`\n   - Documentation sites: `docs.rapid7.com`, `metasploit.help.rapid7.com`\n\n2. **Browser artifacts (IE/Edge, Chrome, Firefox):**\n   - Downloaded installers: `metasploit-framework-*.exe`, `metasploitframework-latest.msi`\n   - URLs in history related to exploit databases or module documentation\n   - Search queries containing \"metasploit\", \"msfconsole\", \"meterpreter\", \"rapid7\"\n\n3. **Common browsing patterns:**\n   - Exploit-DB visits while researching vulnerabilities\n   - Ruby/mingw dependency downloads for Windows installation\n   - Community forum visits (rapid7.com/community)\n\n4. **Download timestamps** in browser history/cache corresponding to installation artifacts on disk\n\n**Without access to the specific image**, I cannot provide actual URLs visited, download counts, timestamps, or specific filenames. If this references a published CTF, training scenario, or known case (KDFS, DFRWS, etc.), please specify and I can attempt to recall those details.\n\n**Uncertainty:** High - no case context or image access; answer is generic."
+ },
+ {
+  "id": "HNT39",
+  "recall": 0.5,
+  "found": [
+   "Data Exfiltration"
+  ],
+  "missing": [
+   "2016-06-21"
+  ],
+  "answer": "Based on the question about \"Data Exfiltration research\" performed in a browser, this appears to reference a digital forensics case scenario, but without access to the specific case files or artifacts, I cannot provide the actual browsing history, search queries, or visited URLs from that particular suspect's system.\n\n**Generic forensic approach:**\n\nTo answer this question in a real examination, I would analyze:\n\n1. **Browser artifacts** (Chrome, Edge, Firefox):\n   - History databases (`History` SQLite file)\n   - Search terms table\n   - Downloads database\n   - Cache files\n   - Cookies\n\n2. **Typical search patterns** for data exfiltration research might include queries about:\n   - Encrypted file transfer methods\n   - Anonymous upload services\n   - Cloud storage platforms\n   - Steganography techniques\n   - DNS tunneling\n   - USB/removable media encryption\n   - Bypassing DLP (Data Loss Prevention) systems\n\n3. **Visited sites** often include:\n   - File sharing services (Mega, WeTransfer, Dropbox, etc.)\n   - Tor/VPN documentation\n   - GitHub repositories for exfiltration tools\n   - Forums discussing data theft techniques\n\n**Uncertainty:** Without the actual disk image, parsed browser artifacts, or case documentation, I cannot provide the specific search terms, URLs, timestamps, or frequency counts from this suspect's browsing activity. If this references a published CTF, training scenario, or public case, please provide the case name for a more specific answer."
+ },
+ {
+  "id": "HNT40",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "google.jo",
+   "162"
+  ],
+  "answer": "Based on typical Windows forensic analysis of browser artifacts, the country domain pattern of Google searches refers to the top-level domain (TLD) used when accessing Google search services.\n\n**Generic Answer:**\nWithout access to the specific case image, I would look for this information in:\n- Browser history databases (Chrome: History SQLite, Edge: WebCacheV01.dat, Firefox: places.sqlite)\n- Search query artifacts in registry (TypedURLs, search provider keys)\n- Cache and temporary internet files\n\nThe pattern would typically appear as:\n- **google.com** (United States/International)\n- **google.co.uk** (United Kingdom)\n- **google.de** (Germany)\n- **google.fr** (France)\n- **google.ca** (Canada)\n- **google.com.au** (Australia)\n- etc.\n\nThe domain pattern reveals the user's geographic location or language preference settings at the time of searches.\n\n**To determine the main pattern**, I would:\n1. Extract all Google search URLs from browser artifacts\n2. Parse the domain component (e.g., `google.XX` or `google.com.XX`)\n3. Count frequency of each TLD pattern\n4. Identify the predominant country domain\n\n**Uncertainty:** Without knowing which specific forensic case this references or having access to the parsed artifacts, I cannot provide the actual country domain value. If this is from a published CTF, training scenario, or known case (NIST CFReDS, DFRWS challenges, etc.), please provide the case name for a more specific answer."
+ },
+ {
+  "id": "HNT41",
+  "recall": 1.0,
+  "found": [
+   "ollydbg.de"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge of Windows forensic cases, I cannot identify a specific case from this question alone. However, I can provide a generic answer about common OllyDbg download sources that appear in browser history:\n\n**Common OllyDbg download sources:**\n- **ollydbg.de** - The official OllyDbg website (most common)\n- **www.ollydbg.de/version2.html** - OllyDbg v2.x download page\n- **www.ollydbg.de/odbg110.zip** - Direct download link for v1.10\n- **download.cnet.com** - CNET Downloads mirror\n- **sourceforge.net** - SourceForge mirrors\n- **softpedia.com** - Softpedia download page\n- **majorgeeks.com** - MajorGeeks mirror\n\n**Most likely answer:** ollydbg.de or www.ollydbg.de\n\nWithout access to the specific case image or parsed browser history artifacts (WebCacheV01.dat, places.sqlite, History files, etc.), I cannot provide the exact URL that appeared in this particular case.\n\n**Uncertainty:** This is a generic answer. The actual download source in your specific case could be any mirror site, a direct link, or even a malicious/repackaged version from an unofficial source. The exact URL, timestamp, and browser type would be visible in the parsed browser history artifacts from the image."
+ },
+ {
+  "id": "HNT42",
+  "recall": 1.0,
+  "found": [
+   "java.com"
+  ],
+  "missing": [],
+  "answer": "Based on the question asking about Java-related downloads referenced in browser artifacts from a Windows forensic image, I cannot provide specific values without access to the actual case evidence.\n\nIn a generic Windows forensics examination, Java-related downloads would typically be found by examining:\n\n**Browser download history artifacts:**\n- Chrome: `History` SQLite database, `downloads` table\n- Firefox: `places.sqlite`, `moz_downloads`/`moz_annos` tables  \n- Edge/IE: `WebCacheV*.dat` ESE database, download containers\n\n**Common Java download patterns to search for:**\n- Filenames: `jre-*`, `jdk-*`, `JavaSetup*.exe`, `java*-windows-*.exe`\n- URLs containing: `java.com/download`, `oracle.com/java`, `adoptium.net`, `openjdk`\n- MIME types: `application/x-java-archive`, `application/java-archive`\n\n**Typical findings might include:**\n- Java Runtime Environment (JRE) installers\n- Java Development Kit (JDK) packages\n- Java update executables\n- JAR files or Java applets\n\nWithout access to the specific case image, I cannot provide:\n- Exact filenames downloaded\n- Download timestamps\n- Source URLs\n- Version numbers\n- Download counts\n\n**Uncertainty:** This is a generic answer. If this refers to a known published forensic case (CTF, training scenario, or public investigation), I would need the case name to recall specific details."
+ },
+ {
+  "id": "HNT43",
+  "recall": 1.0,
+  "found": [
+   "network",
+   "Google"
+  ],
+  "missing": [],
+  "answer": "I don't recognize this as a specific published forensic case from my training data, so I cannot provide case-specific search terms or queries that were actually performed on that particular disk image.\n\n**Generic answer:** Network diagram and home network searches in Windows forensics are typically found in:\n\n1. **Web browser history** - Search queries in Google, Bing, etc. for terms like:\n   - \"network diagram\"\n   - \"home network setup\"\n   - \"network topology diagram\"\n   - \"how to map my network\"\n   - \"home network diagram software\"\n\n2. **Windows Search history** - Local file searches stored in:\n   - `Windows.edb` (Windows Search database)\n   - Registry: `NTUSER.DAT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\WordWheelQuery`\n\n3. **Application-specific searches** - Visio, Draw.io, or diagram software recent searches\n\n4. **File system artifacts** - MRU lists showing recently opened .vsd, .drawio, or image files with \"network\" in the name\n\nWithout access to the actual image or case materials, I cannot provide the specific search terms that were performed. If this relates to a known case (e.g., a CTF, published investigation, or training scenario), providing the case name would allow me to recall specific details if they're in my training data.\n\n**Uncertainty:** High - this is entirely generic guidance without case-specific information."
+ },
+ {
+  "id": "HNT44",
+  "recall": 0.5,
+  "found": [
+   "Chrome"
+  ],
+  "missing": [
+   "28,177"
+  ],
+  "answer": "Based on the question about \"SRUM bytes,\" you're asking which browser consumed the most network bandwidth according to the System Resource Usage Monitor (SRUM) database.\n\nSRUM (stored in `C:\\Windows\\System32\\sru\\SRUDB.dat`) tracks application resource usage including network bytes sent/received. The relevant table is typically the Network Usage/Network Connectivity table which logs bytes sent and received per application.\n\n**Without access to the specific image**, I cannot provide the exact browser name or byte count from this case. \n\nA generic forensic approach would be:\n- Parse the SRUDB.dat file\n- Query the Network Data Usage table (often `{973F5D5C-1D90-4944-BE8E-24B94231A174}`)\n- Sum BytesSent + BytesRecv per AppId\n- Cross-reference AppId with the SruDbIdMapTable to get the executable path\n- Identify browser executables (chrome.exe, firefox.exe, msedge.exe, iexplore.exe, etc.)\n- Determine which has the highest total bytes\n\nCommon browsers on Windows systems include:\n- Google Chrome (chrome.exe)\n- Microsoft Edge (msedge.exe or MicrosoftEdge.exe)\n- Firefox (firefox.exe)\n- Internet Explorer (iexplore.exe)\n\n**If you recognize this as a specific CTF, training scenario, or published case**, please provide the case name and I may be able to recall specific details. Otherwise, you would need to parse the SRUDB.dat from the actual image to get the definitive answer.\n\n**Uncertainty**: Cannot provide the specific browser or byte values without access to the forensic image's SRUM database."
+ },
+ {
+  "id": "HNT45",
+  "recall": 0.5,
+  "found": [
+   "Internet Explorer"
+  ],
+  "missing": [
+   "10,657"
+  ],
+  "answer": "Based on Windows forensics knowledge, Internet Explorer activity in SRUM (System Resource Usage Monitor) can be found in the **SRUDB.dat** database, specifically within the **{D10CA2FE-6FCF-4F6D-848E-B2E99266FA89}** table (Application Resource Usage Provider).\n\nFor Internet Explorer, SRUM typically records:\n\n**Key artifacts:**\n- **Application name**: \"iexplore.exe\" or \"IEXPLORE.EXE\"\n- **Metrics tracked**:\n  - Bytes sent and received (network usage)\n  - Foreground and background cycle time (CPU usage)\n  - Timestamp of first/last activity\n  - User SID associated with the activity\n\n**Specific fields:**\n- `BytesSent` - data uploaded\n- `BytesRecv` - data downloaded  \n- `NetworkTailId` - associates with network connectivity table\n- `AppId` - links to application identifier\n- `UserId` - SID of the user running IE\n- `TimeStamp` - hourly aggregated activity\n\n**Additional context:**\nSRUM data is aggregated hourly and typically retained for 30-60 days. The data shows network consumption and resource usage but does **not** contain:\n- URLs visited\n- Search terms\n- Specific webpage content\n- Cache or history details\n\nWithout access to the specific case image, I cannot provide exact byte counts, timestamps, user SIDs, or how many SRUM entries exist for IE in that particular case.\n\n**Uncertainty**: The specific values depend entirely on the case data available in the SRUDB.dat file from that image."
+ },
+ {
+  "id": "HNT46",
+  "recall": 0.5,
+  "found": [
+   "Skype"
+  ],
+  "missing": [
+   "7.24"
+  ],
+  "answer": "Based on the question asking about a specific Windows disk image from a forensic case, I cannot identify which particular case or image you're referring to without additional context (case name, source, or identifying details).\n\n**Generic answer:**\n\nCommon instant messaging applications found on Windows systems in forensic examinations include:\n\n- **Skype** (or Skype for Business/Microsoft Teams)\n- **WhatsApp Desktop**\n- **Telegram Desktop**\n- **Discord**\n- **Slack**\n- **Signal Desktop**\n- **Facebook Messenger Desktop**\n- **WeChat**\n- **Viber**\n- **ICQ**\n- Legacy: Windows Live Messenger/MSN Messenger, Yahoo Messenger, AIM\n\n**Typical forensic indicators to identify installed IM apps:**\n\n- Program Files or Program Files (x86) directories\n- Registry keys: `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall`\n- User AppData folders: `%APPDATA%`, `%LOCALAPPDATA%`\n- Start Menu entries\n- Prefetch files (*.pf)\n- ShimCache/AmCache entries\n- UserAssist registry keys\n\n**Uncertainty:** Without access to the specific image, case files, or recognition of which published case this refers to, I cannot provide the definitive application name. If this is from a known CTF, training scenario, or published case study, please provide the case identifier for a specific answer."
+ },
+ {
+  "id": "HNT47",
+  "recall": 0.5,
+  "found": [
+   "TeamViewer"
+  ],
+  "missing": [
+   "9,856"
+  ],
+  "answer": "Based on Windows forensics knowledge, I cannot identify the specific case you're referring to from the question alone, so I must provide a generic answer.\n\n**Common remote access applications found in Windows forensic cases include:**\n\n- TeamViewer\n- AnyDesk\n- LogMeIn\n- Remote Desktop (RDP - built-in)\n- Chrome Remote Desktop\n- VNC variants (TightVNC, RealVNC, UltraVNC)\n- Ammyy Admin\n- ScreenConnect/ConnectWise Control\n- Splashtop\n\n**To determine which is installed, examiners typically check:**\n\n- `C:\\Program Files\\` and `C:\\Program Files (x86)\\` for application folders\n- Windows Registry: `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall`\n- Prefetch files (`C:\\Windows\\Prefetch\\`) showing execution\n- Windows Event Logs (Security, Application logs)\n- Amcache.hve and ShimCache for execution artifacts\n\n**Traffic volume determination typically requires:**\n\n- Network packet captures (PCAP files)\n- Firewall logs\n- Application-specific logs (many remote access tools log connection duration/data transferred)\n- Router/gateway logs\n- Windows Resource Monitor historical data (if captured)\n- SRUM (System Resource Usage Monitor) database: `C:\\Windows\\System32\\sru\\SRUDB.dat` - tracks network usage per application\n\n**Uncertainty:** Without access to the specific disk image or case artifacts, I cannot provide the actual application name or traffic volume for your case. If this relates to a known published case, please provide additional context."
+ },
+ {
+  "id": "HNT48",
+  "recall": 0.5,
+  "found": [
+   "Dropbox"
+  ],
+  "missing": [
+   "2,662"
+  ],
+  "answer": "Based on the question alone, I cannot identify the specific forensic case or image being referenced, so I cannot provide a definitive answer about which cloud storage application is installed on that particular system.\n\nHowever, in Windows forensic examinations, common cloud storage applications that are frequently found include:\n\n**Most common:**\n- **OneDrive** (Microsoft) - often pre-installed with Windows\n- **Dropbox**\n- **Google Drive** (Google Backup and Sync / Drive for Desktop)\n- **iCloud** (Apple)\n- **Box**\n\n**Typical forensic indicators to identify installed cloud storage apps:**\n- Program installation directories (e.g., `C:\\Program Files\\`, `C:\\Program Files (x86)\\`)\n- Registry keys: `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\`\n- User profile directories (e.g., `%USERPROFILE%\\AppData\\Local\\`, `%USERPROFILE%\\AppData\\Roaming\\`)\n- Startup entries showing auto-launch at login\n- Sync folders and configuration files\n- Windows event logs showing service activity\n\n**If this refers to a known CTF/training scenario or published case:** Without more context (case name, year, source), I cannot recall specific details.\n\n**Uncertainty:** Without access to the actual image or case materials, I cannot provide the specific application name or details for this particular forensic case."
+ },
+ {
+  "id": "HNT49",
+  "recall": 1.0,
+  "found": [
+   "Google Drive"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge of Windows forensics, I cannot identify the specific case from the question alone, so I'll provide a generic answer about Google Drive sync activity artifacts that would typically be examined:\n\n**Common Google Drive Sync Artifacts on Windows:**\n\n1. **Snapshot.db / sync_config.db** - SQLite databases in `%LocalAppData%\\Google\\Drive\\user_default\\` containing:\n   - Synced file metadata\n   - Local and cloud IDs\n   - Modification timestamps\n   - Sync state (cloud_entry, local_entry tables)\n\n2. **Cloud_graph folder** - Contains protobuf files with sync graph data\n\n3. **Event logs** - `sync_log.log` in the Drive folder showing sync operations, errors, timestamps\n\n4. **Windows Registry**:\n   - `HKCU\\Software\\Google\\Drive` - Installation path, email, settings\n   - Run keys for auto-start configuration\n\n5. **Prefetch** - `GoogleDriveFS.exe-[hash].pf` showing execution times\n\n6. **LNK files** - Recent shortcuts to synced Google Drive files in `%AppData%\\Microsoft\\Windows\\Recent\\`\n\n7. **USN Journal** - Records of file creation/modification in the Google Drive sync folder (typically `G:\\My Drive` or similar)\n\n8. **Browser artifacts** - If using web interface, cookies, history for drive.google.com\n\n**Uncertainty:** Without access to the specific image, I cannot provide actual file counts, specific timestamps, email addresses, folder names, or sync volumes from this particular case."
+ },
+ {
+  "id": "HNT50",
+  "recall": 1.0,
+  "found": [
+   "Outlook",
+   "Office"
+  ],
+  "missing": [],
+  "answer": "Based on your question, I cannot identify a specific email client without access to the disk image or case artifacts.\n\n**Generic answer:**\n\nCommon indicators to determine installed email clients on Windows systems include:\n\n- **Program Files / Program Files (x86)**: Installed application directories (Outlook, Thunderbird, etc.)\n- **Registry keys**:\n  - `HKLM\\SOFTWARE\\Clients\\Mail` - registered mail clients\n  - `HKCU\\SOFTWARE\\Clients\\Mail\\Default` - default client\n  - Application-specific keys under `HKLM\\SOFTWARE` or `HKCU\\SOFTWARE`\n- **Start Menu / AppData**: Application shortcuts and configuration files\n- **File extensions**: `.pst` (Outlook), `.mbox` (Thunderbird), `.eml` files\n- **Prefetch files**: Evidence of execution (e.g., `OUTLOOK.EXE-*.pf`)\n\n**Most common Windows email clients:**\n- Microsoft Outlook (standalone or Office suite)\n- Windows Mail / Mail app (Windows 10/11 built-in)\n- Mozilla Thunderbird\n- Legacy: Outlook Express, Windows Live Mail\n\n**Uncertainty:** Without case-specific details, image access, or recognition of which forensic case this refers to, I cannot provide the actual email client name or version installed on the target system."
+ },
+ {
+  "id": "HNT51",
+  "recall": 1.0,
+  "found": [
+   "backup.pst",
+   "Dropbox"
+  ],
+  "missing": [],
+  "answer": "Based on the question asking about a specific Outlook PST backup file stored in Dropbox on a Windows forensic image, I cannot identify the specific file without access to the actual disk image or case artifacts.\n\nHowever, I can provide a generic forensic answer:\n\n**Typical locations to examine:**\n- `%USERPROFILE%\\Dropbox\\` \n- `%USERPROFILE%\\Documents\\Dropbox\\`\n- Files with `.pst` extension (Personal Storage Table)\n- Common names: `backup.pst`, `outlook.pst`, `archive.pst`, user's email address as filename\n\n**Forensic approach if you had access:**\n1. Search for `*.pst` files in Dropbox sync folders\n2. Check Dropbox cache database (`.dropbox.cache`, `filecache.dbx`)\n3. Examine cloud sync logs for uploaded PST files\n4. Parse Windows Search index for PST references\n5. Check LNK files and JumpLists for recently accessed PST files\n6. Review USN Journal for Dropbox folder file creation events\n\n**If this refers to a published/known case** (CTF, training scenario, or public investigation), I do not have enough context clues in your question to identify which specific case this is. The phrasing suggests a scenario where one particular PST file is the answer.\n\n**Uncertainty:** Without access to the image or knowing the specific case/scenario, I cannot provide the exact filename, path, size, or timestamps."
+ },
+ {
+  "id": "HNT52",
+  "recall": 1.0,
+  "found": [
+   "gmail.com"
+  ],
+  "missing": [],
+  "answer": "I do not have access to the specific Windows disk image or any artifacts from this forensic case, nor can I identify which case you are referring to based solely on this question.\n\n**Generic answer:**\n\nGmail accounts configured on a Windows system are typically found in:\n\n1. **Windows Mail / Mail app** - Account credentials stored in:\n   - `\\Users\\<username>\\AppData\\Local\\Comms\\UnistoreDB\\store.vol` (ESE database)\n   - `\\Users\\<username>\\AppData\\Local\\Packages\\microsoft.windowscommunicationsapps_*\\LocalState\\` folders\n\n2. **Web browsers** - Saved credentials/autofill:\n   - Chrome: `\\Users\\<username>\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data`\n   - Edge: `\\Users\\<username>\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Login Data`\n   - Firefox: `\\Users\\<username>\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\*.default*\\logins.json`\n\n3. **Email clients** (Outlook, Thunderbird) - Configuration files and account settings\n\n4. **Registry keys** - `HKCU\\Software\\Microsoft\\Office\\Outlook\\Profiles\\` or similar paths\n\n5. **Browser history/cache** - URLs showing gmail.com logins, username visible in URLs or cached pages\n\nWithout access to the actual image or artifacts, I cannot provide the specific Gmail address for this case.\n\n**Uncertainty:** Complete - no case data available to provide a factual answer."
+ },
+ {
+  "id": "HNT53",
+  "recall": 1.0,
+  "found": [
+   "myaccount.google.com",
+   "Google"
+  ],
+  "missing": [],
+  "answer": "Based on the question about Google account security pages visited by a suspect, I can provide a forensic perspective, but without access to the actual disk image or browser artifacts, I cannot give you specific URLs or timestamps from this particular case.\n\n**Generic answer:**\n\nIn Windows forensics, Google account security page visits would typically be recovered from:\n\n1. **Browser history databases:**\n   - Chrome: `History` SQLite file (urls, visits tables)\n   - Edge: `WebCacheV*.dat` or History files\n   - Firefox: `places.sqlite`\n\n2. **Common Google security URLs to look for:**\n   - `myaccount.google.com/security`\n   - `myaccount.google.com/signinoptions/two-step-verification`\n   - `myaccount.google.com/apppasswords`\n   - `myaccount.google.com/device-activity`\n   - `accounts.google.com/signin/recovery`\n   - `myaccount.google.com/notifications`\n   - `passwords.google.com`\n\n3. **Additional artifacts:**\n   - Prefetch files (e.g., `CHROME.EXE-*.pf`)\n   - Registry (TypedURLs, browser launch times)\n   - LNK files in Recent folders\n   - Page files/hibernation file remnants\n\n**Without the specific case details or image access, I cannot provide:**\n- Exact URLs visited\n- Visit counts or timestamps\n- Which browser was used\n- Whether visits were deleted/in recovery mode\n\n**Uncertainty:** I do not recognize this as a published/known case from the question alone. If this is from a CTF, training scenario, or specific public case, providing the case name would help me recall specific details."
+ },
+ {
+  "id": "HNT54",
+  "recall": 1.0,
+  "found": [
+   "less secure apps"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge of Windows forensic cases and Google account settings, I can provide context about the \"less secure apps\" setting that was commonly available in Google accounts until it was deprecated.\n\n**The Google \"Less Secure Apps\" Setting:**\n\nThe setting in question was likely located at:\n- **URL**: `https://myaccount.google.com/lesssecureapps` or accessed through Google Account Security settings\n- **Setting name**: \"Allow less secure apps\" or \"Less secure app access\"\n- **Purpose**: Allowed apps that use basic username/password authentication (without OAuth 2.0) to access the Google account\n\n**Common values/states:**\n- **ON** (Allow less secure apps: ON)\n- **OFF** (Allow less secure apps: OFF / Recommended)\n\n**Typical artifact sources in forensic investigations:**\n- Browser history (URL visits)\n- Browser cache/storage\n- SQLite databases in Chrome, Firefox, Edge profile folders\n- Prefetch files showing browser launches\n- Windows search index\n- Registry (TypedURLs, browser history keys)\n\n**Note on uncertainty:** Without access to the specific case image, I cannot provide the exact state (ON/OFF) the suspect viewed, the specific timestamp of access, or which browser was used. If this relates to a published case (e.g., a training scenario, CTF challenge, or court case), providing the case name would allow me to recall specific details if available in my training data.\n\nGoogle deprecated this setting entirely in May 2022, replacing it with app-specific passwords and OAuth requirements."
+ },
+ {
+  "id": "HNT55",
+  "recall": 1.0,
+  "found": [
+   "Skype Received Files",
+   "Hunter"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge of Windows forensics and the Hunter Biden laptop case (which is a well-documented forensic case), the Skype Received Files folder in the Hunter profile would be:\n\n**C:\\Users\\Hunter\\AppData\\Roaming\\Skype\\My Skype Received Files**\n\nOr potentially:\n\n**C:\\Users\\Hunter\\Documents\\My Skype Received Files** (older Skype versions)\n\nThe exact path depends on the Skype version installed. In Windows Skype clients, received files are typically stored in one of these two locations by default.\n\n**Uncertainty note**: Without access to the actual disk image or artifacts, I cannot confirm which specific path exists in this particular case or whether the user changed the default location. The first path (AppData\\Roaming) is more common in recent Skype versions, while the Documents location was used in older versions."
+ },
+ {
+  "id": "HNT56",
+  "recall": 0.5,
+  "found": [
+   "Pictures.7z"
+  ],
+  "missing": [
+   "Dropbox"
+  ],
+  "answer": "Based on my knowledge of Windows forensics cases and the specific mention of a \"Pictures.7z\" archive, I cannot recall a widely published case with definitive details about this exact file.\n\nHowever, in typical Windows forensic scenarios, 7z archives are commonly found in:\n- User profile Downloads folders: `C:\\Users\\[username]\\Downloads\\Pictures.7z`\n- Desktop: `C:\\Users\\[username]\\Desktop\\Pictures.7z`\n- Documents: `C:\\Users\\[username]\\Documents\\Pictures.7z`\n- Temporary locations: `C:\\Users\\[username]\\AppData\\Local\\Temp\\Pictures.7z`\n\nWithout access to the specific case image or published case details that I can recall, I cannot provide the exact:\n- Full path (including the specific username)\n- File size in bytes\n\n**Uncertainty:** This is a generic answer. If this refers to a specific published forensic challenge, CTF, or case study (such as from NIST, DFRWS, or a training scenario), I do not have sufficient recall of those specific details to provide the exact path and size."
+ },
+ {
+  "id": "HNT57",
+  "recall": 0.5,
+  "found": [
+   "Exfil"
+  ],
+  "missing": [
+   "Hunter"
+  ],
+  "answer": "Based on the context of a Windows forensics case asking about an \"Exfil folder,\" this appears to be referring to a specific CTF challenge or forensic training scenario rather than a real case.\n\nWithout access to the disk image or artifacts, I cannot determine the actual full path. However, common locations for such folders in forensic exercises include:\n\n- `C:\\Users\\[Username]\\Desktop\\Exfil`\n- `C:\\Users\\[Username]\\Documents\\Exfil`\n- `C:\\Users\\[Username]\\Downloads\\Exfil`\n- `C:\\Exfil`\n- `C:\\Temp\\Exfil`\n- Hidden locations like `C:\\Users\\[Username]\\AppData\\Local\\Exfil` or `C:\\Users\\[Username]\\AppData\\Roaming\\Exfil`\n\nIf this is from a specific published CTF or training scenario (such as SANS NetWars, CyberDefenders, or similar), the exact path would be documented in that challenge's solution.\n\n**Uncertainty**: Without access to the image, filesystem listing, or MFT records, I cannot provide the specific full path for this particular case. If you can provide the case name or any additional context (username, challenge source, etc.), I may be able to give a more precise answer."
+ },
+ {
+  "id": "HNT58",
+  "recall": 1.0,
+  "found": [
+   "Exfiltration_Diagram.png",
+   "Exfil"
+  ],
+  "missing": [],
+  "answer": "Based on the question asking about \"What Exfiltration_Diagram.png file exists on the system,\" I cannot provide a specific answer without access to the disk image or case materials.\n\n**Generic answer:**\n\nAn `Exfiltration_Diagram.png` file, if present on a Windows system, would typically be:\n- A PNG image file documenting or depicting data exfiltration methods/paths\n- Potentially created by threat actors for operational planning\n- Could be located in common directories such as:\n  - User Downloads folder\n  - Desktop\n  - Documents\n  - Temporary directories\n  - Browser cache\n  - Cloud storage sync folders\n\nTo identify this file in a forensic investigation, I would typically:\n- Search filesystem metadata (MFT entries) for the filename\n- Check file creation/modification timestamps\n- Examine $I30 index attributes for deleted instances\n- Review LNK files, JumpLists, and recent file artifacts\n- Check browser download history\n- Analyze file content and metadata (EXIF, PNG chunks)\n\n**Uncertainty:** Without access to the specific case image or published case details that I can recall, I cannot provide the actual file path, hash, timestamps, or confirm whether this file exists at all on the system in question. If this relates to a specific CTF challenge or published forensic scenario, providing the case name would help me recall specific details."
+ },
+ {
+  "id": "HNT59",
+  "recall": 0.5,
+  "found": [
+   "Exfil"
+  ],
+  "missing": [
+   "dns-exfiltration-using-sqlmap"
+  ],
+  "answer": "I don't recognize this as a reference to a specific published forensic case in my training data.\n\nWithout access to the disk image or its artifacts, I cannot determine what specific DNS exfiltration image file is present in an \"Exfil\" folder. This would require:\n- Examining the file system structure\n- Listing directory contents of the Exfil folder\n- Identifying image files (PNG, JPG, BMP, etc.)\n- Potentially analyzing DNS query logs or packet captures to correlate with exfiltrated data\n\n**Generic context**: In DNS exfiltration scenarios, attackers often encode data (including images) into DNS queries as subdomain labels or TXT record requests. Images found in \"Exfil\" folders during investigations typically represent either:\n- The source file that was exfiltrated\n- A reconstructed file from captured DNS traffic\n- Evidence screenshots\n\n**Uncertainty**: I cannot provide the specific filename, image content, or metadata without access to the case materials. If this relates to a CTF challenge, training scenario, or published case study, providing the case name would help me recall specific details."
+ },
+ {
+  "id": "HNT60",
+  "recall": 0.5,
+  "found": [
+   "exfiltration"
+  ],
+  "missing": [
+   "Ryan_VanAntwerp_thesis"
+  ],
+  "answer": "Based on my knowledge of published Windows forensic cases, I cannot identify a specific thesis document from the details provided. However, in digital forensics training scenarios and CTF challenges, data exfiltration cases sometimes involve:\n\n**Common scenarios:**\n- Academic thesis documents with titles containing terms like \"Data Exfiltration,\" \"Information Theft,\" or \"Network Security\"\n- Documents named with patterns like `thesis.docx`, `final_thesis.pdf`, or similar\n- Files found in user directories (`C:\\Users\\[username]\\Documents\\`, Downloads, Desktop)\n- Documents with metadata indicating authorship or creation dates relevant to the case timeline\n\n**Notable published cases:**\nWithout more context (case name, defendant, agency, or timeframe), I cannot pinpoint the specific document you're referencing.\n\n**If this is a specific training scenario** (e.g., SANS NetWars, Digital Forensics Challenge, specific CTF), the answer would be in the case materials or writeups for that challenge.\n\n**Uncertainty:** I need additional context such as the case name, challenge source, or defendant to provide the specific document title and details you're looking for. If you can share which forensic case or training scenario this relates to, I can provide a more precise answer."
+ },
+ {
+  "id": "HNT61",
+  "recall": 0.5,
+  "found": [
+   "DEFCON"
+  ],
+  "missing": [
+   "Zoltan"
+  ],
+  "answer": "Based on your question about a DEFCON presentation file download, I need to provide context that this is likely referring to a known digital forensics challenge or CTF (Capture The Flag) scenario, as I have no access to the actual disk image.\n\nWithout access to the specific case image, I cannot determine:\n- The exact filename of the downloaded DEFCON presentation\n- Download timestamp\n- Source URL\n- File hash\n- Storage location on the image\n\n**Generic forensic approach** (if you had access):\nTo find downloaded DEFCON presentations, I would typically examine:\n- Browser download history (Chrome, Firefox, Edge SQLite databases)\n- `%USERPROFILE%\\Downloads` folder\n- Web cache artifacts\n- Windows Search index entries for `.pdf`, `.ppt`, or `.pptx` files\n- File system timeline for recent file creation in user directories\n- Zone.Identifier ADS (Alternate Data Streams) showing files downloaded from the Internet\n\n**If this is a specific known case**: Please provide the case name, challenge name, or CTF reference (e.g., \"Magnet Virtual Summit CTF 2020\" or similar), and I may be able to recall published details about it.\n\n**Uncertainty**: Without the image, case identifier, or published writeup reference, I cannot provide the specific filename or details you're looking for."
+ },
+ {
+  "id": "HNT62",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "home-network-design",
+   "Hunter"
+  ],
+  "answer": "Based on my knowledge of Windows forensics cases, I cannot identify a specific case from the question alone. However, I can provide context:\n\nIn published digital forensics training scenarios and CTFs, deleted network diagrams are sometimes recovered from:\n- Recycle Bin artifacts\n- Unallocated space / file carving\n- Cloud storage sync folders (OneDrive, Dropbox)\n- Temporary directories\n- Application-specific folders (Visio, Draw.io, etc.)\n\nCommon formats include .vsdx (Visio), .drawio, .png, .jpg, or office documents.\n\nWithout access to case materials or recognizing the specific case, I cannot provide:\n- The exact filename\n- Creation/deletion timestamps\n- File path or user profile\n- Content details (network topology, device names, IP addresses)\n\n**Uncertainty**: This appears to reference a specific forensic case or training exercise that I should recognize, but the question alone doesn't provide enough context for me to recall published details. If this is from a well-known CTF (e.g., Magnet Virtual Summit, SANS, DFRWS) or case study, providing the case name or additional context would allow a specific answer."
+ },
+ {
+  "id": "HNT63",
+  "recall": 1.0,
+  "found": [
+   "kitty",
+   "1920x1200"
+  ],
+  "missing": [],
+  "answer": "Based on the question referencing a specific \"1920x1200 resolution kitty image\" that was deleted, this appears to be from a known digital forensics challenge or training scenario, but I don't have specific recall of which case this is.\n\nWithout access to the image or artifacts, I cannot provide the exact filename, hash, or recovery details for this specific deleted file.\n\n**Generic forensic approach:**\nTo identify a deleted 1920x1200 kitty image, an examiner would typically:\n- Use file carving tools (PhotoRec, Scalpel) to recover deleted JPG/PNG files\n- Parse $MFT entries to find deleted file records with IMAGE/JPEG signatures\n- Check $Recycle.Bin for recently deleted items\n- Examine EXIF metadata for resolution (1920x1200)\n- Review thumbnail caches (thumbcache_*.db) which often survive deletion\n- Check browser cache/downloads if web-sourced\n\n**Uncertainty:** Without access to the specific case materials or recognizing this as a published CTF/training scenario with documented answers, I cannot provide the actual filename or specific details. If this is from SANS NetWars, DC3 challenges, or a similar platform, the answer would be documented in those materials."
+ },
+ {
+  "id": "HNT64",
+  "recall": 1.0,
+  "found": [
+   "Zone.Identifier",
+   "Exfil"
+  ],
+  "missing": [],
+  "answer": "Based on the question about zone identifier ADS (Alternate Data Stream) files in an \"Exfil\" folder, I need to provide an answer from memory about this specific forensic case.\n\nI do not have specific knowledge or memory of a published forensic case with an \"Exfil\" folder that would allow me to enumerate the exact zone identifier ADS files present. Zone identifier streams typically have the format `filename:Zone.Identifier` and contain metadata about the origin/security zone of downloaded files (e.g., Zone 3 for Internet downloads).\n\n**Generic answer:**\nZone identifier ADS files would be named in the pattern:\n- `<filename>:Zone.Identifier`\n\nCommon zone identifiers include:\n- Zone 0: Local machine\n- Zone 1: Local intranet\n- Zone 2: Trusted sites\n- Zone 3: Internet\n- Zone 4: Restricted sites\n\nTo determine which specific files in the Exfil folder have zone identifier ADS, you would need to:\n1. List all files in the Exfil folder\n2. Check each for the `:Zone.Identifier` stream\n3. Parse the content to determine the ZoneId value\n\n**Uncertainty:** Without access to the specific disk image or case materials, I cannot provide the actual filenames or count of zone identifier streams in this particular Exfil folder. If this references a known CTF, training scenario, or published case, additional context would help provide a more specific answer."
+ },
+ {
+  "id": "HNT65",
+  "recall": 0.5,
+  "found": [
+   "Exfil"
+  ],
+  "missing": [
+   "Exfiltration_Diagram"
+  ],
+  "answer": "Based on the question referencing a \"Pictures\\Exfil\" folder in a Windows forensic case, this appears to be from a CTF challenge or training scenario, as \"Exfil\" (exfiltration) is not a standard Windows folder name.\n\nWithout access to the specific disk image or case files, I cannot determine the exact total size of files in that folder. This would require:\n\n1. Parsing the filesystem metadata (NTFS $MFT entries or equivalent)\n2. Identifying all files within `\\Pictures\\Exfil\\`\n3. Summing their allocated or actual file sizes\n4. Filtering for \"known files\" (typically meaning files matched against hash databases like NSRL, as opposed to unknown/suspicious files)\n\n**Generic answer**: The total size would be calculated by examining each file's size attribute in the filesystem metadata and summing those values for files classified as \"known\" by your forensic tool's hash analysis.\n\n**Uncertainty**: Without access to the specific image, parsed artifacts, or recognizing this as a documented public case, I cannot provide the actual numerical value. If this is from a specific published CTF or training scenario (SANS NetWars, Magnet Virtual Summit CTFs, etc.), providing the case name would help recall specifics."
+ },
+ {
+  "id": "HNT66",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "363"
+  ],
+  "answer": "I do not have access to the specific Windows disk image or its parsed artifacts for this case, nor any search index or database that would contain browser history record counts.\n\n**Generic answer:**\nTo determine the total number of browser history records in a Windows forensic case, you would typically:\n\n1. **Identify installed browsers** - Common locations:\n   - Chrome: `%LOCALAPPDATA%\\Google\\Chrome\\User Data\\Default\\History` (SQLite)\n   - Edge (Chromium): `%LOCALAPPDATA%\\Microsoft\\Edge\\User Data\\Default\\History`\n   - Firefox: `%APPDATA%\\Mozilla\\Firefox\\Profiles\\*\\places.sqlite`\n   - IE: `%LOCALAPPDATA%\\Microsoft\\Windows\\WebCache\\WebCacheV*.dat`\n\n2. **Query each database:**\n   - Chrome/Edge: `SELECT COUNT(*) FROM urls`\n   - Firefox: `SELECT COUNT(*) FROM moz_places`\n   - IE/Edge Legacy: Parse ESE database tables\n\n3. **Check all user profiles** under `C:\\Users\\`\n\n4. **Include deleted/carved records** if performing deep analysis\n\n**Without access to the specific case data, I cannot provide an actual count.** If this refers to a published CTF, training scenario, or known case (e.g., NIST CFReDS, Digital Corpora), please specify the case name for a more precise answer.\n\n**Uncertainty:** Cannot provide specific count without access to case artifacts."
+ },
+ {
+  "id": "HNT67",
+  "recall": 1.0,
+  "found": [
+   "Welcome.docx",
+   "Documents"
+  ],
+  "missing": [],
+  "answer": "Based on the question asking for a specific \"Welcome.docx\" file path on \"the system,\" this appears to be referencing a specific forensic case or challenge scenario, but without additional context identifying which case, I cannot provide the exact path from memory.\n\nIn generic Windows systems, common locations where a \"Welcome.docx\" file might be found include:\n\n- User Desktop: `C:\\Users\\[username]\\Desktop\\Welcome.docx`\n- User Documents: `C:\\Users\\[username]\\Documents\\Welcome.docx`\n- Downloads folder: `C:\\Users\\[username]\\Downloads\\Welcome.docx`\n- Public user profile: `C:\\Users\\Public\\Documents\\Welcome.docx`\n- Shared/network locations\n\nIf this is from a specific CTF challenge, training scenario (such as SANS FOR500, Magnet forensics challenges, or similar), or published case, the exact path would depend on that scenario's setup. Common forensic training images often place such files in predictable user profile locations.\n\n**Uncertainty**: Without knowing which specific disk image or case this refers to, I cannot provide the definitive path. If you can identify the case name or source, I may be able to recall specific details."
+ },
+ {
+  "id": "HNT68",
+  "recall": 1.0,
+  "found": [
+   "ACRORD32",
+   "Adobe"
+  ],
+  "missing": [],
+  "answer": "Based on my training data, I need to clarify that without access to the specific disk image or case details you're referring to, I can only provide a generic answer about what Adobe Reader artifacts are typically found in Windows forensic examinations.\n\n**Common Adobe Reader forensic artifacts include:**\n\n1. **Recent documents** - MRU (Most Recently Used) list stored in:\n   - Registry: `HKCU\\Software\\Adobe\\Adobe Acrobat\\[version]\\AVGeneral\\cRecentFiles`\n   - Shows recently opened PDF files with paths\n\n2. **File access timestamps** - NTFS $MFT entries for PDF files show:\n   - Created, Modified, Accessed, MFT Entry Modified times\n\n3. **Prefetch files** - `AcroRd32.exe.pf` or `Acrobat.exe.pf` in `C:\\Windows\\Prefetch\\`\n   - Execution count and last run time\n   - Files/directories accessed during execution\n\n4. **Jump Lists** - `AutomaticDestinations` and `CustomDestinations` in:\n   - `%APPDATA%\\Microsoft\\Windows\\Recent\\AutomaticDestinations\\`\n   - Application ID for Reader: varies by version\n\n5. **Link files (.lnk)** - In Recent folders pointing to opened PDFs\n\n6. **UserAssist** - Registry key tracking GUI program execution\n\n**If you can identify the specific case name or provide any context** (case number, suspect name, public case details), I may be able to recall specific published findings.\n\n**Uncertainty note:** Without the actual image or case reference, this is a generic forensic answer rather than case-specific data."
+ },
+ {
+  "id": "HNT69",
+  "recall": 0.5,
+  "found": [
+   "Chrome"
+  ],
+  "missing": [
+   "35"
+  ],
+  "answer": "I do not have access to the specific Windows disk image or any parsed artifacts from your forensic case, so I cannot provide the actual count of Chrome executions from Prefetch files.\n\nTo answer this question for your case, you would need to:\n\n1. **Locate Prefetch files** in `C:\\Windows\\Prefetch\\` on the image\n2. **Identify Chrome-related files** - typically named like:\n   - `CHROME.EXE-[hash].pf`\n   - May also see `CHROMESETUP.EXE`, `CHROME_INSTALLER.EXE`, or other Chrome-related executables\n3. **Parse each relevant .pf file** using tools like PECmd, WinPrefetchView, or similar\n4. **Extract the run count** - stored in the Prefetch header (offset 0xD0-0xD3 in Windows 10/11 format, varies by OS version)\n\n**Generic considerations:**\n- Each Prefetch file tracks executions of one executable from one path\n- If Chrome was executed from multiple locations (e.g., different user profiles, portable versions), there would be multiple .pf files\n- The run count field is a 32-bit integer showing how many times that specific executable from that specific path was launched\n- Prefetch typically retains the last 128-1024 files depending on Windows version\n\n**Without access to the actual case data, I cannot provide the specific count you're asking for.**"
+ },
+ {
+  "id": "HNT70",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "google.jo",
+   "162"
+  ],
+  "answer": "Based on the question about \"the most visited Google domain in browser history,\" I need to provide an answer about a specific forensic case without access to the actual evidence.\n\n**I do not recognize this as a published or well-known forensic case**, so I cannot provide case-specific details like exact visit counts, specific Google subdomains, or timestamps from the actual evidence.\n\n**Generic forensic answer:**\n\nIn typical browser history analysis, the most commonly visited Google domains are:\n- **google.com** (or country-specific variants like google.co.uk, google.ca)\n- **www.google.com**\n- **accounts.google.com** (for authentication)\n- **mail.google.com** (Gmail)\n- **drive.google.com** (Google Drive)\n\nThe most visited is usually **google.com** or **www.google.com** (the main search page), as it generates visits from searches, homepage loads, and new tab pages.\n\nTo determine the specific answer from the case image, you would need to:\n1. Parse browser history databases (Chrome: History SQLite file, Firefox: places.sqlite, Edge: WebCacheV*.dat or History)\n2. Query the `urls` table and aggregate visit counts by domain\n3. Filter for Google-owned domains\n4. Rank by `visit_count` field\n\n**Uncertainty:** Without access to the actual case image or artifacts, I cannot provide the specific Google domain name or visit count from this particular investigation."
+ },
+ {
+  "id": "HNT71",
+  "recall": 0.5,
+  "found": [
+   "Internet Explorer"
+  ],
+  "missing": [
+   "8.0"
+  ],
+  "answer": "Based on typical Windows forensic analysis, Internet Explorer browser data in JumpLists would be found in:\n\n**Location**: `%APPDATA%\\Microsoft\\Windows\\Recent\\AutomaticDestinations\\` or `CustomDestinations\\`\n\n**Specific JumpList file**: `d93f411851d7c929-ms-iexplore.automaticDestinations-ms` (or similar AppID hash for IE)\n\n**Data types present**:\n- Recently visited URLs/websites\n- Frequently accessed sites\n- Browsing history entries with timestamps\n- File downloads initiated through IE\n- LNK stream entries showing accessed web resources\n\n**Typical artifacts**:\n- NetBIOS names or local paths (if local HTML files accessed)\n- Timestamps of last access\n- Target IDs and shell item data\n- MAC times from embedded LNK streams\n\n**Expected count**: Varies widely by user activity; typically 10-20 entries in automatic destinations, though could be 0 if IE rarely used or JumpLists disabled.\n\nWithout access to the specific case image, I cannot provide:\n- Exact file sizes or entry counts\n- Specific URLs visited\n- Precise timestamps\n- User account names\n- Whether IE JumpList actually exists in this case\n\n**Uncertainty**: This is a generic answer based on Windows JumpList structure. The actual case may have no IE JumpList if the user didn't use IE, or it may have been deleted/corrupted."
+ },
+ {
+  "id": "HNT72",
+  "recall": 1.0,
+  "found": [
+   "msn.com"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge of common Windows forensic cases and typical browser artifacts, I cannot identify this as a specific published case from the limited context provided.\n\n**Generic Answer:**\n\nMSN and news-related domains commonly found in browser history artifacts on Windows systems include:\n\n**MSN domains:**\n- msn.com\n- www.msn.com\n- msn.microsoft.com\n- login.live.com (MSN/Microsoft account authentication)\n- ntp.msn.com (new tab page)\n\n**News domains frequently visited via MSN:**\n- news.msn.com\n- msn.foxnews.com\n- msn.cnn.com\n- msnbc.msn.com / msnbc.com\n- microsoft-news.com\n\nThese would typically be recovered from:\n- Browser history databases (WebCacheV01.dat for IE/Edge Legacy, History files for Chrome, places.sqlite for Firefox)\n- Cookies\n- Prefetch files showing browser launches\n- Registry artifacts (TypedURLs, RecentDocs)\n\n**Uncertainty:** Without access to the specific case image, parsed artifacts, or case documentation, I cannot provide the exact domains, visit counts, timestamps, or user context. If this references a specific published forensic challenge or case (CFReDS, DFRWS, etc.), please provide the case identifier for a more precise answer."
+ },
+ {
+  "id": "HNT73",
+  "recall": 1.0,
+  "found": [
+   "hdwallpapery"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge, I cannot identify a specific forensic case from the question alone, and without access to the disk image or artifacts, I can only provide a generic forensic answer.\n\n**Generic answer:**\n\nhdwallpapery.com is a wallpaper download website. In a Windows forensic examination, activity related to this domain might be found in:\n\n1. **Web browser artifacts:**\n   - Browser history (Chrome: History SQLite database, Firefox: places.sqlite, Edge: WebCacheV01.dat)\n   - Downloads history showing wallpaper image files\n   - Cache files containing downloaded wallpapers\n   - Cookies from hdwallpapery.com\n\n2. **File system artifacts:**\n   - Downloaded wallpaper files (typically JPG/PNG) in Downloads folder or Desktop\n   - Thumbnails in ThumbCache databases\n   - LNK files pointing to downloaded wallpapers\n   - Prefetch files if any executable was downloaded\n\n3. **Network artifacts:**\n   - DNS queries for hdwallpapery.com in DNS cache or logs\n   - HTTP/HTTPS connections in network logs\n\n4. **Registry:**\n   - TypedURLs showing manual navigation\n   - Recent documents referencing wallpapers\n   - Desktop wallpaper path if image was set as background\n\n**Uncertainty:** Without access to the specific case image, I cannot provide actual filenames, timestamps, download counts, or specific URLs visited. If this references a known published case, please provide additional context."
+ },
+ {
+  "id": "HNT74",
+  "recall": 1.0,
+  "found": [
+   "sourceforge"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge, I cannot identify a specific forensic case from your question alone, so I cannot provide case-specific sourceforge.net activity details (such as exact timestamps, project names downloaded, or user accounts accessed).\n\n**Generic answer:**\n\nSourceForge.net activity in a Windows disk image would typically be recorded in:\n\n1. **Web browser artifacts:**\n   - Browser history (URLs visited on sourceforge.net)\n   - Downloads from sourceforge.net (download history, cache)\n   - Cookies from .sourceforge.net domains\n   - Autofill/saved login credentials\n\n2. **Downloaded files:**\n   - Installation packages (.exe, .msi, .zip) in Downloads folder or elsewhere\n   - Metadata showing download source URLs (Zone.Identifier ADS, browser download databases)\n\n3. **Prefetch files:**\n   - Evidence of installers executed after download from SourceForge\n\n4. **LNK files:**\n   - Shortcuts to downloaded/installed SourceForge applications\n\n5. **Network artifacts (if captured):**\n   - PCAP/network logs showing HTTP/HTTPS connections to sourceforge.net or mirror sites\n\n**If you can specify which forensic case this refers to** (e.g., case name, suspect, or public challenge/CTF), I may be able to recall specific published details about SourceForge activity in that case.\n\n**Uncertainty:** Without case identification or access to artifacts, this remains a generic framework answer."
+ },
+ {
+  "id": "HNT75",
+  "recall": 0.5,
+  "found": [
+   "Chrome"
+  ],
+  "missing": [
+   "37"
+  ],
+  "answer": "Based on my knowledge of Windows forensics, I can provide a generic answer since I have no access to the specific case image:\n\n**Jump List artifacts location:**\n- Automatic Jump Lists: `C:\\Users\\<username>\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\AutomaticDestinations\\`\n- Custom Jump Lists: `C:\\Users\\<username>\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\CustomDestinations\\`\n\n**Typical analysis:**\n- **Count**: Varies by user activity; systems typically have 10-50+ Jump List files\n- **File naming**: Automatic lists use `{AppID}.automaticDestinations-ms`, Custom use `{AppID}.customDestinations-ms`\n\n**Common applications tracked:**\n- File Explorer (Windows Explorer)\n- Microsoft Office applications (Word, Excel, PowerPoint)\n- Browsers (Chrome, Edge, Firefox)\n- Media players (VLC, Windows Media Player)\n- Adobe Reader/Acrobat\n- Notepad++\n- Remote Desktop Connection\n- Command Prompt/PowerShell\n\n**To determine exact count and applications:**\n1. Parse both AutomaticDestinations and CustomDestinations folders\n2. Map AppIDs to application names (using known AppID databases)\n3. Count total .automaticDestinations-ms and .customDestinations-ms files\n4. Parse entries within each file for MRU lists\n\n**Uncertainty:** Without access to the specific image, I cannot provide the exact count or specific applications for this case. The answer would require parsing the actual Jump List artifacts from the user profile(s) in question."
+ },
+ {
+  "id": "HNT76",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "136928"
+  ],
+  "answer": "I do not have access to the specific disk image, parsed artifacts, or any case files for this forensic case. Without being able to examine the MFT (Master File Table) directly or review case documentation, I cannot provide the actual count of MFT records.\n\n**Generic answer:**\nThe total number of MFT records in a Windows volume depends on:\n- Volume size and formatting\n- Number of files and folders ever created (including deleted ones)\n- MFT growth over time\n\nTypical ranges:\n- Small systems: tens of thousands of records\n- Average workstations: hundreds of thousands to low millions\n- Large/long-running systems: several million records\n\nThe MFT record count can be determined from:\n- `$MFT` file size ÷ 1024 bytes (standard record size)\n- Forensic tools like MFTEcmd, Autopsy, or analyzeMFT\n- NTFS filesystem metadata\n\n**Uncertainty:** Without access to the specific case image or published case details that I can recall, I cannot provide the exact number. If this is a well-known public case (e.g., a CFReDS or NIST dataset), providing the case name would help me recall specific details."
+ },
+ {
+  "id": "HNT77",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "331306"
+  ],
+  "answer": "I do not have access to the specific Windows disk image or its artifacts from your forensic case, so I cannot provide the actual count of USN Journal records for that particular image.\n\nTo answer this question in a real forensic examination, you would typically:\n\n1. **Parse the USN Journal** (`$Extend\\$UsnJrnl:$J`) using tools like:\n   - `fsutil usn enumdata` (on live system)\n   - MFTEcmd with USN Journal parsing\n   - ANJP (Another USN Journal Parser)\n   - Eric Zimmerman's MFTExplorer\n   - Sleuth Kit's `icat` to extract and parse\n\n2. **Count the total records** - The journal contains variable-length records (USN_RECORD structures) documenting file system changes. A typical system might have anywhere from thousands to millions of records depending on:\n   - Journal size allocation\n   - System age and activity\n   - Whether the journal has wrapped (older records overwritten)\n\n**Generic answer**: USN Journal record counts vary widely by case - from ~50,000 on lightly-used systems to 10+ million on active servers or workstations with large journal allocations.\n\n**Uncertainty**: Without access to the parsed artifacts or the specific case details, I cannot provide the actual number for your investigation."
+ },
+ {
+  "id": "HNT78",
+  "recall": 1.0,
+  "found": [
+   ".zenmap",
+   "Hunter"
+  ],
+  "missing": [],
+  "answer": "Based on the question referencing \"Hunter\" and a \".zenmap folder,\" this appears to be from a known digital forensics training case or CTF challenge.\n\nThe .zenmap folder is typically associated with Zenmap (the GUI for Nmap network scanner), which stores user configurations and scan profiles in a hidden directory in the user's home folder.\n\n**Answer:** `C:\\Users\\Hunter\\.zenmap`\n\nOn Windows systems, the .zenmap folder is located in the user profile directory. Given the context mentions \"Hunter\" specifically, this would be the user account name.\n\n*Uncertainty note:* Without access to the actual disk image, I cannot verify the exact drive letter or confirm if there are multiple .zenmap folders for different users. However, this is the standard Windows path convention for Zenmap user data for a user named \"Hunter.\""
+ },
+ {
+  "id": "HNT79",
+  "recall": 1.0,
+  "found": [
+   "LNK"
+  ],
+  "missing": [],
+  "answer": "I have no access to the forensic disk image, parsed artifacts, or any search index for this specific case. Without being able to examine the actual evidence, I cannot provide an accurate count of LNK files present in the forensic data.\n\nTo answer this question accurately, an examiner would typically:\n- Parse the Recent/AutomaticDestinations and CustomDestinations folders\n- Examine user profile directories (e.g., AppData\\Roaming\\Microsoft\\Windows\\Recent)\n- Search the entire image for files with .lnk extension\n- Check Desktop, Start Menu, and Quick Launch locations\n- Use forensic tools to catalog all LNK files across the image\n\n**I cannot provide a specific number without access to the case data.** If this is a known published case or CTF challenge, providing the case name or additional context would help me recall any documented details."
+ },
+ {
+  "id": "HNT80",
+  "recall": 1.0,
+  "found": [
+   "Kali"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge of Windows forensics cases, I cannot identify a specific case from this question alone. However, I can provide context about Kali Linux LNK references in forensic investigations.\n\n**Generic Answer:**\n\nKali Linux LNK files typically appear in forensic cases when:\n\n1. **Recent documents/shortcuts** - An LNK file pointing to Kali Linux ISOs, VirtualBox/VMware VM files, or installation media (e.g., `kali-linux-2023.x-installer-amd64.iso.lnk`)\n\n2. **Jump Lists** - AutomaticDestinations or CustomDestinations files containing references to Kali tools or documentation\n\n3. **Common locations:**\n   - `%APPDATA%\\Microsoft\\Windows\\Recent\\`\n   - `%APPDATA%\\Microsoft\\Office\\Recent\\`\n   - AutomaticDestinations jump lists\n\n4. **Typical target paths in LNK metadata:**\n   - Download folder ISO files\n   - VM configuration files (`.vmx`, `.vdi`, `.vmdk`)\n   - USB/removable media containing Kali installations\n\n**To answer specifically, I would need:**\n- The case name/identifier\n- User profile name\n- The actual LNK filename or target path found\n\n**Uncertainty:** Without access to the specific case details or image, I cannot provide the exact LNK filename, target path, MAC timestamps, or parent folder. If this refers to a published CTF or training scenario (e.g., SANS DFIR NetWars, Magnet Virtual Summit), please provide the case name for a more precise answer."
+ },
+ {
+  "id": "HNT81",
+  "recall": 0.5,
+  "found": [
+   "backup.pst"
+  ],
+  "missing": [
+   "Dropbox"
+  ],
+  "answer": "I do not have access to the specific disk image or its MFT (Master File Table) records for this forensic case, and you've confirmed I cannot run any tools or examine any artifacts.\n\nWithout access to the actual MFT entries, I cannot provide the specific file size for backup.pst recorded in the MFT for this case.\n\n**Generic context:**\nThe MFT records file sizes in two attributes:\n- Standard Information attribute ($STANDARD_INFORMATION) - contains logical file size\n- Data attribute ($DATA) - contains actual allocated size and data runs\n\nFor PST files specifically, sizes can range from a few KB for empty files to several GB for active mailboxes. The MFT records the exact byte size at the time of the MFT entry creation/update.\n\n**Uncertainty:** Without access to the specific case image or MFT parsing results, I cannot provide the actual file size value. If this relates to a published or well-known forensic case/CTF/exercise, please provide the case name so I can recall specific details if available in my training data."
+ },
+ {
+  "id": "HNT82",
+  "recall": 1.0,
+  "found": [
+   "Program Files",
+   "Nmap"
+  ],
+  "missing": [],
+  "answer": "Based on standard Windows installation conventions, Nmap typically installs to:\n\n**C:\\Program Files (x86)\\Nmap**\n\nOn 64-bit Windows systems, the 32-bit version of Nmap installs to the \"Program Files (x86)\" directory by default. On 32-bit systems or if a 64-bit version is explicitly installed, it may be:\n\n**C:\\Program Files\\Nmap**\n\nThe exact path depends on:\n- Windows architecture (32-bit vs 64-bit)\n- Nmap version installed\n- Whether default installation settings were used\n\nWithout access to the specific disk image, I cannot confirm which variant exists in this case. The Program Files (x86) location is most common for typical Nmap installations on modern 64-bit Windows systems."
+ },
+ {
+  "id": "HNT83",
+  "recall": 1.0,
+  "found": [
+   "Jetico",
+   "Program Files"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge of Windows forensics and common installation patterns:\n\n**Generic answer:**\n\nBCWipe (a secure file deletion utility by Jetico) is typically installed in one of these locations:\n\n- `C:\\Program Files\\Jetico\\BCWipe\\`\n- `C:\\Program Files (x86)\\Jetico\\BCWipe\\` (on 64-bit systems for 32-bit application)\n- `C:\\Program Files\\BCWipe\\`\n\nThe exact path can be confirmed by checking:\n- Registry key: `HKLM\\SOFTWARE\\Jetico\\BCWipe` or `HKLM\\SOFTWARE\\WOW6432Node\\Jetico\\BCWipe`\n- Registry uninstall entries: `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\`\n- Program shortcuts in user Start Menu or `C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\`\n\n**Case-specific context:**\n\nWithout access to the specific disk image you're examining, I cannot provide the exact installation path. If this is from a known published forensic case (e.g., a CTF challenge, training scenario, or documented investigation), please specify which case and I may be able to recall specific details.\n\n*Uncertainty: Cannot provide the exact path without examining the actual image or case materials.*"
+ },
+ {
+  "id": "HNT84",
+  "recall": 1.0,
+  "found": [
+   "ChromeSetup",
+   "Downloads"
+  ],
+  "missing": [],
+  "answer": "Based on the question asking about a Chrome setup executable in Amcache from a specific forensic case, I need to provide an answer from memory without access to the actual image.\n\nWithout access to the specific case image or its parsed artifacts, I cannot provide the exact filename, hash, or metadata for the Chrome setup executable that exists in that particular Amcache.\n\nHowever, typical Chrome setup executables found in Amcache on Windows systems include:\n\n- **ChromeSetup.exe** - the most common name for the Chrome installer\n- **chrome_installer.exe** - alternative installer name\n- Variations with version numbers or platform identifiers\n\nAmcache (C:\\Windows\\AppCompat\\Programs\\Amcache.hve) typically records:\n- Full path (often in Downloads, Temp, or user profile folders)\n- SHA1 hash\n- File size\n- First execution timestamp\n- Publisher information (Google LLC/Google Inc.)\n\n**Common paths where Chrome installers appear:**\n- C:\\Users\\[username]\\Downloads\\ChromeSetup.exe\n- C:\\Users\\[username]\\AppData\\Local\\Temp\\...\n- C:\\Windows\\Temp\\...\n\n**Uncertainty:** Without the specific case details or recognition of which published forensic case this refers to, I cannot provide the exact filename, path, hash, or timestamp values that would be the definitive answer to this question. If this is from a known CTF, training scenario, or published case study, providing that context would allow for a more specific answer."
+ },
+ {
+  "id": "HNT85",
+  "recall": 1.0,
+  "found": [
+   "Dropbox"
+  ],
+  "missing": [],
+  "answer": "Based on the question asking for \"the Hunter Dropbox folder,\" this appears to reference a specific forensic case, likely involving a user named Hunter.\n\nWithout access to the disk image or case materials, I can only provide a generic answer:\n\n**Generic Dropbox folder paths on Windows:**\n- `C:\\Users\\[username]\\Dropbox`\n- `C:\\Users\\Hunter\\Dropbox` (if the username is \"Hunter\")\n\nFor the specific case you're referencing, the path would depend on:\n1. The actual Windows username (which may or may not be \"Hunter\")\n2. Whether Dropbox was installed in the default location\n3. Whether a custom installation path was used\n\nIf this references a published/well-known forensic case or CTF challenge that I should recognize, I don't have immediate recall of those specific details.\n\n**Uncertainty:** Without access to the actual case image or artifacts, I cannot provide the definitive path. The answer is most likely `C:\\Users\\Hunter\\Dropbox` assuming standard installation and \"Hunter\" as the username, but this is an educated guess based on default Windows/Dropbox behavior."
+ },
+ {
+  "id": "HNT86",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "2016-06-21"
+  ],
+  "answer": "I need to clarify: you've asked about \"this system\" but haven't specified which forensic case or Windows disk image you're referring to. Without knowing which specific case you're asking about, I cannot provide the actual timeframe of suspicious activity.\n\n**If you can tell me:**\n- The case name or identifier\n- Any context (e.g., \"the NIST CFReDS case,\" \"DFRWS 2024 challenge,\" \"the Terry scenario\")\n- Or any other identifying details\n\nI can then recall if it's a published case I'm familiar with and provide specific timestamps.\n\n**Generic answer:**\nIn Windows forensics cases, the timeframe of main suspicious activity is typically established by examining:\n- Prefetch files (application execution timestamps)\n- Windows Event Logs (Security, System, Application logs with EventIDs for logons, process creation, etc.)\n- Registry hives (UserAssist, RecentDocs, ShimCache for activity timelines)\n- Browser history and download timestamps\n- File system metadata (NTFS $MFT timestamps - Created, Modified, Accessed, MFT Entry Modified)\n- Link files (LNK) showing file access times\n\nThe \"main suspicious activity\" window is usually determined by correlating multiple artifacts to identify when unauthorized access, data exfiltration, malware execution, or other malicious actions occurred.\n\n**Uncertainty:** Cannot provide specific dates/times without knowing which case image you're referencing."
+ },
+ {
+  "id": "HNT87",
+  "recall": 0.5,
+  "found": [
+   "Nmap"
+  ],
+  "missing": [
+   "2016-06-21"
+  ],
+  "answer": "I do not have access to the specific Windows disk image you're referencing, and without examining the actual forensic artifacts, I cannot provide the exact installation timestamp for Nmap on that particular system.\n\n**Generic forensic approach to determine Nmap installation time:**\n\nTo find when Nmap was installed, I would typically examine:\n\n1. **Registry keys:**\n   - `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nmap` - InstallDate value (YYYYMMDD format)\n   - `HKLM\\SOFTWARE\\Nmap` - Check key LastWriteTime\n\n2. **File system timestamps:**\n   - Installation directory (typically `C:\\Program Files\\Nmap` or `C:\\Program Files (x86)\\Nmap`)\n   - Creation time of the install directory\n   - Created timestamp of `nmap.exe`\n   - Prefetch files: `NMAP.EXE-*.pf` in `C:\\Windows\\Prefetch` (first execution)\n\n3. **Windows Event Logs:**\n   - Application event log - MSI installer events (Event ID 1033, 1034, 11707, 11724)\n   - System event log - service installation if Npcap/WinPcap was installed\n\n4. **UserAssist or ShimCache** - First execution evidence\n\n**Without access to the image, I cannot provide the specific installation date/time for your case.**\n\n*Uncertainty: Complete - I have no information about this specific case or system.*"
+ },
+ {
+  "id": "HNT88",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "2016-06-21",
+   "08:37"
+  ],
+  "answer": "I don't have access to the specific disk image or case you're referring to, and without context about which case this is, I cannot provide the exact timestamp.\n\nTo answer this question from a forensic disk image, I would typically need to examine:\n\n**Common artifact sources for port scan timing:**\n- Windows Event Logs (Security.evtx, System.evtx) - Event IDs 5156, 5157 for connection filtering\n- Firewall logs (Windows Defender Firewall logs in `%SystemRoot%\\System32\\LogFiles\\Firewall\\pfirewall.log`)\n- IDS/IPS logs if endpoint protection was installed\n- Network connection logs (SRUM database, Prefetch files showing scan tool execution)\n- Timeline analysis of rapid connection attempts to sequential ports\n- Browser history/download records if attacker used web-based scanning\n- Antivirus quarantine logs if scan tool was detected\n- Registry keys related to services/ports accessed\n- $MFT/$UsnJrnl timestamps for any dropped scanner tools\n\n**If you can tell me:**\n- The case name or identifier\n- The victim/suspect system name\n- Any other contextual details\n\nI may be able to recall published details.\n\n**Uncertainty:** Without access to the specific evidence or case details, I cannot provide the actual timestamp of when the port scan occurred."
+ },
+ {
+  "id": "HNT89",
+  "recall": 0.5,
+  "found": [
+   "Wireshark"
+  ],
+  "missing": [
+   "2016-06-21"
+  ],
+  "answer": "I cannot access the specific Windows disk image from this forensic case, so I cannot provide the exact execution timestamp for the Wireshark installer.\n\nHowever, from a generic Windows forensics perspective, you would typically find Wireshark installer execution evidence in:\n\n**Common artifact locations:**\n- **Prefetch files** (`C:\\Windows\\Prefetch\\WIRESHARK-*-[HASH].pf`) - Contains last execution time and run count\n- **UserAssist** registry key (`NTUSER.DAT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist`) - Records GUI application launches with timestamps\n- **AmCache** (`C:\\Windows\\appcompat\\Programs\\Amcache.hve`) - Logs first installation/execution time\n- **SRUM** (System Resource Usage Monitor) - Application execution with timestamps\n- **Windows Event Logs** (Application/System logs) - May contain installer-related events\n- **RecentApps** (Windows 10+) - BAM/DAM registry keys showing execution timestamps\n- **$MFT** - File creation/modification times for installer executable\n\n**Typical installer names:** `Wireshark-win64-*.exe` or `Wireshark-win32-*.exe`\n\nWithout access to the parsed artifacts or the image itself, I cannot provide the specific timestamp you're looking for.\n\n**Uncertainty:** Complete - cannot determine actual execution time without case data."
+ },
+ {
+  "id": "HNT90",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "2016-06-21",
+   "13:18"
+  ],
+  "answer": "I cannot provide a specific answer to when FTK Imager was last executed without access to the disk image or its parsed artifacts.\n\n**Generic answer:**\n\nTo determine when FTK Imager was last executed on a Windows system, you would typically examine:\n\n1. **Prefetch files** - Look for `FTKIMAGER.EXE-*.pf` in `C:\\Windows\\Prefetch\\`. The prefetch file shows last execution time (timestamp of the file itself shows the most recent run; the embedded timestamps show up to the last 8 execution times on Windows 10+).\n\n2. **UserAssist** - Registry key `NTUSER.DAT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{GUID}\\Count` contains ROT13-encoded entries with execution count and last run time.\n\n3. **AmCache** - `C:\\Windows\\appcompat\\Programs\\Amcache.hve` records application execution with timestamps.\n\n4. **RecentApps** (Windows 10+) - Registry locations in NTUSER.DAT under `Software\\Microsoft\\Windows\\CurrentVersion\\Search\\RecentApps`.\n\n5. **BAM/DAM** - `SYSTEM\\CurrentControlSet\\Services\\bam\\State\\UserSettings` or `dam` shows last execution time per user SID.\n\n6. **SRUM** - System Resource Usage Monitor database may contain execution evidence.\n\nThe most reliable artifact is typically the **Prefetch file** modification timestamp for the last execution time.\n\n**Uncertainty:** Without access to the specific case image, I cannot provide the actual timestamp."
+ },
+ {
+  "id": "HNT91",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "2016-06-21"
+  ],
+  "answer": "I do not have access to the specific forensic case image you're referencing, nor can I identify which case this is from the question alone.\n\n**Generic answer:**\n\nBrowser history date ranges vary by case. To determine this for a specific Windows image, you would typically:\n\n- Parse browser history databases (Chrome: `History` SQLite file in `%LOCALAPPDATA%\\Google\\Chrome\\User Data\\Default\\`; Firefox: `places.sqlite`; Edge: similar to Chrome locations)\n- Query the `urls` and `visits` tables for MIN/MAX timestamp values\n- Common timestamp fields: `last_visit_time`, `visit_time` (WebKit epoch), `visit_date` (PRTime for Firefox)\n\n**Typical ranges seen in cases:**\n- Often spans weeks to years depending on user activity and browser retention settings\n- Default retention varies: Chrome/Edge keep ~90 days of history, Firefox indefinitely until manually cleared\n- Gaps may indicate clearing, private browsing, or periods of inactivity\n\n**If you can provide:**\n- Case name/number\n- Specific examiner notes\n- Which browser(s) are relevant\n- Any context about the timeframe of interest\n\nI may be able to give a more specific answer if this is a published or well-known case.\n\n*Uncertainty: Cannot provide specific dates without access to the actual artifacts or case documentation.*"
+ },
+ {
+  "id": "HNT92",
+  "recall": 1.0,
+  "found": [
+   "Skype"
+  ],
+  "missing": [],
+  "answer": "Based on my knowledge of Windows forensics, I cannot identify which specific case you're referring to from the question alone, so I cannot provide the exact timestamp from memory.\n\nHowever, I can provide guidance on where this artifact would typically be found:\n\n**Generic answer:**\nThe Skype app last modification timestamp would typically be found in one of these locations:\n\n1. **Registry** - `HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall` or `HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall` entries for Skype\n2. **File system** - Main executable timestamp (e.g., `C:\\Program Files\\Microsoft\\Skype for Desktop\\Skype.exe` or `C:\\Program Files (x86)\\Microsoft\\Skype for Desktop\\Skype.exe`)\n3. **AppX/Modern app** - If Windows Store version: `C:\\Program Files\\WindowsApps\\Microsoft.SkypeApp_*` folder or package registry entries\n4. **NTFS $MFT** records for the Skype executable or installation directory\n\nWithout access to the specific case image or published case details, I cannot provide the exact timestamp value.\n\n**Uncertainty:** This is a generic answer. If this refers to a published CTF challenge, training scenario, or known forensic case (e.g., NIST datasets, DFRWS challenges, Magnet forensics CTFs), please provide the case name for a more specific answer."
+ },
+ {
+  "id": "HNT93",
+  "recall": 0.5,
+  "found": [
+   "Chrome"
+  ],
+  "missing": [
+   "2016-06-21"
+  ],
+  "answer": "I do not recognize this as a specific published forensic case, so I cannot provide case-specific values.\n\n**Generic answer:**\n\nTo find the latest Chrome execution timestamp in Prefetch, you would examine all Chrome-related `.pf` files in `C:\\Windows\\Prefetch\\`, specifically looking for files matching patterns like:\n- `CHROME.EXE-########.pf`\n- Any Chrome helper processes (e.g., `CHROME_INSTALLER-*.pf`, `SOFTWARE_REPORTER_TOOL-*.pf`)\n\nEach Prefetch file contains:\n1. **Last execution time** - the most recent timestamp (latest of up to 8 execution times in Windows 10/11)\n2. **Previous execution times** - up to 7 additional timestamps\n3. **File modification time** - updates on each execution\n\nThe **latest Chrome execution timestamp** would be the most recent \"Last Run Time\" field across all Chrome-related Prefetch files, parsed using tools like PECmd, WinPrefetchView, or manual parsing.\n\n**Without access to the image, I cannot provide:**\n- The specific timestamp\n- Which Chrome executable (main browser vs. installer vs. updater) was executed last\n- The exact Prefetch filename or hash value\n\n**Uncertainty:** This is a generic procedural answer. The actual case may have a specific timestamp that was documented in case notes or challenge materials."
+ },
+ {
+  "id": "HNT94",
+  "recall": 0.5,
+  "found": [
+   "Ryan"
+  ],
+  "missing": [
+   "2016-06-21"
+  ],
+  "answer": "I do not recognize this specific forensic case or have any published details about a Ryan VanAntwerp thesis PDF download in my training data.\n\nWithout access to the disk image or its parsed artifacts, I cannot provide the specific download timestamp. \n\n**Generic answer:**\nTo determine when a PDF was downloaded on a Windows system, a forensic examiner would typically check:\n\n1. **Browser download history** (Chrome, Firefox, Edge) - shows download timestamp\n2. **File system timestamps** - MACB times, particularly Created time often reflects download time\n3. **Browser cache/downloads database** - SQLite databases like Chrome's History file\n4. **Zone.Identifier ADS** (Alternate Data Stream) - records URL and referrer for downloaded files\n5. **Windows Search database** - may index download events\n6. **Prefetch files** - if the PDF was opened, may show first execution\n7. **SRUM database** - System Resource Usage Monitor may track network activity\n8. **Jump lists/Recent files** - LNK files with embedded timestamps\n\n**Uncertainty:** I have no information about this specific case, so I cannot provide the actual timestamp requested."
+ },
+ {
+  "id": "HNT95",
+  "recall": 0.0,
+  "found": [],
+  "missing": [
+   "2016-06-21",
+   "09:22"
+  ],
+  "answer": "Based on typical Windows attack chain forensics, I need to clarify that without access to the specific case artifacts, I can only provide a generic framework for analyzing attack chain timing patterns.\n\n## Generic Attack Chain Time Pattern Analysis\n\nA typical Windows attack chain shows this temporal sequence:\n\n**Initial Compromise (T0)**\n- Phishing email delivery/opening\n- Drive-by download\n- Exploit delivery\n- Usually during business hours (8 AM - 6 PM local time)\n\n**Execution & Persistence (T0 + minutes to hours)**\n- Initial payload execution\n- Registry Run key creation\n- Scheduled task creation\n- Service installation\n- Typically within 5-30 minutes of initial access\n\n**Discovery & Lateral Movement (T0 + hours to days)**\n- Network enumeration (`net view`, `nltest`)\n- Credential dumping (LSASS access)\n- SMB/RDP lateral connections\n- Often occurs 2-24 hours after initial compromise\n\n**Collection & Exfiltration (T0 + days to weeks)**\n- File staging\n- Compression/archival\n- Outbound network connections\n- May occur over multiple sessions spanning days/weeks\n\n## Key Forensic Artifacts for Timing\n\n- **Prefetch**: First/last execution times\n- **Shimcache/Amcache**: Program execution timeline\n- **Event Logs**: Security 4688, 4624, 4672, 7045\n- **$MFT timestamps**: File creation/modification sequences\n- **Registry LastWrite times**: Persistence mechanism timestamps\n- **Browser history/downloads**: Initial compromise vector timing\n\n**Uncertainty**: Without the specific case image or artifacts, I cannot provide actual timestamps, tool names, or the precise sequence for this particular investigation."
+ },
+ {
+  "id": "HNT96",
+  "recall": 1.0,
+  "found": [
+   "Run"
+  ],
+  "missing": [],
+  "answer": "Based on general Windows forensics knowledge, I cannot provide specific values from the case image you're examining since I have no access to it.\n\n**Common Registry Run key locations that configure startup programs:**\n\n1. **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run**\n2. **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce**\n3. **HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run**\n4. **HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce**\n\nAdditional locations on 64-bit systems:\n- **HKLM\\Software\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Run**\n- **HKLM\\Software\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\RunOnce**\n\n**Typical legitimate entries** often found:\n- Windows Defender/Security updates\n- Graphics driver utilities (NVIDIA, AMD, Intel)\n- Audio managers (Realtek, etc.)\n- Cloud sync clients (OneDrive, Dropbox, Google Drive)\n- Update schedulers for installed software\n\n**Malware indicators** to look for:\n- Entries with suspicious paths (%TEMP%, %APPDATA%\\Local\\Temp)\n- Obfuscated or random value names\n- Executables with misleading names (svchost.exe not in System32)\n- Persistence for known malware families\n\n**To answer your specific question:** You would need to export these registry hives from the image (SYSTEM, SOFTWARE, NTUSER.DAT per user) and parse them with tools like Registry Explorer, RegRipper, or autopsy to see the actual configured startup programs.\n\n*Uncertainty: Without access to the specific image, I cannot provide the actual entries, counts, or timestamps from your case.*"
+ },
+ {
+  "id": "HNT97",
+  "recall": 1.0,
+  "found": [
+   "4720",
+   "2"
+  ],
+  "missing": [],
+  "answer": "I have no access to the disk image, parsed artifacts, or any search index for this specific case, so I cannot provide the actual count of Event ID 4720 events present in this particular forensic image.\n\n**Generic answer:**\nEvent ID 4720 records are generated in the Windows Security event log whenever a user account is created. To determine the count in a forensic examination, you would typically:\n\n- Parse `%SystemRoot%\\System32\\winevt\\Logs\\Security.evtx` (and any archived `.evtx` files)\n- Filter for Event ID 4720\n- Count the matching entries\n\nThe count could range from zero (if no accounts were created during the retention period, or if logging was disabled/cleared) to dozens or hundreds depending on system activity, retention policy, and whether the system was a domain controller or standalone machine.\n\n**Uncertainty:** Without access to the actual evidence, I cannot provide the specific count for this case. If this is a known published CTF challenge or public case study, providing the case name might allow me to recall documented details."
+ },
+ {
+  "id": "HNT98",
+  "recall": 1.0,
+  "found": [
+   "Administrators",
+   "Remote Desktop"
+  ],
+  "missing": [],
+  "answer": "Based on your question about group memberships on a Windows 8.1 system, I can provide generic information about typical group memberships found on Windows 8.1 systems:\n\n## Default Built-in Groups on Windows 8.1:\n\n**Administrators** - Full system control\n**Users** - Standard user privileges\n**Guests** - Minimal privileges for temporary access\n**Power Users** - Legacy group, limited use in modern Windows\n**Backup Operators** - Can backup/restore files\n**Remote Desktop Users** - Allowed RDP access\n**Network Configuration Operators** - Can modify network settings\n**Performance Monitor Users** - Can monitor performance counters\n**Performance Log Users** - Can manage performance logs\n**Distributed COM Users** - Can launch DCOM objects\n**IIS_IUSRS** - Used by Internet Information Services\n**Cryptographic Operators** - Can perform cryptographic operations\n**Event Log Readers** - Can read event logs\n**Hyper-V Administrators** - Manage Hyper-V (if installed)\n**Replicator** - Supports directory replication\n\n## Where to Find This Information Forensically:\n\n- **SAM Registry Hive** (`C:\\Windows\\System32\\config\\SAM`) - Contains local groups and memberships\n- **SECURITY Hive** - Contains additional security-related group information\n- **Group memberships** stored at: `SAM\\Domains\\Builtin\\Aliases\\` and `SAM\\Domains\\Account\\Aliases\\`\n\n**Uncertainty**: Without access to the specific image, I cannot provide actual group names, custom groups created by users/applications, domain groups (if domain-joined), or specific membership counts for this particular system."
+ },
+ {
+  "id": "HNT99",
+  "recall": 1.0,
+  "found": [
+   "500"
+  ],
+  "missing": [],
+  "answer": "Based on standard Windows configuration, the Administrator account RID (Relative Identifier) is **500**.\n\nThis is the default and well-known RID assigned to the built-in Administrator account on all Windows systems. Even if the account is renamed, it retains RID 500.\n\n**Certainty**: High. This is a Windows constant across all NT-based systems. The built-in Administrator always has RID 500 unless you're dealing with a highly unusual system modification, which is extremely rare in practice."
+ },
+ {
+  "id": "HNT100",
+  "recall": 0.5,
+  "found": [
+   "FTK IMAGER"
+  ],
+  "missing": [
+   "3"
+  ],
+  "answer": "Based on Windows forensics knowledge, the FTK Imager Prefetch run count refers to the execution counter found in the prefetch file for FTK Imager (typically `FTKIMAGER.EXE-[hash].pf`).\n\n**What it indicates:**\n\nThe run count shows how many times FTK Imager has been executed on the system (up to Windows 7). Starting with Windows 8/10, the prefetch format changed and the run count field may show different behavior or require parsing of the execution timestamp array to determine actual run frequency.\n\n**Forensic significance:**\n\n- **Evidence of use**: Confirms FTK Imager was run on the suspect system, which may indicate:\n  - Anti-forensic activity (suspect creating their own images)\n  - Legitimate IT/forensic work\n  - Prior examination of the system\n\n- **Frequency analysis**: Multiple runs (high count) vs. single execution helps determine whether this was routine use or isolated incident\n\n- **Timeline correlation**: The prefetch file also contains the last 8 execution timestamps (Windows 8+) or last run time (Windows 7), allowing correlation with other artifacts\n\n**Without access to the specific case image**, I cannot provide the actual run count value. In published cases, FTK Imager prefetch counts have ranged from 1 (single execution) to dozens (repeated use), each carrying different investigative implications depending on context.\n\n*Note: This is a generic answer based on prefetch analysis principles. The specific run count and its meaning in your case would require examining the actual prefetch file from the image.*"
+ }
+]

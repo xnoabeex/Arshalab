@@ -1,0 +1,238 @@
+{
+  "provider": "opus",
+  "case": "magnet",
+  "case_name": "Magnet_CTF_2022",
+  "case_id": "case_20260323_032324",
+  "run": 2,
+  "evidence_file": "evidence_Magnet_CTF_2022.json",
+  "evidence_record_count": 896,
+  "chain_event_count": 32,
+  "prompt_chars": 183012,
+  "elapsed_seconds": 49.9,
+  "chain": [
+    {
+      "timestamp": "2022-02-04T04:53:43.637602Z",
+      "event": "MinecraftInstaller.exe downloaded to Users\\Patrick\\Downloads; browser download record precedes Minecraft install chain",
+      "supporting_artifact": "browser_downloads_searches / MFT MinecraftInstaller.exe",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-04 04:53:49.5074280",
+      "event": "MinecraftInstaller.exe created in Users\\Patrick profile (entry 93176)",
+      "supporting_artifact": "MFT ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-04 05:52:20.3104112",
+      "event": "DiscordSetup.exe created in Users\\Patrick Downloads (entry 241404) with :SmartScreen ADS",
+      "supporting_artifact": "MFT ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-04 05:53:43.4033112",
+      "event": "Discord.lnk created on Desktop; Discord communication app installed (app-1.0.9003)",
+      "supporting_artifact": "MFT mft_lnk_files / app_communication",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-04 07:08:04",
+      "event": "DISCORD.EXE executed from Users\\Patrick\\AppData\\Local\\Discord (prefetch user-path execution)",
+      "supporting_artifact": "ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-05T01:17:49.868431Z",
+      "event": "Browser search 'stamps worth money' on YouTube — financial-motive research",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2022-02-06T07:10:15.844950Z",
+      "event": "Google search 'what are packets' — reconnaissance / tooling research preceding ZeroTier install",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "medium",
+      "phase": "reconnaissance"
+    },
+    {
+      "timestamp": "2022-02-06 07:14:10.0767923",
+      "event": "ZeroTier One.msi created in Users\\Patrick\\Downloads (entry 99598) with :SmartScreen ADS — VPN tunnel installer",
+      "supporting_artifact": "MFT mft_msi_installers / ext_mft_user_profile_content",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:35.7898674",
+      "event": "ZeroTier CLI helper zerotier-cli.bat written to Program Files (x86)\\ZeroTier\\One",
+      "supporting_artifact": "MFT mft_bat_files",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:45.3852097",
+      "event": "file_deleter.ps1 created under ZeroTier One\\prerequisites — anti-forensic script dropped",
+      "supporting_artifact": "MFT mft_ps1_files",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2022-02-06 07:15:45",
+      "event": "AIPACKAGECHAINER.EXE executed from AppData\\Roaming (ZeroTier installer chainer)",
+      "supporting_artifact": "ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-06 06:28:49.7262351",
+      "event": "Service install Event 7045 recorded on DESKTOP-SKPTDIO (earliest post-ZeroTier-period service install)",
+      "supporting_artifact": "EventLog Event 7045 svc_install_7045",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-06 07:48:24.3521658",
+      "event": "start.bat created in Users\\Patrick\\Documents\\Minecraft (entry 229071) with :SmartScreen ADS — Minecraft server launcher",
+      "supporting_artifact": "MFT ext_mft_user_profile_content / mft_bat_files",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-09 22:44:37.8591332",
+      "event": "Windows Defender Event 1117 action taken on detected threat",
+      "supporting_artifact": "EventLog Event 1117 def_action_taken_1117",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-09 23:34:55.1225188",
+      "event": "PowerShell ScriptBlock logging Event 4104 — first adversary PowerShell activity",
+      "supporting_artifact": "EventLog Event 4104 ps_scriptblock_4104",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11T01:18:02.114178Z",
+      "event": "Google search 'how to know if you've been hacked' — suspect situational-awareness research",
+      "supporting_artifact": "browser_raw_history",
+      "confidence_or_caveat": "medium",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2022-02-11 22:46:09.7189557",
+      "event": "Failed logon Event 4625 on DESKTOP-SKPTDIO (Security channel) — credential-access attempt",
+      "supporting_artifact": "EventLog Event 4625 auth_logon_failures_4625",
+      "confidence_or_caveat": "medium",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-11 22:50:40",
+      "event": "Documents\\Evidence folder accessed (LNK target, modified 2022-02-11 22:50:37) — data staging/collection folder",
+      "supporting_artifact": "lnk_recent_files",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2022-02-11 23:00:56.3207237",
+      "event": "Windows Defender Event 1116 threat detection on DESKTOP-SKPTDIO (coincident with PowerShell goteem.ps1)",
+      "supporting_artifact": "EventLog Event 1116 def_threat_detected_1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-11 23:19:23.2090504",
+      "event": "goteem.ps1 created in Users\\Patrick\\Documents\\Minecraft — adversary payload script",
+      "supporting_artifact": "MFT mft_ps1_files / lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-11 23:25:57.5388308",
+      "event": "goteem2.ps1 created in Users\\Patrick\\Documents\\Minecraft — second-stage payload script",
+      "supporting_artifact": "MFT mft_ps1_files / lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2022-02-12 01:29:43.1362394",
+      "event": "Unauthorized account creation Event 4720 on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4720 auth_account_created_4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 01:29:43.1595265",
+      "event": "Account enabled Event 4722 immediately after creation on DESKTOP-SKPTDIO",
+      "supporting_artifact": "EventLog Event 4722 auth_account_enabled_4722",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 01:37:07.8274813",
+      "event": "Member added to a security group Event 4732 — privilege grant to new account",
+      "supporting_artifact": "EventLog Event 4732 auth_group_added_4732",
+      "confidence_or_caveat": "medium",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 02:12:16.6903086",
+      "event": "tightvnc-2.8.63-gpl-setup-64bit.msi written to Windows\\SysWOW64 — remote-access tool install",
+      "supporting_artifact": "MFT mft_msi_installers",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2022-02-12 04:30:12.3573572",
+      "event": "Defender Event 1116 burst (coincident with Event 7045 service install at 04:30:13) — detection during payload deployment",
+      "supporting_artifact": "EventLog Event 1116 def_threat_detected_1116",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2022-02-12 22:47:43.3308355",
+      "event": "Explicit-credential logon Event 4648 on DESKTOP-SKPTDIO — credential use with alternate account",
+      "supporting_artifact": "EventLog Event 4648 auth_explicit_cred_4648",
+      "confidence_or_caveat": "medium",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2022-02-12 22:54:09.9190932",
+      "event": "Service GamingServicesNet/GamingServices registered under ControlSet001\\Services (Event 7045 at 22:54:09) — persistence service",
+      "supporting_artifact": "Registry reg_persistence_master / EventLog Event 7045",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2022-02-12 23:25:56.0076948",
+      "event": "Special privileges assigned Event 4672 on DESKTOP-SKPTDIO — SYSTEM-level privilege session",
+      "supporting_artifact": "EventLog Event 4672 auth_priv_assigned_4672",
+      "confidence_or_caveat": "medium",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2022-02-12 23:33:49.5097252",
+      "event": "USBSTOR device 'Ven_General Prod_UDisk' (DiskId {e34d8416-8c59-11ec-a228-f894c2dfe804}) connected, registered under ControlSet001\\Enum\\USBSTOR",
+      "supporting_artifact": "Registry reg_persistence_master USBSTOR / usb_attach_driverframeworks",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2022-02-12 23:33:49.8141627",
+      "event": "WPD/USB service install Event 7045 (WUDFWpdFs) coincident with UDisk attach — removable-media exfil staging",
+      "supporting_artifact": "EventLog Event 7045 svc_install_7045 / reg_image_file_execution_options WUDFWpdFs",
+      "confidence_or_caveat": "medium",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2022-02-12 23:39:58.9487382",
+      "event": "Winlogon AutoAdminLogon=1 / AutoLogonSID S-1-5-21-3341181097-1059518978-806882922-1001 set for user Patrick — persistence auto-logon",
+      "supporting_artifact": "Registry reg_winlogon_helpers",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    }
+  ]
+}

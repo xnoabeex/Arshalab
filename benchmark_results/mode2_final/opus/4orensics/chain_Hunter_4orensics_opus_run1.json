@@ -1,0 +1,245 @@
+{
+  "provider": "opus",
+  "case": "4orensics",
+  "case_name": "Hunter_4orensics",
+  "case_id": "case_20260410_120043",
+  "run": 1,
+  "evidence_file": "evidence_Hunter_4orensics.json",
+  "evidence_record_count": 846,
+  "chain_event_count": 33,
+  "prompt_chars": 190656,
+  "elapsed_seconds": 48.0,
+  "chain": [
+    {
+      "timestamp": "2016-06-15 13:53:52.0000000",
+      "event": "CCleaner.exe installed to C:\\Program Files\\CCleaner (anti-forensic tool staged pre-incident)",
+      "supporting_artifact": "MFT mft_exe_files",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-15 22:18:58.0000000",
+      "event": "Skype.exe installed to Program Files (x86)\\Skype\\Phone (communication app for accomplice contact)",
+      "supporting_artifact": "MFT app_communication",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:49:39.9920378",
+      "event": "Recent LNK created for how_do_threat_actors_steal_your_data.lnk (data-theft research document opened)",
+      "supporting_artifact": "MFT mft_lnk_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:58:09.3725499",
+      "event": "Recent LNK for DEFCON-22-Zoltan-Balazs-Bypass-firewalls-application-whitelists research PDF opened",
+      "supporting_artifact": "MFT mft_lnk_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:34",
+      "event": "putty.exe present in Downloads (SSH/exfil tooling staged)",
+      "supporting_artifact": "LNK lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-20 23:57:41",
+      "event": "pscp.exe present in Downloads (PuTTY SCP for file transfer/exfil)",
+      "supporting_artifact": "LNK lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-20 23:58:45.2342383",
+      "event": "card_expiration_terms_dict.txt / card_security_terms_dict.txt / ssn_high_group_info.txt created (sensitive PII/card dictionaries staged)",
+      "supporting_artifact": "USN ext_usn_user_content_lifecycle",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-20 23:59:06.9483540",
+      "event": "setupssh381-20040709.zip created in Downloads (SSH server package staged)",
+      "supporting_artifact": "MFT mft_archive_files",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 00:02:23.8454489",
+      "event": "Archive WVRBEZZTFREDLTKJ.zip created (staged data packaged for handoff)",
+      "supporting_artifact": "USN ext_usn_archive_created",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:15",
+      "event": "TeamViewer_Setup-vfa.exe downloaded to C:\\Users\\Hunter\\Downloads (remote-access tool for accomplice/handoff)",
+      "supporting_artifact": "SRUM/MFT app_remote_access",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:21",
+      "event": "TEAMVIEWER_.EXE executed from AppData\\Local\\Temp\\TeamViewer",
+      "supporting_artifact": "Prefetch ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 00:57:30.3757303",
+      "event": "tvfiles.7z / tvfilesx64.7z archives created (TeamViewer payload packaged)",
+      "supporting_artifact": "USN ext_usn_archive_created",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:41:07.0000000",
+      "event": "Failed logon Event 4625 on computer 4ORENSICS",
+      "supporting_artifact": "EventLog Event 4625",
+      "confidence_or_caveat": "medium",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2016-06-21 01:45:11.4222303",
+      "event": "Dropbox Update Service (dbupdate) registered as service in ControlSet001\\Services (cloud exfil persistence)",
+      "supporting_artifact": "Registry reg_appinit_dlls Services key",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 01:52:17.0902822",
+      "event": "Pictures.7z archive created (user content staged for exfil)",
+      "supporting_artifact": "USN ext_usn_archive_created",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 01:53:14.7757045",
+      "event": "USB device attach (Kernel-PnP Event 410) - Imation Nano Pro USB device connected",
+      "supporting_artifact": "EventLog Kernel-PnP 410 / usb_attach_driverframeworks",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:01:59.3657151",
+      "event": "USBSTOR registry entry for Imation Nano Pro USB Device (SerialNumber 07B20C03C80830A9) recorded",
+      "supporting_artifact": "Registry reg_persistence_master USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 02:04:40.0000000",
+      "event": "FTK-Imager.zip placed in Downloads and Google Drive (forensic imaging / anti-forensic staging)",
+      "supporting_artifact": "MFT mft_archive_files",
+      "confidence_or_caveat": "medium",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0245506",
+      "event": "Unauthorized account creation Event 4720 on computer 4orensics",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.0402357",
+      "event": "New account added to privileged group Event 4732",
+      "supporting_artifact": "EventLog Event 4732",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    },
+    {
+      "timestamp": "2016-06-21 08:37:43.6961545",
+      "event": "Windows Defender configuration change Event 5007 (Defender tampering)",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 09:18:07",
+      "event": "7z1602-x64.exe downloaded/executed from C:\\Users\\Hunter\\Downloads (archive packaging tool installed)",
+      "supporting_artifact": "SRUM/Prefetch app_archive_tools",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2016-06-21 09:22:25",
+      "event": "WIRESHARK-WIN64-2.0.4.EXE executed (network capture/discovery tool)",
+      "supporting_artifact": "Prefetch ext_prefetch_builtin_discovery",
+      "confidence_or_caveat": "medium",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2016-06-21 09:34:13.5047860",
+      "event": "Service install Event 7045 on computer 4orensics (adversary service installed)",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 09:37:32",
+      "event": "Exfiltration_Diagram.png accessed from C:\\Users\\Hunter\\Pictures\\Exfil (exfiltration staging folder)",
+      "supporting_artifact": "LNK lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 11:01:44.1316101",
+      "event": "psexec staged in Program Files (x86) (lateral movement / remote execution tool)",
+      "supporting_artifact": "USN suspicious_indicators_universal",
+      "confidence_or_caveat": "high",
+      "phase": "lateral_movement"
+    },
+    {
+      "timestamp": "2016-06-21 11:02:03",
+      "event": "zenmap.exe (Nmap) accessed from C:\\Program Files (x86)\\Nmap (network discovery/port scanning)",
+      "supporting_artifact": "LNK lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2016-06-21 11:43:18.2219434",
+      "event": "Run key Skype value added for autostart (C:\\Program Files (x86)\\Skype\\Phone\\Skype.exe /minimized /regrun)",
+      "supporting_artifact": "Registry reg_persistence_master Run key",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2016-06-21 11:44:54.1431830",
+      "event": "MftWipeFilter service (Jetico file system filter) registered in ControlSet001\\Services - MFT wiping/anti-forensic driver",
+      "supporting_artifact": "Registry reg_persistence_master Services key",
+      "confidence_or_caveat": "high",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2016-06-21 10:51:23",
+      "event": "Tor Browser firefox.exe accessed from C:\\Users\\Hunter\\Desktop\\Tor Browser (anonymized C2/exfil channel)",
+      "supporting_artifact": "LNK lnk_recent_files",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2016-06-21 12:46:19.0904602",
+      "event": "Windows Defender Application crash Event 1000 (Defender disrupted)",
+      "supporting_artifact": "EventLog Event 1000 (Windows Defender/Operational)",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2016-06-21 13:00:54.476902Z",
+      "event": "Browser access to security.google.com activity and Gmail forwarding settings for ehptmsgs@gmail.com (account takeover / exfil email setup)",
+      "supporting_artifact": "Browser browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2016-06-21 13:12:11.576942Z",
+      "event": "Browser visit to Google 'Less secure apps' settings (enabling programmatic mail access for exfil)",
+      "supporting_artifact": "Browser browser_raw_history",
+      "confidence_or_caveat": "medium",
+      "phase": "exfiltration"
+    }
+  ]
+}

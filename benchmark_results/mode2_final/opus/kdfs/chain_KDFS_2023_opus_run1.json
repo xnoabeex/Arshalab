@@ -1,0 +1,224 @@
+{
+  "provider": "opus",
+  "case": "kdfs",
+  "case_name": "KDFS_2023",
+  "case_id": "case_20260128_141256",
+  "run": 1,
+  "evidence_file": "evidence_KDFS_2023.json",
+  "evidence_record_count": 895,
+  "chain_event_count": 30,
+  "prompt_chars": 193130,
+  "elapsed_seconds": 43.0,
+  "chain": [
+    {
+      "timestamp": "2023-09-11 02:22:01.0721731",
+      "event": "Account created (Event 4720) on WIN-NI0JCB7SBTU, earliest account creation in incident window",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-11 02:22:07.5533823",
+      "event": "Logon failure (Event 4625) on WIN-NI0JCB7SBTU, earliest failed logon",
+      "supporting_artifact": "EventLog Event 4625",
+      "confidence_or_caveat": "medium",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-11 02:22:55.8657340",
+      "event": "StartupApproved\\Run value SecurityHealth modified (disabled flag 04-00...) in SOFTWARE hive",
+      "supporting_artifact": "Registry StartupApproved\\Run",
+      "confidence_or_caveat": "low",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-13 09:12:52.2453169",
+      "event": "Service install (Event 7045) on DESKTOP-K7VGB7O, earliest 7045 occurrence",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-14 06:04:57.7236391",
+      "event": "Run key values set (SecurityHealth, VMware User Process, Everything -startup) in SOFTWARE Run hive",
+      "supporting_artifact": "Registry Run key",
+      "confidence_or_caveat": "low",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-14 06:32:29",
+      "event": "Suspect opens trading-journal file 2023년 매매일지_나씨TV_v.230115.xlsx (financial motive research)",
+      "supporting_artifact": "LNK recent files",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:04:44.0014684",
+      "event": "Archive BTCUSDT-1h-2023-07.zip created in .\\Users\\souldrag\\Desktop\\USDT (data staging)",
+      "supporting_artifact": "MFT / ext_mft_user_profile_content",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2023-09-15 01:06:18.2448753",
+      "event": "BANDIZIP-SETUP-STD-X64.EXE dropped in Downloads (archive packaging tool install)",
+      "supporting_artifact": "MFT mft_exe_files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:08:09",
+      "event": "BANDIZIP-SETUP-STD-X64.EXE executed (Bandizip archive tool install)",
+      "supporting_artifact": "Prefetch app_archive_tools",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-15 01:10:20.1296462",
+      "event": "Windows Defender configuration change (Event 5007), earliest Defender tampering",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-15 01:37:00",
+      "event": "Discord.exe network/application activity (AppData\\Local\\Discord) — accomplice communication channel",
+      "supporting_artifact": "SRUM app_communication",
+      "confidence_or_caveat": "medium",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2023-09-15 01:40:28.5056471",
+      "event": "cointrader.bat created in .\\#Github\\cointrader (suspect script/payload project)",
+      "supporting_artifact": "MFT mft_bat_files",
+      "confidence_or_caveat": "low",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-15 02:30:03",
+      "event": "BLOCKSTREAMGREENSETUP.TMP executed — Blockstream Green crypto wallet install",
+      "supporting_artifact": "Prefetch ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "medium",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 02:49:48.5934869",
+      "event": "Windows Defender config change (Event 5007) during 02:49 activity burst",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-15 05:55:12.1275465",
+      "event": "Defender action taken (Event 1117) — malware remediation action",
+      "supporting_artifact": "EventLog Event 1117",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-16 02:13:24",
+      "event": "DISCORD.EXE executed from AppData\\Local\\Discord (accomplice contact)",
+      "supporting_artifact": "Prefetch ext_prefetch_user_path_execution",
+      "confidence_or_caveat": "medium",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2023-09-16 10:45:38.4579540",
+      "event": "Outlook OST souldrag576@gmail.com.ost modified (email client activity)",
+      "supporting_artifact": "MFT app_email_client",
+      "confidence_or_caveat": "low",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2023-09-17 08:45:39.9382969",
+      "event": "MSEDGE_PATCH.PACKED.7Z created (payload packaging / process-hollowing artifact)",
+      "supporting_artifact": "USN ext_usn_archive_created",
+      "confidence_or_caveat": "medium",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2023-09-17 08:47:15.1889210",
+      "event": "msedge.hollow.7z created (disguised payload archive — process hollowing indicator)",
+      "supporting_artifact": "USN ext_usn_archive_created",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-17 10:35:04.8134924",
+      "event": "Defender action taken (Event 1117) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog Event 1117",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-17 10:38:33",
+      "event": "IPCONFIG.EXE executed — network discovery / host enumeration",
+      "supporting_artifact": "Prefetch ext_prefetch_builtin_discovery",
+      "confidence_or_caveat": "medium",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2023-09-18 04:34:53.3780777",
+      "event": "PowerShell ScriptBlock logged (Event 4104) — adversary PowerShell execution",
+      "supporting_artifact": "EventLog Event 4104",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-18 07:33:19.2006062",
+      "event": "Driver ProDefense2.sys written to Windows\\System32\\drivers (adversary/driver install)",
+      "supporting_artifact": "MFT mft_sys_drivers",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-18 07:33:19.2356207",
+      "event": "Driver kck64s.sys written to Windows\\SysWOW64\\drivers (suspicious driver)",
+      "supporting_artifact": "MFT mft_sys_drivers",
+      "confidence_or_caveat": "medium",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-21 05:50:14.9707487",
+      "event": "USBSTOR SanDisk Cruzer Blade SerialNumber 4C530000320903119361 connected (removable media exfil)",
+      "supporting_artifact": "Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-21 05:51:23.785402Z",
+      "event": "Browser search for 'gofile' (gofile - Google 검색) — file-sharing distribution handoff research",
+      "supporting_artifact": "Browser history browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-21 05:51:32.390051Z",
+      "event": "Visited https://gofile.io/uploadFiles (payload/data distribution handoff)",
+      "supporting_artifact": "Browser history browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-22 07:42:54.6083618",
+      "event": "Defender threat detected (Event 1116) on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog Event 1116",
+      "confidence_or_caveat": "medium",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-22 18:24:15.3775923",
+      "event": "Autologger EventLog-System provider altered to Microsoft-Windows-Directory-Services-SAM (log tampering)",
+      "supporting_artifact": "Registry WMI Autologger",
+      "confidence_or_caveat": "low",
+      "phase": "anti_forensics"
+    },
+    {
+      "timestamp": "2023-09-22 18:37:25.339399Z",
+      "event": "Naver search for '랜섬웨어' (ransomware) — ransomware motive/research",
+      "supporting_artifact": "Browser history browser_raw_history",
+      "confidence_or_caveat": "high",
+      "phase": "impact"
+    }
+  ]
+}

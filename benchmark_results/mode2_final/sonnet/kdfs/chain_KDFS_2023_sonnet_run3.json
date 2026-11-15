@@ -1,0 +1,224 @@
+{
+  "provider": "sonnet",
+  "case": "kdfs",
+  "case_name": "KDFS_2023",
+  "case_id": "case_20260128_141256",
+  "run": 3,
+  "evidence_file": "evidence_KDFS_2023.json",
+  "evidence_record_count": 895,
+  "chain_event_count": 30,
+  "prompt_chars": 193130,
+  "elapsed_seconds": 43.8,
+  "chain": [
+    {
+      "timestamp": "2023-09-11 02:23:25.3721991",
+      "event": "New user account created, Event 4720",
+      "supporting_artifact": "EventLog Event 4720",
+      "confidence_or_caveat": "high",
+      "phase": "initial_access"
+    },
+    {
+      "timestamp": "2023-09-13 09:12:52.2453169",
+      "event": "First service installation Event 7045 on DESKTOP-K7VGB7O",
+      "supporting_artifact": "EventLog Event 7045",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-14 06:04:57.7236391",
+      "event": "Registry Run key modified: SecurityHealth, VMware User Process, Everything",
+      "supporting_artifact": "Registry Run key",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-15 01:04:44.0014684",
+      "event": "Cryptocurrency trading data files downloaded: BTCUSDT-1h-2023-07.zip",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:06:18.2448753",
+      "event": "Bandizip archive tool installer downloaded: BANDIZIP-SETUP-STD-X64.EXE",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:08:18.6962812",
+      "event": "Bandizip installation completed, .lnk files created",
+      "supporting_artifact": "MFT LNK files",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-15 01:10:20.1296462",
+      "event": "Windows Defender configuration change Event 5007",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-15 01:12:20.0706291",
+      "event": "VS Code installer downloaded: VSCodeUserSetup-x64-1.82.2.exe",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 01:37:00",
+      "event": "Discord communication app installed and active in SRUM network records",
+      "supporting_artifact": "SRUM",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2023-09-15 01:40:28.5056471",
+      "event": "Cryptocurrency trading script created: cointrader.bat in #Github directory",
+      "supporting_artifact": "MFT .bat files",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 02:27:54.8027106",
+      "event": "Blockstream Green crypto wallet downloaded: BlockstreamGreen_Windows_x86_64.zip",
+      "supporting_artifact": "MFT",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-15 02:30:03",
+      "event": "Blockstream crypto wallet installer executed: BLOCKSTREAMGREENSETUP.TMP",
+      "supporting_artifact": "Prefetch",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-15 02:49:26.8440399",
+      "event": "Process creation spike Event 4688",
+      "supporting_artifact": "EventLog Event 4688",
+      "confidence_or_caveat": "medium",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-15 02:50:05.4566245",
+      "event": "Additional Defender configuration tampering Event 5007",
+      "supporting_artifact": "EventLog Event 5007",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-15 05:55:12.1275465",
+      "event": "Defender action taken Event 1117",
+      "supporting_artifact": "EventLog Event 1117",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-16 02:13:24",
+      "event": "Discord.exe executed from user AppData",
+      "supporting_artifact": "Prefetch user_path_execution",
+      "confidence_or_caveat": "high",
+      "phase": "command_and_control"
+    },
+    {
+      "timestamp": "2023-09-16 02:35:08.9155271",
+      "event": "Windows Firewall stopped Event 5025",
+      "supporting_artifact": "EventLog Event 5025",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-17 08:45:39.9382969",
+      "event": "Suspicious archive created: MSEDGE_PATCH.PACKED.7Z",
+      "supporting_artifact": "USN Journal",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2023-09-17 08:47:15.1889210",
+      "event": "Suspicious archive created: msedge.hollow.7z",
+      "supporting_artifact": "USN Journal",
+      "confidence_or_caveat": "high",
+      "phase": "collection"
+    },
+    {
+      "timestamp": "2023-09-17 10:38:33",
+      "event": "ipconfig.exe executed for network discovery",
+      "supporting_artifact": "Prefetch builtin_discovery",
+      "confidence_or_caveat": "high",
+      "phase": "discovery"
+    },
+    {
+      "timestamp": "2023-09-17 10:38:33.1216989",
+      "event": "Defender threat detected Event 1116",
+      "supporting_artifact": "EventLog Event 1116",
+      "confidence_or_caveat": "high",
+      "phase": "defense_evasion"
+    },
+    {
+      "timestamp": "2023-09-18 04:23:46.3161550",
+      "event": "Explicit credentials used Event 4648",
+      "supporting_artifact": "EventLog Event 4648",
+      "confidence_or_caveat": "high",
+      "phase": "credential_access"
+    },
+    {
+      "timestamp": "2023-09-18 04:34:53.3780777",
+      "event": "PowerShell ScriptBlock execution Event 4104",
+      "supporting_artifact": "EventLog Event 4104",
+      "confidence_or_caveat": "high",
+      "phase": "execution"
+    },
+    {
+      "timestamp": "2023-09-18 07:33:19.2006062",
+      "event": "Suspicious driver installed: ProDefense2.sys, kck64s.sys, x64kdss.sys",
+      "supporting_artifact": "MFT sys_drivers",
+      "confidence_or_caveat": "high",
+      "phase": "persistence"
+    },
+    {
+      "timestamp": "2023-09-21 05:50:14.9658507",
+      "event": "USB device attached: SanDisk Cruzer Blade",
+      "supporting_artifact": "EventLog DriverFrameworks",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-21 05:50:15.5395675",
+      "event": "USB mass storage device registered in registry: USBSTOR SanDisk Cruzer Blade",
+      "supporting_artifact": "Registry USBSTOR",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-21 05:51:26.339720Z",
+      "event": "File-sharing platform visited: gofile.io",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-21 05:51:32.390051Z",
+      "event": "Gofile upload page accessed: gofile.io/uploadFiles",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "exfiltration"
+    },
+    {
+      "timestamp": "2023-09-22 18:37:25.339399Z",
+      "event": "Ransomware research: Naver search for '랜섬웨어' (ransomware)",
+      "supporting_artifact": "Browser history",
+      "confidence_or_caveat": "high",
+      "phase": "preparation"
+    },
+    {
+      "timestamp": "2023-09-23 02:20:12.7760050",
+      "event": "Special privileges assigned Event 4672",
+      "supporting_artifact": "EventLog Event 4672",
+      "confidence_or_caveat": "high",
+      "phase": "privilege_escalation"
+    }
+  ]
+}
